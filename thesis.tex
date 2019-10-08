@@ -10,7 +10,7 @@
 \title{Building a template bank}
 \author{Giada Caneva Santoro}
 \IDnumber{1490713}
-\course{Facoltà di Scienze Matematiche Fisiche e Naturali}
+\course{Facolt\`a di Scienze Matematiche Fisiche e Naturali}
 \courseorganizer{Corso di Laurea Magistrale in Fisica}
 \AcademicYear{2018/2019}
 \copyyear{2012}
@@ -90,10 +90,8 @@ h_{\mu\nu} = {\bar h}_{\mu\nu} + {1 \over {2}}\eta_{\mu\nu}{\bar h}
 \end{equation} 
 The Rienmann tensor constructed in linearised theory is given by
 \begin{align}
-
 R^{\mu}_{\nu\rho\sigma} = \partial_{\rho} \Gamma^{\mu}_{\nu\sigma} - \partial_{\sigma}\Gamma^{\mu}_{\nu\rho}  \\
 &={ 1 \over 2} (\partial_{\rho}\partial_{\nu}h^{\mu}_{\nu\rho} + \partial_{\sigma}\partial^{\mu}h^{\nu\rho} - \partial_{\rho}\partial^{\mu}h^{\nu\sigma} - \partial_{\sigma}\partial_{\nu}h^{\mu}_{\rho})
-
 \end{align}
 From this, the Ricci tensor takes the form
 \begin{equation}
@@ -106,7 +104,7 @@ R = R^{\mu}_{\mu} = (\partial_{\rho}\partial^{\mu}h^{\rho}_{\mu} - \square h)
 
 Combining all together the Einstein tensor can be expressed as
 \begin{equation}
-G_{\mu\nu} = {1 \over 2}(\partial_{\rho}\partial{\nu}h^{\rho}_{\mu} + \partial^{\rho}\partial_{\mu}h_{\nu\rho} - \sqaure h_{\mu\nu} - \partial_{\mu}\partial_{\nu}h - \eta_{\mu\nu}\partial_{\rho}\partial^{\sigma}h^{\rho}_{\sigma} + \eta_{\mu\nu}\square h)
+G_{\mu\nu} = {1 \over 2}(\partial_{\rho}\partial{\nu}h^{\rho}_{\mu} + \partial^{\rho}\partial_{\mu}h_{\nu\rho} - \square h_{\mu\nu} - \partial_{\mu}\partial_{\nu}h - \eta_{\mu\nu}\partial_{\rho}\partial^{\sigma}h^{\rho}_{\sigma} + \eta_{\mu\nu}\square h)
 \end{equation}
 Substituting the metric perturbation $h_{\mu\nu}$  with the $trace-reversed$ perturbation ${\bar h}_{\mu\nu}$ and expandig, the linerised Einstein equations assume the  compact form:
 \begin{equation}
@@ -179,7 +177,7 @@ Given a spacetime metric $g_{\mu\nu}$ and a set of spacetime coordinates $x^{\mu
 \begin{equation}
 {{d^2x^{\mu}}\over{d\lambda^2}} + \Gamma_{\nu\rho}^{\mu}(x){{dx^{\nu}}\over{d\lambda}}{{dx^{\rho}}\over{d\lambda}} = 0 \hspace*{2cm} m = 0
 \end{equation}
-which is the classical equation of motion of a test mass in the curved background described by the metric $g_{\mu\nu}$, in the absence of external non gravitational force and where $m$ is the mass of the object, $\tau$ represents the proper time given by $d\tau^2 = −ds^2$, and $\lambda$ is some affine parameter on the geodesic. 
+which is the classical equation of motion of a test mass in the curved background described by the metric $g_{\mu\nu}$, in the absence of external non gravitational force and where $m$ is the mass of the object, $\tau$ represents the proper time given by $d\tau^2 = -ds^2$, and $\lambda$ is some affine parameter on the geodesic. 
 In a flat spacetime, two straight lines taht are initially parallel to each other will remain parallel. In a curved spacetime, geodesics do not satisfy this property. Instead, two nearby geodesics, separeted by $\zeta^{\mu}$, follow the geodesic deviation equation
 \begin{equation}
 {{D^2\zeta^{\mu}}\over{D\tau^2}} = -R^{\mu}_{\nu\rho\sigma}\zeta^{\rho}{{dx^{\nu}}\over{d\tau}}{{dx^{\sigma}}\over{d\tau}}
@@ -292,32 +290,32 @@ h_{ab}^{TT} =
 1  & 0 \\
 0 &  -1 \\
 \end{bmatrix} 
-h_{+}cos \omega t
+h_{+}\cos \omega t
 \end{equation}
 
 If the displacement between geodesics is $\zeta_a (t) = (x_0 + \delta x(t), y_0 + \delta y(t))$, then of $\zeta_a (t)$ is 
 
 \begin{equation}
-\delta {\ddot x} = - {{h_{+}} \over 2} (x_0 + \delta x) \omega ^2 sin \omega t
+\delta {\ddot x} = - {{h_{+}} \over 2} (x_0 + \delta x) \omega ^2 \sin \omega t
 \end{equation}
 \begin{equation}
-\delta {\ddot y} =  {{h_{+}} \over 2} (y_0 + \delta y) \omega ^2 sin \omega t
+\delta {\ddot y} =  {{h_{+}} \over 2} (y_0 + \delta y) \omega ^2 \sin \omega t
 \end{equation}
 Assuming that the perturbations are $O(h)$, and thus small compared to the unperturbed locations, $\delta x$ and $\delta y$ can be neglected.
 The integrations gives the deviations caused by the plus polarisations:
 
 \begin{equation}
-\delta x(t) =  {{h_{+}} \over 2} x_0 sin \omega t
+\delta x(t) =  {{h_{+}} \over 2} x_0 \sin \omega t
 \end{equation}
 \begin{equation}
-\delta y(t) = - {{h_{+}} \over 2} y_0  sin \omega t
+\delta y(t) = - {{h_{+}} \over 2} y_0  \sin \omega t
 \end{equation}
 Similarly, for the cross polarization at $z=0$ and initial conditions $h_{ij}^{TT} = 0$ at $t= 0$, the situation is described by the equations
 \begin{equation}
-\delta x(t) =  {{h_{\times}} \over 2} y_0 sin \omega t
+\delta x(t) =  {{h_{\times}} \over 2} y_0 \sin \omega t
 \end{equation}
 \begin{equation}
-\delta y(t) =  {{h_{\times}} \over 2} x_0  sin \omega t
+\delta y(t) =  {{h_{\times}} \over 2} x_0  \sin \omega t
 \end{equation}
 This set of equations describes the changes in the x and y components for a passing gravitational wave. The plus polarization alternately stretches and compresses the ring of test masses in the x and y directions, while the cross polarization exhibits the same behavior rotated by $\ang{45}$ in the x - y plane. 
 
@@ -348,7 +346,7 @@ Gravitons in a gravitational-wave burst are phase coherent; photons in electroma
 An extremely important consequence of this coherency is that the direct observable of gravitational radiation is the strain $h$, a quantity that falls off with distance as $1/r$. Most electromagnetic observables are some kind of energy flux, and so fall off with a $1/r^2$ law; measuring coherent GWs is analogous to measuring a coherent, $1/r$ 
 electromagnetic radiation field. This comparatively slow fall off with radius means that relatively small improvements in the sensitivity of GW detectors can have a large impact on their science: Doubling the sensitivity of a detector doubles the distance to which sources can be detected, increasing the volume of the Universe to which sources are measurable by a factor of 8. Every factor of two improvement in the sensitivity of a GW observatory should increase the number of observable sources by about an order of magnitude. 
 In most cases, electromagnetic astronomy is based on deep imaging of small fields of view: Observers obtain a large amount of information about sources on a small piece of the sky. GW astronomy will be a nearly all-sky affair: GW detectors have nearly $4\pi$ steradian sensitivity to events over the sky. A consequence of this is that their ability to localize a source on the sky is not good by usual astronomical standards; but, it means that any source on the sky will be detectable, not just sources towards which the detector is “pointed”. The contrast between the all-sky sensitivity but poor angular resolution of GW observatories, and the pointed, high angular resolution of telescopes is very similar to the angular resolution contrast of hearing and sight, strengthening the useful analogy of GWs with sound. 
-It is useful to categorize GW sources (and the methods for detecting their waves) by the frequency band in which they radiate. Broadly speaking, we may break the GW spectrum into four rather different bands: the ultra low frequency band,$10^{-18}Hz \apprle f \apprle 10^{-13} Hz$; the very low frequency band, $10^{−9} Hz \apprle f \apprle 10^{−7} Hz$; the low frequency band, $10^{−5} Hz \apprle f \apprle 1Hz$; and the high frequency band, $1Hz \apprle f \apprle 10^4 Hz$.
+It is useful to categorize GW sources (and the methods for detecting their waves) by the frequency band in which they radiate. Broadly speaking, we may break the GW spectrum into four rather different bands: the ultra low frequency band,$10^{-18}Hz \apprle f \apprle 10^{-13} Hz$; the very low frequency band, $10^{-9} Hz \apprle f \apprle 10^{-7} Hz$; the low frequency band, $10^{-5} Hz \apprle f \apprle 1Hz$; and the high frequency band, $1Hz \apprle f \apprle 10^4 Hz$.
 
 For compact sources, the GW frequency band is typically related to the source’s size $R$ and mass $M$. Here the source size $R$ means the lengthscale over which the source’s dynamics vary; for example, it could be the actual size of a particular body, or the separation of members of a binary. The “natural” GW frequency of such a source is $f_{GW} \sim (1/2\pi)\sqrt{GM/R^3}$. Because $R \apprge 2GM/c^2$ (the Schwarzschild radius of a mass $M$), an upper bound for the frequency of a compact source can be estimated:
 \begin{equation}
@@ -380,13 +378,13 @@ As a GW causes the stretching and shrinking of the proper distance between test 
 \caption{Schematic overview of an interferometric detecto. Without a GW present, the interferometer is kept at a destructive interference configuration. A GW will change the relative distance between the arms and cause the interferometer output to deviate from the destructive interference. The intensity of the light and its temporal evolution encode the footprints of GWs.}
 \label{fig:spot}
 \end{figure}
-The first gravitational wave detectors were resonant-mass cylindrical bar detectors. The first was developed and built by Joseph Weber in the 1960s. Over the course of the next several decades, more bar detectors were built that were at least four orders of magnitude more sensitive than Weber’s original design. These detectors would be set into oscillation at their resonant frequency by passing gravitational waves near that resonant frequency and were sensitive to gravitational waves with relatively high frequency $(\textasciitilde 1 kHz)$ and in a narrow frequency band. In order to detect signals in a broader range of frequencies and out to farther distances, large-scale interferometric detectors have been built. The idea originated with the Russian theorists, M. Gertsenshtein and V. I. Pustovoit in 1962. But the strong push for using interferometers came in the late 1960s with R. Forward, R. Weiss, R. Drever, and others. From the early 2000s, several kilometer-scale ground-based interferometers operated in the frequency band from ∼ 10 Hz to ∼ 1 kHz at a sensitivity that allowed the potential for detection from a variety of sources at large extragalactic distances.
+The first gravitational wave detectors were resonant-mass cylindrical bar detectors. The first was developed and built by Joseph Weber in the 1960s. Over the course of the next several decades, more bar detectors were built that were at least four orders of magnitude more sensitive than Weber’s original design. These detectors would be set into oscillation at their resonant frequency by passing gravitational waves near that resonant frequency and were sensitive to gravitational waves with relatively high frequency $(\textasciitilde 1 kHz)$ and in a narrow frequency band. In order to detect signals in a broader range of frequencies and out to farther distances, large-scale interferometric detectors have been built. The idea originated with the Russian theorists, M. Gertsenshtein and V. I. Pustovoit in 1962. But the strong push for using interferometers came in the late 1960s with R. Forward, R. Weiss, R. Drever, and others. From the early 2000s, several kilometer-scale ground-based interferometers operated in the frequency band from $\sim 10$\,Hz to $\sim 1$\,kHz at a sensitivity that allowed the potential for detection from a variety of sources at large extragalactic distances.
 An interferometric detector is based on the simple principles of a Michelson interferometer. In general, an interferometer uses laser light as a displacement measuring device. Two highly reflecting mirrors and a central beam splitter (a 50\% reflecting mirror) act as test masses. The three masses are suspended as pendulums and are allowed to swing freely in the horizontal direction. Thus, they can be considered freely falling masses in that direction. The reflecting mirrors,  labeled as test masses, are placed equidistant from the central beam splitter but in orthogonal directions.
 A beam of laser light is incident on the beam splitter and is split into two beams along the x and y arms. The light is then reflected by the end mirrors, recombined at the beam splitter, and detected at the photodiode. When the beams recombine, they will interfere constructively if the lengths of the two arms differ by an integral number of wavelengths and interfere destructively if the lengths differ by an odd number of half wavelengths:
 
-\begin{equation}
-
-\end{equation}
+%\begin{equation}
+%
+%\end{equation}
 \subsection{Beam pattern functions}
 nterferometers are sensitive to the relative difference between two distances, the so-called strain. Suppose we have an interferometer with its arms pointing along the unit vectors $u^i$ and $v^i$. The strain $h(t)$ is given by
 \begin{equation}
@@ -402,11 +400,11 @@ As the expression for $h(t)$ is linear in $h_{+}$ and $h_{\times}$, one can also
 \begin{equation}
 h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
 \end{equation}
-where $F_{+,\times}$ are called the beam pattern functions. Suppose we have a detector with arms that are perpendicular to each other, one pointing in the x-direction and the other in the $y$-direction in a Cartesian coordinate system. This detector frame, denoted by $(x,y,z)$, is generally different from the GW coordinate system, denoted by $(x',y',z')$, where the source is conveniently described. To account for such a difference, we first note that when the plus and cross polarisations are not equal in strength, we can rotate the coordinate system by an angle $\psi$ around the $z′$ axis so that the $x′$ and $y′$ axes coincide with the mayor and minor axis of the associated ellipse. In going from the GW frame to the detector frame, we can rotate the GW frame by an angle $\theta$ around the $x′$ axis and an angle $\phi$ around the $z′$ axis, where the angles $(\theta, \phi)$ denote the direction of propagation of the GW in the detector frame. Applying these three rotations, the beam pattern functions for a detector with perpendicular arms are given by 
+where $F_{+,\times}$ are called the beam pattern functions. Suppose we have a detector with arms that are perpendicular to each other, one pointing in the x-direction and the other in the $y$-direction in a Cartesian coordinate system. This detector frame, denoted by $(x,y,z)$, is generally different from the GW coordinate system, denoted by $(x^\prime,y^\prime,z^\prime)$, where the source is conveniently described. To account for such a difference, we first note that when the plus and cross polarisations are not equal in strength, we can rotate the coordinate system by an angle $\psi$ around the $z^\prime$ axis so that the $x^\prime$ and $y^\prime$ axes coincide with the mayor and minor axis of the associated ellipse. In going from the GW frame to the detector frame, we can rotate the GW frame by an angle $\theta$ around the $x^\prime$ axis and an angle $\phi$ around the $z^\prime$ axis, where the angles $(\theta, \phi)$ denote the direction of propagation of the GW in the detector frame. Applying these three rotations, the beam pattern functions for a detector with perpendicular arms are given by 
 
 \begin{align}
-F_{+}^{\ang{90}}& = {1 \over 2} (1 + cos^2 \theta)cos 2\phi cos 2 \psi - cos \theta sin2\phi sin2\psi \\
-F_{\times}^{\ang{90}}& = {1 \over 2} (1 + cos^2 \theta)cos 2\phi sin 2 \psi + cos \theta sin2\phi cos2\psi
+F_{+}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \cos 2 \psi - \cos \theta \sin2\phi \sin2\psi \\
+F_{\times}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \sin 2 \psi + \cos \theta \sin2\phi \cos2\psi
 \end{align}
 
 
