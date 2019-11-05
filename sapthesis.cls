@@ -372,7 +372,7 @@
 \if|\SAP@submitdate|\ClassError{sapthesis}{You must specify the %
   thesis submission date}{Example: \protect\submitdate{August 2012} The date must be in the form Month(name) Year(number)}\fi
 \if|\SAP@copyyear|\ClassError{sapthesis}{You must specify the %
-  copyright year}{Example: \protect\copyyear{2012}}\fi
+  copyright year}{Example: \protect\copyyear{2019}}\fi
 \if|\SAP@IDnumber|\ClassError{sapthesis}{You must specify your %
   ID number (matricola)}{Example: \protect\IDnumber{123456}}\fi
 \if|\SAP@authoremail|\ClassError{sapthesis}{You must specify the email of the author}{%
