@@ -37,7 +37,404 @@ bank is built neglecting the emission in ways superior to the fundamental one.
 
 
 \chapter{Introduction}
-\chapter{Gravitational waves: Detection and sources}
+\chapter{Gravitational Wave Detection}
+\section{Laser Interferometers}
+\section{Ground Based Interferometers}
+\section{Beam pattern functions}
+\section{Interferometers sentitivities and noise sources}
+\subsection{The Noise Spectral Density}
+\subsection{Non-stationary transient noise sources}
+\subsection{Detector’s response to a Gravitational Wave}
+
+\chapter{Gravitational waves in linearized gravity}
+\section{Weak-field metric}
+\subsection{Linearising the Einstein field equations}
+\subsection{Geodesic equation and geodesic deviation}
+\section{Interaction of Gravitational waves with test masses}
+
+\subsection{Transverse-traceless gauge}
+
+	Consider a test mass initially at rest at $\tau = 0$. The geodesic equation then becomes
+
+		\begin{equation}
+		{{dx^i}\over{d\tau^2}} = -[\Gamma^i_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}}]_{\tau=0} \\ 
+		= - [ \Gamma^i_{00}({{dx^0}\over{d\tau}})^2]_{\tau=0}
+		\end{equation}
+
+	by assumption
+		
+		\begin{equation}
+		{{dx^i}\over{d\tau}} = 0 \hspace*{2cm} at \hspace*{0.5cm}\tau = 0
+		\end{equation}
+
+	since the mass is initially at rest. Expanding to first order in $h_{\mu\nu}$, 
+	the Christoffel symbol $\Gamma^i_{00}$ vanishes in the TT gauge
+
+		\begin{equation}
+		\Gamma^i_{00} = {1 \over {2}}(2\partial_{0}h_{0i} - \partial_i h_{00})
+		\end{equation}
+
+	because both $h_{00}$ and $h_{0i}$ are set to zero by the gauge condition. 
+	Therefore, if at time $\tau = 0$ $dx^i/d\tau$ is zero, remains zero at all times, 
+	because its derivatives also vanishes.
+	This shows that if two test masses are initially separated by a coordinate separation of $x^i$ in the TT frame, 
+	and are at rest with respect to each other, they will remain at this separation.
+	Overall, it seems that a GW has no influence on the geodesic or on the deviation of geodesics.
+	In other words, in the TT gauge the coordinate location of a slowly moving, freely falling body is unaffected 
+	by the GW because the coordinates move with the waves.
+	The TT gauge illustrates that, in general relativity, the physical effects are not expressed by what happens 
+	to the coordinates since the theory is invariant under coordinate transformations:
+	the position of test masses doesn't change because the freedom of gauge allowed to define the coordinates 
+	in such a way that they don't change.
+	Physical effects can instead be found monitoring proper distances, or proper times.
+
+	In fact the GWs cause the proper separation between two freely falling particles to oscillate, 
+	even if the coordinate separation is constant. Consider two spatial freely falling particles, 
+	located at $z = 0$, and separated on the x axis by a coordinate distance $L_c$. 
+	Consider a GW in TT gauge that propagates down the z axis, $h^{TT}_{\mu\nu}(t,z)$. 
+	The proper distance L between the two particles in the presence of the GW is given by
+
+		\begin{align}
+		L & = \int^{L_c}_{0}{dx\sqrt{g_{xx}}} = \int^{L_c}_{0}dx\sqrt{1 + h^{TT}_{xx}(t,z=0)} \\
+		& \simeq \int^{L_c}_{0}{dx[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]} \\
+		&= L_c[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]
+		\end{align}
+
+	Therefore, the proper distance expands and shrinks periodically,with a fractional length change $\delta L/L$ given by
+
+		\begin{equation}
+		{{\delta L}\over{L}} \simeq {1 \over 2} h_{xx}^{TT}(t,z=0)
+		\end{equation}
+
+	Even though this result is calculaterd in the TT gauge, it is indeed gauge indipendent.
+	$h_{xx}^{TT}$ acts as a strain, a fractional length change.
+	Because the time that light travels between the two test masses is related to the proper distance,  
+	which directly relates to the accumulated phase measured by laser interferometric GW observatories,
+	GWs leave an imprint on the time it takes for a photon to make a round trip. 
+	Consequently, interferometers can potentially measure these imprints by measuring the length difference between
+	their arms. The “extra” phase $\delta \phi$ (if $L \ll \lambda$ so that the metric perturbation 
+	does not change value very much during a light travel time) accumulated by a photon that travels
+	down and back the arm of a laser interferometer in the presence of a GW is $\delta \phi = 4\pi \delta L \lambda$, 
+	where $\lambda$ is the photon’s wavelength and $\delta L$ is the distance
+	the end mirror moves relative to the beam splitter.
+
+
+\subsection{Local proper reference frame}
+
+	A convenient coordinate system for analyzing the geodesic deviation equation is the 
+	local proper reference frame of the observer who travels along the first geodesic.
+	Consider a detector capable of measuring changes in the proper distance, e.g. an interferometer, 
+	with a characteristic size that is much smaller than the characteristic wavelength of the GW.
+	In this case, one can approximate the entire detector to be in a near local Lorentz frame  
+	(freely falling frame), even in the presence of GWs. This coordinate system is defined by the requirements
+
+		\begin{equation}
+		z^i(\tau) = 0, \hspace*{2cm} g_{ab}(t, 0) = \eta_{ab}, \hspace*{2cm} \Gamma^a_{bc}(t,0) = 0,
+		\end{equation}
+
+	which imply that the metric has the form
+
+		\begin{equation}
+		ds^2 \approx -dt^2 + \delta_{ij}dx^i dx^j + O({{x^ix^j}\over{L^2_B}})
+		\end{equation}
+
+	where $L^2_B$ denotes the typical variation scale of the metric.
+	Consider now the proper distance between the two geodesics, $\zeta^i$, 
+	to understand how the GWs influence these two test masses the geodesic deviation equation is calculated as
+
+		\begin{equation}
+		{{d^2\zeta^{\mu}}\over{d\tau^2}} + 2\Gamma^{\mu}_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^\rho}\over{d\tau}} + \zeta^{\sigma}\Gamma^{\mu}_{\nu\rho,\sigma}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}} = 0
+		\end{equation}
+
+	Assuming the two test masses are moving non-relativistically, $dx^i/d\tau$ can be neglected compared to $dx^0/d\tau$.
+	Furthermore, the term proportional to $\Gamma^{\mu}_\nu\rho{}$ is negligible compared to other terms in a near LLF. Hence,
+
+		\begin{equation}
+		{{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{\sigma}\Gamma^{i}_{00, \sigma}({{dx^0}\over{d\tau}})^2 = 0
+		\end{equation}
+
+	Further simplifying $\zeta^{\sigma}\Gamma^{i}_{00, \sigma} \approx \zeta^{j}\Gamma^{i}_{00, j}$
+
+		\begin{equation}
+		{{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{j}\Gamma^{i}_{00,j}({{dx^0}\over{d\tau}})^2 = 0
+		\end{equation}
+
+	But in the LLF, $R^i_{0j0} = \Gamma^i_{00,j} - \Gamma^i_{0j,0} = \Gamma^i_{00,j}$ and therefore
+
+		\begin{equation}
+		{{d^2\zeta^{\mu}}\over{d\tau^2}} + R^i_{0j0} \zeta^j({{dx^0}\over{d\tau}})^2 = 0
+		\end{equation}
+
+	Because $dx^0/d\tau \approx 1$, one can approximate $\tau \approx t$:
+
+		\begin{equation}
+		{\ddot \zeta}^j = - R^i_{0j0}\zeta^j
+		\end{equation}
+	
+	The key quantity entering into the equation, the Rienmann tensor, is gauge invariant in linearized theory, 
+	it can be evaluated in any convenient coordinate system.
+	The expression for the Rienmann tensor in terms of the TT gauge metric perturbation $h_{ij}^TT$
+
+		\begin{equation}
+		R^i_{0j0} = R_{i0j0} = - {1 \over 2}{\ddot h}_{ij}^{TT}
+		\end{equation}
+
+	Substituting into the previous equation, the geodesic deviation equation in the proper detector frame takes the form
+
+		\begin{equation}
+		{\ddot \zeta}^i = {1 \over 2}{\ddot h}_{ij}^{TT}\zeta^j
+		\end{equation}
+
+	which can be interpreted as if the influence of a GW in a near LLF resembles a Newtonian force.
+	In general directions, the proper distance is given by
+
+		\begin{equation}
+		s = \sqrt{L^2 + h_{ij}(t)L_{i}L_{j}}
+		\end{equation}
+
+	where $L_i$ denotes the spatial separation between two test masses and $L$ the associated coordinate distance.
+	In the given metric for the proper reference frame, the proper distance is just $|L| = \sqrt{L_iL_j}$ up to fractional errors; 
+	since the only detectors taken in consideration are those
+	with $L \ll \lambda$, these errors are smaller than the fractional distance changes caused by the GW.
+	Therefore $|L|$ is simply identified as the proper separation. The ideal equation for analyzing an interferometric GW detector is
+
+		\begin{equation}
+		{\ddot L}^i = {1 \over 2}{\ddot h}_{ij}^{TT}L^j
+		\end{equation}
+
+
+\subsection{Ring of test masses}
+
+	The effects of gravitational waves cannot be seen in isolated bodies. 
+	This is a result ofthe fact that a single test mass, in a frame freely falling with it, 
+	will remain at rest. At least two test masses are required to measure the effects of gravitational waves. 
+	This is also the case when one wants to measure any curvature of spacetime.
+	Consider a ring of test masses in the $(x, y)$ plane of a proper detector frame, initially at rest, centred at $z = 0$, 
+	and a GW travelling in the $z$-direction.
+	This situation restricts the attentionto the $(x,y)$ plane alone, because $h_{ij}^{TT}$ is transverse to the propagation direction, 
+	so the GW will only have influence in the plane of the test masses:
+	the only non zero compontents of the metric perturbation are
+
+		\begin{equation}
+		h_{xx}^{TT} = - h_{yy}^{TT} = h_{+} \hspace*{3cm} h_{xy}^{TT} = h_{yx}^{TT} = h_{\times}
+		\end{equation}
+
+	where $h_{+}(t-z)$ and $h_{\times}(t-z)$ are the two polarization components, which are indipendent and can be considered separately.
+	For the plus polarization at $z=0$ and initial conditions $h_{ij}^{TT} = 0$ at $t=0$:
+
+		\begin{equation}
+		h_{ab}^{TT} = 
+		\begin{bmatrix}
+		1  & 0 \\
+		0 &  -1 \\
+		\end{bmatrix} 
+		h_{+}\cos \omega t
+		\end{equation}
+
+	If the displacement between geodesics is $\zeta_a (t) = (x_0 + \delta x(t), y_0 + \delta y(t))$, then of $\zeta_a (t)$ is
+
+		\begin{equation}
+		\delta {\ddot x} = - {{h_{+}} \over 2} (x_0 + \delta x) \omega ^2 \sin \omega t
+		\end{equation}
+
+		\begin{equation}
+		\delta {\ddot y} =  {{h_{+}} \over 2} (y_0 + \delta y) \omega ^2 \sin \omega t
+		\end{equation}
+
+	Assuming that the perturbations are $O(h)$, and thus small compared to the unperturbed locations, $\delta x$ and $\delta y$ can be neglected.
+	The integrations gives the deviations caused by the plus polarisations:
+
+		\begin{equation}
+		\delta x(t) =  {{h_{+}} \over 2} x_0 \sin \omega t
+		\end{equation}
+
+		\begin{equation}
+		\delta y(t) = - {{h_{+}} \over 2} y_0  \sin \omega t
+		\end{equation}
+
+	Similarly, for the cross polarization at $z=0$ and initial conditions $h_{ij}^{TT} = 0$ at $t= 0$, the situation is described by the equations
+		
+		\begin{equation}
+		\delta x(t) =  {{h_{\times}} \over 2} y_0 \sin \omega t
+		\end{equation}
+
+		\begin{equation}
+		\delta y(t) =  {{h_{\times}} \over 2} x_0  \sin \omega t
+		\end{equation}
+		
+	This set of equations describes the changes in the x and y components for a passing gravitational wave.
+	The plus polarization alternately stretches and compresses the ring of test masses in the x and y directions, 
+	while the cross polarization exhibits the same behavior rotated by $\ang{45}$ in the x - y plane.
+
+		\begin{figure}
+		\includegraphics[scale=1]{ring}
+		\centering
+		\caption{The effects of plus and cross polarization on a ring of test masses. 
+			 The plus polarization alternately compresses and stretches the x- and y-separations.
+			 The cross polarization has the same effect only rotated by  $\ang{45}$.}
+		\label{fig:ring}
+		\end{figure}
+
+
+\section{Energy and momentum of gravitational waves}
+	Energy has been one of the most confusing aspects of gravitational wave theory and hence of general relativity.
+	The fact that GWs do indeed carry energy and momentum is already clear from the discussion of the interaction of GWs with test masses:
+	in the proper detector frame, an incoming GW sets in motion a ring of test masses initally at rest, 
+	so GWs impart kinetic energy to these asses.
+	If, for example, these masses are connected together with a loose spring with friction, 
+	this kinetic energy will be dissipated into heat.
+	Conservation of energy requires that the kinetic energy acquired by the test masses must necessarily come from the energy of the GWs.
+	The problem is difficult because of the equivalence principle: in a local frame there are no waves and hence no local definition 
+	of energy that can be coordinate-invariant.
+	Moreover, a wave is a time-dependent metric, and in such spacetimes there is no global energy conservation law. 
+	(Recall that conservation laws are associated with symmetry.
+	Angular momentum is conserved only in axisymmetric systems, or in systems governed by axisymmetric forces or fields.
+	Likewise, energy is conserved on in time-invariant systems.) 
+	Energy is only well-defined in certain regimes, which coincide with those for which waves can be cleanly separated from ”background”
+ 	metrics.
+
+
+\subsection{Effect of gravitational waves on the background spacetime}
+
+	In order to consider the fact that GWs generate a curvature, the background spacetime has to be dynamical, 
+	and this implies that GWs are defined as perturbations over some curved, dynamical, 
+	background metric $\bar g_{\mu \nu}$, that is now allowed to be curved and expand in such way
+
+		\begin{equation}
+		g_{\mu \nu}(x) = \bar g_{\mu \nu}(x) + h_{\mu \nu}(x) \hspace*{2cm}\|h_{\mu\nu}\|\ll 1
+		\end{equation}
+
+	In order to understand how the perturbation $h_{\mu \nu}$ propagates and how it affects the background spacetime, 
+	we have to to decide which part of $g_{\mu\nu}$ is the background and which is the fluctuations. 
+	Having a dynamical background metric requires a splitting that in linearized theory, 
+	having chosen the background metric as the constant flat-space metric $\eta_{\mu\nu}$, was not necessary.
+
+	There is no natural way to do such a split, hence some assumptions are needed: we are considering the situation in which, 
+	in some reference frame, we can separate the metric into a background plus fluctuations, 
+	and this separation is based on the fact that there is a clear distinction of scales either in space or in time.
+	Assuming that in some coordinate system, the $\bar g_{\mu \nu}$ has some typical length scale of spatial variation $L_B$, 
+	on top of which small amplitude perturbations are superimposed, characterized by a wavelength $\lambda$ such that $\lambda \ll L_B$. 
+	In this case $h_{\mu\nu}$ has the physical meaning of small ripples on a smooth background.
+	Equivalently, in a frequency space $\bar g_{\mu\nu}$ has frequencies up to a maximum value $f_b$ and  $h_{\mu\nu}$  
+	is peaked around a frequency $f$, with $f >> f_b$.
+
+	First of all, let's expand the Einstein equations around the background $\bar g_{\mu \nu}$ in terms of two small parameters: 
+	the typical amplitude $h= O(|h_{\mu\nu}|)$, and either $\lambda/L_B$ or $f_B/f$.
+	It is convenient to write the Einstein equations as
+
+		\begin{equation}
+		R_{\mu\nu} = {{8\pi G}\over c^4}(T_{\mu\nu}- {1 \over 2}g_{\mu\nu}T) 
+		\end{equation}
+
+	where $T_{\mu\nu}$ is the energy-momentum tensor of matter and $T$ its trace.The expantion of the Ricci tensor to $O(h^2)$ is
+
+		\begin{equation}
+		R_{\mu\nu} = {\bar R_{\mu\nu}} + R_{\mu\nu}^{(1)} + R_{\mu\nu}^{(2)} + ...
+		\end{equation}
+
+	where $ {\bar R_{\mu\nu}}$ is constructed with $\bar g_{\mu\nu}$ only, thus it contains only low frequency modes;
+	$R_{\mu\nu}^{(1)}$ is linear in $h_{\mu\nu}$ and it contains high frequency modes;
+	and $R_{\mu\nu}^{(2)} $ is quadratic in $h_{\mu\nu}$, it contains both high and low frequency modes.
+	Therefore the Einstein equations can be split into two separate equations for the low and high frequency parts
+
+		\begin{equation}
+		{\bar R_{\mu\nu}} = -[R_{\mu\nu}^{(2)}]^{Low} + {{8\pi G}\over c^4}(T_{\mu\nu}- {1 \over 2}g_{\mu\nu}T) ^{Low}
+		\end{equation}
+
+	and
+
+		\begin{equation}
+ 		R_{\mu\nu}^{(1)} = - [R_{\mu\nu}^{(2)}]^{High} +  {{8\pi G}\over c^4}(T_{\mu\nu}- {1 \over 2}g_{\mu\nu}T)^{High}
+		\end{equation}
+
+	One way to project on the long wavelenght modes is to introduce a scale $\bar l$ such that $\lambda << \bar l << L_B$, 
+	and averaging over a spatial volume with side $\bar l$.
+	A wavelenght of order $L_B$ is constant over the volume used for the averaging, 
+	while modes with a reduced wavelenght of order $\lambda$ are oscillating very fast and average to zero.
+	The low-frequency Einstein equations become
+
+		\begin{equation}
+ 		{\bar R_{\mu\nu}} = - <R_{\mu\nu}^{(2)}> +  {{8\pi G}\over c^4}(T_{\mu\nu}- {1 \over 2}g_{\mu\nu}T) ^{High}
+		\end{equation}
+
+	where $<..>$ denotes a spatial average over many reduced wavelenghts, over a volume with sides $l$.
+	We now define an effective energy-momentum tensor of matter, $\bar T^{\mu\nu}$
+
+		\begin{equation}
+		{\bar T^{\mu\nu}} - {1 \over 2}{\bar g_{\mu\nu}}{\bar T} = <T_{\mu\nu}- {1 \over 2}T>
+		\end{equation}
+
+	where ${\bar T}$ is the trace.
+	We also define the quantity $t_{\mu\nu}$ as
+
+		\begin{equation}
+		t_{\mu\nu} = -{{c^4}\over{8\pi G}}<R_{\mu\nu}^{(2)} - {1 \over 2}{\bar g_{\mu \nu}}R^{(2)}>
+		\end{equation}
+
+	whose trace is $t= {\bar g^{\mu\nu}}t_{\mu\nu} = {{c^4}\over{8\pi G}}<R_{\mu\nu}^{(2)}>$.
+	Then the low-frequency Einstein equations can be written as
+
+		\begin{equation}
+		 {\bar R_{\mu\nu}} = -{1 \over 2}{\bar g^{\mu\nu}} {\bar R} =  {{8\pi G}\over c^4}({\bar T_{\mu\nu}}+t_{\mu\nu})
+		\end{equation}
+
+	These equations determine the dynamics of $\bar g_{\mu\nu}$, which is the long-wavelength part of the metric, 
+	in terms of the low-frequency part of the matter energy-momentum tensor, $\bar T_{\mu\nu}$, 
+	and of a tensor $t_{\mu\nu}$ which does not depend on the external matter but only on the gravitational field itself, 
+	and is quadratic in $h_{\mu\nu}$.
+	These equations show that the effect of GWs on the background curvature is formally identical to that of matter 
+	with energy-momentum tensor $t_{\mu\nu}$, which comes out automatically in an averaged form because 
+	one is passing from a microscopic description to a macroscopic one.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%--------------------------------------------------------
 \section{Gravitational waves vs Electromagnetic waves}
 The generation and propagation of gravitational and electromagnetic radiation are basically quite similar but, on a more practical level, gravitational and electromagnetic waves are quite different.
 First of all, electromagnetic waves interact strongly with matter; GWs do not.
