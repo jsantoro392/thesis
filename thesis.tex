@@ -23,11 +23,6 @@
 \maketitle
 \dedication{Fortsett å gå.}
 
-\begin{abstract}
-In the present work we describe the methodology to build a template bank for one of the gravitational wave searches that will be carried out in the LIGO-Virgo interferometers observation campaign. 
-We will also quantify the effectiveness of detection using the most current waveform models and characterise the fraction of signals not detected in the common approximation in which the template 
-bank is built neglecting the emission in ways superior to the fundamental one.
-\end{abstract}
 
 \tableofcontents
 
@@ -37,20 +32,428 @@ bank is built neglecting the emission in ways superior to the fundamental one.
 
 
 \chapter{Introduction}
+
 \chapter{Gravitational Wave Detection}
+
+
+
 \section{Laser Interferometers}
+
+
+
 \section{Ground Based Interferometers}
+
+
+
 \section{Beam pattern functions}
+
+	Interferometers are sensitive to the relative difference between two distances, the so-called strain.
+ 	Suppose we have an interferometer with its arms pointing along the unit vectors $u^i$ and $v^i$. The strain $h(t)$ is given by
+
+		\begin{equation}
+		h(t) = {1 \over 2} (h_{ij}u^iu^j - h_{ij}v^iv^j) = D^{ij}h_{ij}(t)
+		\end{equation}
+
+	where $D^{ij}$ is referred to as the detector tensor and is given by
+
+		\begin{equation}
+		D^{ij} = {1\over 2} (u^iu^j -v^iv^j)
+		\end{equation}
+
+	As the expression for $h(t)$ is linear in $h_{+}$ and $h_{\times}$, one can also write
+
+		\begin{equation}
+		h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
+		\end{equation}
+
+	where $F_{+,\times}$ are called the beam pattern functions. Suppose we have a detector 
+	with arms that are perpendicular to each other, one pointing in the x-direction and the other
+	in the $y$-direction in a Cartesian coordinate system. This detector frame, denoted by $(x,y,z)$, 
+	is generally different from the GW coordinate system, denoted by $(x^\prime,y§^\prime,z^\prime)$, where the source
+	is conveniently described. To account for such a difference, we first note that when the plus 
+	and cross polarisations are not equal in strength, we can rotate the coordinate system by
+	an angle $\psi$ around the $z^\prime$ axis so that the $x^\prime$ and $y^\prime$ axes 
+	coincide with the mayor and minor axis of the associated ellipse.
+ 	In going from the GW frame to the detector frame, we can rotate the GW frame by 
+	an angle $\theta$ around the $x^\prime$ axis and an angle $\phi$ around the $z^\prime$ axis,
+	where the angles $(\theta, \phi)$ denote the direction of propagation of the GW in the detector frame.
+	Applying these three rotations, the beam pattern functions for a detector with perpendicular arms are given by
+
+		\begin{align}
+		F_{+}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \cos 2 \psi - \cos \theta \sin2\phi \sin2\psi \\
+		F_{\times}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \sin 2 \psi + \cos \theta \sin2\phi \cos2\psi
+		\end{align}
+
+
+
 \section{Interferometers sentitivities and noise sources}
+
+	The three dominant noise sources for the initial detectors were seismic, thermal, and shot noise.
+
+	$Photon Shot Noise$
+	The primary limitation in measuring a small change in light is shot noise,
+	or the natural fluctuations in the rate of photons arriving at the photodiode, 
+	that follow a Poisson process. The noise will decrease with increasing laser power, 
+	recycling cavity gain, arm cavity gain, and arm length.
+
+	$Radiation Pressure Sensor Noise$
+	Radiation pressure noise is associated with the photons from the laser striking the mirror 
+	and causing a force on the mirror. Of course, increasing the laser power to combat shot noise 
+	will actually result in an increase of radiation pressure. 
+	This noise source dominates the sensor noise at low frequencies while shot noise dominates 
+	at high frequencies. Thus one must optimize the laser power to give the smallest sensor noise overall.
+
+	$Seismic Noise$
+	At low frequencies, below about 40 Hz for initial LIGO, ground motion is the dominant
+	source of noise. It shakes the optics and produces strain signals that mask gravitational wave
+	signals. It would actually dominate at higher frequencies as well if it were not for a series
+	of active- and passive-isolation systems. The first line-of-defense is suspending the optics
+	as pendulums. For ground-motion frequencies much larger than the pendulum frequency
+	($f_{pend} = 0.76 Hz$ for initial LIGO), motion of the optics will be suppressed. Further sup-
+	pression occurs from four alternating mass-spring layers which provide an attenuation factor
+	$\propto f^{-2}$.
+
+	$Thermal Noise$
+	At frequencies of about 40-100 Hz, the random Brownian motion of the molecules on the surface 
+	of the mirrors and wires dominates. Initial LIGO’s two most important sources of thermal noise 
+	are the pendulum suspension system and the internal vibration modes of the mirrors.
+
+	$Gravity Gradient Noise$
+	Gravity gradient noise is actually due to the gravitational attraction between the test masses 
+	and density fluctuations in the atmosphere and earth in the local vicinity of the detector. 
+	It was not a dominant source of noise for initial detectors but will be for advanced detectors at low frequencies.
+
 \subsection{The Noise Spectral Density}
+
+	The various noises of the detector can be conveniently characterized by a spectral strain
+	sensitivity with dimensions of $1/sqrt{Hz}$.
+	The detector output $s(t)$ is composed of instrumental noise $n(t)$ arising from 
+	naturally occurring random processes and a potential strain signal $h(t)$
+
+		\begin{equation}
+		s(t) = n(t) + h(t)
+		\end{equation}
+
+	The detection problem then becomes how to distinguish $h(t)$ from $n(t)$ when $h(t) << n(t)$. 
+	In a way, $n(t)$ provides a measure of how small an $h(t)$ we can detect. 
+	Thus we take $n(t)$ as the detector’s noise and have a convenient way to 
+	compare performances of different detectors. 
+	Instrumental noise is a random process. In the case that we have a stationary 
+	random process (which can be the case for detector noise for short periods of time), 
+	the expectation value of $n$ at some time t becomes a long time average (as opposed to an ensemble average):
+
+		\begin{equation}
+		<n> = \lim_{T \to \infty} {1 \over T} \int^{T/2}_{-T/2}n(t)dt
+		\end{equation}
+
+	For simplicity, let us assume that $<n> = 0$. We can still define the power in the signal by 
+	integrating $n^2(t)$ over some duration $T$ and then dividing by $T$. 
+	Again, the expectation value of $n^2(t)$ will just be the time average:
+
+		\begin{equation}
+		<n^2> = \lim_{T \to \infty} {1 \over T} \int^{T/2}_{-T/2}n^2(t)dt
+		\end{equation}
+
+	If $n(t) = 0$ outside of $−T/2 < t < T/2$, then we can extend the integral limits to infinity
+	
+		\begin{equation}
+		\begin{split}
+  		<n^2>  = \lim_{T \to \infty}{1 \over T}int^{\infty}_{-\infty}n^2(t) dt \\
+         	       = \lim_{T \to \infty}{1 \over T} \int^{\infty}_{-\infty}|\~{n}(f)|^2df \\ 
+                       = \lim_{T \to \infty}{2 \over T} \int^{\infty}_{0}|\~{n}(f)|^2df \\
+                       = \int^{\infty}_{0}S_n(f)df
+		\end{split}
+		\end{equation}
+
+	where $S_n$ is what is known as the power spectral density of the noise process $n(t)$ 
+	and $\~{n}(f)$ is the Fourier transform of $n(t)$. 
+	Thus, in general, the power spectral density of a stationary random process $n(t)$ is defined as
+
+		\begin{equation}
+		= \lim_{T \to \infty}{2 \over T} |\int^{T/2}_{-T/2}n(t)e^{-2\pi ift}dt|^2
+		\end{equation}
+
+	Another useful expression for the power spectral density can be found by finding 
+	the expectation value of the frequency components of the noise
+
+		\begin{equation}
+		<\~{n}\ast(f\prime)\~{n}(f)>  = {1 \over 2} S_n(f) \delta (f-f\prime)
+		\end{equation}
+
+	Since the noise is real, $\~{n}(-f) = \~{n}(f)$ and thus, $S_n(−f) = Sn(f)$. 
+	If $n(t)$ has no dimensions, then $S_n(f)$ has units of $Hz^{-1}$.
+ 	If $<\~{n}\ast(f\prime)\~{n}(f)> $ is obtained by integrating only over the physical
+	range of frequencies, $f > 0$, then $S_n(f)$ is known as the $one-sided spectral density$.
+	Finally, on further definition that will come in handy is the inner product of $a$ and $b$:
+
+
+\begin{equation}
+(a|b) = 2 \int^{\infty}_{-\infty} {{\~{a}(f)\~{b}\ast()f} \over {S_n(f)}}df = 4 Re [\int^{\infty}_{0}{{\~{a}(f)\~{b}\ast(f)} \over {S_n(f)}} df]
+\end{equation}
+
+
 \subsection{Non-stationary transient noise sources}
+
+
+
 \subsection{Detector’s response to a Gravitational Wave}
 
+
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational waves in linearized gravity}
+
 \section{Weak-field metric}
+
+	In 1915, Albert Einstein presented his general theory of relativity  which describes 
+	how mass distorts spacetime and in turn how spacetime dictates how masses flow through it.
+	The classical Newtonian notion of gravity ,which stated that gravity arises from an 
+	action at a distance, was replaced with a geometric interpretation of the Universe, 
+	the spacetime continuum: it can be regarded as a fabric and it can be curved 
+	by the mass of an object. 
+	Masses moving on this curved spacetime fabric will then be perceived as gravity.
+	In general relativity, space-time is regarded as a four-dimensional manifold 
+	with a Lorentzian metric, and gravity is a manifestation of the manifold’s curvature.
+	The spacetime curvature is associated with the stress-energy tensor 
+	of matter fields through the Einstein’s field equations:
+
+		\begin{equation}
+		G_{\mu\nu} \equiv R_{\mu\nu}  - {1 \over 2}g_{\mu\nu}R = {8\pi G_{N} \over {c^4}}T_{\mu\nu} 
+		\end{equation}
+
+	Where $G_{\mu\nu} $ is the Einstein tensor, $T_{\mu\nu} $ is the stress-energy 
+	tensor of matter-fields and $ G_{N}$ is Newton’s gravitational constant.
+	General relativity predicts that gravity is mediated by a new type of radiation: gravitational radiation.
+	In 1916 Einstein found the weak-field solutions to general relativity had wave-like solutions, gravitational waves.
+	Gravitational waves that compose gravitational radiation are ripples in the fabric of spacetime, 
+	which periodically lengthen and shorten space, and speed up and slow down time.
+ 	To study the properties of gravitational waves, it is instructive to first study them 
+	in situations where the gravitational fields are weak.
+	In the so-called weak-field approximation, one can view the metric as the Minkowski metric 
+	with a small perturbation: it is required to expand the Einstein equations around the flat-space metric,
+	considering as a perturbation on the space-time of special relativity.
+	Letting $ x_\mu = (t, x, y, z)$ denote the time and space coordinates, 
+	we can write the proper distance between events $x_{\mu}$ and $x_{\mu} + dx_{\mu}$ as
+		
+		\[
+		ds^2 = g_{\mu\nu}dx^{\mu}dx^{\nu} \approx (\eta_{\mu\nu} + h_{\mu\nu})dx_{\mu}dx_{\nu}. \hspace*{2cm}\|h_{\mu\nu}\|\ll 1
+		\]
+
+	Here $\eta_{\mu\nu} = diag(-1,1,1,1)$ is the usual Minkowski metric and $h_{\mu\nu}$ 
+	represents the linearised gravitational field.
+	The metric perturbation is referred to as  $h_{\mu\nu}$: it encapsulates gravitational waves, 
+	but contains additional, non-radiative degrees of freedom as well; $\|h_{\mu\nu}\|$ means
+	“the magnitude of a typical non-zero component of $h_{\mu\nu}$”. 
+	The condition $\|h_{\mu\nu}\|\ll 1$ requires both the gravitational field to be weak, 
+	and in addition constrains the coordinate system to be approximately Cartesian.  
+	In linearized gravity, the smallness of the perturbation means that only terms which are linear in $h_{\mu\nu}$ are considered;
+	higher order terms are discarded. As a consequence, indices are raised and lowered using the flat metric.
+	The metric perturbation $h_{\mu\nu}$ transforms as a tensor under Lorentz transformations, 
+	but not under general coordinate transformations: since the numerical values of the components
+	of a tensor depend on the reference frame, there exists a reference frame where 
+	the linearisation of the gravitational field holds on a sufficiently large region of the spacetime.
+	The Einstein field equations are covariant under general coordinate transformations
+
+		\begin{equation}
+		x^{\mu} \rightarrow x^{\mu ‘}(x)
+		\end{equation}
+
+	So that the metric transforms as
+
+		\begin{equation}
+		g_{\mu\nu} \rightarrow g_{\mu' \nu'} = x^{\rho},_{\mu'}x^{\sigma},_{\nu'}g_{\rho \sigma}
+		\end{equation}
+
+	This means that one is free to choose a convenient coordinate system without 
+	altering the physical predictions of the field equations.
+	Choosing a reference frame breaks the invariance of general relativity under 
+	coordiante trasformations but it also erases spurious degrees of freedom.
+	However,after choosing a frame where the field is linearised, 
+	a residual gauge symmetry remains. Under infinitesimal coordinate transformations
+ 
+		$x_{\mu} \rightarrow x_{\mu} + \xi_{\mu}$:
+
+	Using the transformation law of the metric, to lowest order $h_{\mu\nu}$ transforms as
+			
+		\[
+		h_{\mu\nu} \rightarrow h_{\mu\nu} - \partial_{\mu}\xi_{\nu} - \partial_{\nu}\xi_{\mu}
+		\]
+
+
 \subsection{Linearising the Einstein field equations}
+
+	All the fundamental quantities in the field equations need to be computed in order to linearise the theory.
+	Rather than working with the metric perturbation, changing notation and using the trace-reversed perturbation 
+	makes the computation more compact and cleaner. Defining
+	
+		\begin{equation}
+		{\bar h}_{\mu\nu} = h_{\mu\nu} - {1 \over {2}}\eta_{\mu\nu}h  
+		\end{equation}
+
+	and the trace
+	
+		\begin{equation}
+		h = \eta^{\mu\nu}h_{\mu\nu}
+		\end{equation}
+
+	expressing the trace-reversed field:
+
+		\begin{equation}
+		h_{\mu\nu} = {\bar h}_{\mu\nu} + {1 \over {2}}\eta_{\mu\nu}{\bar h}
+		\end{equation}
+
+	The Rienmann tensor constructed in linearised theory is given by
+
+		\begin{align}
+		R^{\mu}{\nu\rho\sigma} = \partial_{\rho} \Gamma^{\mu}_{\nu\sigma} - \partial_{\sigma}\Gamma^{\mu}_{\nu\rho}  \\
+				      &={1 \over 2} (\partial_{\rho}\partial_{\nu}h^{\mu}_{\nu\rho} + \partial_{\sigma}\partial^{\mu}h^{\nu\rho} - \partial_{\rho}\partial^{\mu}h^{\nu\sigma} - \partial_{\					     sigma}\partial_{\nu}h^{\mu}_{\rho})
+		\end{align}
+
+	From this, the Ricci tensor takes the form
+
+		\begin{equation}
+		R_{\mu\nu} = R^{\rho}_{\mu\rho\nu} = {1 \over 2}(\partial_{\rho}\partial{\nu}h^{\rho}_{\mu} + \partial^{\rho}\partial_{\mu}h_{\nu\rho} - \square h_{\mu\nu} - \partial_{\mu}\partial_{\nu}h)
+		\end{equation}
+
+	The curvature scalar is obtained contracting once more:
+
+		\begin{equation}
+		R = R^{\mu}_{\mu} = (\partial_{\rho}\partial^{\mu}h^{\rho}_{\mu} - \square h)
+		\end{equation}
+
+	Combining all together the Einstein tensor can be expressed as
+	
+		\begin{equation}
+		G_{\mu\nu} = {1 \over 2}(\partial_{\rho}\partial{\nu}h^{\rho}_{\mu} + \partial^{\rho}\partial_{\mu}h_{\nu\rho} - \square h_{\mu\nu} - \partial_{\mu}\partial_{\nu}h - \eta_{\mu\nu}\partial_{\rho}\partial^{\sigma}h^{\rho}_{\sigma} + \eta_{\mu\nu}\square h)
+		\end{equation}
+
+	Substituting the metric perturbation $h_{\mu\nu}$  with the $trace-reversed$ perturbation ${\bar h}_{\mu\nu}$ and expandig, 
+	the linerised Einstein equations assume the  compact form:
+
+		\begin{equation}
+		\square {\bar h}_{\mu\nu} + \eta_{\mu\nu}{\partial}^{\rho}{\partial}^{\sigma}{\bar h}_{\rho\sigma} - {\partial}^{\rho}{\partial}^{\nu}{\bar h}_{\mu\rho} - {\partial}^{\rho}{\partial}^{\mu}{\bar h}_{\nu\rho} = - {{16\pi G_{N}} \over {c^4}}T_{\mu\nu}.
+		\end{equation}
+
+	The linearised equations of motion are gauge-invariant, and the gauge freedom can
+ 	be used to simplify the form of the field equations.
+ 	In the Lorentz family of gauges, choosing the harmonic gauge $ \partial_{\mu}h_{\mu\nu} = 0 $, 
+	reduces the Einstein equations to a simple wave equation that relates the trace-reversed field
+ 	to the stress energy tensor:
+
+		\begin{equation}
+		\square {\bar h}_{\mu\nu} =({\partial^2 \over {\partial t^2} } - {\partial^2 \over {\partial x^2}}  - {\partial^2 \over {\partial y^2}}  -  {\partial^2 \over {\partial z^2}}) {\bar h}_{\mu\nu} = -{{16\pi G_{N}} \over {c^4}}T_{\mu\nu}. 
+		\end{equation}
+
+	By imposing the harmonic gauge one has chosen the coordinates in such a way that for a single plane wave 
+	(or a superposition of plane waves with their wave vectors pointing in the same direction),
+	the GW polarisations are perpendicular to the direction of propagation.
+
+	The harmonic gauge gives four conditions, that reduce the 10 indipendent component of the symmetric 4x4 matrix 
+	$h_{\mu\nu}$ to six indipendent component, so it does not fix the gauge completely,
+	leaving 4 additional components free to be gauge-fixed.
+	If the metric perturbation is not in the harmonic gauge, by making an infinitesimal coordinate transformation
+
+		\begin{equation}
+		{\bar h}_{\mu\nu} \rightarrow {\bar h}_{\mu’\nu’}  = {\bar h}_{\mu\nu}  - \xi_{\mu,\nu} -\xi_{\nu,\mu} + \eta_{\mu\nu}\xi^{\rho}_{,\rho}
+		\end{equation}
+
+	and applying the harmonic gauge condition
+
+		\begin{equation}
+		{\bar h}_{\mu’\nu’,} ^{\nu’} = {\bar h}_{\mu\nu,} ^{\nu} - \xi_{\mu,\nu}^{\nu}
+		\end{equation}
+
+	Therefore any metric perturbation can be put into an harmonic gauge by making an infinitesimal 
+	coordinate transformation that satisfies
+
+		\begin{equation}
+		{\bar h}_{\mu\nu,} ^{\nu} = \xi_{\mu,\nu}^{\nu}
+		\end{equation}
+
+	This is a wave equation that always admits a solution, thus one can always achieve the harmonic gauge.
+	Outside the source where $T_{\mu\nu} = 0$
+
+		\begin{equation}
+		\square {\bar h}_{\mu\nu} = 0
+		\end{equation}
+
+	In vacuum spacetimes which are asymptotically flat ($h_{\mu\nu} \rightarrow 0 as r \rightarrow 0$), 
+	along with choosing the harmonic gauge, the metric perturbation can be greatly simplified using
+	the residual gauge freedom within the harmonic gauge class. The transverse-traceless gauge,  
+	$TT$-gauge, can be obtained by choosing the components of the metric tensor $h_{\mu\nu}$,
+	so that only the ones on the plane orthogonal to the direction of propagation (transverse) 
+	are different from zero, this results in $h_{\mu\nu}$ being traceless:
+
+		\begin{equation}
+		h^{0\mu} = 0 \hspace*{0.5cm}  h^{i}_i = 0  \hspace*{0.5cm}   {\partial}^jh_{ij} = 0
+		\end{equation}
+
+	By imposing the harmonic gauge, the 10 degrees of freedom of the symmetric matrix $h_{\mu\nu}$ 
+	have reduced to six degrees of freedom, and the residual gauge freedom,
+	associated to the four functio $\xi^{\mu}$, has further reduced these to just two degrees of freedom, 
+	which corrispond to the two possible polarization states of the gravitational wave.
+	Equation (1.16) has plane wave solutions, $h_{\mu\nu}^{TT}(x)=e_{ij}(k)e^{ikx}$ with 
+	$k^{\mu}=(w/c,k)$ and $w/c=|k|$. The tensor $e_{ij}(k)$ is called the polarization tensor.
+	In vacuum spacetimes, a plane gravitational wave with a given wave-vector $k$ is characterized 
+	by two functions $h_+$ and $h_{\times}$, while the remaining components can be set to zero by
+	choosing the transverse-traceless gauge. Choosing $n$ along the z axis:
+
+		\begin{equation} 
+		h_{\mu\nu}^{TT} = 
+		\begin{bmatrix}
+		0 & 0 & 0 & 0 \\
+		0 & h_{+} & h_{\times} & 0 \\
+		0 & h_{\times} & -h_{+} & 0 \\
+		0 & 0 & 0 & 0 
+		\end{bmatrix}cos[w(t-z/c)]
+		\end{equation}
+
 \subsection{Geodesic equation and geodesic deviation}
+
+	The usual notion of “gravitational force” disappears in general relativity, replaced instead 
+	by the idea that freely falling bodies follow geodesics in spacetime.
+	Geodesics are the curved-space equivalents of straight lines, which can be found by 
+	parallel transporting the tangent vector of a curve.
+	Given a spacetime metric $g_{\mu\nu}$ and a set of spacetime coordinates $x^{\mu}$, 
+	geodesic trajectories are given by the equation:
+
+		\begin{equation}
+		{{d^2x^{\mu}}\over{d\tau^2}} + \Gamma_{\nu\rho}^{\mu}(x){{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}} = 0 \hspace*{2cm} m \neq 0
+		\end{equation}
+
+		\begin{equation}
+		{{d^2x^{\mu}}\over{d\lambda^2}} + \Gamma_{\nu\rho}^{\mu}(x){{dx^{\nu}}\over{d\lambda}}{{dx^{\rho}}\over{d\lambda}} = 0 \hspace*{2cm} m = 0
+		\end{equation}
+
+	which is the classical equation of motion of a test mass in the curved background described 
+	by the metric $g_{\mu\nu}$, in the absence of external non gravitational force and where $m$ is the mass
+	of the object, $\tau$ represents the proper time given by $d\tau^2 = -ds^2$, 
+	and $\lambda$ is some affine parameter on the geodesic.
+	In a flat spacetime, two straight lines taht are initially parallel to each other will remain parallel. 
+	In a curved spacetime, geodesics do not satisfy this property.
+	Instead, two nearby geodesics, separeted by $\zeta^{\mu}$, follow the geodesic deviation equation
+		
+		\begin{equation}
+		{{D^2\zeta^{\mu}}\over{D\tau^2}} = -R^{\mu}_{\nu\rho\sigma}\zeta^{\rho}{{dx^{\nu}}\over{d\tau}}{{dx^{\sigma}}\over{d\tau}}
+		\end{equation}
+
+	where $D/D\tau$ is defined as
+
+		\begin{equation}
+		{{DV^{\mu}}\over{D\tau}} \equiv {{dV^{\mu}}\over{dtau}} + \Gamma^{\mu}_{\nu\rho}V^{\nu}{{dx^{\rho}}\over{d\tau}}
+		\end{equation}
+
+	and denotes the covariant derivative along a curve that is parameterised by $\tau$. 
+	The geodesic deviation equation describes the change in separation $\zeta^{\mu}$ between two nearby geodesic.
+	As the Rienmann tensor describes the tidal forces caused by the gravitational field, 
+	the geodesic deviation equation shows that these tidal forces can be considered as deviations of nearby geodesics.
+
 \section{Interaction of Gravitational waves with test masses}
+
+	To understand how gravitational waves interact with the detectors, mirrors in the case of the interferometric detectors, 
+	it's necessary to use the geodesic equation and the geodesic deviation equation, which are also important tools 
+	for understanding the physical meaning of a given gauge choice.
+	In fact the physics must be invariant under coordinate trasformations but GWs and the detector description's depend on the chosen reference frame.
 
 \subsection{Transverse-traceless gauge}
 
@@ -385,10 +788,74 @@ bank is built neglecting the emission in ways superior to the fundamental one.
 	These equations show that the effect of GWs on the background curvature is formally identical to that of matter 
 	with energy-momentum tensor $t_{\mu\nu}$, which comes out automatically in an averaged form because 
 	one is passing from a microscopic description to a macroscopic one.
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\chapter{O1 and O2 results}
+
+\section{O1}
+
+\section{O2}
+
+\section{Neutron Star-Black Hole detection}
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\chapter{Gravitational waves emitted by black hole-neutron star binary}
+
+
+
+\section{Evolution of Black Hole-Neutron Star mergers}
+
+
+
+\subsection{Tidal disruption model}
 
 
 
 
+\section{Electromagnetic Counterpart of a Black Hole-Neutron Star Binary Merger}
+
+
+
+\section{Short Duration Gamma Ray Burst}
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\chapter{compact binary coalescence}
+
+\section{Targeted coherent search}
+
+
+\subsection{Coherent matched filtering}
+
+\subsection{Signalconsistency}
+
+
+\subsubsection{Null stream consistency}
+
+
+\subsubsection{Single detector thresholds}
+
+
+
+\subsubsection{$\Chi^2$ tests}
+
+\subsubsection{Reweighted SNR}
+
+\subsubsection{Event significance}
+
+
+\section{Coincident search}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\chapter{Gravitational wave data analysis}
+
+\section{O3 offline pyGRB analysis}
+
+\subsection{GRB190425089}
+
+\subsection{GRB190627A}
+
+\subsection{GRB190728271}
+
+\section{PyCBC O3 HL C00 data preliminary runs}
+
+\subsection{Chunk 29}
 
 
 
