@@ -338,7 +338,8 @@
 	In fact the physics must be invariant under coordinate trasformations but GWs and the detector description's depend on the chosen reference frame.
 
 \subsubsection{Transverse-traceless gauge}
-
+	Gravitational waves take a particularly simple form in the $TT$-gauge 
+	and choosing a gauge is equivalent to selecting a reference frame. 
 	Consider a test mass initially at rest at $\tau = 0$. The geodesic equation then becomes
 
 		\begin{equation}
@@ -406,8 +407,19 @@
 
 \subsubsection{Local proper reference frame}
 
-	A convenient coordinate system for analyzing the geodesic deviation equation is the 
-	local proper reference frame of the observer who travels along the first geodesic.
+	Since positions in a lab are not marked by test particles,  
+	the $TT$ frame is not very practical. 
+	The preferred reference frame is the proper detector frame 
+	in which the test particle is free to move because of a passing gravitational wave. 
+	The path of a test particle can then be described by Newtonian equations of motion in terms of forces. 
+	There are terms proportional to the Riemann curvature tensor from the gravitational field of the Earth 
+	but also terms from static gravitational forces, Coriolis forces, etc. 
+	In order to leave only the part proportional to the Riemann tensor, 
+	earth-based detectors look for higher frequency gravitational waves, 
+	as gravitational waves with low frequencies are comparable with slowly varying Newtonian noises. 
+	The acceleration in the $z$-direction due to Earth’s gravity can be dealt with suspension systems 
+	allowing the test mass to act as if they were in a freely falling frame in the $x - y$ plane. 
+
 	Consider a detector capable of measuring changes in the proper distance, e.g. an interferometer, 
 	with a characteristic size that is much smaller than the characteristic wavelength of the GW.
 	In this case, one can approximate the entire detector to be in a near local Lorentz frame  
@@ -560,8 +572,47 @@
 		\label{fig:ring}
 		\end{figure}
 
+\subsection{Beam pattern functions}
+
+        Interferometers are sensitive to the relative difference between two distances, the so-called strain.
+        Suppose we have an interferometer with its arms pointing along the unit vectors $u^i$ and $v^i$. The strain $h(t)$ is given by
+
+                \begin{equation}
+                h(t) = {1 \over 2} (h_{ij}u^iu^j - h_{ij}v^iv^j) = D^{ij}h_{ij}(t)
+                \end{equation}
+
+        where $D^{ij}$ is referred to as the detector tensor and is given by
+
+                \begin{equation}
+                D^{ij} = {1\over 2} (u^iu^j -v^iv^j)
+                \end{equation}
+
+        As the expression for $h(t)$ is linear in $h_{+}$ and $h_{\times}$, one can also write
+
+                \begin{equation}
+                h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
+                \end{equation}
+
+        where $F_{+,\times}$ are called the beam pattern functions. Suppose we have a detector
+        with arms that are perpendicular to each other, one pointing in the x-direction and the other
+        in the $y$-direction in a Cartesian coordinate system. This detector frame, denoted by $(x,y,z)$,
+        is generally different from the GW coordinate system, denoted by $(x^\prime,y^\prime,z^\prime)$, where the source
+        is conveniently described. To account for such a difference, we first note that when the plus
+        and cross polarisations are not equal in strength, we can rotate the coordinate system by
+        an angle $\psi$ around the $z^\prime$ axis so that the $x^\prime$ and $y^\prime$ axes
+        coincide with the mayor and minor axis of the associated ellipse.
+        In going from the GW frame to the detector frame, we can rotate the GW frame by
+        an angle $\theta$ around the $x^\prime$ axis and an angle $\phi$ around the $z^\prime$ axis,
+        where the angles $(\theta, \phi)$ denote the direction of propagation of the GW in the detector frame.
+        Applying these three rotations, the beam pattern functions for a detector with perpendicular arms are given by
+
+                \begin{align}
+                F_{+}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \cos 2 \psi - \cos \theta \sin2\phi \sin2\psi \\
+                F_{\times}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \sin 2 \psi + \cos \theta \sin2\phi \cos2\psi
+                \end{align}
+
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\section{Gravitational Wave Detection Principles}
+\section{Gravitational Wave Interferometry}
 
 	The generation and propagation of gravitational and electromagnetic radiation are basically quite similar but, 
 	on a more practical level, gravitational and electromagnetic waves are quite different.
@@ -593,20 +644,6 @@
 	by requiring coincident detections in the analysis. 
 
 
-%		\begin{figure}
-%                \includegraphics[scale=1]{ring}
-%                \centering
-%                \caption{A gravitational wave traveling perpendicular to the plane of the diagram is characterized by a strain amplitude h. 
-%			  The wave distorts a ring of test particles into an ellipse, elongated in one direction in one half-cycle of the wave, 
-%			  and elongated in the orthogonal direction in the next half-cycle. 
-%			  This oscillating distortion can be measured with a Michelson interferometer oriented as shown. 
-%			  The length oscillations modulate the phase shifts accrued by the light in each arm, 
-%			  which are in turn observed as light intensity modulations at the photodetector (green semi-circle). 	
-%			  This depicts one of the linear polarization modes of the gravitational wave.}
-%                \label{fig:ring}
-%                \end{figure}
-
-
 	Also, because the antenna pattern of an interferometer is quite wide, 
 	source localisation requires triangulation using three separated detectors: 
 	the direction of travel of the GWs and the complete polarisation information carried by the waves can only be extracted by a network of detectors. 
@@ -626,7 +663,6 @@
 	developed and built by Joseph Weber in the 1960s. \\
 	Over the course of the next several decades, more bar detectors were built that were at least 
 	four orders of magnitude more sensitive than Weber’s original design, 
-	but they were not able to detect sources outside of the galaxy and its nearby surroundings.
 	These detectors would be set into oscillation at their resonant frequency by passing gravitational waves 
 	near that resonant frequency and were sensitive to gravitational waves with relatively high frequency ($\sim$ 1 kHz) 
 	and in a narrow frequency band. In order to detect signals in a broader range of frequencies and out to farther distances, 
@@ -703,82 +739,6 @@
 
 \end{itemize}
 
-\subsection{Beam pattern functions}
-
-	Interferometers are sensitive to the relative difference between two distances, the so-called strain.
- 	Suppose we have an interferometer with its arms pointing along the unit vectors $u^i$ and $v^i$. The strain $h(t)$ is given by
-
-		\begin{equation}
-		h(t) = {1 \over 2} (h_{ij}u^iu^j - h_{ij}v^iv^j) = D^{ij}h_{ij}(t)
-		\end{equation}
-
-	where $D^{ij}$ is referred to as the detector tensor and is given by
-
-		\begin{equation}
-		D^{ij} = {1\over 2} (u^iu^j -v^iv^j)
-		\end{equation}
-
-	As the expression for $h(t)$ is linear in $h_{+}$ and $h_{\times}$, one can also write
-
-		\begin{equation}
-		h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
-		\end{equation}
-
-	where $F_{+,\times}$ are called the beam pattern functions. Suppose we have a detector 
-	with arms that are perpendicular to each other, one pointing in the x-direction and the other
-	in the $y$-direction in a Cartesian coordinate system. This detector frame, denoted by $(x,y,z)$, 
-	is generally different from the GW coordinate system, denoted by $(x^\prime,y^\prime,z^\prime)$, where the source
-	is conveniently described. To account for such a difference, we first note that when the plus 
-	and cross polarisations are not equal in strength, we can rotate the coordinate system by
-	an angle $\psi$ around the $z^\prime$ axis so that the $x^\prime$ and $y^\prime$ axes 
-	coincide with the mayor and minor axis of the associated ellipse.
- 	In going from the GW frame to the detector frame, we can rotate the GW frame by 
-	an angle $\theta$ around the $x^\prime$ axis and an angle $\phi$ around the $z^\prime$ axis,
-	where the angles $(\theta, \phi)$ denote the direction of propagation of the GW in the detector frame.
-	Applying these three rotations, the beam pattern functions for a detector with perpendicular arms are given by
-
-		\begin{align}
-		F_{+}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \cos 2 \psi - \cos \theta \sin2\phi \sin2\psi \\
-		F_{\times}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \sin 2 \psi + \cos \theta \sin2\phi \cos2\psi
-		\end{align}
-
-\subsection{Interferometers sentitivities and noise sources}
-
-	The three dominant noise sources for the initial detectors were seismic, thermal, and shot noise.
-
-	$Photon Shot Noise$
-	The primary limitation in measuring a small change in light is shot noise,
-	or the natural fluctuations in the rate of photons arriving at the photodiode, 
-	that follow a Poisson process. The noise will decrease with increasing laser power, 
-	recycling cavity gain, arm cavity gain, and arm length.
-
-	$Radiation Pressure Sensor Noise$
-	Radiation pressure noise is associated with the photons from the laser striking the mirror 
-	and causing a force on the mirror. Of course, increasing the laser power to combat shot noise 
-	will actually result in an increase of radiation pressure. 
-	This noise source dominates the sensor noise at low frequencies while shot noise dominates 
-	at high frequencies. Thus one must optimize the laser power to give the smallest sensor noise overall.
-
-	$Seismic Noise$
-	At low frequencies, below about 40 Hz for initial LIGO, ground motion is the dominant
-	source of noise. It shakes the optics and produces strain signals that mask gravitational wave
-	signals. It would actually dominate at higher frequencies as well if it were not for a series
-	of active- and passive-isolation systems. The first line-of-defense is suspending the optics
-	as pendulums. For ground-motion frequencies much larger than the pendulum frequency
-	($f_{pend} = 0.76 Hz$ for initial LIGO), motion of the optics will be suppressed. Further sup-
-	pression occurs from four alternating mass-spring layers which provide an attenuation factor
-	$\propto f^{-2}$.
-
-	$Thermal Noise$
-	At frequencies of about 40-100 Hz, the random Brownian motion of the molecules on the surface 
-	of the mirrors and wires dominates. Initial LIGO’s two most important sources of thermal noise 
-	are the pendulum suspension system and the internal vibration modes of the mirrors.
-
-	$Gravity Gradient Noise$
-	Gravity gradient noise is actually due to the gravitational attraction between the test masses 
-	and density fluctuations in the atmosphere and earth in the local vicinity of the detector. 
-	It was not a dominant source of noise for initial detectors but will be for advanced detectors at low frequencies.
-
 \subsubsection{The Noise Spectral Density}
 
 	The various noises of the detector can be conveniently characterized by a spectral strain
@@ -850,86 +810,105 @@
 
 \subsubsection{Non-stationary transient noise sources}
 
-	Noises are categorised as either a displacement noise, which directly moves the suspended mirrors 
-	causing a differential change in the arm cavity lengths, or as a sensing noise, 
-	which appears in the readout signal but is not caused by a gravitational wave. \\ 
-	In this paragraph are described the principal noises that dominate the limits of our sensitivity. 
+	Noises are categorised as either a displacement noise, which directly moves the suspended mirrors
+        causing a differential change in the arm cavity lengths, or as a sensing noise,
+        which appears in the readout signal but is not caused by a gravitational wave. \\
+        In this paragraph are described the principal noises that dominate the limits of our sensitivity.
 
-	At lower frequencies, up to 10Hz, the main contribute to the global noise 
-	is due to vibrations of the ground which couple to the mirror motion. \\
-	This seismic noise could be caused by earthquakes, weather and human activity. 
-	To reduce the potential movements of the optical elements, an attempt is made to 
-	isolate the mirrors using an advanced suspension system. \\
-	At frequencies where the seismic motion has been sufficiently reduced, 
-	between 10Hz and 500Hz, the interferometer’s strain sensitivity is limited by thermal noise 
-	that constitute one of the most serious problems of precise measurements. \\
-	The thermal energy of the interferometer’s components induce vibrations both in the suspensions and in the mirrors. 
-	The nature of gravitational wave signal requires the sensitivity of the interferometric detectors 
-	to be extremely high in broad frequency band. \\
-	Therefore, the power spectrum density of the thermal noise must be considered in the development of the detectors. 
-	The Fluctuation-dissipation Theorem (FDT) relates the spectrum of the thermal noise to the amount of dissipation 
+                \begin{figure}
+                        \includegraphics[scale=0.3]{noisetwo}
+                        \centering
+                        \caption{Noise budget}
+                        \label{fig:noisetwo}
+                \end{figure}
 
-		\begin{equation}
-		S_{n}(w) = - {{4k_bT} \over {w}} Im[H(w)]
-		\end{equation}
+        At lower frequencies, up to 10Hz, the main contribute to the global noise
+        is due to vibrations of the ground which couple to the mirror motion: it shakes the optics and produces strain signals that mask gravitational wave signals. \\
+        This seismic noise could be caused by earthquakes, weather and human activity.
+        To reduce the potential movements of the optical elements, an attempt is made to
+        isolate the mirrors using an advanced suspension system. \\
 
-	From this equation is possible to state that the energy of fluctuations has a frequency dependent distribution; 
-	$H(z)$ is the transfer function of the system, it is a mathematical function that models the device’s output, defined as 
+        At frequencies where the seismic motion has been sufficiently reduced,
+        between 10Hz and 500Hz, the random Brownian motion of the molecules on the surface of the mirrors and wires dominates. \\
+    
+        The thermal energy of the interferometer’s components induce vibrations both in the suspensions and in the mirrors.
+        The nature of gravitational wave signal requires the sensitivity of the interferometric detectors
+        to be extremely high in broad frequency band. \\
+        Therefore, the power spectrum density of the thermal noise must be considered in the development of the detectors.
+        The Fluctuation-dissipation Theorem (FDT) relates the spectrum of the thermal noise to the amount of dissipation
 
-		\begin{equation}
-		H(x) = {1 \over {iWZ(w)}}
-		\end{equation}
+                \begin{equation}
+                S_{n}(w) = - {{4k_bT} \over {w}} Im[H(w)]
+                \end{equation}
 
-	In which $Z(w)$ is the impedance of the system in the frequency domain that can be computed as the ratio
-	between the Fourier components of the generalised force $\tilde F(w)$ and the response of the system $\tilde X(w)$
+        From this equation is possible to state that the energy of fluctuations has a frequency dependent distribution;
+        $H(z)$ is the transfer function of the system, it is a mathematical function that models the device’s output, defined as
 
-		\begin{equation}
-		Z(w) = {{\tilde F(w)} \over {iw \tilde X(w)}}
-		\end{equation}
+                \begin{equation}
+                H(x) = {1 \over {iWZ(w)}}
+                \end{equation}
 
-	In the case of an harmonic oscillator, the noise spectral density is 
+        In which $Z(w)$ is the impedance of the system in the frequency domain that can be computed as the ratio
+        between the Fourier components of the generalised force $\tilde F(w)$ and the response of the system $\tilde X(w)$
 
-		\begin{equation}
-		S_n(w) = {{4k_bT} \over {mw}} {{{w_0}^2 \phi(w)} \over {(w^2-{w_0}^2)^2 + {w_0}^4 \phi^2(w)}}
-		\end{equation}
+                \begin{equation}
+                Z(w) = {{\tilde F(w)} \over {iw \tilde X(w)}}
+                \end{equation}
 
-	Generally, thermal noise can be reduced decreasing the dissipation with monolithic suspensions and better coatings 
-	other than lowering the temperature using criogenic payloads as it will be done in Kagra and Einstein Telescope. \\
-	Quantum mechanics limits the precision at which the test mass positions can be determined. \\
-	At high frequencies, photon shot noise limits the sensitivity, while at low frequencies it is limited by radiation pressure. 
-	The photon shot noise is produced by discrete photons that compose the light beam, 
-	each passing any given point independently of the ones before and after it, generating fluctuations in the observed power. 
-	The corresponding noise spectral density is 
+        In the case of an harmonic oscillator, the noise spectral density is
 
-		\begin{equation}
-		S_n(w) = ({{\lambda_{laser}} \over {4 \pi L}})^2 {{2 \hbar w_{laser}} \over {P}}
-		\end{equation}
+                \begin{equation}
+                S_n(w) = {{4k_bT} \over {mw}} {{{w_0}^2 \phi(w)} \over {(w^2-{w_0}^2)^2 + {w_0}^4 \phi^2(w)}}
+		\end{equation} 
 
-	According to formula 3.5, the sensitivity of a detector can be increased by increasing the intensity of the laser. 
-	However, a very powerful laser produces a large radiation pressure on any object from which the light is reflected. 
+	Generally, thermal noise can be reduced decreasing the dissipation with monolithic suspensions and better coatings
+        other than lowering the temperature using criogenic payloads as it will be done in Kagra and Einstein Telescope. \\
+        Quantum mechanics limits the precision at which the test mass positions can be determined. 
 
-		\begin{equation}
-		S_n(w) =  {{32 \hbar w_{laser}P} \over {(4MLc \pi^2 f^2)^2}}
-		\end{equation}
+        At high frequencies, photon shot noise limits the sensitivity, 
+	while at low frequencies it is limited by radiation pressure.
+        The photon shot noise is produced by the natural fluctuations in the rate of photons arriving at the photodiode,
+        that follow a Poisson process. The noise will decrease with increasing laser power,
+        recycling cavity gain, arm cavity gain, and arm length.
+        The corresponding noise spectral density is
 
-	This is an example of the Heisenberg’s Uncertainty Principle, which says that the knowledge 
-	of the position and the momentum of a body is restricted from the relation $\delta x \delta p \geq \hbar$. \\
-	The high laser power required to determine the position of the test masses exerts 
-	a fluctuating radiation pressure which perturbs the test mass positions. \\ 
-	The minimun noise level is called Standard Quantum Limit (SQL) and sets a fundamental limit 
-	on the sensitivity of beam detectors, contributing to the noise as 
+                \begin{equation}
+                S_n(w) = ({{\lambda_{laser}} \over {4 \pi L}})^2 {{2 \hbar w_{laser}} \over {P}}
+                \end{equation}
 
-		\begin{equation}
-		S_n(w) = {{2 \hbar} \over {M(\pi f L)^2}}
-		\end{equation}
+        Radiation pressure noise is associated with the photons from the laser striking the mirror
+        and causing a force on the mirror. Of course, increasing the laser power to combat shot noise
+        will actually result in an increase of radiation pressure.
 
-	Moreover, the presence of residual gas in the beam tubes would worsen the performance 
-	of the mirrors and of the laser; for this reason the vacuum system is maintained at a pressure 
-	of below $10^{-6}$Pa and the noise curve of the interferometer includes only 
-	the most dominant residual gas component, hydrogen, at a pressure of $10^{−7}$ Pa. \\ 
+                \begin{equation}
+                S_n(w) =  {{32 \hbar w_{laser}P} \over {(4MLc \pi^2 f^2)^2}}
+                \end{equation}
 
+        This is an example of the Heisenberg’s Uncertainty Principle, which says that the knowledge
+        of the position and the momentum of a body is restricted from the relation $\delta x \delta p \geq \hbar$. \\
+        The high laser power required to determine the position of the test masses exerts
+        a fluctuating radiation pressure which perturbs the test mass positions. \\
+        The minimun noise level is called Standard Quantum Limit (SQL) and sets a fundamental limit
+        on the sensitivity of beam detectors, contributing to the noise as
 
-\subsubsection{Detector’s response to a Gravitational Wave}
+                \begin{equation}
+                S_n(w) = {{2 \hbar} \over {M(\pi f L)^2}}
+                \end{equation}
+
+        Moreover, the presence of residual gas in the beam tubes would worsen the performance
+        of the mirrors and of the laser; for this reason the vacuum system is maintained at a pressure
+        of below $10^{-6}$Pa and the noise curve of the interferometer includes only
+        the most dominant residual gas component, hydrogen, at a pressure of $10^{−7}$ Pa. \\
+
+		\begin{figure}
+                	\includegraphics[scale=0.3]{noiseone}
+                	\centering
+                	\caption{Sensitivities of the two LIGO detectors during their S6 science run, 
+				 and the Virgo detector during its VSR2 and VSR3 science runs. 
+				 Each curve shows the average detector noise as a function of frequency; 
+				 a signal has to be significantly above the noise to be detected reliably.}
+                	\label{fig:noiseone}
+                \end{figure}
 
 \subsection{Sources}
 
