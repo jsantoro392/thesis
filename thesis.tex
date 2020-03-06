@@ -739,77 +739,109 @@
 
 \end{itemize}
 
-\subsubsection{The Noise Spectral Density}
+%	The various noises of the detector can be conveniently characterized by a spectral strain
+%	sensitivity with dimensions of $1/\sqrt{Hz}$.
+%	The detector output $s(t)$ is composed of instrumental noise $n(t)$ arising from 
+%	naturally occurring random processes and a potential strain signal $h(t)$
+%
+%		\begin{equation}
+%		s(t) = n(t) + h(t)
+%		\end{equation}
+%
+%	The detection problem then becomes how to distinguish $h(t)$ from $n(t)$ when $h(t) << n(t)$. 
+%	In a way, $n(t)$ provides a measure of how small an $h(t)$ we can detect. 
+%	Thus we take $n(t)$ as the detector’s noise and have a convenient way to 
+%	compare performances of different detectors. 
+%	Instrumental noise is a random process. In the case that we have a stationary 
+%	random process (which can be the case for detector noise for short periods of time), 
+%	the expectation value of $n$ at some time t becomes a long time average (as opposed to an ensemble average):
+%
+%		\begin{equation}
+%		<n> = \lim_{T \to \infty} {1 \over T} \int^{T/2}_{-T/2}n(t)dt
+%		\end{equation}
+%
+%	For simplicity, let us assume that $<n> = 0$. We can still define the power in the signal by 
+%	integrating $n^2(t)$ over some duration $T$ and then dividing by $T$. 
+%	Again, the expectation value of $n^2(t)$ will just be the time average:
+%
+%		\begin{equation}
+%		<n^2> = \lim_{T \to \infty} {1 \over T} \int^{T/2}_{-T/2}n^2(t)dt
+%		\end{equation}
+%
+%	If $n(t) = 0$ outside of $−T/2 < t < T/2$, then we can extend the integral limits to infinity
+%	
+%		\begin{equation}
+%		\begin{split}
+%		<n^2>  = \lim_{T \to \infty}{1 \over T}\int^{\infty}_{-\infty}n^2(t) dt \\
+%         	       = \lim_{T \to \infty}{1 \over T} \int^{\infty}_{-\infty}|\tilde{n}(f)|^2df \\ 
+%                       = \lim_{T \to \infty}{2 \over T} \int^{\infty}_{0}|\tilde{n}(f)|^2df \\
+%                       = \int^{\infty}_{0}S_n(f)df
+%		\end{split}
+%		\end{equation}
+%
+%	where $S_n$ is what is known as the power spectral density of the noise process $n(t)$ 
+%	and $\tilde{n}(f)$ is the Fourier transform of $n(t)$. 
+%	Thus, in general, the power spectral density of a stationary random process $n(t)$ is defined as
+%
+%		\begin{equation}
+%		= \lim_{T \to \infty}{2 \over T} |\int^{T/2}_{-T/2}n(t)e^{-2\pi ift}dt|^2
+%		\end{equation}
+%
+%	Another useful expression for the power spectral density can be found by finding 
+%	the expectation value of the frequency components of the noise
+%
+%		\begin{equation}
+%		<\tilde{n}\ast(f\prime)\tilde{n}(f)>  = {1 \over 2} S_n(f) \delta (f-f\prime)
+%		\end{equation}
 
-	The various noises of the detector can be conveniently characterized by a spectral strain
-	sensitivity with dimensions of $1/\sqrt{Hz}$.
-	The detector output $s(t)$ is composed of instrumental noise $n(t)$ arising from 
-	naturally occurring random processes and a potential strain signal $h(t)$
-
-		\begin{equation}
-		s(t) = n(t) + h(t)
-		\end{equation}
-
-	The detection problem then becomes how to distinguish $h(t)$ from $n(t)$ when $h(t) << n(t)$. 
-	In a way, $n(t)$ provides a measure of how small an $h(t)$ we can detect. 
-	Thus we take $n(t)$ as the detector’s noise and have a convenient way to 
-	compare performances of different detectors. 
-	Instrumental noise is a random process. In the case that we have a stationary 
-	random process (which can be the case for detector noise for short periods of time), 
-	the expectation value of $n$ at some time t becomes a long time average (as opposed to an ensemble average):
-
-		\begin{equation}
-		<n> = \lim_{T \to \infty} {1 \over T} \int^{T/2}_{-T/2}n(t)dt
-		\end{equation}
-
-	For simplicity, let us assume that $<n> = 0$. We can still define the power in the signal by 
-	integrating $n^2(t)$ over some duration $T$ and then dividing by $T$. 
-	Again, the expectation value of $n^2(t)$ will just be the time average:
-
-		\begin{equation}
-		<n^2> = \lim_{T \to \infty} {1 \over T} \int^{T/2}_{-T/2}n^2(t)dt
-		\end{equation}
-
-	If $n(t) = 0$ outside of $−T/2 < t < T/2$, then we can extend the integral limits to infinity
-	
-		\begin{equation}
-		\begin{split}
-  		<n^2>  = \lim_{T \to \infty}{1 \over T}\int^{\infty}_{-\infty}n^2(t) dt \\
-         	       = \lim_{T \to \infty}{1 \over T} \int^{\infty}_{-\infty}|\tilde{n}(f)|^2df \\ 
-                       = \lim_{T \to \infty}{2 \over T} \int^{\infty}_{0}|\tilde{n}(f)|^2df \\
-                       = \int^{\infty}_{0}S_n(f)df
-		\end{split}
-		\end{equation}
-
-	where $S_n$ is what is known as the power spectral density of the noise process $n(t)$ 
-	and $\tilde{n}(f)$ is the Fourier transform of $n(t)$. 
-	Thus, in general, the power spectral density of a stationary random process $n(t)$ is defined as
-
-		\begin{equation}
-		= \lim_{T \to \infty}{2 \over T} |\int^{T/2}_{-T/2}n(t)e^{-2\pi ift}dt|^2
-		\end{equation}
-
-	Another useful expression for the power spectral density can be found by finding 
-	the expectation value of the frequency components of the noise
-
-		\begin{equation}
-		<\tilde{n}\ast(f\prime)\tilde{n}(f)>  = {1 \over 2} S_n(f) \delta (f-f\prime)
-		\end{equation}
-
-	Since the noise is real, $\tilde{n}(-f) = \tilde{n}(f)$ and thus, $S_n(−f) = Sn(f)$. 
-	If $n(t)$ has no dimensions, then $S_n(f)$ has units of $Hz^{-1}$.
- 	If $<\tilde{n}\ast(f\prime)\tilde{n}(f)> $ is obtained by integrating only over the physical
-	range of frequencies, $f > 0$, then $S_n(f)$ is known as the $one-sided spectral density$.
-	Finally, on further definition that will come in handy is the inner product of $a$ and $b$:
-
-
-		\begin{equation}
-		(a|b) = 2 \int^{\infty}_{-\infty} {{\tilde{a}(f)\tilde{b}\ast(f)} \over {S_n(f)}}df = 4 Re [\int^{\infty}_{0}{{\tilde{a}(f)\tilde{b}\ast(f)} \over {S_n(f)}} df]
-		\end{equation}
-
+%	Since the noise is real, $\tilde{n}(-f) = \tilde{n}(f)$ and thus, $S_n(−f) = Sn(f)$. 
+%	If $n(t)$ has no dimensions, then $S_n(f)$ has units of $Hz^{-1}$.
+% 	If $<\tilde{n}\ast(f\prime)\tilde{n}(f)> $ is obtained by integrating only over the physical
+%	range of frequencies, $f > 0$, then $S_n(f)$ is known as the $one-sided spectral density$.
+%	Finally, on further definition that will come in handy is the inner product of $a$ and $b$:
+%
+%
+%		\begin{equation}
+%		(a|b) = 2 \int^{\infty}_{-\infty} {{\tilde{a}(f)\tilde{b}\ast(f)} \over {S_n(f)}}df = 4 Re [\int^{\infty}_{0}{{\tilde{a}(f)\tilde{b}\ast(f)} \over {S_n(f)}} df]
+%		\end{equation}
+%
 
 \subsubsection{Non-stationary transient noise sources}
+	
+	The various noises of the detector can be conveniently characterized by a spectral strain
+        sensitivity with dimensions of $1/\sqrt{Hz}$.
+        The detector output $s(t)$ is composed of instrumental noise $n(t)$ arising from
+        naturally occurring random processes and a potential strain signal $h(t)$
 
+                \begin{equation}
+                s(t) = n(t) + h(t)
+                \end{equation}
+
+        The detection problem then becomes how to distinguish $h(t)$ from $n(t)$ when $h(t) << n(t)$.
+        In a way, $n(t)$ provides a measure of how small an $h(t)$ we can detect.
+        Thus we take $n(t)$ as the detector’s noise and have a convenient way to
+        compare performances of different detectors.
+	The instrument response $s(t)$ can be also expressed as a convolution of the antenna patterns 
+	with the two gravitational wave polarizations $h_{+}, h_{\times}(t)$:
+	
+		\begin{equation}
+		s(t) = n(t) +  F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
+		\end{equation} 
+
+	The antenna patterns depend on the frequency and sky location of the source; 
+	for wavelengths that are large compared to the detector, the antenna patterns are simple quadrupoles.
+	The information contained in the time series is usually represented in the Fourier domain 
+	as a strain amplitude spectral density, $h(f)$.
+	This quantity is defined in terms of the power spectral density $S_s(f) = \tilde s^{*}(f) \tilde s(f)$
+	of the Fourier transform of the time series:
+
+		\begin{equation}
+                \tilde s(f) = \int^{\infty}_{-\infty} e^{-2 \pi ift} s(t)dt
+		\end{equation}
+
+	The strain amplitude spectral density is then defined as $h(f) = \sqrt{S_s(f}$.
+	The noise power spectral density $S_n(f)$ and the signal power spectral density $S_h(f)$.ù
+  
 	Noises are categorised as either a displacement noise, which directly moves the suspended mirrors
         causing a differential change in the arm cavity lengths, or as a sensing noise,
         which appears in the readout signal but is not caused by a gravitational wave. \\
