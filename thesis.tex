@@ -1115,19 +1115,19 @@
 	Instead of integrating the data against waveforms, a generic filter that is going to be integrated against the noise can be defined as:
 		
 		\begin{equation}
- 		s = \int^{\infty}_{-\infty} dt s(t) K(t)
+ 		\hat s = \int^{\infty}_{-\infty} dt s(t) K(t)
 		\end{equation}
 
-	The expectation value of $s$, when a signal $h(t)$ is present, is obtained simply by integrating against the probability of noise realisations
+	The expectation value of $\hat s$, when a signal $h(t)$ is present, is obtained simply by integrating against the probability of noise realisations
 
 		\begin{equation}
-		S = <s>_{h}
+		S = \langle s \rangle_{h}
 		\end{equation}
 
 	while $N$, the root-mean-square value when no signal is present, is defined as:
 
 		\begin{equation}
-		N = [<s^2>_{h=0} - <s>^2_{h=0}]^{1/2}
+		N = \langle \hat s^2 \rangle_{h=0} - \langle \hat s \rangle^2_{h=0}]^{1/2}
 		\end{equation}
 
 \subsection{Signal to noise ratio}
@@ -1156,9 +1156,9 @@
 
 		\begin{align}
 		S &= <s>_h \\
-   		&= \int^{\infty}_{-\infty} \\
-   		&= \int^{\infty}_{-\infty} \\
-   		&= \int^{\infty}_{-\infty}
+   		&= \int^{\infty}_{-\infty} dt <s(t)> K(t)\\
+   		&= \int^{\infty}_{-\infty} dt h(t) K(t)\\
+   		&= \int^{\infty}_{-\infty} df h(f) K(t)
 		\end{align}
 
 		\begin{align}
@@ -1183,7 +1183,47 @@
 	Therefore, the expectation value of s(t) is just h(t), the expected signal. 
 
 
-	So far, we have arrived at
+So far, we have arrived at
+\begin{equation}
+{s \over N} = {{\int^{\infty}_{-\infty}df h(t) K(t)}\over{ [\int^{\infty}_{-\infty}} df {1 \over 2} S_n(f) |K(f)|^2]^{1/2}}
+\end{equation}
+This expression can be simplify by defining an inner product of two function of time:
+\begin{align}
+(A|B)  &= Re \int^{\infty}_{-\infty} df {A(f)B(f)}\over{1 \over 2 S_n(f)} \\
+       &=4Re \int^{\infty}_{0} df {A(f)B(f)}\over {S_n(f)} 
+\end{align}
+
+And this allows to rewrite the SNR as
+\begin{equation}
+{S \over N} = {{(K|h)} \over {(K|K)^{1/2}}}
+\end{equation}
+One step further is defying the normalised K
+
+
+
+Maximizin SNR is equivalent to making K point in the same direction as h, that means that K has to be proportional to h:
+
+Meaning that the optimal filter is defined as
+
+Submitting back into the expression for SNR gives the highest SNR one can attain:
+
+%\begin{equation}
+
+%\end{equation}
+
+In practice, the expectation value of S is not known, only the actual detector output s(t) is, so in signal processing the following approximation is made
+
+%\begin{equation}
+
+%\end{equation}
+
+
+The waveforms are characterise by source parameters: $\bar \theta = {\theta_1, \theta_2…,\theta_N}$ i.e. masses, spins, sky position.
+In the SNR formula, instead of the expectation value I put the detector’s output and then I maximise this over all parameters: I am going to take the data and use the optimal filter for many different .
+choices of the parameters 
+In practice this maximum value cannot be taken in a continuous way, the parameter space can only be sampled in a discrete manner: template banks.
+
+
 
 
 \section{p-value}
