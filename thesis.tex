@@ -80,62 +80,55 @@
 \chapter{Gravitational Wave Detection Principles}
 \section{Gravitational waves in linearized gravity}
 
-\subsection{Weak-field metric}
+	In 1915, Albert Einstein presented his general theory of relativity
+	The classical Newtonian notion of gravity, which stated that gravity arises from an 
+	action at a distance, was replaced by a geometric interpretation of the Universe, 
+	the spacetime continuum: this may be regarded as a fabric and that can be curved 
+	by mass. 
+	The motion of masses on this curved spacetime fabric will then be perceived as gravity. \\
 
-	In 1915, Albert Einstein presented his general theory of relativity  which describes 
-	how mass distorts spacetime and in turn how spacetime dictates how masses flow through it.
-	The classical Newtonian notion of gravity ,which stated that gravity arises from an 
-	action at a distance, was replaced with a geometric interpretation of the Universe, 
-	the spacetime continuum: it can be regarded as a fabric and it can be curved 
-	by the mass of an object. \\
-	Masses moving on this curved spacetime fabric will then be perceived as gravity.
 	In general relativity, space-time is regarded as a four-dimensional manifold 
-	with a Lorentzian metric, and gravity is a manifestation of the manifold’s curvature. \\
+	with a Lorentzian metric, and gravity is a manifestation of the manifold’s curvature. 
 	The spacetime curvature is associated with the stress-energy tensor 
-	of matter fields through the Einstein’s field equations:
+	of matter fields through the Einstein field equation:
 
 		\begin{equation}
 		G_{\mu\nu} \equiv R_{\mu\nu}  - {1 \over 2}g_{\mu\nu}R = {8\pi G_{N} \over {c^4}}T_{\mu\nu} 
 		\end{equation}
 
-	Where $G_{\mu\nu} $ is the Einstein tensor, $T_{\mu\nu} $ is the stress-energy 
-	tensor of matter-fields and $ G_{N}$ is Newton’s gravitational constant. \\
-	General relativity predicts that gravity is mediated by a new type of radiation: gravitational radiation. 
+	$G_{\mu\nu} $ is the Einstein tensor, $T_{\mu\nu} $ is the stress-energy 
+	tensor of matter-fields and $ G_{N}$ is Newton’s gravitational constant. 
 
 	In 1916 Einstein found the weak-field solutions to general relativity had wave-like solutions, gravitational waves.
-	Gravitational waves that compose gravitational radiation are ripples in the fabric of spacetime, 
+	Gravitational waves are ripples in the fabric of spacetime, 
 	which periodically lengthen and shorten space, and speed up and slow down time.
  	To study the properties of gravitational waves, it is instructive to first study them 
 	in situations where the gravitational fields are weak.
 	In the so-called weak-field approximation, one can view the metric as the Minkowski metric 
-	with a small perturbation: it is required to expand the Einstein equations around the flat-space metric,
-	considering as a perturbation on the space-time of special relativity.
+	with a small perturbation: the Einstein equations around the flat-space metric, of special relativity.
 	Letting $ x_\mu = (t, x, y, z)$ denote the time and space coordinates, 
 	we can write the proper distance between events $x_{\mu}$ and $x_{\mu} + dx_{\mu}$ as
 		
 		\[
 		ds^2 = g_{\mu\nu}dx^{\mu}dx^{\nu} \approx (\eta_{\mu\nu} + h_{\mu\nu})dx_{\mu}dx_{\nu}. \hspace*{2cm}\|h_{\mu\nu}\|\ll 1
 		\]
-
 	Here $\eta_{\mu\nu} = diag(-1,1,1,1)$ is the usual Minkowski metric and $h_{\mu\nu}$ 
-	represents the linearised gravitational field. \\
-	The metric perturbation is referred to as  $h_{\mu\nu}$: it encapsulates gravitational waves, 
-	but contains additional, non-radiative degrees of freedom as well; $\|h_{\mu\nu}\|$ means
-	“the magnitude of a typical non-zero component of $h_{\mu\nu}$”. \\ 
+	represents the linearised gravitational field, it encapsulates gravitational waves, 
+	but contains additional, non-radiative degrees of freedom as well. $\|h_{\mu\nu}\|$ means
+	“the magnitude of a typical non-zero component of $h_{\mu\nu}$”. 
 	The condition $\|h_{\mu\nu}\|\ll 1$ requires both the gravitational field to be weak, 
-	and in addition constrains the coordinate system to be approximately Cartesian.  
+	and constrains the coordinate system to be approximately Cartesian.  
 	In linearized gravity, the smallness of the perturbation means that only terms which are linear in $h_{\mu\nu}$ are considered;
 	higher order terms are discarded. As a consequence, indices are raised and lowered using the flat metric. \\
 	The metric perturbation $h_{\mu\nu}$ transforms as a tensor under Lorentz transformations, 
 	but not under general coordinate transformations: since the numerical values of the components
-	of a tensor depend on the reference frame, there exists a reference frame where 
+	of a tensor depend on the reference frame, there exists a reference frame in which 
 	the linearisation of the gravitational field holds on a sufficiently large region of the spacetime. \\
 	The Einstein field equations are covariant under general coordinate transformations
 
 		\begin{equation}
 		x^{\mu} \rightarrow x^{\mu ‘}(x)
 		\end{equation}
-
 	So that the metric transforms as
 
 		\begin{equation}
@@ -146,7 +139,7 @@
 	altering the physical predictions of the field equations.
 	Choosing a reference frame breaks the invariance of general relativity under 
 	coordiante trasformations but it also erases spurious degrees of freedom. \\
-	However,after choosing a frame where the field is linearised, 
+	After choosing a frame where the field is linearised, 
 	a residual gauge symmetry remains. \\
 	Under infinitesimal coordinate transformations
                  \[
@@ -159,30 +152,26 @@
 		h_{\mu\nu} \rightarrow h_{\mu\nu} - \partial_{\mu}\xi_{\nu} - \partial_{\nu}\xi_{\mu}
 		\]
 
-
-\subsubsection{Linearising the Einstein field equations}
-
-	All the fundamental quantities in the field equations need to be computed in order to linearise the theory.
 	Rather than working with the metric perturbation, changing notation and using the trace-reversed perturbation 
-	makes the computation more compact and cleaner. Defining
+	makes the computation more compact and cleaner. We define
 	
 		\begin{equation}
 		{\bar h}_{\mu\nu} = h_{\mu\nu} - {1 \over {2}}\eta_{\mu\nu}h  
 		\end{equation}
 
-	and the trace
+	the trace
 	
 		\begin{equation}
 		h = \eta^{\mu\nu}h_{\mu\nu}
 		\end{equation}
 
-	expressing the trace-reversed field:
+	and express the trace-reversed field:
 
 		\begin{equation}
 		h_{\mu\nu} = {\bar h}_{\mu\nu} + {1 \over {2}}\eta_{\mu\nu}{\bar h}
 		\end{equation}
 
-	The Rienmann tensor constructed in linearised theory is given by
+	The Rienmann tensor constructed in the linearised theory is given by
 
 		\begin{align}
 		R^{\mu}_{\nu\rho\sigma} &= \partial_{\rho} \Gamma^{\mu}_{\nu\sigma} - \partial_{\sigma}\Gamma^{\mu}_{\nu\rho}  \\
@@ -201,14 +190,14 @@
 		R = R^{\mu}_{\mu} = (\partial_{\rho}\partial^{\mu}h^{\rho}_{\mu} - \square h)
 		\end{equation}
 
-	Combining all together the Einstein tensor can be expressed as
+	Finally, the Einstein tensor can be expressed as
 	
 		\begin{equation}
 		G_{\mu\nu} = {1 \over 2}(\partial_{\rho}\partial_{\nu}h^{\rho}_{\mu} + \partial^{\rho}\partial_{\mu}h_{\nu\rho} - \square h_{\mu\nu} - \partial_{\mu}\partial_{\nu}h - \eta_{\mu\nu}\partial_{\rho}\partial^{\sigma}h^{\rho}_{\sigma} + \eta_{\mu\nu}\square h)
 		\end{equation}
 
-	Substituting the metric perturbation $h_{\mu\nu}$  with the $trace-reversed$ perturbation ${\bar h}_{\mu\nu}$ and expandig, 
-	the linerised Einstein equations assume the  compact form:
+	Substituting the metric perturbation $h_{\mu\nu}$  with the $trace-reversed$ perturbation ${\bar h}_{\mu\nu}$ and expanding, 
+	the linerised Einstein equations take the  compact form:
 
 		\begin{equation}
 		\square {\bar h}_{\mu\nu} + \eta_{\mu\nu}{\partial}^{\rho}{\partial}^{\sigma}{\bar h}_{\rho\sigma} - {\partial}^{\rho}{\partial}^{\nu}{\bar h}_{\mu\rho} - {\partial}^{\rho}{\partial}^{\mu}{\bar h}_{\nu\rho} = - {{16\pi G_{N}} \over {c^4}}T_{\mu\nu}.
@@ -226,11 +215,11 @@
 
 	By imposing the harmonic gauge one has chosen the coordinates in such a way that for a single plane wave 
 	(or a superposition of plane waves with their wave vectors pointing in the same direction),
-	the GW polarisations are perpendicular to the direction of propagation.
+	the gravitational wave  polarisations are perpendicular to the direction of propagation.
 
-	The harmonic gauge gives four conditions, that reduce the 10 indipendent component of the symmetric 4x4 matrix 
-	$h_{\mu\nu}$ to six indipendent component, so it does not fix the gauge completely,
-	leaving 4 additional components free to be gauge-fixed.
+	The harmonic gauge gives four conditions, that reduce the ten indipendent components of  
+	$h_{\mu\nu}$ to six indipendent components, so it does not fix the gauge completely,
+	leaving four additional components free to be gauge-fixed.
 	If the metric perturbation is not in the harmonic gauge, by making an infinitesimal coordinate transformation
 
 		\begin{equation}
@@ -1056,8 +1045,6 @@
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Data analysis technique}
 
-\section{Matched Filtering}
-	
 	The matched filter is the optimal linear filter technique to extract a know signal from a gaussian stochastic noise. 
 	Since the gravitational wave emission from binary coalescence is pretty well modelled, 
 	the matched filtering is the natural choice. However some complications arise: 
@@ -1075,13 +1062,15 @@
 	template banks are built covering the parameter space with a given accuracy and 
 	the filter output is computed summing in quadrature the filter outputs that involved two orthogonal-phase templates. 
 	Different approximations can be chosen to obtain waveforms as close as possible to the expected signals, 
-	with different PN orders and involving more parameters, 
+	with different post-newtonian orders and involving more parameters, 
 	for instance, the spin of the single components and the orbital eccentricity. 
 	Taking into account an higher number of parameters corresponds to an increment of the parameter space dimension 
 	and a growing up of the number of templates required to cover effectively the space. 
 	At the end, more templates generate more false alarms, 
 	therefore the pursuit of the best compromise between the efficiency in extracting signals 
 	and the false alarm rate is the final goal of a search. 
+
+\section{Matched Filtering}
 	
 	Matched filtering technique is the standard filter choice when the expected signal is known. 
 	The technique is based on evaluating the phase-coherent correlation between the data 
@@ -1132,10 +1121,9 @@
 
 \subsection{Signal to noise ratio}
 
-	The ratio S/N is by definition the signal to noise ratio, SNR, 	
+	The ratio $S/N$ is by definition the signal to noise ratio, SNR, 	
 	and is the expectation value of this filtering integral in the event that the signal is present, 
-	divided by its RMS value in the even no signal is present.
-	This SNR quantity will be directly related to likelihood. 
+	divided by its root-mean-square value, when no signal is present.
 	The filter is going to depend from the signal and therefore, 
 	from its strength and also from the properties of the detector, 
 	and whatever the noise curve was during the data taking time. 
@@ -1144,28 +1132,28 @@
 	on the properties of the detector during the data taking time and 
 	it will depend on the kind of signal templates that one has to its disposal. 
 	The knowledge of the kind of signal that is going to be extracted is limited,  
-	if the search focuses on a signal from a CBC, 
+	if the search focuses on a signal from a compact binary coalescence, CBC, 
 	it’s evident that the waveform is not exactly known because the two-body problem in GR 
 	has no exact solution; the signal will be approximated to some level.
 	The integration is not simply against some trial waveform, 
 	because some informations about the detector as well have to be combined into the research. 
 	Given that kind of expected signal, 
-	given the kind of operating detector and the length of the data taking what choice of a filter maximises the SNR?
+	given the kind of operating detector and the length of the data taking, what choice of a filter maximises the SNR?
 
 	A more convenient form to write S and N is the Fourier domain: 
 
 		\begin{align}
-		S &= <s>_h \\
-   		&= \int^{\infty}_{-\infty} dt <s(t)> K(t)\\
+		S &= \langle \hat s \rangle_h \\
+   		&= \int^{\infty}_{-\infty} dt \langle s(t) \rangle  K(t)\\
    		&= \int^{\infty}_{-\infty} dt h(t) K(t)\\
-   		&= \int^{\infty}_{-\infty} df h(f) K(t)
+   		&= \int^{\infty}_{-\infty} df \tilde h(f)\tilde K^{*}(t)
 		\end{align}
 
 		\begin{align}
-		N &=[ <s^2> - <s>^2]^{1/2}_{h=0} \\
-       		&= [ <s^2> ]^{1/2}_{h=0} \\
+		N &=[ \langle \hat s^2 \rangle - \langle \hat s \rangle ^2]^{1/2}_{h=0} \\
+       		&= [\langle \hat s^2 \rangle  ]^{1/2}_{h=0} \\
    		&= [\int^{\infty}_{-\infty} dt \int^{\infty}_{-\infty} dt \prime <n(t)n(t \prime)> K(t) K(t\prime)]^{1/2}\\
-   		&= [\int^{\infty}_{-\infty} df {1 \over 2} S_n(f) |K(f)|^2]^{1/2}
+   		&= [\int^{\infty}_{-\infty} df {1 \over 2} S_n(f) |\tilde K(f)^{*}|^2]^{1/2}
 		\end{align}
 
 	Since the filter is just a function of time, it knows nothing about the noise, 
@@ -1183,48 +1171,66 @@
 	Therefore, the expectation value of s(t) is just h(t), the expected signal. 
 
 
-So far, we have arrived at
-\begin{equation}
-{s \over N} = {{\int^{\infty}_{-\infty}df h(t) K(t)}\over{ [\int^{\infty}_{-\infty}} df {1 \over 2} S_n(f) |K(f)|^2]^{1/2}}
-\end{equation}
-This expression can be simplify by defining an inner product of two function of time:
-\begin{align}
-(A|B)  &= Re \int^{\infty}_{-\infty} df {A(f)B(f)}\over{1 \over 2 S_n(f)} \\
-       &=4Re \int^{\infty}_{0} df {A(f)B(f)}\over {S_n(f)} 
-\end{align}
+	So far, we have arrived at
 
-And this allows to rewrite the SNR as
-\begin{equation}
-{S \over N} = {{(K|h)} \over {(K|K)^{1/2}}}
-\end{equation}
-One step further is defying the normalised K
+		\begin{equation}
+		{S \over N} = {{\int^{\infty}_{-\infty}df \tilde h(t) \tilde K(t)^{*}}\over{ [\int^{\infty}_{-\infty}} df {1 \over 2} S_n(f) |\tilde K(f)|^2]^{1/2}}
+		\end{equation}
+	
+	This expression can be simplify by defining an inner product of two function of time:
 
+		\begin{align}
+		(A|B)  &= Re \int^{\infty}_{-\infty} df {\tilde A(f)^{*} \tilde B(f)}\over{1 \over 2 S_n(f)} \\
+       		       &=4Re \int^{\infty}_{0} df {\tilde A(f)^{*} \tilde B(f)}\over {S_n(f)} 
+		\end{align}
 
+	And this allows to rewrite the SNR as
 
-Maximizin SNR is equivalent to making K point in the same direction as h, that means that K has to be proportional to h:
+		\begin{equation}
+		{S \over N} = {{(\textbf{K}|h)} \over {(\textbf{K}|\textbf{K})^{1/2}}}
+		\end{equation}
 
-Meaning that the optimal filter is defined as
+	One step further is defying the normalised K
 
-Submitting back into the expression for SNR gives the highest SNR one can attain:
+		\begin{equation}
+		\textbf{\~ K} = {{\mathbf{K}} \over {{(\mathbf{K}|\mathbf{K})^{1/2}}}}
+		\end{equation}
 
-%\begin{equation}
+	Maximizing the SNR is equivalent to making K point in the same direction as h, 
+	that means that K has to be proportional to h:
+	
+		\begin{equation}
+		\mathbf K \propto h
+		\end{equation}
 
-%\end{equation}
+	Meaning that the optimal filter is defined as
+	
+		\begin{equation}
+		\tilde K (f) \propto {{\tilde h(f)} \over {S_n(f)}} 
+		\end{equation}
+	
+	Submitting back into the expression for SNR gives the highest SNR one can attain:
 
-In practice, the expectation value of S is not known, only the actual detector output s(t) is, so in signal processing the following approximation is made
+		\begin{align}
+		{S \over N} & = {{(\mathbf{K} | h)} \over {\sqrt{(\mathbf{K} |\mathbf{K})}}}  \\
+            		    & = {{(h | h)} \over {\sqrt{(h |h)}}} \\
+	    		    & = sqrt{(h|h)}
+		\end{align}
 
-%\begin{equation}
+	In practice, the expectation value of S is not known, only the actual detector output s(t) is, 
+	so in signal processing the following approximation is made
 
-%\end{equation}
+		\begin{equation}
+		({S \over N })_i \simeq {{(h_i|s)} \over {sqrt{(h_i|h_i)}}}
+		\end{equation}
 
-
-The waveforms are characterise by source parameters: $\bar \theta = {\theta_1, \theta_2…,\theta_N}$ i.e. masses, spins, sky position.
-In the SNR formula, instead of the expectation value I put the detector’s output and then I maximise this over all parameters: I am going to take the data and use the optimal filter for many different .
-choices of the parameters 
-In practice this maximum value cannot be taken in a continuous way, the parameter space can only be sampled in a discrete manner: template banks.
-
-
-
+	The waveforms are characterise by source parameters: 
+	$\bar \theta = {\theta_1, \theta_2…,\theta_N}$ i.e. masses, spins, sky position.
+	In the SNR formula, instead of the expectation value we put the detector’s output and then
+	maximise this over all parameters: we are going to take the data and use the optimal filter 
+	for many different choices of the parameters. 
+	In practice this maximum value cannot be taken in a continuous way, 
+	the parameter space can only be sampled in a discrete manner: template banks.
 
 \section{p-value}
 
@@ -1286,6 +1292,38 @@ In practice this maximum value cannot be taken in a continuous way, the paramete
 
 \section{Coincident and coherent research}
 
+	A coherent search is a very sensitive way to search for gravitational waves from a network of detectors,
+	in which data from all detectors are combined in an optimal way prior to performing the search. 
+	While this method has been applied to searches for unmodelled burst sources, 
+	it has proven more difficult to use for the binary merger search. 
+	Instead, a coincidence search has been used, whereby the data from individual detectors are searched independently 
+	and the events recorded in the different detectors checked for time and mass consistency appropriate for a gravitational wave signal. 
+	The benefit of the coincidence search is that it reduces the computational cost, 
+	at the expense of some loss in sensitivity. 
+	The dominant cost of the search is in performing a matched filter of the data against a bank of template waveforms. 
+	The coincidence search performs this task once per detector per template. 
+	A search over the sky location of the signal is then trivially done by time-shifting the results from the different detectors accordingly. 
+	Similarly, the noise background is estimated by applying larger time shifts to the data 
+	(significantly longer than the light travel time between detectors) to search for noise coincidences. 
+	A naive implementation of the coherent search would require an independent filtering of the data for each template and each sky point, 
+	with the search repeated for each time-shift used to estimate the noise background. 
+	Computationally, this is not feasible. 
+	In a coincidence search, it is necessary to place a threshold on the signal-to-noise ratio (SNR) of events 
+	which will be stored by the analysis prior to identifying coincidences. 
+	This means that the power in the GW signal will only be accumulated in those detectors where there was an event above threshold. 
+	In comparison, the coherent analysis naturally incorporates the SNR from all operational detectors. 
+	In the coincidence analysis, each detector is searched independently, 
+	and there is no guarantee that the observed signals in each detector are compatible with a GW source with two polarisations. 
+	In the coherent analysis the data from all detectors is combined to extract the two physical GW polarisations. 
+	When there are more than two detectors, it is then possible to generate a null stream which will contain only noise. 
+	Removing these additional noise contributions from the SNR will enhance the sensitivity of the search. 
+	The benefit of a coherent analysis becomes more significant as the number of detectors in the global network increases. 
+	In a coherent search for gravitational waves associated with gamma-ray bursts (GRBs),
+	the observed GRB signal is used to restrict the sky location and arrival time of the GW signal, 
+	which significantly reduces the computational cost of the analysis. 
+	The analysis has been constructed so that each template is filtered independently through the data from each detector and 
+	the single detector (complex) SNR time series are used to search over the sky and also perform a small number of time shifts. 
+	Thus, the calculation of the single detector SNR remains the dominant computational cost. 
 \section{Injections}
 
 
