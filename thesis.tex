@@ -5,6 +5,8 @@
 \usepackage{hyperref}
 \usepackage{wasysym}
 \usepackage{siunitx}
+\usepackage{biblatex}
+\addbibresource{sample.bib}
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
 \usepackage{amsmath, amssymb}
 \title{Building a template bank}
@@ -1027,195 +1029,367 @@
 	and a population of white dwarf binaries that would be important mostly for a space-based interferometers such as LISA 
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\chapter{Data analysis technique}
+\chapter{Data Analysis for Coalescing Binary Systems}
 
-	The matched filter is the optimal linear filter technique to extract a know signal from a gaussian stochastic noise. 
-	Since the gravitational wave emission from binary coalescence is pretty well modelled, 
-	the matched filtering is the natural choice. However some complications arise: 
-	the detector background is neither stationary nor Gaussian and the knowledge of the signal 
-	is not perfect because the waveforms are approximated up to a given order 	
-	and the model parameters of the incoming wave are unknown. 
-	
-	Consistency checks, such as the $\chi^2$-test, 
-	are needed to discriminate true events from broadband transients 
-	of instrumental or environmental origin. 
-	To reduce the effects of the non-stationarities, 
-	vetoes can be defined to reject triggers on the base of the detector behaviour 
-	which is analysed by monitoring channels. 
-	To overcome the issues related to the unknown parameters, 
-	template banks are built covering the parameter space with a given accuracy and 
-	the filter output is computed summing in quadrature the filter outputs that involved two orthogonal-phase templates. 
-	Different approximations can be chosen to obtain waveforms as close as possible to the expected signals, 
-	with different post-newtonian orders and involving more parameters, 
-	for instance, the spin of the single components and the orbital eccentricity. 
-	Taking into account an higher number of parameters corresponds to an increment of the parameter space dimension 
-	and a growing up of the number of templates required to cover effectively the space. 
-	At the end, more templates generate more false alarms, 
-	therefore the pursuit of the best compromise between the efficiency in extracting signals 
-	and the false alarm rate is the final goal of a search. 
+	The main role of data analysis in gravitational wave detection is to extract the GW signal 
+	buried into noisy interferometric strain data, which can be characterised by a spectral strain sensitivity.
+	The data analysis technique depends on the type of source.
+	GW searches from the inspiral, merger and ringdown phases of compact binary systems 
+	are based on two broad techniques: 
+	modeled searches which use theoretical waveforms for such systems 
+	as predicted by general relativity and 
+	unmodelled or burst searches which assume minimal information about these waveforms. \cite[p. 2] {bar}
+	Although signals from coalescing binaries will most probably not stand above the broadband noise of the detector, 
+	their detection is possible by the use of matched filtering, 
+	which takes advantage of the fact that the wave form can be fairly well predicted. 
+
+	This technique is the optimal detection strategy in Gaussian noise 
+	in searching for gravitational waves with well understood waveforms. \cite[p. 2] {bar} \cite[p. 2] {bar}
+
 
 \section{Matched Filtering}
-	
-	Matched filtering technique is the standard filter choice when the expected signal is known. 
-	The technique is based on evaluating the phase-coherent correlation between the data 
-	coming from the detector and a bank of template, 
-	a copy of the model waveform weighted down by the expected power spectral density of the data, 
-	that must reproduce the expected signal. 
-	Each template of the bank is produced starting from a set of continuous waveform parameters, 
-	the amplitude, the masses $m1$, $m2$, and spins of the binary system objects and a fiducial reference time 
-	(taken to be either “time-of-arrival” $t_0$ or “epoch-of-coalescence” $t_C$) and the corresponding orbital phase $\phi_0$. 
 
-	The parameters describing the inclination of the binary orbit and 
-	the location of the source on the sky are degenerate with other parameters, 
-	and are therefore, ignored in the search problem, 
-	although they can be deduced once the response of three or more non-colocated detectors 
-	to a gravitational wave event is known. 
-	The eccentricity may also be ignored, since it is expected to be negligible 
-	(due to orbital circularisation) by the time the gravitational radiation enters the frequency band 
-	(10-1000 Hz) of a ground-based detector. 
-	Therefore, once the waveform equation is chosen, 
-	with a given approximation and up to a given order, 
-	the bank can be considered as a collection of points that span the parameter space.
-	
-	How can a signal be taken optimally out of the noise? 
-	The assumption so far was that if a signal is present h(t) is known, 
-	then the part of the detector’s output that contains the signal leads to 
-	an integral that grows, whereas integrating a single template against the noise doesn’t grow as fast, it is oscillatory.
-	However, integrating the detector output against some h(t), 
-	it is not an optimal thing because the properties of our detector are not taken into consideration. 
+	The filtering procedure involves correlating the detector output 
+	with a copy of the expected waveform, 
+	called a matched filter or a template.
+	A real detector functions only over a finite frequency band, 
+	and acquires data at a finite sample rate. 
+	In this case, the noise power spectrum $S_n$ 
+	may be taken to be infinite outside the bandwidth of the instrument, 
+	effectively restricting the range of integration to lie between $[-f_N, f_N]$, 
+	where $f_N$ denotes the Nyquist frequency $f_N = 1/(2\Delta t)$, 
+	and $\Delta t$ is the time between successive data samples.   \cite[p. 2] {bar}
 
-	The optimal procedure is obtaining a filter to integrate against the data knowing how the detector’s output in terms of noise looks like. 
-	Instead of integrating the data against waveforms, a generic filter that is going to be integrated against the noise can be defined as:
-		
-		\begin{equation}
- 		\hat s = \int^{\infty}_{-\infty} dt s(t) K(t)
-		\end{equation}
-
-	The expectation value of $\hat s$, when a signal $h(t)$ is present, is obtained simply by integrating against the probability of noise realisations
+	The measured detector’s strain amplitude, $s(t)$, 
+	is assumed to be the sum
 
 		\begin{equation}
-		S = \langle s \rangle_{h}
+			s(t) = h(t) + n(t)
 		\end{equation}
 
-	while $N$, the root-mean-square value when no signal is present, is defined as:
+	where $h(t)$ is a GW signal, while $n(t)$ is the real strain-equivalent noise 
+	produced by fluctuations within the detector and its environment, 
+        assumed to be well described as stationary Gaussian noise with zero mean and one-sided PSD. 
+
+	The aim of the match filtering is to choose an optimal filter function, 
+	that for a signal $h(t)$ embedded in stationary Gaussian noise is defined as 
+	$\tilde h_{template}/S_n$, to match the signal (assumed this is known). \cite[p. 2]{bar}
+	The output of the filter is obtained from a weighted inner product in the frequency domain, 
+	cross-correlating the data with the inverse noise power weighted data from each of the detectors:
 
 		\begin{equation}
-		N = \langle \hat s^2 \rangle_{h=0} - \langle \hat s \rangle^2_{h=0}]^{1/2}
+ 			(s|h)(t) = 4Re \int^{f^{high}}_{f^{low}} {{\tilde s (f) \tilde h^{*}_{template}(f)} \over {S_n (f)}} e^{2 \pi if} 
 		\end{equation}
 
+	The frequency limits $f_{low}$ and $f_{high}$ are determined by the bandwidth of the detector’s data.
+
+	Here $\hat s(f)$ denotes the Fourier-transformed detector data, defined by
+
+		\begin{equation}
+			\hat s(f) = \int^{\infty}_{-\infty} s(t) e^{-2i \pi tf} dt
+		\end{equation}
+
+	and $\tilde h(f)_{template}$ denotes the Fourier-transformed template waveform 
+	and $S_n(f)$ is the one-sided power spectral density of the detector noise. 
+  
 \subsection{Signal to noise ratio}
 
-	The ratio $S/N$ is by definition the signal to noise ratio, SNR, 	
-	and is the expectation value of this filtering integral in the event that the signal is present, 
-	divided by its root-mean-square value, when no signal is present.
-	The filter is going to depend from the signal and therefore, 
-	from its strength and also from the properties of the detector, 
-	and whatever the noise curve was during the data taking time. 
-	The SNR will depend on the observation time and also the length in time of signal, 
-	if one is going to be present in the detector, 
-	on the properties of the detector during the data taking time and 
-	it will depend on the kind of signal templates that one has to its disposal. 
-	The knowledge of the kind of signal that is going to be extracted is limited,  
-	if the search focuses on a signal from a compact binary coalescence, CBC, 
-	it’s evident that the waveform is not exactly known because the two-body problem in GR 
-	has no exact solution; the signal will be approximated to some level.
-	The integration is not simply against some trial waveform, 
-	because some informations about the detector as well have to be combined into the research. 
-	Given that kind of expected signal, 
-	given the kind of operating detector and the length of the data taking, what choice of a filter maximises the SNR?
+	Finding the form of the filter which will optimally extract the signal from the noise, 
+	means locating the maxima of the output of the matched filter, $(s|h)$, over the arrival time and phase.
+	The expected value of the square of $(s|h)(t)$ may be found using 
 
-	A more convenient form to write S and N is the Fourier domain: 
+		\begin{equation}
+			\langle (s|h) \rangle = (\tilde h_{template}|\tilde h)
+		\end{equation}
+
+	The error or uncertainty in a measurement of $(s|h)$, due to noise in the detector, is 
+
+                \begin{equation}
+                        \sigma^2 =4 \int^{\infty}_{0} {{|\tilde h_{template}(f)|^2} \over {S_n(f)}}df
+                \end{equation}
+
+	This quantity is a measure of the sensitivity of the instrument, 
+	and can be used to normalize the filter output. 
+	The signal to noise ratio (SNR) is then defined by the ratio of the observed filter output to its, 
+	expected or observed, root-mean-square fluctuations.
 
 		\begin{align}
-		S &= \langle \hat s \rangle_h \\
-   		&= \int^{\infty}_{-\infty} dt \langle s(t) \rangle  K(t)\\
-   		&= \int^{\infty}_{-\infty} dt h(t) K(t)\\
-   		&= \int^{\infty}_{-\infty} df \tilde h(f)\tilde K^{*}(t)
+			\rho &= {{\langle (s|h) \rangle} \over {\sigma_{h}}} \\
+	    		     &= {{(\tilde h_{template}|\tilde h)} \over {\sqrt{(h_{template}|h_{template})}}}
 		\end{align}
 
-		\begin{align}
-		N &=[ \langle \hat s^2 \rangle - \langle \hat s \rangle ^2]^{1/2}_{h=0} \\
-       		&= [\langle \hat s^2 \rangle  ]^{1/2}_{h=0} \\
-   		&= [\int^{\infty}_{-\infty} dt \int^{\infty}_{-\infty} dt \prime <n(t)n(t \prime)> K(t) K(t\prime)]^{1/2}\\
-   		&= [\int^{\infty}_{-\infty} df {1 \over 2} S_n(f) |\tilde K(f)^{*}|^2]^{1/2}
-		\end{align}
+	The value of the SNR will then be proportional to the amplitude of the signal buried in the noise. 
 
-	Since the filter is just a function of time, it knows nothing about the noise, 
-	the expectation value is acting only on s(t), 
-	and this is what gets integrated against the probability density over noise realisation.
+\subsection{Matched Filtering for Compact Binary Signals}
 
-	Here we have assumed that a signal is present, so s(t) is really
+	An interferometric detector is sensitive to a linear combination 
+	of the two gravitational wave polarizations where the gravitational wave signal has the form: 
+
+                \begin{equation}
+                h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
+                \end{equation}
+
+	where $F_{+}$ and $F_{\times}$ are the two antenna response functions of the detector, 
+	which depend on $\theta$ and $\phi$, 
+	the spherical coordinates of the sources sky position with respect to axes defined by interferometers’ arms. 
+	Due to the nature of GW signals from the inspiral phase of CBCs, 
+	it follows that the phase evolution of the cross polarization is $\ang{90}$ out of phase with the plus polarization, given by 
 
 		\begin{equation}
-		s(t) = n(t) + h(t)
+			h_{+}(t) = A(t) cos (\phi (t))
 		\end{equation}
 
-	Where n(t) is the noise but, the initial assumption is stationary gaussian noise, 
-	the expectation value of n(t) is zero.
-	Therefore, the expectation value of s(t) is just h(t), the expected signal. 
-
-
-	So far, we have arrived at
-
 		\begin{equation}
-		{S \over N} = {{\int^{\infty}_{-\infty}df \tilde h(t) \tilde K(t)^{*}}\over{ [\int^{\infty}_{-\infty}} df {1 \over 2} S_n(f) |\tilde K(f)|^2]^{1/2}}
+			h_{\times}(t) = A(t) sin (\phi (t))  
 		\end{equation}
 	
-	This expression can be simplify by defining an inner product of two function of time:
-
-		\begin{align}
-		(A|B)  &= Re \int^{\infty}_{-\infty} df {\tilde A(f)^{*} \tilde B(f)}\over{1 \over 2 S_n(f)} \\
-       		       &=4Re \int^{\infty}_{0} df {\tilde A(f)^{*} \tilde B(f)}\over {S_n(f)} 
-		\end{align}
-
-	And this allows to rewrite the SNR as
+	where $A(t)$ is the amplitude evolution of the signal 
+	and $\phi(t)$ is the phase evolution of the signal. 
+	The Fourier transform of the two polarization are related by $\tilde h_{+} = ih_{\times}$, 
+	which means that the inner product between the orthogonal polarisation is zero 
 
 		\begin{equation}
-		{S \over N} = {{(\textbf{K}|h)} \over {(\textbf{K}|\textbf{K})^{1/2}}}
+			(h_{\times}|h_{+}) = 0
 		\end{equation}
-
-	One step further is defying the normalised K
+ 
+	Hence, when filtering  $s = (Xh_{+}/\sigma_{h}) + (Y h_{\times}/\sigma_{h}$ 
+	with the template $h_{+}$ and $h_{\times}$, 
+	respectively, we obtain the matched-filter real-time series
+ 
+		\begin{equation}
+			z_{+} = X\sigma_{h}
+		\end{equation}
 
 		\begin{equation}
-		\textbf{\~ K} = {{\mathbf{K}} \over {{(\mathbf{K}|\mathbf{K})^{1/2}}}}
+			z_{\times} = Y \sigma_{h} 
 		\end{equation}
 
-	Maximizing the SNR is equivalent to making K point in the same direction as h, 
-	that means that K has to be proportional to h:
-	
-		\begin{equation}
-		\mathbf K \propto h
-		\end{equation}
-
-	Meaning that the optimal filter is defined as
-	
-		\begin{equation}
-		\tilde K (f) \propto {{\tilde h(f)} \over {S_n(f)}} 
-		\end{equation}
-	
-	Submitting back into the expression for SNR gives the highest SNR one can attain:
-
-		\begin{align}
-		{S \over N} & = {{(\mathbf{K} | h)} \over {\sqrt{(\mathbf{K} |\mathbf{K})}}}  \\
-            		    & = {{(h | h)} \over {\sqrt{(h |h)}}} \\
-	    		    & = sqrt{(h|h)}
-		\end{align}
-
-	In practice, the expectation value of S is not known, only the actual detector output s(t) is, 
-	so in signal processing the following approximation is made
+	Which leads to the definition of the two-phase filter, 
+	which has twice the degrees of freedom of a single-phase filter:
 
 		\begin{equation}
-		({S \over N })_i \simeq {{(h_i|s)} \over {sqrt{(h_i|h_i)}}}
+			\rho = {1 \over \sigma_h} \sqrt{|z_{+}| ^2+ |z_{\times}|^2}
 		\end{equation}
 
-	The waveforms are characterise by source parameters: 
-	$\bar \theta = {\theta_1, \theta_2…,\theta_N}$ i.e. masses, spins, sky position.
-	In the SNR formula, instead of the expectation value we put the detector’s output and then
-	maximise this over all parameters: we are going to take the data and use the optimal filter 
-	for many different choices of the parameters. 
-	In practice this maximum value cannot be taken in a continuous way, 
-	the parameter space can only be sampled in a discrete manner: template banks.
+	The bonus of extracting information from both polarizations of the GW 
+	comes with the cost of increasing the expectation value of $\rho$ when there is no signal present. 
+	For a detector output that includes a signal at distance $D_eff$, 
+	$s(t) = n(t) + (D_eff/1 Mpc)^{-1}h_{1Mpc}$, 
+	a biased estimate of the effective distance for a given trigger 
+	can be defined by combining the definition of the SNR with the template normalization $\sigma_h$:
 
+		\begin{equation}
+			\hat D_eff = {{\sigma_h} \over {\rho}}
+		\end{equation}
+
+	In reality, the parameters of astrophysical systems will not be known a-priori, 
+	and searches must therefore be sensitive to signals at any location in the parameter space. 
+	Performing the matched-filter calculation at every point in the full parameter space 
+	would be extremely computationally prohibitive, 
+	and therefore a number of analytic approximations are used to reduce the size of the parameter space. 
+	It is assumed that the “extrinsic” parameters of a GW signal, 
+	such as the sky-location, source orientation, polarisation phase and distance, 
+	can all be absorbed by applying a constant phase-shift, 
+	constant time-shift and a constant amplitude scaling to the observed waveform. 
+	With these assumptions in place, 
+	one can analytically maximise over an overall amplitude and phase of the signal, 
+	and use an inverse Fourier transform to quickly evaluate the statistic as a function of time. 
+	The component masses and spins, 
+	which are the only intrinsic parameters, 
+	are searched over by repeating the search process with a well chosen discrete set of waveform models 
+	with varying values of the component masses and spins, 
+	known as the template bank. 
+	Physically, these assumptions hold if one assumes that the sources being observed 
+	have no orbital eccentricity, no precession and no contribution from higher-order modes 
+	to the gravitational-wave signal. 
+
+%	The matched filter is the optimal linear filter technique to extract a know signal from a gaussian stochastic noise. 
+%	Since the gravitational wave emission from binary coalescence is pretty well modelled, 
+%	the matched filtering is the natural choice. However some complications arise: 
+%	the detector background is neither stationary nor Gaussian and the knowledge of the signal 
+%	is not perfect because the waveforms are approximated up to a given order 	
+%	and the model parameters of the incoming wave are unknown. 
+%	
+%	Consistency checks, such as the $\chi^2$-test, 
+%	are needed to discriminate true events from broadband transients 
+%	of instrumental or environmental origin. 
+%	To reduce the effects of the non-stationarities, 
+%	vetoes can be defined to reject triggers on the base of the detector behaviour 
+%	which is analysed by monitoring channels. 
+%	To overcome the issues related to the unknown parameters, 
+%	template banks are built covering the parameter space with a given accuracy and 
+%	the filter output is computed summing in quadrature the filter outputs that involved two orthogonal-phase templates. 
+%	Different approximations can be chosen to obtain waveforms as close as possible to the expected signals, 
+%	with different post-newtonian orders and involving more parameters, 
+%	for instance, the spin of the single components and the orbital eccentricity. 
+%	Taking into account an higher number of parameters corresponds to an increment of the parameter space dimension 
+%	and a growing up of the number of templates required to cover effectively the space. 
+%	At the end, more templates generate more false alarms, 
+%	therefore the pursuit of the best compromise between the efficiency in extracting signals 
+%	and the false alarm rate is the final goal of a search. 
+
+%\section{Matched Filtering}
+%	
+%	Matched filtering technique is the standard filter choice when the expected signal is known. 
+%	The technique is based on evaluating the phase-coherent correlation between the data 
+%	coming from the detector and a bank of template, 
+%	a copy of the model waveform weighted down by the expected power spectral density of the data, 
+%	that must reproduce the expected signal. 
+%	Each template of the bank is produced starting from a set of continuous waveform parameters, 
+%	the amplitude, the masses $m1$, $m2$, and spins of the binary system objects and a fiducial reference time 
+%	(taken to be either “time-of-arrival” $t_0$ or “epoch-of-coalescence” $t_C$) and the corresponding orbital phase $\phi_0$. 
+%
+%	The parameters describing the inclination of the binary orbit and 
+%	the location of the source on the sky are degenerate with other parameters, 
+%	and are therefore, ignored in the search problem, 
+%	although they can be deduced once the response of three or more non-colocated detectors 
+%	to a gravitational wave event is known. 
+%	The eccentricity may also be ignored, since it is expected to be negligible 
+%	(due to orbital circularisation) by the time the gravitational radiation enters the frequency band 
+%	(10-1000 Hz) of a ground-based detector. 
+%	Therefore, once the waveform equation is chosen, 
+%	with a given approximation and up to a given order, 
+%	the bank can be considered as a collection of points that span the parameter space.
+%	
+%	How can a signal be taken optimally out of the noise? 
+%	The assumption so far was that if a signal is present h(t) is known, 
+%	then the part of the detector’s output that contains the signal leads to 
+%	an integral that grows, whereas integrating a single template against the noise doesn’t grow as fast, it is oscillatory.
+%	However, integrating the detector output against some h(t), 
+%	it is not an optimal thing because the properties of our detector are not taken into consideration. 
+%
+%	The optimal procedure is obtaining a filter to integrate against the data knowing how the detector’s output in terms of noise looks like. 
+%	Instead of integrating the data against waveforms, a generic filter that is going to be integrated against the noise can be defined as:
+%		
+%		\begin{equation}
+ %		\hat s = \int^{\infty}_{-\infty} dt s(t) K(t)
+%		\end{equation}
+%
+%	The expectation value of $\hat s$, when a signal $h(t)$ is present, is obtained simply by integrating against the probability of noise realisations
+%
+%		\begin{equation}
+%		S = \langle s \rangle_{h}
+%		\end{equation}
+%
+%	while $N$, the root-mean-square value when no signal is present, is defined as:
+%
+%		\begin{equation}
+%		N = \langle \hat s^2 \rangle_{h=0} - \langle \hat s \rangle^2_{h=0}]^{1/2}
+%		\end{equation}
+%
+%\subsection{Signal to noise ratio}
+%
+%	The ratio $S/N$ is by definition the signal to noise ratio, SNR, 	
+%	and is the expectation value of this filtering integral in the event that the signal is present, 
+%	divided by its root-mean-square value, when no signal is present.
+%	The filter is going to depend from the signal and therefore, 
+%	from its strength and also from the properties of the detector, 
+%	and whatever the noise curve was during the data taking time. 
+%	The SNR will depend on the observation time and also the length in time of signal, 
+%	if one is going to be present in the detector, 
+%	on the properties of the detector during the data taking time and 
+%	it will depend on the kind of signal templates that one has to its disposal. 
+%	The knowledge of the kind of signal that is going to be extracted is limited,  
+%	if the search focuses on a signal from a compact binary coalescence, CBC, 
+%	it’s evident that the waveform is not exactly known because the two-body problem in GR 
+%	has no exact solution; the signal will be approximated to some level.
+%	The integration is not simply against some trial waveform, 
+%	because some informations about the detector as well have to be combined into the research. 
+%	Given that kind of expected signal, 
+%	given the kind of operating detector and the length of the data taking, what choice of a filter maximises the SNR?
+%
+%	A more convenient form to write S and N is the Fourier domain: 
+%
+%		\begin{align}
+%		S &= \langle \hat s \rangle_h \\
+%   		&= \int^{\infty}_{-\infty} dt \langle s(t) \rangle  K(t)\\
+%   		&= \int^{\infty}_{-\infty} dt h(t) K(t)\\
+%  		&= \int^{\infty}_{-\infty} df \tilde h(f)\tilde K^{*}(t)
+%		\end{align}
+%
+%		\begin{align}
+%		N &=[ \langle \hat s^2 \rangle - \langle \hat s \rangle ^2]^{1/2}_{h=0} \\
+%      		&= [\langle \hat s^2 \rangle  ]^{1/2}_{h=0} \\
+%   		&= [\int^{\infty}_{-\infty} dt \int^{\infty}_{-\infty} dt \prime <n(t)n(t \prime)> K(t) K(t\prime)]^{1/2}\\
+%   		&= [\int^{\infty}_{-\infty} df {1 \over 2} S_n(f) |\tilde K(f)^{*}|^2]^{1/2}
+%		\end{align}
+%
+%	Since the filter is just a function of time, it knows nothing about the noise, 
+%	the expectation value is acting only on s(t), 
+%	and this is what gets integrated against the probability density over noise realisation.
+%
+%	Here we have assumed that a signal is present, so s(t) is really
+%
+%		\begin{equation}
+%		s(t) = n(t) + h(t)
+%		\end{equation}
+%
+%	Where n(t) is the noise but, the initial assumption is stationary gaussian noise, 
+%	the expectation value of n(t) is zero.
+%	Therefore, the expectation value of s(t) is just h(t), the expected signal. 
+%
+%
+%	So far, we have arrived at
+%
+%		\begin{equation}
+%		{S \over N} = {{\int^{\infty}_{-\infty}df \tilde h(t) \tilde K(t)^{*}}\over{ [\int^{\infty}_{-\infty}} df {1 \over 2} S_n(f) |\tilde K(f)|^2]^{1/2}}
+%		\end{equation}
+%	
+%	This expression can be simplify by defining an inner product of two function of time:
+%
+%		\begin{align}
+%		(A|B)  &= Re \int^{\infty}_{-\infty} df {\tilde A(f)^{*} \tilde B(f)}\over{1 \over 2 S_n(f)} \\
+ %      		       &=4Re \int^{\infty}_{0} df {\tilde A(f)^{*} \tilde B(f)}\over {S_n(f)} 
+%		\end{align}
+%
+%	And this allows to rewrite the SNR as
+%
+%		\begin{equation}
+%		{S \over N} = {{(\textbf{K}|h)} \over {(\textbf{K}|\textbf{K})^{1/2}}}
+%		\end{equation}
+%
+%	One step further is defying the normalised K
+%
+%		\begin{equation}
+%		\textbf{\~ K} = {{\mathbf{K}} \over {{(\mathbf{K}|\mathbf{K})^{1/2}}}}
+%		\end{equation}
+%
+%	Maximizing the SNR is equivalent to making K point in the same direction as h, 
+%	that means that K has to be proportional to h:
+%	
+%		\begin{equation}
+%		\mathbf K \propto h
+%		\end{equation}
+%
+%	Meaning that the optimal filter is defined as
+%	
+%		\begin{equation}
+%		\tilde K (f) \propto {{\tilde h(f)} \over {S_n(f)}} 
+%		\end{equation}
+%	
+%	Submitting back into the expression for SNR gives the highest SNR one can attain:
+%
+%		\begin{align}
+%		{S \over N} & = {{(\mathbf{K} | h)} \over {\sqrt{(\mathbf{K} |\mathbf{K})}}}  \\
+ %           		    & = {{(h | h)} \over {\sqrt{(h |h)}}} \\
+%	    		    & = sqrt{(h|h)}
+%		\end{align}
+%
+%	In practice, the expectation value of S is not known, only the actual detector output s(t) is, 
+%	so in signal processing the following approximation is made
+%
+%		\begin{equation}
+%		({S \over N })_i \simeq {{(h_i|s)} \over {sqrt{(h_i|h_i)}}}
+%		\end{equation}
+%
+%	The waveforms are characterise by source parameters: 
+%	$\bar \theta = {\theta_1, \theta_2…,\theta_N}$ i.e. masses, spins, sky position.
+%	In the SNR formula, instead of the expectation value we put the detector’s output and then
+%	maximise this over all parameters: we are going to take the data and use the optimal filter 
+%	for many different choices of the parameters. 
+%	In practice this maximum value cannot be taken in a continuous way, 
+%	the parameter space can only be sampled in a discrete manner: template banks.
+%
 \section{Candidate Event Significance}
 
 
@@ -1260,7 +1434,7 @@
 	this is a sufficiently accurate approximation of the background to support detection claims. 
 	Our significance calculation requires that candidate events are statistically independent; 
 	however, both noise transients and signals can generate many triggers across the template bank, 
-	potentially yielding several correlated coincident events within a short time (􏰁 1 second). 
+	potentially yielding several correlated coincident events within a short time (1 second). 
 	To generate independent candidates, the pipeline performs a final stage of clustering: 
 	if more than one coincident event occurs within a time window of fixed duration,	
 	typically 10 seconds, only the event with the highest detection statistic value,
@@ -1285,50 +1459,13 @@
 
 \section{Template Bank}
 
-	Since the parameters of an incoming gravitational wave signal will not be known a priori, 
-	the data must be searched with a set of templates, 
-	called a template bank, designed to cover the whole parameter space. 
-	The distance between the templates in the parameter space is governed by the trade-off 
-	between computational power and loss in detection rate due to the discrete nature of the template bank. 
-	The spacing should be chosen so that the loss in signal-to-noise ratio 
-	due to the mis-match of the template with the signal does not deprecate the detectability of these sources. 
 
-	One can employ a geometrical approach in constructing a template bank, 
-	namely defining a metric on the parameter space and use local flatness theorem 
-	to place templates at equal distances. 
-	The template bank could be seen naively as a uniform grid in the parameter space. 
-	Placing templates on the parameter space depends upon two crucial things: 
-	geometrical properties of the signal manifold, whether it is flat or curved, 
-	and the coordinates chosen for template placement, 
-	which could be curvilinear even when the manifold is flat, or “almost flat”. 
-	Indeed, we need to choose a “Lorentzian-like” (or close to it) coordinate frame. 
-	The second point is similar to the problem of laying a regular grid on the plane using either Cartesian or polar coordinates. 
-	The situation is even more complicated because the metric, 
-	in general, depends on the waveform model and the PN order one chooses. 
-	The different PN models differ significantly from each other in their prediction of the phasing of the waves, 
-	making it necessary to search for binary black holes and neutron stars 
-	by using not one but all the different families of waveforms currently available. 
-	
-	The signal from a BNS sweeps through the detector bandwidth and 
-	the two neutron stars can even merge outside the sensitive bandwidth of the current ground-based detectors 	
-	and the waveforms corresponding to different physical models agree reasonably well among each other 
-	(with overlaps very close to unity). 
-	For higher mass systems, e.g. BBH, the situation changes, 
-	the deviation between the various models getting more significant in the sensitive bandwidth of the detectors. 
-	Since for BBH the model waveforms from different families do not agree well with each other, 
-	a template bank that employs one PN family of templates will not be efficient to detect signals from another family. 
-	One solution is to filter the data through a number of banks with templates based on all the different models. 
-	If the reasonable assumption that at least one of the available PN models 
-	is close to the true gravitational wave signal bears out then our bank 
-	consisting of templates from all the different PN families 
-	should be efficient enough in capturing the coalescence events. 
-	Unexpectedly, we have found that the bank works well as long as the template and signal 
-	are both from the same family meaning a single template bank might suffice 
-	to filter the data through different PN families. 
-	The end result of the construction of the template bank is a set of points in the parameter space 	
-	of chirptimes or, equivalently, the masses. 
-	Each point is associated with a template built from a specific signal model. 
-
+	To perform a matched-filtered search that would recover any CBC system 	
+	with minimal loss in SNR over a given range of parameters 
+	one must filter the data against a template bank, 
+	designed to cover the whole parameter space.
+	The manifold of waveforms is a continuous space in the component masses, 
+	of which we are only able to search discrete points. 
 \subsection{The lower frequency cutoff}
 
 	The lower frequency cutoff $f_L$, which essentially determines the size of the parameter space 
@@ -1341,41 +1478,9 @@
 
 \section{Coincident and coherent research}
 
-	A coherent search is a very sensitive way to search for gravitational waves from a network of detectors,
-	in which data from all detectors are combined in an optimal way prior to performing the search. 
-	While this method has been applied to searches for unmodelled burst sources, 
-	it has proven more difficult to use for the binary merger search. 
-	Instead, a coincidence search has been used, whereby the data from individual detectors are searched independently 
-	and the events recorded in the different detectors checked for time and mass consistency appropriate for a gravitational wave signal. 
-	The benefit of the coincidence search is that it reduces the computational cost, 
-	at the expense of some loss in sensitivity. 
-	The dominant cost of the search is in performing a matched filter of the data against a bank of template waveforms. 
-	The coincidence search performs this task once per detector per template. 
-	A search over the sky location of the signal is then trivially done by time-shifting the results from the different detectors accordingly. 
-	Similarly, the noise background is estimated by applying larger time shifts to the data 
-	(significantly longer than the light travel time between detectors) to search for noise coincidences. 
-	A naive implementation of the coherent search would require an independent filtering of the data for each template and each sky point, 
-	with the search repeated for each time-shift used to estimate the noise background. 
-	Computationally, this is not feasible. 
-	In a coincidence search, it is necessary to place a threshold on the signal-to-noise ratio (SNR) of events 
-	which will be stored by the analysis prior to identifying coincidences. 
-	This means that the power in the GW signal will only be accumulated in those detectors where there was an event above threshold. 
-	In comparison, the coherent analysis naturally incorporates the SNR from all operational detectors. 
-	In the coincidence analysis, each detector is searched independently, 
-	and there is no guarantee that the observed signals in each detector are compatible with a GW source with two polarisations. 
-	In the coherent analysis the data from all detectors is combined to extract the two physical GW polarisations. 
-	When there are more than two detectors, it is then possible to generate a null stream which will contain only noise. 
-	Removing these additional noise contributions from the SNR will enhance the sensitivity of the search. 
-	The benefit of a coherent analysis becomes more significant as the number of detectors in the global network increases. 
-	In a coherent search for gravitational waves associated with gamma-ray bursts (GRBs),
-	the observed GRB signal is used to restrict the sky location and arrival time of the GW signal, 
-	which significantly reduces the computational cost of the analysis. 
-	The analysis has been constructed so that each template is filtered independently through the data from each detector and 
-	the single detector (complex) SNR time series are used to search over the sky and also perform a small number of time shifts. 
-	Thus, the calculation of the single detector SNR remains the dominant computational cost. 
 \section{Injections}
 
-
+\cite[p. 2] {bar}
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational wave observation so far}
 
@@ -1433,5 +1538,6 @@
    \bibitem[nome]{riferimento}
 \end{thebibliography}
 
+\printbibliography
 \end{document} 
 
