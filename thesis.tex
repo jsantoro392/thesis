@@ -1060,20 +1060,34 @@
 	where $f_N$ denotes the Nyquist frequency $f_N = 1/(2\Delta t)$, 
 	and $\Delta t$ is the time between successive data samples.   \cite[p. 2] {bar}
 
-	The measured detector’s strain amplitude, $s(t)$, 
-	is assumed to be the sum
+	The measured detector’s strain amplitude, $s(t)$, may or may not contain a signal,
+	thus it will be composed of $n(t)$, the real strain-equivalent noise
+        produced by fluctuations within the detector and its environment, 
+	and possibly a gravitational wave of known form, $h(t)$
+        
+                \begin{equation}
+                        s(t) = h(t) + n(t)
+                \end{equation}
+	
+	or if there is no signal   		
 
 		\begin{equation}
-			s(t) = h(t) + n(t)
+                        s(t) = n(t)
+                \end{equation}
+	
+        assuming that the detector noise is well described as stationary Gaussian noise with zero mean and one-sided PSD, $S_n(f)$, given by Equation in Section.
+
+        The aim of the match filtering is to look for a filter function,
+	whose output, when passing the data through this filter, 
+	will be large when a signal is present and small otherwise. 
+        If the waveform, $h(t)$, embedded in stationary Gaussian noise is known, 
+        the optimal filter, $K(t)$, has the following form
+
+		\begin{equation}
+ 			K(t) = \tilde h_{template}/S_n
 		\end{equation}
 
-	where $h(t)$ is a GW signal, while $n(t)$ is the real strain-equivalent noise 
-	produced by fluctuations within the detector and its environment, 
-        assumed to be well described as stationary Gaussian noise with zero mean and one-sided PSD. 
-
-	The aim of the match filtering is to choose an optimal filter function, 
-	that for a signal $h(t)$ embedded in stationary Gaussian noise is defined as 
-	$\tilde h_{template}/S_n$, to match the signal (assumed this is known). \cite[p. 2]{bar}
+	where $\tilde h_{template}$ is the waveform template to match the signal.
 	The output of the filter is obtained from a weighted inner product in the frequency domain, 
 	cross-correlating the data with the inverse noise power weighted data from each of the detectors:
 
@@ -1094,31 +1108,31 @@
   
 \subsection{Signal to noise ratio}
 
-	Finding the form of the filter which will optimally extract the signal from the noise, 
-	means locating the maxima of the output of the matched filter, $(s|h)$, over the arrival time and phase.
-	The expected value of the square of $(s|h)(t)$ may be found using 
-
-		\begin{equation}
-			\langle (s|h) \rangle = (\tilde h_{template}|\tilde h)
-		\end{equation}
-
-	The error or uncertainty in a measurement of $(s|h)$, due to noise in the detector, is 
+	Finding the form of the filter which will optimally extract the signal from the noise,
+        means locating the maxima of the output of the matched filter, $(s|h)$, 
+	over the arrival time and phase.
+        This quantity, $(s|h)$, could be used to set a threshold value such that 
+	a $|(s|h)|$ above the threshold would indicate a signal
+	and below would indicate no signal. 
+	However, the filter output can be normalized by the variance of the optimal filter, $\sigma^2$,
+	which is an estimation of the uncertainty in a measurement of $(s|h)$, due to noise in the detector:
 
                 \begin{equation}
                         \sigma^2 =4 \int^{\infty}_{0} {{|\tilde h_{template}(f)|^2} \over {S_n(f)}}df
                 \end{equation}
 
-	This quantity is a measure of the sensitivity of the instrument, 
-	and can be used to normalize the filter output. 
-	The signal to noise ratio (SNR) is then defined by the ratio of the observed filter output to its, 
-	expected or observed, root-mean-square fluctuations.
+ 	The normalized output of the optimal filter is a new thresholding statistic and can be defined as  
+	the signal to noise ratio (SNR), the ratio of the observed filter output to its,
+        expected or observed, root-mean-square fluctuations:
 
-		\begin{align}
-			\rho &= {{\langle (s|h) \rangle} \over {\sigma_{h}}} \\
-	    		     &= {{(\tilde h_{template}|\tilde h)} \over {\sqrt{(h_{template}|h_{template})}}}
-		\end{align}
+                \begin{align}
+                        \rho(t) &= {{| (s|h) |} \over {\sigma_{h}}} \\
+                             &= {{(\tilde h_{template}|\tilde h)} \over {\sqrt{(h_{template}|h_{template})}}}
+                \end{align}
 
-	The value of the SNR will then be proportional to the amplitude of the signal buried in the noise. 
+        The value of the SNR will then be proportional to the amplitude of the signal buried in the noise.
+	The smart choice for a threshold that can be set on this value is such that
+	it can admit as many signals as possible, while still keeping the false alarm rate low. 
 
 \subsection{Matched Filtering for Compact Binary Signals}
 
@@ -1390,6 +1404,64 @@
 %	In practice this maximum value cannot be taken in a continuous way, 
 %	the parameter space can only be sampled in a discrete manner: template banks.
 %
+
+\section{Template Bank}
+
+
+	To perform a matched-filtered search that would recover any CBC system 	
+	with minimal loss in SNR over a given range of intrinsic parameters 
+	one must filter the data against a a bank of templates, 
+	to obtain an estimation of the parameters for the source of the signal 
+	from the template that provided the largest SNR.
+	
+
+	The manifold of waveforms is a continuous space in the component masses, 
+	of which we are only able to search discrete points, 
+	which have to be placed in such a way that any signal
+	that has parameters in the space will still produce an SNR 
+	above threshold by matching with the “closest” template. 
+	In order to compute the distance between two templates of different parameters, 
+	one can create a metric over the parameter space and then compute the the error between the two waveforms.
+	Two neighbouring templates can be defined as $\hat h(f;\lambda)$ and $\hat h(f;\lambda + \Delta \lambda)$,
+	where $\lambda = \{\lambda_{intr}, \lambda_{extr}\}$ is the a set of 
+	the intrinsic (masses and spins) and extrinsic parameters (time of arrival and phase).
+	Using the overlap of two waveforms, defined as the inner product inversely weighted 
+	by the one-sided PSD $S_n(f)$ of the detector noise, one can compute the match:
+
+		\begin{equation}
+			\mathcal{M}(\lambda, \Delta \lambda) \equiv max_{\Delta \lambda_{extr}} \langle\hat h(f;\lambda), \hat h(f;\lambda + \Delta \lambda)  \rangle
+		\end{equation}
+
+	The match is maximised only over the extrinsic parameters, 
+	because waveforms related by time and phase offsets
+	are described by the same template, 
+	since all possible coalescence times and phases are searched for.
+	This expression can be Taylor-expanded about $\Delta \lambda = 0$:
+
+		\begin{equation}
+			\mathcal{M}(\lambda, \Delta \lambda) \simeq 1 - g_{ij} \Delta \lambda^i \Delta \lambda^j
+		\end{equation}
+
+	Where 
+
+		\begin{equation}
+			 g_{ij} \equiv -{1 \over 2} ({{\partial^2\mathcal{M}} \over {\partial  \Delta \lambda^i  \partial. \Delta \lambda^j}})_{\Delta \lambda = 0}
+		\end{equation}
+
+	can be interpreted as a metric in the parameter space, which is also defined
+	by the mismatch $MM = (1 − \mathcal{M})$ between two templates.
+	Any mismatch between signal and template leads to a loss in SNR, 
+	and down-weighting by the signal-based vetoes. 
+	When constructing a template bank, this mismatch can be also interpreted 
+	as the proper distance in the parameter space,	
+
+		\begin{equation}
+			ds_{ij}^2 = 1 − \mathcal{M} = g_{ij} \Delta \lambda^i \Delta \lambda^j
+		\end{equation}
+
+	which should be chosen so that the loss in signal-to-noise ratio due to the mismatch 
+	of the template with the signal does not deprecate the detectability of these sources.
+
 \section{Candidate Event Significance}
 
 
@@ -1457,15 +1529,6 @@
 	Using the distribution of coincident events from the time shifts, we can measure 
 	how many noise background events are louder than a given candidate event. 
 
-\section{Template Bank}
-
-
-	To perform a matched-filtered search that would recover any CBC system 	
-	with minimal loss in SNR over a given range of parameters 
-	one must filter the data against a template bank, 
-	designed to cover the whole parameter space.
-	The manifold of waveforms is a continuous space in the component masses, 
-	of which we are only able to search discrete points. 
 \subsection{The lower frequency cutoff}
 
 	The lower frequency cutoff $f_L$, which essentially determines the size of the parameter space 
@@ -1480,7 +1543,6 @@
 
 \section{Injections}
 
-\cite[p. 2] {bar}
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational wave observation so far}
 
@@ -1528,14 +1590,14 @@
 %--------------------------------------------------------
 \chapter{Conclusions}
 
-
+\cite[]{1}
 \backmatter
 \cleardoublepage
 
 \phantomsection % Give this command only if hyperref is loaded \addcontentsline{toc}{chapter}{\bibname}
 
 \begin{thebibliography}{100}
-   \bibitem[nome]{riferimento}
+   \bibitem[1]{Articolo} Articolo da citare
 \end{thebibliography}
 
 \printbibliography
