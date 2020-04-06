@@ -1461,6 +1461,69 @@
 
 	which should be chosen so that the loss in signal-to-noise ratio due to the mismatch 
 	of the template with the signal does not deprecate the detectability of these sources.
+\subsection{Template placement}
+
+
+	The computational cost of any gravitational wave search
+	 is directly proportional to the number of templates used.
+	It is therefore vital to have a method that enables one 
+	to place a template bank using as few templates as possible. 
+	Two broad classes of template-placement algorithms 
+	have been developed in the literature. 
+
+\subsubsection{Stochastic placement}
+
+	Stochastic methods place templates, 
+	that are randomly drawn from an initially chosen distribution, 
+	at random points in the parameter space.
+	The bank is gradually built by comparing the newly drawn waveform
+	with previously accepted templates, 
+	and keeping only the ones that are sufficiently far away 
+	from the ones the bank already has.
+ 	Those that are too similar to at least one existing waveform are discarded.
+	This procedure continues until the pre-set convergence threshold is reached, 
+	resulting in a final saturated template bank.
+	The threshold is measured from the the ratio of rejected templates over the total number of template candidates.
+	Stochastic placement, however, has the shortcoming that 
+	a large number of trial waveforms needs to be drawn before convergence is achieved 
+	(much more than the required number of templates in the bank). 
+	This method also tends to over-cover the parameter space, 
+	in the sense that the average template density is higher than optimal at fixed minimum match.
+	Furthermore, the construction of a stochastic template bank 
+	can be computationally demanding since, in principle, 
+	each new proposed template needs to be compared 
+	with previously chosen templates. 
+	This problem becomes particularly acute 
+	the closer the bank gets to saturation. 
+	The computational problem also becomes especially demanding 
+	when precession effects are considered as these additional degrees 
+	of freedom require a large number of templates. 
+	It is therefore important to consider methods of optimising a template bank, 
+	specifically finding ways of improving effectualness for a given number 
+	of templates and reducing the computational cost. 
+
+\subsubsection{Geometric placement}
+
+
+	A different method to construct the bank is geometric placement:
+	this means building a flat, linear space in such a way that embeds the space of physical waveforms. 
+	Hence, a crucial point is to identify a set of coordinates 
+	in which the parameter space metric is almost constant: 
+	the Euclidean distance in this space coincides with the matched-filtering overlap 
+	between waveforms, making these coordinates naturally suited to define a regular lattice. 
+	The minimal match determines the choice of spacing of the discrete template parameters 
+	and therefore the number of discrete templates in the family.
+	The most significant drawback of such banks is the amount of fine-tuning required 
+	in order to cover “holes” across local patches because of the misalignment 
+	of the cells arising from the variation of the metric. 
+
+\subsubsection{Hybrid placement}
+
+	In practice, a combination of the two methods is often a better strategy. 
+	For example, one can place templates geometrically at low masses 
+	and stochastically at high masses, or one can use many small patches 
+	with regularly spaced templates, which are themselves placed stochastically 
+	to cover the entire parameter space. 
 
 \section{Candidate Event Significance}
 
