@@ -1461,6 +1461,64 @@
 
 	which should be chosen so that the loss in signal-to-noise ratio due to the mismatch 
 	of the template with the signal does not deprecate the detectability of these sources.
+
+\subsubsection{Fitting factor}
+
+	The standard measure for deciding what class 
+	of waveforms is good enough is the fitting factor, $FF$.
+	The fitting factor i quantitatively describe closeness of 
+	the true signals to the template manifold, in terms of the fraction of 
+	signal-to-noise-ratio obtained when filtering 
+	the data with an approximate family of templates. 
+	To quantify the bank coverage, usually Monte-Carlo simulations carried out   
+	to compute the distribution of fitting factors of the banks against 
+	a set of injected signal waveforms with randomly chosen parameters. 
+	The fitting factor, $FF$, of a template bank with respect to an injected signal $h_{*}$ 
+	is defined as the maximum value of match over all the templates:
+
+		\begin{equation}
+			FF(h_{*}) = max \mathcal{M}(\hat h_{*}, \hat h(\Lambda))
+		\end{equation}
+
+	assuming that the signal model is the same for both templates and injections. 
+	The fractional loss of SNR in capturing the signal 
+	$h_{*}$ with the template bank is $1 - FF(h_{*})$.
+
+	If the fitting factor is less than unity, the signal lies outside the parameter space, 
+	and the fitting factor represents the cross-correlation between 
+	the signal and the template nearest it in parameter space. 
+	This loss arises from the discrete placement of the templates. 
+	Because binaries are, on large scales, uniformly distributed in space 
+	and because the signal strength scales inversely with distance, 
+	the fraction of event rate retained is approximately FF. 
+	Therefore it is desirable that the template bank is constructed such that 
+	no putative signal anywhere in the parameter space
+	has a FF value less than the minimal match. 
+	A bank is said to be effectual if it can satisfy this condition.
+	It has become conventional to regard $FF = 97\%$, 
+	which translates in $10\%$ loss of event rate, as a reasonable goal.
+
+
+\subsubsection{Frequency bound}
+
+	An algorithm that most efficiently covers the parameter space relies on the choice of a coordinate system, 
+	in which the metric is as flat as possible across the space.
+	In computations with the two-mass-parameter waveforms, 
+	the best coordinates to use on the parameter space are not the two masses, 
+	but rather the inspiral times, chirp times, from some fiducial frequency to final merger, 
+	as computed at Newtonian and first post-Newtonian order. 
+	The metric components are slowly varying over the parameter space, 
+	when expressed in as dimensionless chirp times.
+	
+
+        The lower frequency cutoff $f_L$, which essentially determines the size of the parameter space
+        of chirptimes and plays a crucial role in the computational resources required
+        to process the data through the template bank.
+        The initial fiducial frequency $f_L$ defines the range of values of the chirptimes
+        and is not itself a parameter to search for.
+        However, it affects the length of the signals
+        (therefore, the parameter space to be covered) and the SNR extracted.
+
 \subsection{Template placement}
 
 
