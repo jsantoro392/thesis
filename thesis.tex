@@ -1438,13 +1438,12 @@
 	and down-weight triggers caused by noise transients, 	
 	the matched-filter SNR is re-weighted 
 
-			\begin{equation}
-				\hat \rho = \rho \hspace*{2cm}  for \chi^2_r <= 1
-			\end{equation}
-	
-			\begin{equation}
-				\hat \rho = \rho[{1 \over 2} (1 + (\chi^2_r)^3)]^{-1/6}  \hspace*{2cm}  for \chi^2_r > 1
-			\end{equation}
+		\begin{equation}
+		\begin{cases}
+			\hat \rho &= \rho \hspace*{4.5cm}  \text{for} \hspace*{0.15cm}\chi^2_r <= 1 \\
+			\hat \rho &= \rho[{1 \over 2} (1 + (\chi^2_r)^3)]^{-1/6}  \hspace*{1.5cm}  \text{for} \hspace*{0.15cm} \chi^2_r > 1
+		\end{cases}
+		\end{equation}
 
 	The search requires that gravitational-wave signals be identified via matched filtering 
 	in at least two independent detectors with consistent parameters. 
@@ -1490,7 +1489,7 @@
 	noise background events in the observation time with a detection-statistic value above that of the candidate event, given by 
 
 		\begin{equation}
-			FAP(\hat \rho) \equiv P(\geq 1 noise event above \hat \rho|T,T_b) = 1 - e^{-T{{1+n_b(\hat \rho)} \over{T_b}}}
+			FAP(\hat \rho) \equiv P(\geq 1 \hspace*{0.1cm}\text{noise event above}\hspace*{0.1cm} \hat \rho|T,T_b) = 1 - e^{-T{{1+n_b(\hat \rho)} \over{T_b}}}
 		\end{equation}
 
 	where T is the observation time of the search.
