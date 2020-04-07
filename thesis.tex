@@ -1399,73 +1399,109 @@
 	which makes the parameter space three-dimensional, 
 	using the two masses and reduced-spin as variables. 
 	
+\section{Candidate ranking statistic}
+	
+\subsection{$\chi^2$ test}
 
-\section{Candidate Event Significance}
+	Since the detector’s calibrated strain data contains both stationary, Gaussian noise 
+	and non-Gaussian noise transients of instrumental and environmental origin,
+	matched filtering does not suffice as a detection statistic.
+ 	Consistency checks are needed to distinguish to mitigate the effect of the noise transients,
+	that can sometimes mimic the signal from a true signal,
+	and to assign an accurate statistical significance to candidate signals.
+  	To eliminate the worst periods of detector performance, 
+	data quality investigations are conducted by looking only at the detector behaviour,  
+	which is analysed by monitoring channels.
+	After removing data that is not suitable for astrophysical searches, 
+	noise transients, glitches, of unknown origin could still be present in the data 
+	and can cause certain templates to produce high SNR values.
+	To mitigate the effect of glitches, a gating procedure is applied:
+	after identification of times impacting on the sensitivity of the search,
+	the data are zeroed out around these times.
+	Filtering the data with template banks generates a matched-filter SNR for each template in each detector;
+	GPS times of local maxima that exceed the SNR threshold are recorded as triggers. 
+	Waveform consistency tests are needed to determine if the morphology 
+	of a candidate signal is consistent with the expectation from the triggering template waveform.
+	For signals from compact binary mergers, one can construct $\chi^2$-test:
+	the template is split into p non-overlapping frequency bins; 
+	these bins are constructed so that each contributes equally t
+	o the SNR of a perfectly matching signal. 
+	The $\chi^2$ statistic compares the expected to the measured template in each bin according to 
 
+		\begin{equation}
+			\chi^2_r = {1 \over {2p-2}}   \sum_{I=1}^{I=p} || \langle   s|h_i  \rangle -   \langle  h_i|h_i   \rangle ||^2
+		\end{equation}
 
-	To assign a statistical significance to detection candidates, 
-	we need to measure the false-alarm rate of the search as a function of the detection statistic.
-	Since it is not possible to isolate the detectors from GWs, i
-	t is impossible to directly measure the detector noise in the absence of signals. 
-	This, together with the non-stationary and non-Gaussian nature of the noise, 
-	means that the false-alarm rate of the search must be empirically measured. 
-	This is done by applying a time shift to the triggers from one detector relative to another. 
-	The minimum time-shift offset is chosen to be larger than the time-coincidence window 
-	used to determine if signals are observed with consistent parameters in the network. 
-	Events in the time-shifted analysis therefore cannot be due to the coincidence 
-	of the pair of triggers produced by a real gravitational-wave signal. 
-	Many time shifts create a large background data set which are used to 
-	approximate the background noise and estimate the search’s false-alarm rate. 
-	Since different templates in the bank can respond to detector noise in different ways, 
-	the search background is not uniform across the template bank. 
-	To maintain the sensitivity of the search to signals over a wide range 
-	of masses under this non- uniform background distribution, 
-	the search sorts both candidate events and background events into different classes. 
-	The false-alarm rate of the search in each class is used to 
-	assign a p-value to the candidate events; 
-	a given candidate event is compared to the background events from the same class. 
-	To account for having searched multiple classes 
-	whose response is not completely independent, 
-	the significance of candidate events is decreased by applying 
-	a trials factor equal to the number of bins to obtain a final p-value 
-	which describes the statistical significance of a candidate event. 
+	where $\chi^2_r = \chi^2/(2p-2)$ is the reduced chi-squared and for real GW signals this value should be near unity, 
+	meaning that the data is describing Gaussian noise with an embedded signal.
+	In order to combine the SNR with the $\chi^2$ test to produce a ranking statistic 
+	and down-weight triggers caused by noise transients, 	
+	the matched-filter SNR is re-weighted 
 
+			\begin{equation}
+				\hat \rho = \rho \hspace*{2cm}  for \chi^2_r <= 1
+			\end{equation}
+	
+			\begin{equation}
+				\hat \rho = \rho[{1 \over 2} (1 + (\chi^2_r)^3)]^{-1/6}  \hspace*{2cm}  for \chi^2_r > 1
+			\end{equation}
+
+	The search requires that gravitational-wave signals be identified via matched filtering 
+	in at least two independent detectors with consistent parameters. 
+	To be considered a candidate event, arrival times of the gravitational waves at each detector 
+	must differ by no more than the the maximum time-of-flight between the detectors, 
+	with an additional window to account for uncertainty in the measurement of the time of arrival.
  
-	Triggers from one detector are shifted in time
-	 with respect to triggers from the second detector, 
-	then the coincidence test is re-computed to create a background data set 
-	that does not contain coincident gravitational-wave signals. 
-	Repeating this procedure many times on a sufficiently large duration of input data 
-	produces a large sample of false coincidences that are used to compute 
-	the false-alarm rate of the search as a function of the detection statistic. 
-	Under the assumptions that the times of transient noise artifacts 
-	present in the data streams are not correlated between different detectors
-	and that gravitational-wave signals are sparse in the data set, 
-	this is a sufficiently accurate approximation of the background to support detection claims. 
-	Our significance calculation requires that candidate events are statistically independent; 
-	however, both noise transients and signals can generate many triggers across the template bank, 
-	potentially yielding several correlated coincident events within a short time (1 second). 
-	To generate independent candidates, the pipeline performs a final stage of clustering: 
-	if more than one coincident event occurs within a time window of fixed duration,	
-	typically 10 seconds, only the event with the highest detection statistic value,
-	an identical clustering operation is also performed on the events in each time- shifted analysis. 
-	Each candidate event is assigned a p-value that measures its significance. 
-	For a candidate event with detection statistic $\rho$, its p-value p is the probability that the 
-	there are one or more coincident noise events (false alarms) that have 
-	a detection statistic value greater than or equal to $\rho$ . 
-	We calculate p-values under the null hypothesis that all triggers seen are due to noise. 
-	While this hypothesis might be unrealistic in the presence of loud signals, 
-	we can never determine with complete certainty from gravitational-wave data alone 
-	that any given trigger is due to signal rather than noise. 
-	In order to claim detection it is necessary to show that the statistic values 	
-	of events actually obtained in the search are highly improbable under such a null hypothesis: 
-	i.e. that the p-value is very small. 
-	Including all search triggers in the background calculation results in a self-consistent significance, 
-	i.e. small p-values are assigned to random noise candidate events with the expected frequency; 
-	the procedure also does not adversely affect the efficiency of the search 
-	compared to other methods which aim to remove likely signal triggers before calculating the significance of search events. 
-	Using the distribution of coincident events from the time shifts, we can measure 
-	how many noise background events are louder than a given candidate event. 
+\subsection{False Alarm Rate}
+
+	After mitigating the effects of noise transients, the probability of remaining transients 
+	occurring simultaneously in two detectors and producing a large joint 
+	ranking statistic value becomes extremely small.
+	In order to keep only the most representative trigger among all the triggers produced by a single inspiral signal or glitch, 
+	a final clustering step is performed on coincident triggers, 
+	by selecting those with the largest value of $\hat \rho$ 
+	in each time window of $10s$. 
+	Any other events in the same time window are discarded. 
+	This ensures that a loud signal or transient noise artifact gives rise to at most one candidate event.
+	In order to assess the actual significance of a candidate, 
+	we need to measure the false-alarm rate, (FAR), of the search as a function of the detection statistic.
+	Typically, a detector’s background FAR can be determined 
+	simply by turning off the source or changing the orientation of the detector. 
+  	However, since it is not possible to isolate the detectors from gravitational waves, 
+	it is impossible to directly measure the detector noise in the absence of signals.
+ 	To estimate the FARs the data stream is shifted in time, 
+	choosing the minimum time-shift offset to be larger than the time-coincidence window 
+	used to determine if signals are observed with consistent parameters in the network.
+	The resulting “time-shifted” coincidences are then treated as a background noise sample. 
+	This is done numerous times with different time shifts in order to obtain 
+	a probability distribution for the joint detector ranking statistics. 
+	Each coincident trigger is assigned a FAR given by the number 
+	of background triggers, $n_b(\hat \rho)$, with an equal or larger ranking statistic, 
+	divided by the total time searched for time-shifted coincidences $T_b$
+		
+		\begin{equation}
+			FAR = {{1 + n_(\hat \rho)} \over {T_b}}
+		\end{equation}
+
+	To account for the noise background varying across the target signal space, 
+	candidate and background events are divided into different search classes based on template length. 
+	The significance of candidate events is measured against the background from the same class. 
+	For each candidate event, one can compute the probability of finding one or more 
+	noise background events in the observation time with a detection-statistic value above that of the candidate event, given by 
+
+		\begin{equation}
+			FAP(\hat \rho) \equiv P(\geq 1 noise event above \hat \rho|T,T_b) = 1 - e^{-T{{1+n_b(\hat \rho)} \over{T_b}}}
+		\end{equation}
+
+	where T is the observation time of the search.
+	If a candidate event’s detection-statistic value is larger 
+	than that of any noise background event, 
+	then the analysis places an upper bound on the candidate’s false alarm probability. 
+	The inverse of FAR specifies the waiting time before such an event from noise is seen, and it is given by 
+
+		\begin{equation}
+			IFAR = {1 \over {FAR}}
+		\end{equation}   
 
 \section{Coincident and coherent research}
 
