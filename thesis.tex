@@ -1447,7 +1447,7 @@
 
 	The search requires that gravitational-wave signals be identified via matched filtering 
 	in at least two independent detectors with consistent parameters. 
-	To be considered a candidate event, arrival times of the gravitational waves at each detector 
+	To be considered a candidate event, arrival times of the GWs at each detector 
 	must differ by no more than the the maximum time-of-flight between the detectors, 
 	with an additional window to account for uncertainty in the measurement of the time of arrival.
  
@@ -1466,7 +1466,7 @@
 	we need to measure the false-alarm rate, (FAR), of the search as a function of the detection statistic.
 	Typically, a detector’s background FAR can be determined 
 	simply by turning off the source or changing the orientation of the detector. 
-  	However, since it is not possible to isolate the detectors from gravitational waves, 
+  	However, since it is not possible to isolate the detectors from GWs, 
 	it is impossible to directly measure the detector noise in the absence of signals.
  	To estimate the FARs the data stream is shifted in time, 
 	choosing the minimum time-shift offset to be larger than the time-coincidence window 
@@ -1506,41 +1506,69 @@
 
 \section{Injections}
 
-In order to assess the sensitivity of a search pipeline to a particular source, 
-	we can conduct searches on data that has had simulated gravitational waveforms added.
-	 These simulated waveforms are called injections. 
-	When combined with time-slide analyses, 
-	we can ascertain how well we detect certain types of sources 
-	by determining false alarm rates for the injections that we recover 
-	and noting which injections are not recovered at all from our pipeline. 
+\section{Injections}
+
+	In order to test the sensitivity of a search pipeline to detect CBC signals, 
+	simulated gravitational waveforms, injections, can be added o the data before filtering.
+	Then a search can be performed over the data with the added injections just as it would normally do with the real data;
+	by determining FARs for the injections that we recover, 	
+	and noting which injections are not recovered at all,
+	we can understand how well we detect certain types of sources.
 	Studies of injection recovery also aid with tuning different parameters 
 	of the search pipeline and setting upper limits on the rates of particular sources. 
-	he recovery of lone ringdown waveform injections and also ringdown waveforms 
-	attached to inspiral-merger CBC signals is studied for the ringdown search. 
-	The sensitivity of the ringdown search pipeline differs depending on whether 
-	it is recovering IMR signals or lone ringdown signals. 
-	The amount of energy emitted as gravitational waves 
-	for these two distinct types of signals can differ by orders of magnitude 
-	depending on the source, thus affecting the distance to which we can observe. 
-	Furthermore, the ringdown pipeline recovers the parameters 
-	of the two waveforms with different accuracies. 
-	One method of determining sensitivity to particular injections is the eciency, 
+	One method of determining sensitivity to particular injections is the efficiency, 
 	or fraction of found injections, as a function of injected physical distance. 
-	Traditionally, found injections are binned in logarithmic distance 
-	and the effiency is calculated in each bin. 
-	The uncertainty in each bin is binomial, 
-		\begin{equation}
-			\sigma^2_{\epsilon} = {{\epsilon(1-\epsilon)} \over {N}}
-		\end{equation}
-
-	where N is the total number of injections made. 
-	We choose to count injections missed due to vetoes as 
-	a loss in live-time rather than a loss in eciency. 
-	 Another method of determining a search’s sensitivity to a particular source 
+	Another method of determining a search’s sensitivity to a particular source 
 	is to examine the injected distance as a function of frequency 
 	(or total mass) for missed and found injections. 
 	
+	These simulations can be performed in two ways: software and hardware injections.
+	The former are used to verify the results obtained from software injections, 
+	the latter are used for high-statistics evaluation of the performance of analyses. 
 
+\subsection{Software injections}
+
+	Software injections are a streaming time series of simulated gravitational waveforms, 
+	generated in the software, from a synthetic population of a certain type of source, 
+	described by astrophysical parameters, including the strain amplitude, sky location, 	
+	and initial frequency, and added to the data stream. 
+	This can be done many times, by specifying a time-step at which to place injections, 
+	without disturbing the detector or significantly reducing the duty cycle of the detectors. 
+	To randomize the placement, a time interval needs to be provided around 
+	each time-step in which the injection is actually placed. 
+	Furthermore, one can choose to set up multiple injection searches with different injection sets. 
+	Thus, we can study the recovery of thousands of injections to decide on the best tuning for a search. 
+	However, there is no limit to the number of software injections that can be performed. 
+	The analysis of the same data can simply be repeated with different software injections present as often as is desired. 
+	For the CBC low mass analysis, the process is to use software injections to tune the pipeline; 
+	they are also used when calculating upper limits.
+	Software injections do not offer as comprehensive a test of the infrastructure as hardware injections. 
+	
+\subsection{Hardware injections}
+
+	In contrast hardware injections are performed by physically displacing
+	the detectors’ test masses to simulate the response of a GW passage. 
+	Even though the detectors’ response to a true GW signal is not 
+	exactly the same as the response from the injection,
+	the difference is well understood and it is only relevant at high frequencies.
+	These hardware injections offer a better test of the sensitivity of the infrastructure than the software ones:
+	they provide an end-to-end check for the search,
+	from the gravitational wave being incident on 
+	the detector through to making a detection, and parameter estimation analysis to recover signals in the detectors’ data. 
+	The recovery of hardware injections provides an additional check 
+	of the sign of the calibration between the Advanced LIGO detectors 
+	using astrophysical waveforms and the recovery measures 
+	the time delay of the signal in the controls system. 
+	However, as hardware injections cannot be removed from the data, 
+	times when hardware injections are made cannot be analysed 
+	for any other signals that might be in the data. 
+	Therefore, only a limited number of hardware injections can be made in a given stretch of data. 
+
+	If a detection candidate is a true gravitational wave, 
+	we should be able to reproduce the morphology of the posterior distributions 
+	using the hardware injections as well as with software injection. 
+	Conversely any significant differences have the potential to highlight 
+	discrepancies between the observation and our waveform models, or errors in our data analysis. 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational wave observation so far}
 
