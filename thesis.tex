@@ -6,6 +6,7 @@
 \usepackage{wasysym}
 \usepackage{siunitx}
 \usepackage{biblatex}
+\usepackage{titlesec}
 \addbibresource{sample.bib}
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
 \usepackage{amsmath, amssymb}
@@ -1504,7 +1505,42 @@
 
 \section{Coincident and coherent research}
 
-\section{Injections}
+	There are two main detection strategies to search for GWs 	
+	from a network of detectors: coincident and coherent.
+
+\subsection{Coincident analysis}
+
+	A coincidence analysis searches the data from individual detectors independently 	
+	and matches the candidate event lists of individual detectors for consistency,
+	in the mass and time parameters of a GW signal.
+	This methodology ignores the phase information at the expense of some loss in sensitivity, 
+	so there is no guarantee that the observed signals in each detector 
+	are compatible with a GW source with two polarisations.
+	The benefit of the coincidence search is that it is not computationally expensive: 
+	the dominant cost of the search is in performing a matched filter 
+	of the data against a bank of template waveforms, (as seen in Section.) :
+        this task is done once per detector per template.
+	A search over the sky location of the signal is then trivially done 
+	by time-shifting the results from the different detectors accordingly.
+        Similarly, the noise background is estimated by applying larger time shifts to the data,
+        significantly longer than the light travel time between detectors, to search for noise coincidences.
+        In a coincidence search, it is necessary to place a threshold on the SNR of events
+        which will be stored by the analysis prior to identifying coincidences.
+        This means that the power in the GW signal will only be accumulated
+	in those detectors where there was an event above threshold.
+
+\subsection{Coherent}
+
+	A coherent search is a very sensitive way to search for GWs from a network of detectors:
+	this strategy treats the detectors as if they are isolated 
+	and then combines the data from all detectors phase coherently, 
+	appropriately correcting for time-delays and polarization phases, 
+	to obtain an individual detection statistic which is then compared with a single threshold. 
+	The aim of this type of search is to obtain a single statistic for the full 
+	network, that is optimized in the maximum likelihood sense, 
+	to effectively construct a single, more sensitive detector.
+ 	While this method has been applied to searches for unmodelled burst sources,
+        it has proven more difficult to use for the binary merger search.
 
 \section{Injections}
 
