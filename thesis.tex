@@ -30,30 +30,30 @@
 \tableofcontents
 
 \mainmatter 
-
+$\omega(t)$
 \chapter{Introduction}
 
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves,
 	GWs, on the basis of his theory of general relativity.  
 	Einstein predicted that the motion of two bodies, such as planets or stars—orbit each other,
-	could cause distortions of space-time, GWs.
+	could cause distortions of space-time, GWs \cite{einein}\cite{einzwei}.
 	These ripples in the fabric of space-time would spread out like the ripples in a pond when a stone is tossed in,
 	although their amplitude would be so small that it would be nearly impossible to detect by any technology foreseen at that time.
 	It was also predicted that objects moving in an orbit would lose energy for this reason 
 	(a consequence of the law of conservation of energy), as some energy would be given off as GWs, 
 	although this would be insignificantly small in all but the most extreme cases. 
 
-	Gravitational waves squeeze and stretch anything in their path as they pass by.
+	GWs squeeze and stretch anything in their path as they pass by.
 	The most powerful GWs are created when objects move at very high speeds. 
 	Examples of such things are orbiting pairs of black holes and neutron stars, 
 	or massive stars blowing up at the ends of their lives.
 	There are four categories of GWs based on what generates them: 
 	continuous, compact binary inspiral, stochastic, and burst. 	
 	Each category of objects generates a unique or characteristic set of signal 
-	that LIGO-Virgo's interferometers can sense, and that researchers can look for in LIGO-Virgo’s data. \\
+	that LIGO-Virgo's interferometers can sense, and that researchers can look for in LIGO-Virgo’s data. 
         The interferometers are designed to detect a specified range of frequencies of GWs,
         which means that they cannot detect objects orbiting at rates that fall outside of this range of frequencies 
-        (either too low or too high). \\ 
+        (either too low or too high). 
 	During the final moments of the merger of two compact objects such as neutron stars 
 	or black holes the emission of GWs is at its peak. The binary loses energy, 
 	largely through GWs, and as a result, the two compact objects spiral in towards each other, 
@@ -66,7 +66,7 @@
         Heavy objects, like black holes, move through their final inspiral phase much more rapidly than 'lighter' objects, 
         like neutron stars. This means that black-hole merger signals are much shorter than neutron star merger signals.
         For example, the first detection of a GW signal, GW150914, coming from the a pair of merging black holes, 
-	produced a signal just two-tenths of a second long. \\
+	produced a signal just two-tenths of a second long. 
         In contrast, the first neutron star merger LIGO detected in August 2017 generated a signal over 100 seconds long.
 	This first observation was a a remarkable accomplishment: it demonstrated both the existence of binary stellar-mass black hole systems, 
 	and the fact that such mergers could occur within the current age of the universe.  
@@ -106,7 +106,7 @@
 	tensor of matter-fields and $ G_{N}$ is Newton’s gravitational constant. 
 
 	In 1916 Einstein found the weak-field solutions to general relativity had wave-like solutions, GWs.
-	Gravitational waves are ripples in the fabric of spacetime, 
+	GWs are ripples in the fabric of spacetime, 
 	which periodically lengthen and shorten space, and speed up and slow down time.
  	To study the properties of GWs, it is instructive to first study them 
 	in situations where the gravitational fields are weak.
@@ -325,245 +325,383 @@
 	As the Rienmann tensor describes the tidal forces caused by the gravitational field, 
 	the geodesic deviation equation shows that tidal forces can be considered as deviations of nearby geodesics.
 
-\subsection{Interaction of gravitational waves with test masses}
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Gravitational wave detection with laser interferometers}
 
-	To understand how GWs interact with the interferometric detectors, that will be described in %warning: rephrase Section%  
-	it is necessary to use the geodesic equation and the geodesic deviation equation, which are also important tools 
-	for understanding the physical meaning of a given gauge choice. \\
-	In fact the physics must be invariant under coordinate trasformations but GWs and the detector description's depend on the chosen reference frame.
-	Consider a test mass initially at rest at $\tau = 0$. The geodesic equation then becomes
+	Electromagnetic waves interact strongly with matter, while GWs travel unperturbed through space,
+        as they interact only very weakly with matter. This makes them an excellent probe for astrophysicalphenomena that dark
+        in the electromagnetic channel, such as the coalescence and merger of black holes, the collapse of a stellar core,
+  	the dynamics of the early Universe. However, it also means that detecting GWs is extremely challenging.
+        Electromagnetic radiation typically has a wavelength smaller than the size of the emitting system,
+        and so can be used to form an image of the source, while the wavelength of gravitational radiation is typically comparable
+        to or larger than the size of the radiating source.
+        Because GWs are generated by the bulk dynamics of the source itself therefore they cannot be used to form an image:
+        the radiation simply does not resolve the generating system.
+        In most cases, electromagnetic astronomy is based on observers obtain a large amount of information about sources on a small piece
+        of the sky while GW astronomy is intrinsically an all-sky approach.
 
-		\begin{equation}
-		{{dx^i}\over{d\tau^2}} = -[\Gamma^i_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}}]_{\tau=0} \\ 
-		= - [ \Gamma^i_{00}({{dx^0}\over{d\tau}})^2]_{\tau=0}
-		\end{equation}
+	The experimental search for GWs was initiated by Joseph Weber in the early 60  \cite{weber}.
+	Weber’s first GW detector was a resonant bar detector; 
+	the detection’s principle behind these instruments is that 
+	they would be set into oscillation at their resonant frequency 
+	by passing GWs near that resonant frequency.
+	For this purpose, Weber designed and built a big aluminum cylinder as a sort of antenna, 
+	hung by a steel wire from a support to isolate vibrations of its environment. 
+	The whole instrument was placed inside a vacuum chamber 
+	and the cylinder surrounded by a belt of piezoelectric crystal, 
+	to sense cylinder vibrations induced by GWs. 
+	Even though, over the course of the following years, the bar detectors’ sensitivity increased, 
+	it did not reach a level where they would be able to detect an extragalactic source.
+	The first explicit suggestion of a laser interferometer detector 
+	was outlined by Gertsenshtein and Pustovoid in 1962 \cite{urss}.
+	From the early 2000s, several kilometer-scale ground-based interferometers 
+	operated in the frequency band from $10 Hz$ to $1 kHz$ at a sensitivity 
+	that all owed the potential for detection from a variety 
+	of sources at large extragalactic distances.
 
-	because
+\subsection{Description of laser interferometers}
 
-		\begin{equation}
-		{{dx^i}\over{d\tau}} = 0 \hspace*{2cm} at \hspace*{0.5cm}\tau = 0
-		\end{equation}
-
-	since the mass is initially at rest. Expanding to first order in $h_{\mu\nu}$, 
-	the Christoffel symbol $\Gamma^i_{00} = 1/2(2\partial_{0}h_{0i} - \partial_i h_{00})$ vanishes in the TT gauge
-	because both $h_{00}$ and $h_{0i}$ are set to zero by the gauge condition. 
-	Therefore, if at time $\tau = 0$ $dx^i/d\tau$ is zero, it remains zero at all times, 
-	because its derivative also vanishes.
-	This shows that if two test masses are initially separated by a coordinate separation of $x^i$ in the TT frame, 
-	and are at rest with respect to each other, they will remain at this separation. 
-	Overall, it seems that a GW has no influence on the geodesic or on the deviation of geodesics.
-	In other words, in the TT gauge the coordinate location of a slowly moving, free-falling body is unaffected 
-	by a GW because the coordinates move with the waves.
-	The TT gauge illustrates that, in general relativity, the physical effects are not expressed by what happens 
-	to the coordinates since the theory is invariant under coordinate transformations:
-	the position of test masses does not change because the gauge freedom allowed to define the coordinates 
-	in such a way that they do not change.
-	Physical effects can instead be found monitoring proper distances, or proper times.
-
-	GWs cause the proper separation between two freely falling particles to oscillate, 
-	even if their coordinate separation is constant. Consider two  free-falling particles, 
-	located at $z = 0$, and separated on the $x$ axis by a coordinate distance $L_c$. \\
-	Consider a GW in TT gauge that propagates down the $z$ axis, $h^{TT}_{\mu\nu}(t,z)$. 
-	The proper distance L between the two particles in the presence of the GW is given by
-
-		\begin{align}
-		\label{distance}
-		L & = \int^{L_c}_{0}{dx\sqrt{g_{xx}}} = \int^{L_c}_{0}dx\sqrt{1 + h^{TT}_{xx}(t,z=0)} \\
-		& \simeq \int^{L_c}_{0}{dx[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]} \\
-		&= L_c[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]
-		\end{align}
-
-	Therefore, the proper distance expands and shrinks periodically, with a fractional length change $\delta L/L_c$ given by
-
-		\begin{equation}
-		{{\delta L}\over{L_c}} \simeq {1 \over 2} h_{xx}^{TT}(t,z=0)
-		\end{equation}
-
-	Even though this result is calculated in the TT gauge, it is indeed gauge indipendent;
-	$h_{xx}^{TT}$ acts as a strain, a fractional length change.
-%warning: rephrase se uno sa monitorare la distanza propria fra due test-masses, allora sa rilevare GWs.%
-	Because the time that light travels between the two test masses is related to the proper distance,  
-	which directly relates to the accumulated phase measured by laser interferometric GW observatories,
-	GWs leave an imprint on the time it takes for a photon to make a round trip. 
-	Consequently, interferometers can potentially measure these imprints by measuring the length difference between
-	their arms. The “extra” phase $\delta \phi$ (if $L \ll \lambda$ so that the metric perturbation 
-	does not change value very much during a light travel time) accumulated by a photon that travels
-	down and back the arm of a laser interferometer in the presence of a GW is $\delta \phi = 4\pi \delta L \lambda$, 
-	where $\lambda$ is the photon’s wavelength and $\delta L$ is the distance
-	the end mirror moves relative to the beam splitter.
-%warning: end%
-
-\subsubsection{Local proper reference frame}
-
-	Since positions in a lab are not marked by test particles,  
-	the $TT$ frame is not very practical. 
-	The preferred reference frame is the proper detector frame 
-	in which the test particle is free to move because of a passing GW. 
-	The path of a test particle can then be described by Newtonian equations of motion in terms of forces. 
-	There are terms proportional to the Riemann curvature tensor from the gravitational field of the Earth 
-	but also terms from static gravitational forces, Coriolis forces, etc. 
-%warning: rephrase GW detectors need to be designed in order to maximise their sensitive to the part proportional to the Riemann tensor while minimizing their sensitivity to all other terms (see Section ...).%
-%	In order to leave only the part proportional to the Riemann tensor, 
-%	earth-based detectors look for higher frequency GWs, 
-%	as GWs with low frequencies are comparable with slowly varying Newtonian noises. 
-%	The acceleration in the $z$-direction due to Earth’s gravity can be dealt with suspension systems 
-%	allowing the test mass to act as if they were in a freely falling frame in the $x - y$ plane. 
-	Consider a detector capable of measuring changes in the proper distance, between two test masses
-	and assume the detector has a characteristic size that is much smaller 
-	than the characteristic wavelength of the GW.
-	In this case, one can approximate the entire detector to be in a near local Lorentz frame  
-	(freely falling frame), even in the presence of GWs. This coordinate system is defined by the requirements
-
-		\begin{equation}
-		z^i(\tau) = 0, \hspace*{2cm} g_{ab}(t, 0) = \eta_{ab}, \hspace*{2cm} \Gamma^a_{bc}(t,0) = 0,
-		\end{equation}
-
-	which imply that the metric has the form
-
-		\begin{equation}
-		ds^2 \approx -dt^2 + \delta_{ij}dx^i dx^j + O({{x^ix^j}\over{L^2_B}})
-		\end{equation}
-
-	where $L^2_B$ denotes the typical variation scale of the metric.
-	Consider now the proper distance between the two geodesics of the test masses, $\zeta^i$. 
-	The GWs influence these two test masses via the geodesic deviation equation
-
-		\begin{equation}
-		{{d^2\zeta^{\mu}}\over{d\tau^2}} + 2\Gamma^{\mu}_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^\rho}\over{d\tau}} + \zeta^{\sigma}\Gamma^{\mu}_{\nu\rho,\sigma}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}} = 0
-		\end{equation}
-
-	Assuming the two test masses are moving non-relativistically, $dx^i/d\tau$ can be neglected compared to $dx^0/d\tau$.
-	Furthermore, the term proportional to $\Gamma^{\mu}_{\nu\rho}$ is negligible compared to other terms in a near  local-Lorentz frame, LLF. Hence,
-
-		\begin{equation}
-		{{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{\sigma}\Gamma^{i}_{00, \sigma}({{dx^0}\over{d\tau}})^2 = 0
-		\end{equation}
-
-	Further simplifying $\zeta^{\sigma}\Gamma^{i}_{00, \sigma} \approx \zeta^{j}\Gamma^{i}_{00, j}$
-
-		\begin{equation}
-		{{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{j}\Gamma^{i}_{00,j}({{dx^0}\over{d\tau}})^2 = 0
-		\end{equation}
-
-	But in the LLF, $R^i_{0j0} = \Gamma^i_{00,j} - \Gamma^i_{0j,0} = \Gamma^i_{00,j}$ and therefore
-
-		\begin{equation}
-		{{d^2\zeta^{\mu}}\over{d\tau^2}} + R^i_{0j0} \zeta^j({{dx^0}\over{d\tau}})^2 = 0
-		\end{equation}
-
-	Because $dx^0/d\tau \approx 1$, one can approximate $\tau \approx t$:
-
-		\begin{equation}
-		{\ddot \zeta}^j = - R^i_{0j0}\zeta^j
-		\end{equation}
+	The optical layout of the detectors consists in perpendicular 
+	Fabry–Perot arm cavities of the Michelson, 
+	with lasers running along the 4 km arms, as shown in Fig.\cite{interferometer}. 
+	A beam splitter directs 1064 nm light from a diode-pumped, power amplified, 
+	and intensity and frequency stabilized Nd:YAG laser to the Fabry-Perot arms, 
+	which are made of an input test mass mirror and an end test mass mirror. 
+	The two beams of laser light that return from the two arms are recombined out of phase so that, 
+	in principle, no light reaches the so-called 'dark fringe' of the detector. 
+	The oscillating quadrupolar strain pattern of a GW, 
+	as seen in Fig.$\cite{ring}$, is well matched by a Michelson interferometer,
+        which makes a very sensitive comparison of the lengths of its two orthogonal arms.
+	Any variation caused by an alteration in the distance between the mirrors, 
+	produces a very small shift in phase between the beams and, thus, 
+	a variation of the intensity of the light, which is proportional to the wave's amplitude. \cite{weinstein}. 
 	
-	The key quantity entering into the equation, the Rienmann tensor, is gauge invariant in the linearized theory and  
-	it can be evaluated in any convenient coordinate system.
-	The expression for the Rienmann tensor in terms of the TT gauge metric perturbation $h_{ij}^{TT}$ is
+	The Fabry-Perot arms are a modification to the Michelson 
+	that increases the change in phase measured compared to that for a simple Michelson: 
+	because of multiple reflections that occur within each cavity, 
+	the tiny distance variation caused by a GW is amplified.
+	
+	All the main interferometer optical components and beam paths are enclosed in the ultra-high vacuum system
+        $(10^{−8} - 10^{−9} torr)$ for acoustical isolation and to reduce phase fluctuations from light scattering off residual gas.
+        The photodetectors are all located outside the vacuum system, mounted on optical tables.
+        The beam tubes are made from stainless steel and are designed to have low-outgassing
+        so that the required vacuum can be attained by pumping only from the ends of the tubes \cite{detector book}.
+        The interferometer optics, including the test masses, are manufactured to have extremely low scatter and low absorption.
+ 	
+	The GW detectors offer the possibility of very high sensitivities over a wide range of frequency and
+        are particularly suited for the detection of local perturbations in the spacetime metric from astrophysical sources,
+        such as binary black hole or neutron star coalescences, asymmetric rapidly spinning neutron stars,
+        and supernovae .
+ 	Gravitational radiation is produced by oscillating multipole moments of the mass distribution of a system.
+        Quadrupole radiation is the lowest allowed form, and is thus usually the dominant form.
+        In this case, the GW field strength is proportional to the second time derivative of the quadrupole moment of the source,
+        and it falls off in amplitude $h$, the direct observable of gravitational radiation, with distance as $1/r$.
+        This comparatively slow fall off with distances means that relatively small improvements in the sensitivity
+        of GW detectors can have a large impact on their science:
+        doubling the sensitivity of a detector doubles the distance to which sources can be detected,
+        increasing the volume of the Universe to which sources are measurable by a factor eight.
 
-		\begin{equation}
-		R^i_{0j0} = R_{i0j0} = - {1 \over 2}{\ddot h}_{ij}^{TT}
-		\end{equation}
+	The frequency band $1Hz \apprle f \apprle 10^4 Hz$ is targeted by
+        ground-based laser interferometric detectors has its low end set by the fact that it is extremely difficult
+        to prevent mechanical coupling of the detector to ground vibrations at low frequencies,
+        and probably impossible to prevent gravitational coupling to ground vibrations, human activity, and atmospheric motions.
 
-	Substituting into the previous equation, the geodesic deviation equation in the proper detector frame takes the form
+    \begin{figure}
+                \label{interferometer}
+                \includegraphics[scale=0.5]{interferometer}
+                \centering
+                \caption{Simplified schematic of the experimental setup.  
+			 Several modifications to the Michelson interferometer 
+			 are shown such as power and signal recycling. 
+			 The photodetector records the differential lengths of the arms. \cite{advligo}}
+                \label{fig:interferometer}
+                \end{figure}
 
-		\begin{equation}
-		{\ddot \zeta}^i = {1 \over 2}{\ddot h}_{ij}^{TT}\zeta^j
-		\end{equation}
+\subsection{Ground-based laser interferometers}
 
-	which can be interpreted as if the influence of a GW in a near LLF resembles a Newtonian force.
-	Generalizing Eq.$\ref{distance}$, the proper distance may be written as 
+	Detectors have nearly $4\pi$ steradian sensitivity to events over the sky. 
+	This means that any source on the sky will be detectable,
+        not just sources in specific pointing directions.
+	A single interferometer is unable to detect GW alone,
+	because it us difficult to separate a signal from noise confidently 
+	and also provides no directional information about the source.
+	A worldwide network of detector is essential to a successful GW detection:
+	looking for identical, simultaneous signals from multiple detectors worldwide, 
+	rules out noise sources which are local to a given detector. 
+	More detectors means a better determination of the direction of GW sources: 
+	to reconstruct the location of a transient signal is primarily due to triangulation 
+	based on the observed time delays of the signal at several detectors. 
+	For more than two sites, requiring a consistency between the observed amplitudes 
+	will also serve to restrict the allowed sky positions. \cite{triangular}
+	
+	A crucial aspect of the research is to make the instrument sufficiently sensitive:
+        at the targeted strain sensitivity of $10^{−21}$ m, the resulting arm length change is only $ 10^{-18}$ m for km-scale instruments, that is
+        a thousand times smaller than the diameter of a proton.
+        A key feature of the detectors is simply their scale:
+        the arms are made as long as practically possible to increase the signal due to a GW strain.
+	We now briefly list current GW interferometers.
 
-		\begin{equation}
-		s = \sqrt{L^2 + h_{ij}(t)L_{i}L_{j}}
-		\end{equation}
+	\begin{itemize}
+		\item LIGO. LIGO operates two identical and far apart GW observatories: 
+				   LIGO Hanford, in Washington, and LIGO Livingston, in Louisiana.
+				   The sites are separated by roughly 3000 km, 
+				   and are situated to support coincidence analysis of events.
+				   LIGO's original instrument engaged in "science observations" from 2002 to 2010. 
+				   During this initial phase, the Hanford site operated two collocated interferometers:
+				   one detector with 4 km long arms (H1) and another with 2 km long arms (H2). 
+				   The Livingston site operated a second 4 km detector (L1). 
+				   Each observatory is made up of ultra high vacuum system, 
+				   where the interferometer is placed.
+				   This Advanced LIGO project successfully improved the capabilities of the detectors, 
+				   both interferometers were completely overhauled to incorporate much more sophisticated engineering.
 
-	where $L_i$ denotes the spatial separation between two test masses and $L$ the associated coordinate distance.
-	In the given metric for the proper reference frame, the proper distance is just $|L| = \sqrt{L_iL_j}$ up to fractional errors; 
-	since we are considering detectors such that
-	$L \ll \lambda$, these errors are smaller than the fractional distance changes caused by the GW.
-	Therefore $|L|$ is simply identified as the proper separation. The equation for analyzing an interferometric GW detector is therefore
-
-		\begin{equation}
-		{\ddot L}^i = {1 \over 2}{\ddot h}_{ij}^{TT}L^j
-		\end{equation}
+		\item Virgo. The Advanced Virgo detector, located in Cascina (near Pisa) in Italy, 
+			            is the upgraded version of the Virgo detector. 
+				    As LIGO, it is a Michelson interferometer but with 3 km arms.
 
 
-\subsubsection{Ring of test masses}
-%warning:Queste 3 frasi vanno benissimo anche prima, quando mostri che serve la deviazione geodetica.  Ti permette poi di andare avanti fino all'eqazione precedente, senza mai dover dire rapidamente com'è fatto un IFO %
-	The effects of GWs cannot be seen in isolated bodies. 
-	This is a result of the fact that a single test mass, in a frame freely falling with it, 
-	will remain at rest. At least two test masses are required to measure the effects of GWs. 
-	This is also the case when one wants to measure any curvature of spacetime.
-	Consider a ring of test masses in the $(x, y)$ plane of a proper detector frame, initially at rest, centred at $z = 0$, 
-	and a GW travelling in the $z$-direction.
-	This situation restricts the attention to the $(x,y)$ plane alone, because $h_{ij}^{TT}$ is transverse to the propagation direction, 
-	so the GW will only have influence in the plane of the test masses:
-	the only non zero compontents of the metric perturbation are
+                 \item GEO600. GEO600 is a 600 m interferometer located near Hannover,
+                 	                  Germany. It is designed and operated by scientists from the
+                              		  Max Planck Institute for Gravitational Physics and the Leibniz Universität Hannover.
 
-		\begin{equation}
-		h_{xx}^{TT} = - h_{yy}^{TT} = h_{+} \hspace*{3cm} h_{xy}^{TT} = h_{yx}^{TT} = h_{\times}
-		\end{equation}
+                  \item KAGRA. It is Japan’s first GW detector and also the first GW detector to operate
+					      at cryogenic temperatures, improving sensitivity at frequencies around 100 Hz.
 
-	where $h_{+}$ and $h_{\times}$ are the two polarization components, which are indipendent and can be considered separately.
-	For the plus polarization at $z=0$ and initial conditions $h_{ij}^{TT} = 0$ at $t=0$:
+\end{itemize}
 
-		\begin{equation}
-		h_{ab}^{TT} = 
-		\begin{bmatrix}
-		1  & 0 \\
-		0 &  -1 \\
-		\end{bmatrix} 
-		h_{+}\cos \omega t
-		\end{equation}
+\section{Interaction of gravitational waves with test masses}
+	
+	The effects of GWs cannot be seen in isolated bodies. This is a result
+	of the fact that a single test mass, in a frame freely falling with it, will remain at rest.
+	At least two test masses are required to measure the effects of gravitational
+	waves. This is also the case when one wants to measure any curvature of spacetime.
+        Therefore, to understand how GWs interact with the interferometric detectors,
+        it is necessary to use the geodesic equation and the geodesic deviation equation, which are also important tools
+        for understanding the physical meaning of a given gauge choice. 
+        In fact the physics must be invariant under coordinate trasformations but GWs and the detector description's depend on the chosen reference frame.
+        Consider a test mass initially at rest at $\tau = 0$. The geodesic equation then becomes
 
-	If the displacement between geodesics is $\zeta_a (t) = (x_0 + \delta x(t), y_0 + \delta y(t))$, then of $\zeta_a (t)$ is %warning: cosa avrò voluto dire?%
+                \begin{equation}
+                {{dx^i}\over{d\tau^2}} = -[\Gamma^i_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}}]_{\tau=0} \\ 
+                = - [ \Gamma^i_{00}({{dx^0}\over{d\tau}})^2]_{\tau=0}
+                \end{equation}
 
-		\begin{equation}
-		\delta {\ddot x} = - {{h_{+}} \over 2} (x_0 + \delta x) \omega ^2 \sin \omega t
-		\end{equation}
+        because
 
-		\begin{equation}
-		\delta {\ddot y} =  {{h_{+}} \over 2} (y_0 + \delta y) \omega ^2 \sin \omega t
-		\end{equation}
+                \begin{equation}
+                {{dx^i}\over{d\tau}} = 0 \hspace*{2cm} at \hspace*{0.5cm}\tau = 0
+                \end{equation}
 
-	Assuming that the perturbations are $O(h)$, and thus small compared to the unperturbed locations, $\delta x$ and $\delta y$ can be neglected.
-	The integrations gives the deviations caused by the plus polarisations:
+        since the mass is initially at rest. Expanding to first order in $h_{\mu\nu}$,
+        the Christoffel symbol $\Gamma^i_{00} = 1/2(2\partial_{0}h_{0i} - \partial_i h_{00})$ vanishes in the TT gauge
+        because both $h_{00}$ and $h_{0i}$ are set to zero by the gauge condition.
+        Therefore, if at time $\tau = 0$ $dx^i/d\tau$ is zero, it remains zero at all times,
+        because its derivative also vanishes.
+        This shows that if two test masses are initially separated by a coordinate separation of $x^i$ in the TT frame,
+        and are at rest with respect to each other, they will remain at this separation.
+        Overall, it seems that a GW has no influence on the geodesic or on the deviation of geodesics.
+        In other words, in the TT gauge the coordinate location of a slowly moving, free-falling body is unaffected
+        by a GW because the coordinates move with the waves.
+        The TT gauge illustrates that, in general relativity, the physical effects are not expressed by what happens
+        to the coordinates since the theory is invariant under coordinate transformations:
+        the position of test masses does not change because the gauge freedom allowed to define the coordinates
+        in such a way that they do not change \cite{maggiore}.
+        Physical effects can instead be found monitoring proper distances, or proper times.
 
-		\begin{equation}
-		\delta x(t) =  {{h_{+}} \over 2} x_0 \sin \omega t
-		\end{equation}
+        GWs cause the proper separation between two freely falling particles to oscillate,
+        even if their coordinate separation is constant. Consider two  free-falling particles,
+        located at $z = 0$, and separated on the $x$ axis by a coordinate distance $L_c$. \\
+        Consider a GW in TT gauge that propagates down the $z$ axis, $h^{TT}_{\mu\nu}(t,z)$.
+        The proper distance L between the two particles in the presence of the GW is given by
 
-		\begin{equation}
-		\delta y(t) = - {{h_{+}} \over 2} y_0  \sin \omega t
-		\end{equation}
+                \begin{align}
+                \label{distance}
+                L & = \int^{L_c}_{0}{dx\sqrt{g_{xx}}} = \int^{L_c}_{0}dx\sqrt{1 + h^{TT}_{xx}(t,z=0)} \\
+                & \simeq \int^{L_c}_{0}{dx[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]} \\
+                &= L_c[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]
+                \end{align}
 
-	Similarly, for the cross polarization at $z=0$ and initial conditions $h_{ii}^{TT} = 0$ at $t= 0$, the situation is described by the equations
-		
-		\begin{equation}
-		\delta x(t) =  {{h_{\times}} \over 2} y_0 \sin \omega t
-		\end{equation}
+        Therefore, the proper distance expands and shrinks periodically, with a fractional length change $\delta L/L_c$ given by
 
-		\begin{equation}
-		\delta y(t) =  {{h_{\times}} \over 2} x_0  \sin \omega t
-		\end{equation}
-		
-	This set of equations describes the changes in the $x$ and $y$ components for a passing GW.
-	The plus polarization alternately stretches and compresses the ring of test masses in the x and y directions, 
-	while the cross polarization exhibits the same behavior rotated by $\ang{45}$ in the $x - y$ plane. This is shown in Figure 2.1.
-%warning:  modificare immagine phi è \omega t%
-		\begin{figure}
-		\includegraphics[scale=1]{ring}
-		\centering
-		\caption{The effects of plus and cross polarization on a ring of test masses. 
-			 The plus polarization alternately compresses and stretches the x- and y-separations.
-			 The cross polarization has the same effect only rotated by  $\ang{45}$.}
-		\label{fig:ring}
-		\end{figure}
+                \begin{equation}
+                {{\delta L}\over{L_c}} \simeq {1 \over 2} h_{xx}^{TT}(t,z=0)
+                \end{equation}
 
-\subsection{Beam pattern functions}
+        Even though this result is calculated in the TT gauge, it is indeed gauge indipendent;
+        $h_{xx}^{TT}$ acts as a strain, a fractional length change.
+        Because the time that light travels between the two test masses is related to the proper distance,
+        which directly relates to the accumulated phase measured by laser interferometric GW observatories,
+        GWs leave an imprint on the time it takes for a photon to make a round trip \cite{basics}.
+        Consequently, interferometers can potentially measure these imprints by measuring the length difference between
+        their arms. The “extra” phase $\delta \phi$ (if $L \ll \lambda$ so that the metric perturbation
+	does not vary during a light travel time) accumulated by a photon that travels
+        down and back the arm of a laser interferometer in the presence of a GW is $\delta \phi = 4\pi \delta L \lambda$,
+        where $\lambda$ is the photon’s wavelength and $\delta L$ is the distance
+        the end mirror moves relative to the beam splitter.
 
-        Interferometers are sensitive to the relative difference between two distances, the so-called strain.
+\subsection{Local proper reference frame}
+
+        Since positions in a lab are not marked by test particles,
+        the $TT$ frame is not very practical.
+        The preferred reference frame is the proper detector frame
+        in which the test particle is free to move because of a passing GW.
+        The path of a test particle can then be described by Newtonian equations of motion in terms of forces.
+        There are terms proportional to the Riemann curvature tensor from the gravitational field of the Earth
+        but also terms from static gravitational forces, Coriolis forces, etc \cite{blau}.
+	GW detectors need to be designed in order to maximise their sensitivity to the part proportional to the Riemann tensor while minimizing their sensitivity to all other terms.
+
+        Consider a detector capable of measuring changes in the proper distance, between two test masses
+        and assume the detector has a characteristic size that is much smaller
+        than the characteristic wavelength of the GW.
+        In this case, one can approximate the entire detector to be in a near local Lorentz frame
+        (freely falling frame), even in the presence of GWs. This coordinate system is defined by the requirements
+
+                \begin{equation}
+                z^i(\tau) = 0, \hspace*{2cm} g_{ab}(t, 0) = \eta_{ab}, \hspace*{2cm} \Gamma^a_{bc}(t,0) = 0,
+                \end{equation}
+
+        which imply that the metric has the form
+
+                \begin{equation}
+                ds^2 \approx -dt^2 + \delta_{ij}dx^i dx^j + O({{x^ix^j}\over{L^2_B}})
+                \end{equation}
+
+        where $L^2_B$ denotes the typical variation scale of the metric.
+        Consider now the proper distance between the two geodesics of the test masses, $\zeta^i$.
+        The GWs influence these two test masses via the geodesic deviation equation
+
+                \begin{equation}
+                {{d^2\zeta^{\mu}}\over{d\tau^2}} + 2\Gamma^{\mu}_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^\rho}\over{d\tau}} + \zeta^{\sigma}\Gamma^{\mu}_{\nu\rho,\sigma}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}} = 0
+                \end{equation}
+
+        Assuming the two test masses are moving non-relativistically, $dx^i/d\tau$ can be neglected compared to $dx^0/d\tau$.
+        Furthermore, the term proportional to $\Gamma^{\mu}_{\nu\rho}$ is negligible compared to other terms in a near  local-Lorentz frame, LLF. Hence,
+
+                \begin{equation}
+                {{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{\sigma}\Gamma^{i}_{00, \sigma}({{dx^0}\over{d\tau}})^2 = 0
+                \end{equation}
+
+        Further simplifying $\zeta^{\sigma}\Gamma^{i}_{00, \sigma} \approx \zeta^{j}\Gamma^{i}_{00, j}$
+
+                \begin{equation}
+                {{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{j}\Gamma^{i}_{00,j}({{dx^0}\over{d\tau}})^2 = 0
+                \end{equation}
+
+        But in the LLF, $R^i_{0j0} = \Gamma^i_{00,j} - \Gamma^i_{0j,0} = \Gamma^i_{00,j}$ and therefore
+
+                \begin{equation}
+                {{d^2\zeta^{\mu}}\over{d\tau^2}} + R^i_{0j0} \zeta^j({{dx^0}\over{d\tau}})^2 = 0
+                \end{equation}
+
+        Because $dx^0/d\tau \approx 1$, one can approximate $\tau \approx t$:
+
+                \begin{equation}
+                {\ddot \zeta}^j = - R^i_{0j0}\zeta^j
+                \end{equation}
+
+        The key quantity entering into the equation, the Rienmann tensor, is gauge invariant in the linearized theory and
+        it can be evaluated in any convenient coordinate system.
+        The expression for the Rienmann tensor in terms of the TT gauge metric perturbation $h_{ij}^{TT}$ is
+
+                \begin{equation}
+                R^i_{0j0} = R_{i0j0} = - {1 \over 2}{\ddot h}_{ij}^{TT}
+                \end{equation}
+
+        Substituting into the previous equation, the geodesic deviation equation in the proper detector frame takes the form
+
+                \begin{equation}
+                {\ddot \zeta}^i = {1 \over 2}{\ddot h}_{ij}^{TT}\zeta^j
+                \end{equation}
+
+        which can be interpreted as if the influence of a GW in a near LLF resembles a Newtonian force.
+        Generalizing Eq.$\ref{distance}$, the proper distance may be written as
+
+                \begin{equation}
+                s = \sqrt{L^2 + h_{ij}(t)L_{i}L_{j}}
+                \end{equation}
+
+        where $L_i$ denotes the spatial separation between two test masses and $L$ the associated coordinate distance.
+        In the given metric for the proper reference frame, the proper distance is just $|L| = \sqrt{L_iL_j}$ up to fractional errors;
+        since we are considering detectors such that
+        $L \ll \lambda$, these errors are smaller than the fractional distance changes caused by the GW.
+        Therefore $|L|$ is simply identified as the proper separation. The equation for analyzing an interferometric GW detector is therefore
+
+                \begin{equation}
+                {\ddot L}^i = {1 \over 2}{\ddot h}_{ij}^{TT}L^j
+                \end{equation}
+
+\subsection{Ring of test masses}
+
+        Consider a ring of test masses in the $(x, y)$ plane of a proper detector frame, initially at rest, centred at $z = 0$,
+        and a GW travelling in the $z$-direction.
+        This situation restricts the attention to the $(x,y)$ plane alone, because $h_{ij}^{TT}$ is transverse to the propagation direction,
+        so the GW will only have influence in the plane of the test masses:
+        the only non zero compontents of the metric perturbation are
+
+                \begin{equation}
+                h_{xx}^{TT} = - h_{yy}^{TT} = h_{+} \hspace*{3cm} h_{xy}^{TT} = h_{yx}^{TT} = h_{\times}
+                \end{equation}
+
+        where $h_{+}=h_{+}(t-z)$ and $h_{\times}=h_{\times}(t-z)$ are the two polarization components, which are indipendent and can be considered separately.
+        For the plus polarization at $z=0$ and initial conditions $h_{ij}^{TT} = 0$ at $t=0$:
+
+                \begin{equation}
+                h_{ab}^{TT} = 
+                \begin{bmatrix}
+                1  & 0 \\
+                0 &  -1 \\
+                \end{bmatrix} 
+                h_{+}\cos \omega t
+                \end{equation}
+
+        If the displacement between geodesics is $\zeta_a (t) = (x_0 + \delta x(t), y_0 + \delta y(t))$, then
+
+                \begin{equation}
+                \delta {\ddot x} = - {{h_{+}} \over 2} (x_0 + \delta x) \omega ^2 \sin \omega t
+                \end{equation}
+
+                \begin{equation}
+                \delta {\ddot y} =  {{h_{+}} \over 2} (y_0 + \delta y) \omega ^2 \sin \omega t
+                \end{equation}
+
+        Assuming that the perturbations are $O(h)$, and thus small compared to the unperturbed locations, $\delta x$ and $\delta y$ can be neglected.
+        The integrations gives the deviations caused by the plus polarisations:
+
+                \begin{equation}
+                \delta x(t) =  {{h_{+}} \over 2} x_0 \sin \omega t
+                \end{equation}
+
+                \begin{equation}
+                \delta y(t) = - {{h_{+}} \over 2} y_0  \sin \omega t
+                \end{equation}
+
+        Similarly, for the cross polarization at $z=0$ and initial conditions $h_{ii}^{TT} = 0$ at $t= 0$, the situation is described by the equations
+
+                \begin{equation}
+                \delta x(t) =  {{h_{\times}} \over 2} y_0 \sin \omega t
+                \end{equation}
+
+                \begin{equation}
+                \delta y(t) =  {{h_{\times}} \over 2} x_0  \sin \omega t
+                \end{equation}
+
+        This set of equations describes the changes in the $x$ and $y$ components for a passing GW.
+        The plus polarization alternately stretches and compresses the ring of test masses in the x and y directions,
+        while the cross polarization exhibits the same behavior rotated by $\ang{45}$ in the $x - y$ plane. This is shown in Figure 2.1.
+
+                \begin{figure}
+                \label{ring}
+                \includegraphics[scale=1]{ring}
+                \centering
+                \caption{The effects of plus and cross polarization on a ring of test masses.
+                         The plus polarization alternately compresses and stretches the x- and y-separations.
+                         The cross polarization has the same effect only rotated by  $\ang{45}$.}
+                \label{fig:ring}
+                \end{figure}
+
+\section{Interferometer’s response to a gravitational wave}
+
+        Interferometers are sensitive to the relative difference between two distances, the so-called strain \cite{tjonnie} .
         Suppose we have an interferometer with its arms pointing along the unit vectors $u^i$ and $v^i$. The strain $h(t)$ is given by
 
                 \begin{equation}
@@ -600,122 +738,12 @@
                 F_{\times}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \sin 2 \psi + \cos \theta \sin2\phi \cos2\psi
                 \end{align}
 
-%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\section{Gravitational Wave Interferometry}
 
-	The generation and propagation of gravitational and electromagnetic radiation are basically quite similar but, 
-	on a more practical level, gravitational and electromagnetic waves are quite different.
-	First of all, electromagnetic waves interact strongly with matter, while GWs travel unperturbed through space, 
-	as they interact only very weakly with matter. This makes possible to probe astrophysics that is hidden or dark 
-	to electromagnetic observations, such as the coalescence and merger of black holes, the collapse of a stellar core, 
-	the dynamics of the early Universe. It also means that detecting GWs is very difficult. \\
-	Electromagnetic radiation typically has a wavelength smaller than the size of the emitting system, 
-	and so can be used to form an image of the source, while the wavelength of gravitational radiation is typically comparable 
-	to or larger than the size of the radiating source. \\
-	Gravitational waves are generated by the bulk dynamics of the source itself so they cannot be used to form an image: 
-	the radiation simply does not resolve the generating system. 
-	In most cases, electromagnetic astronomy is based on observers obtain a large amount of information about sources on a small piece 
-	of the sky while GW astronomy is all-sky research.
-	Detectors have nearly $4\pi$ steradian sensitivity to events over the sky. This means that any source on the sky will be detectable, 
-	not just sources towards which the detector is pointed. 
-
-	Gravitational radiation is produced by oscillating multipole moments of the mass distribution of a system. 
-	Quadrupole radiation is the lowest allowed form, and is thus usually the dominant form. 
-	In this case, the GW field strength is proportional to the second time derivative of the quadrupole moment of the source, 
-	and it falls off in amplitude $h$, the direct observable of gravitational radiation, with distance as $1/r$. 
-	This comparatively slow fall off with radius means that relatively small improvements in the sensitivity 
-	of GW detectors can have a large impact on their science:
-	doubling the sensitivity of a detector doubles the distance to which sources can be detected, 
-	increasing the volume of the Universe to which sources are measurable. \\ 
-	The oscillating quadrupolar strain pattern of a GW is well matched by a Michelson interferometer, 
-	which makes a very sensitive comparison of the lengths of its two orthogonal arms. 
-	Multiple detectors at separated sites are crucial for rejecting instrumental and environmental artifacts in the data, 
-	by requiring coincident detections in the analysis. 
-
-
-	Also, because the antenna pattern of an interferometer is quite wide, 
-	source localisation requires triangulation using three separated detectors: 
-	the direction of travel of the GWs and the complete polarisation information carried by the waves can only be extracted by a network of detectors. 
-	The challenge is to make the instrument sufficiently sensitive: 
-	at the targeted strain sensitivity of $10^{−21}$ m, the resulting arm length change is only $\tilde 10^{-18}$ m, 
-	a thousand times smaller than the diameter of a proton. \\
-	A key feature of the detectors is simply their scale: 
-	the arms are made as long as practically possible to increase the signal due to a GW strain. 
-
-\subsection{Laser Interferometers}
-
-	For the many decades after they were predicted, direct observation of GWs was not possible 
-	due to the tiny effect that would need to be detected and separated from the background of vibrations present everywhere on Earth.
-	A technique called interferometry was suggested in the 1960s and eventually technology developed  
-	sufficiently for this technique to become achievable. \\
-	The first GW detectors were resonant-mass cylindrical bar detectors, 
-	developed and built by Joseph Weber in the 1960s. \\
-	Over the course of the next several decades, more bar detectors were built that were at least 
-	four orders of magnitude more sensitive than Weber’s original design, 
-	These detectors would be set into oscillation at their resonant frequency by passing GWs 
-	near that resonant frequency and were sensitive to GWs with relatively high frequency ($\sim$ 1 kHz) 
-	and in a narrow frequency band. In order to detect signals in a broader range of frequencies and out to farther distances, 
-	large-scale interferometric detectors have been built. \\ 
-	The idea originated with the Russian theorists, M. Gertsenshtein and V. I. Pustovoit in 1962. 
-	But the strong push for using interferometers came in the late 1960s with R. Forward, R. Weiss, 
-	R. Drever, and others. From the early 2000s, several kilometer-scale ground-based interferometers 
-	operated in the frequency band from 10 Hz to 1 kHz at a sensitivity that all
-	owed the potential for detection from a variety of sources at large extragalactic distances.
-
-	The GW detectors are power-recycled Fabry–Perot Michelson interferometers, 
-	which offer the possibility of very high sensitivities over a wide range of frequency and 
-	are particularly suited to the detection of local perturbations in the space–time metric from astrophysical sources.
-	These distant sources, including binary black hole or neutron star coalescences, asymmetric rapidly spinning neutron stars, 
-	and supernovae are expected to produce time-dependent strain $h(t)$ observable by the interferometer array.
-	The optical layout of the detectors consists in perpendicular Fabry–Perot arm cavities of the Michelson, 
-	composed of mirrors, which also serve as gravitational test masses, widely separated and 
-	freely suspended as pendulums to isolate against seismic noise and reduce the effects of thermal noise.
-	A beam splitter divides the incident laser beam into two equal components sent into the two arms of the interferometer. 
-	In each arm, a two mirrors Fabry-Perot resonant cavity extends the optical length from 3 to about 100 kilometers, 
-	because of multiple reflections and therefore increases the carrier power and phase shift for a given strain amplitude. 
-	When the beams recombine, they will interfere constructively if the lengths of the two arms differ by an integral number 
-	of wavelengths and interfere destructively if the lengths differ by an odd number of half wavelengths.
-	The induced change in the length of the interferometer arms impresses a phase modulation on the 
-	light observed at the interferometer output, which is proportional to the wave’s amplitude.
-	Each interferometer uses a Nd:YAG laser  ($\lambda = 1064 nm$ or f = 282 THz).
-	After phase modulation, the beam passes into the LIGO vacuum system. 
-	All the main interferometer optical components and beam paths are enclosed in the ultra-high vacuum system 
-	$(10^{−8} - 10^{−9} torr)$ for acoustical isolation and to reduce phase fluctuations from light scattering off residual gas. 
-	The photodetectors are all located outside the vacuum system, mounted on optical tables. 
-	The beam tubes are made from stainless steel and are designed to have low-outgassing 
-	so that the required vacuum could be attained by pumping only from the ends of the tubes. 
-	The interferometer optics, including the test masses, are manufactured to have extremely low scatter and low absorption.
-	The two Fabry-Perot arms and power recycling cavities are essential to achieving the LIGO sensitivity goal, 
-	but they require an active feedback system to maintain the interferometer at the proper operating point.
-
-	The high frequency band, $1Hz \apprle f \apprle 10^4 Hz$, is targeted by 
-	the new generation of ground-based laser interferometric detectors such as LIGO.
-	The low frequency end of this band is set by the fact that it is extremely difficult 
-	to prevent mechanical coupling of the detector to ground vibrations at low frequencies,
-	and probably impossible to prevent gravitational coupling to ground vibrations, human activity, and atmospheric motions.
-	The high end of the band is set by the fact that it is unlikely any interesting GW source 
-	radiates at frequencies higher than a few kilohertz. Such a source would have to be relatively
-	low mass $(\apprle 1M_{\odot})$ but extremely compact. \\
-	There are no known theoretical or observational indications that gravitationally collapsed objects in this mass range exist.
-
-\begin{itemize}
-			\item LIGO.
-			      a single four kilometer interferometer in Livingston, Louisiana, 
-			      as well as a pair of interferometers (four kilometers and two kilometers) in the LIGO facility at Hanford, Washington.
-			      The sites are separated by roughly 3000 kilometers, and are situated to support coincidence analysis of events.
-  			\item Virgo located in Italy, with two orthogonal arms each 3 kilometers long. 
-			      Virgo is sensitive to GWs in a wide frequency range, from 10 to 10,000 Hz. 
-  			\item GEO600. GEO600 is a six hundred meter interferometer located near Hannover, 
-			      Germany. It is designed and operated by scientists from the 
-			      Max Planck Institute for Gravitational Physics and the Leibniz Universität Hannover.
-  			\item KAGRA 
-
-\end{itemize}
 
 \subsubsection{Non-stationary transient noise sources}
 	
 	The various noises of the detector can be conveniently characterized by a spectral strain
-        sensitivity with dimensions of $1/\sqrt{Hz}$.
+        sensitivity with dimensions of $1/\sqrt{Hz}$, as we explain in this section. 
         The detector output $s(t)$ is composed of instrumental noise $n(t)$ arising from
         naturally occurring random processes and a potential strain signal $h(t)$
 
@@ -745,14 +773,14 @@
                 \tilde s(f) = \int^{\infty}_{-\infty} e^{-2 \pi ift} s(t)dt
 		\end{equation}
 
-	The strain amplitude spectral density is then defined as $h(f) = \sqrt{S_s(f}$.
-	The noise power spectral density $S_n(f)$ and the signal power spectral density $S_h(f)$.ù
+	The strain amplitude spectral density is then defined as $h(f) = \sqrt{S_s(f)}$.
+	The noise power spectral density $S_n(f)$ and the signal power spectral density $S_h(f)$.%warning: manca un verbo%
   
-	Noises are categorised as either a displacement noise, which directly moves the suspended mirrors
-        causing a differential change in the arm cavity lengths, or as a sensing noise,
-        which appears in the readout signal but is not caused by a GW. \\
-        In this paragraph are described the principal noises that dominate the limits of our sensitivity.
-
+	Noise is categorised as either displacement noise, which directly moves the suspended mirrors
+        causing a differential change in the arm cavity lengths, or as sensing noise,
+        which appears in the readout signal but is not caused by a GW.
+        We describe the principal noises that dominate the limits of our sensitivity.
+%warning: e ti devi riferire sistematicamente alla figura%
                 \begin{figure}
                         \includegraphics[scale=0.3]{noisetwo}
                         \centering
@@ -760,23 +788,23 @@
                         \label{fig:noisetwo}
                 \end{figure}
 
-        At lower frequencies, up to 10Hz, the main contribute to the global noise
-        is due to vibrations of the ground which couple to the mirror motion: it shakes the optics and produces strain signals that mask GW signals. \\
-        This seismic noise could be caused by earthquakes, weather and human activity.
-        To reduce the potential movements of the optical elements, an attempt is made to
-        isolate the mirrors using an advanced suspension system. \\
+        At lower frequencies, up to 10Hz, the main contribution to the global noise
+        is due to vibrations of the ground which couple to the mirror motion: it shakes the optics and produces strain signals that mask GW signals. 
+        This seismic noise is caused by earthquakes, weather and human activity.
+        To reduce the potential movements of the optical elements,
+        the mirrors are isolated using an advanced suspension system. 
 
         At frequencies where the seismic motion has been sufficiently reduced,
-        between 10Hz and 500Hz, the random Brownian motion of the molecules on the surface of the mirrors and wires dominates. \\
+        between 10Hz and 500Hz, the random Brownian motion of the molecules on the surface of the mirrors and wires dominates. 
     
         The thermal energy of the interferometer’s components induce vibrations both in the suspensions and in the mirrors.
         The nature of GW signal requires the sensitivity of the interferometric detectors
-        to be extremely high in broad frequency band. \\
+        to be extremely high in broad frequency band.
         Therefore, the power spectrum density of the thermal noise must be considered in the development of the detectors.
-        The Fluctuation-dissipation Theorem (FDT) relates the spectrum of the thermal noise to the amount of dissipation
+        The Fluctuation-dissipation Theorem relates the spectrum of the thermal noise to the amount of dissipation
 
                 \begin{equation}
-                S_{n}(w) = - {{4k_bT} \over {w}} Im[H(w)]
+                S_{n}(\omega) = - {{4k_bT} \over {\omega}} Im[H(\omega)]
                 \end{equation}
 
         From this equation is possible to state that the energy of fluctuations has a frequency dependent distribution;
@@ -800,7 +828,7 @@
 		\end{equation} 
 
 	Generally, thermal noise can be reduced decreasing the dissipation with monolithic suspensions and better coatings
-        other than lowering the temperature using criogenic payloads as it will be done in Kagra and Einstein Telescope. \\
+        other than lowering the temperature using criogenic payloads as it is done in KAGRA.
         Quantum mechanics limits the precision at which the test mass positions can be determined. 
 
         At high frequencies, photon shot noise limits the sensitivity, 
@@ -809,7 +837,7 @@
         that follow a Poisson process. The noise will decrease with increasing laser power,
         recycling cavity gain, arm cavity gain, and arm length.
         The corresponding noise spectral density is
-
+%warning:Usa \Bigg( or roba simile%
                 \begin{equation}
                 S_n(w) = ({{\lambda_{laser}} \over {4 \pi L}})^2 {{2 \hbar w_{laser}} \over {P}}
                 \end{equation}
@@ -837,7 +865,7 @@
         of the mirrors and of the laser; for this reason the vacuum system is maintained at a pressure
         of below $10^{-6}$Pa and the noise curve of the interferometer includes only
         the most dominant residual gas component, hydrogen, at a pressure of $10^{−7}$ Pa. \\
-
+%warning: Vecchi.  Prendi un esempio più recente.%
 		\begin{figure}
                 	\includegraphics[scale=0.3]{noiseone}
                 	\centering
@@ -858,19 +886,18 @@
 \subsubsection{Coalescing compact binaries}
 
 	Compact binary star systems, in which each member is a neutron star or black hole, 
-	are currently the only observed sources of GWs. \\
+	are currently the only observed sources of GWs.
 	They are an ideal source for ground based GW detectors, 
 	as their compactness allows their orbital separation to become 
-	small enough before they merge for them to emit GWs in the detectors sensitive frequency band. \\
+	small enough before they merge for them to emit GWs in the detectors sensitive frequency band.
 	If one of the components of the binary is a neutron star 
-	then there may be an electromagnetic counterpart to the GW signal. \\
+	then there may be an electromagnetic counterpart to the GW signal. 
 	The loss of energy from the system will cause the orbital radius to decay, 
 	the frequency to increase, and the amplitude of the radiation to increase, 
 	producing a distinctive chirp-like signal. 
-	
 	Eventually, the two objects will be close enough to merge together, 
 	and the new single object will pulsate in an excite state as it tries to return to equilibrium. 
-	This phase is known as the ringdown phase and it is well-modeled as a series of quasi-normal modes. \\ 
+	If the remanant is a BH, this phase is known as the ringdown phase and it is well-modeled as a series of quasi-normal modes. 
 	As the form of the gravitational radiation can be predicted allows 
 	a more sensitive search to be performed: knowing the form of the signal 
 	that is being search for allows powerful matched filtering techniques 
@@ -885,16 +912,15 @@
 	include gamma ray bursts and supernovae explosion as well as the final stages of a coalescing binary. \\
 	GW signal with a partially modelled or unknown waveform, 
 	this may be due to unknown or complicated physics, or the source may be something totally unpredicted. 
-
 	The matched filtering is not a useful technique to search for this type of signal, 
-	as the waveform of a GW burst signal is unknown. \\
-	Searches for GW bursts typically search for excess power that occurs coherently between multiple detectors. \\ 
+	as the waveform of a GW burst signal is unknown. 
+	Searches for GW bursts typically search for excess power that occurs coherently between multiple detectors.  
 	Even with no knowledge of the source of a GW signal, 
-	it is still possible to estimate some of the source parameters. \\
+	it is still possible to estimate some of the source parameters. 
 	Searches for GW bursts typically give estimations of the duration, 
 	amplitude and frequency of the source. 
 	An estimation of the sky position is given by measuring the difference 
-	in arrival time between different detectors. \\
+	in arrival time between different detectors. 
 	If the distance to the source is known, 
 	perhaps through an electromagnetic counterpart, 
 	then it is possible to estimate the energy of the source. 
@@ -905,35 +931,32 @@
 	A periodic source is a source that emits at constant or nearly constant frequency.
 	The prototypical source of continuous GWs is high frequency rotating neutron stars 
 	with a non-axial deformation or low frequency binary systems 
-	composed of white dwarfs or black holes far from merger. \\
+	composed of white dwarfs or black holes far from merger. 
 	These sources should be present throughout the operational lifetime of a detector, 
 	so the greater the observation time, the better the sensitivity to periodic sources becomes. 
-
 	Spinning neutron stars will lose energy and spin down over time, 
 	and this energy loss is due to a number of different mechanisms, 
-	including emission of gravitational radiation. \\
+	including emission of gravitational radiation. 
 	To emit a continuous GW with characteristic amplitude, 
 	a neutron star must have a non-axisymmetry in the crust. 
 	The radiation amplitude is proportional to the crucial parameter $\epsilon$, 
-	the fractional asymmetry that is proportional to the mass of the bump on the surface.\\
+	the fractional asymmetry that is proportional to the mass of the bump on the surface.
 	As neutron stars emit electromagnetic radiation, 
 	it is possible to target searches of GWs for neutron stars with positions, 
 	frequencies and spin-downs known from X-ray, radio and gamma-ray observations. 
 	Examples are the Crab and Vela pulsars. 
-
 	Continuous GWs have not yet been detected, 
-	but current searches have produced upper limits for their emission. \\
+	but current searches have produced upper limits for their emission. 
 	Upgraded interferometers in LIGO could set an upper limit on  
 	$\epsilon$ of order $10^{-6}$ for sources at $\sim10$ kpc, 
-	and explain how a neutron star can be distorted to give a value of $\epsilon$ that is interesting as a GW source. \\
+	and explain how a neutron star can be distorted to give a value of $\epsilon$ that is interesting as a GW source. 
 	Whatever the mechanism generating the distortion, 
 	it is clear that  $\epsilon$ will be small,
-	so that $h \sim 10^{-24}$ or smaller, which is quite weak. \\
+	so that $h \sim 10^{-24}$ or smaller, which is quite weak. 
 	Measuring these waves will require
 	coherently tracking their signal for a large number of wave cycles, 
 	which is actually quite difficult, 
 	since the signal is strongly modulated by the Earth’s rotation and orbital motion.
-
 	Searching for periodic GWs means demodulating the motion of the detector, 
 	a computationally intensive problem since the modulation is different for every sky position. 
 	Unless one knows in advance the position of the source, 
@@ -943,18 +966,16 @@
 
 	Stochastic backgrounds are “random” GWs, 
 	arising from a  number of sources that overlap 
-	in time and frequency that are not individually resolvable. \\
-
+	in time and frequency that are not individually resolvable. 
 	The sum of the signals at any given time and frequency will have 
-	a random pattern that may be analyzed statistically but not predicted precisely. \\
+	a random pattern that may be analyzed statistically but not predicted precisely.
 	A particularly interesting source of stochastic waves is the dynamics of the early Universe, 
 	which could produce an all-sky GW background, 
-	similar to the cosmic microwave background. \\
+	similar to the cosmic microwave background. 
 	However, to measure waves from this epoch, 
 	we would need much more sensitive detectors than the ground-based interferometers available.
-	
 	Stochastic backgrounds are usually idealized as being stationary, 
-	isotropic and homogeneous and because of their random nature they look just like noise.	\\
+	isotropic and homogeneous and because of their random nature they look just like noise.	
 	Another possible background could come from astrophysical sources. 
 	These possible sources include a population of rotating neutron stars 
 	and a population of white dwarf binaries that would be important mostly for a space-based interferometers such as LISA 
@@ -969,13 +990,13 @@
 	are based on two broad techniques: 
 	modeled searches which use theoretical waveforms for such systems 
 	as predicted by general relativity and 
-	unmodelled or burst searches which assume minimal information about these waveforms. \cite[p. 2] {bar}
+	unmodelled or burst searches which assume minimal information about these waveforms.
 	Although signals from coalescing binaries will most probably not stand above the broadband noise of the detector, 
 	their detection is possible by the use of matched filtering, 
 	which takes advantage of the fact that the wave form can be fairly well predicted. 
 
 	This technique is the optimal detection strategy in Gaussian noise 
-	in searching for GWs with well understood waveforms. \cite[p. 2] {bar} \cite[p. 2] {bar}
+	in searching for GWs with well understood waveforms. 
 
 
 \section{Matched Filtering}
@@ -989,7 +1010,7 @@
 	may be taken to be infinite outside the bandwidth of the instrument, 
 	effectively restricting the range of integration to lie between $[-f_N, f_N]$, 
 	where $f_N$ denotes the Nyquist frequency $f_N = 1/(2\Delta t)$, 
-	and $\Delta t$ is the time between successive data samples.   \cite[p. 2] {bar}
+	and $\Delta t$ is the time between successive data samples.   
 
 	The measured detector’s strain amplitude, $s(t)$, may or may not contain a signal,
 	thus it will be composed of $n(t)$, the real strain-equivalent noise
@@ -1358,7 +1379,7 @@
 
 	Almost all searches for GWs from coalescing compact binaries 
 	using the data of first generation interferometers 
-	have used templates that neglect the spins of the compact objects. \cite 
+	have used templates that neglect the spins of the compact objects.
 	This was primarily motivated by the sensitivity of the Initial LIGO detectors:
 	because the sensitivity band started above 40 Hz, 
 	including spin effects greatly increased the number of templates to be searched over, 
@@ -1375,7 +1396,7 @@
 
 	Currently, waveform models with spins aligned (or antialigned) with the orbital angular momentum 
 	are being used in searches with Advanced LIGO, 
-	having been demonstrated that aligned-spin templates pull in more signal than noise. \cite{}
+	having been demonstrated that aligned-spin templates pull in more signal than noise. 
 	While building a template bank with the geometric approach for these cases is feasible, 
 	since a closed-form expression of the template-space metric can be computed, 
 	this is not possible for binaries with generic spins. 
@@ -1663,7 +1684,7 @@
 	the difference is well understood and it is only relevant at high frequencies.
 	These hardware injections offer a better test of the sensitivity of the infrastructure than the software ones:
 	they provide an end-to-end check for the search,
-	from the gravitational wave being incident on 
+	from the GW being incident on 
 	the detector through to making a detection, and parameter estimation analysis to recover signals in the detectors’ data. 
 	The recovery of hardware injections provides an additional check 
 	of the sign of the calibration between the Advanced LIGO detectors 
@@ -1674,7 +1695,7 @@
 	for any other signals that might be in the data. 
 	Therefore, only a limited number of hardware injections can be made in a given stretch of data. 
 
-	If a detection candidate is a true gravitational wave, 
+	If a detection candidate is a true GW, 
 	we should be able to reproduce the morphology of the posterior distributions 
 	using the hardware injections as well as with software injection. 
 	Conversely any significant differences have the potential to highlight 
@@ -1726,14 +1747,26 @@
 %--------------------------------------------------------
 \chapter{Conclusions}
 
-\cite[]{1}
 \backmatter
 \cleardoublepage
 
 \phantomsection % Give this command only if hyperref is loaded \addcontentsline{toc}{chapter}{\bibname}
 
 \begin{thebibliography}{100}
-   \bibitem[1]{Articolo} Articolo da citare
+
+	\bibitem[]{einein} Albert Einstein. On the General Theory of Relativity. Sitzungsber. Preuss. Akad. Wiss. Berlin (Math. Phys.), 1915:778–786, 1915. [Addendum: Sitzungsber. Preuss. Akad. Wiss. Berlin (Math. Phys.)1915,799(1915)]. 
+	\bibitem[]{einzwei}  Albert Einstein. Naherungsweise integration der feldgleichungen der gravitation. Sitzungsberichte der Koniglich Preußischen Akademie der Wissenschaften (Berlin), 1:688–696, 1916. 
+	\bibitem[]{maggiore} M. Maggiore. Gravitational Waves: Volume 1: Theory and Experiments. Oxford University Press, 2008
+	\bibitem[]{basics} E. E. Flanagan and S.A .Hughes. The basics of gravitational wave theory. arXiv:gr-qc/0501041v3
+	\bibitem[]{blau}  M. Blau, “Lecture Notes on General Relativity,” ICTP (2000). 
+	\bibitem[]{tjonnie} Tjonnie G. F. Li. A. Extracting Physics from Gravitational Waves: Testing the Strong-field Dynamics of General Relativity and Inferring the Large-scale Structure of the Universe. Springer, 3 lug 2015	
+	\bibitem[]{weber} J. Weber. Detection and generation of gravitational waves. Phys. Rev., 117: 306–313, Jan 1960. doi:10.1103/PhysRev.117.306. 
+	\bibitem[]{urss} Gertsenshtein M.E.; Pustovoit V.I. On the detection of low frequency gravitational waves. Sov. J. Exp. Theor. Phys. 1962, 43, 605–607. 
+	\bibitem[]{advligo} Yu, Haocun and others. Quantum correlations between the light and kilogram-mass mirrors of LIGO. [arXiv:2002.01519 [quant-ph]].
+	\bibitem[]{weinstein} Weinstein, A. Advanced LIGO optical configuration and prototyping effort. Class. Quantum Grav. 19, 1575–1584 (2002).
+	\bibitem[]{detector book} D. G. Blair, E. J. Howell, L. Ju, C. Zhao. Advanced Gravitational Wave Detectors. Cambridge University Press, 16 feb 2012 
+	\bibitem[]{triangular} Stephen Fairhurst. Triangulation of gravitational wave sources with a network of detectors. arXiv:0908.2356v2 [gr-qc]
+
 \end{thebibliography}
 
 \printbibliography
