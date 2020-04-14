@@ -36,8 +36,8 @@
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves,
 	GWs, on the basis of his theory of general relativity.  
 	Einstein predicted that the motion of two bodies, such as planets or stars—orbit each other,
-	could cause distortions of space-time, GWs \cite{1,2}, 
-	These ripples in the fabric of space-time would spread out like the ripples in a pond when a stone is tossed in,
+	could cause distortions of spacetime, GWs \cite{1,2}, 
+	These ripples in the fabric of spacetime would spread out like the ripples in a pond when a stone is tossed in,
 	although their amplitude would be so small that it would be nearly impossible to detect by any technology foreseen at that time.
 	It was also predicted that objects moving in an orbit would lose energy for this reason 
 	(a consequence of the law of conservation of energy), as some energy would be given off as GWs, 
@@ -69,10 +69,10 @@
 	This first observation was a a remarkable accomplishment: it demonstrated both the existence of binary stellar-mass black hole systems, 
 	and the fact that such mergers could occur within the current age of the universe.  
 	It also confirmed the last remaining unproven prediction of general relativity and validated 
-	its predictions of space-time distortion in the context of large scale cosmic events. 
+	its predictions of spacetime distortion in the context of large scale cosmic events. 
 	Prior to this first detection, GWs had only been inferred indirectly,
         via their effect on the timing of pulsars in binary star systems.
-	This event  marked the beginning of a new era of gravitational-wave astronomy, 
+	This event  marked the beginning of a new era of GW astronomy, 
 	which would enable observations of violent astrophysical events that were not previously possible, 
 	and potentially allow the direct observation of the birth of the universe.
 
@@ -80,7 +80,16 @@
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational-Wave Detection Principles}
 
-%warning: add a few lines to explain the chapter%
+	The aim of this thesis is to expose the methodologies involved 
+	in compact binary coalescence through gravitational wave observation. 
+	Before giving into this topic, it is useful to shortly discuss gravitational waves, 
+	the theory behind them and the instrumental apparatus that is being used to detect them. 
+	In this chapter we give a broad outline of these subjects, 
+	without going too deep into details. \\
+	We begin by introducing the basics of gravitational wave theory in section 2.1. 
+	In section 2.2 we discuss gravitational wave interferometric detectors. 
+	In section 2.3 we briefly describe the noise sources that affect the detection. 
+	Finally. in section 2.4, we describe the astrophysical sources of gravitational radiation.
 
 \section{Gravitational waves in linearized gravity}
 
@@ -92,13 +101,13 @@
 	The motion of masses on this curved spacetime fabric will then be perceived as gravity. 
 	In general relativity, spacetime is regarded as a four-dimensional manifold 
 	with a Lorentzian metric, and gravity is a manifestation of the manifold’s curvature. \\
-	The spacetime curvature is associated with the stress-energy tensor 
+	The space-time curvature is associated with the stress-energy tensor 
 	of matter fields through the Einstein field equation:
 		\begin{equation}
 		G_{\mu\nu} \equiv R_{\mu\nu}  - {1 \over 2}g_{\mu\nu}R = {8\pi G_{N} \over {c^4}}T_{\mu\nu} 
 		\end{equation}
 	where $G_{\mu\nu} $ is the Einstein tensor, $T_{\mu\nu} $ is the stress-energy 
-	tensor of matter-fields and $ G_{N}$ is Newton’s gravitational constant. \\
+	tensor of matter-fields, $ G_{N}$ is Newton’s gravitational constant and $c$ the speed of light. \\
 	In 1916 Einstein found the weak-field solutions to general relativity had wave-like solutions, GWs.
 	GWs are ripples in the fabric of spacetime, 
 	which periodically lengthen and shorten space, and speed up and slow down time \cite{2}.
@@ -111,7 +120,7 @@
 		\[
 		ds^2 = g_{\mu\nu}dx^{\mu}dx^{\nu} \approx (\eta_{\mu\nu} + h_{\mu\nu})dx_{\mu}dx_{\nu}. \hspace*{2cm}\|h_{\mu\nu}\|\ll 1
 		\]
-	Here $\eta_{\mu\nu} = diag(-1,1,1,1)$ is the usual Minkowski metric and the metric perturbation  $h_{\mu\nu}$         %decide if you want c and G% 
+	Here $\eta_{\mu\nu} = diag(-1,1,1,1)$ is the usual Minkowski metric and the metric perturbation  $h_{\mu\nu}$        
 	represents the linearised gravitational field, it encapsulates GWs, 
 	but contains additional, non-radiative degrees of freedom as well. $\|h_{\mu\nu}\|$ means
 	“the magnitude of a typical non-zero component of $h_{\mu\nu}$”. 
@@ -279,12 +288,13 @@
 \section{Gravitational wave detection with laser interferometers}
 
 	Electromagnetic waves interact strongly with matter, while GWs travel unperturbed through space,
-        as they interact only very weakly with matter. This makes them an excellent probe for astrophysicalphenomena that dark
+        as they interact only very weakly with matter. This makes them an excellent probe for astrophysical phenomena that are dark
         in the electromagnetic channel, such as the coalescence and merger of black holes, the collapse of a stellar core,
-  	the dynamics of the early Universe. However, it also means that detecting GWs is extremely challenging.
+  	the dynamics of the early Universe. \\
+	However, it also means that detecting GWs is extremely challenging.
         Electromagnetic radiation typically has a wavelength smaller than the size of the emitting system,
         and so can be used to form an image of the source, while the wavelength of gravitational radiation is typically comparable
-        to or larger than the size of the radiating source \cite{18}. \\
+        to or larger than the size of the radiating source \cite{18}. 
         Because GWs are generated by the bulk dynamics of the source itself therefore they cannot be used to form an image:
         the radiation simply does not resolve the generating system.
         In most cases, electromagnetic astronomy is based on observers obtain a large amount of information about sources on a small piece
@@ -304,7 +314,7 @@
 	The first explicit suggestion of a laser interferometer detector 
 	was outlined by Gertsenshtein and Pustovoid in 1962 \cite{8}. \\
 	From the early 2000s, several kilometer-scale ground-based interferometers 
-	operated in the frequency band from $10 Hz$ to $1 kHz$ at a sensitivity 
+	operated in the frequency band from 10 Hz to 1 kHz at a sensitivity 
 	that all owed the potential for detection from a variety 
 	of sources at large extragalactic distances.
 
@@ -327,17 +337,17 @@
 	The Fabry-Perot arms are a modification to the Michelson 
 	that increases the change in phase measured compared to that for a simple Michelson: 
 	because of multiple reflections that occur within each cavity, 
-	the tiny distance variation caused by a GW is amplified. \\
+	the tiny distance variation caused by a GW is amplified. 
 	All the main interferometer optical components and beam paths are enclosed in the ultra-high vacuum system
         $(10^{−8} - 10^{−9} torr)$ for acoustical isolation and to reduce phase fluctuations from light scattering off residual gas.
         The photodetectors are all located outside the vacuum system, mounted on optical tables.
         The beam tubes are made from stainless steel and are designed to have low-outgassing
-        so that the required vacuum can be attained by pumping only from the ends of the tubes \cite{11}. \\
-        The interferometer optics, including the test masses, are manufactured to have extremely low scatter and low absorption.
+        so that the required vacuum can be attained by pumping only from the ends of the tubes \cite{11}. 
+        The interferometer optics, including the test masses, are manufactured to have extremely low scatter and low absorption. \\
 	The GW detectors offer the possibility of very high sensitivities over a wide range of frequency and
         are particularly suited for the detection of local perturbations in the spacetime metric from astrophysical sources,
         such as binary black hole or neutron star coalescences, asymmetric rapidly spinning neutron stars,
-        and supernovae . \\
+        and supernovae.
  	Gravitational radiation is produced by oscillating multipole moments of the mass distribution of a system.
         Quadrupole radiation is the lowest allowed form, and is thus usually the dominant form.
         In this case, the GW field strength is proportional to the second time derivative of the quadrupole moment of the source,
@@ -626,7 +636,7 @@
                 F_{\times}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \sin 2 \psi + \cos \theta \sin2\phi \cos2\psi
                 \end{align}
 
-\subsubsection{Non-stationary transient noise sources}
+\section{Non-stationary transient noise sources}
 	
 	The various noises of the detector can be conveniently characterized by a spectral strain
         sensitivity with dimensions of $1/\sqrt{Hz}$, as we explain in this section. 
@@ -856,7 +866,7 @@
 	unmodelled or burst searches which assume minimal information about these waveforms \cite{23}. \\
 	Although signals from coalescing binaries will most probably not stand above the broadband noise of the detector, 
 	their detection is possible by the use of matched filtering, 
-	which takes advantage of the fact that the wave form can be fairly well predicted. 
+	which takes advantage of the fact that the waveform can be fairly well predicted. 
 	This technique is the optimal detection strategy in Gaussian noise 
 	in searching for GWs with well understood waveforms. 
 
@@ -912,7 +922,7 @@
         means locating the maxima of the output of the matched filter, $(s|h)$, 
 	over the arrival time and phase.
         This quantity, $(s|h)$, could be used to set a threshold value such that 
-	a $|(s|h)|$ above the threshold would indicate a signal
+	a quantity $|(s|h)|$ above the threshold would indicate a signal
 	and below would indicate no signal. \\
 	However, the filter output can be normalized by the variance of the optimal filter, $\sigma^2$,
 	which is an estimation of the uncertainty in a measurement of $(s|h)$, due to noise in the detector:
@@ -955,7 +965,7 @@
 		\begin{equation}
 			(h_{\times}|h_{+}) = 0
 		\end{equation}
-	Hence, when filtering  $s = (Xh_{+}/\sigma_{h}) + (Y h_{\times}/\sigma_{h}$ 
+	Hence, when filtering  $s = (Xh_{+}/\sigma_{h}) + (Y h_{\times}/\sigma_{h})$ 
 	with the template $h_{+}$ and $h_{\times}$, 
 	respectively, we obtain the matched-filter real-time series
 		\begin{equation}
@@ -997,7 +1007,7 @@
 	known as the template bank \cite{27}. 
 	Physically, these assumptions hold if one assumes that the sources being observed 
 	have no orbital eccentricity, no precession and no contribution from higher-order modes 
-	to the gravitational-wave signal \cite{23}. 
+	to the GW signal \cite{23}. 
 
 \section{Template Bank}
 
@@ -1005,12 +1015,12 @@
 	with minimal loss in SNR over a given range of intrinsic parameters 
 	one must filter the data against a a bank of templates, 
 	to obtain an estimation of the parameters for the source of the signal 
-	from the template that provided the largest SNR.
+	from the template that provided the largest SNR \cite{28}.
 	The manifold of waveforms is a continuous space in the component masses, 
 	of which we are only able to search discrete points, 
 	which have to be placed in such a way that any signal
 	that has parameters in the space will still produce an SNR 
-	above threshold by matching with the “closest” template. 
+	above threshold by matching with the “closest” template \cite{27}. \\ 
 	In order to compute the distance between two templates of different parameters, 
 	one can create a metric over the parameter space and then compute the the error between the two waveforms.
 	Two neighbouring templates can be defined as $\hat h(f;\lambda)$ and $\hat h(f;\lambda + \Delta \lambda)$,
@@ -1018,15 +1028,13 @@
 	the intrinsic (masses and spins) and extrinsic parameters (time of arrival and phase).
 	Using the overlap of two waveforms, defined as the inner product inversely weighted 
 	by the one-sided PSD $S_n(f)$ of the detector noise, one can compute the match:
-
 		\begin{equation}
 			\mathcal{M}(\lambda, \Delta \lambda) \equiv max_{\Delta \lambda_{extr}} \langle\hat h(f;\lambda), \hat h(f;\lambda + \Delta \lambda)  \rangle
 		\end{equation}
-
 	The match is maximised only over the extrinsic parameters, 
 	because waveforms related by time and phase offsets
 	are described by the same template, 
-	since all possible coalescence times and phases are searched for.
+	since all possible coalescence times and phases are searched for \cite{29}. \\
 	This expression can be Taylor-expanded about $\Delta \lambda = 0$:
 
 		\begin{equation}
@@ -1042,7 +1050,7 @@
 	can be interpreted as a metric in the parameter space, which is also defined
 	by the mismatch $MM = (1 − \mathcal{M})$ between two templates.
 	Any mismatch between signal and template leads to a loss in SNR, 
-	and down-weighting by the signal-based vetoes. 
+	and down-weighting by the signal-based vetoes. \\
 	When constructing a template bank, this mismatch can be also interpreted 
 	as the proper distance in the parameter space,	
 
@@ -1051,19 +1059,19 @@
 		\end{equation}
 
 	which should be chosen so that the loss in signal-to-noise ratio due to the mismatch 
-	of the template with the signal does not deprecate the detectability of these sources.
+	of the template with the signal does not deprecate the detectability of these sources \cite{30}.
 
 \subsubsection{Fitting factor}
 
 	The standard measure for deciding what class 
 	of waveforms is good enough is the fitting factor, $FF$.
-	The fitting factor i quantitatively describe closeness of 
+	The fitting factor quantitatively describes closeness of 
 	the true signals to the template manifold, in terms of the fraction of 
-	signal-to-noise-ratio obtained when filtering 
-	the data with an approximate family of templates. 
-	To quantify the bank coverage, usually Monte-Carlo simulations carried out   
+	SNR obtained when filtering 
+	the data with an approximate family of templates \cite{31}. 
+	To quantify the bank coverage, usually Monte-Carlo simulations are carried out   
 	to compute the distribution of fitting factors of the banks against 
-	a set of injected signal waveforms with randomly chosen parameters. 
+	a set of injected signal waveforms with randomly chosen parameters \cite{32}. \\
 	The fitting factor, $FF$, of a template bank with respect to an injected signal $h_{*}$ 
 	is defined as the maximum value of match over all the templates:
 
@@ -1074,49 +1082,42 @@
 	assuming that the signal model is the same for both templates and injections. 
 	The fractional loss of SNR in capturing the signal 
 	$h_{*}$ with the template bank is $1 - FF(h_{*})$.
-
 	If the fitting factor is less than unity, the signal lies outside the parameter space, 
 	and the fitting factor represents the cross-correlation between 
-	the signal and the template nearest it in parameter space. 
+	the signal and the template nearest it in parameter space \cite{33}. 
 	This loss arises from the discrete placement of the templates. 
 	Because binaries are, on large scales, uniformly distributed in space 
 	and because the signal strength scales inversely with distance, 
-	the fraction of event rate retained is approximately FF. 
+	the fraction of event rate retained is approximately FF. \\ 
 	Therefore it is desirable that the template bank is constructed such that 
 	no putative signal anywhere in the parameter space
 	has a FF value less than the minimal match. 
 	A bank is said to be effectual if it can satisfy this condition.
 	It has become conventional to regard $FF = 97\%$, 
-	which translates in $10\%$ loss of event rate, as a reasonable goal.
-
+	which translates in $10\%$ loss of event rate, as a reasonable goal \cite{33}.
 
 \subsubsection{Frequency bound}
 
 	An algorithm that most efficiently covers the parameter space relies on the choice of a coordinate system, 
-	in which the metric is as flat as possible across the space.
+	in which the metric is as flat as possible across the space \cite{34}.
 	In computations with the two-mass-parameter waveforms, 
 	the best coordinates to use on the parameter space are not the two masses, 
 	but rather the inspiral times, chirp times, from some fiducial frequency to final merger, 
 	as computed at Newtonian and first post-Newtonian order. 
 	The metric components are slowly varying over the parameter space, 
-	when expressed in as dimensionless chirp times.
-	
-
+	when expressed in as dimensionless chirp times. 
         The lower frequency cutoff $f_L$, which essentially determines the size of the parameter space
         of chirptimes and plays a crucial role in the computational resources required
-        to process the data through the template bank.
-        The initial fiducial frequency $f_L$ defines the range of values of the chirptimes
-        and is not itself a parameter to search for.
+        to process the data through the template bank \cite{30}, and is not itself a parameter to search for. \\
         However, it affects the length of the signals
         (therefore, the parameter space to be covered) and the SNR extracted.
 
 \subsection{Template placement}
 
-
 	The computational cost of any GW search
-	 is directly proportional to the number of templates used.
+	 is directly proportional to the number of templates used \cite{28}.
 	It is therefore vital to have a method that enables one 
-	to place a template bank using as few templates as possible. 
+	to place a template bank using as few templates as possible. \\ 
 	Two broad classes of template-placement algorithms 
 	have been developed in the literature. 
 
@@ -1129,7 +1130,7 @@
 	with previously accepted templates, 
 	and keeping only the ones that are sufficiently far away 
 	from the ones the bank already has.
- 	Those that are too similar to at least one existing waveform are discarded.
+ 	Those that are too similar to at least one existing waveform are discarded \cite{35}.
 	This procedure continues until the pre-set convergence threshold is reached, 
 	resulting in a final saturated template bank.
 	The threshold is measured from the the ratio of rejected templates over the total number of template candidates.
@@ -1137,16 +1138,16 @@
 	a large number of trial waveforms needs to be drawn before convergence is achieved 
 	(much more than the required number of templates in the bank). 
 	This method also tends to over-cover the parameter space, 
-	in the sense that the average template density is higher than optimal at fixed minimum match.
+	in the sense that the average template density is higher than optimal at fixed minimum match. \\
 	Furthermore, the construction of a stochastic template bank 
 	can be computationally demanding since, in principle, 
 	each new proposed template needs to be compared 
-	with previously chosen templates. 
+	with previously chosen templates \cite{36}. 
 	This problem becomes particularly acute 
 	the closer the bank gets to saturation. 
 	The computational problem also becomes especially demanding 
 	when precession effects are considered as these additional degrees 
-	of freedom require a large number of templates. 
+	of freedom require a large number of templates. \\
 	It is therefore important to consider methods of optimising a template bank, 
 	specifically finding ways of improving effectualness for a given number 
 	of templates and reducing the computational cost. 
@@ -1160,11 +1161,11 @@
 	in which the parameter space metric is almost constant: 
 	the Euclidean distance in this space coincides with the matched-filtering overlap 
 	between waveforms, making these coordinates naturally suited to define a regular lattice. 
-	The minimal match determines the choice of spacing of the discrete template parameters 
+	The minimal match determines the choice of spacing of the discrete template parameters, as shown in Section 3.2, 
 	and therefore the number of discrete templates in the family.
 	The most significant drawback of such banks is the amount of fine-tuning required 
 	in order to cover “holes” across local patches because of the misalignment 
-	of the cells arising from the variation of the metric. 
+	of the cells arising from the variation of the metric \cite{29}. 
 
 \subsubsection{Hybrid placement}
 
@@ -1172,13 +1173,13 @@
 	For example, one can place templates geometrically at low masses 
 	and stochastically at high masses, or one can use many small patches 
 	with regularly spaced templates, which are themselves placed stochastically 
-	to cover the entire parameter space. 
+	to cover the entire parameter space \cite{29, 34}. 
 
 \subsubsection{Compact Binary Spin}
 
 	An observed GW signal from compact  binary coalescence, CBC, is a powerful tool, 
 	that can be used to estimate the parameters of the merging binary,
-	which can then provide information about the formation processes of the system. 
+	which can then provide information about the formation processes of the system. \\ 
 	However, the processes which lead to compact binary formation  
 	depend sensitively on a number of poorly constrained parameters, 
 	such as the typical stellar metallicity at formation, 
@@ -1187,41 +1188,38 @@
 	There are two main channel through which compact objects can be formed:
 	the coevolution of two massive stars in a binary and 
 	the dynamical capture of two preformed compact objects 
-	in dense stellar environments such as globular clusters.
-	
+	in dense stellar environments such as globular clusters \cite{37}. \\	
 	In particular, it is thought that compact binaries formed by dynamical capture 
 	are more likely to have component spins
 	at large angles to the orbital angular momentum, 
 	while those formed by common evolution are more likely to have 
 	spins that are nearly aligned with the orbital angular momentum.
 	Present observations clearly indicate the potential for large spins 
-	on black holes in binaries, possibly close to the Kerr limit $|S/m^2| = |\chi| = 1$.
+	on black holes in binaries, possibly close to the Kerr limit $|\mathbf{S}/m^2| = |\mathbf{\chi}| = 1$.
 	Very few measurements of the angles between the spins and 
 	the orbital angular momentum exist from electromagnetic observations. 
 	In some cases, one can measure this spin misalignment via GW emission, 
 	as misalignment leads to precession of the orbital plane, 
-	which appears as phase and amplitude modulations in the observed signal.
-
+	which appears as phase and amplitude modulations in the observed signal. \\
 	Almost all searches for GWs from coalescing compact binaries 
 	using the data of first generation interferometers 
-	have used templates that neglect the spins of the compact objects.
+	have used templates that neglect the spins of the compact objects \cite{32}.
 	This was primarily motivated by the sensitivity of the Initial LIGO detectors:
 	because the sensitivity band started above 40 Hz, 
 	including spin effects greatly increased the number of templates to be searched over, 
 	and the search performed, on average, no better than non spinning searches, 	
 	as the increased degrees of freedom in the signal space picked up extra noise, 	
-	increasing the false alarm rate. 
+	increasing the false alarm rate \cite{32, 38}. \\ 
 	However, the Advanced LIGO detectors are sensitive to frequencies above 10–20 Hz, 
 	therefore detectors are able to observe the inspiral from much larger orbital separations, 
-	resulting is significantly longer observed GW signal. 
+	resulting is significantly longer observed GW signal \cite{23}. 
 	Proper consideration of the spin effects is essential in the advanced detector era, 
 	as there might be astrophysical systems that are entirely missed by non-precessing searches.
 	Neglecting the spin effects can cause a much larger dephasing of the template with the signal, 
-	and hence considerable loss of SNR.
-
+	and hence considerable loss of SNR. \\
 	Currently, waveform models with spins aligned (or antialigned) with the orbital angular momentum 
 	are being used in searches with Advanced LIGO, 
-	having been demonstrated that aligned-spin templates pull in more signal than noise. 
+	having been demonstrated that aligned-spin templates pull in more signal than noise \cite{27}. 
 	While building a template bank with the geometric approach for these cases is feasible, 
 	since a closed-form expression of the template-space metric can be computed, 
 	this is not possible for binaries with generic spins. 
@@ -1230,13 +1228,13 @@
 	the spin-orbit and spin-spin interactions will cause the spins 
 	(and hence the orbit also) to precess. 
 	The resulting dynamics as well as the GW forms are rather complex, 
-	and the modelling requires solving a set of coupled ordinary differential equations. 
+	and the modelling requires solving a set of coupled ordinary differential equations \cite{39}. 
 	The template placement is further complicated by the large dimensionality of the parameter space 
 	(two mass parameters, five spin parameters, and two angles describing the orientation of the binary, in general). 
 	Detecting highly precessing systems offers a better chance to 
 	disentangle the various parameters that describe the source,  
 	breaking degeneracies that exist between physical parameters 
-	in the emitted gravitational-wave signal.  
+	in the emitted GW signal.  
 	This could allow a better understanding of the nature and origin of these systems.
 	Although the effect of precession on the GW signal is not fully captured 
 	by aligned-spin templates, it has been demonstrated that non-precessing templates 
@@ -1244,59 +1242,56 @@
 	$(m_2/m_1 \leq 10)$; these spin effects can be also described by 
 	a single reduced-spin parameter in an approximate way, 
 	which makes the parameter space three-dimensional, 
-	using the two masses and reduced-spin as variables. 
+	using the two masses and reduced-spin as variables \cite{32}. 
 	
 \section{Candidate ranking statistic}
+
+ 	Since the detector’s calibrated strain data contains both stationary, Gaussian noise
+        and non-Gaussian noise transients of instrumental and environmental origin,
+        matched filtering does not suffice as a detection statistic.
+        Consistency checks are needed to distinguish to mitigate the effect of the noise transients,
+        that can sometimes mimic the signal from a true signal,
+        and to assign an accurate statistical significance to candidate signals.
+        To eliminate the worst periods of detector performance, 
+        data quality investigations are conducted by looking only at the detector behaviour,  
+        which is analysed by monitoring channels \cite{40}.
+        After removing data that is not suitable for astrophysical searches, 
+        noise transients, glitches, of unknown origin could still be present in the data 
+        and can cause certain templates to produce high SNR values.
+        To mitigate the effect of glitches, a gating procedure is applied:
+        after identification of times impacting on the sensitivity of the search,
+        the data are zeroed out around these times \cite{42}.
+        Filtering the data with template banks generates a matched-filter SNR for each template in each detector;
+        GPS times of local maxima that exceed the SNR threshold are recorded as triggers. 
+        Waveform consistency tests are needed to determine if the morphology 
+        of a candidate signal is consistent with the expectation from the triggering template waveform.
 	
 \subsection{$\chi^2$ test}
 
-	Since the detector’s calibrated strain data contains both stationary, Gaussian noise 
-	and non-Gaussian noise transients of instrumental and environmental origin,
-	matched filtering does not suffice as a detection statistic.
- 	Consistency checks are needed to distinguish to mitigate the effect of the noise transients,
-	that can sometimes mimic the signal from a true signal,
-	and to assign an accurate statistical significance to candidate signals.
-  	To eliminate the worst periods of detector performance, 
-	data quality investigations are conducted by looking only at the detector behaviour,  
-	which is analysed by monitoring channels.
-	After removing data that is not suitable for astrophysical searches, 
-	noise transients, glitches, of unknown origin could still be present in the data 
-	and can cause certain templates to produce high SNR values.
-	To mitigate the effect of glitches, a gating procedure is applied:
-	after identification of times impacting on the sensitivity of the search,
-	the data are zeroed out around these times.
-	Filtering the data with template banks generates a matched-filter SNR for each template in each detector;
-	GPS times of local maxima that exceed the SNR threshold are recorded as triggers. 
-	Waveform consistency tests are needed to determine if the morphology 
-	of a candidate signal is consistent with the expectation from the triggering template waveform.
 	For signals from compact binary mergers, one can construct $\chi^2$-test:
-	the template is split into p non-overlapping frequency bins; 
-	these bins are constructed so that each contributes equally t
-	o the SNR of a perfectly matching signal. 
+	the template is split into $p$ non-overlapping frequency bins; 
+	these bins are constructed so that each contributes equally to 
+	the SNR of a perfectly matching signal \cite{28, 41}. 
 	The $\chi^2$ statistic compares the expected to the measured template in each bin according to 
-
 		\begin{equation}
 			\chi^2_r = {1 \over {2p-2}}   \sum_{I=1}^{I=p} || \langle   s|h_i  \rangle -   \langle  h_i|h_i   \rangle ||^2
 		\end{equation}
-
 	where $\chi^2_r = \chi^2/(2p-2)$ is the reduced chi-squared and for real GW signals this value should be near unity, 
 	meaning that the data is describing Gaussian noise with an embedded signal.
 	In order to combine the SNR with the $\chi^2$ test to produce a ranking statistic 
 	and down-weight triggers caused by noise transients, 	
 	the matched-filter SNR is re-weighted 
-
 		\begin{equation}
 		\begin{cases}
 			\hat \rho &= \rho \hspace*{4.5cm}  \text{for} \hspace*{0.15cm}\chi^2_r <= 1 \\
 			\hat \rho &= \rho[{1 \over 2} (1 + (\chi^2_r)^3)]^{-1/6}  \hspace*{1.5cm}  \text{for} \hspace*{0.15cm} \chi^2_r > 1
 		\end{cases}
 		\end{equation}
-
-	The search requires that gravitational-wave signals be identified via matched filtering 
+	The search requires that GW signals be identified via matched filtering 
 	in at least two independent detectors with consistent parameters. 
 	To be considered a candidate event, arrival times of the GWs at each detector 
 	must differ by no more than the the maximum time-of-flight between the detectors, 
-	with an additional window to account for uncertainty in the measurement of the time of arrival.
+	with an additional window to account for uncertainty in the measurement of the time of arrival \cite{13}.
  
 \subsection{False Alarm Rate}
 
@@ -1312,7 +1307,7 @@
 	In order to assess the actual significance of a candidate, 
 	we need to measure the false-alarm rate, (FAR), of the search as a function of the detection statistic.
 	Typically, a detector’s background FAR can be determined 
-	simply by turning off the source or changing the orientation of the detector. 
+	simply by turning off the source or changing the orientation of the detector \cite{13, 43}. \\ 
   	However, since it is not possible to isolate the detectors from GWs, 
 	it is impossible to directly measure the detector noise in the absence of signals.
  	To estimate the FARs the data stream is shifted in time, 
@@ -1320,35 +1315,29 @@
 	used to determine if signals are observed with consistent parameters in the network.
 	The resulting “time-shifted” coincidences are then treated as a background noise sample. 
 	This is done numerous times with different time shifts in order to obtain 
-	a probability distribution for the joint detector ranking statistics. 
+	a probability distribution for the joint detector ranking statistics \cite{44}. 
 	Each coincident trigger is assigned a FAR given by the number 
 	of background triggers, $n_b(\hat \rho)$, with an equal or larger ranking statistic, 
 	divided by the total time searched for time-shifted coincidences $T_b$
-		
 		\begin{equation}
 			FAR = {{1 + n_(\hat \rho)} \over {T_b}}
 		\end{equation}
-
 	To account for the noise background varying across the target signal space, 
 	candidate and background events are divided into different search classes based on template length. 
 	The significance of candidate events is measured against the background from the same class. 
 	For each candidate event, one can compute the probability of finding one or more 
 	noise background events in the observation time with a detection-statistic value above that of the candidate event, given by 
-
 		\begin{equation}
 			FAP(\hat \rho) \equiv P(\geq 1 \hspace*{0.1cm}\text{noise event above}\hspace*{0.1cm} \hat \rho|T,T_b) = 1 - e^{-T{{1+n_b(\hat \rho)} \over{T_b}}}
 		\end{equation}
-
 	where T is the observation time of the search.
 	If a candidate event’s detection-statistic value is larger 
 	than that of any noise background event, 
 	then the analysis places an upper bound on the candidate’s false alarm probability. 
 	The inverse of FAR specifies the waiting time before such an event from noise is seen, and it is given by 
-
 		\begin{equation}
 			IFAR = {1 \over {FAR}}
 		\end{equation}   
-
 \section{Coincident and coherent research}
 
 	There are two main detection strategies to search for GWs 	
@@ -1364,8 +1353,8 @@
 	are compatible with a GW source with two polarisations.
 	The benefit of the coincidence search is that it is not computationally expensive: 
 	the dominant cost of the search is in performing a matched filter 
-	of the data against a bank of template waveforms, (as seen in Section.) :
-        this task is done once per detector per template.
+	of the data against a bank of template waveforms, (as seen in Section 2.1):
+        this task is done once per detector per template \cite{28, 45}. \\
 	A search over the sky location of the signal is then trivially done 
 	by time-shifting the results from the different detectors accordingly.
         Similarly, the noise background is estimated by applying larger time shifts to the data,
@@ -1373,7 +1362,7 @@
         In a coincidence search, it is necessary to place a threshold on the SNR of events
         which will be stored by the analysis prior to identifying coincidences.
         This means that the power in the GW signal will only be accumulated
-	in those detectors where there was an event above threshold.
+	in those detectors where there was an event above threshold \cite{45}.
 
 \subsection{Coherent}
 
@@ -1381,39 +1370,33 @@
 	this strategy treats the detectors as if they are isolated 
 	and then combines the data from all detectors phase coherently, 
 	appropriately correcting for time-delays and polarization phases, 
-	to obtain an individual detection statistic which is then compared with a single threshold. 
+	to obtain an individual detection statistic which is then compared with a single threshold \cite{18}. 
 	The aim of this type of search is to obtain a single statistic for the full 
 	network, that is optimized in the maximum likelihood sense, 
-	to effectively construct a single, more sensitive detector.
+	to effectively construct a single, more sensitive detector. \\
  	While this method has been applied to searches for unmodelled burst sources,
-        it has proven more difficult to use for the binary merger search.
+        it has proven more difficult to use for the binary merger search \cite{45}.
 
 \subsubsection{Coherent SNR}
 	
 	The GW signal seen by detector $X$ is a combination of 
 	the two polarisations weighted by the detector antenna 
 	response
-
 		\begin{equation}
 			h^X(t) = F_{+}^X h_{+}(t^X) + F_{\times}^X h_{\times}(t^X) 
 		\end{equation}
-
 	where the time of arrival in detector $X$ depends upon the sky location 
 	of the source relative to the detector and the time of arrival at a fiducial location, 
-	for example the Earth’s centre [24]. 
+	for example the Earth’s centre \cite{45}. 
 	For a network of detectors, the multi-detector matched-filter
-	 is defined as the sum of the single detector inner products
- 
+	is defined as the sum of the single detector inner products
 		\begin{equation}
 			(a|b) \equiv \sum^D_{X=1} (a^X|b^X)
 		\end{equation}
-	
 	where D is the number of detectors in the network. The multi-detector log-likelihood is then calculated as
-
 		\begin{equation}
 			ln \lambda = (s|h) - {1 \over 2} (h|h)
 		\end{equation}
-
 	The larger the value of $ln \lambda$, the more likely that a signal is present.
 	The coherent SNR is obtained by maximising the log-likelihood 
 	over the values of the waveform amplitudes:
@@ -1421,19 +1404,15 @@
 		\begin{equation}
 			\rho^2 _{coh}\equiv 2 ln \lambda |_{MAX}
 		\end{equation}
- 	
-	In the absence of a signal, the $\rho^2_{coh}$ follows a $\chi^2$ distribution.
-
+	In the absence of a signal, the $\rho^2_{coh}$ follows a $\chi^2$ distribution. \\
         While in a coincidence search requires a signal to be observed in two or more detectors, 
 	resulting in the coincident SNR to be simply the sum of all power consistent with the template waveform in each detector,
-	the coherent search naturally incorporates the SNR from all operational detectors.
-	
+	the coherent search naturally incorporates the SNR from all operational detectors \cite{45, 46}. \\
 	It has been demonstrated that for a signal in the absence of noise the coincident and coherent SNRs are identical. 
 	For noise events, the coincident SNR includes all of the noise, 
 	while the coherent SNR, incorporating only those contributions which are compatible 
-	with a coherent signal at all detectors, obtains precisely the same signal but reduces the noise background. 
-	
-	 Even though the coherent method is highly effective at removing background noise,  
+	with a coherent signal at all detectors, obtains precisely the same signal but reduces the noise background \cite{45}. \\
+	Even though the coherent method is highly effective at removing background noise,  
 	signal consistency tests are still required to distinguish glitches from GW signals. 
 
 \subsubsection{Null Stream Consistency}
@@ -1443,62 +1422,54 @@
 	and uses this to restrict the signal model to 
 	only two independent polarizations, 
 	thus it is easier to distinguish transients from GW signals, 
-	as those transients which do not contribute power to the signal space, and to reject incoherent background noise. 
-	
-
-	and consequently the search is more sensitive as the number of detectors in the global network increases.
-
+	as those transients which do not contribute power to the signal space, and to reject incoherent background noise. \\
+	Consequently the search is more sensitive as the number of detectors in the global network increases.
         When there are more than two detectors, 
 	it is possible to construct one or more null data streams 
 	which contain only noise, and define the null SNR as
-
 		\begin{equation}
 			\rho^2_N = \rho^2_{coinc} - \rho^2_{coh} 
 		\end{equation}
-
-	 
 	Requiring a small null SNR is an effective method to separate 
 	an incoherent noise transient from a real GW signals: 
 	in fact such noise events may give a large coherent SNR,
-	 but it is likely to also give a large null SNR.       
+	but it is likely to also give a large null SNR \cite{45}.       
 
 \section{Injections}
 
 	In order to test the sensitivity of a search pipeline to detect CBC signals, 
-	simulated gravitational waveforms, injections, can be added o the data before filtering.
+	simulated gravitational waveforms, injections, can be added in the data before filtering.
 	Then a search can be performed over the data with the added injections just as it would normally do with the real data;
 	by determining FARs for the injections that we recover, 	
 	and noting which injections are not recovered at all,
-	we can understand how well we detect certain types of sources.
+	we can understand how well we detect certain types of sources \cite{47, 48}.
 	Studies of injection recovery also aid with tuning different parameters 
 	of the search pipeline and setting upper limits on the rates of particular sources. 
 	One method of determining sensitivity to particular injections is the efficiency, 
 	or fraction of found injections, as a function of injected physical distance. 
 	Another method of determining a search’s sensitivity to a particular source 
 	is to examine the injected distance as a function of frequency 
-	(or total mass) for missed and found injections. 
-	
+	(or total mass) for missed and found injections. \\
 	These simulations can be performed in two ways: software and hardware injections.
 	The former are used to verify the results obtained from software injections, 
-	the latter are used for high-statistics evaluation of the performance of analyses. 
+	the latter are used for high-statistics evaluation of the performance of analyses \cite{49}. 
 
 \subsection{Software injections}
 
 	Software injections are a streaming time series of simulated gravitational waveforms, 
 	generated in the software, from a synthetic population of a certain type of source, 
 	described by astrophysical parameters, including the strain amplitude, sky location, 	
-	and initial frequency, and added to the data stream. 
+	and initial frequency, and added to the data stream \cite{30}. 
 	This can be done many times, by specifying a time-step at which to place injections, 
 	without disturbing the detector or significantly reducing the duty cycle of the detectors. 
 	To randomize the placement, a time interval needs to be provided around 
 	each time-step in which the injection is actually placed. 
 	Furthermore, one can choose to set up multiple injection searches with different injection sets. 
-	Thus, we can study the recovery of thousands of injections to decide on the best tuning for a search. 
+	Thus, we can study the recovery of thousands of injections to decide on the best tuning for a search. \\ 
 	However, there is no limit to the number of software injections that can be performed. 
 	The analysis of the same data can simply be repeated with different software injections present as often as is desired. 
-	For the CBC low mass analysis, the process is to use software injections to tune the pipeline; 
-	they are also used when calculating upper limits.
-	Software injections do not offer as comprehensive a test of the infrastructure as hardware injections. 
+	For the CBC analysis, the process is to use software injections to tune the pipeline; 
+	they are also used when calculating upper limits \cite{47}.
 	
 \subsection{Hardware injections}
 
@@ -1514,17 +1485,16 @@
 	The recovery of hardware injections provides an additional check 
 	of the sign of the calibration between the Advanced LIGO detectors 
 	using astrophysical waveforms and the recovery measures 
-	the time delay of the signal in the controls system. 
+	the time delay of the signal in the controls system. \\ 
 	However, as hardware injections cannot be removed from the data, 
 	times when hardware injections are made cannot be analysed 
 	for any other signals that might be in the data. 
-	Therefore, only a limited number of hardware injections can be made in a given stretch of data. 
-
+	Therefore, only a limited number of hardware injections can be made in a given stretch of data. \\
 	If a detection candidate is a true GW, 
 	we should be able to reproduce the morphology of the posterior distributions 
 	using the hardware injections as well as with software injection. 
 	Conversely any significant differences have the potential to highlight 
-	discrepancies between the observation and our waveform models, or errors in our data analysis. 
+	discrepancies between the observation and our waveform models, or errors in our data analysis \cite{50}. 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational wave observation so far}
 
@@ -1606,6 +1576,11 @@
   	\bibitem{25} Collin Capano, Ian Harry, Stephen Privitera, and Alessandra Buonanno. Implementing a search for gravitational waves from non-precessing, spinning binary black holes. arXiv:1602.03509.
   	\bibitem{26} L. Wen et al 2008. Geometrical expression of the angular resolution of a network of gravitational-wave detectors and improved localization methods. J. Phys.: Conf. Ser. 122 012038.
 	\bibitem{27} I. Harry, J. Calderon Bustillo, and A. Nitz, (2017). Searching for the full symphony of black hole binary mergers. arXiv:1709.09181 [gr-qc]. 
+  	\bibitem{28} Samantha A. Usman et al. The PyCBC search for gravitational waves from compact binary coalescence.  Classical Quantum Gravity 33, 215004 (2016). 
+  	\bibitem{29}  Javier Roulet, Liang Dai, Tejaswi Venumadhav, Barak Zackay, and Matias Zaldarriaga. Template bank for compact binary coalescence searches in gravitational wave data: A general geometric placement algorithm. Phys. Rev. D 99, 123022. 
+	\bibitem{30} S. Babak, R. Balasubramanian, D. Churches, T. Cokelaer, and B. S. Sathyaprakash. A template bank to search for gravitational waves from inspiralling compact binaries. I: Physical models. Class. Quant. Grav., 23:5477–5504, 2006. 
+	\bibitem{31} Benjamin J. Owen, B. S. Sathyaprakash. Matched filtering of gravitational waves from inspiraling compact binaries: Computational cost and template placement. arXiv:gr-qc/9808076v1
+	\bibitem{32} P. Ajith, N. Fotopoulos, S. Privitera, A. Neunzert, N. Mazumder, A. J. Weinstein. An effectual template bank for the detection of gravitational waves from inspiralling compact binaries with generic spins. arXiv:1210.6666v2.
 
 \end{thebibliography}
 
