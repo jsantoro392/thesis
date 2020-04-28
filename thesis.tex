@@ -1313,9 +1313,15 @@
  	To estimate the FARs the data stream is shifted in time, 
 	choosing the minimum time-shift offset to be larger than the time-coincidence window 
 	used to determine if signals are observed with consistent parameters in the network.
-	The resulting “time-shifted” coincidences are then treated as a background noise sample. 
+	The resulting “time-shifted” coincidences are then treated as a background noise sample, as seen in Fig.$\ref{fig:Significance}$. 
 	This is done numerous times with different time shifts in order to obtain 
 	a probability distribution for the joint detector ranking statistics \cite{44}. 
+		\begin{figure}
+			\includegraphics[scale=0.25]{Significance}
+                  	\centering
+                  	\caption{Visual description of time shifting data to build a background noise sample.}
+                  	\label{fig:Significance}
+                 \end{figure}
 	Each coincident trigger is assigned a FAR given by the number 
 	of background triggers, $n_b(\hat \rho)$, with an equal or larger ranking statistic, 
 	divided by the total time searched for time-shifted coincidences $T_b$
@@ -1489,7 +1495,7 @@
 	However, as hardware injections cannot be removed from the data, 
 	times when hardware injections are made cannot be analysed 
 	for any other signals that might be in the data. 
-	Therefore, only a limited number of hardware injections can be made in a given stretch of data. \\
+	:herefore, only a limited number of hardware injections can be made in a given stretch of data. \\
 	If a detection candidate is a true GW, 
 	we should be able to reproduce the morphology of the posterior distributions 
 	using the hardware injections as well as with software injection. 
@@ -1502,48 +1508,118 @@
 	by the LIGO Scientific Collaboration from 2002 to 2010; 
 	during the last two observing runs LIGO, various enhancements 
 	beyond the original design improved its sensitivity up to a $20\%$  
-	is measure by the BNS range \cite{53, 54}.
+	as measured by the by the BNS range \cite{53,54},
 	defined as the average distance at which we can detect a binary neutron star (BNS) merger
 	assuming each neutron star with mass of 1.4 ${M_\odot}$ with a SNR of 8, 
 	averaged over all possible sky locations and orientations of the source \cite{51}. \\
 	Even though no GW were detected during the initial LIGO era, 
 	observations led to over 100 publications of observational limits 
 	on the strength and frequency of occurrence of GWs from a broad range of alleged GW sources. \\
-	The first GW direct observation was achieved in 2015 \cite{52}, 
-	after LIGO began observing in an upgraded program called Advanced LIGO, 
-	during its first observing run (O1) from 12th September 2015 to 19th January 2016.
-	After an upgrade and commissioning period, 
-	the second observing run (O2) took place from November 30, 2016 to August 25, 2017. \\
-	During O1 and O2 the individual LIGO detectors were in science mode, meaning that they were taking data,
-	for about 60$\%$ of the time, 45$\%$ of which was taken simultaneously by both detectors.
-	During O2, on the 1st August 2017, Advanced Virgo joined the two Advanced LIGO detectors for the first time, 
-	taking sensitive data about 80$\%$ of the time \cite{55}.  \\
-	Between O1 and O2 run the sensitivity of both LIGO instruments was improved and 
-	at LIGO Livingston (LLO) further improvements were made during O2. 
-	As a result, the LLO BNS range increased from about 60 Mpc during O1, 
-	to 80 Mpc at the beginning of O2 and then it was increased 
-	by an average of about $20\%$ over all of O2. 
- 	Despite the lower BNS range, during O2 was about 25 Mpc, 
-	and cumulative time-volume for Virgo, its contribution has been important 
-	for astrophysical parameter estimation, especially in determining source localization and orientation \cite{56}. \\
-	In addition to the instruments upgrade, development were made also
-	in the algorithms that search for GW signal in the observed data motivated the reanalysis of data from O1, 
-	in order to reevaluate the significance of previously identified GW events and to potentially discover new ones. 
-	An example of reevaluation is one of the BBH mergers from O1, that was previously referred to as LVT151012.
- 	Its statistical significance was to low to be considered as a GW at the time, 
-	but a detailed re-analysis showed that it is an indeed a GW event, and it is now re-labeled as GW151012. 
-	Data from the O2 run was also reanalysed after the application of a data cleaning procedure, 
-	to remove some of the detector noise and improve the sensitivity. \\
-	The GW Transient Catalog (GWTC-1) \cite{58} from the O1 and O2 data collects 
-	a total of eleven confident detections: 
-	ten BBH mergers \cite{52, 57-60} and one BNS merger \cite{62} and fourteen marginal triggers.
-	Notable events in this catalog are the  first observed event GW150914 \cite{52},
-	the first three-detector event GW170814 \cite{61} and the BNS 
-	coalescence GW170817 \cite{62}, the first case where an electromagnetic counterpart to a GW 
-	has been observed from a single source \cite{63}. \\
-	On April 1, 2019, Advanced LIGO and Advanced Virgo initiated their third observing run (O3),
-	which ended in April, 2020 \cite{53}. 
-\section{O1}
+	The first GW direct observation was achieved after LIGO began observing in an upgraded program called Advanced LIGO, 
+	during its first observing run (O1) in 2015  \cite{52}, which was followed by a second observing run (O2) in 2016 and a third (O3) in 2019.
+	A total of eleven confident detections were collected from the O1 and O2 data: The GW Transient Catalog (GWTC-1) %warning: mettere a  posto citazione%
+	ten BBH mergers \cite{52, 57-60} and one BNS merger \cite{61} and fourteen marginal triggers.
+	Notable events in this catalog are the first observed event GW150914 \cite{52},
+	the first three-detector event GW170814 \cite{60} and the BNS
+	coalescence GW170817 \cite{61}, the first case where an electromagnetic counterpart to a GW 
+	has been observed from a single source \cite{62}. \\
+	Data from GW detectors are searched by detection pipelines, which look for many types of possible signals %warning:(Abbott et al. 2018f)%. 
+	Candidate triggers flagged by a pipeline are assigned a detection statistic 
+	to quantify how signal-like they are. 
+	Here we focus on signals from CBCs, including BNS, NSBH and BBH systems.
+	During the observing runs, CBC searches are carried out in near real-time 
+	to rapidly identify event candidates and deliver prompt notice of potential GW transients 
+	enabling follow-up observations in the electromagnetic spectrum. 
+	Increased detection confidence, improved sky localization, identification of a host galaxy, 
+	and the source redshift are just some of the benefits of joint GW–electromagnetic observations. 
+	The emitted signals depend upon the strong field dynamics of general relativity; 
+	thus, our observations provide an extraordinary opportunity to test 
+	the predictions of general relativity for binary coalescence waveforms, such as tests for the consistency of the observed waveform with a general-relativity-based model.
+	Lower mass systems, lasting for many more cycles in the detector data, 
+	allow to better constrain the post-newtonian coefficients that describe the evolution of the binary through the inspiral phase. 
+
+\section{O1: first observing run}
+
+	The first observing run, which took place from 12th September 2015 to 19th January 2016, 
+	involved the Hanford and Livingston detectors which provided unprecedented sensitivity to GW 
+	over a range of frequencies from 30 Hz to several kHz \cite{108}, 
+	covering the frequencies of GW emitted during 
+	the late inspiral, merger, and ringdown of stellar-mass BBHs. \\
+	Two independent matched-filter searches were used to detect GWs from CBC, PyCBC \cite{109-112} and GstLAL \cite{112-114}.
+	The pipelines identify GW candidates by looking at coincident events, 
+	found in both LIGO detectors in a proper time window, 15 ms, 
+	that accounts for the intersite propagation time plus uncertainties; 
+	they both use a discrete template bank \cite{114, 115-120}, which targets GW from binaries with individual masses from 1${M_\odot}$  to 99 ${M_\odot}$,
+	total mass less than 100 ${M_\odot}$, and dimensionless spins up to 0.99.\\
+	To assess the candidate significance, they compare the candidate with the noise background, 
+	and once an event is confirmed to be a real GW signal, it is removed from the data when estimating the noise background. 
+	Polluted data with short duration artifacts are identified and removed from the analysis data set.
+	After applying this data quality process, the remaining coincident analysis time in O1 was 48.6 days. 
+	The analyses search only stretches of data longer than a minimum duration, 
+	to ensure that the detectors are operating stably, 
+	resulting in 46.1 days of available data for the PyCBC analysis and 48.3 daysr for the GstLAL analysis. \\
+	Three GW events detected during this run, all three consistent with originating from BBHs
+	The binary component masses of all three systems lie 
+	within the range expected for stellar-mass black holes. 
+
+\subsection{GW150914 BBH}
+	
+	The era of GW astronomy began with the detection of the merger of two stellar-mass BHs, GW150914, 
+	on September 14, 2015 at 09:50:45 UTC with a matched-filter SNR of 23.7 \cite{BBH mergers}. 
+	It is recovered with a reweighted SNR in the PyCBC analysis of 22.7 and a log likelihood of $84.7$ in the GstLAL analysis. 
+	Both analyses have shown that GW150914 is the most significant event and that the probability that 
+	this event was formed by random coincidence of detector noise is extremely small. 
+	In both cases, there are no background events with significance 
+	equal to or greater than GW150914, therefore only a limit can be imposed on the false alarm rate (FAR) for GW150914. 
+	Using the time-shift method to estimate background, 
+	the FAR of GW150914 is limited to be less than $6.0 \times 10^{-7} yr^{-1}$. 
+	This corresponds to a p-value of $7.5 × 10^{-8}$, or a significance of $5.3\sigma$. \\
+	The analysis makes use of two waveform models, the double aligned spin waveform model (EOBNR) \cite{103, 104} 
+	and an effective precessing spin model (IMRPhenom) \cite{105-107}. 
+	Results from the two waveforms are similar, and match the expectations for a coherent signal in both detectors,
+	coming from astrophysical origin. 
+	GW150914 corresponds to the heaviest BBH system, $M^{source} = 65.3^{+4.1}_{-3.4}M_\odot$ and came from a near equal-mass system of $36^{+5}_{-4}M_\odot$ and $29^{+4}_{-4}M_\odot$ \cite{}%warning missing cite%.
+	Following the inspiral, the BBHs merge to form a final remnant black hole, that has a mass of $M^{source}_f = 62.3^{+3.7}_{-3.1}M_\odot$.
+	This result is coherent with the expected final remnant black hole mass, which is usually 0.95–0.98 of the initial 
+	total mass of the binary components, as similar fractions of 0.02–0.05 are radiated away as gravitational waves. 
+	While predominantly determined by the total mass, the radiated energy also 
+	depends upon the mass ratio and component spins. \\
+	The results obtained for GW150914 are consistent with expectations for moderately spinning black holes \cite{101, 102}. 
+	For equal mass binaries, both components of the spin, 
+	parallel and orthogonal to the orbital angular momentum, 
+	play an equal role in the dynamics, but, as the mass ratio tends towards zero, 
+	the effects of the secondary spin become negligible. 
+	The spin of the final black hole, like its mass, is calculated using fitting formulas 
+	calibrated against numerical relativity simulations.
+	The final black holes for GW150914 has spin of $0.68^{+0.05}_{-0.06}$ as expected for mergers of similar-mass black holes \cite{99, 100}. 
+	The final spin is dominated by the orbital angular momentum of the binary at merger. \\
+	The luminosity distance to the source is inversely proportional to the signal’s amplitude: 
+	GW150914 has an estimate distance of $D_L = 420^{+150}_{-180}Mpc$ (redshift $z=0.09^{+0.03}_{-0.04}$). 
+	Since there is a degeneracy between the distance and the binary’s inclination, 	
+	which also impacts the signal amplitude \cite{96-98}, 
+	there is significant fractional uncertainty for the distance. 
+	The configurations for which the orientation of the binary produces the greatest GW amplitude, 
+	are either face-on or face-off (angular momentum pointed parallel or antiparallel to the line of sight). 
+	The inclination could potentially be better constrained in a precessing system \cite{94, 95}. 
+	Only for GW150914 is there preference for one of the configurations, with there being greater posterior support for the source being face-off \cite{93}. \\ 
+	Sky localization from a GW detector network is primarily determined by the measured delay in the signal arriving at the sites, 
+	with additional information coming from the signal amplitude and phase \cite{91,92}. 
+	The arrival time at Hanford relative to Livingstone was $\Delta t_{HL} = 7.0^{+0.02}_{-0.02}$.
+	The 90\% credible region for sky localization is $230 deg^2$ for GW150914.
+	The sky area is expected to scale inversely with the square of the SNR \cite{89,90}, 
+	and this trend is followed as this event has the smallest sky localisation and 
+	highest SNR than the other two events detected during O1, as we will see in the next sections. \\
+	This GW discovery provides the first robust confirmation of several theoretical predictions:
+	heavy BHs exist, BBHs form in nature, and BBHs merge within the age of the Universe at a detectable rate. 
+	However, it was impossible to determine the formation channel for this event. 
+	Possible BBH formation channels include dynamical formation in a dense stellar environment \cite{84, 88} 
+	possibly assisted by gas drag in galactic nuclear disks \cite{82, 83}, or isolated binary evolution, 
+	either the classical variant via a common-envelope phase \cite{76-81}, 
+	possibly from population III binaries \cite{74, 75}, or chemically homogeneous evolution 
+	in close tidally locked binaries \cite{72, 73}. 
+	All of these channels have been shown to be consistent with the GW150914 discovery \cite{63-70}. 
+
+
 
 \section{O2}
 
@@ -1657,6 +1733,63 @@
 	\bibitem{61} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). GW170814: A Three-Detector Observation of Gravitational Waves from a Binary Black Hole Coalescence. Phys. Rev. Lett. 119, 141101 (2017).
 	\bibitem{62} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral. Phys. Rev. Lett. 119, 161101 (2017).         
 	\bibitem{63} Abbott, B. P. et al. Multi-messenger observations of a binary neutron star merger. ApJ 848, L12 (2017).
+	\bibitem{63} K. Belczynski, D. E. Holz, T. Bulik, and R. O’Shaugh- nessy, The First Gravitational-Wave Source from the Isolated Evolution of Two 40-100 Msun Stars, Nature (London) 534, 512 (2016)
+	\bibitem{64} J. J. Eldridge and E. R. Stanway, BPASS Predictions for Binary Black-Hole Mergers, Mon. Not. R. Astron. Soc. 462, 3302 (2016).
+	\bibitem{65} V. M. Lipunov, V. Kornilov, E. Gorbovskoy, N. Tiurina, P. Balanutsa, and A. Kuznetsov, The First Gravitational- Wave Burst GW150914. Part I. Scenario Machine Pre- diction, New Astron. 51, 122 (2016).
+ 	\bibitem{66}S.E. de Mink and I. Mandel, The Chemically Homo- geneous Evolutionary Channel for Binary Black Hole Mergers: Rates and Properties of Gravitational-Wave Events Detectable by Advanced LIGO, Mon. Not. R. Astron. Soc. 460, 3545 (2016).
+	\bibitem{67} K. Inayoshi, K. Kashiyama, E. Visbal, and Z. Haiman, Strong Gravitational Wave Background from Population III Binary Black Holes Consistent with Cosmic Reioniza- tion, Mon. Not. R. Astron. Soc. 461, 2722 (2016).
+	\bibitem{69} C. L. Rodriguez, C.J. Haster, S. Chatterjee, V. Kalogera, and F. A. Rasio, Dynamical Formation of the GW150914 Binary Black Hole, Astrophys. J. Lett. 824, L8 (2016). M. Mapelli, Massive Black Hole Binaries from Runaway Collisions: The Impact of Metallicity, Mon. Not. R. Astron. Soc. 459, 3432 (2016).
+        \bibitem{70} I. Bartos, B. Kocsis, Z. Haiman, and S. Márka, Rapid and Bright Stellar-Mass Binary Black Hole Mergers in Active Galactic Nuclei, arXiv:1602.03831.
+	\bibitem{71} N. C. Stone, B. D. Metzger, and Z. Haiman, Assisted Inspirals of Stellar Mass Black Holes Embedded in AGN Disks, Mon. Not. R. Astron. Soc., doi: 10.1093/ mnras/stw2260 (2015).
+        \bibitem{72} I. Mandel and S. E. de Mink, Merging Binary Black Holes Formed through Chemically Homogeneous Evolution in Short-Period Stellar Binaries, Mon. Not. R. Astron. Soc. 458, 2634 (2016).
+        \bibitem{73} P. Marchant, N. Langer, P. Podsiadlowski, T. M. Tauris, and T. J. Moriya, A New Route Towards Merging Massive Black Holes, Astron. Astrophys. 588, A50 (2016).
+        \bibitem{74}K. Belczynski, T. Bulik, and B. Rudak, The First Stellar Binary Black Holes: The Strongest Gravitational Wave Burst Sources, Astrophys. J. Lett. 608, L45 (2004).
+        \bibitem{75}T. Kinugawa, K. Inayoshi, K. Hotokezaka, D. Nakauchi, and T. Nakamura, Possible Indirect Confirmation of the Existence of Pop III Massive Stars by Gravitational Wave, Mon. Not. R. Astron. Soc. 442, 2963 (2014).
+        \bibitem{76} A. Tutukov and L. Yungelson, Evolution of Massive Close Binaries, Nauchnye Informatsii 27, 70 (1973).
+        \bibitem{77} A. V. Tutukov and L. R. Yungelson, The Merger Rate of Neutron Star and Black Hole Binaries, Mon. Not. R. Astron. Soc. 260, 675 (1993).
+        \bibitem{78}V. M. Lipunov, K. A. Postnov, and M. E. Prokhorov, Formation and Coalescence of Relativistic Binary Stars: The Effect of Kick Velocity, Mon. Not. R. Astron. Soc. 288, 245 (1997).
+        \bibitem{79}R. Voss and T. M. Tauris, Galactic Distribution of Merging Neutron Stars and Black Holes—Prospects for Short Gamma-Ray Burst Progenitors and LIGO/Virgo, Mon. Not. R. Astron. Soc. 342, 1169 (2003).
+        \bibitem{80}G. Nelemans, Galactic Binaries as Sources of Gravitational Waves, in Astrophysics of Gravitational Wave Sources, American Institute of Physics Conference Series, edited by J.M. Centrella (AIP, Melville, NY, 2003), Vol. 686, pp. 263–272.
+        \bibitem{81}K. Belczynski, M. Dominik, T. Bulik, R. O’Shaughnessy, C. Fryer, and D. E. Holz, The Effect of Metallicity on the Detection Prospects for Gravitational Waves, Astrophys. J. Lett. 715, L138 (2010).
+        \bibitem{82} B. McKernan, K. E. S. Ford, W. Lyra, and H. B. Perets, Intermediate Mass Black Holes in AGN DiscsI. Production and Growth, Mon. Not. R. Astron. Soc. 425, 460 (2012).
+        \bibitem{83} J.M. Bellovary, M.-M. Mac Low, B. McKernan, and K. E. S. Ford, Migration Traps in Disks around Super- massive Black Holes, Astrophys. J. Lett. 819, L17 (2016).
+        \bibitem{84} S. Sigurdsson and L. Hernquist, Primordial Black Holes in Globular Clusters, Nature (London) 364, 423 (1993).
+        \bibitem{85} S. F. Portegies Zwart and S. L. W. McMillan, Black Hole Mergers in the Universe, Astrophys. J. 528, L17 (2000).
+        \bibitem{86} M. C. Miller and V. M. Lauburg, Mergers of Stellar-Mass Black Holes in Nuclear Star Clusters, Astrophys. J. 692, 917 (2009).
+        \bibitem{87} B. M. Ziosi, M. Mapelli, M. Branchesi, and G. Tormen, Dynamics of Stellar Black Holes in Young Star Clusters with Different Metallicities II. Black Hole-Black Hole Binaries, Mon. Not. R. Astron. Soc. 441, 3703 (2014).
+        \bibitem{88} C.L. Rodriguez, M. Morscher, B. Pattabiraman, S. Chatterjee, C.-J. Haster, and F.A. Rasio, Binary Black Hole Mergers from Globular Clusters: Implications for Advanced LIGO, Phys. Rev. Lett. 115, 051101 (2015).
+        \bibitem{89} C. P. L. Berry et al., Parameter Estimation for Binary Neutron-Star Coalescences with Realistic Noise During the Advanced LIGO Era, Astrophys. J. 804, 114 (2015).
+	\bibitem{90} S. Fairhurst, Source Localization with an Advanced Gravitational Wave Detector Network, Classical Quantum Gravity 28, 105021 (2011).
+        \bibitem{91} L. P. Singer and L. R. Price, Rapid Bayesian Position Reconstruction for Gravitational-Wave Transients, Phys. Rev. D 93, 024013 (2016).
+   	\bibitem{92} S. Fairhurst, Triangulation of Gravitational Wave Sources with a Network of Detectors, New J. Phys. 11, 123006 (2009).
+   	\bibitem{93} B. P. Abbott, R. Abbott, T. D. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration), Properties of the Binary Black Hole Merger GW150914, Phys. Rev. Lett. 116, 241102 (2016).
+	\bibitem{94} S. Vitale, R. Lynch, J. Veitch, V. Raymond, and R. Sturani, Measuring the Spin of Black Holes in Binary Systems Using Gravitational Waves, Phys. Rev. Lett. 112, 251101 (2014). 
+	\bibitem{95} M. V. van der Sluys, C. Roever, A. Stroeer, N. Christensen, V. Kalogera, R. Meyer, and A. Vecchio, Gravitational- Wave Astronomy with Inspiral Signals of Spinning Compact-Object Binaries,        Astrophys. J. 688, L61 (2008).
+        \bibitem{96}S. Nissanke, D. E. Holz, S. A. Hughes, N. Dalal, and J. L. Sievers, Exploring Short Gamma-Ray Bursts as Gravitational-Wave Standard Sirens, Astrophys. J. 725, 496 (2010).
+        \bibitem{97}B. Farr et al., Parameter Estimation on Gravitational Waves from Neutron-Star Binaries with Spinning Components, Astrophys. J. 825, 116 (2015).
+    	\bibitem{98} C. Cutler and E. Flanagan, Gravitational Waves from Merging Compact Binaries: How Accurately Can One Extract the Binary’s Parameters from the Inspiral Waveform?, Phys. Rev. D 49, 2658 (1994) 
+   	\bibitem{99} J. A. Gonzalez, U. Sperhake, B. Brügmann, M. Hannam, and S. Husa, Total Recoil: The Maximum Kick from Nonspinning Black-Hole Binary Inspiral, Phys. Rev. Lett. 98, 091101 (2007).
+        \bibitem{100} E. Berti, V. Cardoso, J.A. Gonzalez, U. Sperhake, M. Hannam, S. Husa, and B. Brügmann, Inspiral, Merger and Ringdown of Unequal Mass Black Hole Binaries: A Multipolar Analysis, Phys. Rev. D 76, 064034 (2007).
+        \bibitem{101} J. G. Baker, W. D. Boggs, J. Centrella, B. J. Kelly, S. T. McWilliams, and J.R. van Meter, Mergers of Non- spinning Black-Hole Binaries: Gravitational Radiation Characteristics, Phys. Rev. D 78, 044046 (2008). 
+        \bibitem{102} C. Reisswig, S. Husa, L. Rezzolla, E.N. Dorband, D. Pollney, and J. Seiler, Gravitational-Wave Detectability of Equal-Mass Black-Hole Binaries with Aligned Spins, Phys. Rev. D 80, 124026 (2009). 
+    	\bibitem{103} A. Taracchini, A. Buonanno, Y. Pan, T. Hinderer, M. Boyle et al., Effective-One-Body Model for Black-Hole Binaries with Generic Mass Ratios and Spins, Phys. Rev. D 89, 061502 (2014).
+        \bibitem{104} M. Pürrer, Frequency Domain Reduced Order Model of Aligned-Spin Effective-One-Body Waveforms with Generic Mass-Ratios and Spins, Phys. Rev. D 93, 064041 (2016). 
+        \bibitem{105} S. Husa, S. Khan, M. Hannam, M. Pürrer, F. Ohme, X. J. Forteza, and A. Bohé, Frequency-Domain Gravitational Waves from Nonprecessing Black-Hole Binaries. I. New Numerical Waveforms and Anatomy of the Signal, Phys. Rev. D 93, 044006 (2016).
+        \bibitem{106}  S. Khan, S. Husa, M. Hannam, F. Ohme, M. Prrer, X. J. Forteza, and A. Boh, Frequency-Domain Gravitational Waves from Non-precessing Black-Hole Binaries. II. A Phenomenological Model for the Advanced Detector Era, Phys. Rev. D 93, 044007 (2016).
+        \bibitem{107} M. Hannam, P. Schmidt, A. Bohé, L. Haegel, S. Husa, F. Ohme, G. Pratten, and M. Pürrer, Simple Model of Complete Precessing Black-Hole-Binary Gravitational Waveforms, Phys. Rev. Lett. 113, 151101 (2014).
+        \bibitem{108} B. P. Abbott, R. Abbott, T. D. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration), GW150914: The Advanced LIGO Detectors in the Era of First Discoveries, Phys. Rev. Lett. 116, 131103 (2016).
+        \bibitem{109}  T. Dal Canton et al., Implementing a Search for Aligned- Spin Neutron Star-Black Hole Systems with Advanced Ground Based Gravitational Wave Detectors, Phys. Rev. D 90, 082004 (2014).
+	\bibitem{110} S. A. Usman et al., An Improved Pipeline to Search for Gravitational Waves from Compact Binary Coalescence, arXiv:1508.02357.
+        \bibitem{111} A. H. Nitz, I. W. Harry, J. L. Willis, C. M. Biwer, D. A. Brown, L. P. Pekowsky, T. Dal Canton, A. R. Williamson, T. Dent, C. D. Capano et al., PyCBC Software, https:// github.com/ligo!cbc/pycbc.
+        \bibitem{112}  K. Cannon, R. Cariou, A. Chapman, M. Crispin-Ortuzar, N. Fotopoulos et al., Toward Early-Warning Detection of Gravitational Waves from Compact Binary Coalescence, Astrophys. J. 748, 136 (2012).
+	\bibitem{113}  S. Privitera, S. R. P. Mohapatra, P. Ajith, K. Cannon, N. Fotopoulos, M.A. Frei, C. Hanna, A.J. Weinstein, and J. T. Whelan, Improving the Sensitivity of a Search for Coalescing Binary Black Holes with Nonprecessing Spins in Gravitational Wave Data, Phys. Rev. D 89, 024003 (2014).
+        \bibitem{114} C. Messick, K. Blackburn, P. Brady, P. Brockill, K. Cannon, S. Caudill, S. J. Chamberlin, J. D. E. Creighton, R. Everett, C. Hanna et al., Analysis Framework for the Prompt Discovery of Compact Binary Mergers in Gravi- tational-wave Data, arXiv:1604.04324
+        \bibitem{115} A. Effler, R. M. S. Schofield, V. V. Frolov, G. Gonzalez, K. Kawabe, J. R. Smith, J. Birch, and R. McCarthy, Envi- ronmental Influences on the LIGO Gravitational Wave Detectors During the 6th Science Run, Classical Quantum Gravity 32, 035017 (2015). 
+        \bibitem{116} B.P. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration), Effects of Data Quality Vetoes on a Search for Compact Binary Coalescences in Ad- vanced LIGO’s First Observing Run 
+        \bibitem{117} L. A. Wainstein and V. D. Zubakov, Extraction of Signals from Noise (Prentice-Hall, Englewood Cliffs, NJ, 1962). 
+        \bibitem{118} K. S. Thorne, Gravitational Radiation, in Three Hundred Years of Gravitation, edited by S. W. Hawking and W. Israel (Cambridge University Press, Cambridge, England, 1987), Chap. 9, pp. 330–458. 
+        \bibitem{119} B. S. Sathyaprakash and S. V. Dhurandhar, Choice of Filters for the Detection of Gravitational Waves from Coalescing Binaries, Phys. Rev. D 44, 3819 (1991). 
+	\bibitem{120}  C. Cutler et al., The Last Three Minutes: Issues in Gravitational Wave Measurements of Coalescing Compact Binaries, Phys. Rev. Lett. 70, 2984 (1993).
 
 \end{thebibliography}
 
