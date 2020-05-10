@@ -7,6 +7,7 @@
 \usepackage{siunitx}
 \usepackage{biblatex}
 \usepackage{titlesec}
+\usepackage{float}
 \addbibresource{sample.bib}
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
 \usepackage{amsmath, amssymb}
@@ -360,7 +361,7 @@
         ground-based laser interferometric detectors has its low end set by the fact that it is extremely difficult
         to prevent mechanical coupling of the detector to ground vibrations at low frequencies,
         and probably impossible to prevent gravitational coupling to ground vibrations, human activity, and atmospheric motions.
-    \begin{figure}
+    \begin{figure}[H]
                 \includegraphics[scale=0.5]{interferometer}
                 \centering
                 \caption{Simplified schematic of the experimental setup.  
@@ -594,7 +595,7 @@
         This set of equations describes the changes in the $x$ and $y$ components for a passing GW.
         The plus polarization alternately stretches and compresses the ring of test masses in the x and y directions,
         while the cross polarization exhibits the same behavior rotated by $\ang{45}$ in the $x - y$ plane. This is shown in Figure 2.1.
-                \begin{figure}
+                \begin{figure}[H]
                 \label{ring}
                 \includegraphics[scale=1]{ring}
                 \centering
@@ -669,7 +670,7 @@
         causing a differential change in the arm cavity lengths, or as sensing noise,
         which appears in the readout signal but is not caused by a GW. \\
         We describe the principal noises that dominate the limits of our sensitivity, (Fig.$\ref{fig:noise2}$).
-		\begin{figure}
+		\begin{figure}[H]
                         \includegraphics[scale=0.3]{noise2}
                         \centering
                         \caption{The strain equivalent spectral amplitudes $\sqrt{S_n(\omega)}$ 
@@ -740,7 +741,7 @@
         of the mirrors and of the laser; for this reason the vacuum system is maintained at a pressure
         of below $10^{-6}$Pa and the noise curve of the interferometer includes only
         the most dominant residual gas component, hydrogen, at a pressure of $10^{−7}$ Pa. 
-		\begin{figure}
+		\begin{figure}[H]
                 	\includegraphics[scale=0.6]{noise1}
                 	\centering
                 	\caption{Amplitude spectral density of the total strain noise 
@@ -1317,7 +1318,7 @@
 	The resulting “time-shifted” coincidences are then treated as a background noise sample, as seen in Fig.$\ref{fig:Significance}$. 
 	This is done numerous times with different time shifts in order to obtain 
 	a probability distribution for the joint detector ranking statistics \cite{44}. 
-		\begin{figure}
+		\begin{figure}[H]
 			\includegraphics[scale=0.25]{Significance}
                   	\centering
                   	\caption{Visual description of time shifting data to build a background noise sample.}
@@ -1624,7 +1625,7 @@
 	possibly from population III binaries \cite{74, 75}, or chemically homogeneous evolution 
 	in close tidally locked binaries \cite{72, 73}. 
 	All of these channels have been shown to be consistent with the GW150914 discovery \cite{63-70}. 
-		\begin{figure}
+		\begin{figure}[H]
                 	\label{firstgw}
                 	\includegraphics[scale=0.45]{firstgw}
                 	\centering
@@ -1683,7 +1684,7 @@
 	possibly associated with an astrophysical event. \\
 	However, a detailed re-analysis of this event has demonstrated that it does indeed 
 	meet the criteria of a confident detection of a BBH merger, and it is now re-labeled as GW151012.
-                \begin{figure}
+                \begin{figure}[H]
                         \label{o1}
                         \includegraphics[scale=0.45]{o1}
                         \centering
@@ -1696,12 +1697,10 @@
                                       The upper panels show the 90\% credible intervals from the posterior 
                                       probability density functions of the waveform time series,
                                       inferred using CBC waveform templates from Bayesian inference (LALINFERENCE)
-                                      with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) %warning:[53].  
-                                %N. J. Cornish and T. B. Littenberg, BayesWave: Baye- sian Inference for Gravitational                                         
-                                %Wave Bursts and Instrument Glitches, Classical Quantum Gravity 32, 135012 (2015).  WARNING 2 CITATION!!                                       
+                                      with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) 
                                       The lower panels show the point estimates from the cWB search (solid lines),
                                       along with a 90\% confidence interval (green band) derived from cWB analyses of
-                                      simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event.}
+                                      simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event. \cite{193}}
                          \label{fig:o1}
                 \end{figure}
 
@@ -1823,7 +1822,9 @@
 	the 90\% credible area on the sky is $1160 deg^2$ and shrinks to $100 deg^2$ when including Virgo data. 
 	Incorporating Virgo data also reduces the luminosity distance uncertainty from 
 	$570^{+300}_{-200}Mpc$ (rapid localization) to $540^{+130}_{-210} Mpc$ (full parameter estimation). \\
-	  Since the two LIGO instruments have similar orientations, little information about polarizations can be obtained using the LIGO detectors alone, therefore including Virgo in the search allows for the first time to investigate GW polarizations, by geometrically 
+	 Since the two LIGO instruments have similar orientations, little information about polarizations 
+	can be obtained using the LIGO detectors alone, therefore including Virgo in the search 
+	allows for the first time to investigate GW polarizations, by geometrically 
 	projecting the wave’s amplitude onto the three detectors. \\
 	Generic metric theories predict that any combination of tensor, vector, or scalar 
 	polarizations \cite{171,172} characterize metric perturbations.
@@ -1834,7 +1835,7 @@
 	pure tensor polarization of GWs, over pure scalar or pure vector polarizations. \\
 	The black hole characteristics of GW170814 are similar to GW150914 and GW170104, 
 	and are found to be consistent with the astrophysical population and merger rate determined with previous detections.
-		\begin{figure}
+		\begin{figure}[H]
                         \label{o2}
                         \includegraphics[scale=0.45]{o2}
                         \centering
@@ -1847,9 +1848,7 @@
 			  	      The upper panels show the 90\% credible intervals from the posterior 
 				      probability density functions of the waveform time series, 
 				      inferred using CBC waveform templates from Bayesian inference (LALINFERENCE) 
-				      with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) %[53].  
-				%N. J. Cornish and T. B. Littenberg, BayesWave: Baye- sian Inference for Gravitational 					       
-				%Wave Bursts and Instrument Glitches, Classical Quantum Gravity 32, 135012 (2015).  WARNING 2 CITATION!! 				       
+				      with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) 
 				      The lower panels show the point estimates from the cWB search (solid lines), 
 				      along with a 90\% confidence interval (green band) derived from cWB analyses of 
 				      simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event.}
@@ -1977,7 +1976,7 @@
 	delayed X-ray and radio counterparts that provide information on the environment of the binary. 
 	A major astrophysical implication of a joint detection of an SGRB and of GWs from a BNS merger 
 	is the confirmation that these binaries are indeed the progenitors of at least some SGRBs. 
-		\begin{figure}
+		\begin{figure}[H]
                         \label{gw-grb}
                         \includegraphics[scale=0.45]{gw-grb}
                         \centering
@@ -2008,7 +2007,7 @@
 	other upgrades included reducingtechnical noises, increasing the input laser power 
 	and installation of a squeezed vacuum source. 
 	The Virgo BNS inspiral range was about $43–50 Mpc$ over the first three months of O3, as shown in Fig.$\ref{fig:o3bnsrange}$. 
-                \begin{figure}
+                \begin{figure}[H]
                         \label{o3bnsrange}
                         \includegraphics[scale=0.5]{o3bnsrange}
                         \centering
@@ -2022,7 +2021,7 @@
                 \end{figure}
 	These improvements successfully impacted the detection: in spite of the early suspension, 
 	56 detection candidates have already been announced as public alerts, Fig.$\ref{fig:o3detection}$.
-                \begin{figure}
+                \begin{figure}[H]
                         \label{o3detection}
                         \includegraphics[scale=0.22]{o3detection}
                         \centering
@@ -2082,7 +2081,7 @@
 	spinning Galactic BNS that are expected to merge within the lifetime of the Universe. \\
 	In the BNS scenario, the detection of GW190425 provides an update 
 	on the number of NS that collide in a volume of the universe every year of $250–2810 Gpc^{-3}yr^{-1}$ \cite{62}.
-		\begin{figure}
+		\begin{figure}[H]
                         \label{secondbns}
                         \includegraphics[scale=0.3]{secondbns}
                         \centering
@@ -2132,7 +2131,7 @@
 	resulting in more precise measurements of these parameters. \\ 
 	The new observation also provides new insight into the merging BBH rate, 
 	and how clearly unequal-mass system are less unlikely but still expected to form in the universe. \cite{133}
-                \begin{figure}
+                \begin{figure}[H]
                         \label{asymmetric}
                         \includegraphics[scale=0.2]{asymmetric}
                         \centering
@@ -2379,7 +2378,8 @@
 	\bibitem{189} L. E. Kidder, Phys. Rev. D 77, 044016 (2008). 
 	\bibitem{190} J. Healy, P. Laguna, L. Pekowsky, and D. Shoemaker, Phys. Rev. D 88, 024034 (2013). 
 	\bibitem{191} L. London, D. Shoemaker, and J. Healy, Phys. Rev. D 90, 124032 (2014). 
-	\bibitem{192} C. K. Mishra, A. Kela, K. G. Arun, and G. Faye, Phys. Rev. D 93, 084054 (2016). 
+	\bibitem{192} C. K. Mishra, A. Kela, K. G. Arun, and G. Faye, Phys. Rev. D 93, 084054 (2016).
+	\bibitem{193} N. J. Cornish and T. B. Littenberg. BayesWave: Bayesian Inference for Gravitational Wave Bursts and Instrument Glitches. Classical Quantum Gravity 32, 135012 (2015). 
 \end{thebibliography}
 
 \printbibliography
