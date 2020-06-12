@@ -1005,92 +1005,83 @@
 	have negligible orbital eccentricity, precession and contributions from higher-order modes 
 	to the GW signal \cite{23}. 
 
-\section{Template Bank}
+\section{Template Banks}
 
-	To perform a matched-filtered search that would recover any compact binary system 	
-	with minimal loss in SNR over a given range of intrinsic parameters 
-	one must filter the data against a a bank of templates, 
-	to obtain an estimation of the parameters for the source of the signal 
-	from the template that provided the largest SNR \cite{28}.
-	The manifold of waveforms is a continuous space in the component masses, 
-	of which we are only able to search discrete points, 
+	To perform a matched-filtered search that recovers compact binary coalescence signals
+	with minimal loss of SNR over a given range of intrinsic parameters, 
+	one must filter the data against a predetermined collection of waveform models: the template bank \cite{28}.
+	The manifold of waveforms is a continuous space in the component masses and spins. 
+	One may only to search over this manifold on a discrete points, 
 	which have to be placed in such a way that any signal
-	that has parameters in the space will still produce an SNR 
-	above threshold by matching with the “closest” template \cite{27}. \\ 
-	In order to compute the distance between two templates of different parameters, 
-	one can create a metric over the parameter space and then compute the the error between the two waveforms.
-	Two neighbouring templates can be defined as $\hat h(f;\lambda)$ and $\hat h(f;\lambda + \Delta \lambda)$,
-	where $\lambda = \{\lambda_{intr}, \lambda_{extr}\}$ is the a set of 
-	the intrinsic (masses and spins) and extrinsic parameters (time of arrival and phase).
-	Using the overlap of two waveforms, defined as the inner product inversely weighted 
-	by the one-sided PSD $S_n(f)$ of the detector noise, one can compute the match:
+	that has parameters in the targeted space will still produce an SNR 
+	above threshold by matching with the ''losest'' template \cite{27}. \\ 
+	In order to compute the distance between two templates with different parameter values, 
+	one can create a metric over the parameter space and then compute an ``error'' between two waveforms.
+	Two neighbouring templates can be defined as $\tilde h(f;\lambda)$ and $\tilde h(f;\lambda + \Delta \lambda)$,
+	where $\lambda = \{\lambda_{intr}, \lambda_{extr}\}$ is the set of 
+	intrinsic (masses and spins) and extrinsic (time and phase shifts) template parameters.
+	Using the overlap of two waveforms, defined as the normalized inner product inversely weighted 
+	by the detector one-sided PSD $S_n(f)$, one can define the match:
 		\begin{equation}
-			\mathcal{M}(\lambda, \Delta \lambda) \equiv max_{\Delta \lambda_{extr}} \langle\hat h(f;\lambda), \hat h(f;\lambda + \Delta \lambda)  \rangle
+			\mathcal{M}(\lambda, \Delta \lambda) \equiv \max_{\Delta \lambda_{extr}} (\tilde h(f;\lambda), \tilde h(f;\lambda + \Delta \lambda))
 		\end{equation}
-	The match is maximised only over the extrinsic parameters, 
+        \fpg{Qua manca la normalizzazione.}
+	The match is maximised only over the two extrinsic parameters of a template, 
 	because waveforms related by time and phase offsets
 	are described by the same template, 
 	since all possible coalescence times and phases are searched for \cite{29}. \\
 	This expression can be Taylor-expanded about $\Delta \lambda = 0$:
-
 		\begin{equation}
-			\mathcal{M}(\lambda, \Delta \lambda) \simeq 1 - g_{ij} \Delta \lambda^i \Delta \lambda^j
+			\mathcal{M}(\lambda, \Delta \lambda) \simeq 1 - g_{ij} \Delta \lambda^i \Delta \lambda^j\,,
 		\end{equation}
-
-	Where 
-
+	where 
 		\begin{equation}
-			 g_{ij} \equiv -{1 \over 2} ({{\partial^2\mathcal{M}} \over {\partial  \Delta \lambda^i  \partial. \Delta \lambda^j}})_{\Delta \lambda = 0}
+			 g_{ij} \equiv -{1 \over 2} {{\partial^2\mathcal{M}} \over {\partial  \Delta \lambda^i  \partial \Delta \lambda^j}}\vert_{\Delta \lambda = 0}
 		\end{equation}
-
-	can be interpreted as a metric in the parameter space, which is also defined
-	by the mismatch $MM = (1 − \mathcal{M})$ between two templates.
+	can be interpreted as a metric in the waveform manifold.  A commonly used quantity related to this metric
+	is the mismatch between two templates $MM = (1 − \mathcal{M})$.
 	Any mismatch between signal and template leads to a loss in SNR, 
-	and down-weighting by the signal-based vetoes. \\
-	When constructing a template bank, this mismatch can be also interpreted 
-	as the proper distance in the parameter space,	
-
+	and to a down-weighting by the signal-based vetoes \fpg{(see Sec.\,...)}. \\
+	When constructing a template bank, this mismatch can be viewed as the means
+	to compute the proper distance in the waveform space:
 		\begin{equation}
-			ds_{ij}^2 = 1 − \mathcal{M} = g_{ij} \Delta \lambda^i \Delta \lambda^j
+			ds_{ij}^2 = 1 − \mathcal{M} = g_{ij} \Delta \lambda^i \Delta \lambda^j\,.
 		\end{equation}
-
-	which should be chosen so that the loss in signal-to-noise ratio due to the mismatch 
-	of the template with the signal does not deprecate the detectability of these sources \cite{30}.
+	This proper distance should be chosen to guarantee that the loss in SNR due to the mismatch 
+	between template and signal does not jeopardize the detectability of the signal \cite{30}.
 
 \subsubsection{Fitting factor}
 
-	The standard measure for deciding what class 
-	of waveforms is good enough is the fitting factor, $FF$.
-	The fitting factor quantitatively describes closeness of 
+	The standard measure used to determine the set of waveform models to used in a
+        search is the fitting factor, $FF$.
+	The fitting factor quantitatively describes the ``closeness'' of 
 	the true signals to the template manifold, in terms of the fraction of 
 	SNR obtained when filtering 
 	the data with an approximate family of templates \cite{31}. 
 	To quantify the bank coverage, usually Monte-Carlo simulations are carried out   
-	to compute the distribution of fitting factors of the banks against 
+	to compute the distribution of fitting factors of the templates in the bank against 
 	a set of injected signal waveforms with randomly chosen parameters \cite{32}. \\
 	The fitting factor, $FF$, of a template bank with respect to an injected signal $h_{*}$ 
 	is defined as the maximum value of match over all the templates:
-
 		\begin{equation}
-			FF(h_{*}) = max \mathcal{M}(\hat h_{*}, \hat h(\Lambda))
+			FF(h_{*}) = \max_\Lambda \mathcal{M}(\tilde{h}_{*}, \tilde{h}(\Lambda))
 		\end{equation}
-
 	assuming that the signal model is the same for both templates and injections. 
 	The fractional loss of SNR in capturing the signal 
 	$h_{*}$ with the template bank is $1 - FF(h_{*})$.
 	If the fitting factor is less than unity, the signal lies outside the parameter space, 
 	and the fitting factor represents the cross-correlation between 
-	the signal and the template nearest it in parameter space \cite{33}. 
+	the signal and its nearest template in the waveform parameter space \cite{33}. 
 	This loss arises from the discrete placement of the templates. 
 	Because binaries are, on large scales, uniformly distributed in space 
 	and because the signal strength scales inversely with distance, 
-	the fraction of event rate retained is approximately FF. \\ 
+	the fraction of events retained is approximately $FF(h_*)^3$. \\ 
 	Therefore it is desirable that the template bank is constructed such that 
 	no putative signal anywhere in the parameter space
 	has a FF value less than the minimal match. 
 	A bank is said to be effectual if it can satisfy this condition.
-	It has become conventional to regard $FF = 97\%$, 
-	which translates in $10\%$ loss of event rate, as a reasonable goal \cite{33}.
+	It has become conventional to set $FF = 97\%$ as a reasonable goal when building a template bank, 
+	as this translates into a $10\%$ loss of events \cite{33}.
 
 \subsubsection{Frequency bound}
 
@@ -1125,26 +1116,26 @@
 	The bank is gradually built by comparing the newly drawn waveform
 	with previously accepted templates, 
 	and keeping only the ones that are sufficiently far away 
-	from the ones the bank already has.
+	from the ones already in the bank.
  	Those that are too similar to at least one existing waveform are discarded \cite{35}.
 	This procedure continues until the pre-set convergence threshold is reached, 
 	resulting in a final saturated template bank.
-	The threshold is measured from the the ratio of rejected templates over the total number of template candidates.
+	The threshold is measured from the ratio of rejected templates over the total number of template candidates.
 	Stochastic placement, however, has the shortcoming that 
-	a large number of trial waveforms needs to be drawn before convergence is achieved 
-	(much more than the required number of templates in the bank). 
+	a large number of trial waveforms needs to be drawn and generated before convergence is achieved 
+	(many more than the required number of templates in the bank). 
 	This method also tends to over-cover the parameter space, 
 	in the sense that the average template density is higher than optimal at fixed minimum match. \\
 	Furthermore, the construction of a stochastic template bank 
 	can be computationally demanding since, in principle, 
 	each new proposed template needs to be compared 
-	with previously chosen templates \cite{36}. 
+	with the previously chosen templates \cite{36}. 
 	This problem becomes particularly acute 
 	the closer the bank gets to saturation. 
 	The computational problem also becomes especially demanding 
 	when precession effects are considered as these additional degrees 
 	of freedom require a large number of templates. \\
-	It is therefore important to consider methods of optimising a template bank, 
+	It is therefore important to consider methods to optimise the template bank construction, 
 	specifically finding ways of improving effectualness for a given number 
 	of templates and reducing the computational cost. 
 
@@ -1160,7 +1151,7 @@
 	The minimal match determines the choice of spacing of the discrete template parameters, as shown in Section 3.2, 
 	and therefore the number of discrete templates in the family.
 	The most significant drawback of such banks is the amount of fine-tuning required 
-	in order to cover “holes” across local patches because of the misalignment 
+	in order to cover ``holes'' across local patches because of the misalignment 
 	of the cells arising from the variation of the metric \cite{29}. 
 
 \subsubsection{Hybrid placement}
@@ -1171,23 +1162,20 @@
 	with regularly spaced templates, which are themselves placed stochastically 
 	to cover the entire parameter space \cite{29, 34}. 
 
-\subsubsection{Compact Binary Spin}
+\subsubsection{Spins of compact objects}
 
-	An observed GW signal from compact  binary coalescence, CBC, is a powerful tool, 
-	that can be used to estimate the parameters of the merging binary,
-	which can then provide information about the formation processes of the system. \\ 
-	However, the processes which lead to compact binary formation  
+	The processes that lead to the formation of a compact binary
 	depend sensitively on a number of poorly constrained parameters, 
 	such as the typical stellar metallicity at formation, 
 	the distribution of supernova kicks, 
 	and the binding energy of the common envelope. 
-	There are two main channel through which compact objects can be formed:
+	There are two main channels through which compact objects can be formed:
 	the coevolution of two massive stars in a binary and 
 	the dynamical capture of two preformed compact objects 
 	in dense stellar environments such as globular clusters \cite{37}. \\	
-	In particular, it is thought that compact binaries formed by dynamical capture 
+	It is thought that compact binaries formed by dynamical capture 
 	are more likely to have component spins
-	at large angles to the orbital angular momentum, 
+	at large angles with respect to the orbital angular momentum, 
 	while those formed by common evolution are more likely to have 
 	spins that are nearly aligned with the orbital angular momentum.
 	Present observations clearly indicate the potential for large spins 
@@ -1200,29 +1188,29 @@
 	Almost all searches for GWs from coalescing compact binaries 
 	using the data of first generation interferometers 
 	have used templates that neglect the spins of the compact objects \cite{32}.
-	This was primarily motivated by the sensitivity of the Initial LIGO detectors:
+	This was primarily motivated by the sensitivity of the initial LIGO and Virgo detectors:
 	because the sensitivity band started above 40 Hz, 
 	including spin effects greatly increased the number of templates to be searched over, 
 	and the search performed, on average, no better than non spinning searches, 	
-	as the increased degrees of freedom in the signal space picked up extra noise, 	
+	as the increased degrees of freedom in the signal space picked up extra noise noise transients, 	
 	increasing the false alarm rate \cite{32, 38}. \\ 
-	However, the Advanced LIGO detectors are sensitive to frequencies above 10–20 Hz, 
-	therefore detectors are able to observe the inspiral from much larger orbital separations, 
+	However, the Advanced LIGO and Virgo detectors are sensitive to frequencies above 10–20 Hz, 
+	therefore they can observe the inspiral from much larger orbital separations, 
 	resulting is significantly longer observed GW signal \cite{23}. 
 	Proper consideration of the spin effects is essential in the advanced detector era, 
 	as there might be astrophysical systems that are entirely missed by non-precessing searches.
 	Neglecting the spin effects can cause a much larger dephasing of the template with the signal, 
 	and hence considerable loss of SNR. \\
-	Currently, waveform models with spins aligned (or antialigned) with the orbital angular momentum 
-	are being used in searches with Advanced LIGO, 
-	having been demonstrated that aligned-spin templates pull in more signal than noise \cite{27}. 
+	Currently, waveform models with spins (anti)aligned with the orbital angular momentum 
+	are used in searches with Advanced LIGO and Virgo, 
+	as it was demonstrated that aligned-spin templates accumulate more signals than noise \cite{27}. 
 	While building a template bank with the geometric approach for these cases is feasible, 
 	since a closed-form expression of the template-space metric can be computed, 
 	this is not possible for binaries with generic spins. 
 	This is due to the fact that, 
 	if the spins are misaligned with the orbital angular momentum of the binary, 
 	the spin-orbit and spin-spin interactions will cause the spins 
-	(and hence the orbit also) to precess. 
+	(and hence the orbit) to precess. 
 	The resulting dynamics as well as the GW forms are rather complex, 
 	and the modelling requires solving a set of coupled ordinary differential equations \cite{39}. 
 	The template placement is further complicated by the large dimensionality of the parameter space 
@@ -1231,58 +1219,59 @@
 	disentangle the various parameters that describe the source,  
 	breaking degeneracies that exist between physical parameters 
 	in the emitted GW signal.  
-	This could allow a better understanding of the nature and origin of these systems.
+	This could allow for a better understanding of the nature and origin of these systems.
 	Although the effect of precession on the GW signal is not fully captured 
 	by aligned-spin templates, it has been demonstrated that non-precessing templates 
 	are also effectual in detecting binaries with generic spins if the mass ratio is moderate 
-	$(m_2/m_1 \leq 10)$; these spin effects can be also described by 
+	$(m_1/m_2 \leq 10)$; these spin effects can be also described by 
 	a single reduced-spin parameter in an approximate way, 
 	which makes the parameter space three-dimensional, 
 	using the two masses and reduced-spin as variables \cite{32}. 
 	
 \section{Candidate ranking statistic}
 
- 	Since the detector’s calibrated strain data contains both stationary, Gaussian noise
+ 	Since the detector calibrated strain data contains both stationary, Gaussian noise
         and non-Gaussian noise transients of instrumental and environmental origin,
         matched filtering does not suffice as a detection statistic.
-        Consistency checks are needed to distinguish to mitigate the effect of the noise transients,
-        that can sometimes mimic the signal from a true signal,
+        Consistency checks are needed to mitigate the effect of noise transients,
+        which can sometimes mimic signals of astrophysical origin,
         and to assign an accurate statistical significance to candidate signals.
-        To eliminate the worst periods of detector performance, 
+        In order to eliminate the worst periods of detector performance, 
         data quality investigations are conducted by looking only at the detector behaviour,  
-        which is analysed by monitoring channels \cite{40}.
+        which is analysed by monitoring environmental and instrumental channels \cite{40}.
         After removing data that is not suitable for astrophysical searches, 
         noise transients, glitches, of unknown origin could still be present in the data 
-        and can cause certain templates to produce high SNR values.
+        and cause certain templates to produce high SNR values.
         To mitigate the effect of glitches, a gating procedure is applied:
         after identification of times impacting on the sensitivity of the search,
         the data are zeroed out around these times \cite{42}.
         Filtering the data with template banks generates a matched-filter SNR for each template in each detector;
         GPS times of local maxima that exceed the SNR threshold are recorded as triggers. 
-        Waveform consistency tests are needed to determine if the morphology 
-        of a candidate signal is consistent with the expectation from the triggering template waveform.
+        Waveform consistency tests are then needed to determine if the morphology 
+        of a candidate signal is consistent with the expectation from the triggering template waveform.  If it is not,
+        it is more likely to correspond to a noise transient.
 	
 \subsection{$\chi^2$ test}
 
-	For signals from compact binary mergers, one can construct $\chi^2$-test:
-	the template is split into $p$ non-overlapping frequency bins; 
-	these bins are constructed so that each contributes equally to 
+	For signals from compact binary mergers, one can construct $\chi^2$-test.
+	A standard $\chi^2$-test consists in splitting the template into $p$ non-overlapping frequency bins 
+	constructed so that each one contributes equally to 
 	the SNR of a perfectly matching signal \cite{28, 41}. 
-	The $\chi^2$ statistic compares the expected to the measured template in each bin according to 
+	The $\chi^2$ statistic compares the expected to the measured SNR in each bin as follows:
 		\begin{equation}
-			\chi^2_r = {1 \over {2p-2}}   \sum_{I=1}^{I=p} || \langle   s|h_i  \rangle -   \langle  h_i|h_i   \rangle ||^2
+			\chi^2_r = {1 \over {2p-2}}   \sum_{i=1}^{i=p} || \langle   s|h_i  \rangle -   \langle  h_i|h_i   \rangle ||^2\,,
 		\end{equation}
-	where $\chi^2_r = \chi^2/(2p-2)$ is the reduced chi-squared and for real GW signals this value should be near unity, 
-	meaning that the data is describing Gaussian noise with an embedded signal.
-	In order to combine the SNR with the $\chi^2$ test to produce a ranking statistic 
-	and down-weight triggers caused by noise transients, 	
-	the matched-filter SNR is re-weighted 
+	where $\chi^2_r = \chi^2/(2p-2)$ is the reduced chi-squared.  For real GW signals, this value should be close to unity, 
+	meaning that the data is describing Gaussian noise with an embedded signal.\\
+	The SNR returned by the matched filtering procedure is combined with the $\chi^2$-test result to produce a ranking statistic 
+	that down-weights triggers caused by noise transients, the so-called reweighted SNR:
 		\begin{equation}
 		\begin{cases}
-			\hat \rho &= \rho \hspace*{4.5cm}  \text{for} \hspace*{0.15cm}\chi^2_r <= 1 \\
+			\hat \rho &= \rho \hspace*{4.5cm}  \text{for} \hspace*{0.15cm}\chi^2_r \leq 1 \\
 			\hat \rho &= \rho[{1 \over 2} (1 + (\chi^2_r)^3)]^{-1/6}  \hspace*{1.5cm}  \text{for} \hspace*{0.15cm} \chi^2_r > 1
 		\end{cases}
 		\end{equation}
+                \fpg{Quello che segue riguarda i consistency tests, non i chi-square tests.} 
 	The search requires that GW signals be identified via matched filtering 
 	in at least two independent detectors with consistent parameters. 
 	To be considered a candidate event, arrival times of the GWs at each detector 
@@ -1290,6 +1279,8 @@
 	with an additional window to account for uncertainty in the measurement of the time of arrival \cite{13}.
  
 \subsection{False Alarm Rate}
+
+\fpg{Sono qui.}
 
 	After mitigating the effects of noise transients, the probability of remaining transients 
 	occurring simultaneously in two detectors and producing a large joint 
