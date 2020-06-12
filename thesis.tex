@@ -8,6 +8,7 @@
 \usepackage{biblatex}
 \usepackage{titlesec}
 \usepackage{float}
+\newcommand{\fpg}[1]{\textcolor{red}{#1} }
 \addbibresource{sample.bib}
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
 \usepackage{amsmath, amssymb}
@@ -33,7 +34,7 @@
 \mainmatter 
 
 \chapter{Introduction}
-
+\fpg{Non ancora letto.}%
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves,
 	GWs, on the basis of his theory of general relativity.  
 	Einstein predicted that the motion of two bodies, such as planets or stars—orbit each other,
@@ -80,7 +81,7 @@
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational-Wave Detection Principles}
-
+\fpg{Una lettura.}%
 	The aim of this thesis is to expose the methodologies involved 
 	in compact binary coalescence through gravitational wave observation. 
 	Before giving into this topic, it is useful to shortly discuss gravitational waves, 
@@ -286,7 +287,7 @@
 	the geodesic deviation equation shows that tidal forces can be considered as deviations of nearby geodesics \cite{6}.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\section{Gravitational wave detection with laser interferometers}
+\section{Gravitational-wave detection with laser interferometers}
 
 	Electromagnetic waves interact strongly with matter, while GWs travel unperturbed through space,
         as they interact only very weakly with matter. This makes them an excellent probe for astrophysical phenomena that are dark
@@ -605,7 +606,7 @@
                 \label{fig:ring}
                 \end{figure}
 
-\section{Interferometer’s response to a gravitational wave}
+\section{Response of an interferometer to a gravitational wave}
 
         Interferometers are sensitive to the relative difference between two distances, the so-called strain \cite{6} .
         Suppose we have an interferometer with its arms pointing along the unit vectors $u^i$ and $v^i$. The strain $h(t)$ is given by
@@ -858,157 +859,150 @@
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Data Analysis for Coalescing Binary Systems}
 
-	The main role of data analysis in GW detection is to extract the GW signal 
-	buried into noisy interferometric strain data, which can be characterised by a spectral strain sensitivity.
-	The data analysis technique depends on the type of source.
+	One of the tasks of GW data analysis is to extract GWs signal 
+	buried into noisy interferometric strain data, hence achieving GW detections.
+	The techniques involved in this proces depend on the type of source.
 	GW searches from the inspiral, merger and ringdown phases of compact binary systems 
 	are based on two broad techniques: 
-	modeled searches which use theoretical waveforms for such systems 
-	as predicted by general relativity and 
-	unmodelled or burst searches which assume minimal information about these waveforms \cite{23}. \\
+	modeled searches which use theoretical waveforms for the GW emitted by such systems 
+	as predicted by general relativity, and 
+	unmodelled (or burst) searches which assume minimal information about these waveforms \cite{23}.
+        This chapter provides a basic overview of the main data analysis ingredients needed to perform a modelled GW search:
+        matched filtering, template banks, evalution of a candidate's significance, measure of the sensitivity of a search.
+
+\section{Matched Filtering}
 	Although signals from coalescing binaries will most probably not stand above the broadband noise of the detector, 
 	their detection is possible by the use of matched filtering, 
 	which takes advantage of the fact that the waveform can be fairly well predicted. 
-	This technique is the optimal detection strategy in Gaussian noise 
-	in searching for GWs with well understood waveforms. 
-
-\section{Matched Filtering}
+	As we will see, this technique is the optimal detection strategy when searching for GWs
+        with well understood waveforms in Gaussian noise.
 
 	The filtering procedure involves correlating the detector output 
 	with a copy of the expected waveform, 
-	called a matched filter or a template.
-	A real detector functions only over a finite frequency band, 
+	called template.
+	A real detector operates over a finite frequency band, 
 	and acquires data at a finite sample rate \cite{24}. 
 	In this case, the noise power spectrum $S_n$ 
 	may be taken to be infinite outside the bandwidth of the instrument, 
 	effectively restricting the range of integration to lie between $[-f_N, f_N]$, 
 	where $f_N$ denotes the Nyquist frequency $f_N = 1/(2\Delta t)$, 
 	and $\Delta t$ is the time between successive data samples.   \\
-	The measured detector’s strain amplitude, $s(t)$, may or may not contain a signal,
+	The measured detector strain amplitude, $s(t)$, may or may not contain a signal,
 	thus it will be composed of $n(t)$, the real strain-equivalent noise
         produced by fluctuations within the detector and its environment, 
 	and possibly a GW of known form, $h(t)$
                 \begin{equation}
-                        s(t) = h(t) + n(t)
-                \end{equation}	
-	or if there is no signal   		
-		\begin{equation}
-                        s(t) = n(t)
+                        s(t) = h(t) + n(t)\,.
                 \end{equation}
-        assuming that the detector noise is well described as stationary Gaussian noise with zero mean and one-sided PSD, $S_n(f)$.
-        The aim of the match filtering is to look for a filter function,
-	whose output, when passing the data through this filter, 
-	will be large when a signal is present and small otherwise. 
-        If the waveform, $h(t)$, embedded in stationary Gaussian noise is known, 
-        the optimal filter, $K(t)$, has the following form
+        When no signal is present,   		
 		\begin{equation}
- 			K(t) = \tilde h_{template}/S_n
-		\end{equation}
-	where $\tilde h_{template}$ is the waveform template to match the signal.
-	The output of the filter is obtained from a weighted inner product in the frequency domain, 
-	cross-correlating the data with the inverse noise power weighted data from each of the detectors:
+                        s(t) = n(t)\,.
+                \end{equation}
+        The aim of the match filtering is to look for a filter function to process the data,
+	the output of which will be large when a signal is present and small otherwise. 
+        If the waveform, $h(t)$, is embedded in stationary Gaussian noise with zero mean and one-sided power-spectral density (PSD) $S_n(f)$,
+        the optimal filter takes the form $\tilde h_{template}/S_n$, where $\tilde h_{template}$
+        is the frequency domain waveform template that approximates the real signal to the best of our knowledge.
+	This optimal filter may be cross-correlated with the data over the detector frequency band to search for GW
+        signals.  The output of this filtering operation may be viewed as a weighted inner product in the frequency domain, 
+	between the data and the template, where the weight is the inverse PSD of the detector:
 		\begin{equation}
- 			(s|h)(t) = 4Re \int^{f^{high}}_{f^{low}} {{\tilde s (f) \tilde h^{*}_{template}(f)} \over {S_n (f)}} e^{2 \pi if} 
+ 			(s|h)(t) = 4Re \int^{f^{high}}_{f^{low}} {{\tilde s (f) \tilde h^{*}_{template}(f)} \over {S_n (f)}} e^{2 \pi ift}df\,, 
 		\end{equation}
-	The frequency limits $f_{low}$ and $f_{high}$ are determined by the bandwidth of the detector’s data.
-	Here $\hat s(f)$ denotes the Fourier-transformed detector data, defined by
+	where the frequency limits $f_{low}$ and $f_{high}$ are determined by the detector bandwidth
+	and $\hat s(f)$ denotes the Fourier-transformed detector data, defined as
 		\begin{equation}
-			\hat s(f) = \int^{\infty}_{-\infty} s(t) e^{-2i \pi tf} dt
+			\tilde s(f) = \int^{\infty}_{-\infty} s(t) e^{-2i \pi tf} dt\,.
 		\end{equation}
-	and $\tilde h(f)_{template}$ denotes the Fourier-transformed template waveform 
-	and $S_n(f)$ is the one-sided power spectral density of the detector noise. 
   
-\subsection{Signal to noise ratio}
+\subsection{Signal-to-noise ratio}
 
 	Finding the form of the filter which will optimally extract the signal from the noise,
-        means locating the maxima of the output of the matched filter, $(s|h)$, 
+        means locating the maxima of the output of the matched filter, $(s|h)(t)$, 
 	over the arrival time and phase.
-        This quantity, $(s|h)$, could be used to set a threshold value such that 
-	a quantity $|(s|h)|$ above the threshold would indicate a signal
-	and below would indicate no signal. \\
-	However, the filter output can be normalized by the variance of the optimal filter, $\sigma^2$,
-	which is an estimation of the uncertainty in a measurement of $(s|h)$, due to noise in the detector:
+        One can therefore set a threshold value such that values of the matched filter 
+	above it would indicate a signal candidate while values below would indicate the absence of signals. \\
+	The filter output can be normalized by the variance of the optimal filter, $\sigma^2$,
+	which is an estimate of the uncertainty in a measurement of $(s|h)$ due to the detector noise:
                 \begin{equation}
-                        \sigma^2 =4 \int^{\infty}_{0} {{|\tilde h_{template}(f)|^2} \over {S_n(f)}}df
+                        \sigma^2 =4 \int^{f^{high}}_{f^{low}} {{|\tilde h_{template}(f)|^2} \over {S_n(f)}}df
                 \end{equation}
  	The normalized output of the optimal filter is a new thresholding statistic and can be defined as  
-	the signal to noise ratio (SNR), the ratio of the observed filter output to its,
+	the signal-to-noise ratio (SNR), the ratio of the observed filter output to its,
         expected or observed, root-mean-square fluctuations \cite{24}:
                 \begin{align}
                         \rho(t) &= {{| (s|h) |} \over {\sigma_{h}}} \\
-                             &= {{(\tilde h_{template}|\tilde h)} \over {\sqrt{(h_{template}|h_{template})}}}
+                             &= {{(\tilde s|\tilde h_{template})} \over {\sqrt{(h_{template}|h_{template})}}}\,.
                 \end{align}
         The value of the SNR will then be proportional to the amplitude of the signal buried in the noise.
 	The smart choice for a threshold that can be set on this value is such that
 	it can admit as many signals as possible, while still keeping the false alarm rate low. 
 
-\subsection{Matched Filtering for Compact Binary Signals}
+\subsection{Matched filtering for compact binary coalescence signals}
 
 	An interferometric detector is sensitive to a linear combination 
-	of the two GW polarizations where the GW signal has the form \cite{26}: 
+	of the two GW polarizations \cite{26}: 
                 \begin{equation}
-                h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
+                h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)\,,
                 \end{equation}
 	where $F_{+}$ and $F_{\times}$ are the two antenna response functions of the detector, 
 	which depend on $\theta$ and $\phi$, 
-	the spherical coordinates of the sources sky position with respect to axes defined by interferometers’ arms. 
-	Due to the nature of GW signals from the inspiral phase of CBCs, 
-	it follows that the phase evolution of the cross polarization is $\ang{90}$ out of phase with the plus polarization, given by 
+	the angular coordinates of the source sky position with respect to axes defined by the interferometer arms. 
+	Due to the nature of GW signals from the inspiral stage of compact binary coalescences (CBCs), 
+	it follows that the phase evolution of the cross polarization is $\ang{90}$ out of phase with the plus polarization:
 		\begin{equation}
-			h_{+}(t) = A(t) cos (\phi (t))
+			h_{+}(t) = A(t) \cos (\phi (t))
 		\end{equation}
 		\begin{equation}
-			h_{\times}(t) = A(t) sin (\phi (t))  
+			h_{\times}(t) = A(t) \sin (\phi (t))  
 		\end{equation}
 	where $A(t)$ is the amplitude evolution of the signal 
 	and $\phi(t)$ is the phase evolution of the signal. 
-	The Fourier transform of the two polarization are related by $\tilde h_{+} = ih_{\times}$, 
-	which means that the inner product between the orthogonal polarisation is zero 
+	The Fourier transform of the two polarization are related by $\tilde h_{+} = i\tilde{h}_{\times}$, 
+	which means that the inner product between the two orthogonal polarisations is zero 
 		\begin{equation}
 			(h_{\times}|h_{+}) = 0
 		\end{equation}
 	Hence, when filtering  $s = (Xh_{+}/\sigma_{h}) + (Y h_{\times}/\sigma_{h})$ 
-	with the template $h_{+}$ and $h_{\times}$, 
-	respectively, we obtain the matched-filter real-time series
+	with the templates $h_{+}$ and $h_{\times}$, we obtain the matched-filter real-time series
 		\begin{equation}
 			z_{+} = X\sigma_{h}
 		\end{equation}
 		\begin{equation}
 			z_{\times} = Y \sigma_{h} 
 		\end{equation}
-	Which leads to the definition of the two-phase filter, 
+	This leads to the definition of the two-phase filter, 
 	which has twice the degrees of freedom of a single-phase filter:
 		\begin{equation}
 			\rho = {1 \over \sigma_h} \sqrt{|z_{+}| ^2+ |z_{\times}|^2}
 		\end{equation}
 	The bonus of extracting information from both polarizations of the GW 
-	comes with the cost of increasing the expectation value of $\rho$ when there is no signal present. 
-	For a detector output that includes a signal at distance $D_eff$, 
-	$s(t) = n(t) + (D_eff/1 Mpc)^{-1}h_{1Mpc}$, 
+	comes at the cost of increasing the expectation value of $\rho$ when there is no signal present. 
+	For a detector output that includes a signal at distance $D_{eff}$, 
+	$s(t) = n(t) + (D_{eff}/1 Mpc)^{-1}h_{1Mpc}$, 
 	a biased estimate of the effective distance for a given trigger 
-	can be defined by combining the definition of the SNR with the template normalization $\sigma_h$:
+	may be defined by combining the definition of the SNR with the template normalization $\sigma_h$:
 		\begin{equation}
-			\hat D_eff = {{\sigma_h} \over {\rho}}
+			\hat D_{eff} = {{\sigma_h} \over {\rho}}
 		\end{equation}
 	In reality, the parameters of astrophysical systems will not be known a-priori, 
 	and searches must therefore be sensitive to signals at any location in the parameter space \cite{25}. 
 	Performing the matched-filter calculation at every point in the full parameter space 
-	would be extremely computationally prohibitive, 
+	would be computationally prohibitive, 
 	and therefore a number of analytic approximations are used to reduce the size of the parameter space. 
-	It is assumed that the “extrinsic” parameters of a GW signal, 
-	such as the sky-location, source orientation, polarisation phase and distance, 
+	It is assumed that the ``extrinsic'' parameters of a GW signal --- 
+	sky-location, source orientation, polarisation phase and distance --- 
 	can all be absorbed by applying a constant phase-shift, 
 	constant time-shift and a constant amplitude scaling to the observed waveform \cite{27}. 
 	With these assumptions in place, 
 	one can analytically maximise over an overall amplitude and phase of the signal, 
 	and use an inverse Fourier transform to quickly evaluate the statistic as a function of time. \\
-	The component masses and spins, 
-	which are the only intrinsic parameters, 
+	The component masses and spins --- the intrinsic parameters --- 
 	are searched over by repeating the search process with a well chosen discrete set of waveform models 
 	with varying values of the component masses and spins, 
 	known as the template bank \cite{27}. 
 	Physically, these assumptions hold if one assumes that the sources being observed 
-	have no orbital eccentricity, no precession and no contribution from higher-order modes 
+	have negligible orbital eccentricity, precession and contributions from higher-order modes 
 	to the GW signal \cite{23}. 
 
 \section{Template Bank}
