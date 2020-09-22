@@ -8,6 +8,7 @@
 \usepackage{biblatex}
 \usepackage{titlesec}
 \usepackage{float}
+\usepackage{xcolor}
 \newcommand{\fpg}[1]{\textcolor{red}{#1} }
 \addbibresource{sample.bib}
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
@@ -365,10 +366,7 @@
     \begin{figure}[H]
                 \includegraphics[scale=0.5]{interferometer}
                 \centering
-                \caption{Simplified schematic of the experimental setup.  
-			 Several modifications to the Michelson interferometer 
-			 are shown such as power and signal recycling. 
-			 The photodetector records the differential lengths of the arms. \cite{9}}
+                \caption{Simplified schematic of the experimental setup. Several modifications to the Michelson interferometer are shown such as power and signal recycling. The photodetector records the differential lengths of the arms. \cite{9}}
                 \label{fig:interferometer}
                 \end{figure}
 
@@ -600,9 +598,7 @@
                 \label{ring}
                 \includegraphics[scale=1]{ring}
                 \centering
-                \caption{The effects of plus and cross polarization on a ring of test masses.
-                         The plus polarization alternately compresses and stretches the x- and y-separations.
-                         The cross polarization has the same effect only rotated by  $\ang{45}$.}
+                \caption{The effects of plus and cross polarization on a ring of test masses. The plus polarization alternately compresses and stretches the x- and y-separations. The cross polarization has the same effect only rotated by  $\ang{45}$.}
                 \label{fig:ring}
                 \end{figure}
 
@@ -674,11 +670,7 @@
 		\begin{figure}[H]
                         \includegraphics[scale=0.3]{noise2}
                         \centering
-                        \caption{The strain equivalent spectral amplitudes $\sqrt{S_n(\omega)}$ 
-				 of several noises couple to the detector. 
-				 Most relevant contributions comes from quantum noise 
-				 and from thermal noise of mirror coating and suspensions. 
-				 Seismic noise dominates below 10Hz}
+                        \caption{The strain equivalent spectral amplitudes $\sqrt{S_n(\omega)}$ of several noises couple to the detector. Most relevant contributions comes from quantum noise and from thermal noise of mirror coating and suspensions. Seismic noise dominates below 10Hz}
                         \label{fig:noise2}
                 \end{figure}
         At lower frequencies, up to 10Hz, the main contribution to the global noise
@@ -745,10 +737,7 @@
 		\begin{figure}[H]
                 	\includegraphics[scale=0.6]{noise1}
                 	\centering
-                	\caption{Amplitude spectral density of the total strain noise 
-				 of the Virgo, LHO, and LLO detectors. 
-				 The curves are representative of the best 
-				 performance of each detector during O2 \cite{13}.}
+                	\caption{Amplitude spectral density of the total strain noise  of the Virgo, LHO, and LLO detectors. The curves are representative of the best performance of each detector during O2 \cite{13}.}
                 	\label{fig:noise1}
                 \end{figure}
 
@@ -1614,14 +1603,7 @@
                 	\label{firstgw}
                 	\includegraphics[scale=0.45]{firstgw}
                 	\centering
-                	\caption{Left: PyCBC matched-filter SNR (blue), re-weighted SNR (purple) 
-				 and c2 (green) versus time of the best-matching template at the time of GW150914. 
-				 The top plot shows the Hanford detector; bottom, Livingston. 
-				 Right: Observed matched-filter SNR (blue) and expected matched-filter 
-				 SNR (purple) versus time for the best-matching template at the time of GW150914, 
-				 as reported by the GstLAL analysis. 
-				 The expected matched-filter SNR is based on the autocorrelation of the best-matching template. 
-				 The dashed black lines indicate 1s deviations expected in Gaussian noise.\cite{21}} 
+                	\caption{Left: PyCBC matched-filter SNR (blue), re-weighted SNR (purple) and c2 (green) versus time of the best-matching template at the time of GW150914. The top plot shows the Hanford detector; bottom, Livingston. Right: Observed matched-filter SNR (blue) and expected matched-filter SNR (purple) versus time for the best-matching template at the time of GW150914, as reported by the GstLAL analysis. The expected matched-filter SNR is based on the autocorrelation of the best-matching template. The dashed black lines indicate 1s deviations expected in Gaussian noise.\cite{21}} 
                 	\label{fig:firstgw}
                 \end{figure}
 
@@ -1673,19 +1655,7 @@
                         \label{o1}
                         \includegraphics[scale=0.45]{o1}
                         \centering
-                        \caption{Time-frequency maps and reconstructed signal waveforms for the O1 BBH events.
-                                      Each event is represented with three panels showing whitened data
-                                      from the LIGO detector where the higher SNR is recorded.
-                                      The first panel shows a normalized time-frequency power map of the GW strain.
-                                      The remaining pair of panels shows time-domain reconstructions of the whitened signal,
-                                      in units of the standard deviation of the noise.
-                                      The upper panels show the 90\% credible intervals from the posterior 
-                                      probability density functions of the waveform time series,
-                                      inferred using CBC waveform templates from Bayesian inference (LALINFERENCE)
-                                      with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) 
-                                      The lower panels show the point estimates from the cWB search (solid lines),
-                                      along with a 90\% confidence interval (green band) derived from cWB analyses of
-                                      simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event. \cite{193}}
+                        \caption{Time-frequency maps and reconstructed signal waveforms for the O1 BBH events. Each event is represented with three panels showing whitened data from the LIGO detector where the higher SNR is recorded. The first panel shows a normalized time-frequency power map of the GW strain. The remaining pair of panels shows time-domain reconstructions of the whitened signal, in units of the standard deviation of the noise. The upper panels show the 90\% credible intervals from the posterior probability density functions of the waveform time series, inferred using CBC waveform templates from Bayesian inference (LALINFERENCE with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) The lower panels show the point estimates from the cWB search (solid lines), along with a 90\% confidence interval (green band) derived from cWB analyses of simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event. \cite{193}}
                          \label{fig:o1}
                 \end{figure}
 
@@ -1824,19 +1794,7 @@
                         \label{o2}
                         \includegraphics[scale=0.45]{o2}
                         \centering
-                        \caption{Time-frequency maps and reconstructed signal waveforms for some of the O2 BBH events.
-				      Each event is represented with three panels showing whitened data 
-				      from the LIGO detector where the higher SNR is recorded. 
-				      The first panel shows a normalized time-frequency power map of the GW strain. 
-				      The remaining pair of panels shows time-domain reconstructions of the whitened signal, 
-				      in units of the standard deviation of the noise. 
-			  	      The upper panels show the 90\% credible intervals from the posterior 
-				      probability density functions of the waveform time series, 
-				      inferred using CBC waveform templates from Bayesian inference (LALINFERENCE) 
-				      with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) 
-				      The lower panels show the point estimates from the cWB search (solid lines), 
-				      along with a 90\% confidence interval (green band) derived from cWB analyses of 
-				      simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event.}
+                        \caption{Time-frequency maps and reconstructed signal waveforms for some of the O2 BBH event Each event is represented with three panels showing whitened data from the LIGO detector where the higher SNR is recorded. The first panel shows a normalized time-frequency power map of the GW strain. The remaining pair of panels shows time-domain reconstructions of the whitened signal in units of the standard deviation of the noise. The upper panels show the 90\% credible intervals from the posterior probability density functions of the waveform time series, inferred using CBC waveform templates from Bayesian inference (LALINFERENCE) with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band). The lower panels show the point estimates from the cWB search (solid lines) along with a 90\% confidence interval (green band) derived from cWB analyses of simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event.}
                          \label{fig:o2}
                 \end{figure}
 
@@ -1965,15 +1923,7 @@
                         \label{gw-grb}
                         \includegraphics[scale=0.45]{gw-grb}
                         \centering
-                        \caption{Joint, multi-messenger detection of GW170817 and GRB170817A. 
-				 Top: the summed GBM lightcurve for sodium iodide (NaI) detector
-				 for GRB170817A in the 50–300 keV energy range, 
-				 matching the 100 ms time bins of the SPI-ACS data. 
-				 The background estimate from \cite{110} 
-				 is overlaid in red.   
-                                 Bottom: the time-frequency map of GW170817 was obtained by coherently 
-				 combining LHO and LLO data. All times here are referenced to the GW170817 
-				 trigger time $T_0^{GW}$. \cite{55}}
+                        \caption{Joint, multi-messenger detection of GW170817 and GRB170817A. Top: the summed GBM lightcurve for sodium iodide (NaI) detector for GRB170817A in the 50–300 keV energy range matching the 100 ms time bins of the SPI-ACS data. The background estimate from \cite{110} is overlaid in red. Bottom: the time-frequency map of GW170817 was obtained by coherently combining LHO and LLO data. All times here are referenced to the GW170817 trigger time $T_0^{GW}$. \cite{55}}
                         \label{fig:gw-grb}
                 \end{figure}
 
@@ -1996,12 +1946,7 @@
                         \label{o3bnsrange}
                         \includegraphics[scale=0.5]{o3bnsrange}
                         \centering
-                        \caption{Advanced LIGO (top left), Advance Virgo (top right) target strain sensitivities as a function of frequency. 
-				      The quoted range is for a [-$1.4M_\odot, 4 M_\odot]$ BNS merger. The BNS range (in megaparsec) achieved in past 
-				      observing runs and anticipated for future runs is shown. The O1 aLIGO curve is taken from the LHO, 
-				      the O2 aLIGO curve comes from the LLO. In each case these had the better performance for that observing run. 
-				      The O3 curves for aLIGO and AdV reflect recent performance. For some runs the anticipated ranges are shown 
-				      as bands reflecting the uncertainty in the impact of improvements and upgrades to the overall sensitivity. \cite{53}} 
+                        \caption{Advanced LIGO (top left), Advance Virgo (top right) target strain sensitivities as a function of frequency. The quoted range is for a [-$1.4M_\odot, 4 M_\odot]$ BNS merger. The BNS range (in megaparsec) achieved in past observing runs and anticipated for future runs is shown. The O1 aLIGO curve is taken from the LHO, the O2 aLIGO curve comes from the LLO. In each case these had the better performance for that observing run. The O3 curves for aLIGO and AdV reflect recent performance. For some runs the anticipated ranges are shown as bands reflecting the uncertainty in the impact of improvements and upgrades to the overall sensitivity. \cite{53}}
                         \label{fig:o3bnsrange}
                 \end{figure}
 	These improvements successfully impacted the detection: in spite of the early suspension, 
@@ -2010,10 +1955,7 @@
                         \label{o3detection}
                         \includegraphics[scale=0.22]{o3detection}
                         \centering
-                        \caption{LIGO's third observing run yielded 56 gravitational-wave detections. 
-				      That's 5-times more than were collectively made during O1 and O2,  
-				       that yielded 11 gravitational wave detections. Image credit: LIGO-Virgo Collaboration.
-                                 } 
+                        \caption{LIGO's third observing run yielded 56 gravitational-wave detections. That's 5-times more than were collectively made during O1 and O2, that yielded 11 gravitational wave detections. Image credit: LIGO-Virgo Collaboration}. 
                         \label{fig:o3detection}
                 \end{figure}
 
@@ -2070,11 +2012,7 @@
                         \label{secondbns}
                         \includegraphics[scale=0.3]{secondbns}
                         \centering
-                        \caption{Blue and orange curves show the estimated total mass of GW190425 
-				 under different spin assumptions. 
-				 In either case, the estimated mass is dramatically different from 
-				 the total masses for the known galactic population of BNS, 
-				 indicated with the grey histogram bars and the dashed line. \cite{62}}
+                        \caption{Blue and orange curves show the estimated total mass of GW190425 under different spin assumptions. In either case, the estimated mass is dramatically different from the total masses for the known galactic population of BNS, indicated with the grey histogram bars and the dashed line. \cite{62}}
 		        \label{fig:secondbns}
                 \end{figure}
 
@@ -2120,11 +2058,7 @@
                         \label{asymmetric}
                         \includegraphics[scale=0.2]{asymmetric}
                         \centering
-                        \caption{The inferred mass ratio $q$ and effective spin $\chi_{eff}$ of GW190412. 
-				 The orange and blue contours show the distributions on the parameters 
-				 recovered using two different waveform models, which make slightly different 
-				 approximations for modeling the true general-relativistic signal.\cite{133} 
-                                 } 
+                        \caption{The inferred mass ratio $q$ and effective spin $\chi_{eff}$ of GW190412. The orange and blue contours show the distributions on the parameters recovered using two different waveform models, which make slightly different approximations for modeling the true general-relativistic signal.\cite{133}} 
                         \label{fig:asymmetric}
                 \end{figure}
 
@@ -2212,12 +2146,7 @@
                         \label{nsbh}
                         \includegraphics[scale=0.45]{nsbh}
                         \centering
-                        \caption{Schematic pictures for the outcome of the merger process,
-                                depending on the relative position of $d_{tid}$ and $R_{ISCO}$.
-                                The solid filled circle denotes the BH, the distorted ellipsoid denotes the NS,
-                                the solid circle is the location of $R_{ISCO}$, and the dashed circle is the location of  $d_{tid}$.
-                                Left: the NS is tidally disrupted, and the spatial extent of the disrupted material
-                                is larger than or as large as that of the BH. Right: the NS is not tidally disrupted.}
+                        \caption{Schematic pictures for the outcome of the merger process, depending on the relative position of $d_{tid}$ and $R_{ISCO}$. The solid filled circle denotes the BH, the distorted ellipsoid denotes the NS, the solid circle is the location of $R_{ISCO}$, and the dashed circle is the location of  $d_{tid}$. Left: the NS is tidally disrupted, and the spatial extent of the disrupted material is larger than or as large as that of the BH. Right: the NS is not tidally disrupted.}
                          \label{fig:nsbh}
                 \end{figure}
         As the binary spirals in, the transition to a dynamically plunging orbit happens
@@ -2307,6 +2236,20 @@
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{My contribution to gravitational dave data analysis during O3}
+
+\begin{table}[]
+\begin{tabular}{|l|l|l|l|l|} \hline
+\textbf{BNS}  & \textbf{NSBH}       & \textbf{NSBH}    & \textbf{BBH}     \\ 
+EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
+{\color{red}1}0{\color{green}1}  & {\color{red}1}1{\color{green}0}{\color{blue}1}  & {\color{red}1}1{\color{green}0}{\color{blue}0}  & {\color{red}0}  \\ \hline
+\end{tabular}
+\end{table}
+
+\textbf{{\color{red}mask\_not\_bbh} \\
+mask\_nsbh \\
+{\color{green}mask\_bns}=mask\_nsbh \\
+{\color{blue}mask\_nsbh\_bright} \\
+}
 
 \section{Bank Tests}
 
