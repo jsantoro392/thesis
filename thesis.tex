@@ -2237,21 +2237,51 @@
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{My contribution to gravitational dave data analysis during O3}
 
+	GW170817 not only marked the beginning of a new era in multi-messenger astronomy, 
+	but was also a major step forward towards the understanding of the puzzling origins of SGRB. 
+	Since then more efforts are now being directed toward optimising the search to take full advantage 
+	of the potential for joint GRB-GW events observations.
+	In a coherent GW search triggered by SGRBs, template banks play a crucial role in finding the data buried in noise, 
+	therefore it is extremely important that they are generated under certain conditions.
+	The strong dependence of the GW signal on the component masses and spins, 
+	as well as the orientation of the source relative to the detectors, 
+	requires that the template bank covers the region of this parameter space 
+	that is expected to include the progenitors of short GRBs.
+	At the same time it should not exceed this region by too much, 
+	as this will make the analysis computationally infeasible and increase the number of background triggers. 
+	In order to better discriminate NSBH systems that could produce an accretion disk from this disruption,
+	Eq. 5.5 has been replaced by Eq. 5.7 in the generation of the template bank.
+
+\section{Bank Tests}
+
+	The new template bank generates a large set of point within the mass and spin parameter space,
+	with the desired minimum $M_{rem}$, then it checks if the systems produce an EM counterpart.
+	This means they are required to produce a remnant mass disk: 
+	if they do EOS data are loaded and the minimum $\eta$ needed to generate a given $M_{rem}$,
+	as a function of $M_{NS}$ and $\chi_{BH}$,  is computed;
+	if this is not the case the binary is treated as point particle binaries.
+	All system that produce the given $M_{rem}$ make the cut and are stored: 
+	as the EM cut can remove several randomly generated binaries, 
+	the numbers of accepted points needs to be tracked and stopped when they are enough.
+	First all EM dark systems needs to be identified using the logical mask ‘\textbf{{\color{red}mask\_not\_bbh}}, 
+	which track points that are not BBH: a point is kept if the secondary object is not a BH, 
+	then its masses and spins are stored.
+	After this first cut only BNS and NSBH systems are left. 
+	To discriminate between these two classes, another requirement is that the secondary mass is a NS, 
+	so that ‘\textbf{{\color{green}mask\_bns}}’ identifies only BNS, while the systems that do not satisfy this conditions 
+	are identified by ‘\textbf{{\color{black}masknsbh}}’.	
+	All these point’s masses and spin are stored.
+	As previously showed in Chapter 5, not all NSBH coalescence produce an EM counterpart, 
+	so the next step is to cut all systems whose $M_{rem}$ is lower that the threshold mass, 
+	identify these points with ‘\textbf{{\color{blue}mask\_nsbh\_bright}}’ and store their masses and spins. 
+
 \begin{table}[]
 \begin{tabular}{|l|l|l|l|l|} \hline
-\textbf{BNS}  & \textbf{NSBH}       & \textbf{NSBH}    & \textbf{BBH}     \\ 
+\textbf{BNS}  & \textbf{NSBH}       & \textbf{NSBH}    & \textbf{BBH}     \\
 EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 {\color{red}1}0{\color{green}1}  & {\color{red}1}1{\color{green}0}{\color{blue}1}  & {\color{red}1}1{\color{green}0}{\color{blue}0}  & {\color{red}0}  \\ \hline
 \end{tabular}
 \end{table}
-
-\textbf{{\color{red}mask\_not\_bbh} \\
-mask\_nsbh \\
-{\color{green}mask\_bns}=mask\_nsbh \\
-{\color{blue}mask\_nsbh\_bright} \\
-}
-
-\section{Bank Tests}
 
 \section{O3 offline pyGRB analysis}
 
