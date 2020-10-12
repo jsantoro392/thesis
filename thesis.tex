@@ -9,6 +9,7 @@
 \usepackage{titlesec}
 \usepackage{float}
 \usepackage{xcolor}
+\usepackage{nameref}
 \newcommand{\fpg}[1]{\textcolor{red}{#1} }
 \addbibresource{sample.bib}
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
@@ -1801,74 +1802,83 @@
 
 \subsection{Gamma Ray Burst}
 
-	Discovered fortuitously by the Vela satellites in the late 1960s \cite{180}, 
-	gamma-ray bursts (GRBs) are brief, $\Delta t \sim 0.1-100s$, intense, flashes of high-energy, 1 keV–10 MeV, radiation 
-	produced when an ultra-relativistic fireball of high energy photons is launched from some central engine. 
-	In most cosmological scenarios, as well as a few galactic ones, 
-	the large energy density at the source implies that the plasma produced 
-	undergoes relativistic expansion \cite{181}.
-	An important consequence of this scenario, as well as the prompt emission of gamma-ray emission from internal shocks, 
-	is the prediction that this fireball will produce detectable afterglow emission in the X-ray and sometimes optical and radio bands \cite{182},	
-	after ploughing into the external medium, surrounding the source \cite{153,162}. \\ 
-	Collected data from the Swift and Fermi satellites show 
-	that the observed spectra are composed of several distinctive components:
-	the spectra of both the prompt and afterglow emission is non-thermal, 
-	the prompt emission also has an exponential high energy cutoff.
-	Broadband simultaneous spectral energy distributions  
-	reveal the presence of spectral breaks, showing that the spectrum is composed of multiple, 
-	smoothly connected power law branches. 
-	The spectral break frequencies are seen to evolve during time, 
-	and the peak of the spectrum to move towards lower frequencies. 
-	There are evidence that the very high energy part of the spectra evolve differently than the lower energy part, 
-	hence is likely to have a separate origin. 
-	The sharp cutoff in the lightcurves of many GRBs observed by Swift enables a clear discrimination between the prompt and the afterglow phases.  \\
-	The afterglow is believed to be synchrotron emission caused by the shocked external medium: after producing the prompt emission, the GRB ejecta move at relativistic speed 
-	and they expand into the interstellar medium, sweeping it. 	
-	As soon as the rest mass of the collected interstellar medium becomes comparable 
-	to the kinetic energy of the ejecta, a strong shock wave is formed. 	
-	At the shock, electrons are accelerated by the Fermi process and radiate mainly by synchrotron emission\cite{153,162}. 
-	In many cases, the decay of the optical or X-ray afterglow light-curve steepens 
-	to $F_{\nu} \propto t^{−2.2}$ at $\sim 1$ day after the burst, meaning that GRB outflows 
-	are not spherical but collimated into narrow jets \cite{183}. 
-	As the ejecta is decelerated and the strength of the relativistic beaming diminishes, 
-	the edge of the jet becomes visible to the observer. 
-	Distances to GRBs were completely uncertain until the launch of Compton-Gamma-Ray-Observatory (CGRO),  	
-	which discovered roughly one new GRB per day and established that these bursts 
-	are isotropically distributed, meaning they occur everywhere in the cosmos \cite{184}.\\
-	Burst redshift and flux show that GRBs radiate between $10^48$ and $10^55 ergs$, if isotropic.
-	This means that they are the most powerful outbursts of electromagnetic (EM) radiation in our universe 
-	and a possible source of (ultra) high-energy cosmic rays \cite{185,186}. 
-	After the discovery of the afterglow, a distinction between the initial gamma-rays 
-	and the subsequent longer wavelength counterpart became necessary: 
-	observationally, the prompt emission phase of a GRB is conventionally defined 
-	as the temporal phase during which sub-MeV emission is detected by 
-	the GRB triggering detectors above the background level. \\
-	Quantitatively, the duration of a burst is defined by the so-called $T_90$: 
-	the time interval between the epochs when 5\% and 95\% of the total fluence is registered by the detector. 
-	Fluence here is the gamma-ray flux received in the detector integrated over the duration of the GRB. \\
-	The histogram of GRB duration has two distinct peaks:
-	one at $0.3s$ and the other at about $30s$, and there is a trough in between the peaks at $2s$. \\
-	Bursts with duration less than $2s$ are classified as short-GRBs (SGRB) 
-	and those that last for more than $2s$ are called long-GRBs.
-	The two peaks in the duration distribution indicate the existence of 
-	two progenitor source classes: mergers of compact object
-	and rapidly spinning, hydrogen-stripped massive stars. 
-	These models are linked with SGRBs and LGRBs respectively. 
-	The secure association of SGRB with with both elliptical and star-forming galaxies
-	demonstrates unambiguously that some of the GRB progenitors are related to an old stellar population. 
-	Moreover, an analysis of the distribution of SGRB offsets relative to their 
-	host galaxy centers indicated that SGRB progenitors are compact object binaries. 
-	These observation led to the association of SGRB with mergers of NS 
-	with other NS or with BH, which was confirmed with the joint observation of GW170817 and GRB170817A. \\
-	The Fermi Gamma-ray Space Telescope is currently the most efficient GRB detection satellite in orbit. 
-	Its two main instruments are the Large Area Telescope (LAT) and the Gamma-ray Burst Monitor (GBM). 
-	Whereas LAT has a sky coverage of 20\%, GBM continuously observes the full region of the sky not occulted by Earth. \\ 
-	The Swift satellite is a first-of-its-kind multi-wavelength observatory:
-	it has X-ray and UV-optical telescopes on board and provides localization of bursts to within 3 arcminutes. 
-	When Swift’s gamma-ray telescope (Burst and Altert Telescope or BAT) detects a burst, 
-	the X-Ray Telescope (XRT) and the UV-Optical Telescope (UVOT) on board Swift quickly slew to the 
-	GRB position within 60-100 seconds to observe the target, which provides excellent coverage 
-	of the transition from the prompt gamma-ray phase to the lower-frequency afterglow emission phase.
+	Discovered fortuitously by the Vela satellites in the late 1960s \cite{180},
+        gamma-ray bursts (GRBs) are brief, $\Delta t \sim 0.1-100s$, intense, flashes of high-energy, 1 keV–10 MeV, radiation
+        produced when an ultra-relativistic fireball of high energy photons, restricted to a cone-shaped jet with opening angle $\theta$
+	which is centered on the rotation axis, is launched from some central engine.
+        In most cosmological scenarios, as well as a few galactic ones,
+        the large energy density at the source implies that the plasma produced
+        undergoes relativistic expansion \cite{181}.
+        An important consequence of this scenario, as well as the prompt emission of gamma-ray emission from internal shocks,
+        is the prediction that this fireball will produce detectable afterglow emission in the X-ray and sometimes optical and radio bands \cite{182},
+        Collected data from the Swift and Fermi satellites show
+        that the observed spectra are composed of several distinctive components:
+        the spectra of both the prompt and afterglow emission is non-thermal,
+        the prompt emission also has an exponential high energy cutoff.
+        Broadband simultaneous spectral energy distributions
+        reveal the presence of spectral breaks, showing that the spectrum is composed of multiple,
+        smoothly connected power law branches. 
+        The spectral break frequencies are seen to evolve during time,
+        and the peak of the spectrum to move towards lower frequencies.
+        There are evidence that the very high energy part of the spectra evolve differently than the lower energy part,
+        hence is likely to have a separate origin. 
+        The sharp cutoff in the lightcurves of many GRBs observed by Swift enables a clear discrimination between the prompt and the afterglow phases.  \\
+        The afterglow is believed to be synchrotron emission caused by the shocked external medium: after producing the prompt emission, the GRB ejecta move at relativistic speed
+        and they expand into the interstellar medium, sweeping it.
+        As soon as the rest mass of the collected interstellar medium becomes comparable
+        to the kinetic energy of the ejecta, a strong shock wave is formed.
+        At the shock, electrons are accelerated by the Fermi process and radiate mainly by synchrotron emission\cite{153,162}.
+        In many cases, the decay of the optical or X-ray afterglow light-curve steepens
+        to $F_{\nu} \propto t^{−2.2}$ at $\sim 1$ day after the burst, meaning that GRB outflows
+        are not spherical but collimated into narrow jets \cite{183}.
+        Due to relativistic beaming an observer at infinity can only see radiation from the internal section of the cone, 
+	as the ejecta is decelerated and the strength of the relativistic beaming diminishes,
+        the edge of the jet becomes visible to the observer.
+        Distances to GRBs were completely uncertain until the launch of Compton-Gamma-Ray-Observatory (CGRO),
+        which discovered roughly one new GRB per day and established  
+	through afterglow redshift measurements along with host galaxy identification, that they originate 
+	from sources at cosmological distances out to billions of light-years, and 
+	that are isotropically distributed, meaning they occur everywhere in the cosmos \cite{184}.\\
+        Burst redshift and flux show that GRBs radiate between $10^48$ and $10^55 ergs$, if isotropic.
+        This means that they are the most powerful outbursts of electromagnetic (EM) radiation in our universe
+        and a possible source of (ultra) high-energy cosmic rays \cite{185,186}.
+        After the discovery of the afterglow, a distinction between the initial gamma-rays
+        and the subsequent longer wavelength counterpart became necessary:
+        observationally, the prompt emission phase of a GRB is conventionally defined
+        as the temporal phase during which sub-MeV emission is detected by
+        the GRB triggering detectors above the background level. \\
+        Quantitatively, the duration of a burst is defined by the so-called $T_90$:
+        the time interval between the epochs when 5\% and 95\% of the total fluence is registered by the detector.
+        Fluence here is the gamma-ray flux received in the detector integrated over the duration of the GRB. \\
+        The histogram of GRB duration has two distinct peaks:
+        one at $0.3s$ and the other at about $30s$, and there is a trough in between the peaks at $2s$. \\
+        Bursts with duration less than $2s$ are classified as short-GRBs (SGRB)
+        and those that last for more than $2s$ are called long-GRBs.
+	The two peaks in the duration distribution indicate the existence of
+        two progenitor source classes: mergers of compact object
+        and rapidly spinning, hydrogen-stripped massive stars.
+        These models are linked with SGRBs and LGRBs respectively.
+	Short GRBs also tend to have higher energy spectra and lower measured redshifts than LGRBs.
+	Because large redshifts correspond to more distant sources, the sample of SGRBs with measured redshifts tend to be more nearby than the corresponding LGRB sample. 
+	Another difference is that SGRBs tend to be found in regions of low star formation in galaxies, meaning that its progenitors are related to an old stellar population,
+	whereas LGRBs are found in active star-forming regions:
+	several LGRBs have been directly associated with type 1b/c supernovae through spectral analysis of optical lightcurves detected in close proximity to the GRB.
+        Moreover, an analysis of the distribution of SGRB offsets relative to their
+	host galaxy centers indicated that SGRB progenitors are compact object binaries.
+        These observation led to the association of SGRB with mergers of NS
+        with other NS or with BH:
+	in this scenario, the binary system loses energy in the form of gravitational radiation and eventually the two objects 
+	merge to form a stellar mass black hole, surrounded by an accretion disk around a central BH, which is believed to power the beamed $\gamma$-ray emission that is observed. 
+	The joint observation of GW170817 and GRB170817A confirmed that the coalescence of two NS has indeed powered a SGRB. \\
+        The Fermi Gamma-ray Space Telescope is currently the most efficient GRB detection satellite in orbit.
+        Its two main instruments are the Large Area Telescope (LAT) and the Gamma-ray Burst Monitor (GBM).
+        Whereas LAT has a sky coverage of 20\%, GBM continuously observes the full region of the sky not occulted by Earth. \\
+        The Swift satellite is a first-of-its-kind multi-wavelength observatory:
+        it has X-ray and UV-optical telescopes on board and provides localization of bursts to within 3 arcminutes.
+        When Swift’s gamma-ray telescope (Burst and Altert Telescope or BAT) detects a burst,
+        the X-Ray Telescope (XRT) and the UV-Optical Telescope (UVOT) on board Swift quickly slew to the
+        GRB position within 60-100 seconds to observe the target, which provides excellent coverage
+        of the transition from the prompt gamma-ray phase to the lower-frequency afterglow emission phase.
 
 \subsection{GW170817: first BNS detection}
 
@@ -2065,7 +2075,7 @@
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 \chapter{Black hole-neutron star binaries}
-
+\label{neutronhole}
         Black holes and neutron stars are the densest object in the universe resulting from gravitational collapse,
         and extraordinary cosmic laboratories to probe gravity in the strong-field regime.
         BHs represent the extremes of space-time curvature:
@@ -2115,7 +2125,6 @@
         This is the optimal scenario to validate whether NSBH binaries are suitable SGRBs progenitor canditate.
 
 \section{Evolution of Black Hole-Neutron Star mergers}
-
         Three stages with widely different timescales characterise the evolution of BHNS binaries
         and involve different physical processes and observable signals.
         After their formation, the two objects go through a millions-of-years long inspiral phase,
@@ -2185,10 +2194,11 @@
                         \lambda_{NS} = {{2} \over {3}} k_2 C_{NS}^{-5}
                 \end{equation}
         where $C_{NS} = M_{NS}/R_{NS}$ and $k_2$ is the dimensionless Love number.
+	Another EOS dependent quantity is the frequency at which the GW signal is cut off when disruption occurs, $f_{cut}$,
+	which can be included in waveform models to have a more accurate description of the system.
 
 \section{Tidal disruption model}
-
-        Tidal disruption occurs when  the  tidal force of the BH at the surface of the NS is stronger
+	Tidal disruption occurs when  the  tidal force of the BH at the surface of the NS is stronger
         than the self-gravity of the NS.  Assuming Newtonian gravity, this condition is approximately
                 \begin{equation}
                         {{M_{NS}} \over {R_{NS}^2}} \sim {{3M_{BH}} \over {d_{tid}^3}}R_{NS}
@@ -2212,14 +2222,16 @@
         outside the BH about $10ms$ after a BHNS merger, $M_{rem}$, based on comparison
         between $d_{tid}$ and $R_{ISCO}$:
                 \begin{equation}
-                        {{M_{rem}^{model}} \over {M^b_{NS}}} = \alpha(3q)^{1/3}(1 - 2C_{NS}) - \beta{{R_{ISCO}} \over {R_{NS}}}
+                \label{eq:mrem}
+		        {{M_{rem}^{model}} \over {M^b_{NS}}} = \alpha(3q)^{1/3}(1 - 2C_{NS}) - \beta{{R_{ISCO}} \over {R_{NS}}}
                 \end{equation}
         where $\alpha$ and $\beta$ are the free parameters of the model,
         and $M^b_{NS}$ is the baryon mass of the NS.
         Since applying the $d_{tid}$ derived from Newtonian gravity to compact object results in underestimating the $C_{NS}$,
         a more appropriate estimation of this quantity, in which compact objects are more strongly bound is
                 \begin{equation}
-                        \hat{d}_{tid} = d_{tid} (1 - 2C_{NS})
+                \label{eq:mreup} 
+		       \hat{d}_{tid} = d_{tid} (1 - 2C_{NS})
                 \end{equation}
         This simple model applies to BH spins aligned with the orbital angular momentum and remnants below
         $\sim 20-25\%$ of the NS mass, leaving out unexplored regions of the parameter space,
@@ -2228,29 +2240,48 @@
                 \begin{equation}
                         {{M_{rem}^{model}} \over {M^b_{NS}}} = \Bigg[ Max \Bigg( \alpha{{1 - 2C_{NS}} \over {\eta^{1/3}}} - \beta {{R_{ISCO}C_{NS}} \over{\eta M_{BH}}} + \gamma, 0 \Bigg)\Bigg]^{\delta}
                 \end{equation}
-
-
+	where $\alpha$, $\beta$, $\gamma$ and $\delta$ are the free parameter of the new model.
+	Both models predict the $M_{rem}$ outside the BH after a NSBH merger, 
+	each result rely on tidal disruption dynamics considerations and 
+	is fitted to a set of numerical simulations, 
+	in order to assess their validity in the parameter space covered by the simulations.
+	While model $\ref{eq:mrem}$ is tested against 26 numerical simulation covering mass ratios 
+	in the range $M_{BH}/M_{NS}=3-7$, $\chi_{BH}$ up to 0.9, and $R_{NS} \approx 11-16 km$,  
+	model $ref{eq:mremup}$ is fitted to 75 simulations covering the range $q = 1-7$ $\chi =-0.5-0.97$, 
+	and $C_{NS} = 0.13-0.182$.
+	The new model covers previously unmodeled regions of the parameter space, comparable masses $q \sim 1$ and high spins,
+	giving a more accurate  results.
+	An upgrade in the calculation for $q \sim 1$ binaries in order to distinguish BNS from low-mass NSBH, 
+	since a solar mass BH in a binary system with a NS companion could mimic the observable properties of a NSNS binary,
+	is done by considering the two-body symmetry in vacuum gravity. 
+	When taking the limit $q \rightarrow \infty$ one loses the invariance under exchanging the bodies' labels, 
+	which can be restored by replacing $q^-1$ with $\eta$, as in Eq. $\ref{eq:mremup}$.
+	This choice leads to a lager value for $R_{ISCO}$ when considering a binary with $q \sim 1$, 
+	which is physically expected because the accreting NS will begin its plunge at a $R_{ISCO}^{effective}$,
+	causing the BH to grow, consequently the ISCO location for the remaining material outside will change, 
+	leading to a fractional change in the position of the ISCO for smaller $q$.	
+	This gives a more precise estimation for $M_{rem}$, which was previously overestimated for nearly equal-mass NSBH.
+	Furthermore, while Eq. $\ref{eq:mrem}$ did not consider nonlinear effects taking place after the coalescence of a NS
+	with a rapidly spinning BH, leading to an underestimation of $M_{rem}$, 
+	the introduction of the new free parameters $\gamma$ and $\delta$ accurately predicts that in this scenario, 
+	the remnant mass has larger values than previously found and therefore it is more likely to have an EM counterpart.
 
 \section{Electromagnetic Counterpart of a Black Hole-Neutron Star Binary Merger}
+	
+
 
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{My contribution to gravitational dave data analysis during O3}
 
-	GW170817 not only marked the beginning of a new era in multi-messenger astronomy, 
-	but was also a major step forward towards the understanding of the puzzling origins of SGRB. 
-	Since then more efforts are now being directed toward optimising the search to take full advantage 
-	of the potential for joint GRB-GW events observations.
-	In a coherent GW search triggered by SGRBs, template banks play a crucial role in finding the data buried in noise, 
-	therefore it is extremely important that they are generated under certain conditions.
-	The strong dependence of the GW signal on the component masses and spins, 
-	as well as the orientation of the source relative to the detectors, 
-	requires that the template bank covers the region of this parameter space 
-	that is expected to include the progenitors of short GRBs.
-	At the same time it should not exceed this region by too much, 
-	as this will make the analysis computationally infeasible and increase the number of background triggers. 
-	In order to better discriminate NSBH systems that could produce an accretion disk from this disruption,
-	Eq. 5.5 has been replaced by Eq. 5.7 in the generation of the template bank.
+	In a targeted GW follow-up of SGRBs search, a convenient way to increase its speed and sensitivity to EM bright GW events, 
+	is to discriminate between regions in the parameter space that enclose combinations of masses and spins, 
+	consistent with the minimum counterpart possibility requirement to have a NS in the binary, i.e. BNS and NSBH.
+	For the latter systems we need to exclude the EM dim case of the BH swallowing the NS,
+	and since GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH, 
+	an estimation of the remnant matter post merger is a useful indicator of whether a coalescence event is accompanied by an EM signal.         
+	In the O2 coherent GW search triggered by SGRBs, the template bank was generated implementing the fitting formula $\ref{eq:mrem}$,
+	and as already seen in Chapter $\ref{ch:neutronhole}$  
 
 \section{Bank Tests}
 
@@ -2301,6 +2332,23 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
                         \label{fig:o3bankvso2bank}
                 \end{figure}
 
+                \begin{figure}[H]
+                        \noindent
+                        \label{fittingfactor}
+                        \makebox[\textwidth]{\includegraphics[scale=0.4]{fittingfactor}}%
+                        \centering
+                        \caption{}
+                        \label{fig:fittingfactor}
+                \end{figure}
+		
+		\begin{figure}[H]
+                        \noindent
+                        \label{pointinj}
+                        \makebox[\textwidth]{\includegraphics[scale=0.55]{pointinj}}%
+                        \centering
+                        \caption{}
+                        \label{fig:pointinj}
+                \end{figure}
 
 \section{O3 offline pyGRB analysis}
 
