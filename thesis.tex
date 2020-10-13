@@ -1270,58 +1270,50 @@
  
 \subsection{False Alarm Rate}
 
-\fpg{Sono qui.}
-
 	After mitigating the effects of noise transients, the probability of remaining transients 
 	occurring simultaneously in two detectors and producing a large joint 
-	ranking statistic value becomes extremely small.
+	ranking statistic is reduced.
 	In order to keep only the most representative trigger among all the triggers produced by a single inspiral signal or glitch, 
 	a final clustering step is performed on coincident triggers, 
 	by selecting those with the largest value of $\hat \rho$ 
-	in each time window of $10s$. 
+	in each time window of $10$\,s. 
 	Any other events in the same time window are discarded. 
 	This ensures that a loud signal or transient noise artifact gives rise to at most one candidate event.
 	In order to assess the actual significance of a candidate, 
-	we need to measure the false-alarm rate, (FAR), of the search as a function of the detection statistic.
-	Typically, a detector’s background FAR can be determined 
-	simply by turning off the source or changing the orientation of the detector \cite{13, 43}. \\ 
-  	However, since it is not possible to isolate the detectors from GWs, 
-	it is impossible to directly measure the detector noise in the absence of signals.
- 	To estimate the FARs the data stream is shifted in time, 
-	choosing the minimum time-shift offset to be larger than the time-coincidence window 
-	used to determine if signals are observed with consistent parameters in the network.
-	The resulting “time-shifted” coincidences are then treated as a background noise sample, as seen in Fig.$\ref{fig:Significance}$. 
-	This is done numerous times with different time shifts in order to obtain 
-	a probability distribution for the joint detector ranking statistics \cite{44}. 
-		\begin{figure}[H]
-			\includegraphics[scale=0.25]{Significance}
-                  	\centering
-                  	\caption{Visual description of time shifting data to build a background noise sample.}
-                  	\label{fig:Significance}
-                 \end{figure}
+	the false-alarm rate (FAR) of the search is computed as a function of the detection statistic.
+  	Since it is not possible to isolate the detectors from GWs, 
+	one cannot determine the FAR by \emph{directly} measuring the detector noise in the absence of signals and a different strategy must be used.
+ 	To estimate FARs, the data streams of the detecters are shifted in time relative to one another: generates a synthetic dataset in which the detector streams are uncorrelated.  The minimum time-shift offset is chosen to be larger than the time-coincidence window used to determine whether signals are observed with consistent parameters in the network.
+	The coincidences resulting in this time-shifted data are then treated as a background noise sample.  They can either be coincident noise instances or coincidences between a noise transient and a signal.  The latter case generates a tail in the background noise distribution: when a signal candidate is present in the data, coincidences with it may be ignored to avoid the appearence of such tail.
+	The time-shifting procedure is repeated multiple times in order to obtain a probability distribution for the joint detector ranking statistics \cite{44}. 
 	Each coincident trigger is assigned a FAR given by the number 
-	of background triggers, $n_b(\hat \rho)$, with an equal or larger ranking statistic, 
+	of background triggers $n_b(\hat \rho)$ with an equal or larger ranking statistic, 
 	divided by the total time searched for time-shifted coincidences $T_b$
-		\begin{equation}
-			FAR = {{1 + n_(\hat \rho)} \over {T_b}}
-		\end{equation}
+        \begin{equation}
+          FAR = {{1 + n_b(\hat \rho)} \over {T_b}}\,.
+        \end{equation}
+        The inverse of the FAR (IFAR) quantifies the waiting time expected to be necessary before the candidate event in question is produced by noise:
+        \begin{equation}
+          IFAR = {1 \over {FAR}}
+        \end{equation}
+
 	To account for the noise background varying across the target signal space, 
 	candidate and background events are divided into different search classes based on template length. 
 	The significance of candidate events is measured against the background from the same class. 
-	For each candidate event, one can compute the probability of finding one or more 
-	noise background events in the observation time with a detection-statistic value above that of the candidate event, given by 
+	For each candidate event, one can compute the false alarm probabilty (FAP), that is, the probability of finding one or more 
+	noise background events in the observation time with a detection-statistic value above that of the candidate event.  This is given by 
 		\begin{equation}
-			FAP(\hat \rho) \equiv P(\geq 1 \hspace*{0.1cm}\text{noise event above}\hspace*{0.1cm} \hat \rho|T,T_b) = 1 - e^{-T{{1+n_b(\hat \rho)} \over{T_b}}}
+			FAP(\hat \rho) \equiv P(\geq 1 \hspace*{0.1cm}\text{noise event above}\hspace*{0.1cm} \hat \rho|T,T_b) = 1 - \exp\left[-T{{1+n_b(\hat \rho)} \over{T_b}}\right]\,,
 		\end{equation}
-	where T is the observation time of the search.
-	If a candidate event’s detection-statistic value is larger 
+	where $T$ is the observation time of the search and it multiplies the FAR in the exponential.
+	If the detection-statistic value of a candidate event is larger 
 	than that of any noise background event, 
-	then the analysis places an upper bound on the candidate’s false alarm probability. 
-	The inverse of FAR specifies the waiting time before such an event from noise is seen, and it is given by 
-		\begin{equation}
-			IFAR = {1 \over {FAR}}
-		\end{equation}   
-\section{Coincident and coherent research}
+	then the analysis places an upper bound on the FAP of that candidate. 
+	
+
+\section{Coincident and coherent searches}
+
+\fpg{Sono qui.}
 
 	There are two main detection strategies to search for GWs 	
 	from a network of detectors: coincident and coherent.
