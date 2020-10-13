@@ -36,7 +36,7 @@
 \mainmatter 
 
 \chapter{Introduction}
-\fpg{Non ancora letto.}%
+\fpg{Giri di correzione: 0.}%
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves,
 	GWs, on the basis of his theory of general relativity.  
 	Einstein predicted that the motion of two bodies, such as planets or stars—orbit each other,
@@ -83,7 +83,7 @@
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational-Wave Detection Principles}
-\fpg{Una lettura.}%
+\fpg{Giri di correzione: 1.}%
 	The aim of this thesis is to expose the methodologies involved 
 	in compact binary coalescence through gravitational wave observation. 
 	Before giving into this topic, it is useful to shortly discuss gravitational waves, 
@@ -848,7 +848,7 @@
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Data Analysis for Coalescing Binary Systems}
-
+\fpg{Giri di correzione: 1.}%
 	One of the tasks of GW data analysis is to extract GWs signal 
 	buried into noisy interferometric strain data, hence achieving GW detections.
 	The techniques involved in this proces depend on the type of source.
@@ -1366,70 +1366,62 @@
 	For a network of detectors, the multi-detector matched-filter
 	is defined as the sum of the single detector inner products
 		\begin{equation}
-			(a|b) \equiv \sum^D_{X=1} (a^X|b^X)
+			(a|b) \equiv \sum^D_{X=1} (a^X|b^X)\,,
 		\end{equation}
 	where D is the number of detectors in the network. The multi-detector log-likelihood is then calculated as
 		\begin{equation}
-			\ln \lambda = (s|h) - {1 \over 2} (h|h)
+			\ln \lambda = (s|h) - {1 \over 2} (h|h)\,.
 		\end{equation}
-	The larger the value of $ln \lambda$, the more likely that a signal is present.
-	The coherent SNR is obtained by maximising the log-likelihood 
+	The larger the value of $\ln \lambda$, the likelier it is that a signal is present.
+	The coherent SNR is obtained by maximising this log-likelihood 
 	over the values of the waveform amplitudes:
-
 		\begin{equation}
-			\rho^2 _{coh}\equiv 2 \ln \lambda |_{MAX}
+			\rho^2_{\rm coh}\equiv 2 \ln \lambda |_{\rm MAX}\,.
 		\end{equation}
-	In the absence of a signal, the $\rho^2_{coh}$ follows a $\chi^2$ distribution. \\
-        While in a coincidence search requires a signal to be observed in two or more detectors, 
+	In the absence of a signal, $\rho^2_{\rm coh}$ follows a $\chi^2$ distribution.
+
+        While a coincidence search requires a signal to be observed in two or more detectors, 
 	resulting in the coincident SNR to be simply the sum of all power consistent with the template waveform in each detector,
-	the coherent search naturally incorporates the SNR from all operational detectors \cite{45, 46}. \\
+	a coherent search naturally incorporates the SNR from all operational detectors \cite{45, 46}.
 	It has been demonstrated that for a signal in the absence of noise the coincident and coherent SNRs are identical. 
 	For noise events, the coincident SNR includes all of the noise, 
 	while the coherent SNR, incorporating only those contributions which are compatible 
-	with a coherent signal at all detectors, obtains precisely the same signal but reduces the noise background \cite{45}. \\
-	Even though the coherent method is highly effective at removing background noise,  
-	signal consistency tests are still required to distinguish glitches from GW signals. 
+	with a coherent signal at all detectors, obtains exactly the same signal but with a reduced noise background \cite{45}.
+	This makes the coherent method highly effective at removing background noise, and therefore coherent searches more sensitive than coincident once.
 
 \subsubsection{Null Stream Consistency}
+	In the coherent analysis, the data from all detectors 
+	are combined to extract the two physical GW polarisations.  \fpg{Forse la frase precedente \`e meglio anticiparla a quando dici cosa sia una ricerca coerente.} 
+	This is exploited to distinguish noise transients from GW signals, 
+	as those transients which do not contribute power to the two-polarization signal space are rejected as incoherent background noise.
+	Consequently the search is more sensitive as the number of detectors in the global network increases, not only because the ranking statistic improves, but also because its noise reduction and rejection mechanisms improve.
 
-	In the coherent analysis the data from all detectors 
-	is combined to extract the two physical GW polarisations, 
-	and uses this to restrict the signal model to 
-	only two independent polarizations, 
-	thus it is easier to distinguish transients from GW signals, 
-	as those transients which do not contribute power to the signal space, and to reject incoherent background noise. \\
-	Consequently the search is more sensitive as the number of detectors in the global network increases.
         When there are more than two detectors, 
 	it is possible to construct one or more null data streams 
-	which contain only noise, and define the null SNR as
+	which contain only noise and to define the null SNR
 		\begin{equation}
-			\rho^2_N = \rho^2_{coinc} - \rho^2_{coh} 
+			\rho^2_N = \rho^2_{\rm coinc} - \rho^2_{\rm coh}\,. 
 		\end{equation}
 	Requiring a small null SNR is an effective method to separate 
-	an incoherent noise transient from a real GW signals: 
-	in fact such noise events may give a large coherent SNR,
-	but it is likely to also give a large null SNR \cite{45}.       
+	incoherent noise transients from real GW signals: 
+	such noise events may give a large coherent SNR,
+	but are highly likely to also give a large null SNR \cite{45}.       
 
 \section{Injections}
 
-	In order to test the sensitivity of a search pipeline to detect CBC signals, 
-	simulated gravitational waveforms, injections, can be added in the data before filtering.
-	Then a search can be performed over the data with the added injections just as it would normally do with the real data;
-	by determining FARs for the injections that we recover, 	
+	In order to test the sensitivity of a CBC search pipeline, 
+	simulated gravitational waveforms are added to the data (software injections) and re-estracted by means of matched filtering.
+	By determining the FARs for the injections that are recovered, 	
 	and noting which injections are not recovered at all,
-	we can understand how well we detect certain types of sources \cite{47, 48}.
-	Studies of injection recovery also aid with tuning different parameters 
-	of the search pipeline and setting upper limits on the rates of particular sources. 
-	One method of determining sensitivity to particular injections is the efficiency, 
-	or fraction of found injections, as a function of injected physical distance. 
-	Another method of determining a search’s sensitivity to a particular source 
+	one can characterize quantitatively the pipeline performance \cite{47, 48}.
+	Studies of injection recovery also aid the tuning of different parameters 
+	of the search pipeline.  Further, in the case of no detections, injection campaigns are used to set upper limits on the rates of specific sources.
+ 	One way of quantifying the sensitivity to a particular set of injections is to calculated the efficiency, that is, the fraction of found injections as a function of the distance of the injection. 
+	Another method of determining the search sensitivity to a particular source 
 	is to examine the injected distance as a function of frequency 
-	(or total mass) for missed and found injections. \\
-	These simulations can be performed in two ways: software and hardware injections.
-	The former are used to verify the results obtained from software injections, 
-	the latter are used for high-statistics evaluation of the performance of analyses \cite{49}. 
+	(or total mass) for missed and found injections.
 
-\subsection{Software injections}
+        \fpg{Devi mettere una forward reference a quando discuti qualcosa di relativo alle tue injections/efficiencies nel capitolo dei risultati.  Ho tolto le hardware injections perch\'e non le hai mai usate/viste.  Per\`o devi mischiare il testo precedente con quello che segue: al momento ci sono delle (inutili) ripatizioni).}.
 
 	Software injections are a streaming time series of simulated gravitational waveforms, 
 	generated in the software, from a synthetic population of a certain type of source, 
@@ -1446,33 +1438,9 @@
 	For the CBC analysis, the process is to use software injections to tune the pipeline; 
 	they are also used when calculating upper limits \cite{47}.
 	
-\subsection{Hardware injections}
-
-	In contrast hardware injections are performed by physically displacing
-	the detectors’ test masses to simulate the response of a GW passage. 
-	Even though the detectors’ response to a true GW signal is not 
-	exactly the same as the response from the injection,
-	the difference is well understood and it is only relevant at high frequencies.
-	These hardware injections offer a better test of the sensitivity of the infrastructure than the software ones:
-	they provide an end-to-end check for the search,
-	from the GW being incident on 
-	the detector through to making a detection, and parameter estimation analysis to recover signals in the detectors’ data. 
-	The recovery of hardware injections provides an additional check 
-	of the sign of the calibration between the Advanced LIGO detectors 
-	using astrophysical waveforms and the recovery measures 
-	the time delay of the signal in the controls system. \\ 
-	However, as hardware injections cannot be removed from the data, 
-	times when hardware injections are made cannot be analysed 
-	for any other signals that might be in the data. 
-	:herefore, only a limited number of hardware injections can be made in a given stretch of data. \\
-	If a detection candidate is a true GW, 
-	we should be able to reproduce the morphology of the posterior distributions 
-	using the hardware injections as well as with software injection. 
-	Conversely any significant differences have the potential to highlight 
-	discrepancies between the observation and our waveform models, or errors in our data analysis \cite{50}. 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational wave observation so far}
-
+\fpg{Giri di correzione: 0.}%
 	The initial LIGO six observing runs (S1...S6) were carried out 
 	by the LIGO Scientific Collaboration from 2002 to 2010; 
 	during the last two observing runs various enhancements 
@@ -2068,6 +2036,7 @@
 
 \chapter{Black hole-neutron star binaries}
 \label{neutronhole}
+\fpg{Giri di correzione: 0.}%
         Black holes and neutron stars are the densest object in the universe resulting from gravitational collapse,
         and extraordinary cosmic laboratories to probe gravity in the strong-field regime.
         BHs represent the extremes of space-time curvature:
@@ -2292,7 +2261,7 @@
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{My contribution to gravitational dave data analysis during O3}
-
+\fpg{Giri di correzione: 0.}%
 	In a targeted GW follow-up of SGRBs search, a convenient way to increase its speed and sensitivity to EM bright GW events, 
 	is to discriminate between regions in the parameter space that enclose combinations of masses and spins, 
 	consistent with the minimum counterpart possibility requirement to have a NS in the binary, i.e. BNS and NSBH.
@@ -2383,6 +2352,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 
 %--------------------------------------------------------
 \chapter{Conclusions}
+\fpg{Giri di correzione: 0.}%
 
 \backmatter
 \cleardoublepage
