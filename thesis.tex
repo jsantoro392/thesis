@@ -35,7 +35,10 @@
 
 \mainmatter 
 
-\chapter{Introduction}
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\markboth{Introduction}{Introduction}
+%
 \fpg{Giri di correzione: 0.}%
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves,
 	GWs, on the basis of his theory of general relativity.  
@@ -1477,7 +1480,7 @@
 	For example, lower mass systems, lasting for many more cycles in the detector data, 
 	allow to better constrain the post-newtonian coefficients that describe the evolution of the binary through the inspiral phase. 
 
-\section{O1: first observing run}
+\section{The First Observing Run (O1)}
 
 	The first observing run, which took place from 12th September 2015 to 19th January 2016, 
 	involved the LIGO Hanford Observatory (LHO) and LIGO Livingston Observatory (LLO) detectors, which provided unprecedented sensitivity to GW 
@@ -1501,7 +1504,7 @@
 	The binary component masses of all three systems lie 
 	within the range expected for stellar-mass BHs. 
 
-\subsection{GW150914 BBH first detection}
+\subsection{GW150914: the Birth of Gravitational-Wave Astronomy}
 	
 	The era of GW astronomy began with the detection of the merger of two stellar-mass BH, GW150914, 
 	on September 14, 2015 at 09:50:45 UTC with a matched-filter SNR of 23.7 \cite{21}. 
@@ -1514,7 +1517,8 @@
 	Using the time-shift method to estimate background, 
 	the FAR of GW150914 is limited to be less than $6.0 \times 10^{-7} yr^{-1}$. 
 	This corresponds to a p-value of $7.5\times10^{-8}$, or a significance of $5.3\sigma$. \\
-	\textbf{Masses} \\ 
+
+	\subsubsection{Masses}
 	The analysis makes use of two waveform models, the double aligned spin waveform model (EOBNR) \cite{103, 104} 
 	and an effective precessing spin model (IMRPhenom) \cite{105-107}. 
 	Results from the two waveforms are similar, and match the expectations for a coherent signal in both detectors,
@@ -1525,7 +1529,8 @@
 	total mass of the binary components, as similar fractions of 0.02–0.05 are radiated away as GWs. 
 	While predominantly determined by the total mass, the radiated energy also 
 	depends upon the mass ratio and component spins. \\
-	\textbf{Spin} \\
+
+	\subsubsection{Spin}
 	The results obtained for GW150914 are consistent with expectations for moderately spinning BH \cite{101, 102}. 
 	For equal mass binaries, both components of the spin, 
 	parallel and orthogonal to the orbital angular momentum, 
@@ -1534,8 +1539,9 @@
 	The spin of the final BH, like its mass, is calculated using fitting formulas 
 	calibrated against numerical relativity simulations. \\
 	The final BHs for GW150914 has spin of $0.68^{+0.05}_{-0.06}$ as expected for mergers of similar-mass BHs \cite{99, 100}. 
-	The final spin is dominated by the orbital angular momentum of the binary at merger. \\
-	\textbf{Distance, inclination, and sky location} \\
+	The final spin is dominated by the orbital angular momentum of the binary at merger.
+
+	\subsubsection{Distance, inclination, and sky location}
 	The luminosity distance to the source is inversely proportional to the signal’s amplitude: 
 	GW150914 has an estimate distance of $D_L = 420^{+150}_{-180}Mpc$ (redshift $z=0.09^{+0.03}_{-0.04}$). 
 	Since there is a degeneracy between the distance and the binary’s inclination, 	
@@ -1551,8 +1557,9 @@
 	The 90\% credible region for sky localization is $230 deg^2$ for GW150914.
 	The sky area is expected to scale inversely with the square of the SNR \cite{89,90}, 
 	and this trend is followed as this event has the smallest sky localisation and 
-	highest SNR than the other two events detected during O1, as we will see in the next sections. \\
-	\textbf{Astrophysical implications} \\
+	highest SNR than the other two events detected during O1, as we will see in the next sections.
+
+	\subsubsection{Astrophysical implications}
 	This GW discovery provides the first robust confirmation of several theoretical predictions:
 	heavy BH exist, BBHs form in nature, and BBHs merge within the age of the Universe at a detectable rate. 
 	However, it was impossible to determine the formation channel for this event. 
@@ -1570,8 +1577,7 @@
                 	\label{fig:firstgw}
                 \end{figure}
 
-\subsection{GW151226 22-Solar-Mass BBH Coalescence}
-
+\subsection{GW151226: a 22-Solar-Mass Binary Black Hole Coalescence}
 	The observation of a second coincident signal GW151226, also from the coalescence of two BHs, 
 	was observed by the twin LIGO detectors, with a combined matched-filter SNR of 13. 
 	The signal was identified as the second most significant event in both the PyCBC and GstLAL analyses 
@@ -1581,8 +1587,9 @@
 	Its significance assessed by its FAR is limited to be less than $6.0 \times 10^{-7} yr^{-1}$. 
 	This corresponds to a p-value of $7.5 \times 10^{-8}$, or a significance of $5.3\sigma$. 
 	In the GstLAL analysis, the background extends past the observed log likelihood of GW151226, 
-	and the event is recovered with a FAR of 1 per 44000 years, which corresponds to a p-value of $3.5\times 10^{-6}$ and a significance of $4.5\sigma$. \\ 
-	\textbf{Source Parameters}
+	and the event is recovered with a FAR of 1 per 44000 years, which corresponds to a p-value of $3.5\times 10^{-6}$ and a significance of $4.5\sigma$.
+
+	\subsubsection{Source Parameters}
 	GW151226 persisted in the LIGO frequency band for approximately 1 s, 
 	increasing in frequency and amplitude over about 55 cycles from 35 to 450 Hz, 
 	this is different from the more massive GW150914 binary for which only the last 10 cycles, 
@@ -1604,9 +1611,8 @@
 	However, the two LIGO detectors are nearly coaligned and the source of GW151226 is likely to be located close to the maxima of the directional responses of both detectors \cite{28}. 
 	Consequently, it is difficult to extract the polarization content, and therefore the orientation of the orbital plane. 
 	As a result, the luminosity distance is only weakly constrained to be $D_L = 440^{+180}_{-190}Mpc$, comparable to GW150914’s, and corresponding to a redshift of $0.09^{+0.03}_{-0.04}$.
-		
-\subsection{GW151012 revaluated BBH}
-	
+
+\subsection{GW151012}	
 	The third most significant GW event from O1, previously referred to as LVT151012,
 	was detected with a low statistical significance of $1.7\sigma$, 
 	corresponding to a false alarm rate of once in 2.7 years. 
@@ -1614,16 +1620,16 @@
 	possibly associated with an astrophysical event. \\
 	However, a detailed re-analysis of this event has demonstrated that it does indeed 
 	meet the criteria of a confident detection of a BBH merger, and it is now re-labeled as GW151012.
-                \begin{figure}[H]
-                        \label{o1}
-                        \includegraphics[scale=0.45]{o1}
-                        \centering
-                        \caption{Time-frequency maps and reconstructed signal waveforms for the O1 BBH events. Each event is represented with three panels showing whitened data from the LIGO detector where the higher SNR is recorded. The first panel shows a normalized time-frequency power map of the GW strain. The remaining pair of panels shows time-domain reconstructions of the whitened signal, in units of the standard deviation of the noise. The upper panels show the 90\% credible intervals from the posterior probability density functions of the waveform time series, inferred using CBC waveform templates from Bayesian inference (LALINFERENCE with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) The lower panels show the point estimates from the cWB search (solid lines), along with a 90\% confidence interval (green band) derived from cWB analyses of simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event. \cite{193}}
-                         \label{fig:o1}
-                \end{figure}
+        \begin{figure}[H]
+          \label{o1}
+          \includegraphics[scale=0.45]{o1}
+          \centering
+          \caption{Time-frequency maps and reconstructed signal waveforms for the O1 BBH events. Each event is represented with three panels showing whitened data from the LIGO detector where the higher SNR is recorded. The first panel shows a normalized time-frequency power map of the GW strain. The remaining pair of panels shows time-domain reconstructions of the whitened signal, in units of the standard deviation of the noise. The upper panels show the 90\% credible intervals from the posterior probability density functions of the waveform time series, inferred using CBC waveform templates from Bayesian inference (LALINFERENCE with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) The lower panels show the point estimates from the cWB search (solid lines), along with a 90\% confidence interval (green band) derived from cWB analyses of simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event. \cite{193}}
+          \label{fig:o1}
+        \end{figure}
 
 
-\section{O2: second observing run}
+\section{The Second Observing Run (O2)}
 
 	After an upgrade and commissioning period, the second observing run (O2) took place from November 30, 2016 to August 25, 2017. 
 	During O2, on the 1st August 2017, Advanced Virgo (AdV) joined the two aLIGO detectors for the first time, 
@@ -1652,7 +1658,7 @@
 
 
 
-\subsection{GW170104 50-Solar-Mass BBH Coalescence}
+\subsection{GW170104: a 50-Solar-Mass Binary Black Hole Coalescence}
 
 	The observation of GW170104 was made by LIGO detectors, 
 	with a network SNR of 13 and a false alarm rate less than 1 in 70,000 years.
@@ -1674,8 +1680,7 @@
 	The inferred merger rate agrees with previous calculations \cite{59, 137}, and could potentially be explained 	
 	by BBHs forming through isolated binary evolution or dynamical interactions in dense stellar clusters \cite{134}. 
 
-\subsection{GW170608 19 Solar-mass BBH Coalescence}
-
+\subsection{GW170608}
 	GW170608 was first identified as a loud (SNR $\sim9$) event in LLO data,
 	via low-latency templated searches \cite{138}.	
 	The morphology of the LLO event is consistent with a compact binary merger signal, 
@@ -1702,8 +1707,8 @@
 	X-ray binary systems contain either a BH or NS which accretes matter from a companion donor star. 
 	The inferred component masses of GW170608 are consistent with dynamically-measured masses of BHs found in low-mass X-ray binaries.
 
-\subsection{GW170814 Three-detector Observation of BBH Coalescence}	
-	
+
+\subsection{GW170814: the First Three-Detector Network Observation}	
 	On August 14, 2017, a GW signal coming from the merger of two stellar mass BH 
 	was observed for the first time by a three detector network, with the Virgo and LIGO detectors. 
 	GW170814 was first identified with high confidence by two independent 
@@ -1763,7 +1768,7 @@
 
 
 \subsection{Gamma Ray Burst}
-
+\fpg{Questo qui non va.}
 	Discovered fortuitously by the Vela satellites in the late 1960s \cite{180},
         gamma-ray bursts (GRBs) are brief, $\Delta t \sim 0.1-100s$, intense, flashes of high-energy, 1 keV–10 MeV, radiation
         produced when an ultra-relativistic fireball of high energy photons, restricted to a cone-shaped jet with opening angle $\theta$
@@ -1842,7 +1847,7 @@
         GRB position within 60-100 seconds to observe the target, which provides excellent coverage
         of the transition from the prompt gamma-ray phase to the lower-frequency afterglow emission phase.
 
-\subsection{GW170817: first BNS detection}
+\subsection{GW170817: the Birth of Multimessenger Astronomy}
 
 	On 2017 August 17 the first confident joint EM–GW observation in history was made when 
 	a coincident GW trigger by LIGO occurred $\sim1.7s$ prior to the announcement of a GBM trigger \cite{147},
@@ -1899,7 +1904,7 @@
                         \label{fig:gw-grb}
                 \end{figure}
 
-\section{O3a: first half of the third observing run}
+\section{The First Part of the Third Observing Run (O3a)}
 
 	On April 1, 2019, Advanced LIGO and Advanced Virgo initiated their third observing run (O3), 
 	and was prematurely suspended on March 27th 2020 \cite{53}.
@@ -1931,7 +1936,7 @@
                         \label{fig:o3detection}
                 \end{figure}
 
-\subsection{GW190425: Observation of a compact binary coalescence with total mass ~3.4 Msun}
+\subsection{GW190425: a Compact Binary Coalescence with Total Mass $\sim 3.4M_\odot$}
 
 	On 2019 April 25, the LLO observed the second GW signal, GW190425, 
 	consistent with the inspiral of a BNS system of component masses in the range from $1.12$ to $2.52 M_\odot$ 
@@ -1989,8 +1994,8 @@
                 \end{figure}
 
 
-\subsection{GW190412: Observation of a Binary-Black-Hole Coalescence with Asymmetric Masses}
-
+\subsection{GW190412: a Binary-Black-Hole with Asymmetric Masses}
+\fpg{Non saprei se tenerle in ordine non cronologico.}
 	GW190412 is a loud event detected with a three detector network SNR of 19 and a FAR of 1 over 30000 yr.
 	The peculiarity of this event is the asymmetry in the binary component masses:
 	one BH was $\sim8 M_\odot$, while the other companion $\sim30 M_\odot$.
@@ -2033,6 +2038,10 @@
                         \caption{The inferred mass ratio $q$ and effective spin $\chi_{eff}$ of GW190412. The orange and blue contours show the distributions on the parameters recovered using two different waveform models, which make slightly different approximations for modeling the true general-relativistic signal.\cite{133}} 
                         \label{fig:asymmetric}
                 \end{figure}
+
+\subsection{GW190521}
+
+\subsection{GW190814}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2353,7 +2362,10 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 \subsection{Chunk 29}
 
 %--------------------------------------------------------
-\chapter{Conclusions}
+\chapter*{Conclusions}
+\addcontentsline{toc}{chapter}{Conclusions}
+\markboth{Introduction}{Conclusions}
+
 \fpg{Giri di correzione: 0.}%
 
 \backmatter
