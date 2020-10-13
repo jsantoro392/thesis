@@ -861,6 +861,7 @@
         matched filtering, template banks, evalution of a candidate's significance, measure of the sensitivity of a search.
 
 \section{Matched Filtering}
+\label{sec:matched_filtering}
 	Although signals from coalescing binaries will most probably not stand above the broadband noise of the detector, 
 	their detection is possible by the use of matched filtering, 
 	which takes advantage of the fact that the waveform can be fairly well predicted. 
@@ -1313,44 +1314,43 @@
 
 \section{Coincident and coherent searches}
 
-\fpg{Sono qui.}
-
-	There are two main detection strategies to search for GWs 	
-	from a network of detectors: coincident and coherent.
+	The two main detection strategies to search for GWs 	
+	from a network of detectors are known as coincident and coherent.  In this section, we highlight differences between them.  \fpg{Qui ci vuole una forward reference al capitolo con i risultati, cos\`i spieghi che hai fatto entrambi i tipi di searches.}
 
 \subsection{Coincident analysis}
 
 	A coincidence analysis searches the data from individual detectors independently 	
 	and matches the candidate event lists of individual detectors for consistency,
-	in the mass and time parameters of a GW signal.
+	in the mass, spin, and time parameters of a GW signal.
 	This methodology ignores the phase information at the expense of some loss in sensitivity, 
 	so there is no guarantee that the observed signals in each detector 
 	are compatible with a GW source with two polarisations.
 	The benefit of the coincidence search is that it is not computationally expensive: 
 	the dominant cost of the search is in performing a matched filter 
-	of the data against a bank of template waveforms, (as seen in Section 2.1):
-        this task is done once per detector per template \cite{28, 45}. \\
+	of the data against a bank of template waveforms (see, Section \ref{sec:matched_filtering}}:
+        this task is performed once per detector per template \cite{28, 45}.
+
 	A search over the sky location of the signal is then trivially done 
 	by time-shifting the results from the different detectors accordingly.
         Similarly, the noise background is estimated by applying larger time shifts to the data,
         significantly longer than the light travel time between detectors, to search for noise coincidences.
-        In a coincidence search, it is necessary to place a threshold on the SNR of events
+        In a coincidence search, it is necessary to place a threshold on the SNR of events \fpg{SNR di singolo detector, coincidente, o tutte e due? E l'SNR coincidente lo hai mai definito?}
         which will be stored by the analysis prior to identifying coincidences.
         This means that the power in the GW signal will only be accumulated
-	in those detectors where there was an event above threshold \cite{45}.
+	in those detectors where there was an event above threshold \cite{45}.  
 
 \subsection{Coherent}
 
-	A coherent search is a very sensitive way to search for GWs from a network of detectors:
-	this strategy treats the detectors as if they are isolated 
-	and then combines the data from all detectors phase coherently, 
-	appropriately correcting for time-delays and polarization phases, 
+	The coherent search strategy combines the data from all detectors coherently in phase, 
+	appropriately correcting for time-delays and polarization phases, in order
 	to obtain an individual detection statistic which is then compared with a single threshold \cite{18}. 
 	The aim of this type of search is to obtain a single statistic for the full 
 	network, that is optimized in the maximum likelihood sense, 
-	to effectively construct a single, more sensitive detector. \\
- 	While this method has been applied to searches for unmodelled burst sources,
-        it has proven more difficult to use for the binary merger search \cite{45}.
+	to effectively construct a single, more sensitive detector.
+ 	While this method is applied to searches for unmodelled burst sources,
+        it is computationally expensive in the case of modelled searches \cite{45}.  It is therefore used for externally triggered searches, when knowing the time- and sky-location of the source can cut the cost of the search.  \fpg{Citare i vari papers metodologici di PyGRB.}
+
+        The fact that the detector data are combined coherently allows to define a new ranking statistic, known as coherent SNR, and to build new consistency tests, of which we discuss an example.
 
 \subsubsection{Coherent SNR}
 	
@@ -1358,7 +1358,7 @@
 	the two polarisations weighted by the detector antenna 
 	response
 		\begin{equation}
-			h^X(t) = F_{+}^X h_{+}(t^X) + F_{\times}^X h_{\times}(t^X) 
+			h^X(t) = F_{+}^X h_{+}(t^X) + F_{\times}^X h_{\times}(t^X)\,, 
 		\end{equation}
 	where the time of arrival in detector $X$ depends upon the sky location 
 	of the source relative to the detector and the time of arrival at a fiducial location, 
