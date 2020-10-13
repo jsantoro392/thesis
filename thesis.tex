@@ -1479,38 +1479,36 @@
 	covers the frequencies of GWs emitted during 
 	the late inspiral, merger, and ringdown of stellar-mass BBHs.
 
-\fpg{Sono qui.}
+	Two independent matched-filter searches were used to detect GWs from CBC sources: PyCBC \cite{109-112} and GstLAL \cite{112-114}.
+	The pipelines identify GW candidates by looking at coincident events 
+	found in both LIGO detectors, in a 15\,ms time window 
+	that accounts for the intersite propagation time plus timing uncertainties. 
+	Both pipelines used a discrete template bank \cite{42, 114, 115, 117-120}, tartetting binary sources with individual masses from 1${M_\odot}$  to 99${M_\odot}$,
+	total mass less than 100${M_\odot}$, and dimensionless spins up to 0.99 and 0.05 for BHs and NSs, respectively.
 
-	Two independent matched-filter searches were used to detect GWs from CBC, PyCBC \cite{109-112} and GstLAL \cite{112-114}.
-	The pipelines identify GW candidates by looking at coincident events, 
-	found in both LIGO detectors in a proper time window, 15 ms, 
-	that accounts for the intersite propagation time plus uncertainties; 
-	they both use a discrete template bank \cite{42, 114, 115, 117-120}, which targets GW from binaries with individual masses from 1${M_\odot}$  to 99 ${M_\odot}$,
-	total mass less than 100 ${M_\odot}$, and dimensionless spins up to 0.99.\\
 	To assess the candidate significance, they compare the candidate with the noise background, 
-	and once an event is confirmed to be a real GW signal, it is removed from the data when estimating the noise background.
-	Polluted data with short duration artifacts are identified and removed from the analysis data set.
-	After applying this data quality process, the remaining coincident analysis time in O1 was 48.6 days. 
+	and once an event is confirmed to be a real GW signal, it is removed from the data when estimating the noise background (see Sec.\,\fpg{quella sulla FAR}).
+	Data affected by short duration artifacts of known origin are identified and removed from the analysis dataset.
+	After applying this data quality process, the remaining coincident analysis time in O1 was 48.6\,days. 
 	The analyses search only stretches of data longer than a minimum duration, 
-	to ensure that the detectors are operating stably, 
-	resulting in 46.1 days of available data for the PyCBC analysis and 48.3 daysr for the GstLAL analysis. \\
-	Three GW events detected during this run, all three consistent with originating from BBHs.
+	to ensure that the detectors are operating stably and enough data is available to build the background noise distribution.  This 
+	resulted in 46.1\,days of data for the PyCBC analysis and 48.3\,days for the GstLAL analysis.
+
+	Three GW events were detected during this run, all three consistent with a BBH source: GW150914, GW151012, and GW151226.
 	The binary component masses of all three systems lie 
 	within the range expected for stellar-mass BHs. 
 
 \subsection{GW150914: the Birth of Gravitational-Wave Astronomy}
-	
-	The era of GW astronomy began with the detection of the merger of two stellar-mass BH, GW150914, 
-	on September 14, 2015 at 09:50:45 UTC with a matched-filter SNR of 23.7 \cite{21}. 
-	It is recovered with a reweighted SNR in the PyCBC analysis of 22.7, 
-	and a log likelihood of $84.7$ in the GstLAL analysis, as shown in Fig.$\ref{fig:firstgw}$. 
-	Both analyses have shown that GW150914 is the most significant event and that the probability that 
-	this event was formed by random coincidence of detector noise is extremely small. 
-	In both cases, there are no background events with significance 
-	equal to or greater than GW150914, therefore only a limit can be imposed on the false alarm rate (FAR) for GW150914. \\ 
-	Using the time-shift method to estimate background, 
-	the FAR of GW150914 is limited to be less than $6.0 \times 10^{-7} yr^{-1}$. 
-	This corresponds to a p-value of $7.5\times10^{-8}$, or a significance of $5.3\sigma$. \\
+
+	The era of GW astronomy began with the detection of the coalescence of two stellar-mass BHs
+	on September 14, 2015 at 09:50:45 UTC.  The signal GW150914 was detected with a matched-filter SNR of 23.7 \cite{21}. 
+	Both PyCBC and GstLAL identified GW150914 as the most significant event in O1 and the probability that 
+	it was due to a random coincidence of detector noise is extremely small: 
+	both pipelines found no background events with significance 
+	equal to or greater than GW150914.  Therefore only an upper limit on the FAR of GW150914 was determined: $6.0 \times 10^{-7} yr^{-1}$. 
+	This corresponds to a FAP of $7.5\times10^{-8}$, or a Gaussian-equivalent significance of $5.3\sigma$.
+
+\fpg{Sono qui.}
 
 	\subsubsection{Masses}
 	The analysis makes use of two waveform models, the double aligned spin waveform model (EOBNR) \cite{103, 104} 
