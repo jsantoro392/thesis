@@ -1483,8 +1483,8 @@
 	The pipelines identify GW candidates by looking at coincident events 
 	found in both LIGO detectors, in a 15\,ms time window 
 	that accounts for the intersite propagation time plus timing uncertainties. 
-	Both pipelines used a discrete template bank \cite{42, 114, 115, 117-120}, tartetting binary sources with individual masses from 1${M_\odot}$  to 99${M_\odot}$,
-	total mass less than 100${M_\odot}$, and dimensionless spins up to 0.99 and 0.05 for BHs and NSs, respectively.
+	Both pipelines used a discrete template bank \cite{42, 114, 115, 117-120}, tartetting binary sources with individual masses from $1{M_\odot}$ to $99{M_\odot}$,
+	total mass less than $100{M_\odot}$, and dimensionless non-precessing spins up to 0.99 and 0.05 for BHs and NSs, respectively.
 
 	To assess the candidate significance, they compare the candidate with the noise background, 
 	and once an event is confirmed to be a real GW signal, it is removed from the data when estimating the noise background (see Sec.\,\fpg{quella sulla FAR}).
@@ -1500,76 +1500,71 @@
 
 \subsection{GW150914: the Birth of Gravitational-Wave Astronomy}
 
+		\begin{figure}[!t]
+                	\label{firstgw}
+                	\includegraphics[scale=0.45]{firstgw}
+                	\centering
+                	\caption{Left: PyCBC matched-filter SNR (blue), re-weighted SNR (purple) and chi-squared (green) versus time for the best-matching template at the time of GW150914. The top and bottom plots refer to the Hanford and Livingston detectors, respectively. Right: Observed matched-filter SNR (blue) and expected matched-filter SNR (purple) versus time for the best-matching template at the time of GW150914, as reported by the GstLAL analysis. The expected matched-filter SNR is based on the autocorrelation of the best-matching template. The dashed black lines indicate 1-$\sigma$ deviations expected in Gaussian noise. \cite{21}} 
+                	\label{fig:firstgw}
+                \end{figure}
+
 	The era of GW astronomy began with the detection of the coalescence of two stellar-mass BHs
 	on September 14, 2015 at 09:50:45 UTC.  The signal GW150914 was detected with a matched-filter SNR of 23.7 \cite{21}. 
 	Both PyCBC and GstLAL identified GW150914 as the most significant event in O1 and the probability that 
 	it was due to a random coincidence of detector noise is extremely small: 
 	both pipelines found no background events with significance 
 	equal to or greater than GW150914.  Therefore only an upper limit on the FAR of GW150914 was determined: $6.0 \times 10^{-7}\,$yr$^{-1}$. 
-	This corresponds to a FAP of $7.5\times10^{-8}$, or a Gaussian-equivalent significance of $5.3\sigma$.
-
-\fpg{Sono qui.}
+	This corresponds to a FAP of $7.5\times10^{-8}$, or a Gaussian-equivalent significance of $5.3\sigma$.  In Fig.\,\ref{fig:firstgw}, taken from \cite{21}, we show a snapshot of the PyCBC (left) and GstLAL (right) analyses around the time of GW150914.  The SNR timeseries (blue) and reweighted SNR (purple) timeseries otained with the best-matching template peak at time of GW150914, while the normalized chi-squared (green) dips suddenly; this behaviour is observed at both detectors (Handford top, and Livingston bottom).  A similar behaviour holds for the GstLAL data that shows the SNR (blue) and expected SNR (purple) timeseries for the same best-matching template.  The two timeseries vary consistently with one another, within the 1-$\sigma$ deviations reported by the black dashed line.
 
 	\subsubsection{Masses}
-	The analysis makes use of two waveform models, the double aligned spin waveform model (EOBNR) \cite{103, 104} 
-	and an effective precessing spin model (IMRPhenom) \cite{105-107}. 
-	Results from the two waveforms are similar, and match the expectations for a coherent signal in both detectors,
-	coming from astrophysical origin. 
-	GW150914 corresponds to the heaviest BBH system, $M^{source} = 65.3^{+4.1}_{-3.4}M_\odot$ and came from a near equal-mass system of $36^{+5}_{-4}M_\odot$ and $29^{+4}_{-4}M_\odot$ \cite{21,41,51}
-	Following the inspiral, the BBHs merge to form a final remnant BH, that has a mass of $M^{source}_f = 62.3^{+3.7}_{-3.1}M_\odot$. \\
-	This result is coherent with the expected final remnant BH mass, which is usually 0.95–0.98 of the initial 
-	total mass of the binary components, as similar fractions of 0.02–0.05 are radiated away as GWs. 
-	While predominantly determined by the total mass, the radiated energy also 
-	depends upon the mass ratio and component spins. \\
+	The physical parameters of the source of GW150914 were inferred using two waveform models, a non-precessing effective-one-body waveform model (EOBNR) \cite{103, 104} 
+	and a precessing spin model (IMRPhenom) \cite{105-107}. 
+	Results from the two waveforms are consistent, and match the expectations for a coherent signal of astrophysical origin in both detectors. 
+	The total mass of GW150914 was found to be $M^{\rm source} = 65.3^{+4.1}_{-3.4}M_\odot$, with individual masses of $36^{+5}_{-4}M_\odot$ and $29^{+4}_{-4}M_\odot$ \cite{21,41,51}.  This makes the source compatible with a near-equal mass BBH system.
+	Following the inspiral, a BBH merges to form a BH remnant; in the case of this signal, the mass of the remnant was $M^{\rm source}_f = 62.3^{+3.7}_{-3.1}M_\odot$.
+	The $\sim 3M_\odot$ of difference between $M^{\rm source}$ and $M^{\rm source}_f$ are radiated away in GWs.  While predominantly determined by the total mass, the radiated energy also depends upon the mass ratio and component spins.
 
 	\subsubsection{Spins}
-	The results obtained for GW150914 are consistent with expectations for moderately spinning BH \cite{101, 102}. 
+	The results obtained for GW150914 are consistent with expectations for moderately spinning BHs \cite{101, 102}. 
 	For equal mass binaries, both components of the spin, 
 	parallel and orthogonal to the orbital angular momentum, 
-	play an equal role in the dynamics, but, as the mass ratio tends towards zero, 
-	the effects of the secondary spin become negligible. 
-	The spin of the final BH, like its mass, is calculated using fitting formulas 
-	calibrated against numerical relativity simulations. \\
-	The final BHs for GW150914 has spin of $0.68^{+0.05}_{-0.06}$ as expected for mergers of similar-mass BHs \cite{99, 100}. 
-	The final spin is dominated by the orbital angular momentum of the binary at merger.
+	play a role in the dynamics, but, as the mass ratio tends to zero, 
+	the effects of the secondary spin become negligible.
+	The spin of the remnant BH, as its mass, is calculated using fitting formulas calibrated against numerical relativity simulations.  It was inferred to be $0.68^{+0.05}_{-0.06}$, as expected for near equal-mass BBH mergers for which the final spin is dominated by the orbital angular momentum of the binary at merger \cite{99, 100}.
 
-	\subsubsection{Distance, inclination, and sky location}
-	The luminosity distance to the source is inversely proportional to the signal’s amplitude: 
-	GW150914 has an estimate distance of $D_L = 420^{+150}_{-180}Mpc$ (redshift $z=0.09^{+0.03}_{-0.04}$). 
-	Since there is a degeneracy between the distance and the binary’s inclination, 	
-	which also impacts the signal amplitude \cite{96-98}, 
-	there is significant fractional uncertainty for the distance. 
-	The configurations for which the orientation of the binary produces the greatest GW amplitude, 
+	\subsubsection{Distance, Inclination, and Sky Location}
+	The signal amplitude is inversely proportional to the luminosity distance to the source: 
+	GW150914 has an estimated distance of $D_L = 420^{+150}_{-180}\,$Mpc (redshift $z=0.09^{+0.03}_{-0.04}$). 
+
+	The significant fractional uncertainty for the distance is due to the degeneracy between the distance and the binary inclination with respect to the observer, which both impact the signal amplitude \cite{96-98}.
+	The configurations for which the orientation of the binary produces the greatest GW amplitude 
 	are either face-on or face-off (angular momentum pointed parallel or antiparallel to the line of sight). 
 	The inclination could potentially be better constrained in a precessing system \cite{94, 95}. 
-	Only for GW150914 is there preference for one of the configurations, with there being greater posterior support for the source being face-off \cite{93}. \\ 
-	Sky localization from a GW detector network is primarily determined by the measured delay in the signal arriving at the sites, 
+	For GW150914, the data provides a greater posterior support for the source being face-off \cite{93}.
+
+	Sky localization from a GW detector network is primarily determined by the measured delay in the signal arrival times at the sites, 
 	with additional information coming from the signal amplitude and phase \cite{91,92}. 
-	The arrival time at Hanford relative to Livingstone was $\Delta t_{HL} = 7.0^{+0.02}_{-0.02}$.
-	The 90\% credible region for sky localization is $230 deg^2$ for GW150914.
-	The sky area is expected to scale inversely with the square of the SNR \cite{89,90}, 
-	and this trend is followed as this event has the smallest sky localisation and 
-	highest SNR than the other two events detected during O1, as we will see in the next sections.
+	The arrival time at Hanford relative to Livingstone was $\Delta t_{HL} = 7.0^{+0.02}_{-0.02}$ \fpg{Le unit\`a di misura!!!}.
+	The 90\% credible region for the sky localtion of the source of GW150914 had an area of $230\,$deg$^2$.
+	The sky area scales inversely with the square of the SNR \cite{89,90}, 
+	and this trend is followed as this event had the smallest sky localisation and 
+	highest SNR amongst the events detected during O1.
 
 	\subsubsection{Astrophysical implications}
-	This GW discovery provides the first robust confirmation of several theoretical predictions:
-	heavy BH exist, BBHs form in nature, and BBHs merge within the age of the Universe at a detectable rate. 
+	This GW discovery provides the first robust confirmation of several theoretical predictions, beyond the existence of GWs:
+	heavy BHs exist, BBHs form in nature, and BBHs merge within the age of the Universe at a detectable rate. 
 	However, it was impossible to determine the formation channel for this event. 
 	Possible BBH formation channels include dynamical formation in a dense stellar environment \cite{84, 88} 
 	possibly assisted by gas drag in galactic nuclear disks \cite{82, 83}, or isolated binary evolution, 
 	either the classical variant via a common-envelope phase \cite{76-81}, 
-	possibly from population III binaries \cite{74, 75}, or chemically homogeneous evolution 
+	potentially from population III binaries \cite{74, 75}, or chemically homogeneous evolution 
 	in close tidally locked binaries \cite{72, 73}. 
 	All of these channels have been shown to be consistent with the GW150914 discovery \cite{63-70}. 
-		\begin{figure}[H]
-                	\label{firstgw}
-                	\includegraphics[scale=0.45]{firstgw}
-                	\centering
-                	\caption{Left: PyCBC matched-filter SNR (blue), re-weighted SNR (purple) and c2 (green) versus time of the best-matching template at the time of GW150914. The top plot shows the Hanford detector; bottom, Livingston. Right: Observed matched-filter SNR (blue) and expected matched-filter SNR (purple) versus time for the best-matching template at the time of GW150914, as reported by the GstLAL analysis. The expected matched-filter SNR is based on the autocorrelation of the best-matching template. The dashed black lines indicate 1s deviations expected in Gaussian noise.\cite{21}} 
-                	\label{fig:firstgw}
-                \end{figure}
+
 
 \subsection{GW151226: a 22-Solar-Mass Binary Black Hole Coalescence}
+\fpg{Sono qui.}
+
 	The observation of a second coincident signal GW151226, also from the coalescence of two BHs, 
 	was observed by the twin LIGO detectors, with a combined matched-filter SNR of 13. 
 	The signal was identified as the second most significant event in both the PyCBC and GstLAL analyses 
