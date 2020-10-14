@@ -1850,49 +1850,50 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         \end{figure}
 
 \subsection{GW190412: a Binary-Black-Hole with Asymmetric Masses}
-\fpg{Non saprei se tenerle in ordine non cronologico.}
-	GW190412 is a loud event detected with a three detector network SNR of 19 and a FAR of 1 over 30000 yr.
+	GW190412 is a loud event detected with by the LIGO-Virgo three detector network with network SNR of 19 and a FAR of 1 in 30,000\,yrs.
 	The peculiarity of this event is the asymmetry in the binary component masses:
-	one BH was $\sim8 M_\odot$, while the other companion $\sim30 M_\odot$.
-	While the individual masses of the BBH were consistent with what has been observed in
-	prior observing runs, the mass ratio is unlike any of the other BH mergers detected before. 
-	Therefore, the GW frequency from each of the BH’s orbit was different: 
-	the heaviest was likely producing a lower frequency, while the lighter one was producing a higher frequency.
-	This inequality allows to observe a fundamental property of GWs. \\
-	Gravitational radiation from CBC was shown to be predominantly quadrupolar \cite{177-179} 
-	and is observed as a combination of two polarizations, weighted with the detector response functions, see Eq.$\ref{beampattern}$. 
+	one is a $\sim 8M_\odot$ BH, while its companion has a mass of $\sim 30M_\odot$.
+	While the individual masses of the BBH were consistent with whose of preious GW events,
+	the mass ratio is unlike any of the other BH mergers detected before. 
+	This allows to observe a fundamental property of GWs.
+
+	In general relativity, gravitational radiation
+	is observed as a combination of two polarizations, weighted with the detector response functions, see Eq.\,(\ref{beampattern}). 
 	This quantity can be expressed also as $h = h_{+}-ih_{\times}$ and expanded into multipole moments 
 	using spherical polar coordinates defined in a source centered frame \cite{225}
-		\begin{equation}
-			h_{+}-ih_{\times} = \sum_{l \geq 2} \sum_{-l \leq m \leq l} {{h_{lm}(t, \boldsymbol{\lambda})} \over {D_L}} _{-2} Y_{lm}(\theta, \phi)
-		\end{equation}
-	The radiative multipoles, $h_{lm}$, depend on source properties, while the source geometry 
+        \begin{equation}
+          h_{+}-ih_{\times} = \sum_{l \geq 2} \sum_{-l \leq m \leq l} {{h_{lm}(t, \boldsymbol{\lambda})} \over {D_L}} _{-2} Y_{lm}(\theta, \phi)
+        \end{equation}
+	The radiative multipoles, $h_{lm}$, depend on the source properties, while the source geometry 
 	depends on mass ratio and is most prominently manifested in the relative contribution 
 	of multipoles with odd or even azimuthal index, $m$.
 	For an exactly equal mass binary with non-spinning components, only multipoles with even $m$ 
 	respect orbital symmetry and so are present in the radiation \cite{187}, resulting in the quadrupole, $h_{22}$, 
-	to be the most dominant, followed by other multipoles with even $m$. 
+	being the most dominant, followed by other multipoles with even $m$. 
 	Otherwise, for sufficiently unequal mass ratios, the $l = m = 3$ and subsequent 
-	multipoles with $l = m$ gain increasing importance \cite{187-192}. \\
+	multipoles with $l = m$ gain increasing importance \cite{187-192}.
 	GWs of higher harmonics had not been observed until GW190412:
-	these higher multipoles makes a significant, measurable contribution to the observed data as shown in \cite{133}. \\
-	As a result, the orientation of the binary is more accurately determined and 
-	tighter bounds are obtained on relevant intrinsic source parameters such as the mass ratio and primary spin magnitude, 
-	which is the strongest constraint on the individual spin magnitude of a BH using GWs so far. 
-	Even though the $\chi_{eff}$ is found to be positive, there are not lare in-plane spin component, 
-	hinting that the system is slightly precessing.
-	The degeneracy between luminosity distance and inclination angle that is present 
-	in the results obtained without higher multipoles, is broken when higher multipoles are included, 
-	resulting in more precise measurements of these parameters. \\ 
-	The new observation also provides new insight into the merging BBH rate, 
-	and how clearly unequal-mass system are less unlikely but still expected to form in the universe. \cite{133}
-                \begin{figure}[H]
-                        \label{asymmetric}
-                        \includegraphics[scale=0.2]{asymmetric}
-                        \centering
-                        \caption{The inferred mass ratio $q$ and effective spin $\chi_{eff}$ of GW190412. The orange and blue contours show the distributions on the parameters recovered using two different waveform models, which make slightly different approximations for modeling the true general-relativistic signal.\cite{133}} 
-                        \label{fig:asymmetric}
-                \end{figure}
+	these higher multipoles makes a significant, measurable contribution to the observed data as shown in \cite{133}.
+
+	As a result of the richer detectable multipole content, the orientation of the binary is more accurately determined and 
+	tighter bounds are obtained on intrinsic source parameters, such as the mass ratio and primary spin magnitude, 
+	which constitutes the tightest constraint on the individual spin magnitude of a BH obtained with GWs so far. 
+	Even though the $\chi_{eff}$ is found to be positive, large in-plane spin components are absent, 
+	indicating that the system is slightly precessing.
+	The degeneracy between luminosity distance and inclination angle that is typical 
+	in the results obtained when higher multipoles are suppressed is broken when higher multipoles are visible, 
+	resulting in more precise measurements of these parameters.
+
+	The new observation also provides new insight into the BBH merger rate, 
+	showing clearly that unequal-mass systems are less likely, but still expected to form in the universe. \cite{133}
+
+        \begin{figure}[!t]
+          \label{asymmetric}
+          \includegraphics[scale=0.2]{asymmetric}
+          \centering
+          \caption{The inferred mass ratio $q$ and effective spin $\chi_{eff}$ of GW190412. The distributions reported in orange and blue are obtained with two distinct waveform models. \cite{133}} 
+          \label{fig:asymmetric}
+        \end{figure}
 
 \subsection{GW190425: a Compact Binary Coalescence with Total Mass $\sim 3.4M_\odot$}
 
@@ -1936,7 +1937,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
           \label{secondbns}
           \includegraphics[scale=0.3]{secondbns}
           \centering
-          \caption{Blue and orange curves show the estimated total mass of GW190425 under different spin assumptions. In either case, the estimated mass is dramatically different from the total masses for the known galactic population of BNS, indicated with the grey histogram bars and the dashed line. \cite{62}}
+          \caption{Blue and orange curves are the total mass posteriors of GW190425 obtained by using different priors for the spins of the two NSs. In both cases, these distributions are dramatically different from the distribution of total masses of known galactic BNSs, reported with the grey histogram and fitted by the black dashed line. \cite{62}}
           \label{fig:secondbns}
         \end{figure}
 
