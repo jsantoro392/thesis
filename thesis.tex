@@ -1637,35 +1637,32 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	by BBHs forming through isolated binary evolution or dynamical interactions in dense stellar clusters \cite{134}. 
 
 \subsection{GW170608}
-\fpg{Sono qui.}
 
 	GW170608 was first identified as a loud (SNR $\sim9$) event in LLO data,
 	via low-latency templated searches \cite{138}.	
-	The morphology of the LLO event is consistent with a compact binary merger signal, 
+	The morphology of the LLO event is consistent with a CBC signal, 
 	but a noise origin could not be ruled out using LLO data alone. 
 	Consequently, LHO data were investigated and were determined to be stable 
 	at frequencies above 30Hz, which was established as the starting frequecy to look into a segment of LHO data around the event time.
-	Two matched filter pipelines identified GW170608, with a network SNR of 13 
-	and a rate of occurrence of noise events of less than 1 in 3,000 years for the PyCBC pipeline, 
-	and a false alarm rate of 1 in 160,000 years for GstLAL. \\
-	The binary of GW170608 consisted of two compact objects with source-frame component masses 
-	$m_1 =12^{+7}_{-2}M_\odot$ and $m =7^{+2}_{-2}M_\odot$.  
+	PyCBC and GstLAL then identified GW170608 with a network SNR of 13,
+	and a FAR of less than 1 in 3,000 years and 1 in 160,000 years, respectively.
+
+	The binary source of GW170608 consisted of two compact objects with source-frame component masses 
+	$12^{+7}_{-2}M_\odot$ and $7^{+2}_{-2}M_\odot$.  
 	Since NSs are expected to have masses below $\sim 4M_\odot$ \cite{141},
 	both objects are most likely BHs. 
 	The $\chi_{eff}$ inferred from this event is $0.07^{+0.23}_{−0.09}$,
-	disfavoring large, anti-aligned spins on both BH. \\
-	GW170608 is localized at a luminosity distance of  $D_L = 340^{+140}_{−140}Mpc$, and to a sky area of $\sim520 deg^2$, determined largely by the signal’s measured arrival time at LLO $\sim7$ ms later than at LHO. 
-	The low mass of GW170608’s source binary, in comparison to other BBH systems 
-	observed by LIGO and Virgo, has potential implications for the binary’s progenitor environment. 
-	High-metallicity progenitors are expected to experience substantial mass loss through strong stellar winds \cite{142}.
-	GW170608’s low mass suggests formation in a higher metallicity environment; 
-	however, formation at lower metallicity with comparatively lower mass progenitors is not excluded. 
-	At this lower boundary of the observed distribution of BBH masses, 
-	a comparison between the component BHs with those found in X-ray binaries is possible.
-	X-ray binary systems contain either a BH or NS which accretes matter from a companion donor star. 
+	disfavoring large, anti-aligned spins on both BH.
+        Finally, GW170608 was localized at a luminosity distance of $D_L = 340^{+140}_{−140}Mpc$, and within a sky area of $\sim 520\,$deg$^2$, determined largely by the signal's measured arrival time at LLO $\sim 7$\,ms later than at LHO.
+ 
 	The inferred component masses of GW170608 are consistent with dynamically-measured masses of BHs found in low-mass X-ray binaries.
+	The low masses involved imply that this time a high-metallicity progenitor environment is possible, as this causes significant mass losses from the progenitor stars via strong stellar winds \cite{142}.
+	However, formation at lower metallicity with comparatively lower mass progenitors is not excluded.
 
 \subsection{GW170814: the First Three-Detector Network Observation}	
+
+\fpg{Sono qui.}
+
 	On August 14, 2017, a GW signal coming from the merger of two stellar mass BH 
 	was observed for the first time by a three detector network, with the Virgo and LIGO detectors. 
 	GW170814 was first identified with high confidence by two independent 
@@ -1715,13 +1712,14 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	pure tensor polarization of GWs, over pure scalar or pure vector polarizations. \\
 	The black hole characteristics of GW170814 are similar to GW150914 and GW170104, 
 	and are found to be consistent with the astrophysical population and merger rate determined with previous detections.
-		\begin{figure}[H]
-                        \label{o2}
-                        \includegraphics[scale=0.45]{o2}
-                        \centering
-                        \caption{Time-frequency maps and reconstructed signal waveforms for some of the O2 BBH event Each event is represented with three panels showing whitened data from the LIGO detector where the higher SNR is recorded. The first panel shows a normalized time-frequency power map of the GW strain. The remaining pair of panels shows time-domain reconstructions of the whitened signal in units of the standard deviation of the noise. The upper panels show the 90\% credible intervals from the posterior probability density functions of the waveform time series, inferred using CBC waveform templates from Bayesian inference (LALINFERENCE) with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band). The lower panels show the point estimates from the cWB search (solid lines) along with a 90\% confidence interval (green band) derived from cWB analyses of simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event.}
-                         \label{fig:o2}
-                \end{figure}
+
+        \begin{figure}[!t]
+          \label{o2}
+          \includegraphics[scale=0.45]{o2}
+          \centering
+          \caption{Same as Fig.\,\ref{fig:o1} but for the O2 events: \fpg{Quali? Perch\'e 170104 appare due volte.}}
+          \label{fig:o2}
+        \end{figure}
 
 
 \subsection{Gamma Ray Burst}
