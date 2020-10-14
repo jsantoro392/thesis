@@ -1509,7 +1509,7 @@
                 \end{figure}
 
 	The era of GW astronomy began with the detection of the coalescence of two stellar-mass BHs
-	on September 14, 2015 at 09:50:45 UTC.  The signal GW150914 was detected with a matched-filter SNR of 23.7 \cite{21}. 
+	on September 14, 2015 at 09:50:45 UTC.  The signal GW150914 was detected with a matched-filter network SNR of 23.7 \cite{21}. 
 	Both PyCBC and GstLAL identified GW150914 as the most significant event in O1 and the probability that 
 	it was due to a random coincidence of detector noise is extremely small: 
 	both pipelines found no background events with significance 
@@ -1561,11 +1561,24 @@
 	in close tidally locked binaries \cite{72, 73}. 
 	All of these channels have been shown to be consistent with the GW150914 discovery \cite{63-70}. 
 
+        \begin{figure}[!t]
+          \label{o1}
+          \includegraphics[scale=0.4]{o1}
+          \centering
+          \caption{Time-frequency maps and reconstructed signal waveforms for the three O1 BBH events. Each row refers to a single event.  The three panels in a row show whitened data from the LIGO detector where the higher SNR was recorded. The panel on the left is a normalized time-frequency power map of the GW strain.  The two panels on the right show time-domain reconstructions of the whitened signal, in units of the standard deviation of the noise. The upper panel shows the 90\% credible intervals from the posterior probability density functions of the waveform timeseries inferred by a Bayesian pipeline that used the PhenomP waveform templates ({\ttfamily LALInference}, red band) and by a pipeline that used wavelet reconstruction ({\ttfamily BayesWave}, blue band).  The lower panel shows the maximum likelihood point estimate from the {\ttfamily cohrent WaveBurst} unmodelled search (solid lines), along with a 90\% confidence interval (green band) derived from the {\ttfamily cohrent WaveBurst} analyses of simulated waveforms generated starting from the {\ttfamily LALInference} posterior and injected into data near each event. \cite{193}}
+          \label{fig:o1}
+        \end{figure}
 
-\subsection{GW151226: a 22-Solar-Mass Binary Black Hole Coalescence}
-\fpg{Sono qui.}
 
-	The observation of a second coincident signal GW151226, also from the coalescence of two BHs, 
+\subsection{GW151012 and GW151226}
+
+Two more GW signals were detected during O1, and both were consistent with a BBH source: GW151012 and GW151226.  A summary of all three observations is provided in Fig.\,\ref{fig:o1} \cite{193}.  This shows the time-frequency maps and reconstructed waveforms for all three O1 events.
+
+	GW151012 is the third most significant GW event from O1.  It was first referred to as LVT151012, where LVT stands for LIGO-Virgo Transient: this was due to the fact that it
+	was originally detected with a low statistical significance of $1.7\sigma$, 
+	corresponding to a FAR of one in 2.7 years.  The trigger was later reanlyzed with improved O2 versions of the pipelines and its significance was increased: the signal now meets the criteria of a confident detection of a BBH merger, and was therefore re-labeled as GW151012.  The final values of the network SNR for this signal are 9.5 and 10.0 for the PyCBC and GstLAL pipelines, respectively.
+
+	GW151226 was announced The observation of a second coincident signal , also from the coalescence of two BHs, 
 	was observed by the twin LIGO detectors, with a combined matched-filter SNR of 13. 
 	The signal was identified as the second most significant event in both the PyCBC and GstLAL analyses 
 	with a reweighed SNR of 12.8 and a log likelihood of 22.6, respectively. 
@@ -1598,22 +1611,6 @@
 	However, the two LIGO detectors are nearly coaligned and the source of GW151226 is likely to be located close to the maxima of the directional responses of both detectors \cite{28}. 
 	Consequently, it is difficult to extract the polarization content, and therefore the orientation of the orbital plane. 
 	As a result, the luminosity distance is only weakly constrained to be $D_L = 440^{+180}_{-190}Mpc$, comparable to GW150914’s, and corresponding to a redshift of $0.09^{+0.03}_{-0.04}$.
-
-\subsection{GW151012}	
-	The third most significant GW event from O1, previously referred to as LVT151012,
-	was detected with a low statistical significance of $1.7\sigma$, 
-	corresponding to a false alarm rate of once in 2.7 years. 
-	The trigger had an SNR of 9.7, therefore it was initially classified as a LIGO/Virgo Transient, 
-	possibly associated with an astrophysical event. \\
-	However, a detailed re-analysis of this event has demonstrated that it does indeed 
-	meet the criteria of a confident detection of a BBH merger, and it is now re-labeled as GW151012.
-        \begin{figure}[H]
-          \label{o1}
-          \includegraphics[scale=0.45]{o1}
-          \centering
-          \caption{Time-frequency maps and reconstructed signal waveforms for the O1 BBH events. Each event is represented with three panels showing whitened data from the LIGO detector where the higher SNR is recorded. The first panel shows a normalized time-frequency power map of the GW strain. The remaining pair of panels shows time-domain reconstructions of the whitened signal, in units of the standard deviation of the noise. The upper panels show the 90\% credible intervals from the posterior probability density functions of the waveform time series, inferred using CBC waveform templates from Bayesian inference (LALINFERENCE with the PhenomP model (red band) and by the BAYESWAVE wavelet model (blue band) The lower panels show the point estimates from the cWB search (solid lines), along with a 90\% confidence interval (green band) derived from cWB analyses of simulated waveforms from the LALINFERENCE CBC parameter estimation injected into data near each event. \cite{193}}
-          \label{fig:o1}
-        \end{figure}
 
 
 \section{The Second Observing Run (O2)}
