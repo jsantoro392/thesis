@@ -1304,15 +1304,15 @@
 	To account for the noise background varying across the target signal space, 
 	candidate and background events are divided into different search classes based on template length. 
 	The significance of candidate events is measured against the background from the same class. 
-	For each candidate event, one can compute the false alarm probabilty (FAP), that is, the probability of finding one or more 
+	For each candidate event, one can compute the probabilty of finding one or more 
 	noise background events in the observation time with a detection-statistic value above that of the candidate event.  This is given by 
 		\begin{equation}
-			FAP(\hat \rho) \equiv P(\geq 1 \hspace*{0.1cm}\text{noise event above}\hspace*{0.1cm} \hat \rho|T,T_b) = 1 - \exp\left[-T{{1+n_b(\hat \rho)} \over{T_b}}\right]\,,
+			p(\hat \rho) \equiv P(\geq 1 \hspace*{0.1cm}\text{noise event above}\hspace*{0.1cm} \hat \rho|T,T_b) = 1 - \exp\left[-T{{1+n_b(\hat \rho)} \over{T_b}}\right]\,,
 		\end{equation}
 	where $T$ is the observation time of the search and it multiplies the FAR in the exponential.
 	If the detection-statistic value of a candidate event is larger 
 	than that of any noise background event, 
-	then the analysis places an upper bound on the FAP of that candidate. 
+	then the analysis places an upper bound on the $p$-value of that candidate. 
 	
 
 \section{Coincident and coherent searches}
@@ -1514,7 +1514,7 @@
 	it was due to a random coincidence of detector noise is extremely small: 
 	both pipelines found no background events with significance 
 	equal to or greater than GW150914.  Therefore only an upper limit on the FAR of GW150914 was determined: $6.0 \times 10^{-7}\,$yr$^{-1}$. 
-	This corresponds to a FAP of $7.5\times10^{-8}$, or a Gaussian-equivalent significance of $5.3\sigma$.  In Fig.\,\ref{fig:firstgw}, taken from \cite{21}, we show a snapshot of the PyCBC (left) and GstLAL (right) analyses around the time of GW150914.  The SNR timeseries (blue) and reweighted SNR (purple) timeseries otained with the best-matching template peak at time of GW150914, while the normalized chi-squared (green) dips suddenly; this behaviour is observed at both detectors (Handford top, and Livingston bottom).  A similar behaviour holds for the GstLAL data that shows the SNR (blue) and expected SNR (purple) timeseries for the same best-matching template.  The two timeseries vary consistently with one another, within the 1-$\sigma$ deviations reported by the black dashed line.
+	This corresponds to a $p$-value of $7.5\times10^{-8}$, or a Gaussian-equivalent significance of $5.3\sigma$.  In Fig.\,\ref{fig:firstgw}, taken from \cite{21}, we show a snapshot of the PyCBC (left) and GstLAL (right) analyses around the time of GW150914.  The SNR timeseries (blue) and reweighted SNR (purple) timeseries otained with the best-matching template peak at time of GW150914, while the normalized chi-squared (green) dips suddenly; this behaviour is observed at both detectors (Handford top, and Livingston bottom).  A similar behaviour holds for the GstLAL data that shows the SNR (blue) and expected SNR (purple) timeseries for the same best-matching template.  The two timeseries vary consistently with one another, within the 1-$\sigma$ deviations reported by the black dashed line.
 
 	\subsubsection{Masses}
 	The physical parameters of the source of GW150914 were inferred using two waveform models, a non-precessing effective-one-body waveform model (EOBNR) \cite{103, 104} 
@@ -1530,11 +1530,11 @@
 	parallel and orthogonal to the orbital angular momentum, 
 	play a role in the dynamics, but, as the mass ratio tends to zero, 
 	the effects of the secondary spin become negligible.
-	The spin of the remnant BH, as its mass, is calculated using fitting formulas calibrated against numerical relativity simulations.  It was inferred to be $0.68^{+0.05}_{-0.06}$, as expected for near equal-mass BBH mergers for which the final spin is dominated by the orbital angular momentum of the binary at merger \cite{99, 100}.
+	The spin of the remnant BH, as its mass, is calculated using fitting formulas calibrated against numerical relativity simulations.  It was inferred to be $0.69^{+0.05}_{-0.04}$, as expected for near equal-mass BBH mergers for which the final spin is dominated by the orbital angular momentum of the binary at merger \cite{99, 100}.
 
 	\subsubsection{Distance, Inclination, and Sky Location}
 	The signal amplitude is inversely proportional to the luminosity distance to the source: 
-	GW150914 has an estimated distance of $D_L = 420^{+150}_{-180}\,$Mpc (redshift $z=0.09^{+0.03}_{-0.04}$). 
+	GW150914 has an estimated distance of $D_L = 440^{+150}_{-170}\,$Mpc (redshift $z=0.09^{+0.03}_{-0.03}$). 
 
 	The significant fractional uncertainty for the distance is due to the degeneracy between the distance and the binary inclination with respect to the observer, which both impact the signal amplitude \cite{96-98}.
 	The configurations for which the orientation of the binary produces the greatest GW amplitude 
@@ -1565,7 +1565,7 @@
           \label{o1}
           \includegraphics[scale=0.4]{o1}
           \centering
-          \caption{Time-frequency maps and reconstructed signal waveforms for the three O1 BBH events. Each row refers to a single event.  The three panels in a row show whitened data from the LIGO detector where the higher SNR was recorded. The panel on the left is a normalized time-frequency power map of the GW strain.  The two panels on the right show time-domain reconstructions of the whitened signal, in units of the standard deviation of the noise. The upper panel shows the 90\% credible intervals from the posterior probability density functions of the waveform timeseries inferred by a Bayesian pipeline that used the PhenomP waveform templates ({\ttfamily LALInference}, red band) and by a pipeline that used wavelet reconstruction ({\ttfamily BayesWave}, blue band).  The lower panel shows the maximum likelihood point estimate from the {\ttfamily cohrent WaveBurst} unmodelled search (solid lines), along with a 90\% confidence interval (green band) derived from the {\ttfamily cohrent WaveBurst} analyses of simulated waveforms generated starting from the {\ttfamily LALInference} posterior and injected into data near each event. \cite{193}}
+          \caption{Time-frequency maps and reconstructed signal waveforms for the three O1 BBH events. Each row refers to a single event.  The three panels in a row show whitened data from the LIGO detector where the higher SNR was recorded. The panel on the left is a normalized time-frequency power map of the GW strain.  The two panels on the right show time-domain reconstructions of the whitened signal, in units of the standard deviation of the noise. The upper panel shows the 90\% credible intervals from the posterior probability density functions of the waveform timeseries inferred by a Bayesian pipeline that used the PhenomP waveform templates ({\ttfamily LALInference}, red band) and by a pipeline that used wavelet reconstruction ({\ttfamily BayesWave}, blue band).  The lower panel shows the maximum likelihood point estimate from the {\ttfamily cohrent WaveBurst} unmodelled search (solid lines), along with a 90\% confidence interval (green band) derived from the {\ttfamily cohrent WaveBurst} analyses of simulated waveforms generated starting from the {\ttfamily LALInference} posterior and injected into data near each event. \cite{193} \fpg{Ma l'asse temporale dov'\`e?}}
           \label{fig:o1}
         \end{figure}
 
@@ -1576,45 +1576,33 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 
 	GW151012 is the third most significant GW event from O1.  It was first referred to as LVT151012, where LVT stands for LIGO-Virgo Transient: this was due to the fact that it
 	was originally detected with a low statistical significance of $1.7\sigma$, 
-	corresponding to a FAR of one in 2.7 years.  The trigger was later reanlyzed with improved O2 versions of the pipelines and its significance was increased: the signal now meets the criteria of a confident detection of a BBH merger, and was therefore re-labeled as GW151012.  The final values of the network SNR for this signal are 9.5 and 10.0 for the PyCBC and GstLAL pipelines, respectively.
+	corresponding to a FAR of one in 2.7 years.  The trigger was later reanlyzed with improved O2 versions of the pipelines and its significance was increased: the signal now meets the criteria of a confident detection of a BBH merger, and was therefore re-labeled as GW151012.  The final values of the network SNR for this signal are 9.5 and 10.0 for the PyCBC and GstLAL pipelines, respectively \cite{13}.
 
-	GW151226 was announced The observation of a second coincident signal , also from the coalescence of two BHs, 
-	was observed by the twin LIGO detectors, with a combined matched-filter SNR of 13. 
-	The signal was identified as the second most significant event in both the PyCBC and GstLAL analyses 
-	with a reweighed SNR of 12.8 and a log likelihood of 22.6, respectively. 
-	GW151226 was more significant than all background events in the PyCBC analysis, 
-	after having removed any background events associated with GW150914 from the distribution. \\
-	Its significance assessed by its FAR is limited to be less than $6.0 \times 10^{-7} yr^{-1}$. 
-	This corresponds to a p-value of $7.5 \times 10^{-8}$, or a significance of $5.3\sigma$. 
-	In the GstLAL analysis, the background extends past the observed log likelihood of GW151226, 
-	and the event is recovered with a FAR of 1 per 44000 years, which corresponds to a p-value of $3.5\times 10^{-6}$ and a significance of $4.5\sigma$.
+	GW151226 was the second observation of a coincident GW signal to be announced. 
+	Its combined matched-filter SNR was 13. 
+	The signal was identified as the second most significant event by both the PyCBC and GstLAL analyses.
+	GW151226 was more significant than all O1 background events in the PyCBC analysis, 
+	after having removed any background events associated with GW150914 from the distribution.
+	Its FAR has an upper limit of $6.0 \times 10^{-7} yr^{-1}$, which
+        corresponds to a $p$-value of $< 7.5 \times 10^{-8}$, or a Gaussian-equivalent significance of at least $5.3\sigma$. 
+	In the GstLAL analysis, the background extends past the observed log-likelihood of GW151226, 
+	and the event is recovered with a FAR of 1 per 44000 years, which corresponds to a $p$-value of $3.5\times 10^{-6}$ and a significance of $4.5\sigma$.
 
-	\subsubsection{Source Parameters}
-	GW151226 persisted in the LIGO frequency band for approximately 1 s, 
-	increasing in frequency and amplitude over about 55 cycles from 35 to 450 Hz, 
-	this is different from the more massive GW150914 binary for which only the last 10 cycles, 
-	comprising inspiral and merger, dominated the SNR. 
-	As a consequence, the parameters characterizing GW151226 have different precision than those of GW150914. \\
-	The chirp mass  \cite{126, 127}, which controls the binary’s evolution during the early inspiral, is determined very precisely. 
-	The individual masses, which rely on information from the late inspiral and merger, are measured far less precisely. 
-	The least massive BH is the secondary of GW151226, which has a 90\% credible lower bound that $m^{source}_2 \geq 5.6M_\odot$.
-	This is above the expected maximum NS mass of $\sim3M_\odot$ \cite{121, 122} 
-	and beyond the mass gap where there is currently a dearth of BHs observed in X-ray binaries \cite{123, 125}. 
-	GW151226, corresponds to the least massive BBH system observed during O1 ($M^{source} = 21.8^{+5.9}_{-1.7}M_\odot$). \\
-	The initial binary was an unequal-mass system, composed of two stellar-mass BH 
-	with a source-frame primary mass $m_1. = 14.2^{+8.3}_{-2.3}M_\odot$ and secondary mass $m_2 = 7.5^{+2.3}_{-2.4}M_\odot$.
-	The inferred BH masses are within the range of dynamically measured masses of BHs found in X-ray binaries \cite{128-132}, unlike GW150914. 
-	Since the mass ratio for this systems is greater than GW150914,
-	there is significantly greater uncertainty for the spin of the secondary than for the primary. \\
-	The CBC luminosity distance can be extracted from the amplitude of an observed signal provided the orientation of the orbital plane can be determined. 
-	Information about whether the orbit is face-on, edge-on, or in between is encoded in the two polarizations of the gravitational wave. 
-	However, the two LIGO detectors are nearly coaligned and the source of GW151226 is likely to be located close to the maxima of the directional responses of both detectors \cite{28}. 
+	GW151226 persisted in the LIGO frequency band for approximately 1\,s, 
+	increasing in frequency and amplitude over about 55 cycles from 35 to 450\,Hz. 
+	This differs from the more massive GW150914 binary for which only the last 10 cycles of the inspiral where observable.  This has an immediate effect on the precision with which the chirp mass \cite{126, 127} recovered with respect to the case of GW150914, as this physical parameter controls the binary evolution during the early inspiral.  \fpg{Qui allora dovresti riportare le due chirp masses per fare un confronto.}
+
+	The source of GW151226 was an unequal-mass system with two stellar-mass BHs 
+	with a source-frame masses of $m_1 = 13.7^{+8.8}_{-3.2}M_\odot$ and secondary mass $m_2 = 7.7^{+2.2}_{-2.5}M_\odot$ \cite{13}. \fpg{Stavi citando i valori del paper originale, questi sono quelli finali del catalog visto che giustamente parli di GW151012 e non pi\`u di LVT151012, ovvero tieni conto delle rianalisi.} 
+	The inferred BH masses are within the range of dynamically measured masses of BHs found in X-ray binaries \cite{128-132}, unlike the high masses of GW150914 which had never been observed before. Finally,
+        the two LIGO detectors are nearly coaligned and the source of GW151226 is likely to be located close to the maxima of the directional responses of both detectors \cite{28}. 
 	Consequently, it is difficult to extract the polarization content, and therefore the orientation of the orbital plane. 
-	As a result, the luminosity distance is only weakly constrained to be $D_L = 440^{+180}_{-190}Mpc$, comparable to GW150914’s, and corresponding to a redshift of $0.09^{+0.03}_{-0.04}$.
+	As a result, the luminosity distance is only weakly constrained to be $D_L = 450^{+180}_{-190}Mpc$, which is comparable to the one of GW150914 and corresponds to a redshift of $0.09^{+0.04}_{-0.04}$.
 
 
 \section{The Second Observing Run (O2)}
 
+\fpg{Sono qui.}
 	After an upgrade and commissioning period, the second observing run (O2) took place from November 30, 2016 to August 25, 2017. 
 	During O2, on the 1st August 2017, Advanced Virgo (AdV) joined the two aLIGO detectors for the first time, 
 	taking sensitive data about 80\% of the time \cite{13}.  \\
