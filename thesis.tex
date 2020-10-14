@@ -1782,64 +1782,55 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 
 \subsection{GW170817: the Birth of Multimessenger Astronomy}
 
-\fpg{Sono qui.}
-
-	On 2017 August 17 the first confident joint EM–GW observation in history was made when 
-	a coincident GW trigger by LIGO occurred $\sim1.7s$ prior to the announcement of a GBM trigger \cite{147},
-	which was later designated GRB170817A \cite{140}.
-	The comparison of the Fermi-GBM Gamma-ray Coordinates Network (GCN) notice to the GW 
-	trigger shows the small time offset between the events which, together with an independent localization of the triggers,
-	allowed an unambiguous association of these two events. 
-	The GW170817 candidate was registered in low latency \cite{112,114}
-	based on a single-detector analysis LHO data. 
-	Rapid offline re-analysis \cite{28,111} of data from the LIGO/Virgo network 
-	confirmed the presence of a significant coincident signal in the LIGO GW detectors with a combined SNR of 32.4. \\
-	The offline analysis then identified GW170817 with a false-alarm rate of less than 1 in 80,000 years \cite{61}. 
-	A coherent Bayesian analysis \cite{59,152}
-	inferred the GW source localisation in a region of $28 deg^2$ at a distance of $40^{+8}_{-14}$ Mpc, 
-	consistent with the early estimates disseminated through GCN Circulars \cite{55,60}. \\ 
-	The inspiral phase of the binary coalescence dominates 
-	the portion of GW170817 in the instruments’ sensitivity band, 
+	On 17 August 2017 the first GW signal compatible with a BNS source was detected by the LIGO-Virgo Collaboration.  The GW170817 candidate was first registered in low latency \cite{112,114}
+	as a single-detector trigger in LHO data. 
+	An offline re-analysis \cite{28,111} of data from the whole LIGO-Virgo network 
+	confirmed the presence of a significant coincident signal with a combined SNR of 32.4.
+	The offline analysis then identified the FAR of GW170817 to be less than 1 in 80,000 years \cite{61}. 
+	The source was localised \cite{59,152} in a region of $28\,$deg$^2$ at a distance of $40^{+8}_{-14}$ Mpc, 
+	consistently with the early estimates disseminated through GCN Circulars \cite{55,60}.
+	The inspiral stage of the binary coalescence dominates 
+	the portion of GW170817 in the detector sensitivity bands, 
 	and as a consequence, the chirp mass, which drives the frequency evolution of gravitational radiation at the leading order, 
 	is the best constrained parameter with a value of $1.188^{+0.004}_{-0.002}M_\odot$.
-	The measured component masses are in the range 0.86 to 2.26 $M_\odot$
-	consistent with a binary whose components are neutron stars. \\
-	Two offline targeted coherent searches were employed to analyse the LIGO-Virgo data: 
-	the first targeted search \cite{111,116,213}
-	assumes that the source is a BNS or NS–BH binary merger and is located at the sky-position 
-	observed for the optical counterpart to GW170817 and GRB170817A \cite{55,136}, 
-	and that there is a $[-1, +5] s$ time delay in the arrival of gamma-rays (determined by the GBM trigger time) 
-	compared to the binary merger time \cite{55}. 
-	At the detection statistic value assigned to GW170817, this search has a p-value of $<9.4\time 10^{-6}(>4.2\sigma)$, 
-	with this significance estimate limited by computational resources used to estimate the noise background. 
+	The measured component masses are in the range $0.86$--$2.26M_\odot$
+	consistent with a compact binary with two NSs.
+
+        In of itself this observation already constitutes a remarkable result, but more historical results poured in that day and in the following months.  $\sim1.74$\,s after the trigger time of GW170817, the {\it Fermi}/GBM and INTEGRAL SPI-ACS instruments recorded GRB 170817A \cite{147, 140} which was shown to be unambiguously associated with the source of GW170817 \cite{55}.  This was the first
+        confident joint GW and electromagnetic observation in history (see Fig.\,\ref{fig:gw-grb}).
+	Standard follow-up analyses \cite{108,110} of the {\it Fermi}/GBM trigger 
+	determined the burst duration to be $T_{90} = (2.0 \pm 0.5)\,$s,
+	therefore GRB 170817A was classified as a short GRB, with 3:1 odds over being a long GRB.
+        The classification is further supported by incorporating 
+	the hardness ratio of the burst and comparing it to the {\it Fermi}/GBM catalog \cite{110}.  The unambigious association of GW170818 and short GRB 170817A confirmed that BNSs can be the progenitors of short GRBs, a question that had remained open for decades in high-energy astrophysics.
+
+        Having received notice of the observation of short GRB 170817A by {\it Fermi}, the LIGO-Virgo Collaboration ran
+        two offline targeted {\it coherent} searches on its data, as it does for all {\it Fermi} and {\it Swift} GRB observations.  The first targeted search ({\ttfamily PyGRB} \cite{111,116,213}
+	looks for subthreshold GW signals in the data by searching for BNS and NS–BH binary merger signals compatible with the time and sky-location of short GRBs.  This search is carried out in a $[-5, +1]\,$s window around the GRB trigger time \cite{55}. 
+	This search recovered GW170817, as expected, with a $p$-value of $<9.4\time 10^{-6}(>4.2\sigma)$: this significance estimate is limited by computational resources used to estimate the noise background. 
 	The second coherent search does not assume any particular GW morphology or GRB model 
-	\cite{55,144,145} and uses the GBM localization of GRB170817A 	
-	to constrain the sky location of the source. This search allows for a $[-60, +600] s$ 
-	coincidence between the gamma-rays and the GWs in order to include potentially 
-	larger delays in collapsar models of long GRBs. 
-	At the detection-statistic value observed for GW170817, this search has a p-value of $1.3\times 10^{-5} (4.2\sigma)$. \\ 
-	Standard follow-up analyses \cite{108,110} of the Fermi-GBM trigger 
-	determined the burst duration to be $T_{90} = 2.0 \pm 0.5 s$,
-	therefore GRB 170817A was classified as a sGRB, with 3:1 odds over being a long GRB. 
-	The classification of GRB170817A as an sGRB is further supported by incorporating 
-	the hardness ratio of the burst and comparing it to the Fermi-GBM catalog \cite{110}. 
-	The electromagnetic observations further support the interpretation of the nature of the binary, 
-	and comprise three components at different wavelengths: a prompt sGRB that demonstrates 
-	that BNS mergers are the progenitor of at least a fraction of such bursts; an ultraviolet, optical, 
-	and infrared transient (kilonova), which allows for the identification of the host galaxy 
-	and is associated with the aftermath of the BNS merger; 
-	delayed X-ray and radio counterparts that provide information on the environment of the binary. 
-	A major astrophysical implication of a joint detection of an SGRB and of GWs from a BNS merger 
-	is the confirmation that these binaries are indeed the progenitors of at least some SGRBs. 
-		\begin{figure}[H]
-                        \label{gw-grb}
-                        \includegraphics[scale=0.45]{gw-grb}
-                        \centering
-                        \caption{Joint, multi-messenger detection of GW170817 and GRB170817A. Top: the summed GBM lightcurve for sodium iodide (NaI) detector for GRB170817A in the 50–300 keV energy range matching the 100 ms time bins of the SPI-ACS data. The background estimate from \cite{110} is overlaid in red. Bottom: the time-frequency map of GW170817 was obtained by coherently combining LHO and LLO data. All times here are referenced to the GW170817 trigger time $T_0^{GW}$. \cite{55}}
-                        \label{fig:gw-grb}
-                \end{figure}
+	\cite{55,144,145} and it allows for a $[-600, +60]\,$s search window,
+	in order to address potentially higher time-of-arrival separations 
+	that may arise for long GRB triggers.
+	This unmodelled search also recovered GW170817, with a $p$-value of $1.3\times 10^{-5} (4.2\sigma)$.
+
+	The observation with excellent localization of GW170817 triggered a hugh electromagnetic follow-up campaign \fpg{Cita il 170817 multimessenger paper} which produced observations across the whole electromagnetic spectrum.
+	This captured an infrared transient (kilonova), which allowed for the identification of the host galaxy of the source 
+	and is associated with the aftermath of the BNS merger.
+	Delayed X-ray and radio counterparts that provide information on the environment of the binary where also registered.
+        
+        \begin{figure}[!t]
+          \label{gw-grb}
+          \includegraphics[scale=0.45]{gw-grb}
+          \centering
+          \caption{Joint, multi-messenger detection of GW170817 and GRB 170817A. Top: the GBM lightcurve in the 50--300\,keV energy range. The background estimate from \cite{110} is overlaid in red. Bottom: the time-frequency map of GW170817  obtained by coherently combining LHO and LLO data. All times here are relative to the GW170817 trigger time. \cite{55}}
+          \label{fig:gw-grb}
+        \end{figure}
+
 
 \section{The First Part of the Third Observing Run (O3a)}
+
+\fpg{Sono qui.}
 
 	On April 1, 2019, Advanced LIGO and Advanced Virgo initiated their third observing run (O3), 
 	and was prematurely suspended on March 27th 2020 \cite{53}.
