@@ -33,6 +33,10 @@
 
 \tableofcontents
 
+\begin{acknowledgments}
+We are grateful for computational resources provided by Cardiff University, and funded by an STFC grant supporting UK Involvement in the Operation of Advanced LIGO.
+\end{acknowledgments}
+
 \mainmatter 
 
 \chapter*{Introduction}
@@ -40,51 +44,45 @@
 \markboth{Introduction}{Introduction}
 %
 \fpg{Giri di correzione: 0.}%
-	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves,
-	GWs, on the basis of his theory of general relativity.  
-	Einstein predicted that the motion of two bodies, such as planets or stars—orbit each other,
-	could cause distortions of spacetime, GWs \cite{1,2}, 
-	These ripples in the fabric of spacetime would spread out like the ripples in a pond when a stone is tossed in,
-	although their amplitude would be so small that it would be nearly impossible to detect by any technology foreseen at that time.
-	It was also predicted that objects moving in an orbit would lose energy for this reason 
-	(a consequence of the law of conservation of energy), as some energy would be given off as GWs, 
-	although this would be insignificantly small in all but the most extreme cases. 
-	GWs squeeze and stretch anything in their path as they pass by. \\
-	The most powerful GWs are created when objects move at very high speeds. 
-	Examples of such things are orbiting pairs of black holes (BHs) and neutron stars (NS), 
-	or massive stars blowing up at the ends of their lives.
-	There are four categories of GWs based on what generates them: 
-	continuous, compact binary inspiral, stochastic, and burst. 	
-	Each category of objects generates a unique or characteristic set of signal 
-	that LIGO-Virgo's interferometers can sense, and that researchers can look for in LIGO-Virgo’s data. \\ 
-        The interferometers are designed to detect a specified range of frequencies of GWs,
-        which means that they cannot detect objects orbiting at rates that fall outside of this range of frequencies 
-        (either too low or too high). 
-	During the final moments of the merger of two compact objects such as NSs 
-	or BHs the emission of GWs is at its peak. The binary loses energy, 
-	largely through GWs, and as a result, the two compact objects spiral in towards each other, 
-	reaching extreme velocities at the very end of this process. 
-	In the final fraction of a second of their merger a significant amount of their mass is converted into gravitational energy, 
-	and travel outward as GWs, that potentially fall within the detector’s sensitive range. \\
-	However, the time they spend orbiting in that range of frequencies is typically very brief.
-        The masses of the objects involved dictate how long they emit detectable GWs. 
-        Heavy objects, like BHs, move through their final inspiral phase much more rapidly than 'lighter' objects, 
-        like NSs. This means that BH  merger signals are much shorter than NS merger signals.
-        For example, the first detection of a GW signal, GW150914, coming from the a pair of merging BHs, 
-	produced a signal just two-tenths of a second long \cite{14}. 
-        In contrast, the first NS merger LIGO detected in August 2017 generated a signal over 100 seconds long \cite{15}. \\
-	This first observation was a a remarkable accomplishment: it demonstrated both the existence of binary stellar-mass BH systems, 
-	and the fact that such mergers could occur within the current age of the universe.  
-	It also confirmed the last remaining unproven prediction of general relativity and validated 
-	its predictions of spacetime distortion in the context of large scale cosmic events. 
-	Prior to this first detection, GWs had only been inferred indirectly,
-        via their effect on the timing of pulsars in binary star systems.
-	This event  marked the beginning of a new era of GW astronomy, 
-	which would enable observations of violent astrophysical events that were not previously possible, 
-	and potentially allow the direct observation of the birth of the universe.
+	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves (GWs) on the basis of his theory of general relativity \cite{1,2}.
+	He discovered that the motion of masses
+	can cause distortions in the curvature of spacetime that 
+        travel throughout spacetime itself spreading out at the speed of light, similarly to the ripples in a pond when a stone is tossed in it.
+	He derived that the amplitude of GWs would be extremely small and concluded that it would be impossible to detect them with any of the technology foreseen at his time.
 
-\subsection{Gamma Ray Burst}
-\fpg{Il material GRB l'ho spostato qui, perch\'e in mezzo ad O2 non stava proprio. L'idea \`e di includerlo qui in maniera da stabilire un legamo con la necessit\`a di fare ricerce coerenti in corrispondenza di GRB {\bf e} di utilizzare l'EM bright bank.  Queste due cose sono centrali nella tesi e devi motivarle proprio nell'introduzione.}
+	Nowadays, however, we are able to directly detect GWs.  The most energetic GWs are generated when high speeds and compact ojects are involved, that is, celestial bodies with a high concentration of gravitational mass per unit volume.
+	Orbiting pairs of black holes (BHs) and neutron stars (NS), the densest object in the universe,
+	are therefore efficient GW emitters and are indeed present in all the GW sources detected by the LIGO-Virgo Collaboration so far.
+        BHs and NSs result from the gravitational collapse of massive progenitor stars.
+        BHs represent the extremes of spacetime curvature:
+        they have a singularity in them, no surface, and an event horizon separating the information
+        from within the BH interior from the rest of the universe.
+        They are extraordinary cosmic laboratories to probe gravity in the strong-field regime.
+        Astrophysical BHs are entirely described by two parameters: their gravitaitonal mass and their rotational angular momentum (spin).
+        On the other hand, NSs are extreme objects from the point of view of all fundamental forces, as their masses fall in the range $1$--$2.5M_\odot$, while their radii are of the order of 10\,km; additionally, they are equipped with magnetic fields that can exceed $10^{15}\,$G (in this case one refers to the NS as magnetar). 
+
+        Binaries of NSs and BHs are collectively called compact binaries.
+        As the two compact ojects orbit one another, the binary loses orbital energy and orbital angular momentum, as both are radiated away via GWs.
+        As a results, the two compact objects spiral in towards each other, 
+	reaching extreme velocities ($\sim 0.5c$) at the very end of this process. 
+        At the end of the inspiral, the two compact companions merge and  
+	the GW emission reaches its peak. The newly formed remnant then settles down emitting a weak GW signal that dies out.  This whole process goes under the name of compact binary coalescence (CBC).
+	In the final fraction of a CBC, a significant amount of gravitational mass is converted into gravitational energy.  This travels outwards as GWs and these waves fall within the frequency range of current terrestrial GW detector, if the binary contains NSs and/or BHs with masses up to $\matchal{O}(100M_\odot)$.
+
+        \fpg{Qui devi dire che LIGO-Virgo cercano rountinely binarie compatte (che vengono in 3 sapori: BNS, NSBH, BBH).  Sia in bassa latenza che offline e con varie pipelines. Indeed in questa tesi, tu hai condotto, fra le altre cose, una ricerca di segnali CBC con la pipeline PyCBC.  (Sii breve e metti forward references alle sezioni con i risultati e alle spiegazioni su PyCBC).}
+
+        The masses of the objects involved dictate the how long the GW signal they emit lasts in the band of current detectors.
+        More massive binaries merge at lower frequencies and therefore have fewer cycles in the sensitivity band.
+        For example, the first GW signal ever detected, GW150914, come from the coalescence of two fairly massive BHs: the signal was visible for only two-tenths of a second \cite{14}. 
+        Binary NS (BNS) systems, in contrast, accumulate many cycles in the instrumental band.
+        The first BNS coalescence witnessed by LIGO-Virgo, GW170817, generated a GW signal that lasted 100 seconds in the sensitivity window of the detectors \cite{15}.
+
+	The observation of GW150914 was a truly remarkable accomplishment: it \emph{directly}\footnote{Until then, GWs had only been observed indirectly by using pulsars timing to monitor 
+        their effect on the orbit of pulsar binary star systems.} confirmed Einstein's prediction of the existence of GWs, and it demonstrated that stellar-mass binary BH (BBH) systems form in the universe and merge within a Hubble time.
+	This event  marked the beginning of a new era of GW astronomy, 
+	which enables the observations of violent astrophysical events that are not visible with traditional astronomy.
+
+        \fpg{Qua invece riprendi GW170817.  Scrivi che fra le altre cose conferma che le BNS prodcuono short GRBs.  Poi ingloba (riducendolo/adattandolo) il tuo materiale GRB che trovi qui sotto.  Devi arrivare a giustificare la necessit\`a di fare ricerce coerenti in corrispondenza di GRB {\bf e} l'utilizzo dell'EM bright bank.  Queste due cose sono centrali nella tesi e devi motivarle proprio nell'introduzione.  Poi puoi dire che tu hai fatto anche questo tipo di ricerca e hai enabled la ricerca costruendo e validando la template bank (e di nuovo forward references).}
 
 	Discovered fortuitously by the Vela satellites in the late 1960s \cite{180},
         gamma-ray bursts (GRBs) are brief, $\Delta t \sim 0.1-100s$, intense, flashes of high-energy, 1 keV–10 MeV, radiation
@@ -165,6 +163,7 @@
         GRB position within 60-100 seconds to observe the target, which provides excellent coverage
         of the transition from the prompt gamma-ray phase to the lower-frequency afterglow emission phase.
 
+\fpg{Infine metti il tuo piano della tesi.  Nel capitolo 1..., nel 2..., ecc.}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational-Wave Detection Principles}
@@ -1967,18 +1966,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 \label{neutronhole}
 \fpg{Sono qui.}
 \fpg{Giri di correzione: 0.}%
-        Black holes and neutron stars are the densest object in the universe resulting from gravitational collapse,
-        and extraordinary cosmic laboratories to probe gravity in the strong-field regime.
-        BHs represent the extremes of space-time curvature:
-        they have no surface, just an event horizon which separates the information
-        from within the BH’s interior from the outside universe;
-        they are the most simple fundamental objects in the universe
-        as they are entirely described by two parameters, mass and spin.
-        On the other hand, NS represent both the extremes of space-time as well as dense matter.
-        Both NSs and BHs represent the end states of the lives of massive stars
-        and their masses essentially range from one to a few solar masses,
-        crammed into objects with radii of ten to fifteen kilometers. \\
-        Informations on the properties of BH and NS in NSBH binaries come from
+        Information on the properties of BH and NS in NSBH binaries come from
         their observation in other types of binary systems or from theoretical considerations:
         while most NS observed in BNS systems have masses in the [1.2 − 1.6] $M_{\odot}$ range %\cite{}, 
         more massive NS exist, up to at least $\sim$ 2$M_{\odot}$  %\cite{}. 
@@ -1987,9 +1975,11 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         NSBH binaries are believed to form both in isolated binaries,
         and through dynamical interactions in star clusters, nuclear clusters and galactic nuclei \cite{194}.
         Large number of BHs and NSs and the presence of heavy BHs can impact significantly
-        the probability for NSBH binary to form and, possibly, merge. \\
-        Whether BHs can be formed within the “mass gap” between the most massive NS
-        and $\sim$ 5$M_{\odot}$ also remains an important open question. \\
+        the probability for NSBH binary to form and, possibly, merge.
+
+        Whether BHs can be formed within the ``mass gap'' between the most massive NS
+        and $\sim 5M_{\odot}$ also remains an important open question.
+
         The magnitude and orientation of BH spins are unknown, and while most NSBH binaries
         are expected to have negligible eccentricities %\cite{}, 
         eccentric NSBH binaries cannot entirely be ruled out
