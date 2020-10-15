@@ -70,6 +70,16 @@ We are grateful for computational resources provided by Cardiff University, and 
 	In the final fraction of a CBC, a significant amount of gravitational mass is converted into gravitational energy.  This travels outwards as GWs and these waves fall within the frequency range of current terrestrial GW detector, if the binary contains NSs and/or BHs with masses up to $\mathcal{O}(100M_\odot)$.
 
         \fpg{Qui devi dire che LIGO-Virgo cercano rountinely binarie compatte (che vengono in 3 sapori: BNS, NSBH, BBH).  Sia in bassa latenza che offline e con varie pipelines. Indeed in questa tesi, tu hai condotto, fra le altre cose, una ricerca di segnali CBC con la pipeline PyCBC.  (Sii breve e metti forward references alle sezioni con i risultati e alle spiegazioni su PyCBC).}
+	The GW network of LIGO-Virgo is consistently looking for signal from 
+	compact binary mergers of NSs and BHs (BNS, NSBH, and BBH systems). 
+	Search pipelines are run both online, designed to detect and report compact binary merger events 
+	with sub-minute latencies, and offline, taking advantage of improved calibration of the data 	
+	and additional information regarding data quality.
+	On the other hand, the Burst searches are capable of detecting signals from a wide variety of astrophysical sources 
+	in addition to compact binary mergers: core-collapse supernovae, seismic activity in NSs, and yet unknown GW sources.
+	
+	However, the main focus of this work is the CBC matched filtering search with the PyCBC pipeline discussed in Chapter $\ref{ch:datatools}$, 
+	which I used to conduct the offline data analysis for the LIGO-Virgo third observing run (O3), presented in Chapter $\ref{ch:datanalysis}$.
 
         The masses of the objects involved dictate the how long the GW signal they emit lasts in the band of current detectors.
         More massive binaries merge at lower frequencies and therefore have fewer cycles in the sensitivity band.
@@ -83,88 +93,74 @@ We are grateful for computational resources provided by Cardiff University, and 
 	which enables the observations of violent astrophysical events that are not visible with traditional astronomy.
 
         \fpg{Qua invece riprendi GW170817.  Scrivi che fra le altre cose conferma che le BNS prodcuono short GRBs.  Poi ingloba (riducendolo/adattandolo) il tuo materiale GRB che trovi qui sotto.  Devi arrivare a giustificare la necessit\`a di fare ricerce coerenti in corrispondenza di GRB {\bf e} l'utilizzo dell'EM bright bank.  Queste due cose sono centrali nella tesi e devi motivarle proprio nell'introduzione.  Poi puoi dire che tu hai fatto anche questo tipo di ricerca e hai enabled la ricerca costruendo e validando la template bank (e di nuovo forward references).}
+	
+	The neutron star merger GW170817 marked the beginning of multi-messenger astronomy 
+	because it was the first gravitational wave event with a recorded electromagnetic counterpart.
+	As the NSs merged, they released a short flash of gamma rays, 
+	which was independently detected by the Fermi Gamma-ray Burst Monitor, 
+	less than 2s after the GW event was detected by LIGO and Virgo.
 
-	Discovered fortuitously by the Vela satellites in the late 1960s \cite{180},
-        gamma-ray bursts (GRBs) are brief, $\Delta t \sim 0.1-100s$, intense, flashes of high-energy, 1 keV–10 MeV, radiation
-        produced when an ultra-relativistic fireball of high energy photons, restricted to a cone-shaped jet with opening angle $\theta$
-        which is centered on the rotation axis, is launched from some central engine.
-        In most cosmological scenarios, as well as a few galactic ones,
-        the large energy density at the source implies that the plasma produced
-        undergoes relativistic expansion \cite{181}.
-        An important consequence of this scenario, as well as the prompt emission of gamma-ray emission from internal shocks,
-        is the prediction that this fireball will produce detectable afterglow emission in the X-ray and sometimes optical and radio bands \cite{182},
-        powered in part by the expanding outflow, and in part by continuous energy injection by the central engine.
-        Collected data from the Swift and Fermi satellites show
-        that the observed spectra are composed of several distinctive components:
-        the spectra of both the prompt and afterglow emission is non-thermal,
-        the prompt emission also has an exponential high energy cutoff.
-        Broadband simultaneous spectral energy distributions
-        reveal the presence of spectral breaks, showing that the spectrum is composed of multiple,
-        smoothly connected power law branches.
-        The spectral break frequencies are seen to evolve during time,
-        and the peak of the spectrum to move towards lower frequencies.
-        There are evidence that the very high energy part of the spectra evolve differently than the lower energy part,
-        hence is likely to have a separate origin.
-        The sharp cutoff in the lightcurves of many GRBs observed by Swift enables a clear discrimination between the prompt and the afterglow phases.  \\
-        The afterglow is believed to be synchrotron emission caused by the shocked external medium: after producing the prompt emission, the GRB ejecta move at relativistic speed
-        and they expand into the interstellar medium, sweeping it.
-        As soon as the rest mass of the collected interstellar medium becomes comparable
-        to the kinetic energy of the ejecta, a strong shock wave is formed.
-        At the shock, electrons are accelerated by the Fermi process and radiate mainly by synchrotron emission\cite{153,162}.
-        In many cases, the decay of the optical or X-ray afterglow light-curve steepens
-        to $F_{\nu} \propto t^{−2.2}$ at $\sim 1$ day after the burst, meaning that GRB outflows
-        are not spherical but collimated into narrow jets \cite{183}.
-        Due to relativistic beaming an observer at infinity can only see radiation from the internal section of the cone,
-        as the ejecta is decelerated and the strength of the relativistic beaming diminishes,
-        the edge of the jet becomes visible to the observer.
-        Distances to GRBs were completely uncertain until the launch of Compton-Gamma-Ray-Observatory (CGRO),
-        which discovered roughly one new GRB per day and established
-        through afterglow redshift measurements along with host galaxy identification, that they originate
-        from sources at cosmological distances out to billions of light-years, and
-        that are isotropically distributed, meaning they occur everywhere in the cosmos \cite{184}.\\
-        Burst redshift and flux show that GRBs radiate between $10^48$ and $10^55 ergs$, if isotropic.
-        This means that they are the most powerful outbursts of electromagnetic (EM) radiation in our universe
-        and a possible source of (ultra) high-energy cosmic rays \cite{185,186}.
-        After the discovery of the afterglow, a distinction between the initial gamma-rays
-        and the subsequent longer wavelength counterpart became necessary:
-        observationally, the prompt emission phase of a GRB is conventionally defined
-        as the temporal phase during which sub-MeV emission is detected by
-        the GRB triggering detectors above the background level. \\
-        Quantitatively, the duration of a burst is defined by the so-called $T_90$:
-        the time interval between the epochs when 5\% and 95\% of the total fluence is registered by the detector.
-        Fluence here is the gamma-ray flux received in the detector integrated over the duration of the GRB. \\
-        The histogram of GRB duration has two distinct peaks:
-        one at $0.3s$ and the other at about $30s$, and there is a trough in between the peaks at $2s$. \\
-        Bursts with duration less than $2s$ are classified as short-GRBs (SGRBs)
-        and those that last for more than $2s$ are called long-GRBs (LGRBs.
-        SGRBs are found to be typically less energetic than LGRBs and to occur at a lower redshift.
-        Because large redshifts correspond to more distant sources,
-        the sample of SGRBs with measured redshifts tend to be more nearby than the corresponding LGRB sample.
-        Moreover, SGRBs afterglows tend to be significantly fainter on average than those of LGRBs.
-        Concerning the host galaxies, LGRBs are found in active star-forming regions:
-	 several LGRBs have been directly associated with type 1b/c supernovae
-        through spectral analysis of optical lightcurves detected in close proximity to the GRB,
-        meaning that their origin is to be associated with the core-collapse explosions of massive stars;
-        whereas SGRBs tend to be found in regions of low star formation in galaxies,
-        with a distribution that shows an offsets relative to their host galaxy centers.
-        These observation are entirely consistent with the expectation that SGRBs progenitors
-        are related to an old stellar population, which has a significant velocity with respect to its host galaxy:
-        compact object mergers, in particular of binaries composed by a NS with other NS or with BH, are the most robust candidates.
-        In this scenario, the binary system loses energy in the form of gravitational radiation and eventually the two objects
-        merge to form a stellar mass black hole, surrounded by an accretion disk around a central BH, which is believed to power the beamed $\gamma$-ray emission that is observed.
-        The joint observation of GW170817 and GRB170817A confirmed that the coalescence of two NS has indeed powered a SGRB. \\
-        The Fermi Gamma-ray Space Telescope is currently the most efficient GRB detection satellite in orbit.
-        Its two main instruments are the Large Area Telescope (LAT) and the Gamma-ray Burst Monitor (GBM).
-        Whereas LAT has a sky coverage of 20\%, GBM continuously observes the full region of the sky not occulted by Earth. \\
-        The Swift satellite is a first-of-its-kind multi-wavelength observatory:
-        it has X-ray and UV-optical telescopes on board and provides localization of bursts to within 3 arcminutes.
-        When Swift’s gamma-ray telescope (Burst and Altert Telescope or BAT) detects a burst,
-        the X-Ray Telescope (XRT) and the UV-Optical Telescope (UVOT) on board Swift quickly slew to the
-        GRB position within 60-100 seconds to observe the target, which provides excellent coverage
-        of the transition from the prompt gamma-ray phase to the lower-frequency afterglow emission phase.
+	Gamma-Ray Bursts (GRBs) are short ($\Delta t \sim 0.1-100s$) and intense bursts of 
+	electromagnetic radiation in the high energy (1 keV–10 MeV) $\gamma$-ray spectrum, 
+	that occur at the end of certain stars’s life.
+	This powerful radiation is produced when an ultra-relativistic fireball of high energy photons, 
+	is launched from some central engine, and is usually accompanied by a detectable afterglow emission 
+	in the X-ray and sometimes optical and radio bands, as the brilliant fireball expand and cool.
+	They can be broadly classified based on the timescale in which from 5\% to 95\% of the counts are recorded (defined as $T_{90}$),
+	as either long gamma ray burst (LGRBs), $T_{90} > 2s$ or short gamma ray bursts (SGRBs), $T_{90} \geq 2s$.
+	They also show different spectral properties: SGRBs have a fainter afterglow and are less energetic than LGRBs;
+	SGRB light curves vary on very short timescales, which indicates a compact source smaller than a stellar-scale object, 
+	and are also seen to have an offset relative to their host galaxy center.
+	This is suited to a progenitor involving old astrophysical objects which has a significant velocity with respect to its host galaxy,
+	exactly the expectation for compact binary mergers.
+
+	The event GW170817 marked the first direct observation of a BNS as the central engines that power SGRBs,
+	and not only confirmed a hypothesis that was as-yet unconfirmed about the origins of SGRBs,
+	but it also allowed the measurement of the rate of expansion of the universe and 
+	the comparison between the speed of gravity and the speed of light. 
+	Furthermore, subsequent multi-messenger observations showed that these events 
+	help explain the origin of the universe's heavy elements like gold. 
+	There remain many mysteries surrounding these extreme and energetic events, 
+	and multi messenger astronomy has proven to be a resourceful way to obtain 
+	a complete knowledge of the astrophysical sources and their emission engines, 
+	providing insight that electromagnetic observations alone cannot achieve:
+	understanding the physics of jet breakout through measurements of time-delay 
+	between the prompt gamma-ray emission and merger, investigate the SGRBs jet opening angles, 
+	and provide an independent measurement of distance and redshift for use as a probe of cosmology.
+	In addition SGRBs represent an appealing trigger for GW follow-up searches: 
+	the time and sky position of the GRB are used to analyze the GW data around 
+	the GRB time and considering GWs incident from its sky position.
+	In this way only a small fraction of the parameter space of an all-sky GW survey needs to be searched,
+	therefore it is possible to significantly reduce the detection threshold for the targeted coherent SGRB search,
+	thereby increasing its sensitivity. 
+	Since the observed properties of SGRBs may be attributed to matter accretion onto a BH,
+	following the tidal disruption of a NS, neutron star-black (NSBH) hole systems are also considered likely SGRBs progenitors.
+	In the time of writing this work, no NSBH coalescence both in the GW and electromagnetic (EM) spectrum 
+	has been detected. 
+	Therefore, it is extremely important to have updated data analysis tools to improve the performance of 
+	offline GW searches following SGRB triggers, as the one I conducted in Chapter $\ref{ch:datanalysis}$ for three GRB samples.
+	The targeted coherent search for the third observing run benefitted from the implementation of the 
+	EM bright bank, which was generated after I implemented in the template bank the upgraded model $\ref{eq:mreup}$, 
+	that better discriminates between disrupting and non-disrupting NSBH systems.
+	I also demonstrate the efficacy of the EM bright bank, injecting known GW signals and determining how well the bank recovers them. 
+
+	There remain much more to understand about CBC and SGRBs, 
+	and multi messenger astronomy has proven to be a resourceful way to obtain 
+	a complete knowledge of the astrophysical sources and their emission engines, 
+	providing insight that electromagnetic observations alone cannot achieve.
+	This should motivate future efforts towards targeted, coherent GW search triggered by SGRBs.
 
 \fpg{Infine metti il tuo piano della tesi.  Nel capitolo 1..., nel 2..., ecc.}
-
+	This thesis is organized as follows: Chapter I provides a theoretical introduction to gravitational waves and 
+	describes the LIGO and Virgo detectors and the physics behind its purpose, and noise sources.
+	Chapter II gives an introduction to data analysis tools for a matched filtering source, 
+	describes the generation of template banks and signal consistency tests.
+	It then provides an overview of coherent vs coincident searches; the last section describes injections.
+	Chapter III gives a summary of the gravitational wave detection from the first to the third observing run.
+	Chapter IV illustrates the difference between the old and new model for the remnant mass of a neutron star-black hole system.
+	It then describes how the template bank has been updated and how well it works.
+	Finally, the last sections present the result of the offline PyCBC and PyGRB search,
+	and a brief discussion on the obtained results is provided in Chapter V.
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational-Wave Detection Principles}
 \fpg{Giri di correzione: 1.}%
@@ -932,6 +928,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Data Analysis for Coalescing Binary Systems}
+\label{ch:datatools}
 \fpg{Giri di correzione: 1.}%
 	One of the tasks of GW data analysis is to extract GWs signal 
 	buried into noisy interferometric strain data, hence achieving GW detections.
@@ -2186,6 +2183,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{My contribution to gravitational dave data analysis during O3}
+\label{ch:datanalysis}
 \fpg{Giri di correzione: 0.}%
 	In a targeted GW follow-up of SGRBs search, a convenient way to increase its speed and sensitivity to EM bright GW events, 
 	is to discriminate between regions in the parameter space that enclose combinations of masses and spins, 
