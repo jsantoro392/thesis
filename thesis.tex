@@ -1095,15 +1095,18 @@ We are grateful for computational resources provided by Cardiff University, and 
 	The overlap of two waveforms, defined as the inner product inversely weighted by the detector one-sided  PSD $S_n(f)$, 
 	can be written as  
 		\begin{equation}
-			(h(f;\lambda)| h(f;\lambda + \Delta \lambda)) \equiv 4 \int_{0}^{\infty} df {{\tilde h(f;\lambda) \tilde h^*(f;\lambda + \Delta \lambda)} \over {S_n(f)}}.
+			(h_i| h_j)  \equiv 4 \int_{0}^{\infty} df {{\tilde h_i(f) \tilde h^*_j(f)} \over {S_n(f)}}.
                 \end{equation}
 	The normalised overlap between the two waveforms is given by
-		\begin{equation}
-			(\hat{h}(f;\lambda)|\hat{h}(f;\lambda + \Delta \lambda))= {{(h(f;\lambda)| h(f;\lambda + \Delta \lambda))} \over {\sqrt{(h(f;\lambda)| h(f;\lambda))(h(f;\lambda+ \Delta \lambda)| h(f;\lambda + \Delta \lambda))}}}
-                \end{equation}
+		\begin{align}
+			(\hat{h}_i|\hat{h}_j)& = {{(h_i|h_j)} \over {\sqrt{(h_i| h_i)(h_j| h_j)}}} \\
+                			     & = (h_i|h_j).	
+		\end{align}
+	As usually the template waveforms are defined up to an overall normalization, 
+	in the second line the waveforms are normalized to $(h|h) = 1$. \\
 	The match is then defined as
 		\begin{equation}
-			\mathcal{M}(\lambda, \Delta \lambda) \equiv \max_{\Delta \lambda_{extr}} (\tilde h(f;\lambda), \tilde h(f;\lambda + \Delta \lambda))
+			\mathcal{M}(\lambda, \Delta \lambda) \equiv \max_{\Delta \lambda_{extr}} (\hat h(f;\lambda), \hat h(f;\lambda + \Delta \lambda))
 		\end{equation}
         \fpg{Qua manca la normalizzazione.}
 	The match is maximised only over the two extrinsic parameters of a template, 
@@ -1121,7 +1124,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	can be interpreted as a metric in the waveform manifold.  A commonly used quantity related to this metric
 	is the mismatch between two templates $MM = (1 − \mathcal{M})$.
 	Any mismatch between signal and template leads to a loss in SNR, 
-	and to a down-weighting by the signal-based vetoes \fpg{(see Sec.\,...)}. \\
+	and to a down-weighting by the signal-based vetoes, see Sec. $\ref{subsec:chi_square_test}$ \fpg{(see Sec.\,...)}. \\
 	When constructing a template bank, this mismatch can be viewed as the means
 	to compute the proper distance in the waveform space:
 		\begin{equation}
@@ -1332,7 +1335,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         it is more likely to correspond to a noise transient.
 	
 \subsection{$\chi^2$ test}
-
+\label{subsec:chi_square_test}
 	For signals from compact binary mergers, one can construct $\chi^2$-test.
 	A standard $\chi^2$-test consists in splitting the template into $p$ non-overlapping frequency bins 
 	constructed so that each one contributes equally to 
@@ -1352,11 +1355,10 @@ We are grateful for computational resources provided by Cardiff University, and 
 		\end{cases}
 		\end{equation}
                 \fpg{Quello che segue riguarda i consistency tests, non i chi-square tests.} 
-	The search requires that GW signals be identified via matched filtering 
-	in at least two independent detectors with consistent parameters. 
-	To be considered a candidate event, arrival times of the GWs at each detector 
-	must differ by no more than the the maximum time-of-flight between the detectors, 
-	with an additional window to account for uncertainty in the measurement of the time of arrival \cite{13}.
+	This rewighting process makes sure that the distribution of $\hat \rho$
+        in noise is close to that of SNR in Gaussian noise.
+        Conversely, for a true astrophysical signal $\hat \rho \approx \rho$,
+        as long as the mismatch between signals and templates is small.
  
 \subsection{False Alarm Rate}
 
@@ -1404,30 +1406,47 @@ We are grateful for computational resources provided by Cardiff University, and 
 \section{Coincident and coherent searches}
 
 	The two main detection strategies to search for GWs 	
-	from a network of detectors are known as coincident and coherent.  In this section, we highlight differences between them.  \fpg{Qui ci vuole una forward reference al capitolo con i risultati, cos\`i spieghi che hai fatto entrambi i tipi di searches.}
+	from a network of detectors are known as coincident and coherent.  
+	In this section, we highlight differences between the two methods, 
+	which will be both applied to analyse the O3 data, in Chapter $\ref{ch:datanalysis}$.  
+	\fpg{Qui ci vuole una forward reference al capitolo con i risultati, cos\`i spieghi che hai fatto entrambi i tipi di searches.}
 
 \subsection{Coincident analysis}
-
-	A coincidence analysis searches the data from individual detectors independently 	
-	and matches the candidate event lists of individual detectors for consistency,
-	in the mass, spin, and time parameters of a GW signal.
-	This methodology ignores the phase information at the expense of some loss in sensitivity, 
-	so there is no guarantee that the observed signals in each detector 
-	are compatible with a GW source with two polarisations.
-	The benefit of the coincidence search is that it is not computationally expensive: 
-	the dominant cost of the search is in performing a matched filter 
-	of the data against a bank of template waveforms (see, Section \ref{sec:matched_filtering}):
+	A coincidence analysis searches the data from individual detectors independently        
+        and matches the candidate event lists of individual detectors for consistency,
+        in the mass, spin, and time parameters of a GW signal.
+	A coincidence is formed if the difference between the arrival times of two or more triggers from different detectors, 
+	is less than the allowed time window:
+	this window is taken as the time of flight for GW between the sites plus a small, fixed amount to allow for timing errors. 
+	For example, for the two-detector LHO-LLO network, signals must be seen in both detectors within a time difference of 15ms: 
+	10ms maximum travel time between detectors and 5ms padding to account for timing errors.
+        This methodology ignores the polarization phase information at the expense of some loss in sensitivity,
+        so there is no guarantee that the observed signals in each detector 
+        are compatible with a GW source with two polarisations.
+        The benefit of the coincidence search is that it is not computationally expensive: 
+        the dominant cost of the search is in performing a matched filter 
+        of the data against a bank of template waveforms (see, Section \ref{sec:matched_filtering}):
         this task is performed once per detector per template \cite{28, 45}.
-
-	A search over the sky location of the signal is then trivially done 
-	by time-shifting the results from the different detectors accordingly.
-        Similarly, the noise background is estimated by applying larger time shifts to the data,
-        significantly longer than the light travel time between detectors, to search for noise coincidences.
-        In a coincidence search, it is necessary to place a threshold on the SNR of events \fpg{SNR di singolo detector, coincidente, o tutte e due? E l'SNR coincidente lo hai mai definito?}
-        which will be stored by the analysis prior to identifying coincidences.
-        This means that the power in the GW signal will only be accumulated
-	in those detectors where there was an event above threshold \cite{45}.  
-
+	The PyCBC pipeline, used in Sec. $\ref{sec:pycbc00}$, 
+	requires consistency of arrival time and template parameters (masses and spins) 
+	between triggers in each of the detectors must be exactly the same,,
+	since the same waveform should be observed in all detectors.
+	The same template bank is used to filter data and produce triggers from each detector.
+	When coincident events are found, they are then ranked by the quadrature sum of the reweighted SNR in each detector;
+	for a two-detector network, the \textit{coincident} SNR is defined as
+		\begin{equation}
+			\hat{\rho}_{coinc}  = \sqrt{\hat{\rho}^2_1 + \hat{\rho}^2_2}.
+		\end{equation}
+	A statistical significance is assigned to candidate events by the FAR,
+	calculated as a function of the detection statistic, $\hat{\rho}_{coinc}$,
+	which can be computed in the following way. \\	
+	Single-detector triggers from one detector are time shifted with respect to triggers of the other detector;
+	all such coincidences are recorded and assigned a ranking statistic, 
+	to create a background data set that does not contain coincident GW signals.
+	This time-shifting of the data is performed many times to obtain a representative estimate of the expected rate of background triggers.
+	Assuming that the times of transient noise artifacts present in the data streams are not correlated between different detectors 
+	and that GW signals are sparse in the data set,
+	the significance of a GW event is a measure of the probability that it is a false detection due to coincident noise. 
 \subsection{Coherent}
 
 	The coherent search strategy combines the data from all detectors coherently in phase, 
@@ -2278,7 +2297,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 \subsection{GRB190728271}
 
 \section{PyCBC O3 HL C00 data preliminary runs}
-
+\label{sec:pycbc00}
 \subsection{Chunk 29}
 
 %--------------------------------------------------------
