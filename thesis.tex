@@ -1089,11 +1089,19 @@ We are grateful for computational resources provided by Cardiff University, and 
 	above threshold by matching with the ''losest'' template \cite{27}. \\ 
 	In order to compute the distance between two templates with different parameter values, 
 	one can create a metric over the parameter space and then compute an ``error'' between two waveforms.
-	Two neighbouring templates can be defined as $\tilde h(f;\lambda)$ and $\tilde h(f;\lambda + \Delta \lambda)$,
-	where $\lambda = \{\lambda_{intr}, \lambda_{extr}\}$ is the set of 
-	intrinsic (masses and spins) and extrinsic (time and phase shifts) template parameters.
-	Using the overlap of two waveforms, defined as the normalized inner product inversely weighted 
-	by the detector one-sided PSD $S_n(f)$, one can define the match:
+	Two neighbouring templates can be defined as $h(f;\lambda)$ and $h(f;\lambda + \Delta \lambda)$,
+        where $\lambda = \{\lambda_{intr}, \lambda_{extr}\}$ is the set of
+        intrinsic (masses and spins) and extrinsic (time and phase shifts) template parameters.
+	The overlap of two waveforms, defined as the inner product inversely weighted by the detector one-sided  PSD $S_n(f)$, 
+	can be written as  
+		\begin{equation}
+			(h(f;\lambda)| h(f;\lambda + \Delta \lambda)) \equiv 4 \int_{0}^{\infty} df {{\tilde h(f;\lambda) \tilde h^*(f;\lambda + \Delta \lambda)} \over {S_n(f)}}.
+                \end{equation}
+	The normalised overlap between the two waveforms is given by
+		\begin{equation}
+			(\hat{h}(f;\lambda)|\hat{h}(f;\lambda + \Delta \lambda))= {{(h(f;\lambda)| h(f;\lambda + \Delta \lambda))} \over {\sqrt{(h(f;\lambda)| h(f;\lambda))(h(f;\lambda+ \Delta \lambda)| h(f;\lambda + \Delta \lambda))}}}
+                \end{equation}
+	The match is then defined as
 		\begin{equation}
 			\mathcal{M}(\lambda, \Delta \lambda) \equiv \max_{\Delta \lambda_{extr}} (\tilde h(f;\lambda), \tilde h(f;\lambda + \Delta \lambda))
 		\end{equation}
