@@ -1413,6 +1413,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	\fpg{Qui ci vuole una forward reference al capitolo con i risultati, cos\`i spieghi che hai fatto entrambi i tipi di searches.}
 
 \subsection{Coincident analysis}
+\label{subsec:coincident}
  	A coincidence analysis searches the data from individual detectors independently        
         and matches the candidate event lists of individual detectors for consistency,
         in the mass, spin, and time parameters of a GW signal.
@@ -1471,7 +1472,6 @@ We are grateful for computational resources provided by Cardiff University, and 
 	 given the duration of observing time $T$ and the amount of background time 
 	constructed from the time shifts $T_b$. \cite{28}
 \subsection{Coherent}
-
 	The coherent search strategy combines the data from all detectors coherently in phase, 
 	appropriately correcting for time-delays and polarization phases, in order
 	to obtain an individual detection statistic which is then compared with a single threshold \cite{18}. 
@@ -1483,7 +1483,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	The detection statistic of the PyGRB pipeline, see Sec. $\ref{sec:pygrb}$, is based on a coherent search \cite{46, 92},
 	which uses the sky position and time of the GRB with the antenna response function and PSD of each detector in the network. 
         The fact that the detector data are combined coherently allows to define a new ranking statistic, known as coherent SNR, and to build new consistency tests, of which we discuss an example.
-
+	Furthermore, the data from all detectors are combined to extract the two physical GW polarisations. 
 \subsubsection{Coherent SNR}	
 	The output $s^X(t)$, as already seen in Eq. $\ref{eq:strain}$ by detector $X$,  
 	is the sum of the detector response to a GW $h^X$,
@@ -1536,29 +1536,47 @@ We are grateful for computational resources provided by Cardiff University, and 
 		\end{equation}
 	This expression can be used to rewrite the multi-detector log-likelihood function as 
 		\begin{equation}
-			ln\lambda = \big[  \mathcal{A}^{\mu}(\textbf{s}|\textbf{h}_{\mu} - {{1}\over{2}}\mathcal{A}^{\mu}\mathcal{M}_{\mu\nu}\mathcal{A}^{\nu} \big]
+			\ln\lambda = \big[  \mathcal{A}^{\mu}(\textbf{s}|\textbf{h}_{\mu}) - {{1}\over{2}}\mathcal{A}^{\mu}\mathcal{M}_{\mu\nu}\mathcal{A}^{\nu} \big]
 		\end{equation}
-	
-
+	where $\mathcal{M}_{\mu\nu}$ is the symmetric matrix given by
+		\begin{equation}
+			\mathcal{M}_{\mu\nu}  = (\textbf{h}_{\mu}|\textbf{h}_{\nu}).
+		\end{equation}
 	The coherent SNR is obtained by maximising this log-likelihood 
 	over the values of the waveform amplitudes:
 		\begin{equation}
-			\rho^2_{\rm coh}\equiv 2 \ln \lambda |_{\rm MAX}\,.
+			\rho^2_{\rm coh}\equiv 2 \ln \lambda |_{\rm MAX}\equiv (\textbf{s}|\textbf{h}_{\mu})\mathcal{M}^{\mu\nu}(\textbf{s}|\textbf{h}_{\nu})\,.
 		\end{equation}
 	In the absence of a signal, $\rho^2_{\rm coh}$ follows a $\chi^2$ distribution.
+	In addition, $\rho^2_{coh}$ is now a function of only the waveform components $h_{\mu}$ 
+	and no longer the $\mathcal{A}_{\mu}$ parameters. 
+	Thus four of the original seven waveform parameters have been analytically maximized, leaving three to be searched over.
 
-        While a coincidence search requires a signal to be observed in two or more detectors, 
-	resulting in the coincident SNR to be simply the sum of all power consistent with the template waveform in each detector,
-	a coherent search naturally incorporates the SNR from all operational detectors \cite{45, 46}.
+	In order to easily compare the coherent analysis with the coincident one discussed in Sec.$\ref{subsec:coincident}$,
+	a  first useful assumption is to consider a coincident search where an identical template is used in all detectors;
+	then re-formulate the expression for both the $\rho^2_{coinc}$ and $\rho^2_{coh}$ as
+		\begin{align}
+			\rho^2_{coinc} &= \sum_{X} {{(s^X|h_0)^2+(s^X|h_{{\pi}\over{2}})^2} \over {(\sigma^X)^2}}  \\
+					&= \sum_{X,Y}\sum_{i=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[\delta^{XY}]\big( s^Y|{{h_i}\over{\sigma^Y}}\big).
+		\end{align}
+	Similarly, the coherent SNR can be written as
+		\begin{equation}
+		\label{eq:rhocoh}
+			\rho^2_{coh}  = \sum_{X,Y}\sum_{I=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[f_{+}^Xf_{+}^Y+f_{\times}^Xf_{\times}^Y]\big( s^Y|{{h_i}\over{\sigma^Y}}\big)
+		\end{equation}
+	While a coincidence search requires a signal to be observed in two or more detectors, 
+        resulting in the coincident SNR to be simply the sum of all power consistent with the template waveform in each detector,
+        a coherent search naturally incorporates the SNR from all operational detectors \cite{45, 46}.
+	The coherent SNR ($\ref{eq:rhocoh}$) makes use of the fact that GWs have only two polarizations 
+	to restrict the accumulated SNR to the physical subspace spanned by $f_+$ and $f_{\times}$. 
 	It has been demonstrated that for a signal in the absence of noise the coincident and coherent SNRs are identical. 
-	For noise events, the coincident SNR includes all of the noise, 
-	while the coherent SNR, incorporating only those contributions which are compatible 
-	with a coherent signal at all detectors, obtains exactly the same signal but with a reduced noise background \cite{45}.
-	This makes the coherent method highly effective at removing background noise, and therefore coherent searches more sensitive than coincident once.
+        For noise events, the coincident SNR includes all of the noise, 
+        while the coherent SNR, incorporating only those contributions which are compatible 
+        with a coherent signal at all detectors, obtains exactly the same signal but with a reduced noise background \cite{45}.
+        This makes the coherent method highly effective at removing background noise, and therefore coherent searches more sensitive than coincident once.
+
 
 \subsubsection{Null Stream Consistency}
-	In the coherent analysis, the data from all detectors 
-	are combined to extract the two physical GW polarisations.  \fpg{Forse la frase precedente \`e meglio anticiparla a quando dici cosa sia una ricerca coerente.} 
 	This is exploited to distinguish noise transients from GW signals, 
 	as those transients which do not contribute power to the two-polarization signal space are rejected as incoherent background noise.
 	Consequently the search is more sensitive as the number of detectors in the global network increases, not only because the ranking statistic improves, but also because its noise reduction and rejection mechanisms improve.
