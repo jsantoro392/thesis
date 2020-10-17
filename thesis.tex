@@ -1361,7 +1361,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         as long as the mismatch between signals and templates is small.
  
 \subsection{False Alarm Rate}
-
+\label{subsec:far}
 	After mitigating the effects of noise transients, the probability of remaining transients 
 	occurring simultaneously in two detectors and producing a large joint 
 	ranking statistic is reduced.
@@ -1412,41 +1412,63 @@ We are grateful for computational resources provided by Cardiff University, and 
 	\fpg{Qui ci vuole una forward reference al capitolo con i risultati, cos\`i spieghi che hai fatto entrambi i tipi di searches.}
 
 \subsection{Coincident analysis}
-	A coincidence analysis searches the data from individual detectors independently        
+ 	A coincidence analysis searches the data from individual detectors independently        
         and matches the candidate event lists of individual detectors for consistency,
         in the mass, spin, and time parameters of a GW signal.
 	A coincidence is formed if the difference between the arrival times of two or more triggers from different detectors, 
 	is less than the allowed time window:
-	this window is taken as the time of flight for GW between the sites plus a small, fixed amount to allow for timing errors. 
+	this window is taken as the maximum light travel time for GW between the sites plus a small, fixed amount to allow for timing errors. 
 	For example, for the two-detector LHO-LLO network, signals must be seen in both detectors within a time difference of 15ms: 
-	10ms maximum travel time between detectors and 5ms padding to account for timing errors.
-        This methodology ignores the polarization phase information at the expense of some loss in sensitivity,
-        so there is no guarantee that the observed signals in each detector 
-        are compatible with a GW source with two polarisations.
-        The benefit of the coincidence search is that it is not computationally expensive: 
-        the dominant cost of the search is in performing a matched filter 
+	10ms maximum travel time between detectors and 5ms padding to account for timing errors. \\
+        The benefits of this procedure are plenty: first it immediately eliminates the great majority of background noise 
+	by rejecting any triggers which are not coincident in two or more detectors;
+	secondly, it is not computationally expensive.
+        The dominant cost of the search is in performing a matched filter 
         of the data against a bank of template waveforms (see, Section \ref{sec:matched_filtering}):
-        this task is performed once per detector per template \cite{28, 45}.
+        this task is performed once per detector per template \cite{28, 45}. \\
 	The PyCBC pipeline, used in Sec. $\ref{sec:pycbc00}$, 
 	requires consistency of arrival time and template parameters (masses and spins) 
 	between triggers in each of the detectors must be exactly the same,,
 	since the same waveform should be observed in all detectors.
-	The same template bank is used to filter data and produce triggers from each detector.
+	The same template bank is used to filter data and produce triggers from each detector. \\
 	When coincident events are found, they are then ranked by the quadrature sum of the reweighted SNR in each detector;
 	for a two-detector network, the \textit{coincident} SNR is defined as
 		\begin{equation}
 			\hat{\rho}_{coinc}  = \sqrt{\hat{\rho}^2_1 + \hat{\rho}^2_2}.
 		\end{equation}
+	A confident detection is claimed when the false alarm probability of an event is computed,
+	and the probability of an equally loud event being caused by noise is below a chosen threshold. 
 	A statistical significance is assigned to candidate events by the FAR,
 	calculated as a function of the detection statistic, $\hat{\rho}_{coinc}$,
-	which can be computed in the following way. \\	
+	via analysis of time-shifted data, as already seen in Sec. $\ref{subsec:far}$. \\
 	Single-detector triggers from one detector are time shifted with respect to triggers of the other detector;
 	all such coincidences are recorded and assigned a ranking statistic, 
 	to create a background data set that does not contain coincident GW signals.
-	This time-shifting of the data is performed many times to obtain a representative estimate of the expected rate of background triggers.
-	Assuming that the times of transient noise artifacts present in the data streams are not correlated between different detectors 
-	and that GW signals are sparse in the data set,
-	the significance of a GW event is a measure of the probability that it is a false detection due to coincident noise. 
+	This time-shifting of the data is performed many times to obtain a representative estimate of the expected rate of background triggers. \\
+	For every possible result of a given observation performed on the data with detection statistic $\hat{\rho}_{coinc}$, 
+	a test statistic value, $p_b$ is assigned to measure the probability that the 
+	there are one or more coincident noise events (false alarms) that have
+	a detection statistic value greater than or equal to $\hat{\rho}_{coinc}$. 
+	Given the knowledge of only GW data, one cannot be absolutely confident that 
+	any given trigger is a signal rather than noise. 
+	Therefore, p-values are computed under the null hypothesis: this assumes that candidate events 
+	are caused by non-GW processes acting on and within the interferometers,
+	even when loud signals are present in the data. \\
+	The smaller the p-values is, the more significant is the candidate,
+	while larger p-values indicate a higher deviation from expectations under the null hypothesis.
+	A detection is claimed when events actually obtained in the search all have very small p-value,
+	meaning they are random noise candidate events. \\
+	How many noise background events $n_b$ are louder than a given candidate event
+	can be measured using the distribution of coincident events from the time shifts.
+	The number of background events having a higher detection-statistic value than $\hat{\rho}_{coinc}$
+	is given by the function $n_b(\hat{\rho}_{coinc})$, and can be used to calculate 
+	the probability that one or more noise events as loud as a candidate event with $\hat{\rho}_{coinc}$
+	occurs in the search, as 
+		\begin{equation}
+			p(\geq 1 above \hat{\rho}_{coinc}^*|T,T_b)_0 = 1 - exp\big[ {{-T(1+n_b(\hat{\rho}_{coinc}^*))} \over {T_b}}]
+		\end{equation}
+	 given the duration of observing time $T$ and the amount of background time 
+	constructed from the time shifts $T_b$. \cite{28}
 \subsection{Coherent}
 
 	The coherent search strategy combines the data from all detectors coherently in phase, 
