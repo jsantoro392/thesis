@@ -43,133 +43,105 @@ We are grateful for computational resources provided by Cardiff University, and 
 \addcontentsline{toc}{chapter}{Introduction}
 \markboth{Introduction}{Introduction}
 %
-\fpg{Giri di correzione: 0.}%
-	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves (GWs) on the basis of his theory of general relativity \cite{1,2}.
-	He discovered that the motion of masses
+\fpg{Giri di correzione: 1.}%
+	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves (GWs) starting from his theory of general relativity \cite{1,2}.
+	He discovered that the acceleration of masses
 	can cause distortions in the curvature of spacetime that 
-        travel throughout spacetime itself spreading out at the speed of light, similarly to the ripples in a pond when a stone is tossed in it.
+        spread throughout spacetime itself at the speed of light, similarly to the ripples in a pond when a stone is tossed in it.
 	He derived that the amplitude of GWs would be extremely small and concluded that it would be impossible to detect them with any of the technology foreseen at his time.
 
-	Nowadays, however, we are able to directly detect GWs.  The most energetic GWs are generated when high speeds and compact ojects are involved, that is, celestial bodies with a high concentration of gravitational mass per unit volume.
-	Orbiting pairs of black holes (BHs) and neutron stars (NS), the densest object in the universe,
+	Nowadays, roughly a century later, we are able to directly detect GWs.  The most energetic GWs are generated when high speeds and compact ojects, that is, celestial bodies with a high concentration of gravitational mass per unit volume, are involved.
+	Orbiting pairs of black holes (BHs) and neutron stars (NS), the densest objects in the universe,
 	are therefore efficient GW emitters and are indeed present in all the GW sources detected by the LIGO-Virgo Collaboration so far.
         BHs and NSs result from the gravitational collapse of massive progenitor stars.
         BHs represent the extremes of spacetime curvature:
-        they have a singularity in them, no surface, and an event horizon separating the information
+        they contain a singularity, have no surface, and possess an event horizon that separates the information
         from within the BH interior from the rest of the universe.
         They are extraordinary cosmic laboratories to probe gravity in the strong-field regime.
         Astrophysical BHs are entirely described by two parameters: their gravitaitonal mass and their rotational angular momentum (spin).
-        On the other hand, NSs are extreme objects from the point of view of all fundamental forces, as their masses fall in the range $1$--$2.5M_\odot$, while their radii are of the order of 10\,km; additionally, they are equipped with magnetic fields that can exceed $10^{15}\,$G (in this case one refers to the NS as magnetar). 
+        On the other hand, NSs are extreme objects from the point of view of all fundamental forces, as their masses fall in the range $1$--$2.5M_\odot$, while their radii are of the order of 10\,km; additionally, they are equipped with magnetic fields that can exceed $10^{15}\,$G (in this case one refers to the NS as magnetar). One of the main difficulties in modelling NSs is that the equation of state that governs the microphysics in their interiors is currently unknown.
 
-        Binaries of NSs and BHs are collectively called compact binaries.
+        Binaries of NSs and BHs are collectively called compact binaries,
+        and come in three flavours: systems that consist of two NSs (indicated as BNSs, for binary NSs), of two BHs (indicated as BBHs, for binary BHs), or of a BH and an NS (indicated as NSBHs).
         As the two compact ojects orbit one another, the binary loses orbital energy and orbital angular momentum, as both are radiated away via GWs.
         As a results, the two compact objects spiral in towards each other, 
 	reaching extreme velocities ($\sim 0.5c$) at the very end of this process. 
-        At the end of the inspiral, the two compact companions merge and  
+        At the end of the inspiral, the two compact companions merge and 
 	the GW emission reaches its peak. The newly formed remnant then settles down emitting a weak GW signal that dies out.  This whole process goes under the name of compact binary coalescence (CBC).
-	In the final fraction of a CBC, a significant amount of gravitational mass is converted into gravitational energy.  This travels outwards as GWs and these waves fall within the frequency range of current terrestrial GW detector, if the binary contains NSs and/or BHs with masses up to $\mathcal{O}(100M_\odot)$.
-
-        \fpg{Qui devi dire che LIGO-Virgo cercano rountinely binarie compatte (che vengono in 3 sapori: BNS, NSBH, BBH).  Sia in bassa latenza che offline e con varie pipelines. Indeed in questa tesi, tu hai condotto, fra le altre cose, una ricerca di segnali CBC con la pipeline PyCBC.  (Sii breve e metti forward references alle sezioni con i risultati e alle spiegazioni su PyCBC).}
-	The GW network of LIGO-Virgo is consistently looking for signal from 
-	compact binary mergers of NSs and BHs (BNS, NSBH, and BBH systems). 
-	Search pipelines are run both online, designed to detect and report compact binary merger events 
-	with sub-minute latencies, and offline, taking advantage of improved calibration of the data 	
-	and additional information regarding data quality.
-	On the other hand, the Burst searches are capable of detecting signals from a wide variety of astrophysical sources 
-	in addition to compact binary mergers: core-collapse supernovae, seismic activity in NSs, and yet unknown GW sources.
-	
-	However, the main focus of this work is the CBC matched filtering search with the PyCBC pipeline discussed in Chapter $\ref{ch:datatools}$, 
-	which I used to conduct the offline data analysis for the LIGO-Virgo third observing run (O3), presented in Chapter $\ref{ch:datanalysis}$.
-
-        The masses of the objects involved dictate the how long the GW signal they emit lasts in the band of current detectors.
-        More massive binaries merge at lower frequencies and therefore have fewer cycles in the sensitivity band.
+	In the final fraction of a CBC, a significant amount of gravitational mass is converted into gravitational energy carried away by the GWs.  These waves fall within the frequency range of current terrestrial GW detector, if the binary contains NSs and/or BHs with masses up to $\mathcal{O}(100M_\odot)$.
+        The masses of the objects involved dictate the how long the GW signal they emit lasts in the $\sim 10$--$1000$\,Hz sensitivity band of current detectors.
+        More massive binaries merge at lower frequencies and therefore have fewer cycles in band.
         For example, the first GW signal ever detected, GW150914, come from the coalescence of two fairly massive BHs: the signal was visible for only two-tenths of a second \cite{14}. 
-        Binary NS (BNS) systems, in contrast, accumulate many cycles in the instrumental band.
-        The first BNS coalescence witnessed by LIGO-Virgo, GW170817, generated a GW signal that lasted 100 seconds in the sensitivity window of the detectors \cite{15}.
-
+        BNS systems, by contrast, accumulate many cycles in the instrumental band.
+        The first BNS coalescence witnessed by LIGO-Virgo, GW170817, generated a GW signal that lasted $\sim 100\,$s in the sensitivity window of the detectors \cite{15}.
 	The observation of GW150914 was a truly remarkable accomplishment: it \emph{directly}\footnote{Until then, GWs had only been observed indirectly by using pulsars timing to monitor 
-        their effect on the orbit of pulsar binary star systems.} confirmed Einstein's prediction of the existence of GWs, and it demonstrated that stellar-mass binary BH (BBH) systems form in the universe and merge within a Hubble time.
-	This event  marked the beginning of a new era of GW astronomy, 
+        their effect on the orbit of pulsar binary star systems.} confirmed Einstein's prediction of the existence of GWs, and it demonstrated that stellar-mass BBH systems form in the universe and merge within a Hubble time.
+	This event marked the beginning of a new era of GW astronomy, 
 	which enables the observations of violent astrophysical events that are not visible with traditional astronomy.
+	The BNS merger GW170817 marked, instead, the beginning of multi-messenger astronomy 
+	because as it was the first GW observation with recorded electromagnetic counterparts.  \fpg{Per antrambi questi eventi, aggiungi una forward reference alle sezioni in cui le discuti.}
 
-        \fpg{Qua invece riprendi GW170817.  Scrivi che fra le altre cose conferma che le BNS prodcuono short GRBs.  Poi ingloba (riducendolo/adattandolo) il tuo materiale GRB che trovi qui sotto.  Devi arrivare a giustificare la necessit\`a di fare ricerce coerenti in corrispondenza di GRB {\bf e} l'utilizzo dell'EM bright bank.  Queste due cose sono centrali nella tesi e devi motivarle proprio nell'introduzione.  Poi puoi dire che tu hai fatto anche questo tipo di ricerca e hai enabled la ricerca costruendo e validando la template bank (e di nuovo forward references).}
-	
-	The neutron star merger GW170817 marked the beginning of multi-messenger astronomy 
-	because it was the first gravitational wave event with a recorded electromagnetic counterpart.
-	As the NSs merged, they released a short flash of gamma rays, 
-	which was independently detected by the Fermi Gamma-ray Burst Monitor, 
-	less than 2s after the GW event was detected by LIGO and Virgo.
+	The LIGO-Virgo GW network routinely performs multiples searches aimed at detecting signals emitted by all three kinds of CBCs\footnote{See Sec.\,\ref{sec:sources} for a brief overview of other kinds of seraches.}.
+        These are run both online, to detect and report compact binary merger events 
+	with sub-minute latencies, and offline, to take advantage of improved data calibration 	
+	and of additional information regarding data quality to produce a more sensitive search.
+	This thesis focuses on two kinds of offline analyses of a part of LIGO-Virgo data collected during the third observing run (O3).
+        Specficially, I used the CBC matched-filtering search pipeline {\ttfamily PyCBC}, discussed in Chapter \ref{ch:datatools}, to perform an all-sky search for BNS, NSBH, and BBH signals; further, I used the {\ttfamily PyGRB} pipeline, discussed in Chapter \fpg{...}, to search for BNS and NSBH signals compatible with the sky-location and time of three short gamma-ray bursts (GRBs) that occured during O3.
 
-	Gamma-Ray Bursts (GRBs) are short ($\Delta t \sim 0.1-100s$) and intense bursts of 
-	electromagnetic radiation in the high energy (1 keV–10 MeV) $\gamma$-ray spectrum, 
-	that occur at the end of certain stars’s life.
-	This powerful radiation is produced when an ultra-relativistic fireball of high energy photons, 
-	is launched from some central engine, and is usually accompanied by a detectable afterglow emission 
-	in the X-ray and sometimes optical and radio bands, as the brilliant fireball expand and cool.
-	They can be broadly classified based on the timescale in which from 5\% to 95\% of the counts are recorded (defined as $T_{90}$),
-	as either long gamma ray burst (LGRBs), $T_{90} > 2s$ or short gamma ray bursts (SGRBs), $T_{90} \geq 2s$.
-	They also show different spectral properties: SGRBs have a fainter afterglow and are less energetic than LGRBs;
-	SGRB light curves vary on very short timescales, which indicates a compact source smaller than a stellar-scale object, 
-	and are also seen to have an offset relative to their host galaxy center.
-	This is suited to a progenitor involving old astrophysical objects which has a significant velocity with respect to its host galaxy,
-	exactly the expectation for compact binary mergers.
+        \fpg{Tutta la parte sui GRB richiede delle citazioni.}
+	GRBs are short ($\Delta t \sim 0.1-100s$) and intense bursts of 
+	electromagnetic radiation in the high-energy (1\,keV--10\,MeV) $\gamma$-ray spectrum.
+	This radiation is produced when an ultra-relativistic fireball of high energy photons 
+	is launched from a central engine, and it can be accompanied by a detectable afterglow emission 
+	in the X-ray and sometimes optical and radio bands, as the fireball expands and cools down.
+	GRBs can be broadly classified based on the timescale during which 5\% to 95\% of the counts are recorded ($T_{90}$)
+	as either long GRBs, $T_{90} > 2\,$s or short GRBs, $T_{90} \geq 2\,$s.
+	The two groups also show other differences.  Short GRBs have fainter afterglows and harder emission spectra than long GRBs; they are also seen to have an offset relative to their host galaxy center.
+	For decades, the exact origin of short GRBs was an open question in high-energy astrophysics.  The data indicated a compact source smaller than a stellar-scale object, and a progenitor involving old astrophysical objects with a significant velocity with respect to the host galaxy.  BNS and NSBH mergers were the natural candidates as short GRB progenitors, but the observational confirmation of this conjecture came with GW170817.
+	This event marked the first direct observation of a BNS unambiguously associate to a short GRB, GRB 170817 which followed $1.74\,$s after the GW trigger and was detected by {\it Fermi}/GBM and INTEGRAL SPI-ACS.
+	The unambiguous association also allowed for the most precise comparison to date
+	between the speed of GWs and the speed of light.  Further, it posed new constraints on alternative theories of gravity. 
+	Subsequent electromagnetic follow-up of GW170817 showed that BNS merger events 
+	help explain the origin of heavy elements in the universe.
 
-	The event GW170817 marked the first direct observation of a BNS as the central engines that power SGRBs,
-	and not only confirmed a hypothesis that was as-yet unconfirmed about the origins of SGRBs,
-	but it also allowed the measurement of the rate of expansion of the universe and 
-	the comparison between the speed of gravity and the speed of light. 
-	Furthermore, subsequent multi-messenger observations showed that these events 
-	help explain the origin of the universe's heavy elements like gold. 
-	There remain many mysteries surrounding these extreme and energetic events, 
-	and multi messenger astronomy has proven to be a resourceful way to obtain 
-	a complete knowledge of the astrophysical sources and their emission engines, 
-	providing insight that electromagnetic observations alone cannot achieve:
-	understanding the physics of jet breakout through measurements of time-delay 
-	between the prompt gamma-ray emission and merger, investigate the SGRBs jet opening angles, 
-	and provide an independent measurement of distance and redshift for use as a probe of cosmology.
-	In addition SGRBs represent an appealing trigger for GW follow-up searches: 
-	the time and sky position of the GRB are used to analyze the GW data around 
-	the GRB time and considering GWs incident from its sky position.
-	In this way only a small fraction of the parameter space of an all-sky GW survey needs to be searched,
-	therefore it is possible to significantly reduce the detection threshold for the targeted coherent SGRB search,
-	thereby increasing its sensitivity. 
-	Since the observed properties of SGRBs may be attributed to matter accretion onto a BH,
-	following the tidal disruption of a NS, neutron star-black (NSBH) hole systems are also considered likely SGRBs progenitors.
-	In the time of writing this work, no NSBH coalescence both in the GW and electromagnetic (EM) spectrum 
-	has been detected. 
-	Therefore, it is extremely important to have updated data analysis tools to improve the performance of 
-	offline GW searches following SGRB triggers, as the one I conducted in Chapter $\ref{ch:datanalysis}$ for three GRB samples.
-	The targeted coherent search for the third observing run benefitted from the implementation of the 
-	EM bright bank, which was generated after I implemented in the template bank the upgraded model $\ref{eq:mreup}$, 
-	that better discriminates between disrupting and non-disrupting NSBH systems.
-	I also demonstrate the efficacy of the EM bright bank, injecting known GW signals and determining how well the bank recovers them. 
-
-	There remain much more to understand about CBC and SGRBs, 
-	and multi messenger astronomy has proven to be a resourceful way to obtain 
-	a complete knowledge of the astrophysical sources and their emission engines, 
+	There remain several open questions surrounding these extreme and energetic events, 
+	and multi-messenger astronomy with GWs has proven to be a resourceful means of gaining 
+	knowledge of the astrophysical sources and their emission engines, 
 	providing insight that electromagnetic observations alone cannot achieve.
-	This should motivate future efforts towards targeted, coherent GW search triggered by SGRBs.
+	To mention a few examples of open problems, we do not yet know whether NSBH systems are also short GRB progenitors.  Similarly, the exact mechanism that launches the jet is currently not yet understood.
+        These and other questions motivate the targeted searches for GWs at the sky-position and time of GRBs, as they increase the chances of achieving joint GW-GRB detections.
+	Knowing the time and sky-location of a sought for GW event
+	allows to perform a deeper search in the GW data, potentially uncovering signals that are not accessible to all-sky, all-time searches \fpg{forward reference.}
 
-\fpg{Infine metti il tuo piano della tesi.  Nel capitolo 1..., nel 2..., ecc.}
-	This thesis is organized as follows: Chapter I provides a theoretical introduction to gravitational waves and 
+	Since the observed properties of short GRBs may be attributed to matter accretion onto a BH,
+	following the tidal disruption of a NS, in addition to BNSs, NSBH systems are also considered likely short GRBs progenitors.
+	At the time of writing this work, no certain NSBH coalescence has been observed.
+	This motivates further the use of 
+	offline GW searches targetting short GRB triggers, as the one I conducted in Chapter $\ref{ch:datanalysis}$.
+	To enable this search in O3, I also generated and validate the set of waveforms used to filter the data (see discussion in Sec\,\fpg{...})
+	This specific set of waveform is known as an ``EM-bright template bank,'' 
+	as it covers only BNSs and NSBH sytems that have undergone tidal disruption and are thus potential short GRB progenitors.
+
+	This thesis is organized as follows: Chapter \ref{ch:GWDetectionPrinciples} provides a theoretical introduction to gravitational waves and 
 	describes the LIGO and Virgo detectors and the physics behind its purpose, and noise sources.
-	Chapter II gives an introduction to data analysis tools for a matched filtering source, 
+	Chapter \ref{ch:datatools} gives an introduction to data analysis tools for a matched filtering source, 
 	describes the generation of template banks and signal consistency tests.
 	It then provides an overview of coherent vs coincident searches; the last section describes injections.
-	Chapter III gives a summary of the gravitational wave detection from the first to the third observing run.
-	Chapter IV illustrates the difference between the old and new model for the remnant mass of a neutron star-black hole system.
+	Chapter \ref{ch:ObservingRuns} gives a summary of the gravitational wave detection from the first to the third observing run.
+	Chapter \ref{ch:datanalysis} illustrates the difference between the old and new model for the remnant mass of a neutron star-black hole system.
 	It then describes how the template bank has been updated and how well it works.
-	Finally, the last sections present the result of the offline PyCBC and PyGRB search,
-	and a brief discussion on the obtained results is provided in Chapter V.
+	Finally, the results of the offline {\ttfamily PyCBC} and {\ttfamily PyGRB} search are presented and discussed.
+
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational-Wave Detection Principles}
+\label{ch:GWDetectionPrinciples}
 \fpg{Giri di correzione: 1.}%
 	The aim of this thesis is to expose the methodologies involved 
 	in compact binary coalescence through gravitational wave observation. 
 	Before giving into this topic, it is useful to shortly discuss gravitational waves, 
 	the theory behind them and the instrumental apparatus that is being used to detect them. 
 	In this chapter we give a broad outline of these subjects, 
-	without going too deep into details. \\
+	without going too deep into details.
 	We begin by introducing the basics of gravitational wave theory in section 2.1. 
 	In section 2.2 we discuss gravitational wave interferometric detectors. 
 	In section 2.3 we briefly describe the noise sources that affect the detection. 
@@ -823,6 +795,7 @@ We are grateful for computational resources provided by Cardiff University, and 
                 \end{figure}
 
 \subsection{Sources}
+\label{sec:sources}
 
 	There are four different classes of physical sources 
 	that are potential sources of GWs 
@@ -1426,7 +1399,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         The dominant cost of the search is in performing a matched filter 
         of the data against a bank of template waveforms (see, Section \ref{sec:matched_filtering}):
         this task is performed once per detector per template \cite{28, 45}. \\
-	The PyCBC pipeline, used in Sec. $\ref{sec:pycbc00}$, 
+	The {\ttfamily PyCBC} pipeline, used in Sec. $\ref{sec:pycbc00}$, 
 	requires consistency of arrival time and template parameters (masses and spins) 
 	between triggers in each of the detectors must be exactly the same,,
 	since the same waveform should be observed in all detectors.
@@ -1478,7 +1451,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	network, that is optimized in the maximum likelihood sense, 
 	to effectively construct a single, more sensitive detector.
  	While this method is applied to searches for unmodelled burst sources,
-        it is computationally expensive in the case of modelled searches \cite{45}.  It is therefore used for externally triggered searches, when knowing the time- and sky-location of the source can cut the cost of the search.  \fpg{Citare i vari papers metodologici di PyGRB.}
+        it is computationally expensive in the case of modelled searches \cite{45}.  It is therefore used for externally triggered searches, when knowing the time- and sky-location of the source can cut the cost of the search.  \fpg{Citare i vari papers metodologici di {\ttfamily PyGRB}.}
 
         The fact that the detector data are combined coherently allows to define a new ranking statistic, known as coherent SNR, and to build new consistency tests, of which we discuss an example.
 
@@ -1570,6 +1543,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Highlights from the Gravitational-Wave Observing Runs}
+\label{ch:ObservingRuns}
 \fpg{Giri di correzione: 0.}%
 \fpg{Allora qua sorge un problema, ovvero gli eventi sono sempre di pi\`u...  Hai GW190521 e GW190814 da aggiungere: sono molto particolari come eventi, ti suggerisco di riadattare gli abstract dei 3 papers relativi a questi 2 eventi, senza andare troppo in dettaglio, senn\`o non ne usciamo pi\`u.  Anzi, forse taglier\`o un po' su alcuni degli eventi che hai gi\`a in maniera da non avere troppo squilibrio a cose fatte.}%
 
@@ -1606,7 +1580,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	covers the frequencies of GWs emitted during 
 	the late inspiral, merger, and ringdown of stellar-mass BBHs.
 
-	Two independent matched-filter searches were used to detect GWs from CBC sources: PyCBC \cite{109-112} and GstLAL \cite{112-114}.
+	Two independent matched-filter searches were used to detect GWs from CBC sources: {\ttfamily PyCBC} \cite{109-112} and {\ttfamily GstLAL} \cite{112-114}.
 	The pipelines identify GW candidates by looking at coincident events 
 	found in both LIGO detectors, in a 15\,ms time window 
 	that accounts for the intersite propagation time plus timing uncertainties. 
@@ -1619,7 +1593,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	After applying this data quality process, the remaining coincident analysis time in O1 was 48.6\,days. 
 	The analyses search only stretches of data longer than a minimum duration, 
 	to ensure that the detectors are operating stably and enough data is available to build the background noise distribution.  This 
-	resulted in 46.1\,days of data for the PyCBC analysis and 48.3\,days for the GstLAL analysis.
+	resulted in 46.1\,days of data for the {\ttfamily PyCBC} analysis and 48.3\,days for the {\ttfamily GstLAL} analysis.
 
 	Three GW events were detected during this run, all three consistent with a BBH source: GW150914, GW151012, and GW151226.
 	The binary component masses of all three systems lie 
@@ -1631,17 +1605,17 @@ We are grateful for computational resources provided by Cardiff University, and 
                 	\label{firstgw}
                 	\includegraphics[scale=0.45]{firstgw}
                 	\centering
-                	\caption{Left: PyCBC matched-filter SNR (blue), re-weighted SNR (purple) and chi-squared (green) versus time for the best-matching template at the time of GW150914. The top and bottom plots refer to the Hanford and Livingston detectors, respectively. Right: Observed matched-filter SNR (blue) and expected matched-filter SNR (purple) versus time for the best-matching template at the time of GW150914, as reported by the GstLAL analysis. The expected matched-filter SNR is based on the autocorrelation of the best-matching template. The dashed black lines indicate 1-$\sigma$ deviations expected in Gaussian noise. \cite{21}} 
+                	\caption{Left: {\ttfamily PyCBC} matched-filter SNR (blue), re-weighted SNR (purple) and chi-squared (green) versus time for the best-matching template at the time of GW150914. The top and bottom plots refer to the Hanford and Livingston detectors, respectively. Right: Observed matched-filter SNR (blue) and expected matched-filter SNR (purple) versus time for the best-matching template at the time of GW150914, as reported by the {\ttfamily GstLAL} analysis. The expected matched-filter SNR is based on the autocorrelation of the best-matching template. The dashed black lines indicate 1-$\sigma$ deviations expected in Gaussian noise. \cite{21}} 
                 	\label{fig:firstgw}
                 \end{figure}
 
 	The era of GW astronomy began with the detection of the coalescence of two stellar-mass BHs
 	on September 14, 2015 at 09:50:45 UTC.  The signal GW150914 was detected with a matched-filter network SNR of 23.7 \cite{21}. 
-	Both PyCBC and GstLAL identified GW150914 as the most significant event in O1 and the probability that 
+	Both {\ttfamily PyCBC} and {\ttfamily GstLAL} identified GW150914 as the most significant event in O1 and the probability that 
 	it was due to a random coincidence of detector noise is extremely small: 
 	both pipelines found no background events with significance 
 	equal to or greater than GW150914.  Therefore only an upper limit on the FAR of GW150914 was determined: $6.0 \times 10^{-7}\,$yr$^{-1}$. 
-	This corresponds to a $p$-value of $7.5\times10^{-8}$, or a Gaussian-equivalent significance of $5.3\sigma$.  In Fig.\,\ref{fig:firstgw}, taken from \cite{21}, we show a snapshot of the PyCBC (left) and GstLAL (right) analyses around the time of GW150914.  The SNR timeseries (blue) and reweighted SNR (purple) timeseries otained with the best-matching template peak at time of GW150914, while the normalized chi-squared (green) dips suddenly; this behaviour is observed at both detectors (Handford top, and Livingston bottom).  A similar behaviour holds for the GstLAL data that shows the SNR (blue) and expected SNR (purple) timeseries for the same best-matching template.  The two timeseries vary consistently with one another, within the 1-$\sigma$ deviations reported by the black dashed line.
+	This corresponds to a $p$-value of $7.5\times10^{-8}$, or a Gaussian-equivalent significance of $5.3\sigma$.  In Fig.\,\ref{fig:firstgw}, taken from \cite{21}, we show a snapshot of the {\ttfamily PyCBC} (left) and {\ttfamily GstLAL} (right) analyses around the time of GW150914.  The SNR timeseries (blue) and reweighted SNR (purple) timeseries otained with the best-matching template peak at time of GW150914, while the normalized chi-squared (green) dips suddenly; this behaviour is observed at both detectors (Handford top, and Livingston bottom).  A similar behaviour holds for the {\ttfamily GstLAL} data that shows the SNR (blue) and expected SNR (purple) timeseries for the same best-matching template.  The two timeseries vary consistently with one another, within the 1-$\sigma$ deviations reported by the black dashed line.
 
 	\subsubsection{Masses}
 	The physical parameters of the source of GW150914 were inferred using two waveform models, a non-precessing effective-one-body waveform model (EOBNR) \cite{103, 104} 
@@ -1703,16 +1677,16 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 
 	GW151012 is the third most significant GW event from O1.  It was first referred to as LVT151012, where LVT stands for LIGO-Virgo Transient: this was due to the fact that it
 	was originally detected with a low statistical significance of $1.7\sigma$, 
-	corresponding to a FAR of one in 2.7 years.  The trigger was later reanlyzed with improved O2 versions of the pipelines and its significance was increased: the signal now meets the criteria of a confident detection of a BBH merger, and was therefore re-labeled as GW151012.  The final values of the network SNR for this signal are 9.5 and 10.0 for the PyCBC and GstLAL pipelines, respectively \cite{13}.
+	corresponding to a FAR of one in 2.7 years.  The trigger was later reanlyzed with improved O2 versions of the pipelines and its significance was increased: the signal now meets the criteria of a confident detection of a BBH merger, and was therefore re-labeled as GW151012.  The final values of the network SNR for this signal are 9.5 and 10.0 for the {\ttfamily PyCBC} and {\ttfamily GstLAL} pipelines, respectively \cite{13}.
 
 	GW151226 was the second observation of a coincident GW signal to be announced. 
 	Its combined matched-filter SNR was 13. 
-	The signal was identified as the second most significant event by both the PyCBC and GstLAL analyses.
-	GW151226 was more significant than all O1 background events in the PyCBC analysis, 
+	The signal was identified as the second most significant event by both the {\ttfamily PyCBC} and {\ttfamily GstLAL} analyses.
+	GW151226 was more significant than all O1 background events in the {\ttfamily PyCBC} analysis, 
 	after having removed any background events associated with GW150914 from the distribution.
 	Its FAR has an upper limit of $6.0 \times 10^{-7} yr^{-1}$, which
         corresponds to a $p$-value of $< 7.5 \times 10^{-8}$, or a Gaussian-equivalent significance of at least $5.3\sigma$. 
-	In the GstLAL analysis, the background extends past the observed log-likelihood of GW151226, 
+	In the {\ttfamily GstLAL} analysis, the background extends past the observed log-likelihood of GW151226, 
 	and the event is recovered with a FAR of 1 per 44000 years, which corresponds to a $p$-value of $3.5\times 10^{-6}$ and a significance of $4.5\sigma$.
 
 	GW151226 persisted in the LIGO frequency band for approximately 1\,s, 
@@ -1769,7 +1743,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	but a noise origin could not be ruled out using LLO data alone. 
 	Consequently, LHO data were investigated and were determined to be stable 
 	at frequencies above 30Hz, which was established as the starting frequecy to look into a segment of LHO data around the event time.
-	PyCBC and GstLAL then identified GW170608 with a network SNR of 13,
+	{\ttfamily PyCBC} and {\ttfamily GstLAL} then identified GW170608 with a network SNR of 13,
 	and a FAR of less than 1 in 3,000 years and 1 in 160,000 years, respectively.
 
 	The binary source of GW170608 consisted of two compact objects with source-frame component masses 
@@ -2049,7 +2023,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         Detecting the GW signal associated to these systems is not only important for
         GW astronomy but it is also an opportunity to observe a general relativistic system in the strong field regime,
         in the presence of high-density nuclear matter, magnetic fields, shocks, and intense neutrino radiation.
-        This is the optimal scenario to validate whether NSBH binaries are suitable SGRBs progenitor canditate.
+        This is the optimal scenario to validate whether NSBH binaries are suitable short GRBs progenitor canditate.
 
 \section{Evolution of Black Hole-Neutron Star mergers}
         Three stages with widely different timescales characterise the evolution of BHNS binaries
@@ -2141,9 +2115,9 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         However, the mass accretion time scale is much longer than the rotational period, and hence, the disk remains quasi-stationary for $\gg 10 ms$.
         With the intention of obtaining accurate predictions for identifying and characterising NSBH mergers
         a model for the remnant mass outside the BH is needed.
-        Whether or not this event can result in SGRBs emission,
+        Whether or not this event can result in short GRBs emission,
         Since NSBH systems cover a high-dimensional and largely unconstrained parameter space,
-        understanding whether or not these events can result in SGRBs emission requires to
+        understanding whether or not these events can result in short GRBs emission requires to
         derive limits on the range of binary parameters leading to the disruption of a NS.
         Originally, Foucart proposed a model to calculate the amount of matter remaining
         outside the BH about $10ms$ after a BHNS merger, $M_{rem}$, based on comparison
@@ -2222,10 +2196,10 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         because existing general relativistic simulation are quite limited in the physical effects considered.
         In particular, the large scale structure of magnetic fields within and outside of the post-merger accretion disk
         is not well-constrained by merger simulations, even though it has a crucial role on the eventual continuous or more intermittent relativistic jet emission,
-        which may lead to the production of a SGRB.
-        As seen in Section $\ref{subsec:grb}$, CBC was a potential candidate for SGRB progenitors,
+        which may lead to the production of a short GRB.
+        As seen in Section $\ref{subsec:grb}$, CBC was a potential candidate for short GRB progenitors,
         and was indeed confirmed with the first EM-GW joint detection of a merging NS binary,
-        as seen in Section $\ref{subsec:GW170817}$, cementing the link between SGRBs and NS-NS binary mergers.
+        as seen in Section $\ref{subsec:GW170817}$, cementing the link between short GRBs and BNS binary mergers.
 	
 
 
@@ -2234,13 +2208,13 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 \chapter{My contribution to gravitational dave data analysis during O3}
 \label{ch:datanalysis}
 \fpg{Giri di correzione: 0.}%
-	In a targeted GW follow-up of SGRBs search, a convenient way to increase its speed and sensitivity to EM bright GW events, 
+	In a targeted GW follow-up of short GRBs search, a convenient way to increase its speed and sensitivity to EM bright GW events, 
 	is to discriminate between regions in the parameter space that enclose combinations of masses and spins, 
 	consistent with the minimum counterpart possibility requirement to have a NS in the binary, i.e. BNS and NSBH.
 	For the latter systems we need to exclude the EM dim case of the BH swallowing the NS,
 	and since GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH, 
 	an estimation of the remnant matter post merger is a useful indicator of whether a coalescence event is accompanied by an EM signal.         
-	In the O2 coherent GW search triggered by SGRBs, the template bank was generated implementing the fitting formula $\ref{eq:mrem}$,
+	In the O2 coherent GW search triggered by short GRBs, the template bank was generated implementing the fitting formula $\ref{eq:mrem}$,
 	and as already seen in Chapter $\ref{ch:neutronhole}$  
 
 \section{Bank Tests}
@@ -2318,7 +2292,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 
 \subsection{GRB190728271}
 
-\section{PyCBC O3 HL C00 data preliminary runs}
+\section{{\ttfamily PyCBC} O3 HL C00 data preliminary runs}
 \label{sec:pycbc00}
 \subsection{Chunk 29}
 
