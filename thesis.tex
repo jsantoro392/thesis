@@ -1550,20 +1550,23 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 
 \subsubsection{Null Stream Consistency}
-	This is exploited to distinguish noise transients from GW signals, 
-	as those transients which do not contribute power to the two-polarization signal space are rejected as incoherent background noise.
-	Consequently the search is more sensitive as the number of detectors in the global network increases, not only because the ranking statistic improves, but also because its noise reduction and rejection mechanisms improve.
-
-        When there are more than two detectors, 
-	it is possible to construct one or more null data streams 
-	which contain only noise and to define the null SNR
-		\begin{equation}
-			\rho^2_N = \rho^2_{\rm coinc} - \rho^2_{\rm coh}\,. 
-		\end{equation}
-	Requiring a small null SNR is an effective method to separate 
-	incoherent noise transients from real GW signals: 
-	such noise events may give a large coherent SNR,
-	but are highly likely to also give a large null SNR \cite{45}.       
+	In the context of a coherent search for CBC signals,
+	is straightforward to construct a consistency test to distinguish noise transients from GW signals,
+	as those transients which do not contribute power to the two-polarization signal space are rejected as incoherent background noise. 
+	Consequently the search is more sensitive as the number of detectors in the global network increases, 
+	not only because the ranking statistic improves, but also because its noise reduction and rejection mechanisms improve. 
+	When there are more than two detectors, it is possible to construct one or more null data streams 
+	which contain only noise and to define the null SNR 
+                \begin{align}
+                        \rho^2_N &= \rho^2_{\rm coinc} - \rho^2_{\rm coh} \\
+					&= \sum_{X,Y}\sum_{i=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[N^{XY}]\big( s^Y|{{h_i}\over{\sigma^Y}}\big)\,. 
+                \end{align}
+	where
+                \begin{equation}
+			N^{XY} = \delta^{XY}-f^X_*f^Y_* - f^X_{\times}f^Y_{\times}
+                \end{equation}
+	Requiring a small null SNR is an effective method to separate incoherent noise transients from real GW signals: 
+	such noise events may give a large coherent SNR, but are highly likely to also give a large null SNR \cite{45}.
 
 \section{Injections}
 
