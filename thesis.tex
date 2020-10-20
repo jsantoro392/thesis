@@ -1445,6 +1445,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	 given the duration of observing time $T$ and the amount of background time 
 	constructed from the time shifts $T_b$. \cite{28}
 \subsection{Coherent}
+\label{subsec:coherent}
 	The coherent search strategy combines the data from all detectors coherently in phase, 
 	appropriately correcting for time-delays and polarization phases, in order
 	to obtain an individual detection statistic which is then compared with a single threshold \cite{18}. 
@@ -2092,17 +2093,31 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	and it was indeed missing from EM follow-up campaigns.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-\chapter{Black hole-neutron star binaries}
-\label{neutronhole}
+\chapter{My contribution to gravitational dave data analysis during O3}
+\label{ch:datanalysis}
 \fpg{Sono qui.}
 \fpg{Giri di correzione: 0.}%
-        Information on the properties of BH and NS in NSBH binaries come from
+	The {\ttfamily PyGRB} pipeline performs a targeted search for CBC GW signals in LIGO and Virgo data associated with SGRBs seen by Swift and Fermi,
+	using the known sky location of the SGRB and the relative GW detector sensitivities to analyses the data coherently, as described in $\ref{subsec:coherent}$.
+	Even though this approach is more computationally expensive than a coincident search $\ref{subsec:coincident}$, 
+	it is more sensitive. 
+	In this chapter we will illustrate how to increase the search speed and sensitivity to EM bright GW events,
+	by implementing a new model that helps discriminating between regions in the parameter space that enclose combinations of masses and spins,
+	consistent with the minimum counterpart possibility requirement to have a NS in the binary, i.e. BNS and NSBH.
+	For the latter systems we need to exclude the EM dim case of the BH swallowing the NS,
+        and since GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH,
+        an estimation of the remnant matter post merger is a useful indicator of whether a coalescence event is accompanied by an EM signal. \\
+	{\ttfamily PyGRB} is a matched filter search, therefore it is, foremost, that the template bank covers the region 
+	of the parameter space of BNS and NSBH systems, 
+	which are the GW sources for which electromagnetic follow-up is most promising.
+
+\section{Black hole-neutron star binaries}
+	Information on the properties of BH and NS in NSBH binaries come from
         their observation in other types of binary systems or from theoretical considerations:
-        while most NS observed in BNS systems have masses in the [1.2 − 1.6] $M_{\odot}$ range %\cite{}, 
-        more massive NS exist, up to at least $\sim$ 2$M_{\odot}$  %\cite{}. 
-        Most galactic BH have masses of [5 − 15] $M_{\odot}$  %\cite{}, 
-        but BHs observed through GWs are often more massive %\cite{}. \\ 
+        while most NS observed in BNS systems have masses in the [1.2 − 1.6] $M_{\odot}$ range \cite{200}, 
+        more massive NS exist, up to at least $\sim$ 2$M_{\odot}$  \cite{200}. 
+        Most galactic BH have masses of [5 − 15] $M_{\odot}$  \cite{195}, 
+        but BHs observed through GWs are often more massive \cite{13}. \\ 
         NSBH binaries are believed to form both in isolated binaries,
         and through dynamical interactions in star clusters, nuclear clusters and galactic nuclei \cite{194}.
         Large number of BHs and NSs and the presence of heavy BHs can impact significantly
@@ -2112,9 +2127,9 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         and $\sim 5M_{\odot}$ also remains an important open question.
 
         The magnitude and orientation of BH spins are unknown, and while most NSBH binaries
-        are expected to have negligible eccentricities %\cite{}, 
+        are expected to have negligible eccentricities \cite{202}, 
         eccentric NSBH binaries cannot entirely be ruled out
-        and have evolutions very distinct from circular binaries %\cite{}. \\
+        and have evolutions very distinct from circular binaries \cite{203}. \\
         The evolution of the BH singularity and the presence of matter combine
         the difficulties of evolving both BBHs and BNS, and the system has its own specific challenges,
         specifically the accretion of the NS matter onto the BH.
@@ -2126,7 +2141,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         From this last missing detection we are able to extract and learn about
         the sources fundamental properties, such as the BH’s masses and spins
         as well as the NS equation of state (EOS), because the orbital frequency at tidal disruption
-        depends strongly on the compactness of the NS, $C_{NS}$ (Kyutoku et al 2010, 2011);
+        depends strongly on the compactness of the NS, $C_{NS}$ \cite{204};
         from the electromagnetic radiation we can not only
         pinpoint where the event happens but also withdraw informations about the events energetics as well as the environment.
         Multi-messenger astronomy is like putting together the pieces of a cosmic puzzle
@@ -2136,7 +2151,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         in the presence of high-density nuclear matter, magnetic fields, shocks, and intense neutrino radiation.
         This is the optimal scenario to validate whether NSBH binaries are suitable short GRBs progenitor canditate.
 
-\section{Evolution of Black Hole-Neutron Star mergers}
+\subsection{Evolution of Black Hole-Neutron Star mergers}
         Three stages with widely different timescales characterise the evolution of BHNS binaries
         and involve different physical processes and observable signals.
         After their formation, the two objects go through a millions-of-years long inspiral phase,
@@ -2209,7 +2224,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	Another EOS dependent quantity is the frequency at which the GW signal is cut off when disruption occurs, $f_{cut}$,
 	which can be included in waveform models to have a more accurate description of the system.
 
-\section{Tidal disruption model}
+\subsection{Tidal disruption model}
 	Tidal disruption occurs when  the  tidal force of the BH at the surface of the NS is stronger
         than the self-gravity of the NS.  Assuming Newtonian gravity, this condition is approximately
                 \begin{equation}
@@ -2278,7 +2293,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	the introduction of the new free parameters $\gamma$ and $\delta$ accurately predicts that in this scenario, 
 	the remnant mass has larger values than previously found and therefore it is more likely to have an EM counterpart.
 
-\section{Electromagnetic Counterpart of a Black Hole-Neutron Star Binary Merger}
+\subsection{Electromagnetic Counterpart of a Black Hole-Neutron Star Binary Merger}
 \label{sec:emnsbh}	
 	There are two kinds of matter that characterise NSBH mergers and that are essential to generate an EM counterpart:
         the presence of a gravitationally bound debris disk outside the final BH, and the mass ejection from NSBH.
@@ -2317,7 +2332,6 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\chapter{My contribution to gravitational dave data analysis during O3}
 \label{ch:datanalysis}
 \fpg{Giri di correzione: 0.}%
 	In a targeted GW follow-up of short GRBs search, a convenient way to increase its speed and sensitivity to EM bright GW events, 
@@ -2396,7 +2410,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
                         \label{fig:pointinj}
                 \end{figure}
 
-\section{O3 offline PyGRB analysis}
+\section{O3 offline {\ttfamily PyGRB} analysis}
 \label{sec:pygrb}
 \subsection{GRB190425089}
 
@@ -2621,6 +2635,11 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 	\bibitem{197} Reed Essick, Philippe Landry, Daniel E. Holz . Nonparametric Inference of Neutron Star Composition, Equation of State, and Maximum Mass with GW170817. 10.1103/PhysRevD.101.063007.
 	\bibitem{198} Ben Margalit, Brian Metzger. Constraining the Maximum Mass of Neutron Stars From Multi-Messenger Observations of GW170817.  10.3847/2041-8213/aa991c.
 	\bibitem {199} Ingo Tews, Peter T. H. Pang, Tim Dietrich, Michael W. Coughlin, Sarah Antier, Mattia Bulla, Jack Heinzel, Lina Issa. On the nature of GW190814 and its impact on the understanding of supranuclear matter. arXiv:2007.06057.
+	\bibitem{200} Chang-Hwan Lee and Young-Min Kim. Neutron Star Mass Distribution in Binaries. Journal of Physics: Conference Series, Volume 716, 11th Edoardo Amaldi Conference on Gravitational Waves (AMALDI 11) 21–26 June 2015, Gwangju, South Korea.
+	\bibitem{201} Cromartie, H.T., Fonseca, E., Ransom, S.M. et al. Relativistic Shapiro delay measurements of an extremely massive millisecond pulsar. Nat Astron 4, 72–76 (2020). https://doi.org/10.1038/s41550-019-0880-2.
+	\bibitem{202} Peters, P. C., and Mathews, J. (1963). Gravitational radiation from point masses in a Keplerian orbit. Phys. Rev. 131:435. doi: 10.1103/PhysRev.131.435.
+	\bibitem{203} Stephens, B. C., East, W. E., and Pretorius, F. (2011). Eccentric black hole-neutron star mergers. Astrophys. J. 737:L5. doi: 10.1088/2041-8205/737/1/L5.
+	\bibitem{204} Shibata, M., Taniguchi, K. Coalescence of Black Hole-Neutron Star Binaries. Living Rev. Relativ. 14, 6 (2011). https://doi.org/10.12942/lrr-2011-6.
 
 
 \end{thebibliography}
