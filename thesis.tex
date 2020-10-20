@@ -10,6 +10,7 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{nameref}
+\usepackage{verbatim}
 \newcommand{\fpg}[1]{\textcolor{red}{#1} }
 \addbibresource{sample.bib}
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
@@ -2151,40 +2152,27 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         in the presence of high-density nuclear matter, magnetic fields, shocks, and intense neutrino radiation.
         This is the optimal scenario to validate whether NSBH binaries are suitable short GRBs progenitor canditate.
 
-\subsection{Evolution of Black Hole-Neutron Star mergers}
-        Three stages with widely different timescales characterise the evolution of BHNS binaries
-        and involve different physical processes and observable signals.
-        After their formation, the two objects go through a millions-of-years long inspiral phase,
-        followed by a one millisecond long merger phase and a subsequent seconds-long post merger stage,
-        if the coalescence’s outcome involves the tidal disruption of the NS. \\
-        In the inspiral stage the binary separation gradually decreases due to GW emission,
-        such systems will be circularized by the emission of gravitational waves
-        and will evolve through a quasi-equilibrium sequence of circular orbits.
-        The lifetime of a binary in quasi-circular orbit is approximately written by
-                \begin{equation}
-                        \tau_{GW} = 1.34 \times 10^{10} yrs ({{r} \over {6 \times 10^6 km}})^4 ({{M_{BH}} \over {6M_{\odot}}})^{-1} ({M_{NS} \over {1.4 M_{\odot}}})^{-1} ({{M_{BH} + M_{NS}} \over {7.4M_{\odot}}})^{-1}
-                \end{equation}
-        If the initial semi-major axis is $<10^7 km$, BH and NS merge within the Hubble
-        timescale after a substantial emission of GWs.
-        The inspiral evolves differently during the early stages and the late phase until merger:
-        during the first part since the radii are much smaller than the orbital separation,
-        the objects are well approximated by point masses in an adiabatic orbit,
-        and also the gravitational-radiation-reaction time scale $\tau_{GW}$ is much longer than the orbital period $P_{orb}$.
-        Meanwhile in the second part of the inspiral finite-size effects significantly influence the orbital evolution process
-        and modify the interaction between the two objects.
-        In addition, since the ratio of $\tau_{GW}$ to the $P_{orb}$ is approximately written as
-                \begin{equation}
-                        {{\tau_{GW}} \over {P_{orb}}} \approx 1.8 ({{r} \over {6 G 1(M_{BH}+M_{NS})}})^{5/2} ({{M_{BH}} \over {6M_{\odot}}})^{-1} ({M_{NS} \over {1.4 M_{\odot}}})^{-1} ({{M_{BH} + M_{NS}} \over {7.4M_{\odot}}})^{-1}
-                \end{equation}
-        the adiabatic approximation for orbital evolution breaks down when $\tau_{GW} \sim P_{orb}$,
-        meaning for the orbit close to the last one with $r \sim 6G(M_{BH}+M_{NS})$.
-                 \begin{figure}[H]
-                        \label{nsbh}
-                        \includegraphics[scale=0.45]{nsbh}
-                        \centering
-                        \caption{Schematic pictures for the outcome of the merger process, depending on the relative position of $d_{tid}$ and $R_{ISCO}$. The solid filled circle denotes the BH, the distorted ellipsoid denotes the NS, the solid circle is the location of $R_{ISCO}$, and the dashed circle is the location of  $d_{tid}$. Left: the NS is tidally disrupted, and the spatial extent of the disrupted material is larger than or as large as that of the BH. Right: the NS is not tidally disrupted.}
-                         \label{fig:nsbh}
-                \end{figure}
+\subsection{Tidal disruption model}
+        After their formation, the NS and the BH go through a millions-of-years long inspiral phase,
+        during which the binary separation gradually decreases and the orbit circularizes due to GW emission.
+%        The lifetime of a binary in quasi-circular orbit is approximately written by
+%                \begin{equation}
+%                        \tau_{GW} = 1.34 \times 10^{10} yrs ({{r} \over {6 \times 10^6 km}})^4 ({{M_{BH}} \over {6M_{\odot}}})^{-1} ({M_{NS} \over {1.4 M_{\odot}}})^{-1} ({{M_{BH} + M_{NS}} \over {7.4M_{\odot}}})^{-1}
+%                \end{equation}
+%        If the initial semi-major axis is $<10^7 km$, BH and NS merge within the Hubble
+%        timescale after a substantial emission of GWs.
+%        The inspiral evolves differently during the early stages and the late phase until merger:
+%        during the first part since the radii are much smaller than the orbital separation,
+%        the objects are well approximated by point masses in an adiabatic orbit,
+%        and also the gravitational-radiation-reaction time scale $\tau_{GW}$ is much longer than the orbital period $P_{orb}$.
+%        Meanwhile in the second part of the inspiral finite-size effects significantly influence the orbital evolution process
+%        and modify the interaction between the two objects.
+%        In addition, since the ratio of $\tau_{GW}$ to the $P_{orb}$ is approximately written as
+%                \begin{equation}
+%                        {{\tau_{GW}} \over {P_{orb}}} \approx 1.8 ({{r} \over {6 G 1(M_{BH}+M_{NS})}})^{5/2} ({{M_{BH}} \over {6M_{\odot}}})^{-1} ({M_{NS} \over {1.4 M_{\odot}}})^{-1} ({{M_{BH} + M_{NS}} \over {7.4M_{\odot}}})^{-1}
+%                \end{equation}
+%        the adiabatic approximation for orbital evolution breaks down when $\tau_{GW} \sim P_{orb}$,
+%        meaning for the orbit close to the last one with $r \sim 6G(M_{BH}+M_{NS})$.
         As the binary spirals in, the transition to a dynamically plunging orbit happens
         when the NS first reaches either the innermost stable circular orbit $R_{ISCO}$ of the BH, or the tidal disruption distance $d_{tid}$,
         the distance at which the BH gravitational field is able to induce the tidal disruption of the star.
@@ -2193,14 +2181,104 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         however, the final remnant of a NSBH merger is always a BH.
         Both the GW emission features and the possibility that NSBH binaries have an EM counterpart
         depends crucially on whether or not the NS is tidally disrupted. \\
-        If $d_{tid} \geq R_{ISCO}$ the NS will be tidally disrupted by the tidal field of the BH
+        If $d_{tid} \leq R_{ISCO}$ the NS plunges into the BH whole and no matter is left outside,
+        and very low chances of detectable post-merger EM signals.
+        The GW signal is practically identical to a BBH system with the same component masses and spins \cite{}. \\
+        Otherwise, if $d_{tid} \geq R_{ISCO}$ the NS will be tidally disrupted by the tidal field of the BH
         and some debris are left outside the BH after merger.
         When this matter is present outside the BH, EM emission is expected to emerge from a variety of processes.
-        Otherwise, if $d_{tid} \leq R_{ISCO}$ the NS plunges into the BH whole and no matter is left outside,
-        and very low chances of detectable post-merger EM signals.
-        The GW signal is practically identical to a BBH system with the same component masses and spins [35, 70]. \\
-        In the merger phase and remnant-formation phase, the dynamics of the system depends
-	strongly on the BH and NS mass ratio $q$ defined as $M_{BH}/M_{NS} > 1$, and on the BH spin $\chi_{BH}$.
+	         \begin{figure}[H]
+                        \label{nsbh}
+                        \includegraphics[scale=0.45]{nsbh}
+                        \centering
+                        \caption{Schematic pictures for the outcome of the merger process, depending on the relative position of $d_{tid}$ and $R_{ISCO}$. The solid filled circle denotes the BH, the distorted ellipsoid denotes the NS, the solid circle is the location of $R_{ISCO}$, and the dashed circle is the location of  $d_{tid}$. Left: the NS is tidally disrupted, and the spatial extent of the disrupted material is larger than or as large as that of the BH. Right: the NS is not tidally disrupted.}
+                         \label{fig:nsbh}
+                \end{figure}
+	Tidal disruption occurs when the tidal force of the BH at the surface of the NS is stronger
+        than the self-gravity of the NS. Assuming Newtonian gravity, this condition is approximately
+                \begin{equation}
+                        {{M_{NS}} \over {R_{NS}^2}} \sim {{3M_{BH}} \over {d_{tid}^3}}R_{NS}
+                \end{equation}
+        from which tidal disruption is simply $d_{tid} \sim (M_{BH}/M_{NS})^{1/3}R_{NS}$.
+        A few tens of milliseconds after tidal disruption occurs the remnant consists of
+        a remnant BH and tidal debris containing gravitationally bound and unbound matter.
+        Some material gravitationally bound to the remnant swerves
+        into an approximately axisymmetric disk around the BH, while some debris material,
+        a large amount of neutron-rich material, is dynamically ejected and spread outwards at mildly relativistic speeds.
+        The accretion disk an spread to larger radii to conserve angular momentum in the rotational period $\sim 10 ms$,
+        rather than being confined within the circularizing radius, resulting in a gradual mass infall into the BH over longer timescales, $\sim 0.1-1 s$.
+        However, the mass accretion time scale is much longer than the rotational period, and hence, the disk remains quasi-stationary for $\gg 10 ms$.
+        With the intention of obtaining accurate predictions for identifying and characterising NSBH mergers
+        a model for the remnant mass outside the BH is needed.
+       
+        Since NSBH systems cover a high-dimensional and largely unconstrained parameter space,
+        understanding whether or not these events can result in short GRBs emission requires to
+        derive limits on the range of binary parameters leading to the disruption of a NS.
+        Originally, Foucart proposed a model to calculate the amount of matter remaining
+        outside the BH about $10ms$ after a BHNS merger, $M_{rem}$, based on comparison
+        between $d_{tid}$ and $R_{ISCO}$:
+                \begin{equation}
+                \label{eq:mrem}
+		        {{M_{rem}^{model}} \over {M^b_{NS}}} = \alpha(3q)^{1/3}(1 - 2C_{NS}) - \beta{{R_{ISCO}} \over {R_{NS}}}
+                \end{equation}
+        where $\alpha$ and $\beta$ are the free parameters of the model,
+        and $M^b_{NS}$ is the baryon mass of the NS.
+        Since applying the $d_{tid}$ derived from Newtonian gravity to compact object results in underestimating the $C_{NS}$,
+        a more appropriate estimation of this quantity, in which compact objects are more strongly bound is
+                \begin{equation}
+		       \hat{d}_{tid} = d_{tid} (1 - 2C_{NS})
+                \end{equation}
+        This simple model applies to BH spins aligned with the orbital angular momentum and remnants below
+        $\sim 20-25\%$ of the NS mass, leaving out unexplored regions of the parameter space,
+        such as comparable masses and high spins.
+        To better constraint $M_{rem}$, a new model was proposed by Foucart, Hinderer and Nissanke.
+                \begin{equation}
+                \label{eq:mremup}  
+			{{M_{rem}^{model}} \over {M^b_{NS}}} = \Bigg[ Max \Bigg( \alpha{{1 - 2C_{NS}} \over {\eta^{1/3}}} - \beta {{R_{ISCO}C_{NS}} \over{\eta M_{BH}}} + \gamma, 0 \Bigg)\Bigg]^{\delta}
+                \end{equation}
+	where $\alpha$, $\beta$, $\gamma$ and $\delta$ are the free parameter of the new model. \\
+	Both models predict the $M_{rem}$ outside the BH after a NSBH merger, 
+	each result rely on tidal disruption dynamics considerations and 
+	is fitted to a set of numerical simulations, 
+	in order to assess their validity in the parameter space covered by the simulations.
+	While model $\ref{eq:mrem}$ is tested against 26 numerical simulation covering mass ratios 
+	in the range $M_{BH}/M_{NS}=3-7$, $\chi_{BH}$ up to 0.9, and $R_{NS} \approx 11-16$km,  
+	model $\ref{eq:mremup}$ is fitted to 75 simulations covering the range $q = 1-7$ $\chi_{BH} =-0.5-0.97$, 
+	and $C_{NS} = 0.13-0.182$.
+                \begin{figure}[H]
+                        \noindent
+                        \label{o3bankvso2bank}
+                        \makebox[\textwidth]{\includegraphics[scale=0.4]{o3bankvso2bank}}%
+                        \centering
+                        \caption{This figure shows a comparison between the template bank constructed for the second observing run, which made use of the old model $\ref{eq:mrem}$, and the template bank generated implementing the updated model $\ref{eq:mremup}$.}  
+                        \label{fig:o3bankvso2bank}
+                \end{figure}
+	The new model covers previously unmodeled regions of the parameter space, comparable masses $q \sim 1$ and high spins,
+	giving a more accurate  results.
+	
+	The benefits of updating the template bank with the new model, are shown in fig.$\ref{fig:o3bankvso2bank}$:
+	the visible missing spot on the right high corner ($M_1 >  2.60 M_\odot$, $M_2 > 15 M_\odot $) of the O2 bank gets covered,
+	which corresponds to high values of the component masses. \\
+	An upgrade in the calculation for $q \sim 1$ binaries in order to distinguish BNS from low-mass NSBH, 
+	since a solar mass BH in a binary system with a NS companion could mimic the observable properties of a NSNS binary,
+	is done by considering the two-body symmetry in vacuum gravity. 
+	When taking the limit $q \rightarrow \infty$ one loses the invariance under exchanging the bodies' labels, 
+	which can be restored by replacing $q^{-1}$ with $\eta$, as in Eq. $\ref{eq:mremup}$.
+	This choice leads to a lager value for $R_{ISCO}$ when considering a binary with $q \sim 1$, 
+	which is physically expected because the accreting NS will begin its plunge at a $R_{ISCO}^{effective}$,
+	causing the BH to grow, consequently the ISCO location for the remaining material outside will change, 
+	leading to a fractional change in the position of the ISCO for smaller $q$.	
+	This gives a more precise estimation for $M_{rem}$, which was previously overestimated for nearly equal-mass NSBH. 
+
+	This is clearly shown in the region $M_2 \leq 2.5$ of fig.$\ref{fig:o3bankvso2bank}$, where there is a slighty denser coverage.
+	Furthermore, while Eq. $\ref{eq:mrem}$ did not consider nonlinear effects taking place after the coalescence of a NS
+	with a rapidly spinning BH, leading to an underestimation of $M_{rem}$, 
+	the introduction of the new free parameters $\gamma$ and $\delta$ accurately predicts that in this scenario, 
+	the remnant mass has larger values than previously found and therefore it is more likely to have an EM counterpart.
+
+\begin{comment}	
+	In the merger phase and remnant-formation phase, the dynamics of the system depends
+        strongly on the BH and NS mass ratio $q$ defined as $M_{BH}/M_{NS} > 1$, and on the BH spin $\chi_{BH}$.
         The NS tidal deformability $\lambda_{NS}$ also plays a key role in the evolution of the binary:
         the two-body attractive force is strengthen by the effect of the tidal deformation and, by this,
         the orbital separation of the $R_{ISCO}$ is increased and the GW  signal  is  cut  off  when
@@ -2221,127 +2299,49 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
                         \lambda_{NS} = {{2} \over {3}} k_2 C_{NS}^{-5}
                 \end{equation}
         where $C_{NS} = M_{NS}/R_{NS}$ and $k_2$ is the dimensionless Love number.
-	Another EOS dependent quantity is the frequency at which the GW signal is cut off when disruption occurs, $f_{cut}$,
-	which can be included in waveform models to have a more accurate description of the system.
+        Another EOS dependent quantity is the frequency at which the GW signal is cut off when disruption occurs, $f_{cut}$,
+        which can be included in waveform models to have a more accurate description of the system.
+\end{comment}
 
-\subsection{Tidal disruption model}
-	Tidal disruption occurs when  the  tidal force of the BH at the surface of the NS is stronger
-        than the self-gravity of the NS.  Assuming Newtonian gravity, this condition is approximately
-                \begin{equation}
-                        {{M_{NS}} \over {R_{NS}^2}} \sim {{3M_{BH}} \over {d_{tid}^3}}R_{NS}
-                \end{equation}
-        from which tidal disruption is simply $d_{tid} \sim (M_{BH}/M_{NS})^{1/3}R_{NS}$.
-        A few tens of milliseconds after tidal disruption occurs the remnant consists of
-        a remnant BH and tidal debris containing gravitationally bound and unbound matter.
-        Some material gravitationally bound to the remnant swerves
-        into an approximately axisymmetric disk around the BH, while some debris material,
-        a large amount of neutron-rich material, is dynamically ejected and spread outwards at mildly relativistic speeds.
-        The accretion disk an spread to larger radii to conserve angular momentum in the rotational period $\sim 10 ms$,
-        rather than being confined within the circularizing radius, resulting in a gradual mass infall into the BH over longer timescales, $\sim 0.1-1 s$.
-        However, the mass accretion time scale is much longer than the rotational period, and hence, the disk remains quasi-stationary for $\gg 10 ms$.
-        With the intention of obtaining accurate predictions for identifying and characterising NSBH mergers
-        a model for the remnant mass outside the BH is needed.
-        Whether or not this event can result in short GRBs emission,
-        Since NSBH systems cover a high-dimensional and largely unconstrained parameter space,
-        understanding whether or not these events can result in short GRBs emission requires to
-        derive limits on the range of binary parameters leading to the disruption of a NS.
-        Originally, Foucart proposed a model to calculate the amount of matter remaining
-        outside the BH about $10ms$ after a BHNS merger, $M_{rem}$, based on comparison
-        between $d_{tid}$ and $R_{ISCO}$:
-                \begin{equation}
-                \label{eq:mrem}
-		        {{M_{rem}^{model}} \over {M^b_{NS}}} = \alpha(3q)^{1/3}(1 - 2C_{NS}) - \beta{{R_{ISCO}} \over {R_{NS}}}
-                \end{equation}
-        where $\alpha$ and $\beta$ are the free parameters of the model,
-        and $M^b_{NS}$ is the baryon mass of the NS.
-        Since applying the $d_{tid}$ derived from Newtonian gravity to compact object results in underestimating the $C_{NS}$,
-        a more appropriate estimation of this quantity, in which compact objects are more strongly bound is
-                \begin{equation}
-                \label{eq:mreup} 
-		       \hat{d}_{tid} = d_{tid} (1 - 2C_{NS})
-                \end{equation}
-        This simple model applies to BH spins aligned with the orbital angular momentum and remnants below
-        $\sim 20-25\%$ of the NS mass, leaving out unexplored regions of the parameter space,
-        such as comparable masses and high spins.
-        To better constraint $M_{rem}$, a new model was proposed by Foucart, Hinderer and Nissanke.
-                \begin{equation}
-                        {{M_{rem}^{model}} \over {M^b_{NS}}} = \Bigg[ Max \Bigg( \alpha{{1 - 2C_{NS}} \over {\eta^{1/3}}} - \beta {{R_{ISCO}C_{NS}} \over{\eta M_{BH}}} + \gamma, 0 \Bigg)\Bigg]^{\delta}
-                \end{equation}
-	where $\alpha$, $\beta$, $\gamma$ and $\delta$ are the free parameter of the new model.
-	Both models predict the $M_{rem}$ outside the BH after a NSBH merger, 
-	each result rely on tidal disruption dynamics considerations and 
-	is fitted to a set of numerical simulations, 
-	in order to assess their validity in the parameter space covered by the simulations.
-	While model $\ref{eq:mrem}$ is tested against 26 numerical simulation covering mass ratios 
-	in the range $M_{BH}/M_{NS}=3-7$, $\chi_{BH}$ up to 0.9, and $R_{NS} \approx 11-16 km$,  
-	model $ref{eq:mremup}$ is fitted to 75 simulations covering the range $q = 1-7$ $\chi =-0.5-0.97$, 
-	and $C_{NS} = 0.13-0.182$.
-	The new model covers previously unmodeled regions of the parameter space, comparable masses $q \sim 1$ and high spins,
-	giving a more accurate  results.
-	An upgrade in the calculation for $q \sim 1$ binaries in order to distinguish BNS from low-mass NSBH, 
-	since a solar mass BH in a binary system with a NS companion could mimic the observable properties of a NSNS binary,
-	is done by considering the two-body symmetry in vacuum gravity. 
-	When taking the limit $q \rightarrow \infty$ one loses the invariance under exchanging the bodies' labels, 
-	which can be restored by replacing $q^-1$ with $\eta$, as in Eq. $\ref{eq:mremup}$.
-	This choice leads to a lager value for $R_{ISCO}$ when considering a binary with $q \sim 1$, 
-	which is physically expected because the accreting NS will begin its plunge at a $R_{ISCO}^{effective}$,
-	causing the BH to grow, consequently the ISCO location for the remaining material outside will change, 
-	leading to a fractional change in the position of the ISCO for smaller $q$.	
-	This gives a more precise estimation for $M_{rem}$, which was previously overestimated for nearly equal-mass NSBH.
-	Furthermore, while Eq. $\ref{eq:mrem}$ did not consider nonlinear effects taking place after the coalescence of a NS
-	with a rapidly spinning BH, leading to an underestimation of $M_{rem}$, 
-	the introduction of the new free parameters $\gamma$ and $\delta$ accurately predicts that in this scenario, 
-	the remnant mass has larger values than previously found and therefore it is more likely to have an EM counterpart.
-
-\subsection{Electromagnetic Counterpart of a Black Hole-Neutron Star Binary Merger}
-\label{sec:emnsbh}	
-	There are two kinds of matter that characterise NSBH mergers and that are essential to generate an EM counterpart:
-        the presence of a gravitationally bound debris disk outside the final BH, and the mass ejection from NSBH.
-        There are different matter ejection mechanisms based on typical timescale and ejecta properties:
-        if the NS is disrupted, a few percents of a solar mass of neutron-rich matter is
-        ejected at mildly relativistic speeds on a short timescale $\sim ms$, by tidal forces that disrupt the NS.
-        As this “dynamical” ejecta expands into the surrounding interstellar medium, it possibly undergoes r-process nucleosynthesis,
-        forming the heaviest elements observed today, whose decay powers kilonovae.
-        Emission from the dynamical ejecta of $\sim0.01 M_{\odot}$ is likely to have a luminosity of
-        $\sim10^{40}-10^{41} erg s^{-1}$ with a characteristic timescale of about 1 week.
-        The spectral kilonova peak is located in red optical or near-infrared wavelengths, as this is among the first spectral windows
-        through which the expanding merger ejecta becomes transparent.
-        More neutron-rich ejecta forms heavier r-process elements than more neutron-poor ejecta,
-        therefore the opacity of the ejecta increases, causing the kilonova to be dimmer, of longer duration,
-        and shifted from the optical to the infrared.
-        This feature may help differentiate between BNS and NSBH, since NSBH dynamical ejecta has no neutron poor component to the ejecta that may power an optical kilonova.
-        After merger, as bound matter from the disrupted NS begins to circularize, mostly through hydrodynamical shocks
-        and interactions between the tidal tail and the forming accretion disk, magnetic fields and neutrinos start to play an important role.
-        In addition to the emission from the dynamical ejecta, a subsequent disk “wind” can cause an additional emission
-        which may peak earlier with a bluer color if the emission is not absorbed by the precedent ejecta.
-        This outflow takes place over a timescales of seconds or longer, and
-        can arise from imbalance between viscous turbulent heating and nuclear recombination.
-        Viscous mildly relativistic outflows are expected to arise for multiple seconds after the merger,
-        from an increase in the strength of the magnetic field, angular momentum transport and accretion of matter onto the BH,
-        caused by the growth of the magnetorotational instability.
-        The post-merger outflows are the least understood part of the evolution,
-        because existing general relativistic simulation are quite limited in the physical effects considered.
-        In particular, the large scale structure of magnetic fields within and outside of the post-merger accretion disk
-        is not well-constrained by merger simulations, even though it has a crucial role on the eventual continuous or more intermittent relativistic jet emission,
-        which may lead to the production of a short GRB.
-        As seen in Section $\ref{subsec:grb}$, CBC was a potential candidate for short GRB progenitors,
-        and was indeed confirmed with the first EM-GW joint detection of a merging NS binary,
-        as seen in Section $\ref{subsec:GW170817}$, cementing the link between short GRBs and BNS binary mergers.
+%\subsection{Electromagnetic Counterpart of a Black Hole-Neutron Star Binary Merger}
+%\label{subec:emnsbh}	
+%	There are two kinds of matter that characterise NSBH mergers and that are essential to generate an EM counterpart:
+%        the presence of a gravitationally bound debris disk outside the final BH, and the mass ejection from NSBH.
+%        There are different matter ejection mechanisms based on typical timescale and ejecta properties:
+%        if the NS is disrupted, a few percents of a solar mass of neutron-rich matter is
+%        ejected at mildly relativistic speeds on a short timescale $\sim ms$, by tidal forces that disrupt the NS.
+%        As this “dynamical” ejecta expands into the surrounding interstellar medium, it possibly undergoes r-process nucleosynthesis,
+%        forming the heaviest elements observed today, whose decay powers kilonovae.
+%        Emission from the dynamical ejecta of $\sim0.01 M_{\odot}$ is likely to have a luminosity of
+%        $\sim10^{40}-10^{41} erg s^{-1}$ with a characteristic timescale of about 1 week.
+%        The spectral kilonova peak is located in red optical or near-infrared wavelengths, as this is among the first spectral windows
+%        through which the expanding merger ejecta becomes transparent.
+%        More neutron-rich ejecta forms heavier r-process elements than more neutron-poor ejecta,
+%        therefore the opacity of the ejecta increases, causing the kilonova to be dimmer, of longer duration,
+%        and shifted from the optical to the infrared.
+%        This feature may help differentiate between BNS and NSBH, since NSBH dynamical ejecta has no neutron poor component to the ejecta that may power an optical kilonova.
+%        After merger, as bound matter from the disrupted NS begins to circularize, mostly through hydrodynamical shocks
+%        and interactions between the tidal tail and the forming accretion disk, magnetic fields and neutrinos start to play an important role.
+%        In addition to the emission from the dynamical ejecta, a subsequent disk “wind” can cause an additional emission
+%        which may peak earlier with a bluer color if the emission is not absorbed by the precedent ejecta.
+%        This outflow takes place over a timescales of seconds or longer, and
+%        can arise from imbalance between viscous turbulent heating and nuclear recombination.
+%        Viscous mildly relativistic outflows are expected to arise for multiple seconds after the merger,
+%        from an increase in the strength of the magnetic field, angular momentum transport and accretion of matter onto the BH,
+%        caused by the growth of the magnetorotational instability.
+%        The post-merger outflows are the least understood part of the evolution,
+%        because existing general relativistic simulation are quite limited in the physical effects considered.
+%        In particular, the large scale structure of magnetic fields within and outside of the post-merger accretion disk
+%        is not well-constrained by merger simulations, even though it has a crucial role on the eventual continuous or more intermittent relativistic jet emission,
+%        which may lead to the production of a short GRB.
+%        As seen in Section $\ref{subsec:grb}$, CBC was a potential candidate for short GRB progenitors,
+%        and was indeed confirmed with the first EM-GW joint detection of a merging NS binary,
+%        as seen in Section $\ref{subsec:GW170817}$, cementing the link between short GRBs and BNS binary mergers.
 	
 
 
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\label{ch:datanalysis}
-\fpg{Giri di correzione: 0.}%
-	In a targeted GW follow-up of short GRBs search, a convenient way to increase its speed and sensitivity to EM bright GW events, 
-	is to discriminate between regions in the parameter space that enclose combinations of masses and spins, 
-	consistent with the minimum counterpart possibility requirement to have a NS in the binary, i.e. BNS and NSBH.
-	For the latter systems we need to exclude the EM dim case of the BH swallowing the NS,
-	and since GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH, 
-	an estimation of the remnant matter post merger is a useful indicator of whether a coalescence event is accompanied by an EM signal.         
-	In the O2 coherent GW search triggered by short GRBs, the template bank was generated implementing the fitting formula $\ref{eq:mrem}$,
-	and as already seen in Chapter $\ref{ch:neutronhole}$  
 
 \section{Bank Tests}
 
@@ -2382,16 +2382,6 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
                         \caption{}
                         \label{fig:banktest}
                 \end{figure}
-
-                \begin{figure}[H]
-                        \noindent
-                        \label{o3bankvso2bank}
-                        \makebox[\textwidth]{\includegraphics[scale=0.4]{o3bankvso2bank}}%
-                        \centering
-                        \caption{}
-                        \label{fig:o3bankvso2bank}
-                \end{figure}
-
                 \begin{figure}[H]
                         \noindent
                         \label{fittingfactor}
