@@ -1073,16 +1073,14 @@ We are grateful for computational resources provided by Cardiff University, and 
                 \end{equation}
 	The normalised overlap between the two waveforms is given by
 		\begin{align}
-			(\hat{h}_i|\hat{h}_j)& = {{(h_i|h_j)} \over {\sqrt{(h_i| h_i)(h_j| h_j)}}} \\
-                			     & = (h_i|h_j).	
+			(\hat{h}_i|\hat{h}_j)& = {{(h_i|h_j)} \over {\sqrt{(h_i| h_i)(h_j| h_j)}}}\,.
 		\end{align}
-	As usually the template waveforms are defined up to an overall normalization, 
-	in the second line the waveforms are normalized to $(h|h) = 1$. \\
+	As the template waveforms are defined up to an overall normalization, 
+	it is customary to work directly with the normalized $\hat{h}_i$'s. \\
 	The match is then defined as
 		\begin{equation}
 			\mathcal{M}(\lambda, \Delta \lambda) \equiv \max_{\Delta \lambda_{extr}} (\hat h(f;\lambda), \hat h(f;\lambda + \Delta \lambda))
 		\end{equation}
-        \fpg{Qua manca la normalizzazione.}
 	The match is maximised only over the two extrinsic parameters of a template, 
 	because waveforms related by time and phase offsets
 	are described by the same template, 
@@ -1098,7 +1096,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	can be interpreted as a metric in the waveform manifold.  A commonly used quantity related to this metric
 	is the mismatch between two templates $MM = (1 − \mathcal{M})$.
 	Any mismatch between signal and template leads to a loss in SNR, 
-	and to a down-weighting by the signal-based vetoes, see Sec. $\ref{subsec:chi_square_test}$ \fpg{(see Sec.\,...)}. \\
+	and to a down-weighting by the signal-based vetoes, see Sec. $\ref{subsec:chi_square_test}$. \\
 	When constructing a template bank, this mismatch can be viewed as the means
 	to compute the proper distance in the waveform space:
 		\begin{equation}
@@ -1452,7 +1450,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	network, that is optimized in the maximum likelihood sense, 
 	to effectively construct a single, more sensitive detector.
  	While this method is applied to searches for unmodelled burst sources,
-        it is computationally expensive in the case of modelled searches \cite{45}.  It is therefore used for externally triggered searches, when knowing the time- and sky-location of the source can cut the cost of the search.  \fpg{Citare i vari papers metodologici di {\ttfamily PyGRB}.}
+        it is computationally expensive in the case of modelled searches \cite{45}.  It is therefore used for externally triggered searches, when knowing the time- and sky-location of the source can cut the cost of the search.
 	The detection statistic of the {\ttfamily PyGRB} pipeline, see Sec. $\ref{sec:pygrb}$, is based on a coherent search \cite{46, 92},
 	which uses the sky position and time of the GRB with the antenna response function and PSD of each detector in the network. 
         The fact that the detector data are combined coherently allows to define a new ranking statistic, known as coherent SNR, and to build new consistency tests, of which we discuss an example.
@@ -1603,8 +1601,6 @@ We are grateful for computational resources provided by Cardiff University, and 
 \chapter{Highlights from the Gravitational-Wave Observing Runs}
 \label{ch:ObservingRuns}
 \fpg{Giri di correzione: 1.}%
-\fpg{Allora qua sorge un problema, ovvero gli eventi sono sempre di pi\`u...  Hai GW190521 e GW190814 da aggiungere: sono molto particolari come eventi, ti suggerisco di riadattare gli abstract dei 3 papers relativi a questi 2 eventi, senza andare troppo in dettaglio, senn\`o non ne usciamo pi\`u.  Anzi, forse taglier\`o un po' su alcuni degli eventi che hai gi\`a in maniera da non avere troppo squilibrio a cose fatte.}%
-
 	The first direct observation of GWs was achieved at the start of the first observing run (O1) of the advanced detector era \cite{52}.  O1 started on September 12, 2015 and ended on January 19, 2016.  It was followed by a second observing run (O2), from November 30, 2016 to August 25, 2017.  During the last month of O2, on August 1, 2017, Virgo joined the two LIGO detectors for the first time, taking sensitive data about 80\% of the time \cite{13}.  The third observing run (O3) was split in two parts: O3a, which ran between April 1, 2019 and \fpg{...} and O3b, which started on \fpg{...} and was interrupted on March 27, 2020, prior to the scheduled end date, because of the COVID-19 pandemic.  In between observing runs, the detectors are upgraded leading to improvements in sensitivity and duty cycle.
 
 	A total of eleven confident detections were collected from the O1 and O2 data \cite{13}: 
@@ -1703,7 +1699,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 	Sky localization from a GW detector network is primarily determined by the measured delay in the signal arrival times at the sites, 
 	with additional information coming from the signal amplitude and phase \cite{91,12}. 
-	The arrival time at Hanford relative to Livingstone was $\Delta t_{HL} = 7.0^{+0.02}_{-0.02}$s \fpg{Le unit\`a di misura!!!}.
+	The arrival time at Hanford relative to Livingstone was $\Delta t_{HL} = 7.0^{+0.02}_{-0.02}$\,s.
 	The 90\% credible region for the sky localtion of the source of GW150914 had an area of $230\,$deg$^2$.
 	The sky area scales inversely with the square of the SNR \cite{89,90}, 
 	and this trend is followed as this event had the smallest sky localisation and 
@@ -1724,7 +1720,7 @@ We are grateful for computational resources provided by Cardiff University, and 
           \label{o1}
           \includegraphics[scale=0.4]{o1}
           \centering
-          \caption{Time-frequency maps and reconstructed signal waveforms for the three O1 BBH events. Each row refers to a single event.  The three panels in a row show whitened data from the LIGO detector where the higher SNR was recorded. The panel on the left is a normalized time-frequency power map of the GW strain.  The two panels on the right show time-domain reconstructions of the whitened signal, in units of the standard deviation of the noise. The upper panel shows the 90\% credible intervals from the posterior probability density functions of the waveform timeseries inferred by a Bayesian pipeline that used the PhenomP waveform templates ({\ttfamily LALInference}, red band) and by a pipeline that used wavelet reconstruction ({\ttfamily BayesWave}, blue band).  The lower panel shows the maximum likelihood point estimate from the {\ttfamily cohrent WaveBurst} unmodelled search (solid lines), along with a 90\% confidence interval (green band) derived from the {\ttfamily cohrent WaveBurst} analyses of simulated waveforms generated starting from the {\ttfamily LALInference} posterior and injected into data near each event. \cite{13} \fpg{Ma l'asse temporale dov'\`e?}}
+          \caption{Time-frequency maps and reconstructed signal waveforms for the three O1 BBH events. Each row refers to a single event.  The three panels in a row show whitened data from the LIGO detector where the higher SNR was recorded. The panel on the left is a normalized time-frequency power map of the GW strain.  The two panels on the right show time-domain reconstructions of the whitened signal, in units of the standard deviation of the noise. The upper panel shows the 90\% credible intervals from the posterior probability density functions of the waveform timeseries inferred by a Bayesian pipeline that used the PhenomP waveform templates ({\ttfamily LALInference}, red band) and by a pipeline that used wavelet reconstruction ({\ttfamily BayesWave}, blue band).  The lower panel shows the maximum likelihood point estimate from the {\ttfamily cohrent WaveBurst} unmodelled search (solid lines), along with a 90\% confidence interval (green band) derived from the {\ttfamily cohrent WaveBurst} analyses of simulated waveforms generated starting from the {\ttfamily LALInference} posterior and injected into data near each event. \cite{13}}
           \label{fig:o1}
         \end{figure}
 
@@ -1852,7 +1848,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
           \label{o2}
           \includegraphics[scale=0.45]{o2}
           \centering
-          \caption{Same as Fig.\,\ref{fig:o1} but for the O2 events: GW170104, GW170608 and GW170814.\fpg{Quali? Perch\'e 170104 appare due volte.}}
+          \caption{Same as Fig.\,\ref{fig:o1} but for the O2 events: GW170104, GW170608 and GW170814.}
           \label{fig:o2}
         \end{figure}
 
@@ -2036,7 +2032,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	on the number of NS that collide in a volume of the universe every year, bringing this to $250–2810 Gpc^{-3}\,$yr$^{-1}$ \cite{62}.
 
 \subsection{GW190521}
-	The BBH that produced the GW event GW190521 was the most massive and energetic BH merger yet,
+	\fpg{Sono qui.} \fpg{Giri di correzione:0}. The BBH that produced the GW event GW190521 was the most massive and energetic BH merger yet,
 	with unprecedented and unexpected masses of $85^{+21}_{-14} M_{\odot}$ and  $66^{+17}_{-18} M_{\odot}$.
 	The fact that the primary BH mass is $85 M_{\odot}$ is highly unusual, 
 	since this is in conflicts with current models of stellar evolution:
@@ -2061,7 +2057,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	corresponding to an epoch when the universe was only about half its present age $z \sim 0.8$.
 
 \subsection{GW190814}
-	This was the most exciting yet puzzling observation so far, since the initial source classification,
+	\fpg{Giri di correzione:0}. This was the most exciting yet puzzling observation so far, since the initial source classification,
 	went back and forth between being a BBH and a NSBH.
 	First of all, this is the most asymmetric system observed to date:
 	the primary component is a BH with mass $23.2^{+1.1}_{-1.0}$, 
@@ -2095,7 +2091,6 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 
 \chapter{Black hole-neutron star binaries}
 \label{neutronhole}
-\fpg{Sono qui.}
 \fpg{Giri di correzione: 0.}%
         Information on the properties of BH and NS in NSBH binaries come from
         their observation in other types of binary systems or from theoretical considerations:
