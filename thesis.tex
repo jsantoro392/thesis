@@ -1107,7 +1107,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	between template and signal does not jeopardize the detectability of the signal \cite{30}.
 
 \subsubsection{Fitting factor}
-
+\label{subsec:fittingfactor}
 	The standard measure used to determine the set of waveform models to used in a
         search is the fitting factor, $FF$.
 	The fitting factor quantitatively describes the ``closeness'' of 
@@ -2236,9 +2236,11 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
                 \end{figure}
         The new model covers previously unmodeled regions of the parameter space, comparable masses $q \sim 1$ and high spins,
         giving a more accurate  results.
-The benefits of updating the template bank with the new model, are shown in fig.$\ref{fig:o3bankvso2bank}$:
+	The benefits of updating the template bank with the new model, are shown in fig.$\ref{fig:o3bankvso2bank}$:
         the visible missing spot on the right high corner ($M_1 >  2.60 M_\odot$, $M_2 > 15 M_\odot $) of the O2 bank gets covered,
-        which corresponds to high values of the component masses. \\
+        which corresponds to high values of the component masses. 
+	However, this particular region appears less dense than the rest of the mass parameter space, 
+	because as the mass increases, the waveforms get shorter and start to overlap more with each other. \\
         An upgrade in the calculation for $q \sim 1$ binaries in order to distinguish BNS from low-mass NSBH,
         since a solar mass BH in a binary system with a NS companion could mimic the observable properties of a NSNS binary,
         is done by considering the two-body symmetry in vacuum gravity.
@@ -2284,11 +2286,16 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 {\color{red}1}0{\color{green}1}  & {\color{red}1}1{\color{green}0}{\color{blue}1}  & {\color{red}1}1{\color{green}0}{\color{blue}0}  & {\color{red}0}  \\ \hline
 \end{tabular}
 \end{table}
-
-        A visual illustration of the template bank generated with the implementation of the new formula is shown in Fig.$\ref{fig:banktest}$:
-        it is built with a hybrid geometric random method and uses a phenomenological inspiral merger bringdown waveform model for non precessing point particle binaries.
-
-                \begin{figure}[H]
+	The O3a EM-bright template bank, viewed in the black hole mass-spin plane, is shown in Fig.$\ref{fig:banktest}$:
+	a conspicuous section of the parameter space (lower-right) is empty of any templates, 
+	since greater BH masses and larger anti-aligned spins will not result in disruption of the NS before merger. 
+	This template bank was generated with a hybrid geometric random method and uses a 
+        phenomenological inspiral merger bringdown waveform model, IMRPhenomD \cite{205}, 
+        for non precessing point particle binaries, for aligned spin BNS and aligned spin NSBH that produce EM counterpart.
+	The NS can have mass $1M_\odot \leq M_{NS}  \leq 2.8M_\odot$
+	and dimensionless spin magnitude of $\leq 0.05$, which is based on NS parameters from known Galactic BNS systems \cite{206},
+	while the parameters range for the BH is $1M_\odot \leq M_{BH}  \leq 25M_\odot$ and $0 \leq \chi_{BH} \leq 0.998$.
+		\begin{figure}[H]
                         \noindent
                         \label{banktest}
                         \makebox[\textwidth]{\includegraphics[scale=0.45]{banktest}}%
@@ -2296,7 +2303,11 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
                         \caption{Parameter space boundaries for the O3a template bank illustrated through the BH spin vs BH mass.}
                         \label{fig:banktest}
                 \end{figure}
-                \begin{figure}[H]
+        In order to asses the efficiency of the bank we perform some test to calculate the fitting factor, 
+	introduced in Sec.$\ref{subsec:fittingfactor}$.
+	This is done by injecting two sets of known GW signals, broad and point injections, 
+	and determine how well the bank recovers them.
+		\begin{figure}[H]
                         \noindent
                         \label{fittingfactor}
                         \makebox[\textwidth]{\includegraphics[scale=0.4]{fittingfactor}}%
@@ -2544,8 +2555,8 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 	\bibitem{202} Peters, P. C., and Mathews, J. (1963). Gravitational radiation from point masses in a Keplerian orbit. Phys. Rev. 131:435. doi: 10.1103/PhysRev.131.435.
 	\bibitem{203} Stephens, B. C., East, W. E., and Pretorius, F. (2011). Eccentric black hole-neutron star mergers. Astrophys. J. 737:L5. doi: 10.1088/2041-8205/737/1/L5.
 	\bibitem{204} Shibata, M., Taniguchi, K. Coalescence of Black Hole-Neutron Star Binaries. Living Rev. Relativ. 14, 6 (2011). https://doi.org/10.12942/lrr-2011-6.
-
-
+	\bibitem{205} Sebastian Khan, Sascha Husa, Mark Hannam, Frank Ohme, Michael Purrer, Xisco Jimenez Forteza, and Alejandro Bohe. Frequency-domain gravitational waves from nonprecessing black-hole binaries. ii. a phenomenological model for the advanced detector era. Physical Review D, 93(4), Feb 2016.
+	\bibitem{206} Ben Farr, Christopher P. L. Berry, Will M. Farr, Carl-Johan Haster, Hannah Middleton, Kipp Cannon, Philip B. Graff, Chad Hanna, Ilya Mandel, Chris Pankow, and et al. Parameter estimation on gravitational waves from neutron-star binaries with spinning components. The Astrophysical Journal, 825(2):116, Jul 2016.
 \end{thebibliography}
 
 \printbibliography
