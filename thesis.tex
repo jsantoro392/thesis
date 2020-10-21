@@ -2293,6 +2293,8 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
         The template bank is built with a hybrid geometric random method and uses templates generated with an aligned spin model,
         IMRPhenomD \cite{205}, a family of waveforms tuned for small mass ratios with aligned spins,                                                                                                        
         for non precessing point particle binaries.\\
+	The template bank is designed to have an SNR loss of no more than 3\% due to discretisation, 
+	which results in a bank of 288,177  templates. Filtering is performed from 27 Hz to 1000 Hz. 	
 	Since the targeted search puts particular emphasis on the coalescence of  BNS and NSBH systems,
 	it is important that the EM bright bank appropriately covers the region of the parameter space 
 	that is expected to include the progenitors of short GRB and does not expand over this region,
@@ -2335,7 +2337,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 	The first and fourth plot show that the bank performs well to match the injected signals 
 	throughout the parameter space for NSBH and BNS systems, 
 	except for those regions where both masses are high or for anti-aligned spins components.
-	This could be explained as curvature problem: the bank metric could be doing worse for systems with high masses and high reduced spin. 
+	This could be explained as the placement method not performing properly in extreme regions of parameter space.
 	From the missing clustering around points of either of the parameter spaces,
 	the bank should not contain any systematic holes in its sensitivity.
 		\begin{figure}[H]
@@ -2347,7 +2349,16 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 Plot four shows the fitting factor over the injected spin vs the secondary component mass. Plot five is a histogram of number of fitting factors per bin of fitting factors. The last plot has all the same data as the previous but is cumulative to determine percentages.}
                         \label{fig:fittingfactor}
                 \end{figure}
+	The average fitting factor for the entire bank is $\sim0.98$, that means a loss of detection rates of $\sim6\%$,
+	because the detection rate  is proportional to the cube root of the SNR, and SNR $\propto FF$.
+	Since the analysis depends also on the extrinsic parameters such as sky-location and source distance,
+	this is an ideal recovery rate.
 
+	In Fig.$\ref{pointinj}$, results from an additional check for the bank validity is shown: 
+	this is done by using point injections, wherein 10,000 signals are injected at single points in the mass parameter space while varying the spins. 
+	For this set, 43 points in the mass parameter space were chosen randomly. 
+	It confirms that the bank works well, as the lowest fitting factor of these points is 0.9870, 
+	which is consistent with the bank average from the broad injection set. 
                 \begin{figure}[H]
                         \noindent
                         \label{pointinj}
