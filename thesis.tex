@@ -2320,7 +2320,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
         and determine how well the bank recovers them.
 	The broad injections cover the entire parameter space and contains 10,000 injection signals in each of the BNS and NSBH region,
 	approximated by the effective-one-body waveform model SEOBNRv4\_ROM, 
-	which results to be faster during the bank simulation.
+	which results to be faster during the bank simulation.\\
 	The range of mass and spin parameters of the injected signals were chosen 
 	to be the same as that of the bank and were drawn from a uniform distribution in this range. 
 	The necessary requirements the bank must meet to be claimed effective are: 
@@ -2329,7 +2329,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 	below 0.97 should not be clustered in a particular part of parameter space. 
 	However, these conditions are not sufficient for the bank to  successfully recover all possible signals in the parameter region,
 	since there may be different reasons why the template generation is not successful, such as different sensitivities in the two detectors, 	
-	different waveform approximants, precession effects, tidal deformation, etc.
+	different waveform approximants, precession effects, tidal deformation, etc.\\
 	The results are shown in Fig.$\ref{fig:fittingfactor}$: 
 	the majority of fitting factors are above 0.97, 
 	however, since the injection model is different from the one used to construct the template bank
@@ -2350,11 +2350,11 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \label{fig:fittingfactor}
                 \end{figure}
 	The average fitting factor for the entire bank is $\sim0.98$, that means a loss of detection rates of $\sim6\%$,
-	because the detection rate  is proportional to the cube root of the SNR, and SNR $\propto FF$.
+	because the detection rate  is proportional to the cube of the SNR, and SNR $\propto FF$.
 	Since the analysis depends also on the extrinsic parameters such as sky-location and source distance,
 	this is an ideal recovery rate.
 
-	In Fig.$\ref{pointinj}$, results from an additional check for the bank validity is shown: 
+	In Fig.$\ref{fig:pointinj}$, results from an additional check for the bank validity are shown: 
 	this is done by using point injections, wherein 10,000 signals are injected at single points in the mass parameter space while varying the spins. 
 	For this set, 43 points in the mass parameter space were chosen randomly. 
 	It confirms that the bank works well, as the lowest fitting factor of these points is 0.9870, 
@@ -2370,6 +2370,11 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 
 \section{O3 offline {\ttfamily PyGRB} analysis}
 \label{sec:pygrb}
+	From April 2019 to September 2019, the Advanced LIGO  and  Advanced  Virgo detectors undertook 
+	the first part of the third observing run (O3a).
+	PyGRB was used to search for GWs associated with short and ambiguous duration GRBs detected during O3a. 
+	The GRBs analysed here were detected by Swift BAT or Fermi GBM.
+
 \subsection{GRB190425089}
 
 \subsection{GRB190627A}
