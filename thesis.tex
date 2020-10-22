@@ -1452,7 +1452,9 @@ We are grateful for computational resources provided by Cardiff University, and 
 	network, that is optimized in the maximum likelihood sense, 
 	to effectively construct a single, more sensitive detector.
  	While this method is applied to searches for unmodelled burst sources,
-        it is computationally expensive in the case of modelled searches \cite{45}.  It is therefore used for externally triggered searches, when knowing the time- and sky-location of the source can cut the cost of the search.
+        it is computationally expensive in the case of modelled searches \cite{45}.  
+	It is therefore used for externally triggered searches, 
+	when knowing the time and sky-location of the source can cut the cost of the search.
 	The detection statistic of the {\ttfamily PyGRB} pipeline, see Sec. $\ref{sec:pygrb}$, is based on a coherent search \cite{46, 92},
 	which uses the sky position and time of the GRB with the antenna response function and PSD of each detector in the network. 
         The fact that the detector data are combined coherently allows to define a new ranking statistic, known as coherent SNR, and to build new consistency tests, of which we discuss an example.
@@ -2097,11 +2099,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 \label{ch:datanalysis}
 \fpg{Sono qui.}
 \fpg{Giri di correzione: 0.}%
-        The {\ttfamily PyGRB} pipeline performs a targeted search for CBC GW signals in LIGO and Virgo data associated with SGRBs seen by Swift and Fermi,
-        using the known sky location of the SGRB and the relative GW detector sensitivities to analyses the data coherently, as described in $\ref{subsec:coherent}$.
-        Even though this approach is more computationally expensive than a coincident search $\ref{subsec:coincident}$,
-        it is more sensitive.
-        In this chapter we will illustrate how to increase the search speed and sensitivity to EM bright GW events,
+        In this chapter we will illustrate how to increase the search speed and sensitivity to EM bright GW events of the {\ttfamily PyGRB} offline search,
         by implementing a new model that helps discriminating between regions in the parameter space that enclose combinations of masses and spins,
         consistent with the minimum counterpart possibility requirement to have a NS in the binary, i.e. BNS and NSBH.
         For the latter systems we need to exclude the EM dim case of the BH swallowing the NS,
@@ -2381,6 +2379,11 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 
 \section{O3 offline {\ttfamily PyGRB} analysis}
 \label{sec:pygrb}
+	The {\ttfamily PyGRB} pipeline performs a targeted search for CBC GW signals in LIGO and Virgo data associated with SGRBs seen by Swift and Fermi,
+        using the known sky location of the SGRB and the relative GW detector sensitivities to analyses the data coherently, as described in $\ref{subsec:coherent}$.
+        Even though this approach is more computationally expensive than a coincident search $\ref{subsec:coincident}$,
+        it is more sensitive.
+	
 	From April 2019 to September 2019, the Advanced LIGO  and  Advanced  Virgo detectors undertook 
 	the first part of the third observing run (O3a).
 	PyGRB was used to search for GWs associated with short and ambiguous duration GRBs detected during O3a. 
