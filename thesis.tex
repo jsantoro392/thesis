@@ -2383,7 +2383,29 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         using the known sky location of the SGRB and the relative GW detector sensitivities to analyses the data coherently, as described in $\ref{subsec:coherent}$.
         Even though this approach is more computationally expensive than a coincident search $\ref{subsec:coincident}$,
         it is more sensitive.
-	
+	The analysis is performed if at least two IFOs are active at the time the SGRB was observed, 
+	and if the supplied data cover a sufficiently long period of time either side of the SGRB.
+	The pipeline looks for a GW signal in a time window, “on-source”, that covers  5 s before to 1 s 
+	after the Earth crossing time of the SGRB.
+	However, in order to ensure that the detectors were operating stably at this time, 
+	additional data is required to provide a good estimate of the detector sensitivity. 
+	The first part of the analysis consists in matched-filtering the individual detector data;
+	knowing sky location of the GRB and the fact that gravitational waves travel at the speed of light,
+	data from each detector is then time-shifted so that there is a temporal coincidence between the GW and the GRB in each IFO.
+	A list of triggers is assembled by keeping only times when the individual detector $\rho > 4$,
+	and discarding any trigger that is not coincident in at least two detectors in the network. 
+	Further trigger selection get accomplished after calculating the $\rho_{coinc}$, 
+	and rejecting any trigger with $\rho_{coinc}<6$, and then repeating the same procedure for the $\rho_{coh}$.
+	The last cut is done by computing the $\rho_{null}$ and keeping only the triggers that satisfy the following conditions:
+		\begin{equation}
+			\rho_{null} \leq 5.25 \hspace*{2cm} \text{and} \hspace*{2cm} \rho_{coh} \leq 20
+		\end{equation}
+		\begin{equation}
+			\rho_{null} \leq {{\rho_{coh}-20}\over {5}} \hspace*{2cm} \text{and} \hspace*{2cm} rho_{coh} > 20
+		\end{equation}
+	This prevents losing possibile loud GW events, that have high $\rho_{null}$ and $\rho_{coh}$ values,
+	because differences between the actual GW waveform and the template used for the matched filter, 
+	as well as inaccuracies in timing and sky position, can all lead to some fraction of the energy of a GW contributing to the null SNR. 	
 	From April 2019 to September 2019, the Advanced LIGO  and  Advanced  Virgo detectors undertook 
 	the first part of the third observing run (O3a).
 	PyGRB was used to search for GWs associated with short and ambiguous duration GRBs detected during O3a. 
