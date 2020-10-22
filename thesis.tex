@@ -2327,9 +2327,11 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
         already introduced in Sec.$\ref{subsec:fittingfactor}$.
         This is done by injecting two sets of known GW signals, broad and point injections,
         and determine how well the bank recovers them.
-	The broad injections cover the entire parameter space and contains 10,000 injection signals in each of the BNS and NSBH region,
+	The broad injections cover the entire BNS and NSBH parameter space and contains 10,000 injection signals each,
 	approximated by the effective-one-body waveform model SEOBNRv4\_ROM, 
 	which results to be faster during the bank simulation.\\
+	The NSBH injection set is injected  through the same EM-bright condition so that
+	only potentially EM-bright source waveforms are used to tune the pipeline and test its efficiency at making detections.
 	The range of mass and spin parameters of the injected signals were chosen 
 	to be the same as that of the bank and were drawn from a uniform distribution in this range. 
 	The necessary requirements the bank must meet to be claimed effective are: 
@@ -2385,6 +2387,18 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	The GRBs analysed here were detected by Swift BAT or Fermi GBM.
 
 \subsection{GRB190425089}
+		\begin{figure}[H]
+                        \noindent
+                        \label{scienceseggrb1}
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{scienceseggrb1}}%
+                        \centering
+	 		\caption{}
+                        \label{fig:scienceseggrb1}
+                \end{figure}
+
+
+
+
 
 \subsection{GRB190627A}
 
