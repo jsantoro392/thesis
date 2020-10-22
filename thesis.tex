@@ -2105,11 +2105,11 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         by implementing a new model that helps discriminating between regions in the parameter space that enclose combinations of masses and spins,
         consistent with the minimum counterpart possibility requirement to have a NS in the binary, i.e. BNS and NSBH.
         For the latter systems we need to exclude the EM dim case of the BH swallowing the NS,
-        and since GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH,
-        an estimation of the remnant matter post merger is a useful indicator of whether a coalescence event is accompanied by an EM signal. \\
-        {\ttfamily PyGRB} is a matched filter search, therefore it is, foremost, that the template bank covers the region
-        of the parameter space of BNS and NSBH systems,
-        which are the GW sources for which electromagnetic follow-up is most promising.
+        since SGRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH.\\
+        Therefore, an estimation of the remnant matter post merger is a useful indicator of whether a coalescence event is accompanied by an EM signal. \\
+	{\ttfamily PyGRB} is a matched filter search that focus on GW sources for which electromagnetic follow-up is most promising, 
+       	hence it is important that the template bank does not contain template waveforms that will not lead to the formation of a torus,
+	in the NSBH parameter space.
 
 \section{Black hole-neutron star binaries}
         Information on the properties of BH and NS in NSBH binaries come from
@@ -2181,12 +2181,21 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
                         {{M_{NS}} \over {R_{NS}^2}} \sim {{3M_{BH}} \over {d_{tid}^3}}R_{NS}
                 \end{equation}
         from which tidal disruption is simply $d_{tid} \sim (M_{BH}/M_{NS})^{1/3}R_{NS}$.
+	Many factors influence the  tidal disruption of the NS: 
+	it is more likely that the NS will be swallowed directly by a more massive BH, 
+	since it exerts weaker tidal forces at the ISCO;
+	a highly  spinning BH has the effect of reducing the ISCO radius,
+	possibly beyond the NS Roche limit.
+	Furthermore, the EOS of the NS can highly effect the conditions to power a SGRB:
+	the softer the EOS, the larger the NS radius, the easier to power an EM counterpart,
+	since the tidal force acting across the diameter of the star will be greater.
+
         A few tens of milliseconds after tidal disruption occurs the remnant consists of
         a remnant BH and tidal debris containing gravitationally bound and unbound matter.
         Some material gravitationally bound to the remnant swerves
         into an approximately axisymmetric disk around the BH, while some debris material,
         a large amount of neutron-rich material, is dynamically ejected and spread outwards at mildly relativistic speeds.
- The accretion disk an spread to larger radii to conserve angular momentum in the rotational period $\sim 10 ms$,
+	 The accretion disk an spread to larger radii to conserve angular momentum in the rotational period $\sim 10 ms$,
         rather than being confined within the circularizing radius, resulting in a gradual mass infall into the BH over longer timescales, $\sim 0.1-1 s$.
         However, the mass accretion time scale is much longer than the rotational period, and hence, the disk remains quasi-stationary for $\gg 10 ms$.
         With the intention of obtaining accurate predictions for identifying and characterising NSBH mergers
