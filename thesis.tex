@@ -1294,13 +1294,13 @@ We are grateful for computational resources provided by Cardiff University, and 
         and to assign an accurate statistical significance to candidate signals.
         In order to eliminate the worst periods of detector performance, 
         data quality investigations are conducted by looking only at the detector behaviour,  
-        which is analysed by monitoring environmental and instrumental channels \cite{40}.
+        which is analysed by monitoring environmental and instrumental channels \cite{40}.\\
         After removing data that is not suitable for astrophysical searches, 
         noise transients, glitches, of unknown origin could still be present in the data 
         and cause certain templates to produce high SNR values.
         To mitigate the effect of glitches, a gating procedure is applied:
         after identification of times impacting on the sensitivity of the search,
-        the data are zeroed out around these times \cite{42}.
+        the data are zeroed out around these times \cite{42}. \\
         Filtering the data with template banks generates a matched-filter SNR for each template in each detector;
         GPS times of local maxima that exceed the SNR threshold are recorded as triggers. 
         Waveform consistency tests are then needed to determine if the morphology 
@@ -1309,29 +1309,73 @@ We are grateful for computational resources provided by Cardiff University, and 
 	
 \subsection{$\chi^2$ test}
 \label{subsec:chi_square_test}
-	For signals from compact binary mergers, one can construct $\chi^2$-test.
-	A standard $\chi^2$-test consists in splitting the template into $p$ non-overlapping frequency bins 
-	constructed so that each one contributes equally to 
-	the SNR of a perfectly matching signal \cite{28, 41}. 
-	The $\chi^2$ statistic compares the expected to the measured SNR in each bin as follows:
+In general, the non-stationary detector output data $s(t)$ can be described as
 		\begin{equation}
-			\chi^2_r = {1 \over {2p-2}}   \sum_{i=1}^{i=p} || \langle   s|h_i  \rangle -   \langle  h_i|h_i   \rangle ||^2\,,
+			s(t) = n(t) + Ah(t) + Bg(t) 
 		\end{equation}
-	where $\chi^2_r = \chi^2/(2p-2)$ is the reduced chi-squared.  For real GW signals, this value should be close to unity, 
-	meaning that the data is describing Gaussian noise with an embedded signal.\\
-	The SNR returned by the matched filtering procedure is combined with the $\chi^2$-test result to produce a ranking statistic 
-	that down-weights triggers caused by noise transients, the so-called reweighted SNR:
+	where $g(t)$ is an additional non-Gaussian noise contribution to the data stream, 
+	orthogonal to the template, and $A$ and $B$ are amplitude factors. 
+	Contrary to GW signals which ring off only against templates 
+	that have similar morphology to the GW, 
+	loud glitches may return a high SNR when matched filtered against a 
+	large variety of templates because their amplitude $B$ is high. \\
+	$\chi^2$-tests are necessary to check that triggers match the waveform of the  template.
+	The glitch contribution $g(t)$ is taken to be the power orthogonal to $h(t)$ 
+	and both $g(t)$ and $h(t)$ are normalized, so that 
 		\begin{equation}
-		\begin{cases}
-			\hat \rho &= \rho \hspace*{4.5cm}  \text{for} \hspace*{0.15cm}\chi^2_r \leq 1 \\
-			\hat \rho &= \rho[{1 \over 2} (1 + (\chi^2_r)^3)]^{-1/6}  \hspace*{1.5cm}  \text{for} \hspace*{0.15cm} \chi^2_r > 1
-		\end{cases}
+			(g|h)=0, \hspace*{2cm} (g|g)=1, \hspace*{2cm} (h|h)=1
 		\end{equation}
-                \fpg{Quello che segue riguarda i consistency tests, non i chi-square tests.} 
-	This rewighting process makes sure that the distribution of $\hat \rho$
-        in noise is close to that of SNR in Gaussian noise.
-        Conversely, for a true astrophysical signal $\hat \rho \approx \rho$,
-        as long as the mismatch between signals and templates is small.
+	In order to construct a $\chi^2$-test, an additional set of N waveforms $T^i$, 
+	orthonormal to the template in question, is needed 
+		\begin{equation}
+			(h|T^i)=0,  \hspace*{2cm} (T^i|T^j)=\delta^{ij}
+		\end{equation}
+	Furthermore, for the $\chi^2$-test to be effective, 
+	the $T^i$ must have a good overlap with the glitch waveform $g(t)$.
+	When the noise is stationary B = 0, the orthonormality condition translates to 
+ 		\begin{equation}
+			\chi^2 \equiv \sum^N_{i=1}(T^i|s)^2 =\sum^{N}_{i=1}(T^i|n)^2
+		\end{equation}
+	whether a GW signal is present or not. 
+	Thus the test is $\chi^2$ distributed with N degrees of freedom, 
+	with a mean and variance of 
+		\begin{equation}
+			\langle \chi^2 \rangle = N, \hspace*{2cm} Var\langle \chi^2 \rangle=2N
+		\end{equation}
+	This is true for any set of waveforms $T^i$ given the above assumptions. 
+	In the case there is a  glitch in the data $B \neq 0$, the $\chi^2$ takes the form
+		\begin{equation}
+			\chi^2 =  \sum^N_{i=1}[(T^i|n) + B(T^I|g)]^2.
+		\end{equation}
+	Thus the mean and variance are 
+		\begin{equation}
+			\langle \chi^2 \rangle = N+ B^2\sum^N_{i=1}(T^i|g)^2, 
+		\end{equation}
+		\begin{equation}
+			Var\langle \chi^2 \rangle=2N+ 4B^2\sum^N_{i=1}(T^i|g)^2, 
+		\end{equation}
+	The procedure to distinguish signals from glitches consists in calculating the $\chi^2$-test 
+	and divide by the number of degrees of freedom: for a GW signal this should be $\sim 1$, 
+	but for a glitch it will be greater than one by an amount that is proportional to the square of the amplitude of the glitch. \\
+	Applying a proper threshold on the value of $\chi^2$ per degree of freedom, 
+	its helpful to get rid of glitches, which will be those triggers exceeding the threshold. \\
+	The challenge in constructing a $\chi$-test is to select the basis waveforms $T^i$ 	
+	such they have large overlaps with the observed glitches in the data and 
+	are orthonormal and orthogonal to the template waveform $h$. 
+	If this is done successfully, then any glitch producing a large SNR will also give a large value of $\chi^2$, 
+	inconsistent with a signal in Gaussian noise. 
+	One way to construct a set of waveforms orthogonal to $h$ is using the formula
+		\begin{equation}
+			T^i = {{t^I-(t^i|h)h} \over {\sqrt{1-(t^i|h)^2}}}
+		\end{equation}
+	While this ensures $(h|T^i) = 0$ it does not guarantee orthonormality $(T^i|T^j)=\delta^{ij}$. 
+	Thus the formula for $\chi^2$ will be a sum of correlated Gaussian variables, 
+	for which the mean is unchanged, but the variance becomes
+		\begin{equation}
+			Var\langle \chi^2 \rangle=2N+ 2\sum^N_{i\ neq j}(T^i|T^j)^2, 
+		\end{equation}
+	It has been found, however, that this does not present a significant obstacle to using these tests, 	
+	especially as the thresholds are tuned empirically.
  
 \subsection{False Alarm Rate}
 \label{subsec:far}
