@@ -1323,12 +1323,12 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	The glitch contribution $g(t)$ is taken to be the power orthogonal to $h(t)$ 
 	and both $g(t)$ and $h(t)$ are normalized, so that 
 		\begin{equation}
-			(g|h)=0, \hspace*{2cm} (g|g)=1, \hspace*{2cm} (h|h)=1
+			(g|h)=0, \hspace*{1.5cm} (g|g)=1, \hspace*{1.5cm} (h|h)=1
 		\end{equation}
 	In order to construct a $\chi^2$-test, an additional set of N waveforms $T^i$, 
 	orthonormal to the template in question, is needed 
 		\begin{equation}
-			(h|T^i)=0,  \hspace*{2cm} (T^i|T^j)=\delta^{ij}
+			(h|T^i)=0,  \hspace*{1.5cm} (T^i|T^j)=\delta^{ij}
 		\end{equation}
 	Furthermore, for the $\chi^2$-test to be effective, 
 	the $T^i$ must have a good overlap with the glitch waveform $g(t)$.
@@ -1340,7 +1340,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	Thus the test is $\chi^2$ distributed with N degrees of freedom, 
 	with a mean and variance of 
 		\begin{equation}
-			\langle \chi^2 \rangle = N, \hspace*{2cm} Var\langle \chi^2 \rangle=2N
+			\langle \chi^2 \rangle = N, \hspace*{1.5cm} Var\langle \chi^2 \rangle=2N
 		\end{equation}
 	This is true for any set of waveforms $T^i$ given the above assumptions. 
 	In the case there is a  glitch in the data $B \neq 0$, the $\chi^2$ takes the form
@@ -1372,7 +1372,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	Thus the formula for $\chi^2$ will be a sum of correlated Gaussian variables, 
 	for which the mean is unchanged, but the variance becomes
 		\begin{equation}
-			Var\langle \chi^2 \rangle=2N+ 2\sum^N_{i\ neq j}(T^i|T^j)^2, 
+			Var\langle \chi^2 \rangle=2N+ 2\sum^N_{i \neq j}(T^i|T^j)^2, 
 		\end{equation}
 	It has been found, however, that this does not present a significant obstacle to using these tests, 	
 	especially as the thresholds are tuned empirically.
@@ -1594,7 +1594,6 @@ In general, the non-stationary detector output data $s(t)$ can be described as
         with a coherent signal at all detectors, obtains exactly the same signal but with a reduced noise background \cite{45}.
         This makes the coherent method highly effective at removing background noise, and therefore coherent searches more sensitive than coincident once.
 
-
 \subsubsection{Null Stream Consistency}
 	In the context of a coherent search for CBC signals,
 	is straightforward to construct a consistency test to distinguish noise transients from GW signals,
@@ -1613,6 +1612,33 @@ In general, the non-stationary detector output data $s(t)$ can be described as
                 \end{equation}
 	Requiring a small null SNR is an effective method to separate incoherent noise transients from real GW signals: 
 	such noise events may give a large coherent SNR, but are highly likely to also give a large null SNR \cite{45}.
+
+\subsubsection{Multi-detector $\chi^2$ tests}
+	In order to extend the idea of the $\chi^2$-test to a multi detector search,
+	a four component waveform $\textbf{h}_{\mu}$ that satisfy the condition to 	
+	be orthogonal in the dominant polarization basis 
+		\begin{equation}
+			(\textbf{h}_{\mu}|\textbf{h}_{\nu}) = \mathcal{M}_{\mu \nu}
+		\end{equation}
+	needs to be introduced.
+	Applying the standard normalisation procedure
+		\begin{equation}
+			(\hat{\textbf{h}_{\mu}}|\hat{\textbf{h}_{\nu}}) = \delta_{\mu \nu}
+		\end{equation}
+	a set of normalised test waveforms $\hat{t}^i_{\mu}$, orthogonal to $\hat{\textbf{h}_{\mu}}$ can be defined as
+		\begin{equation}
+			T^i_{\mu} = {{\hat{t}^i_{\mu} - \sum_{\nu}(\hat{\textbf{t}}^i_{\mu}|\hat{\textbf{h}}_{\nu})\hat{h}_{\nu}} \over {\sqrt{1-\sum_{\sigma}(\hat{\textbf{t}}^i_{\sigma}|\hat{\textbf{h}}_{\sigma})^2}}}
+		\end{equation}
+	Thus, the coherent, multi-detector $\chi^2$-test is defined as 
+		\begin{equation}
+			\chi^2= \sum^4_{\mu=1} \sum^N_{i=1} (\textbf{T}^i_{\mu}|\textbf{s})^2
+		\end{equation}
+	Provided the test waveforms are orthonormal, in the 
+sense that 
+		\begin{equation}
+			 (\textbf{T}^i_{\mu}| \textbf{T}^j_{\nu})= \delta^{ij} \delta_{\mu \nu}
+		\end{equation}
+	the distribution for a signal matching $h_{\mu}$ plus Gaussian noise will be $\chi^2$ distributed with 4N degrees of freedom. 
 
 \section{Injections}
 
@@ -2456,20 +2482,25 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	The GRBs analysed here were detected by Swift BAT or Fermi GBM.
 
 \subsection{GRB190425089}
-		\begin{figure}[H]
+
+
+\subsection{GRB190627A}
+	GRB190627A  was a Swift detection of a burst that occurred at 11:18:31 UTC on June 27 2019,
+	The BAT on-board calculated location is  $RA=\ang{244.83}$, $Dec = \ang{-5.3}$ with an uncertainty of 3 arcmin.	
+	This was observed to have a duration of $T_{90} (15-350 keV) = 1.60 \pm 0.28 sec$, 
+	which places it at the longer end of the SGRB distribution. 
+	Follow-up electromagnetic observations of 190627A detected the optical counterpart of the GRB, 
+	and by analysing the spectrum it was inferred that $z = 1.942$ is the likely redshift of GRB 190627A.
+	At the time of the burst, two detectors were operating with the  following antenna patterns:
+	H1 with 0.316, and L1 with 0.452.
+                \begin{figure}[H]
                         \noindent
                         \label{scienceseggrb1}
                         \makebox[\textwidth]{\includegraphics[scale=0.3]{scienceseggrb1}}%
                         \centering
-	 		\caption{}
+                        \caption{}
                         \label{fig:scienceseggrb1}
                 \end{figure}
-
-
-
-
-
-\subsection{GRB190627A}
 
 \subsection{GRB190728271}
 
