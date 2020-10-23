@@ -2570,7 +2570,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \begin{figure}[H]
                         \noindent
                         \label{scienceseggrb1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{scienceseggrb1}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{scienceseggrb1}}%
                         \centering
                         \caption{Science data at the time of a GRB from all available detectors is retrieved and then the software decides what data are to be analysed.
 	The minimum required stretch of data is generally set to 1664 s, roughly half an hour,  
@@ -2587,9 +2587,9 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 		\begin{figure}[H]
                         \noindent
                         \label{signalconsistencyplots1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{signalconsistencyplots1}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{signalconsistencyplots1}}%
                         \centering
-                        \caption{Plots of the $\chi^2$-tests is that down-weight or cut loud background triggers that do not resemble the signals. First row shows the “Bank Veto”: it compares the power in the trigger with a small subset of template  waveforms from the template bank. Second row is  the “Autocorrelation Veto”:  it compares the power in the trigger with the veto time-shifted template. The last row contains the $\chi^2$-test that compares the power across frequency bins. }
+                        \caption{\textbf{Signal consistency plots.} Plots of the $\chi^2$-tests is that down-weight or cut loud background triggers that do not resemble the signals. First row shows the “Bank Veto”: it compares the power in the trigger with a small subset of template  waveforms from the template bank. Second row is  the “Autocorrelation Veto”:  it compares the power in the trigger with the veto time-shifted template. The last row contains the $\chi^2$-test that compares the power across frequency bins. }
                         \label{fig:signalconsistencyplots1}
                 \end{figure}
 	When a detector sensitivity is lower compared to the other detectors, 	
@@ -2609,7 +2609,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 		\begin{figure}[H]
                         \noindent
                         \label{detector1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{detector1}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{detector1}}%
                         \centering
                         \caption{First row shows the null SNR against the coherent SNR. Bottom rows show the H1 and L1 SNR against the coherent SNR.}
                         \label{fig:detector1}
@@ -2642,38 +2642,43 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \begin{figure}[H]
                         \noindent
                         \label{missinj1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{missinj1}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj1}}%
                         \centering
-                        \caption{Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins.}
+                        \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins.}
                         \label{fig:missinj1}
                 \end{figure}
-
+	As already seen in the previous section $\ref{sec:pygrb}$,
+	the FAP is the estimated probability that a trial of the same length as the on-source window 
+	might contain a noise event louder than a specific statistic value. 
+	The background significance as FAP is shown in Fig.$\ref{fig:loudestoffsourcevent1}$ against the detection statistic.
+	The BestNR curve should fall off at a BestNR value of $\sim6$, steeply until a value of $\sim8$, 
+	which is  the candidate threshold. 
+	If there is a tail in the distribution, this could be due to a failure to remove glitches. 
+	In Fig.$\ref{fig:loudestoffsourcevent1}$ the BestNR falloff looks clean but there is a small tail;
+	however,  inspecting the loudest offsource event table doesn't reveal any problems.
                 \begin{figure}[H]
                         \noindent
                         \label{loudestoffsourcevent1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{loudestoffsourcevent1}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.4]{loudestoffsourcevent1}}%
                         \centering
-                        \caption{}
+                        \caption{\textbf{Loudest offsource events.} Background significance as false alarm probability (FAP) against the detection statistic, BestNR.}
                         \label{fig:loudestoffsourcevent1}
                 \end{figure}
-
+	The offtrial results for BNS and NSBH with aligned spin injections are shown in Fig.$\ref{fig:offtrial}$,
+	with  the detection efficiency and exclusion distance plots, respectively.
+	These curves should be span the the fraction range smoothly, 	
+	and the loudest event FAPs should be also be randomly distributed in that range. 
+	This is clearly the  case for this GRB analysis, which does not present any problems.
+	For each set, all injections are recovered within a distance of $83.88$Mpc for BNS and of $156.5$Mpc for NSBH.
                 \begin{figure}[H]
                         \noindent
-                        \label{detectionefficiency1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{detectionefficiency1}}%
+                        \label{offtrial}
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{offtrial}}%
                         \centering
-                        \caption{}
-                        \label{fig:detectionefficiency1}
+			 \caption{Injection recovery around the time of GRB190627A, as a function of distance. The  BNS  injection set is represented in the left column, the NSBH with aligned spin set in the column on the right. Top panels shows the fraction found louder than the loudest background event, while bottom panels the fraction louder than the loudest foreground event. }
+			\label{fig:offtrial}
                 \end{figure}
 
-                \begin{figure}[H]
-                        \noindent
-                        \label{exdistance1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{exdistance1}}%
-                        \centering
-                        \caption{}
-                        \label{fig:exdistance1}
-                \end{figure}
 \subsection{GRB190728271}
 	The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728A at 06:30:36 UT on 28 Jul 2019.
 	The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
