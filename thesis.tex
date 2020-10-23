@@ -2629,7 +2629,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	the waveforms models in the template bank and the injected signals.
 	The template bank contains waveforms that do not account for precession effects, 
 	and consider a maximum NS spin of $0.05$. 
-	Therefore BNS missed injections  might have dimensionless with an absolute value greater than $0.05$,
+	Therefore BNS missed injections  might have dimensionless with a magnitude  greater than $0.05$,
 	or either the NS or the BH could have spin components orthogonal to the orbital angular momentum,
 	causing the precession to be dominant.
 	Another reason behind a  missed injection could be a high $\chi^2$-value, caused by a template rang off by a glitch.
@@ -2683,6 +2683,88 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728A at 06:30:36 UT on 28 Jul 2019.
 	The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
 	with a statistical uncertainty of 5.7 degrees, while the duration is $T_{90} = 0.832 \pm 0.905$s.
+	All three detector were operating at  the time of the GRB with the following antenna patterns: 
+	H1 with 0.271, L1 with 0.665, and V1 with 0.463.
+	While the $\chi^2$ plot looks good, the bank and auto veto plots present several vetoed injections, as seen in Fig.$\ref{fig:scplots2}$.
+		\begin{figure}[H]
+                        \noindent
+                        \label{scplots2}
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{scplots2}}%
+                        \centering
+                        \caption{\textbf{Signal consistency plots.}}
+                        \label{fig:scplots2}
+                \end{figure}
+	Further investigations  revealed that most of them are vetoed due to the presence of a highly spinning and precessing component in the binary.
+	A few BNS injections had also a NS with one spin magnitude  $> 0.05$, other than  in-plane spin components.
+	There are some injections in the null stat vetoed area, dragged by glitches.  
+	Since the H1 single SNR plot  looks scattered, Fig.$\ref{fig:detector2}$, with injections barely contained inside 3 sigma,
+	one could  decide to rerun the analysis excluding H1. 
+                \begin{figure}[H]
+                        \noindent
+                        \label{detector2}
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{detector2}}%
+                        \centering
+                        \caption{First row shows the null SNR against the coherent SNR. Bottom rows show the H1 and L1 SNR against the coherent SNR.}
+                        \label{fig:detector2}
+                \end{figure}
+	In the Found/Missed Injection plots in Fig.$\ref{fig:missinj2}$, there are many nearby missed injections 
+	for both BNS and aligned spin NSBH injection sets. 
+	Investigating the BNS missed injections revealed that most of them have at least 
+	one spin magnitude $> 0.05$ that also causes precession;
+	except one, whose spin magnitudes are $\sim0.038$ and $\sim0.036$, 
+	but also has a high $\chi^2$-test value, which is the main cause of the BestNR down-weighting. 
+	This may be due to the large fractional in-plane spin magnitudes, 
+	since the calculated match between template and injection shows a good agreement.
+	This is not the case for some aligned spin NSBH missed injections: 
+	besides the one that does not have spin component  $> 0.05$,
+	a comparison between the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters 
+	shows that these may be suffering from differences between the waveform models.
+	                \begin{figure}[H]
+                        \noindent
+                        \label{missinj2}
+                        \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj2}}%
+                        \centering
+                        \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins.}
+                        \label{fig:missinj2}
+                \end{figure}
+	In order to make a decision about the conditions under which rerunning  the analysis,
+	the last step is looking at the off trial results which shows that injections with higher distances are required.
+	Even though all curves reach $\sim100\%$ efficiency at nearby distances, 
+	the detection efficiency plots are not entirely smooth at nearby distances, as shown in Fig.$\ref{}$.
+                \begin{figure}[H]
+                        \noindent
+                        \label{offtrial2}
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{offtrial2}}%
+                        \centering
+			\caption{}
+                        \label{fig:offtrial2}
+                \end{figure}
+	The analysis rerun with higher distances is shown in Fig.$\ref{}$.
+	Even though there still are many missed injections, caused by either a component having spin magnitude $> 0.05$, 
+	or high $\chi^2$ value, or further in-plane spin components causing precession, 
+	the off trial results have improved.
+	Higher exclusion distances and FAPs are shown in Fig.$\ref{}$: the plateau in the detection efficiency curves and exclusion distance curves is gone, 
+	but they are not completely smooth and the BNS plots shows dips at closer distances.
+	Smoother curves were successfully achieved by rerunning the analysing one more time with even further distances.
+                \begin{figure}[H]
+                        \noindent
+                        \label{offtrial2rerun}
+                        \makebox[\textwidth]{\includegraphics[scale=0.6]{offtrial2rerun}}%
+                        \centering
+                        \caption{}
+                        \label{fig:offtrial2rerun}
+                \end{figure}
+	Follow up investigations about glitches in the IFOs time series showed four spikes with high SNR values :
+        the one at SNR=37.02 corresponds to scattered light, while the ones at 10.75 and 15.81 both are 
+	the result of a blip like glitch around trigger time.
+                \begin{figure}[H]
+                        \noindent
+                        \label{glitch}
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{glitch}}%
+                        \centering
+                        \caption{}
+                        \label{fig:glitch}
+                \end{figure}
 
 \subsection{GRB190425089}
         GRB190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellites,
