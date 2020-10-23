@@ -2749,7 +2749,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \begin{figure}[H]
                         \noindent
                         \label{offtrial2rerun}
-                        \makebox[\textwidth]{\includegraphics[scale=0.6]{offtrial2rerun}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{offtrial2rerun}}%
                         \centering
                         \caption{}
                         \label{fig:offtrial2rerun}
@@ -2769,7 +2769,84 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 \subsection{GRB190425089}
         GRB190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellites,
         with a sky position of $Ra=\ang{126.5}$ and $Dec=\ang{-58.1}$.
-
+	Initially this analysis was done using all the three IFOs, 
+	that were operating at the time of the GRB:
+	V1 was collecting data at the event time, but its antenna factor is low, 0.47, 
+	compared to the ones of H1 and L1, 0.852 and 0.923 respectively. 
+	This discrepancy between the IFOs sensitivity can be also seen in the single detector SNR vs coherent SNR plots:
+	while it looks clean for L1 and H1, besides a single injection outside the $3 \sigma$ region,
+	the V1 plot is not as clean as the others, as seen in Fig.$\ref{fig:detector3}$. 
+	 	\begin{figure}[H]
+                        \noindent
+                        \label{detector3}
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{detector3}}%
+                        \centering
+                        \caption{}
+                        \label{fig:detector3}
+                \end{figure}
+	By rerunning the analysis, the detection efficiency curves and exclusion distance curves
+	look smoother than in the 3 detector analysis, and they do reach  $\sim 100\%$ and $90\%$ exclusion distances are found,
+	which they did not before, as shown in Fig.$\ref{fig:offtrial3}$  and Fig.$\ref{fig:offtrial_plot3}$.
+	 	\begin{figure}[H]
+                        \noindent
+                        \label{offtrial3}
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial3}}%
+                        \centering
+                        \caption{}
+                        \label{fig:offtrial3}
+                \end{figure}
+	 	\begin{figure}[H]
+                        \noindent
+                        \label{offtrial_plot3}
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_plot3}}%
+                        \centering
+                        \caption{}
+                        \label{fig:offtrial_plot3}
+                \end{figure}
+	However, the curves for precessing injection sets are not entirely smooth at nearby distances; 
+	the NSBHPRECESSSEOBNRV3 curves suffer the most from this.
+	By rerunning the analysis with closer injection for the precessing NSBH, 
+	detection efficiency curves and exclusion distance plots slightly improve, 
+	besides some dips at nearby distances, see Fig.$\ref{fig:offtrial_closer}$.
+	 	\begin{figure}[H]
+                        \noindent
+                        \label{offtrial_closer}
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_closer}}%
+                        \centering
+                        \caption{}
+                        \label{fig:offtrial_closer}
+                \end{figure}
+	In order to increase the number of injections within the IFOs horizon,
+	a new cut for the single detector SNR is introduced: $\rho=0$.
+	Implementing this cut, the H1L1V1 and H1L1 analysis are rerun, both with closer injections.
+	 	\begin{figure}[H]
+                        \noindent
+                        \label{offtrial_closer}
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_closer}}%
+                        \centering
+                        \caption{}
+                        \label{fig:offtrial_closer}
+                \end{figure}
+	In Fig.$\ref{fig:offtrial_de_cut}$ and Fig.$\ref{fig:offtrial_ed_cut}$ it is shown a comparison between the detection efficiency curves and 
+	exclusion distance plots of the 3 IFOs and 2 IFOs analysis with the SNR cut and closer injections.
+	In the first case they look a little smoother but still do not reach  $\sim 100\%$,
+	while in the second case  there are higher exclusion distances and FAPs for all results, and the overall plots look smoother. 
+	 	\begin{figure}[H]
+                        \noindent
+                        \label{offtrial_de_cut}
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_de_cut}}%
+                        \centering
+                        \caption{}
+                        \label{fig:offtrial_de_cut}
+                \end{figure}
+	 	\begin{figure}[H]
+                        \noindent
+                        \label{oofftrial_de_cut}
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_de_cut}}%
+                        \centering
+                        \caption{}
+                        \label{fig:offtrial_de_cut}
+                \end{figure}
 \section{{\ttfamily PyCBC} O3 HL C00 data preliminary runs}
 \label{sec:pycbc00}
 \subsection{Chunk 29}
