@@ -2522,19 +2522,41 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	this data is split into trials with durations equal to that of the on-source window 
 	so that an estimate of the background noise in our detector network around the time of the SGRB can be estimated.
 	The FAP of the on-source trigger is the fraction of off-source trials with an event of equal or greater significance than in the on-source. 
-	The sensitivity of the analysis is assessed by injecting simulated signals to the data stream before performing the search. 
-	The simulated signals are drawn randomly from an astrophysically motivated distribution of distances, component masses and spins and binary inclination. 
-	The simulated signals are compact binary merger waveforms at 3.5 post-Newtonian order \cite{}, 
-	that can be either BNS or NSBH, at appropriate distances to be observable by the detector network. 
-	The efficiency of the analysis at recovering these signals provides a measure of pipeline performance and produces an estimate of the distance to which the pipeline is sensitive. 
+        The efficiency of the analysis is assessed by injecting simulated signals to the data stream before performing the search,
+ 	but it also allows to place constraints on the SGRB source in the event of no detection in the on-source window. 
+        The simulated signals are drawn randomly from an astrophysically motivated distribution of distances given the time and sky position of each trigger, 
+	component masses and spins and binary inclination. 
+	Since BNS systems will not precess significantly within the aLIGO band, the injection set for BNS is built only for generic spin.
+	However, injections for NSBH systems are built both generic and aligned,
+	in order to asses the impact of precession on the search sensitivity for rapidly-spinning and highly-precessing systems.
+	All simulated signals are modelled using the SEOBNRv3 waveform approximate, which is different from IMRPhenomD,
+	the one used to build the template bank. 
+	The injections parameters are chosen in the following way:
+		\begin{itemize}
+			\item $M_{BH}$ are drawn from a Gaussian distribution with mean $10M_\odot$ and width $6M_\odot$.
+			\item $\chi_{BH}$ are drawn uniformly from the interval $[0.00, 0.98]$.
+			\item $M_{NS}$ are drawn from a Gaussian distributions with mean $1.4M_\odot$, 
+				 and widths of $0.2M_\odot$ for BNS systems and $0.4N_\odot$ for NSBH systems \cite{}. 
+				 The larger width for NSBH binaries is chosen in order to reflect the greater uncertainty arising from a lack of observed NSBH systems. 
+			\item For the generic spins sets, both component spins are drawn uniformly from all possible orientations. 
+			\item In all three sets, the SGRB is considered to be emitted in the direction of the binary total angular momentum. 
+				 Relativistic beaming and collimation due to the ambient medium confines the GRB jet to a half-opening angle. 
+				 The observation of prompt gamma-ray emission is, therefore, indicative that the inclination of the total angular momentum 
+				 with respect to the line of sight to the detectors lies within the jet cone. 
+				 In all three injection sets the angle between the total angular momentum and the line-of-sight is uniformly drawn from the interval $[\ang{0}, \ang{30}]$,
+				 since it’s safe to assume that the half-opening angle is $\sim \ang{30}$ \cite{}.
+		\end{itemize}
+	All NSBH injections that will not produce an EM counterpart are excluded, 
+	even under the most optimistic assumptions regarding the NS EOS and the amount of $M_{rem}$ required to power the GRB emission \cite{}. 
+	The data with the injected signals is then filtered with the same EM-bright bank of templates to assess performance. 
+	The efficiency of the analysis at recovering these signals provides a measure of pipeline performance 
+	and produces an estimate of the distance to which the pipeline is sensitive.
 	From April 2019 to September 2019, the Advanced LIGO  and  Advanced  Virgo detectors undertook 
 	the first part of the third observing run (O3a).
-	PyGRB was used to search for GWs associated with short and ambiguous duration GRBs detected during O3a. 
+	PyGRB was used to search for GWs associated with short and ambiguous duration GRBs detected during O3a:
+	in order not to neglect SGRBs in the tail of the duration distribution, 
+	the threshold for a GRB to be short is set to $T_{90} − \Delta T_{90} > 4$s. 
 	The GRBs analysed here were detected by Swift BAT or Fermi GBM.
-
-\subsection{GRB190425089}
-	GRB190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellites, 
-	with a sky position of $Ra=\ang{126.5}$ and $Dec=\ang{-58.1}$.
 
 \subsection{GRB190627A}
 	GRB190627A  was a Swift detection of a burst that occurred at 11:18:31 UTC on June 27 2019,
@@ -2550,34 +2572,79 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \label{scienceseggrb1}
                         \makebox[\textwidth]{\includegraphics[scale=0.3]{scienceseggrb1}}%
                         \centering
-                        \caption{}
+                        \caption{Science data at the time of a GRB from all available detectors is retrieved and then the software decides what data are to be analysed.
+	The minimum required stretch of data is generally set to 1664 s, roughly half an hour,  
+	to ensure there is enough data to accurately estimate the power spectral density (PSD).}
                         \label{fig:scienceseggrb1}
                 \end{figure}
-	        
+	The signal consistency plots in Fig.$\ref{fig:signalconsistencyplots1}$ contain the plots showing the $\chi^2$-test results for bakground
+	in blue crosses, and injection in red crosses; the test are done both with and without injections, where only  background triggers are present.
+	Different rows correspond to different $\chi^2$-tests. 
+	The black line and dark shaded regions denote the cut level: any triggers in the shaded area will have been cut by the  $\chi^2$-tests. 
+	The yellow contour lines show lines of constant re-weighted SNR. 
+	The presence of a non-signal, non-Gaussian noise component in the data can drag an injection into the veto area, causing it to be missed.
+	For this GRB, this happens to a single missed injection with coherent SNR $\sim 12$.
 		\begin{figure}[H]
                         \noindent
                         \label{signalconsistencyplots1}
                         \makebox[\textwidth]{\includegraphics[scale=0.3]{signalconsistencyplots1}}%
                         \centering
-                        \caption{}
+                        \caption{Plots of the $\chi^2$-tests is that down-weight or cut loud background triggers that do not resemble the signals. First row shows the “Bank Veto”: it compares the power in the trigger with a small subset of template  waveforms from the template bank. Second row is  the “Autocorrelation Veto”:  it compares the power in the trigger with the veto time-shifted template. The last row contains the $\chi^2$-test that compares the power across frequency bins. }
                         \label{fig:signalconsistencyplots1}
                 \end{figure}
-
-                \begin{figure}[H]
+	When a detector sensitivity is lower compared to the other detectors, 	
+	this can affect the efficiency of the search.
+	The decision to exclude the data from the least sensitive detector, 	
+	is made after looking at the single IFOs plots, in Fig.$\ref{fig:detector1}$, 
+	that shows the single detector SNR cuts: 
+	the expected trend for the jnjections is to be inside the error lines, wich corresponds to $3\sigma$;
+	if they are scattered  outside these lines instead, it means that the IFO wasn't working properly at  the time of the trigger.  
+	In  the latter case, excluding the less sensitive IFO from the analysis, leads to find better exclusion distances.
+	For the two most sensitive detectors in the SNR network, 
+	a lower threshold is placed on the SNR:
+	if a trigger is not above threshold in any of the two most sensitive it is cut.
+	It is expected that the injections for the Null SNR against the coherent SNR, 
+	will place themselves at low values, while the background triggers should be found with high values. 
+        In this case all the plots look very clean.
+		\begin{figure}[H]
                         \noindent
                         \label{detector1}
                         \makebox[\textwidth]{\includegraphics[scale=0.3]{detector1}}%
                         \centering
-                        \caption{}
+                        \caption{First row shows the null SNR against the coherent SNR. Bottom rows show the H1 and L1 SNR against the coherent SNR.}
                         \label{fig:detector1}
                 \end{figure}
-
+	The injections plots in Fig.$\ref{fig:missinj1}$ show the ability of the search to recover injections at different distances, 
+	against time. It is expected that the analysis is able to better detect nearby injections than far ones. 
+	The panel on the left represents the BNS injection set, while the one on the right the NSBH with aligned spin.
+	Injections are expected to be found at a distance which is compatible with the IFOs range at the time of the GRB, 
+	which can be computed combining the antenna patterns and the sensitivity range.
+	Blue crosses indicate that the injection was found and was more significant than event in the background data. 
+	Red crosses indicate that a trigger was found that was coincident with the injection, but it was vetoed. 
+	Black crosses indicate that no trigger was found that was coincident with the trigger. 
+	Coloured circles indicate that the injection was found but was not louder than all of the background, 
+	and in this case the circle colour indicates the FAP of the trigger.
+	More distant injections tend to be vetoed, missed completely, or have a relatively high FAP.
+	However, there are also missed injections within  the IFOs network range and this can be caused by discrepancies between 
+	the waveforms models in the template bank and the injected signals.
+	The template bank contains waveforms that do not account for precession effects, 
+	and consider a maximum NS spin of $0.05$. 
+	Therefore BNS missed injections  might have dimensionless with an absolute value greater than $0.05$,
+	or either the NS or the BH could have spin components orthogonal to the orbital angular momentum,
+	causing the precession to be dominant.
+	Another reason behind a  missed injection could be a high $\chi^2$-value, caused by a template rang off by a glitch.
+	For this GRB there are 7 missed injections at distance less than 90\% confidence exclusion distance for the BNS injection set.
+	These all have precessing spins in both components and magnitude $>0.05$.
+	The NSBH with aligned spin show one missed injection with $\chi_{BH} = -0.65$. 
+	The injected and recovered chirp masses agree to 3 significant figures. 
+	Calculating the match between the injection and the template using the same approximant returns $\sim 0.85$, 
+	therefore the missed injection is due to differences between the IMRPhenomD and SEOBNRv3 modules.
                 \begin{figure}[H]
                         \noindent
                         \label{missinj1}
                         \makebox[\textwidth]{\includegraphics[scale=0.3]{missinj1}}%
                         \centering
-                        \caption{}
+                        \caption{Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins.}
                         \label{fig:missinj1}
                 \end{figure}
 
@@ -2611,6 +2678,11 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728A at 06:30:36 UT on 28 Jul 2019.
 	The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
 	with a statistical uncertainty of 5.7 degrees, while the duration is $T_{90} = 0.832 \pm 0.905$s.
+
+\subsection{GRB190425089}
+        GRB190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellites,
+        with a sky position of $Ra=\ang{126.5}$ and $Dec=\ang{-58.1}$.
+
 \section{{\ttfamily PyCBC} O3 HL C00 data preliminary runs}
 \label{sec:pycbc00}
 \subsection{Chunk 29}
