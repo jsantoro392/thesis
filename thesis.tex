@@ -118,7 +118,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	following the tidal disruption of a NS, in addition to BNSs, NSBH systems are also considered likely short GRBs progenitors.
 	At the time of writing this work, no certain NSBH coalescence has been observed.
 	This motivates further the use of 
-	offline GW searches targetting short GRB triggers, as the one I conducted in Chapter $\ref{ch:datanalysis}$.
+	offline GW searches targetting short GRB triggers, as the one I conducted in Chapter \ref{ch:datanalysis}.
 	To enable this search in O3, I also generated and validate the set of waveforms used to filter the data (see discussion in Sec\,\fpg{...})
 	This specific set of waveform is known as an ``EM-bright template bank,'' 
 	as it covers only BNSs and NSBH sytems that have undergone tidal disruption and are thus potential short GRB progenitors.
@@ -275,7 +275,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 			{\bar h}_{\mu\nu,} ^{\nu} = \xi_{\mu,\nu}^{\nu}
 		\end{equation}
 	This is a wave equation that always admits a solution, thus one can always achieve the harmonic gauge. 
-	Outside the source where $T_{\mu\nu} = 0$ Eq.$\ref{reduceinstein}$ reads 
+	Outside the source where $T_{\mu\nu} = 0$ Eq.\,(\ref{reduceinstein}) reads 
 		\begin{equation}
 			\square {\bar h}_{\mu\nu} = 0
 		\end{equation}
@@ -379,14 +379,14 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 	The optical layout of the detectors consists in perpendicular 
 	Fabry–Perot arm cavities of the Michelson, 
-	with lasers running along the 4 km arms, as shown in Fig.$\ref{fig:interferometer}$. 
+	with lasers running along the 4 km arms, as shown in Fig.\,\ref{fig:interferometer}. 
 	A beam splitter directs 1064 nm light from a diode-pumped, power amplified, 
 	and intensity and frequency stabilized Nd:YAG laser to the Fabry-Perot arms, 
 	which are made of an input test mass mirror and an end test mass mirror. 
 	The two beams of laser light that return from the two arms are recombined out of phase so that, 
 	in principle, no light reaches the so-called 'dark fringe' of the detector. 
 	The oscillating quadrupolar strain pattern of a GW, 
-	as seen in Fig.$\ref{fig:ring}$, is well matched by a Michelson interferometer,
+	as seen in Fig.\,\ref{fig:ring}, is well matched by a Michelson interferometer,
         which makes a very sensitive comparison of the lengths of its two orthogonal arms.
 	Any variation caused by an alteration in the distance between the mirrors, 
 	produces a very small shift in phase between the beams and, thus, 
@@ -590,7 +590,7 @@ We are grateful for computational resources provided by Cardiff University, and 
                 	{\ddot \zeta}^i = {1 \over 2}{\ddot h}_{ij}^{TT}\zeta^j
                 \end{equation}
         which can be interpreted as if the influence of a GW in a near LLF resembles a Newtonian force. \\
-        Generalizing Eq.$\ref{distance}$, the proper distance may be written as
+        Generalizing Eq.\,(\ref{distance}), the proper distance may be written as
                 \begin{equation}
                 	s = \sqrt{L^2 + h_{ij}(t)L_{i}L_{j}}
                 \end{equation}
@@ -720,7 +720,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	Noise is categorised as either displacement noise, which directly moves the suspended mirrors
         causing a differential change in the arm cavity lengths, or as sensing noise,
         which appears in the readout signal but is not caused by a GW. \\
-        We describe the principal noises that dominate the limits of our sensitivity, (Fig.$\ref{fig:noise2}$).
+        We describe the principal noises that dominate the limits of our sensitivity, (Fig.\,\ref{fig:noise2}).
 		\begin{figure}[H]
                         \includegraphics[scale=0.3]{noise2}
                         \centering
@@ -728,13 +728,13 @@ We are grateful for computational resources provided by Cardiff University, and 
                         \label{fig:noise2}
                 \end{figure}
         At lower frequencies, up to 10Hz, the main contribution to the global noise
-        is due to vibrations of the ground which couple to the mirror motion, (Fig.$\ref{fig:noise2}$ brown line): 
+        is due to vibrations of the ground which couple to the mirror motion, (Fig.\,\ref{fig:noise2} brown line): 
 	it shakes the optics and produces strain signals that mask GW signals. 
         This seismic noise is caused by earthquakes, weather and human activity.
         To reduce the potential movements of the optical elements,
         the mirrors are isolated using an advanced suspension system. \\
         At frequencies where the seismic motion has been sufficiently reduced,
-        between 10Hz and 500Hz, the random Brownian motion of the molecules on the surface of the mirrors and wires dominates (Fig.$\ref{fig:noise2}$ red line). \\
+        between 10Hz and 500Hz, the random Brownian motion of the molecules on the surface of the mirrors and wires dominates (Fig.\,\ref{fig:noise2} red line). \\
         The thermal energy of the interferometer’s components induce vibrations both in the suspensions and in the mirrors.
         The nature of GW signal requires the sensitivity of the interferometric detectors
         to be extremely high in broad frequency band.
@@ -948,13 +948,13 @@ We are grateful for computational resources provided by Cardiff University, and 
         The aim of the match filtering is to look for a filter function to process the data,
 	the output of which will be large when a signal is present and small otherwise. 
         If the waveform, $h(t)$, is embedded in stationary Gaussian noise with zero mean and one-sided power-spectral density (PSD) $S_n(f)$,
-        the optimal filter takes the form $\tilde h_{template}/S_n$, where $\tilde h_{template}$
+        the optimal filter takes the form $\tilde h_{\rm template}/S_n$, where $\tilde h_{\rm template}$
         is the frequency domain waveform template that approximates the real signal to the best of our knowledge.
 	This optimal filter may be cross-correlated with the data over the detector frequency band to search for GW
         signals.  The output of this filtering operation may be viewed as a weighted inner product in the frequency domain, 
 	between the data and the template, where the weight is the inverse PSD of the detector:
 		\begin{equation}
- 			(s|h)(t) = 4Re \int^{f^{high}}_{f^{low}} {{\tilde s (f) \tilde h^{*}_{template}(f)} \over {S_n (f)}} e^{2 \pi ift}df\,, 
+ 			(s|h)(t) = 4Re \int^{f^{high}}_{f^{low}} {{\tilde s (f) \tilde h^{*}_{\rm template}(f)} \over {S_n (f)}} e^{2 \pi ift}df\,, 
 		\end{equation}
 	where the frequency limits $f_{low}$ and $f_{high}$ are determined by the detector bandwidth
 	and $\hat s(f)$ denotes the Fourier-transformed detector data, defined as
@@ -972,14 +972,14 @@ We are grateful for computational resources provided by Cardiff University, and 
 	The filter output can be normalized by the variance of the optimal filter, $\sigma^2$,
 	which is an estimate of the uncertainty in a measurement of $(s|h)$ due to the detector noise:
                 \begin{equation}
-                        \sigma^2 =4 \int^{f^{high}}_{f^{low}} {{|\tilde h_{template}(f)|^2} \over {S_n(f)}}df
+                        \sigma^2 =4 \int^{f^{high}}_{f^{low}} {{|\tilde h_{\rm template}(f)|^2} \over {S_n(f)}}df
                 \end{equation}
  	The normalized output of the optimal filter is a new thresholding statistic and can be defined as  
 	the signal-to-noise ratio (SNR), the ratio of the observed filter output to its,
         expected or observed, root-mean-square fluctuations \cite{24}:
                 \begin{align}
                         \rho(t) &= {{| (s|h) |} \over {\sigma_{h}}} \\
-                             &= {{(\tilde s|\tilde h_{template})} \over {\sqrt{(h_{template}|h_{template})}}}\,.
+                             &= {{(\tilde s|\tilde h_{\rm template})} \over {\sqrt{(h_{\rm template}|h_{\rm template})}}}\,.
                 \end{align}
         The value of the SNR will then be proportional to the amplitude of the signal buried in the noise.
 	The smart choice for a threshold that can be set on this value is such that
@@ -1025,12 +1025,12 @@ We are grateful for computational resources provided by Cardiff University, and 
 		\end{equation}
 	The bonus of extracting information from both polarizations of the GW 
 	comes at the cost of increasing the expectation value of $\rho$ when there is no signal present. 
-	For a detector output that includes a signal at distance $D_{eff}$, 
-	$s(t) = n(t) + (D_{eff}/1 Mpc)^{-1}h_{1Mpc}$, 
+	For a detector output that includes a signal at distance $D_{\rm eff}$, 
+	$s(t) = n(t) + (D_{\rm eff}/1 Mpc)^{-1}h_{1Mpc}$, 
 	a biased estimate of the effective distance for a given trigger 
 	may be defined by combining the definition of the SNR with the template normalization $\sigma_h$:
 		\begin{equation}
-			\hat D_{eff} = {{\sigma_h} \over {\rho}}
+			\hat D_{\rm eff} = {{\sigma_h} \over {\rho}}
 		\end{equation}
 	In reality, the parameters of astrophysical systems will not be known a-priori, 
 	and searches must therefore be sensitive to signals at any location in the parameter space \cite{25}. 
@@ -1097,7 +1097,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	can be interpreted as a metric in the waveform manifold.  A commonly used quantity related to this metric
 	is the mismatch between two templates $MM = (1 − \mathcal{M})$.
 	Any mismatch between signal and template leads to a loss in SNR, 
-	and to a down-weighting by the signal-based vetoes, see Sec. $\ref{subsec:chi_square_test}$. \\
+	and to a down-weighting by the signal-based vetoes, see Sec.\,\ref{subsec:chi_square_test}. \\
 	When constructing a template bank, this mismatch can be viewed as the means
 	to compute the proper distance in the waveform space:
 		\begin{equation}
@@ -1425,8 +1425,8 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	The two main detection strategies to search for GWs 	
 	from a network of detectors are known as coincident and coherent.  
 	In this section, we highlight differences between the two methods, 
-	which will be both applied to analyse the O3 data, in Chapter $\ref{ch:datanalysis}$.  
-	\fpg{Qui ci vuole una forward reference al capitolo con i risultati, cos\`i spieghi che hai fatto entrambi i tipi di searches.}
+	which will both be applied to analyse data from the first part of O3, in Chapter \ref{ch:datanalysis}.  
+
 
 \subsection{Coincident analysis}
 \label{subsec:coincident}
@@ -1444,7 +1444,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
         The dominant cost of the search is in performing a matched filter 
         of the data against a bank of template waveforms (see, Section \ref{sec:matched_filtering}):
         this task is performed once per detector per template \cite{28, 45}. \\
-	The {\ttfamily PyCBC} pipeline, used in Sec. $\ref{sec:pycbc00}$, 
+	The {\ttfamily PyCBC} pipeline, used in Sec.\,\ref{sec:pycbc00}, 
 	requires consistency of arrival time and template parameters (masses and spins) 
 	between triggers in each of the detectors must be exactly the same,,
 	since the same waveform should be observed in all detectors.
@@ -1458,7 +1458,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	and the probability of an equally loud event being caused by noise is below a chosen threshold. 
 	A statistical significance is assigned to candidate events by the FAR,
 	calculated as a function of the detection statistic, $\hat{\rho}_{coinc}$,
-	via analysis of time-shifted data, as already seen in Sec. $\ref{subsec:far}$. \\
+	via analysis of time-shifted data, as already seen in Sec.\,\ref{subsec:far}. \\
 	Single-detector triggers from one detector are time shifted with respect to triggers of the other detector;
 	all such coincidences are recorded and assigned a ranking statistic, 
 	to create a background data set that does not contain coincident GW signals.
@@ -1499,12 +1499,12 @@ In general, the non-stationary detector output data $s(t)$ can be described as
         it is computationally expensive in the case of modelled searches \cite{45}.  
 	It is therefore used for externally triggered searches, 
 	when knowing the time and sky-location of the source can cut the cost of the search.
-	The detection statistic of the {\ttfamily PyGRB} pipeline, see Sec. $\ref{sec:pygrb}$, is based on a coherent search \cite{46, 92},
+	The detection statistic of the {\ttfamily PyGRB} pipeline, see Sec.\,\ref{sec:pygrb}, is based on a coherent search \cite{46, 92},
 	which uses the sky position and time of the GRB with the antenna response function and PSD of each detector in the network. 
         The fact that the detector data are combined coherently allows to define a new ranking statistic, known as coherent SNR, and to build new consistency tests, of which we discuss an example.
 	Furthermore, the data from all detectors are combined to extract the two physical GW polarisations. 
 \subsubsection{Coherent SNR}	
-	The output $s^X(t)$, as already seen in Eq. $\ref{eq:strain}$ by detector $X$,  
+	The output $s^X(t)$, as already seen in Eq.\,(\ref{eq:strain}) by detector $X$,  
 	is the sum of the detector response to a GW $h^X$,
 	with the detector noise $n^X(t)$
 		\begin{equation}
@@ -1536,7 +1536,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
         The larger the value of $\ln \lambda$, the likelier it is that a signal is present.
 	Even for a known sky location, it is necessary to search a seven 
 	dimensional parameter space of signals for binaries on circular orbits with and aligned spin components.
-	However, as already stated in Sec. $\ref{subsec:mfcbc}$, the analysis is greatly simplified 
+	However, as already stated in Sec.\,\ref{subsec:mfcbc}, the analysis is greatly simplified 
 	maximising over source orientation, polarisation phase and distance.
 	Specifically, the two polarizations of the waveform can be expressed as 
 		\begin{equation}
@@ -1548,7 +1548,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
  	where $h_0$ and $h_{{{\pi} \over {2}}}$ are the two phases of the waveform,
 	and $\mathcal{A}_i$ are constant amplitude terms.
 	Combining these expressions for the binary coalescence waveform 
-	and the detector response ($\ref{eq:gwsignal})$,
+	and the detector response (\ref{eq:gwsignal}),
 	the gravitational waveform observed in a given detector is given by
 		\begin{equation}
 			h^X(t) = \sum_{\mu=1}^4\mathcal{A}^{\mu}(D,\psi,\phi_0,\iota)h_{\mu}^X(t)
@@ -1571,7 +1571,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	and no longer the $\mathcal{A}_{\mu}$ parameters. 
 	Thus four of the original seven waveform parameters have been analytically maximized, leaving three to be searched over.
 
-	In order to easily compare the coherent analysis with the coincident one discussed in Sec.$\ref{subsec:coincident}$,
+	In order to easily compare the coherent analysis with the coincident one discussed in Sec.\,\ref{subsec:coincident},
 	a  first useful assumption is to consider a coincident search where an identical template is used in all detectors;
 	then re-formulate the expression for both the $\rho^2_{coinc}$ and $\rho^2_{coh}$ as
 		\begin{align}
@@ -1586,7 +1586,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	While a coincidence search requires a signal to be observed in two or more detectors, 
         resulting in the coincident SNR to be simply the sum of all power consistent with the template waveform in each detector,
         a coherent search naturally incorporates the SNR from all operational detectors \cite{45, 46}.
-	The coherent SNR ($\ref{eq:rhocoh}$) makes use of the fact that GWs have only two polarizations 
+	The coherent SNR (\ref{eq:rhocoh}) makes use of the fact that GWs have only two polarizations 
 	to restrict the accumulated SNR to the physical subspace spanned by $f_+$ and $f_{\times}$. 
 	It has been demonstrated that for a signal in the absence of noise the coincident and coherent SNRs are identical. 
         For noise events, the coincident SNR includes all of the noise, 
@@ -1669,22 +1669,18 @@ sense that
 	is to examine the injected distance as a function of frequency 
 	(or total mass) for missed and found injections.
 
-        \fpg{Devi mettere una forward reference a quando discuti qualcosa di relativo alle tue injections/efficiencies nel capitolo dei risultati.  Ho tolto le hardware injections perch\'e non le hai mai usate/viste.  Per\`o devi mischiare il testo precedente con quello che segue: al momento ci sono delle (inutili) ripatizioni).}.
+	Software injections are time series of simulated gravitational waveforms that are 
+	added via software to detector data.  Adding them to data synthetically, rather than physically displacing the test masses to simulate a signal, has the advantage of not affecting the duty cycle of the detectors. 
+        The waveforms are generated starting from a synthetic population of a certain type of source, 
+	described as a collection of astrophysical parameter values.  These include the strain amplitude, sky location, 	
+	and initial frequency \cite{30}. 
+	The injections are separated in time by specifying a time-step to place them. 
+	To randomize the placement, a time interval needs to be provided and the an injection is placed in this time interval around 
+	each time-step.
+	Further, one can choose to perform multiple sets of software injections, each one with its distinct set of parameters. 
+	Thus, one can study the recovery of thousands of injections to decide on the best tuning for a search, and assess the performance of a search once the tunings are fix \cite{47}.
 
-	Software injections are a streaming time series of simulated gravitational waveforms, 
-	generated in the software, from a synthetic population of a certain type of source, 
-	described by astrophysical parameters, including the strain amplitude, sky location, 	
-	and initial frequency, and added to the data stream \cite{30}. 
-	This can be done many times, by specifying a time-step at which to place injections, 
-	without disturbing the detector or significantly reducing the duty cycle of the detectors. 
-	To randomize the placement, a time interval needs to be provided around 
-	each time-step in which the injection is actually placed. 
-	Furthermore, one can choose to set up multiple injection searches with different injection sets. 
-	Thus, we can study the recovery of thousands of injections to decide on the best tuning for a search. \\ 
-	However, there is no limit to the number of software injections that can be performed. 
-	The analysis of the same data can simply be repeated with different software injections present as often as is desired. 
-	For the CBC analysis, the process is to use software injections to tune the pipeline; 
-	they are also used when calculating upper limits \cite{47}.
+        \fpg{Devi mettere una forward reference a quando discuti qualcosa di relativo alle tue injections/efficiencies nel capitolo dei risultati.}
 	
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Highlights from the Gravitational-Wave Observing Runs}
@@ -1731,7 +1727,7 @@ sense that
 	total mass less than $100{M_\odot}$, and dimensionless non-precessing spins up to 0.99 and 0.05 for BHs and NSs, respectively.
 
 	To assess the candidate significance, they compare the candidate with the noise background, 
-	and once an event is confirmed to be a real GW signal, it is removed from the data when estimating the noise background (see Sec.\,$\ref{subsec:far}$).
+	and once an event is confirmed to be a real GW signal, it is removed from the data when estimating the noise background (see Sec.\,\ref{subsec:far}).
 	Data affected by short duration artifacts of known origin are identified and removed from the analysis dataset.
 	After applying this data quality process, the remaining coincident analysis time in O1 was 48.6\,days. 
 	The analyses search only stretches of data longer than a minimum duration, 
@@ -1867,8 +1863,8 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 
 	The source of GW170104 is a BBH system with total mass of $\sim 50M_\odot$.  	
 	The inferred component masses are $31.2^{+8.4}_{-6.0}M_\odot$ and $19.4^{+5.3} _{-5.9}M_\odot$.
-	The BH spins are best constrained through measurement of the effective inspiral spin parameter, $\chi_{eff}$, 
-	a mass-weighted combination of the spin components perpendicular to the orbital plane; the credible interval found was $\chi_{eff} = −0.12^{+0.21}_{−0.30}$. 
+	The BH spins are best constrained through measurement of the effective inspiral spin parameter, $\chi_{\rm eff}$, 
+	a mass-weighted combination of the spin components perpendicular to the orbital plane; the credible interval found was $\chi_{\rm eff} = −0.12^{+0.21}_{−0.30}$. 
 	This result implies that the BH spins show a preference for being 
 	anti-aligned with the orbital angular momentum, but the zero spin possibility is not excluded. 
 	This is distinct from the case for GW151226, which had a strong preference 
@@ -1894,7 +1890,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	$12^{+7}_{-2}M_\odot$ and $7^{+2}_{-2}M_\odot$.  
 	Since NSs are expected to have masses below $\sim 4M_\odot$ \cite{141},
 	both objects are most likely BHs. 
-	The $\chi_{eff}$ inferred from this event is $0.07^{+0.23}_{−0.09}$,
+	The $\chi_{\rm eff}$ inferred from this event is $0.07^{+0.23}_{−0.09}$,
 	disfavoring large, anti-aligned spins on both BH.
         Finally, GW170608 was localized at a luminosity distance of $D_L = 340^{+140}_{−140}Mpc$, and within a sky area of $\sim 520\,$deg$^2$, determined largely by the signal's measured arrival time at LLO $\sim 7$\,ms later than at LHO.
  
@@ -2041,7 +2037,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	As a result of the richer detectable multipole content, the orientation of the binary is more accurately determined and 
 	tighter bounds are obtained on intrinsic source parameters, such as the mass ratio and primary spin magnitude, 
 	which constitutes the tightest constraint on the individual spin magnitude of a BH obtained with GWs so far. 
-	Even though the $\chi_{eff}$ is found to be positive, large in-plane spin components are absent, 
+	Even though the $\chi_{\rm eff}$ is found to be positive, large in-plane spin components are absent, 
 	indicating that the system is slightly precessing.
 	The degeneracy between luminosity distance and inclination angle that is typical 
 	in the results obtained when higher multipoles are suppressed is broken when higher multipoles are visible, 
@@ -2054,7 +2050,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
           \label{asymmetric}
           \includegraphics[scale=0.2]{asymmetric}
           \centering
-          \caption{The inferred mass ratio $q$ and effective spin $\chi_{eff}$ of GW190412. The distributions reported in orange and blue are obtained with two distinct waveform models. \cite{133}} 
+          \caption{The inferred mass ratio $q$ and effective spin $\chi_{\rm eff}$ of GW190412. The distributions reported in orange and blue are obtained with two distinct waveform models. \cite{133}} 
           \label{fig:asymmetric}
         \end{figure}
 
@@ -2195,6 +2191,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
 	in the NSBH parameter space.
 
 \section{Black hole-neutron star binaries}
+\label{sec:emnsbh}
         Information on the properties of BH and NS in NSBH binaries come from
         their observation in other types of binary systems or from theoretical considerations:
         while most NS observed in BNS systems have masses in the [1.2 − 1.6] $M_{\odot}$ range \cite{200},
@@ -2241,7 +2238,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         when the NS first reaches either the innermost stable circular orbit $R_{ISCO}$ of the BH, or the tidal disruption distance $d_{tid}$,
         the distance at which the BH gravitational field is able to induce the tidal disruption of the star.
         Depending on the relative position of $R_{ISCO}$ and the $d_{tid}$ there are
-        two possible classes of events, as seen in Fig.$\ref{fig:nsbh}$, with very distinct observational properties;
+        two possible classes of events, as seen in Fig.\,\ref{fig:nsbh}, with very distinct observational properties;
         however, the final remnant of a NSBH merger is always a BH.
         Both the GW emission features and the possibility that NSBH binaries have an EM counterpart
         depends crucially on whether or not the NS is tidally disrupted. \\
@@ -2314,21 +2311,21 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         each result rely on tidal disruption dynamics considerations and
         is fitted to a set of numerical simulations,
         in order to assess their validity in the parameter space covered by the simulations.
-        While model $\ref{eq:mrem}$ is tested against 26 numerical simulation covering mass ratios
+        While model \ref{eq:mrem} is tested against 26 numerical simulation covering mass ratios
         in the range $M_{BH}/M_{NS}=3-7$, $\chi_{BH}$ up to 0.9, and $R_{NS} \approx 11-16$km,
-        model $\ref{eq:mremup}$ is fitted to 75 simulations covering the range $q = 1-7$ $\chi_{BH} =-0.5-0.97$,
+        model \ref{eq:mremup} is fitted to 75 simulations covering the range $q = 1-7$ $\chi_{BH} =-0.5-0.97$,
         and $C_{NS} = 0.13-0.182$.
                 \begin{figure}[H]
                         \noindent
                         \label{o3bankvso2bank}
                         \makebox[\textwidth]{\includegraphics[scale=0.4]{o3bankvso2bank}}%
                         \centering
-                        \caption{Comparison between the projection of the O2 and O3a search parameter space in the plane of the component masses, for the template bank generated with the old model $\ref{eq:mrem}$, and the updated one $\ref{eq:mremup}$, respectively.}
+                        \caption{Comparison between the projection of the O2 and O3a search parameter space in the plane of the component masses, for the template bank generated with the old model \ref{eq:mrem}, and the updated one \ref{eq:mremup}, respectively.}
                         \label{fig:o3bankvso2bank}
                 \end{figure}
         The new model covers previously unmodeled regions of the parameter space, comparable masses $q \sim 1$ and high spins,
         giving a more accurate  results.
-	The benefits of updating the template bank with the new model, are shown in fig.$\ref{fig:o3bankvso2bank}$:
+	The benefits of updating the template bank with the new model, are shown in Fig.\,\ref{fig:o3bankvso2bank}:
         the visible missing spot on the right high corner ($M_1 >  2.60 M_\odot$, $M_2 > 15 M_\odot $) of the O2 bank gets covered,
         which corresponds to high values of the component masses. 
 	However, this particular region appears less dense than the rest of the mass parameter space, 
@@ -2337,15 +2334,15 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         since a solar mass BH in a binary system with a NS companion could mimic the observable properties of a NSNS binary,
         is done by considering the two-body symmetry in vacuum gravity.
         When taking the limit $q \rightarrow \infty$ one loses the invariance under exchanging the bodies' labels,
-        which can be restored by replacing $q^{-1}$ with $\eta$, as in Eq. $\ref{eq:mremup}$.
+        which can be restored by replacing $q^{-1}$ with $\eta$, as in Eq.\,(\ref{eq:mremup}).
         This choice leads to a lager value for $R_{ISCO}$ when considering a binary with $q \sim 1$,
         which is physically expected because the accreting NS will begin its plunge at a $R_{ISCO}^{effective}$,
         causing the BH to grow, consequently the ISCO location for the remaining material outside will change,
         leading to a fractional change in the position of the ISCO for smaller $q$.
         This gives a more precise estimation for $M_{rem}$, which was previously overestimated for nearly equal-mass NSBH.
 
-        This is clearly shown in the region $M_2 \leq 2.5$ of fig.$\ref{fig:o3bankvso2bank}$, where there is a slighty denser coverage.
-        Furthermore, while Eq. $\ref{eq:mrem}$ did not consider nonlinear effects taking place after the coalescence of a NS
+        This is clearly shown in the region $M_2 \leq 2.5$ of Fig.\,\ref{fig:o3bankvso2bank}, where there is a slighty denser coverage.
+        Furthermore, while Eq.\,(\ref{eq:mrem}) did not consider nonlinear effects taking place after the coalescence of a NS
         with a rapidly spinning BH, leading to an underestimation of $M_{rem}$,
         the introduction of the new free parameters $\gamma$ and $\delta$ accurately predicts that in this scenario,
         the remnant mass has larger values than previously found and therefore it is more likely to have an EM counterpart.
@@ -2367,7 +2364,7 @@ Two more GW signals were detected during O1, and both were consistent with a BBH
         so that ‘\textbf{{\color{green}mask\_bns}}’ identifies only BNS, while the systems that do not satisfy this conditions
         are identified by ‘\textbf{{\color{black}masknsbh}}’.
         All these point’s masses and spin are stored.
-        As previously showed in Sec.$\ref{subsec:mrem}$, not all NSBH coalescence produce an EM counterpart,
+        As previously showed in Sec.\,\ref{subsec:mrem}, not all NSBH coalescence produce an EM counterpart,
         so the next step is to keep only those systems whose $M_{rem}$ is greater than the threshold mass to have a counterpart,
         identify these points with ‘\textbf{{\color{blue}mask\_nsbh\_bright}}’ and store their masses and spins.
 \begin{table}[H]
@@ -2379,7 +2376,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 \end{tabular}
 \end{table}
 		
-	The O3a EM-bright template bank, viewed in the black hole mass-spin plane, is shown in Fig.$\ref{fig:banktest}$:
+	The O3a EM-bright template bank, viewed in the black hole mass-spin plane, is shown in Fig.\,\ref{fig:banktest}:
         a conspicuous section of the parameter space (lower-right) is empty of any templates,
         since greater BH masses and larger anti-aligned spins will not result in disruption of the NS before merger.\\ 
         The template bank is built with a hybrid geometric random method and uses templates generated with an aligned spin model,
@@ -2407,7 +2404,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
                 \end{figure}
 	The effectiveness of the bank, in recovering the signal it searching for,
         can be assessed by calculating the fitting factor,
-        already introduced in Sec.$\ref{subsec:fittingfactor}$.
+        already introduced in Sec.\,\ref{subsec:fittingfactor}.
         This is done by injecting two sets of known GW signals, broad and point injections,
         and determine how well the bank recovers them.
 	The broad injections cover the entire BNS and NSBH parameter space and contains 10,000 injection signals each,
@@ -2424,7 +2421,7 @@ EM-bright     & EM-bright  & EM-dim  & EM-dim  \\\hline
 	However, these conditions are not sufficient for the bank to  successfully recover all possible signals in the parameter region,
 	since there may be different reasons why the template generation is not successful, such as different sensitivities in the two detectors, 	
 	different waveform approximants, precession effects, tidal deformation, etc.\\
-	The results are shown in Fig.$\ref{fig:fittingfactor}$: 
+	The results are shown in Fig.\,\ref{fig:fittingfactor}: 
 	the majority of fitting factors are above 0.97, 
 	however, since the injection model is different from the one used to construct the template bank
 	fitting factors down to 0.965 across the parameter space are present as expected.
@@ -2448,7 +2445,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Since the analysis depends also on the extrinsic parameters such as sky-location and source distance,
 	this is an ideal recovery rate.
 
-	In Fig.$\ref{fig:pointinj}$, results from an additional check for the bank validity are shown: 
+	In Fig.\,\ref{fig:pointinj}, results from an additional check for the bank validity are shown: 
 	this is done by using point injections, wherein 10,000 signals are injected at single points in the mass parameter space while varying the spins. 
 	For this set, 43 points in the mass parameter space were chosen randomly. 
 	It confirms that the bank works well, as the lowest fitting factor of these points is 0.9870, 
@@ -2465,8 +2462,8 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 \section{O3 offline {\ttfamily PyGRB} analysis}
 \label{sec:pygrb}
 	The {\ttfamily PyGRB} pipeline performs a targeted search for CBC GW signals in LIGO and Virgo data associated with SGRBs seen by Swift and Fermi,
-        using the known sky location of the SGRB and the relative GW detector sensitivities to analyses the data coherently, as described in $\ref{subsec:coherent}$.
-        Even though this approach is more computationally expensive than a coincident search $\ref{subsec:coincident}$,
+        using the known sky location of the SGRB and the relative GW detector sensitivities to analyses the data coherently, as described in \ref{subsec:coherent}.
+        Even though this approach is more computationally expensive than a coincident search \ref{subsec:coincident},
         it is more sensitive.
 	The analysis is performed if at least two IFOs are active at the time the SGRB was observed, 
 	and if the supplied data cover a sufficiently long period of time either side of the SGRB.
@@ -2492,7 +2489,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	This prevents losing possibile loud GW events, that have high $\rho_{null}$ and $\rho_{coh}$ values,
 	because differences between the actual GW waveform and the template used for the matched filter, 
 	as well as inaccuracies in timing and sky position, can all lead to some fraction of the energy of a GW contributing to the null SNR. 	
-	In order to remove glitches, the remaining triggers go through the $\chi^2$-test, described in Sec.$\ref{}$
+	In order to remove glitches, the remaining triggers go through the $\chi^2$-test, described in Sec.\,\ref{}.
 	Once the final list of triggers is ready, they need to be ranked in order of likelihood of being a real GW event:
 	the surviving triggers SNRs are re-weighted based on the values of their $\chi^2$-tests and null SNR.
 	Therefore, glitches that still pass the cut, but do not match well with the template waveform, will be down-weighted.
@@ -2577,7 +2574,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	to ensure there is enough data to accurately estimate the power spectral density (PSD).}
                         \label{fig:scienceseggrb1}
                 \end{figure}
-	The signal consistency plots in Fig.$\ref{fig:signalconsistencyplots1}$ contain the plots showing the $\chi^2$-test results for bakground
+	The signal consistency plots in Fig.\,\ref{fig:signalconsistencyplots1} contain the plots showing the $\chi^2$-test results for bakground
 	in blue crosses, and injection in red crosses; the test are done both with and without injections, where only  background triggers are present.
 	Different rows correspond to different $\chi^2$-tests. 
 	The black line and dark shaded regions denote the cut level: any triggers in the shaded area will have been cut by the  $\chi^2$-tests. 
@@ -2595,7 +2592,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	When a detector sensitivity is lower compared to the other detectors, 	
 	this can affect the efficiency of the search.
 	The decision to exclude the data from the least sensitive detector, 	
-	is made after looking at the single IFOs plots, in Fig.$\ref{fig:detector1}$, 
+	is made after looking at the single IFOs plots, in Fig.\,\ref{fig:detector1}, 
 	that shows the single detector SNR cuts: 
 	the expected trend for the jnjections is to be inside the error lines, wich corresponds to $3\sigma$;
 	if they are scattered  outside these lines instead, it means that the IFO wasn't working properly at  the time of the trigger.  
@@ -2614,7 +2611,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \caption{First row shows the null SNR against the coherent SNR. Bottom rows show the H1 and L1 SNR against the coherent SNR.}
                         \label{fig:detector1}
                 \end{figure}
-	The injections plots in Fig.$\ref{fig:missinj1}$ show the ability of the search to recover injections at different distances, 
+	The injections plots in Fig.\,\ref{fig:missinj1} show the ability of the search to recover injections at different distances, 
 	against time. It is expected that the analysis is able to better detect nearby injections than far ones. 
 	The panel on the left represents the BNS injection set, while the one on the right the NSBH with aligned spin.
 	Injections are expected to be found at a distance which is compatible with the IFOs range at the time of the GRB, 
@@ -2647,14 +2644,14 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins.}
                         \label{fig:missinj1}
                 \end{figure}
-	As already seen in the previous section $\ref{sec:pygrb}$,
+	As already seen in the previous Sec.\,\ref{sec:pygrb},
 	the FAP is the estimated probability that a trial of the same length as the on-source window 
 	might contain a noise event louder than a specific statistic value. 
-	The background significance as FAP is shown in Fig.$\ref{fig:loudestoffsourcevent1}$ against the detection statistic.
+	The background significance as FAP is shown in Fig.\,\ref{fig:loudestoffsourcevent1} against the detection statistic.
 	The BestNR curve should fall off at a BestNR value of $\sim6$, steeply until a value of $\sim8$, 
 	which is  the candidate threshold. 
 	If there is a tail in the distribution, this could be due to a failure to remove glitches. 
-	In Fig.$\ref{fig:loudestoffsourcevent1}$ the BestNR falloff looks clean but there is a small tail;
+	In Fig.\,\ref{fig:loudestoffsourcevent1} the BestNR falloff looks clean but there is a small tail;
 	however,  inspecting the loudest offsource event table doesn't reveal any problems.
                 \begin{figure}[h]
                         \noindent
@@ -2664,7 +2661,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \caption{\textbf{Loudest offsource events.} Background significance as false alarm probability (FAP) against the detection statistic, BestNR.}
                         \label{fig:loudestoffsourcevent1}
                 \end{figure}
-	The offtrial results for BNS and NSBH with aligned spin injections are shown in Fig.$\ref{fig:offtrial}$,
+	The offtrial results for BNS and NSBH with aligned spin injections are shown in Fig.\,\ref{fig:offtrial},
 	with  the detection efficiency and exclusion distance plots, respectively.
 	These curves should be span the the fraction range smoothly, 	
 	and the loudest event FAPs should be also be randomly distributed in that range. 
@@ -2685,7 +2682,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	with a statistical uncertainty of 5.7 degrees, while the duration is $T_{90} = 0.832 \pm 0.905$s.
 	All three detector were operating at  the time of the GRB with the following antenna patterns: 
 	H1 with 0.271, L1 with 0.665, and V1 with 0.463.
-	While the $\chi^2$ plot looks good, the bank and auto veto plots present several vetoed injections, as seen in Fig.$\ref{fig:scplots2}$.
+	While the $\chi^2$ plot looks good, the bank and auto veto plots present several vetoed injections, as seen in Fig.\,\ref{fig:scplots2}.
 		\begin{figure}[h]
                         \noindent
                         \label{scplots2}
@@ -2697,7 +2694,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Further investigations  revealed that most of them are vetoed due to the presence of a highly spinning and precessing component in the binary.
 	A few BNS injections had also a NS with one spin magnitude  $> 0.05$, other than  in-plane spin components.
 	There are some injections in the null stat vetoed area, dragged by glitches.  
-	Since the H1 single SNR plot  looks scattered, Fig.$\ref{fig:detector2}$, with injections barely contained inside 3 sigma,
+	Since the H1 single SNR plot  looks scattered, Fig.\,\ref{fig:detector2}, with injections barely contained inside 3 sigma,
 	one could  decide to rerun the analysis excluding H1. 
                 \begin{figure}[h]
                         \noindent
@@ -2707,7 +2704,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \caption{First row shows the null SNR against the coherent SNR. Bottom rows show the H1 and L1 SNR against the coherent SNR.}
                         \label{fig:detector2}
                 \end{figure}
-	In the Found/Missed Injection plots in Fig.$\ref{fig:missinj2}$, there are many nearby missed injections 
+	In the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2}, there are many nearby missed injections 
 	for both BNS and aligned spin NSBH injection sets. 
 	Investigating the BNS missed injections revealed that most of them have at least 
 	one spin magnitude $> 0.05$ that also causes precession;
@@ -2730,7 +2727,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	In order to make a decision about the conditions under which rerunning  the analysis,
 	the last step is looking at the off trial results which shows that injections with higher distances are required.
 	Even though all curves reach $\sim100\%$ efficiency at nearby distances, 
-	the detection efficiency plots are not entirely smooth at nearby distances, as shown in Fig.$\ref{}$.
+	the detection efficiency plots are not entirely smooth at nearby distances, as shown in Fig.\,\ref{}.
                 \begin{figure}[h]
                         \noindent
                         \label{offtrial2}
@@ -2739,11 +2736,11 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 			\caption{}
                         \label{fig:offtrial2}
                 \end{figure}
-	The analysis rerun with higher distances is shown in Fig.$\ref{}$.
+	The analysis rerun with higher distances is shown in Fig.\,\ref{}.
 	Even though there still are many missed injections, caused by either a component having spin magnitude $> 0.05$, 
 	or high $\chi^2$ value, or further in-plane spin components causing precession, 
 	the off trial results have improved.
-	Higher exclusion distances and FAPs are shown in Fig.$\ref{}$: the plateau in the detection efficiency curves and exclusion distance curves is gone, 
+	Higher exclusion distances and FAPs are shown in Fig.\,\ref{}: the plateau in the detection efficiency curves and exclusion distance curves is gone, 
 	but they are not completely smooth and the BNS plots shows dips at closer distances.
 	Smoother curves were successfully achieved by rerunning the analysing one more time with even further distances.
                 \begin{figure}[h]
@@ -2775,7 +2772,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	compared to the ones of H1 and L1, 0.852 and 0.923 respectively. 
 	This discrepancy between the IFOs sensitivity can be also seen in the single detector SNR vs coherent SNR plots:
 	while it looks clean for L1 and H1, besides a single injection outside the $3 \sigma$ region,
-	the V1 plot is not as clean as the others, as seen in Fig.$\ref{fig:detector3}$. 
+	the V1 plot is not as clean as the others, as seen in Fig.\,\ref{fig:detector3}. 
 	 	\begin{figure}[h]
                         \noindent
                         \label{detector3}
@@ -2786,7 +2783,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \end{figure}
 	By rerunning the analysis, the detection efficiency curves and exclusion distance curves
 	look smoother than in the 3 detector analysis, and they do reach  $\sim 100\%$ and $90\%$ exclusion distances are found,
-	which they did not before, as shown in Fig.$\ref{fig:offtrial3}$  and Fig.$\ref{fig:offtrial_plot3}$.
+	which they did not before, as shown in Fig.\,\ref{fig:offtrial3}  and Fig.\,\ref{fig:offtrial_plot3}.
 	 	\begin{figure}[H]
                         \noindent
                         \label{offtrial3}
@@ -2807,7 +2804,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	the NSBHPRECESSSEOBNRV3 curves suffer the most from this.
 	By rerunning the analysis with closer injection for the precessing NSBH, 
 	detection efficiency curves and exclusion distance plots slightly improve, 
-	besides some dips at nearby distances, see Fig.$\ref{fig:offtrial_closer}$.
+	besides some dips at nearby distances, see Fig.\ref{fig:offtrial_closer}.
 	 	\begin{figure}[h]
                         \noindent
                         \label{offtrial_closer}
@@ -2827,7 +2824,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \caption{}
                         \label{fig:offtrial_closer}
                 \end{figure}
-	In Fig.$\ref{fig:offtrial_de_cut}$ and Fig.$\ref{fig:offtrial_ed_cut}$ it is shown a comparison between the detection efficiency curves and 
+	In Fig.\,\ref{fig:offtrial_de_cut} and Fig.\,\ref{fig:offtrial_ed_cut} it is shown a comparison between the detection efficiency curves and 
 	exclusion distance plots of the 3 IFOs and 2 IFOs analysis with the SNR cut and closer injections.
 	In the first case they look a little smoother but still do not reach  $\sim 100\%$,
 	while in the second case  there are higher exclusion distances and FAPs for all results, and the overall plots look smoother. 
@@ -2853,11 +2850,11 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         and with maximal $\chi_{BH}$ of 0.998 and 0.05 for the NS spin,
         and to provide a measure of their statistical significance.
         This analysis performs direct matched filtering of the data against a template bank,
-        to calculate the SNR for each combination of detector, template waveform, and coalescence time as described in Sec.$\ref{}$.
+        to calculate the SNR for each combination of detector, template waveform, and coalescence time as described in Sec.\,\ref{}.
 \subsection{Chunk 29}
-	The panel on the left of Fig.$\ref{fig:range_time}$ shows that this chunk of raw calibrated data has a duration of 8.59 days,
+	The panel on the left of Fig.\,\ref{fig:range_time} shows that this chunk of raw calibrated data has a duration of 8.59 days,
 	starting from 01:31:32 UTC on 20th December to 15:40:36 UTC of 28th December 2019,
-	during which the coincident time was of 6.235 days (72%) and the detector sensitivity is shown on the right panel of Fig.$\ref{fig:range_time}$.
+	during which the coincident time was of 6.235 days (72\%) and the detector sensitivity is shown on the right panel of Fig.\,\ref{fig:range_time}.
                 \begin{figure}[h]
                         \noindent
                         \label{range_time}
@@ -2872,7 +2869,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Going through the list of the loudest non-coincident detector triggers in both detectors,
 	divided by template-length bins, no potential GW events were found.
 	Triggers were mostly caused by close to loud gated glitches and blips. 
-	Fig.$\ref{fig:glitch}$ on the left shows an example of blip type glitch with few fainter blip around it spanning $\sim1$ second, for H1. 
+	Fig.\,\ref{fig:glitch} on the left shows an example of blip type glitch with few fainter blip around it spanning $\sim1$ second, for H1. 
 	The same goes for L1: there  are no potential GW events and mostly scattered light. 
                 \begin{figure}[h]
                         \noindent
@@ -2885,7 +2882,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Looking at the missed injections with SNR$>8$ in the various injection categories,
 	showed that for BNS and NSBH sets they were all very quiet, namely SNR$<8$.
 	Same for the BBH missed injections, except for a loud missed injection due to gated data in L1 at the time of merging, 
-	seen in Fig.$\ref{fig:missed_inj}$. %seen in Fig.$\ref{fig:missed_inj}$.                 
+	seen in Fig.\,\ref{fig:missed_inj}. %seen in Fig.\,\ref{fig:missed_inj}.                 
 		\begin{figure}[h]
                         \noindent
                         \label{missed_inj}
