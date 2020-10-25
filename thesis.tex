@@ -2917,77 +2917,84 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 \subsection{GRB 190728271}
        \fpg{Sono qui: le 3 GRBs le correggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.}
 \fpg{Rifare sulla falsa riga della precedente sezione.  Per le capitons puoi mettere ``Same as Fig... but for GRB 190728271.''  Nel testo non dovrai rispiegare i plot.}
-	The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728A at 06:30:36 UT on 28 Jul 2019.
-	The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
-	with a statistical uncertainty of 5.7 degrees, while the duration is $T_{90} = 0.832 \pm 0.905$s.
-	All three detector were operating at the time of the GRB 190728271, 
-	and their responses in the direction of the GRB were: H1 with 0.271, L1 with 0.665, and V1 with 0.463.
-	While the $\chi^2$ plot looks rather clean, one injection ends up in the bank veto grey area,
-	while the auto veto vetoes several injections, as seen in Fig.\,\ref{fig:scplots2}.
-		\begin{figure}[h]
+\subsection{GRB 190728271}
+\fpg{Rifare sulla falsa riga della precedente sezione.  Per le capitons puoi mettere ``Same as Fig... but for GRB 190728271.''  Nel testo non dovrai rispiegare i plot.}
+        The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728A at 06:30:36 UT on 28 Jul 2019.
+        The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
+        with a statistical uncertainty of 5.7 degrees, while the duration is $T_{90} = 0.832 \pm 0.905$s.
+        All three detector were operating at the time of the GRB 190728271,
+        and their responses in the direction of the GRB were: H1 with 0.271, L1 with 0.665, and V1 with 0.463.
+        While the $\chi^2$ plot looks rather clean, one injection ends up in the bank veto grey area,
+        while the auto veto vetoes several injections, as seen in Fig.\,\ref{fig:scplots2}.
+                \begin{figure}[h]
                         \noindent
                         \label{scplots2}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{scplots2}}%
                         \centering
-                        \caption{\textbf{Signal consistency plots.}Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190728271.}
+                        \caption{\textbf{Signal consistency plots.}Same as Fig.$\ref{fig:signalconsistencyplots1}$ but for GRB 190728271.}
                         \label{fig:scplots2}
                 \end{figure}
-	Further investigations revealed that the injection vetoed by the Bank test was lost because it is a 22$M_\odot$,
-	highly spinning and precessing BH with a precessing neutron star.
-	Of the six vetoed injections for the Auto Veto, three of them are highly spinning and highly precessing BNS,
-	one NSBH with highly spinning and precessing NS and highly precessing BH,
-	while the last two are BNS with both spin magnitudes greater than 0.05 and in-plane spin components.
-	Several injections overlapping with gilitchy data,
-	end up in the NullStat veto area. 
-	Since the H1 single SNR plot  looks scattered, Fig.\,\ref{fig:detector2}, with injections barely contained inside 3 sigma,
-	one could  decide to rerun the analysis excluding H1. 
+        Further investigations revealed that the injection vetoed by the Bank test was lost because it is a 22$M_\odot$,
+        highly spinning and precessing BH with a precessing neutron star.
+        Of the six vetoed injections for the Auto Veto, three of them are highly spinning and highly precessing BNS,
+        one NSBH with highly spinning and precessing NS and highly precessing BH,
+        while the last two are BNS with both spin magnitudes greater than 0.05 and in-plane spin components.
+        Since the H1 single SNR plot  looks scattered, Fig.\,\ref{fig:detector2},
+        with injections barely contained inside $3\sigma$,
+        one could  decide to rerun the analysis excluding H1.
                 \begin{figure}[h]
                         \noindent
                         \label{detector2}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{detector2}}%
                         \centering
-                        \caption{Same as Fig.\,\ref{fig:detector1} but for GRB 190728271.}
+                        \caption{Same as Fig.$\ref{fig:detector1}$ but for GRB 190728271.}
                         \label{fig:detector2}
                 \end{figure}
-	In the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2}, there are many nearby missed injections 
-	for both BNS and aligned spin NSBH injection sets. 
-	Investigating the BNS missed injections revealed that most of them have at least 
-	one spin magnitude $> 0.05$ that also causes precession;
-	except one, whose spin magnitudes are $\sim0.038$ and $\sim0.036$, 
-	but also has a high $\chi^2$-test value, which is the main cause of the BestNR down-weighting. 
-	This may be due to the large fractional in-plane spin magnitudes, 
-	since the calculated match between template and injection shows a good agreement.
-	This is not the case for some aligned spin NSBH missed injections: 
-	besides the one that does not have spin component  $> 0.05$,
-	a comparison between the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters 
-	shows that these may be suffering from differences between the waveform models.
-	        \begin{figure}[h]
+        By looking at the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2},
+        and comparing to other GRB analyses, it is noticeable that the injection are distributed closer
+        than for most other runs, and there are also many nearby missed injections
+        for both BNS($<68$Mpc) and aligned spin NSBH($<115$Mpc) injection sets.
+        For the BNS set, 32 injections have FAP$\neq0$:
+        a  closer look at the missed injections table shows that
+        most of them have at least one spin magnitude $>$0.05 that also causes precession,
+        except one, whose spin magnitudes are $\sim0.038$ and $\sim0.036$,
+        but also has a high $\chi^2$-test value, which is the main cause of the BestNR down-weighting.
+        This may be due to the large fractional in-plane spin magnitudes($\sim$0.032 and $\sim$0.036),
+        since the calculated match between template and injection shows a good agreement.
+        This is not the case for two of the ten aligned spin NSBH missed injections:
+        a comparison between the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters as it returns matches of  $\sim$8 and  $\sim$9.
+        One of  the two also has high Null SNR values, together
+        Out of the ten aligned spin NSBH missed injections, three do not have a NS spin magnitude $>$ 0.05:
+        one has high Null SNR value, while  the second one suffers from differences between the waveform models,
+        since  when comparing the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters,
+        return a match of $\sim$0.9. The third one has both a high Null SNR value and a low match ($\sim$8) between the injection and waveform model.
+                \begin{figure}[h]
                         \noindent
                         \label{missinj2}
                         \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj2}}%
                         \centering
-                        \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins.}
+                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271.}
                         \label{fig:missinj2}
                 \end{figure}
-	In order to make a decision about the conditions under which rerunning  the analysis,
-	the last step is looking at the off trial results which shows that injections with higher distances are required.
-	Even though all curves reach $\sim100\%$ efficiency at nearby distances, 
-	the detection efficiency plots are not entirely smooth at nearby distances, as shown in Fig.\,\ref{}.
+        In order to make a decision about the conditions under which rerunning  the analysis,
+        the last step is looking at the off trial results which shows that injections with higher distances are required.
+        ven though all curves reach $\sim100\%$ efficiency at nearby distances,
+        the detection efficiency plots are not entirely smooth at nearby distances, as shown in Fig.\,\ref{}.
                 \begin{figure}[h]
                         \noindent
                         \label{offtrial2}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{offtrial2}}%
                         \centering
-			\caption{Detection efficiency curves and exclusion distance plots of the first run.}
+                        \caption{Detection efficiency curves and exclusion distance plots of the first run.}
                         \label{fig:offtrial2}
                 \end{figure}
-	The analysis rerun with higher distances is shown in Fig.\,\ref{}.
-	Even though there still are many missed injections, caused by either a component having spin magnitude $> 0.05$, 
-	or high $\chi^2$ value, or further in-plane spin components causing precession, 
-	the off trial results have improved.
-	Higher exclusion distances and FAPs are shown in Fig.\,\ref{}: the plateau in the detection efficiency curves and exclusion distance curves is gone, 
-	but they are not completely smooth and the BNS plots shows dips at closer distances.
-	Smoother curves were successfully achieved by rerunning the analysing one more time with even further distances.
+        The analysis rerun with higher distances is shown in Fig.\,\ref{}.
+        Even though there still are many missed injections, caused by either a component having spin magnitude $> 0.05$,
+        or high $\chi^2$ value, or further in-plane spin components causing precession,
+        the off trial results have improved.
+        Higher exclusion distances and FAPs are shown in Fig.\,\ref{}: the plateau in the detection efficiency curves and exclusion distance curves is gone,
+        but they are not completely smooth and the BNS plots shows dips at closer distances.
+        Smoother curves were successfully achieved by rerunning the analysing one more time with even further distances.
                 \begin{figure}[h]
                         \noindent
                         \label{offtrial2rerun}
@@ -2996,9 +3003,9 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \caption{Comparison between the detection efficiency curves and exclusion distance plots of the first and second rerun.}
                         \label{fig:offtrial2rerun}
                 \end{figure}
-	Follow up investigations about glitches in the IFOs time series showed four spikes with high SNR values :
-        the one at SNR=37.02 corresponds to scattered light, while the ones at 10.75 and 15.81 both are 
-	the result of a blip like glitch around trigger time.
+        Follow up investigations about glitches in the IFOs time series showed four spikes with high SNR values :
+        the one at SNR=37.02 corresponds to scattered light, while the ones at 10.75 and 15.81 both are
+        the result of a blip like glitch around trigger time.
                 \begin{figure}[h]
                         \noindent
                         \label{glitch_grb}
