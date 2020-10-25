@@ -2371,10 +2371,11 @@ sense that
 	of a new more accurate model \cite{205}, that better discriminates between regions in the parameter space 
 	that enclose combinations of masses and spins,
         consistent with the minimum counterpart possibility requirement to have a NS in the binary, i.e. BNS and NSBH.
-	The resulting EM-bright template bank has been tested to asses its efficiency, as described in Sec.$\ref{subsec:construction_and_validation}$. \\
+	The resulting EM-bright template bank has been tested to assess its efficiency, as described in Sec.$\ref{subsec:construction_and_validation}$. \\
 	Further, we present the results of the PyGRB analysis of three GRBs from the first part of the third  observing run (O3a), and 
-	of the PyCBC of one chunk of data from the second part of the third observing run (O3b). \\
+	of the PyCBC of one chunk of data from the second part of the third observing run (O3b).
 
+\section{Coherent Follow-Up of Short Gamma-Ray Bursts}
 %\section{Black hole-neutron star binaries}
 %\label{sec:emnsbh}
 \fpg{Ma perch\'e parli di NSBH?  Il lettore non lo sa.  C'\`e un tentativo di spiegazione in quello che hai scritto su, ma serve di pi\`u e devi richiamare le informazioni chiave sparse nel resto della tesi.  Va benissimo farlo nel cappello introduttivo di questo capitolo, ma va decisamente migliorato e devi usare i puntatori a quanto hai scritto.  Per esempio ``ho costruito la template bank'' deve essere corredato di rimando al 2.2.   Ti ho rioraganizzatoo sezioni e sottosezioni: al lettore, nel leggere il capitolo, dovr\`a essere evidente perch\'e hai diviso le cose in un certo modo, anzi deve essere proprio di aiuto alla lettura la tua organizzazione del capitolo.}
@@ -2805,46 +2806,52 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Black crosses indicate that no trigger was found for that specific injections: as expected these results dominate large distances.
 	Red crosses indicate that a trigger is found in correspondence with an injection, but it was vetoed.  This kind of results is found in an intermediate region, where the injection is weak and may be over taken by noise.  If a cross of this kind appears for a nearby injection, instead, it generally is due to the presence of noise glitch.
 	Finally, coloured circles indicate that the injection was found, and not vetoed, but was not louder than all the background triggers;  
-	the circles are colour-codeded with the FAP of the recovered trigger (\fpg{see Sec.\,\ref{...} for the definition of FAP within this search}).  It is therefore expected that circles dominate an intermediate transition regime from not confidently recovered injections (blue crosses) to not recovered injections (black crosses).
-	We note that missed injections can also occur within the network's range.  Aside from the aforementioned case of glitches being present in the data, this can be also be due to discrepancies between 
+	the circles are colour-codeded with the FAP of the recovered trigger.
+	As discussed in the Sec.\,\ref{sec:pygrb}, the FAP is assigned to a trigger by calculating the probability that a trial of the same duration as the on-source window 
+	might contain a backgroung event louder than the statistics of the trigger.
+        One expects circles to dominate an intermediate transition regime from not confidently recovered injections (blue crosses) to not recovered injections (black crosses).  This transition distance is further out for more massive systems, i.e., NSBHs, as the GW amplitude scales with the (chirp) mass of the source.
+	We note that missed injections can also occur within the network range.  Aside from the aforementioned case of glitches being present in the data, this can be also be due to discrepancies between 
 	the waveforms models in the template bank and the injected signals.
 	The template bank contains waveforms that do not account for precession effects, 
 	and consider a maximum NS spin of $0.05$, whereas the injections sets can admit precession and NS spin magnitudes up to $0.4$.  In other words, the parameter space of the injections is larger than the on strictly targetted by the template bank.
+	In the case of this GRB follow up, there are 7 injections at nearby distances ($<100\,$Mpc), within the BNS injection set, that warrant additional consideration: 
+        2 are red crosses (missed due to vetoes) and 5 are circles (not confidently recovered).
+	All of them have a high amount of precession in their dynamics and spin magnitudes greater than $0.05$ for both NSs.
+	The aligned spin NSBH injection set shows a single missed injection that warrants follow up, at around \fpg{Qual \`e?  Indica il tempo cos\`i uno sa di che crocetta parli nel plot.  Credo sia la croce rossa a -500s.}.  This had an antialigned BH spin of $-0.65$. 
+	The injected and recovered chirp masses agree to 3 significant figures. 
+	Calculating the match between the injection and the template using the same approximant returns $\sim 0.85$, 
+	therefore the injection is missed due to differences between the approximant used for the template (IMRPhenomD) and for the injection (SEOBNRv3).  These are intentially chosen to be different to account for our incomplete knowledge of the \emph{exact} signal emitted by compact binaries.
+        All in all, the pipeline performance in recovering the injection sets is clean.  \fpg{Perch\'e i precessing NSBHs non li tratti?}
+
+        \begin{figure}[!t]
+          \noindent
+          \label{missinj1}
+          \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj1}}%
+          \centering
+          \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins. \fpg{Qua devi ripetere la spiegazione dei simboli.}}
+          \label{fig:missinj1}
+        \end{figure}
+
+	The distribution of FAPs for the background events is shown in Fig.\,\ref{fig:loudestoffsourcevent1} as a function of the detection statistic, i.e., the reweighted SNR (or ``BestNR'').
+	This distribution is expected to be roughly flat up until a BestNR value of about $6$ --- as triggers are kept only if $\rho_{\rm coinc} > 6$ --- and to fall off linearly in this log plot from there onwards.  This smooth linear fall off is the behaviour of a Gaussian distribution, which is what the pipeline aims at obtaining with its detection statistic.  The fall off should end at a BestNR  of about $8$, 
+	which is the threshold for detection candidates. 
+	Uneaven fall offs, or tails in the distribution are potentially signs of failures in correctly handling glitches present in the background data. 
+	The specific distribution in Fig.\,\ref{fig:loudestoffsourcevent1} is smooth but has a small tail at the higher end of the reweighted SNR.
+	An inspection of the list of loudest offsource events revealed that this is simply a plotting artifact, as the loudest event has an upper limit on its FAP, rather than a specific assigned value.  This upper limit coincides, of course, with the FAP of the second loudest event and hence the plotting artifact.
+
+       \fpg{Io chiuderei qui, dicendo che il background \`e trattato bene, le injections sono recuperate in maniera decente e che quindi si pu\`o guardare l'onsource.  Questo \`e stato fatto, ma non puoi mettere i risultati perch\'e, ecc; quello che succede \`e che o si trova un candidate signal, o, per FAP non sufficientemente bassa, si determina un lower limit sulla distanza come quella distanza entro la quale la pipeline recupera il 90\% delle injections.  Siccome hai vari sets di injections hai una $D_{90}$ per ogni set, ovvero per ogni potenziale classe di sorgenti. Non mi addentrerei nelle exclusion distances per gli offsource trials: altrimenti devi spiegare le varie curve, barre d'errore, ecc.}  
 
        \fpg{Sono qui: le 3 GRBs le correggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.} 
 
+        \begin{figure}[!t]
+          \noindent
+          \label{loudestoffsourcevent1}
+          \makebox[\textwidth]{\includegraphics[scale=0.4]{loudestoffsourcevent1}}%
+          \centering
+          \caption{\textbf{Loudest offsource events.} Distribution of the background significance (FAP) as a function of the detection statistic (BestNR).}
+          \label{fig:loudestoffsourcevent1}
+        \end{figure}
 
-	For this GRB there are 7 missed injections at distance less than 90\% confidence exclusion distance for the BNS injection set.
-	These all have precessing spins in both components and magnitude $>0.05$.
-	The NSBH with aligned spin show one missed injection with $\chi_{BH} = -0.65$. 
-	The injected and recovered chirp masses agree to 3 significant figures. 
-	Calculating the match between the injection and the template using the same approximant returns $\sim 0.85$, 
-	therefore the missed injection is due to differences between the IMRPhenomD and SEOBNRv3 modules.
-                \begin{figure}[H]
-                        \noindent
-                        \label{missinj1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj1}}%
-                        \centering
-                        \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins.}
-                        \label{fig:missinj1}
-                \end{figure}
-	As already seen in the previous Sec.\,\ref{sec:pygrb},
-	the FAP is the estimated probability that a trial of the same length as the on-source window 
-	might contain a noise event louder than a specific statistic value. 
-	The background significance as FAP is shown in Fig.\,\ref{fig:loudestoffsourcevent1} against the detection statistic.
-	The BestNR curve should fall off at a BestNR value of $\sim6$, steeply until a value of $\sim8$, 
-	which is  the candidate threshold. 
-	If there is a tail in the distribution, this could be due to a failure to remove glitches. 
-	In Fig.\,\ref{fig:loudestoffsourcevent1} the BestNR falloff looks clean but there is a small tail;
-	however,  inspecting the loudest offsource event table doesn't reveal any problems.
-                \begin{figure}[h]
-                        \noindent
-                        \label{loudestoffsourcevent1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.4]{loudestoffsourcevent1}}%
-                        \centering
-                        \caption{\textbf{Loudest offsource events.} Background significance as false alarm probability (FAP) against the detection statistic, BestNR.}
-                        \label{fig:loudestoffsourcevent1}
-                \end{figure}
 	The offtrial results for BNS and NSBH with aligned spin injections are shown in Fig.\,\ref{fig:offtrial},
 	with  the detection efficiency and exclusion distance plots, respectively.
 	These curves should be span the the fraction range smoothly, 	
@@ -2861,6 +2868,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \end{figure}
 
 \subsection{GRB 190728271}
+\fpg{Rifare sulla falsa riga della precedente sezione.  Per le capitons puoi mettere ``Same as Fig... but for GRB 190728271.''  Nel testo non dovrai rispiegare i plot.}
 	The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728A at 06:30:36 UT on 28 Jul 2019.
 	The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
 	with a statistical uncertainty of 5.7 degrees, while the duration is $T_{90} = 0.832 \pm 0.905$s.
@@ -2948,6 +2956,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \end{figure}
 
 \subsection{GRB 190425089}
+\fpg{Rifare sulla falsa riga della precedente sezione.  Per le capitons puoi mettere ``Same as Fig... but for GRB 190425089.''  Nel testo non dovrai rispiegare i plot.}
         GRB 190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellites,
         with a sky position of $Ra=\ang{126.5}$ and $Dec=\ang{-58.1}$.
 	Initially this analysis was done using all the three IFOs, 
