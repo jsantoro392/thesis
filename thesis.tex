@@ -2587,34 +2587,24 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Follow-up electromagnetic observations of GRB 190627A detected its optical counterpart, 
 	and by analysing the spectrum it was inferred that $z = 1.942$ is the likely redshift of this specific GRB.
 
-        \fpg{Sono qui: le 3 GRBs me le leggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.}
-	At the time of the GRB 190627A, two GW detectors were operating with the following antenna patterns:
-	H1 with 0.316, and L1 with 0.452.
-                \begin{figure}[H]
-                        \noindent
-                        \label{scienceseggrb1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{scienceseggrb1}}%
-                        \centering
-                        \caption{Science data at the time of a GRB from all available detectors is retrieved and then the software decides what data are to be analysed.
-	The minimum required stretch of data is generally set to 1664 s, roughly half an hour,  
-	to ensure there is enough data to accurately estimate the power spectral density (PSD).}
-                        \label{fig:scienceseggrb1}
-                \end{figure}
-	The signal consistency plots in Fig.\,\ref{fig:signalconsistencyplots1} contain the plots showing the $\chi^2$-test results for bakground
-	in blue crosses, and injection in red crosses; the test are done both with and without injections, where only  background triggers are present.
-	Different rows correspond to different $\chi^2$-tests. 
-	The black line and dark shaded regions denote the cut level: any triggers in the shaded area will have been cut by the  $\chi^2$-tests. 
-	The yellow contour lines show lines of constant re-weighted SNR. 
-	The presence of a non-signal, non-Gaussian noise component in the data can drag an injection into the veto area, causing it to be missed.
-	For this GRB, this happens to a single missed injection with coherent SNR $\sim 12$.
-		\begin{figure}[H]
-                        \noindent
-                        \label{signalconsistencyplots1}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{signalconsistencyplots1}}%
-                        \centering
-                        \caption{\textbf{Signal consistency plots.} Plots of the $\chi^2$-tests is that down-weight or cut loud background triggers that do not resemble the signals. First row shows the “Bank Veto”: it compares the power in the trigger with a small subset of template  waveforms from the template bank. Second row is  the “Autocorrelation Veto”:  it compares the power in the trigger with the veto time-shifted template. The last row contains the $\chi^2$-test that compares the power across frequency bins. }
-                        \label{fig:signalconsistencyplots1}
-                \end{figure}
+	At the time of GRB 190627A, two GW detectors, H1 and L1, were operating and their responses in the direction of the GRB were 0.316 and 0.452, respectively.
+	The panels in Fig.\,\ref{fig:signalconsistencyplots1} show the results of the $\chi^2$-tests applied to the offsource background data
+        (blue crosses), and to the injections (red crosses) that serve as a simulated foreground \fpg{Assicurati di aver definito questo injeciton set da qualche parte e qui metti un puntatore a tale spiegazione}.  From top to bottom, the panels report the template bank veto test, the autocorrelation veto test, and the standard $\chi^2$-test, as a function of coherent SNR \fpg{Il plot deve quindi avere solo i tre pannelli che al momento sono a sinistra, mantenendo il titolo di ognuno (che appare a sinistra).  Assicurati che siano della stessa dimensione.  Inserire puntatore a dove hai spiegato i tre test.}.
+	The contour lines correspond to values of constant reweighted SNR.  The black line, in particular, has a value of \fpg{Lo sai?} which is the threshold value discussed in \fpg{Nel discutere il setup della search, devi dichiarare questo valore e qui richiamarlo.} The shaded region is therefore vetoed: any triggers that fall within it will fail that specific $\chi^2$-test and be discarded.
+	The effect of non-stationarities in the data is evident in the first two plots, that clearly show several background triggers with high coherent SNR \emph{and} high $\chi^2$ values.  When an injection overlaps with a glitch in the background, it may be dragged in the veto area and therefore be missed, as seen from the plots, particularly for a single missed injection with coherent SNR $\sim 12$.  This behaviour is not surprising and corresponds to situations in which a physical GW signal can overlap with a noise transient and thus not be confidently detected. \fpg{La frase precedente che ti ho scritto \`e importante.}
+        
+        \begin{figure}[H]
+          \noindent
+          \label{signalconsistencyplots1}
+          \makebox[\textwidth]{\includegraphics[scale=0.5]{signalconsistencyplots1}}%
+          \centering
+          \caption{\textbf{Signal consistency plots.} Plots of the $\chi^2$-tests is that down-weight or cut loud background triggers that do not resemble the signals. First row shows the “Bank Veto”: it compares the power in the trigger with a small subset of template  waveforms from the template bank. Second row is  the “Autocorrelation Veto”:  it compares the power in the trigger with the veto time-shifted template. The last row contains the $\chi^2$-test that compares the power across frequency bins. }
+          \label{fig:signalconsistencyplots1}
+        \end{figure}
+
+
+       \fpg{Sono qui: le 3 GRBs me le leggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.} 
+
 	When a detector sensitivity is lower compared to the other detectors, 	
 	this can affect the efficiency of the search.
 	The decision to exclude the data from the least sensitive detector, 	
