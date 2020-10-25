@@ -2797,28 +2797,23 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
           \label{fig:detector1}
         \end{figure}
 
-       \fpg{Sono qui: le 3 GRBs me le leggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.} 
-
-
-	The injections plots in Fig.\,\ref{fig:missinj1} show the ability of the search to recover injections at different distances, 
-	against time. It is expected that the analysis is able to better detect nearby injections than far ones. 
-	The panel on the left represents the BNS injection set, while the one on the right the NSBH with aligned spin.
-	Injections are expected to be found at a distance which is compatible with the IFOs range at the time of the GRB, 
-	which can be computed combining the antenna patterns and the sensitivity range.
-	Blue crosses indicate that the injection was found and was more significant than event in the background data. 
-	Red crosses indicate that a trigger was found that was coincident with the injection, but it was vetoed. 
-	Black crosses indicate that no trigger was found that was coincident with the trigger. 
-	Coloured circles indicate that the injection was found but was not louder than all of the background, 
-	and in this case the circle colour indicates the FAP of the trigger.
-	More distant injections tend to be vetoed, missed completely, or have a relatively high FAP.
-	However, there are also missed injections within  the IFOs network range and this can be caused by discrepancies between 
+	The plots in Fig.\,\ref{fig:missinj1} are an example of the results one looks at to inspect the performance of the search in recover injections.
+        These examples refer to the sets of precessing BNS (left) and non-precessing NSBH (right) injections and display the injeciton distance as a funciton of the 
+	injection time.  Qualitatively, one expects the search to perform progressively worse as the distances of the injections increase.
+	The distance at which the analysis begins to fail at recovering injections depends on the sensitivity range of the GW detectors used in the analysis, at the time of the GRB and in its directions.
+	In both plots, blue crosses indicate injections that are found and were more significant than any background event; as expected, these are found mainly nearby.
+	Black crosses indicate that no trigger was found for that specific injections: as expected these results dominate large distances.
+	Red crosses indicate that a trigger is found in correspondence with an injection, but it was vetoed.  This kind of results is found in an intermediate region, where the injection is weak and may be over taken by noise.  If a cross of this kind appears for a nearby injection, instead, it generally is due to the presence of noise glitch.
+	Finally, coloured circles indicate that the injection was found, and not vetoed, but was not louder than all the background triggers;  
+	the circles are colour-codeded with the FAP of the recovered trigger (\fpg{see Sec.\,\ref{...} for the definition of FAP within this search}).  It is therefore expected that circles dominate an intermediate transition regime from not confidently recovered injections (blue crosses) to not recovered injections (black crosses).
+	We note that missed injections can also occur within the network's range.  Aside from the aforementioned case of glitches being present in the data, this can be also be due to discrepancies between 
 	the waveforms models in the template bank and the injected signals.
 	The template bank contains waveforms that do not account for precession effects, 
-	and consider a maximum NS spin of $0.05$. 
-	Therefore BNS missed injections  might have dimensionless with a magnitude  greater than $0.05$,
-	or either the NS or the BH could have spin components orthogonal to the orbital angular momentum,
-	causing the precession to be dominant.
-	Another reason behind a  missed injection could be a high $\chi^2$-value, caused by a template rang off by a glitch.
+	and consider a maximum NS spin of $0.05$, whereas the injections sets can admit precession and NS spin magnitudes up to $0.4$.  In other words, the parameter space of the injections is larger than the on strictly targetted by the template bank.
+
+       \fpg{Sono qui: le 3 GRBs le correggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.} 
+
+
 	For this GRB there are 7 missed injections at distance less than 90\% confidence exclusion distance for the BNS injection set.
 	These all have precessing spins in both components and magnitude $>0.05$.
 	The NSBH with aligned spin show one missed injection with $\chi_{BH} = -0.65$. 
