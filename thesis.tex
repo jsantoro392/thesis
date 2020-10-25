@@ -87,18 +87,18 @@ We are grateful for computational resources provided by Cardiff University, and 
 	lasts in the $\sim 10$--$1000$\,Hz sensitivity band of current detectors.
         More massive binaries merge at lower frequencies and therefore have fewer cycles in band.
         For example, the first GW signal ever detected, GW150914, came from the coalescence of two fairly massive BHs: 
-	the signal was visible for only two-tenths of a second \cite{14}, as discussed in Sec.$\ref{subsec:GW150914}$. 
+	the signal was visible for only two-tenths of a second \cite{14}, as discussed in Sec.\,\ref{subsec:GW150914}. 
         BNS systems, by contrast, accumulate many cycles in the instrumental band.
         The first BNS coalescence witnessed by LIGO-Virgo, GW170817, 
 	generated a GW signal that lasted $\sim 100\,$s in the sensitivity window of the detectors \cite{15}, 
-	as described in Sec.$\ref{subsec:GW170817}$.
-	The observation of GW150914 (Sec.$\ref{subsec:GW150914}$) was a truly remarkable accomplishment: 
+	as described in Sec.\,\ref{subsec:GW170817}.
+	The observation of GW150914 (Sec.\,\ref{subsec:GW150914}) was a truly remarkable accomplishment: 
 	it \emph{directly}\footnote{Until then, GWs had only been observed indirectly by using pulsars timing to monitor 
         their effect on the orbit of pulsar binary star systems.} confirmed Einstein's prediction of the existence of GWs, 
 	and it demonstrated that stellar-mass BBH systems form in the universe and merge within a Hubble time.
 	This event marked the beginning of a new era of GW astronomy, 
 	which enables the observations of violent astrophysical events that are not visible with traditional astronomy.
-	The BNS merger GW170817(Sec.$\ref{subsec:GW170817}$) marked, instead, the beginning of multi-messenger astronomy 
+	The BNS merger GW170817 (Sec.\,\ref{subsec:GW170817}) marked, instead, the beginning of multi-messenger astronomy 
 	because as it was the first GW observation with recorded electromagnetic counterparts.  	
 	\fpg{Per antrambi questi eventi, aggiungi una forward reference alle sezioni in cui le discuti.}
 
@@ -110,7 +110,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	This thesis focuses on two kinds of offline analyses of a part of LIGO-Virgo data collected during the third observing run (O3).
         Specficially, I used the CBC matched-filtering search pipeline {\ttfamily PyCBC}, discussed in Chapter \ref{ch:datatools}, 
 	to perform an all-sky search for BNS, NSBH, and BBH signals; further, I used the {\ttfamily PyGRB} pipeline, 
-	discussed in Chapter $\ref{ch:datanalysis}$, to search for BNS and NSBH signals compatible 
+	discussed in Chapter \ref{ch:datanalysis}, to search for BNS and NSBH signals compatible 
 	with the sky-location and time of three short gamma-ray bursts (GRBs) that occured during O3.
 
         \fpg{Tutta la parte sui GRB richiede delle citazioni.}
@@ -147,13 +147,13 @@ We are grateful for computational resources provided by Cardiff University, and 
 	as they increase the chances of achieving joint GW-GRB detections.
 	Knowing the time and sky-location of a sought for GW event
 	allows to perform a deeper search in the GW data, potentially uncovering signals 
-	that are not accessible to all-sky, all-time searches, as discussed in Chapter $\ref{}$ \fpg{forward reference.}
+	that are not accessible to all-sky, all-time searches, as discussed in Chapter \ref{} \fpg{forward reference.}
 
 	Since the observed properties of short GRBs may be attributed to matter accretion onto a BH,
 	following the tidal disruption of a NS, in addition to BNSs, NSBH systems are also considered likely short GRBs progenitors.
 	At the time of writing this work, no certain NSBH coalescence has been observed.
 	This motivates further the use of 
-	offline GW searches targetting short GRB triggers, as the one I conducted in Chapter $\ref{ch:datanalysis}$.
+	offline GW searches targetting short GRB triggers, as the one I conducted in Chapter \ref{ch:datanalysis}.
 	To enable this search in O3, I also generated and validate the set of waveforms used to filter the data (see discussion in Sec\,\fpg{...})
 	This specific set of waveform is known as an ``EM-bright template bank,'' 
 	as it covers only BNSs and NSBH sytems that have undergone tidal disruption and are thus potential short GRB progenitors.
@@ -1709,7 +1709,7 @@ sense that
         In order to test the sensitivity of a CBC search pipeline,
         streaming time series of simulated gravitational waveforms are added to the data (software injections)
         and re-estracted by means of matched filtering.
-        Different injection sets can be used to set up multiple injection searches, as it will be discussed in Chapter$\ref{ch:datanalysis}$:
+        Different injection sets can be used to set up multiple injection searches, as it will be discussed in Chapter \ref{ch:datanalysis}:
         simulated signals are drawn from a synthetic population of a certain type of source,
         described by astrophysical parameters, including the strain amplitude, sky location,
         and initial frequency \cite{30}.
@@ -2165,7 +2165,7 @@ sense that
 	with network SNR of 19 and a FAR of 1 in 30,000\,yrs.
 	The peculiarity of this event is the asymmetry in the binary component masses:
 	one is a $\sim 8M_\odot$ BH, while its companion has a mass of $\sim 30M_\odot$.
-	While the individual masses of the BBH were consistent with whose of preious GW events,
+	While the individual masses of the BBH were consistent with those of preious GW events,
 	the mass ratio is unlike any of the other BH mergers detected before. 
 	This allows to observe a fundamental property of GWs.
 
@@ -2344,7 +2344,7 @@ sense that
 \label{ch:datanalysis}
 \fpg{Giri di correzione: 1.}%
         {\ttfamily PyGRB} is a GRB triggered CBC search
-	which entails the coherent analysis of multiple detectors data as seen in Sec.$\ref{subsec:coherent}$. \\
+	which entails the coherent analysis of multiple detectors data as seen in Sec.\,\ref{subsec:coherent}. \\
 	It also asses if a GW signal is present in the data, 
 	given the time and sky position coordinates of an observed short GRB,
 	by performing several signal-based veto cuts and data quality cuts. \\
@@ -2357,7 +2357,7 @@ sense that
 	The evolution of the remnant matter is responsible for the generation of the EM counterpart of a GW event.
 	However, there are many effects that conditions if and how much material is present after merger.
 	As a matter of fact, not all NSBH mergers are expected to emit electromagnetically, 
-	the conditions under which an EM component is present are discussed in Sec.$\ref{}$.
+	the conditions under which an EM component is present are discussed in Sec.\,\ref{}.
 	Therefore, the NSBH parameter space which needs to be investigate in a triggered analysis,
 	can be considerably reduced by excluding all those systems that are \textit{EM-dim}:
 	since short GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH,
@@ -2371,12 +2371,12 @@ sense that
 	of a new more accurate model \cite{205}, that better discriminates between regions in the parameter space 
 	that enclose combinations of masses and spins,
         consistent with the minimum counterpart possibility requirement to have a NS in the binary, i.e. BNS and NSBH.
-	The resulting EM-bright template bank has been tested to assess its efficiency, as described in Sec.$\ref{subsec:construction_and_validation}$. \\
+	The resulting EM-bright template bank has been tested to assess its efficiency, as described in Sec.\,\ref{subsec:construction_and_validation}. \\
 	Further, we present the results of the PyGRB analysis of three GRBs from the first part of the third  observing run (O3a), and 
 	of the PyCBC of one chunk of data from the second part of the third observing run (O3b).
 
 \section{Coherent Follow-Up of Short Gamma-Ray Bursts}
-	The outstanding detection of GW170817 (Sec.$\ref{subsec:GW170817}$) was not only an historical result, 
+	The outstanding detection of GW170817 (Sec.\,\ref{subsec:GW170817}) was not only an historical result, 
 	but also clearly demonstrates the vital importance of time-resolved search and follow-up of EM candidate counterparts of GW triggers. 
 	Before that, short GRBs had long been discussed as promising targets for GW astronomy,
 	due to their probable binary merger progenitors \cite{162}, 
@@ -2778,13 +2778,13 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	were operating and their responses in the direction of the GRB were 0.316 and 0.452, respectively.
 	The panels in Fig.\,\ref{fig:signalconsistencyplots1} show the results 
 	of the $\chi^2$-tests applied to the offsource background data (blue crosses), and to the injections (red crosses),
-	whose parameters are listed in Sec.$\ref{sec:pygrb}$, that serve as a simulated foreground. 
+	the parameters of which are listed in Sec.\,\ref{sec:pygrb}, that serve as a simulated foreground. 
 	From top to bottom, the panels report the template bank veto test, 
 	the autocorrelation veto test, and the standard $\chi^2$-test, 
-	discussed in Sec.$\ref{subsubsec:multidec_chi_test}$, as a function of coherent SNR. 
+	discussed in Sec.\,\ref{subsubsec:multidec_chi_test}, as a function of coherent SNR. 
 	The contour lines correspond to values of constant reweighted SNR.  
 	The black line, in particular, has a value of 6, 
-	which is the threshold value discussed in Sec.$\ref{sec:pygrb}$.
+	which is the threshold value discussed in Sec.\,\ref{sec:pygrb}.
 	The shaded region is therefore vetoed: any triggers that fall within it 
 	will fail that specific $\chi^2$-test and be discarded.
 	The effect of non-stationarities in the data is evident in the first two plots, 
@@ -2793,16 +2793,15 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	it may be dragged in the veto area and therefore be missed, as seen from the plots, 	
 	particularly for a single missed injection with coherent SNR $\sim 12$.  
 	This behaviour is not surprising and corresponds to situations in which a physical GW signal 
-	can overlap with a noise transient and thus not be confidently detected. 
+	can overlap with a noise transient and thus not be confidently detected.
 
-	\fpg{La frase precedente che ti ho scritto \`e importante.}
-        
+
         \begin{figure}[!t]
           \noindent
           \label{signalconsistencyplots1}
-          \makebox[\textwidth]{\includegraphics[scale=0.5]{signalconsistencyplots1}}%
+          \makebox[\textwidth]{\includegraphics[scale=0.68]{signalconsistencyplots1}}%
           \centering
-          \caption{\textbf{Signal consistency plots.} The panels show the $\chi^2$-test results for background data (blue crosses) and injected signals (red crosses) as a function of coherent SNR.   From top to bottom, the test reported are: the template bank test (``Bank Veto''), the autocorrelation test (``Auto Veto''), and the standard, frequency bin $\chi^2$-test (``Chi Square'').   The yellow contour lines show lines of constant re-weighted SNR, to rank the remaining triggers. See Sec\,$\ref{subsubsec:multidec_chi_test}$ for details on the three $\chi^2$-tests.}
+          \caption{\textbf{Signal consistency plots.} The panels show the $\chi^2$-test results for background data (blue crosses) and injected signals (red crosses) as a function of coherent SNR.   From top to bottom, the test reported are: the template bank test (``Bank Veto''), the autocorrelation test (``Auto Veto''), and the standard, frequency bin $\chi^2$-test (``Chi Square'').   The yellow lines mark contours of constant re-weighted SNR. See Sec.\,\ref{subsubsec:multidec_chi_test} for details on the three $\chi^2$-tests.}
           \label{fig:signalconsistencyplots1}
         \end{figure}
 	Additional signal consistency tests are reported in Fig.\,\ref{fig:detector1}. 
@@ -2819,7 +2818,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         \begin{figure}[!t]
           \noindent
           \label{detector1}
-          \makebox[\textwidth]{\includegraphics[scale=0.5]{detector1}}%
+          \makebox[\textwidth]{\includegraphics[scale=0.44]{detector1}}%
           \centering
           \caption{The two plots show the single detector SNR as a function of the coherent SNR, for H1 and L1, respectively.  Blue and red crosses represent background data and injected signals.  The expected trend for GW signals of astrophysical origin is marked by the middle, green line; the other two green lines, the two magenta lines, and the two cyan lines represent $1\sigma$, $2\sigma$, and $3\sigma$ deviations, respectively.}
           \label{fig:detector1}
@@ -2885,7 +2884,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
           \label{missinj1}
           \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj1}}%
           \centering
-          \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins. Black cross indicates no trigger was found coincident with the injection. Red cross indicates a trigger was found coincident with the injection but it was vetoed. Coloured circle indicates that a trigger was found coincident with the injection but it was not louder than all offsource events. The colour bar gives the FAP of the trigger. }
+          \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injection set, with precessing BNS systems on the left and aligned-spin NSBH sources on the right. A blu cross denotes an injection that was found and that was louder than all background triggers. A coloured circle indicates that a trigger was found coincident with the injection, but it was not louder than all offsource events: its colour code is given by the FAP of the trigger.  A Red cross indicates a trigger was found coincident with the injection but it was vetoed, while a black cross indicates no trigger was found coincident with the injection.}
           \label{fig:missinj1}
         \end{figure}
 
@@ -2915,35 +2914,8 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	defined as the distance within 90\% of the injections is recovered.
 	The pipeline finds a $D_{90}$ for each injection set.
 
-       \fpg{Io chiuderei qui, dicendo che il background \`e trattato bene, le injections sono recuperate in maniera decente e che quindi si pu\`o guardare l'onsource.  Questo \`e stato fatto, ma non puoi mettere i risultati perch\'e, ecc; quello che succede \`e che o si trova un candidate signal, o, per FAP non sufficientemente bassa, si determina un lower limit sulla distanza come quella distanza entro la quale la pipeline recupera il 90\% delle injections.  Siccome hai vari sets di injections hai una $D_{90}$ per ogni set, ovvero per ogni potenziale classe di sorgenti. Non mi addentrerei nelle exclusion distances per gli offsource trials: altrimenti devi spiegare le varie curve, barre d'errore, ecc.}  
-
-       \fpg{Sono qui: le 3 GRBs le correggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.} 
-\begin{comment}
-        \begin{figure}[!t]
-          \noindent
-          \label{loudestoffsourcevent1}
-          \makebox[\textwidth]{\includegraphics[scale=0.4]{loudestoffsourcevent1}}%
-          \centering
-          \caption{\textbf{Loudest offsource events.} Distribution of the background significance (FAP) as a function of the detection statistic (BestNR).}
-          \label{fig:loudestoffsourcevent1}
-        \end{figure}
-
-	The offtrial results for BNS and NSBH with aligned spin injections are shown in Fig.\,\ref{fig:offtrial},
-	with  the detection efficiency and exclusion distance plots, respectively.
-	These curves should be span the the fraction range smoothly, 	
-	and the loudest event FAPs should be also be randomly distributed in that range. 
-	This is clearly the  case for this GRB analysis, which does not present any problems.
-	For each set, all injections are recovered within a distance of $83.88$Mpc for BNS and of $156.5$Mpc for NSBH.
-                \begin{figure}[h]
-                        \noindent
-                        \label{offtrial}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{offtrial}}%
-                        \centering
-			 \caption{Injection recovery around the time of GRB 190627A, as a function of distance. The  BNS  injection set is represented in the left column, the NSBH with aligned spin set in the column on the right. Top panels shows the fraction found louder than the loudest background event, while bottom panels the fraction louder than the loudest foreground event. }
-			\label{fig:offtrial}
-                \end{figure}
-\end{comment}
 \subsection{GRB 190728271}
+       \fpg{Sono qui: le 3 GRBs le correggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.}
 \fpg{Rifare sulla falsa riga della precedente sezione.  Per le capitons puoi mettere ``Same as Fig... but for GRB 190728271.''  Nel testo non dovrai rispiegare i plot.}
 	The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728A at 06:30:36 UT on 28 Jul 2019.
 	The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
@@ -2957,7 +2929,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \label{scplots2}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{scplots2}}%
                         \centering
-                        \caption{\textbf{Signal consistency plots.}Same as Fig.$\ref{fig:signalconsistencyplots1}$ but for GRB 190728271.}
+                        \caption{\textbf{Signal consistency plots.}Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190728271.}
                         \label{fig:scplots2}
                 \end{figure}
 	Further investigations revealed that the injection vetoed by the Bank test was lost because it is a 22$M_\odot$,
@@ -2974,7 +2946,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \label{detector2}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{detector2}}%
                         \centering
-                        \caption{Same as Fig.$\ref{fig:detector1}$ but for GRB 190728271.}
+                        \caption{Same as Fig.\,\ref{fig:detector1} but for GRB 190728271.}
                         \label{fig:detector2}
                 \end{figure}
 	In the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2}, there are many nearby missed injections 
