@@ -1662,6 +1662,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	such noise events may give a large coherent SNR, but are highly likely to also give a large null SNR \cite{45}.
 
 \subsubsection{Multi-Detector $\chi^2$ Tests}
+\label{subsubsec:multidec_chi_test}	
 	In order to extend the idea of the $\chi^2$-test to a multi detector search,
 	a four component waveform $\textbf{h}_{\mu}$ that satisfy the condition to 	
 	be orthogonal in the dominant polarization basis 
@@ -2375,8 +2376,11 @@ sense that
 	of the PyCBC of one chunk of data from the second part of the third observing run (O3b).
 
 \section{Coherent Follow-Up of Short Gamma-Ray Bursts}
-%\section{Black hole-neutron star binaries}
-%\label{sec:emnsbh}
+	The outstanding detection of GW170817 (Sec.$\ref{subsec:GW170817}$) was not only an historical result, 
+	but also clearly demonstrates the vital importance of time-resolved search and follow-up of EM candidate counterparts of GW triggers. 
+	Before that, short GRBs had long been discussed as promising targets for GW astronomy,
+	due to their probable binary merger progenitors \cite{162}, 
+	hypothesis which was confirmed by the joint detection of GW170817  and GRB170817A.
 \fpg{Ma perch\'e parli di NSBH?  Il lettore non lo sa.  C'\`e un tentativo di spiegazione in quello che hai scritto su, ma serve di pi\`u e devi richiamare le informazioni chiave sparse nel resto della tesi.  Va benissimo farlo nel cappello introduttivo di questo capitolo, ma va decisamente migliorato e devi usare i puntatori a quanto hai scritto.  Per esempio ``ho costruito la template bank'' deve essere corredato di rimando al 2.2.   Ti ho rioraganizzatoo sezioni e sottosezioni: al lettore, nel leggere il capitolo, dovr\`a essere evidente perch\'e hai diviso le cose in un certo modo, anzi deve essere proprio di aiuto alla lettura la tua organizzazione del capitolo.}
 
 \subsection{The O3a Template Bank}
@@ -2715,7 +2719,9 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	For each template of the mass parameter space, 
 	the re-weighted SNR is calculated, and the template producing the largest $\rho_{rw}$ 
 	during the on-source window is retained as the event candidate. 
-	For the {\ttfamily PyGRB} analysis, the threshold that a candidate event must surpass is $\rho_{rw} \geq 8$.
+	For the {\ttfamily PyGRB} analysis, the threshold that a candidate event must surpass is $\rho_{rw} \geq 8$,
+	while, in order to remove any non-Gaussian triggers left from the data, 
+	any trigger with $\rho_{rw}$ less than 6 is discarded.
 	The last step is to determine the significance of a trigger,
 	namely how often glitches with a higher $\rho_{rw}$ than the trigger will occur,
 	by calculating the false alarm probability (FAP) around the time of the GRB.
@@ -2768,26 +2774,48 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Follow-up electromagnetic observations of GRB 190627A detected its optical counterpart, 
 	and by analysing the spectrum it was inferred that $z = 1.942$ is the likely redshift of this specific GRB.
 
-	At the time of GRB 190627A, two GW detectors, H1 and L1, were operating and their responses in the direction of the GRB were 0.316 and 0.452, respectively.
-	The panels in Fig.\,\ref{fig:signalconsistencyplots1} show the results of the $\chi^2$-tests applied to the offsource background data
-        (blue crosses), and to the injections (red crosses) that serve as a simulated foreground \fpg{Assicurati di aver definito questo injeciton set da qualche parte e qui metti un puntatore a tale spiegazione}.  From top to bottom, the panels report the template bank veto test, the autocorrelation veto test, and the standard $\chi^2$-test, as a function of coherent SNR \fpg{Il plot deve quindi avere solo i tre pannelli che al momento sono a sinistra, mantenendo il titolo di ognuno (che appare a sinistra).  Assicurati che siano della stessa dimensione.  Inserire puntatore a dove hai spiegato i tre test.}.
-	The contour lines correspond to values of constant reweighted SNR.  The black line, in particular, has a value of \fpg{Lo sai?} which is the threshold value discussed in \fpg{Nel discutere il setup della search, devi dichiarare questo valore e qui richiamarlo.} The shaded region is therefore vetoed: any triggers that fall within it will fail that specific $\chi^2$-test and be discarded.
-	The effect of non-stationarities in the data is evident in the first two plots, that clearly show several background triggers with high coherent SNR \emph{and} high $\chi^2$ values.  When an injection overlaps with a glitch in the background, it may be dragged in the veto area and therefore be missed, as seen from the plots, particularly for a single missed injection with coherent SNR $\sim 12$.  This behaviour is not surprising and corresponds to situations in which a physical GW signal can overlap with a noise transient and thus not be confidently detected. \fpg{La frase precedente che ti ho scritto \`e importante.}
+	At the time of GRB 190627A, two GW detectors, H1 and L1, 
+	were operating and their responses in the direction of the GRB were 0.316 and 0.452, respectively.
+	The panels in Fig.\,\ref{fig:signalconsistencyplots1} show the results 
+	of the $\chi^2$-tests applied to the offsource background data (blue crosses), and to the injections (red crosses),
+	whose parameters are listed in Sec.$\ref{sec:pygrb}$, that serve as a simulated foreground. 
+	From top to bottom, the panels report the template bank veto test, 
+	the autocorrelation veto test, and the standard $\chi^2$-test, 
+	discussed in Sec.$\ref{subsubsec:multidec_chi_test}$, as a function of coherent SNR. 
+	The contour lines correspond to values of constant reweighted SNR.  
+	The black line, in particular, has a value of 6, 
+	which is the threshold value discussed in Sec.$\ref{sec:pygrb}$.
+	The shaded region is therefore vetoed: any triggers that fall within it 
+	will fail that specific $\chi^2$-test and be discarded.
+	The effect of non-stationarities in the data is evident in the first two plots, 
+	that clearly show several background triggers with high coherent SNR \emph{and} high $\chi^2$ values.  
+	When an injection overlaps with a glitch in the background, 
+	it may be dragged in the veto area and therefore be missed, as seen from the plots, 	
+	particularly for a single missed injection with coherent SNR $\sim 12$.  
+	This behaviour is not surprising and corresponds to situations in which a physical GW signal 
+	can overlap with a noise transient and thus not be confidently detected. 
+
+	\fpg{La frase precedente che ti ho scritto \`e importante.}
         
         \begin{figure}[!t]
           \noindent
           \label{signalconsistencyplots1}
           \makebox[\textwidth]{\includegraphics[scale=0.5]{signalconsistencyplots1}}%
           \centering
-          \caption{\textbf{Signal consistency plots.} The panels show the $\chi^2$-test results for background data (blue crosses) and injected signals (red crosses) as a function of coherent SNR.   From top to bottom, the test reported are: the template bank test (``Bank Veto''), the autocorrelation test (``Auto Veto''), and the standard, frequency bin $\chi^2$-test (``Chi Square'').  \fpg{Manca una spigazione delle linee a reweighted-SNR costante.} \fpg{See Sec\,\ref{...} for details on the three $\chi^2$-tests.}}
+          \caption{\textbf{Signal consistency plots.} The panels show the $\chi^2$-test results for background data (blue crosses) and injected signals (red crosses) as a function of coherent SNR.   From top to bottom, the test reported are: the template bank test (``Bank Veto''), the autocorrelation test (``Auto Veto''), and the standard, frequency bin $\chi^2$-test (``Chi Square'').   The yellow contour lines show lines of constant re-weighted SNR, to rank the remaining triggers. See Sec\,$\ref{subsubsec:multidec_chi_test}$ for details on the three $\chi^2$-tests.}
           \label{fig:signalconsistencyplots1}
         \end{figure}
-
-	Additional signal consistency tests are reported in Fig.\,\ref{fig:detector1}. \fpg{Bastano i due plots di single detector di sinistra, messi uno affianco all'altro.  La null-stat non viene applicata per 2 IFOs.} 
-	Here, the single detector SNR is shown as a function of the coherent SNR, for the background data and injected signals (blue and red crosses, respectively).
-	The expected trend for astrophysical signals is given by the middle, green line, whereas the other two green lines, the magenta lines, and the cyan lines represent $1\sigma$, $2\sigma$, and $3\sigma$ deviations, respectively.
-	The behaviour of H1, which in this case is less sensitive than L1, is qualitatively worse but still acceptable.  The background data clearly depart from the expected behaviour of astrophysical signals.
-        Finally, the black horizontal line and the shaded area beneath it mark a search threshold that is no logner used, so we will not discuss it.
+	Additional signal consistency tests are reported in Fig.\,\ref{fig:detector1}. 
+	Here, the single detector SNR is shown as a function of the coherent SNR, 
+	for the background data and injected signals (blue and red crosses, respectively).
+	The expected trend for astrophysical signals is given by the middle, green line, 
+	whereas the other two green lines, the magenta lines, and the cyan lines represent $1\sigma$, $2\sigma$, 
+	and $3\sigma$ deviations, respectively.
+	The behaviour of H1, which in this case is less sensitive than L1, 
+	is qualitatively worse but still acceptable.  
+	The background data clearly depart from the expected behaviour of astrophysical signals.
+        Finally, the black horizontal line and the shaded area beneath it mark a search threshold 
+	that is no logner used, so we will not discuss it.
         \begin{figure}[!t]
           \noindent
           \label{detector1}
@@ -2796,52 +2824,101 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
           \caption{The two plots show the single detector SNR as a function of the coherent SNR, for H1 and L1, respectively.  Blue and red crosses represent background data and injected signals.  The expected trend for GW signals of astrophysical origin is marked by the middle, green line; the other two green lines, the two magenta lines, and the two cyan lines represent $1\sigma$, $2\sigma$, and $3\sigma$ deviations, respectively.}
           \label{fig:detector1}
         \end{figure}
-
-	The plots in Fig.\,\ref{fig:missinj1} are an example of the results one looks at to inspect the performance of the search in recover injections.
-        These examples refer to the sets of precessing BNS (left) and non-precessing NSBH (right) injections and display the injeciton distance as a funciton of the 
-	injection time.  Qualitatively, one expects the search to perform progressively worse as the distances of the injections increase.
-	The distance at which the analysis begins to fail at recovering injections depends on the sensitivity range of the GW detectors used in the analysis, at the time of the GRB and in its directions.
-	In both plots, blue crosses indicate injections that are found and were more significant than any background event; as expected, these are found mainly nearby.
-	Black crosses indicate that no trigger was found for that specific injections: as expected these results dominate large distances.
-	Red crosses indicate that a trigger is found in correspondence with an injection, but it was vetoed.  This kind of results is found in an intermediate region, where the injection is weak and may be over taken by noise.  If a cross of this kind appears for a nearby injection, instead, it generally is due to the presence of noise glitch.
-	Finally, coloured circles indicate that the injection was found, and not vetoed, but was not louder than all the background triggers;  
+	The plots in Fig.\,\ref{fig:missinj1} are an example of the results 
+	one looks at to inspect the performance of the search in recover injections.
+        These examples refer to the sets of precessing BNS (left) and non-precessing NSBH (right) 
+	injections and display the injectioon distance as a funciton of the injection time.  
+	Qualitatively, one expects the search to perform progressively worse 
+	as the distances of the injections increase.
+	The distance at which the analysis begins to fail at recovering injections 
+	depends on the sensitivity range of the GW detectors used in the analysis, 
+	at the time of the GRB and in its directions.
+	In both plots, blue crosses indicate injections that are found 
+	and were more significant than any background event; 
+	as expected, these are found mainly nearby.
+	Black crosses indicate that no trigger was found for that specific injections: 
+	as expected these results dominate large distances.
+	Red crosses indicate that a trigger is found in correspondence with an injection, 			
+	but it was vetoed.  
+	This kind of results is found in an intermediate region, 
+	where the injection is weak and may be over taken by noise.  
+	If a cross of this kind appears for a nearby injection, instead, 
+	it generally is due to the presence of noise glitch.
+	Finally, coloured circles indicate that the injection was found, and not vetoed, 
+	but was not louder than all the background triggers;  
 	the circles are colour-codeded with the FAP of the recovered trigger.
-	As discussed in the Sec.\,\ref{sec:pygrb}, the FAP is assigned to a trigger by calculating the probability that a trial of the same duration as the on-source window 
+	As discussed in the Sec.\,\ref{sec:pygrb}, the FAP is assigned to a trigger 
+	by calculating the probability that a trial of the same duration as the on-source window 
 	might contain a backgroung event louder than the statistics of the trigger.
-        One expects circles to dominate an intermediate transition regime from not confidently recovered injections (blue crosses) to not recovered injections (black crosses).  This transition distance is further out for more massive systems, i.e., NSBHs, as the GW amplitude scales with the (chirp) mass of the source.
-	We note that missed injections can also occur within the network range.  Aside from the aforementioned case of glitches being present in the data, this can be also be due to discrepancies between 
+        One expects circles to dominate an intermediate transition regime from 
+	not confidently recovered injections (blue crosses) to not recovered injections (black crosses).  
+	This transition distance is further out for more massive systems, i.e., NSBHs, 
+	as the GW amplitude scales with the (chirp) mass of the source.
+	We note that missed injections can also occur within the network range.  
+	Aside from the aforementioned case of glitches being present in the data, 
+	this can be also be due to discrepancies between 
 	the waveforms models in the template bank and the injected signals.
 	The template bank contains waveforms that do not account for precession effects, 
-	and consider a maximum NS spin of $0.05$, whereas the injections sets can admit precession and NS spin magnitudes up to $0.4$.  In other words, the parameter space of the injections is larger than the on strictly targetted by the template bank.
-	In the case of this GRB follow up, there are 7 injections at nearby distances ($<100\,$Mpc), within the BNS injection set, that warrant additional consideration: 
+	and consider a maximum NS spin of $0.05$, whereas the injections sets can admit 
+	precession and NS spin magnitudes up to $0.4$.  
+	In other words, the parameter space of the injections is larger 
+	than the on strictly targetted by the template bank.
+	In the case of this GRB follow up, there are 7 injections at nearby distances ($<100\,$Mpc), 
+	within the BNS injection set, that warrant additional consideration: 
         2 are red crosses (missed due to vetoes) and 5 are circles (not confidently recovered).
 	All of them have a high amount of precession in their dynamics and spin magnitudes greater than $0.05$ for both NSs.
-	The aligned spin NSBH injection set shows a single missed injection that warrants follow up, at around \fpg{Qual \`e?  Indica il tempo cos\`i uno sa di che crocetta parli nel plot.  Credo sia la croce rossa a -500s.}.  This had an antialigned BH spin of $-0.65$. 
+	The aligned spin NSBH injection set shows a single missed injection that warrants follow up, 
+	at around \fpg{Qual \`e?  Indica il tempo cos\`i uno sa di che crocetta parli nel plot.  Credo sia la croce rossa a -500s.}.  
+	This had an antialigned BH spin of $-0.65$. 
 	The injected and recovered chirp masses agree to 3 significant figures. 
 	Calculating the match between the injection and the template using the same approximant returns $\sim 0.85$, 
-	therefore the injection is missed due to differences between the approximant used for the template (IMRPhenomD) and for the injection (SEOBNRv3).  These are intentially chosen to be different to account for our incomplete knowledge of the \emph{exact} signal emitted by compact binaries.
-        All in all, the pipeline performance in recovering the injection sets is clean.  \fpg{Perch\'e i precessing NSBHs non li tratti?}
+	therefore the injection is missed due to differences between the approximant 
+	used for the template (IMRPhenomD) and for the injection (SEOBNRv3).  
+	These are intentially chosen to be different to account for our incomplete knowledge 
+	of the \emph{exact} signal emitted by compact binaries.
+        All in all, the pipeline performance in recovering the injection sets is clean.  
+	
+	\fpg{Perch\'e i precessing NSBHs non li tratti? -Perchè i plot di NSBHprecessingseobnrv3 ce li ho tagliati a metà.}
 
         \begin{figure}[!t]
           \noindent
           \label{missinj1}
           \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj1}}%
           \centering
-          \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins. \fpg{Qua devi ripetere la spiegazione dei simboli.}}
+          \caption{\textbf{Found/missed injections.} Plots of the injections distance against time. Each panel represents a different injections set: on the left BNS set with precessing spins, on the righ NSBH sets with aligned spins. Black cross indicates no trigger was found coincident with the injection. Red cross indicates a trigger was found coincident with the injection but it was vetoed. Coloured circle indicates that a trigger was found coincident with the injection but it was not louder than all offsource events. The colour bar gives the FAP of the trigger. }
           \label{fig:missinj1}
         \end{figure}
 
-	The distribution of FAPs for the background events is shown in Fig.\,\ref{fig:loudestoffsourcevent1} as a function of the detection statistic, i.e., the reweighted SNR (or ``BestNR'').
-	This distribution is expected to be roughly flat up until a BestNR value of about $6$ --- as triggers are kept only if $\rho_{\rm coinc} > 6$ --- and to fall off linearly in this log plot from there onwards.  This smooth linear fall off is the behaviour of a Gaussian distribution, which is what the pipeline aims at obtaining with its detection statistic.  The fall off should end at a BestNR  of about $8$, 
+	The distribution of FAPs for the background events is shown in Fig.\,\ref{fig:loudestoffsourcevent1} 
+	as a function of the detection statistic, i.e., the reweighted SNR (or ``BestNR'').
+	This distribution is expected to be roughly flat up until a BestNR value of about $6$ 
+	--- as triggers are kept only if $\rho_{\rm coinc} > 6$ --- 
+	and to fall off linearly in this log plot from there onwards.  
+	This smooth linear fall off is the behaviour of a Gaussian distribution, 
+	which is what the pipeline aims at obtaining with its detection statistic.  
+	The fall off should end at a BestNR  of about $8$, 
 	which is the threshold for detection candidates. 
-	Uneaven fall offs, or tails in the distribution are potentially signs of failures in correctly handling glitches present in the background data. 
-	The specific distribution in Fig.\,\ref{fig:loudestoffsourcevent1} is smooth but has a small tail at the higher end of the reweighted SNR.
-	An inspection of the list of loudest offsource events revealed that this is simply a plotting artifact, as the loudest event has an upper limit on its FAP, rather than a specific assigned value.  This upper limit coincides, of course, with the FAP of the second loudest event and hence the plotting artifact.
+	Uneaven fall offs, or tails in the distribution are potentially signs 
+	of failures in correctly handling glitches present in the background data. 
+	The specific distribution in Fig.\,\ref{fig:loudestoffsourcevent1} is smooth 
+	but has a small tail at the higher end of the reweighted SNR.
+	An inspection of the list of loudest offsource events revealed that 
+	this is simply a plotting artifact, as the loudest event has an upper limit on its FAP, 
+	rather than a specific assigned value.  
+	This upper limit coincides, of course, with the FAP of the second loudest event and hence the plotting artifact.
+	Since the background analysis has overall given good results,
+	as injections are adequately recovered, the analysis can procede by looking at the on-source data.
+	This step has been done, however, since the results are not made public we cannot discuss them.
+	In order to claim detection of a GW candidate event, if present in the on-source data, 
+	must have very low FAP ($\sim10^{-4}$);
+	otherwise we can infer a lower limit on the 90\% exclusion distance, $D_{90}$, 
+	defined as the distance within 90\% of the injections is recovered.
+	The pipeline finds a $D_{90}$ for each injection set.
 
        \fpg{Io chiuderei qui, dicendo che il background \`e trattato bene, le injections sono recuperate in maniera decente e che quindi si pu\`o guardare l'onsource.  Questo \`e stato fatto, ma non puoi mettere i risultati perch\'e, ecc; quello che succede \`e che o si trova un candidate signal, o, per FAP non sufficientemente bassa, si determina un lower limit sulla distanza come quella distanza entro la quale la pipeline recupera il 90\% delle injections.  Siccome hai vari sets di injections hai una $D_{90}$ per ogni set, ovvero per ogni potenziale classe di sorgenti. Non mi addentrerei nelle exclusion distances per gli offsource trials: altrimenti devi spiegare le varie curve, barre d'errore, ecc.}  
 
        \fpg{Sono qui: le 3 GRBs le correggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.} 
-
+\begin{comment}
         \begin{figure}[!t]
           \noindent
           \label{loudestoffsourcevent1}
@@ -2865,26 +2942,31 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 			 \caption{Injection recovery around the time of GRB 190627A, as a function of distance. The  BNS  injection set is represented in the left column, the NSBH with aligned spin set in the column on the right. Top panels shows the fraction found louder than the loudest background event, while bottom panels the fraction louder than the loudest foreground event. }
 			\label{fig:offtrial}
                 \end{figure}
-
+\end{comment}
 \subsection{GRB 190728271}
 \fpg{Rifare sulla falsa riga della precedente sezione.  Per le capitons puoi mettere ``Same as Fig... but for GRB 190728271.''  Nel testo non dovrai rispiegare i plot.}
 	The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728A at 06:30:36 UT on 28 Jul 2019.
 	The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
 	with a statistical uncertainty of 5.7 degrees, while the duration is $T_{90} = 0.832 \pm 0.905$s.
-	All three detector were operating at  the time of the GRB with the following antenna patterns: 
-	H1 with 0.271, L1 with 0.665, and V1 with 0.463.
-	While the $\chi^2$ plot looks good, the bank and auto veto plots present several vetoed injections, as seen in Fig.\,\ref{fig:scplots2}.
+	All three detector were operating at the time of the GRB 190728271, 
+	and their responses in the direction of the GRB were: H1 with 0.271, L1 with 0.665, and V1 with 0.463.
+	While the $\chi^2$ plot looks rather clean, one injection ends up in the bank veto grey area,
+	while the auto veto vetoes several injections, as seen in Fig.\,\ref{fig:scplots2}.
 		\begin{figure}[h]
                         \noindent
                         \label{scplots2}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{scplots2}}%
                         \centering
-                        \caption{\textbf{Signal consistency plots.}}
+                        \caption{\textbf{Signal consistency plots.}Same as Fig.$\ref{fig:signalconsistencyplots1}$ but for GRB 190728271.}
                         \label{fig:scplots2}
                 \end{figure}
-	Further investigations  revealed that most of them are vetoed due to the presence of a highly spinning and precessing component in the binary.
-	A few BNS injections had also a NS with one spin magnitude  $> 0.05$, other than  in-plane spin components.
-	There are some injections in the null stat vetoed area, dragged by glitches.  
+	Further investigations revealed that the injection vetoed by the Bank test was lost because it is a 22$M_\odot$,
+	highly spinning and precessing BH with a precessing neutron star.
+	Of the six vetoed injections for the Auto Veto, three of them are highly spinning and highly precessing BNS,
+	one NSBH with highly spinning and precessing NS and highly precessing BH,
+	while the last two are BNS with both spin magnitudes greater than 0.05 and in-plane spin components.
+	Several injections overlapping with gilitchy data,
+	end up in the NullStat veto area. 
 	Since the H1 single SNR plot  looks scattered, Fig.\,\ref{fig:detector2}, with injections barely contained inside 3 sigma,
 	one could  decide to rerun the analysis excluding H1. 
                 \begin{figure}[h]
@@ -2892,7 +2974,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \label{detector2}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{detector2}}%
                         \centering
-                        \caption{First row shows the null SNR against the coherent SNR. Bottom rows show the H1 and L1 SNR against the coherent SNR.}
+                        \caption{Same as Fig.$\ref{fig:detector1}$ but for GRB 190728271.}
                         \label{fig:detector2}
                 \end{figure}
 	In the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2}, there are many nearby missed injections 
