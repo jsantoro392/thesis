@@ -2974,30 +2974,25 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	These, too, are not public yet and cannot be disclosed.
 
 \subsection{GRB 190425089}
-\fpg{Rifare sulla falsa riga della precedente sezione.}
-        GRB 190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellites,
+        GRB 190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellite,
         with a sky position of $RA=\ang{126.5}$ and $Dec=\ang{-58.1}$.
-	GRB 190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellites,
-        with a sky position of $RA=\ang{126.5}$ and $Dec=\ang{-58.1}$.
-	This was the most challenging GRB, since it required many reruns in order to achieve 
-	a satisfying result, in order to further analyse the on source data.
-%H1L1V1
-	Initially this analysis was done using all the three IFOs,
-        that were operating at the time of the GRB:
-        V1 was collecting data at the event time, but its antenna factor was low, 0.47,
-        compared to the ones of H1 and L1, 0.852 and 0.923 respectively.
-        This discrepancy between the IFOs sensitivity can be also seen in the single detector SNR vs coherent SNR plots:
-        while it looks clean for L1 and H1, besides a single injection outside the $3 \sigma$ region for H1,
-        the V1 plot does not show the expected trend for astrophysical signals, as seen in Fig.\,$\ref{fig:detector3}$.
-		\begin{figure}[h]
-                 	\noindent
-                        \label{detector3}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{detector3}}%
-                        \centering
-                        \caption{Same as Fig.$\ref{fig:detector1}$ but for GRB 190425089.}
-                        \label{fig:detector3}
-                \end{figure}
-	The results of the $\chi^2$-tests are shown in Fig.$\ref{fig:signalconsistencyplots3}$:
+
+	Initially the folllow-up analysis of this GRB was carried out using data from all three available GW detectors.
+        However, the antenna factor for V1 (0.47) in this case was much lower than those of H1 (0.852) and L1 (0.923).
+        This inhomogeneous antenna response emerges in an evident manner in the  single detector SNR versus coherent SNR plots (Fig.\,\ref{fig:detector3}):
+        while the distribution of injections looks clean for H1 and L1, with the exception of a single injection outside the $3 \sigma$ region for H1,
+        the V1 plot does not show the expected trend for astrophysical signals.
+        \begin{figure}[!t]
+          \noindent
+          \label{detector3}
+          \makebox[\textwidth]{\includegraphics[scale=0.5]{detector3}}%
+          \centering
+          \caption{Same as Fig.$\ref{fig:detector1}$ but for GRB 190425089.}
+          \label{fig:detector3}
+        \end{figure}
+
+        \fpg{Sono qui.}
+	The results of the $\chi^2$-tests are shown in Fig.\,\ref{fig:signalconsistencyplots3}:
 	there are several background triggers with high coherent SNR,
 	due to the  overlap with a background glitch, 
 	injections are dragged into the veto area.
