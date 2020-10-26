@@ -3239,9 +3239,16 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 
 	The first category is the BNS injection set: 
 	the ones that were coincident with a trigger are too quiet,
-	except one which overlaps with gated glitches before and just around the time of merger, as shown in Fig.$\ref{}$
+	except one which overlaps with gated glitches before and just around the time of merger, as shown in Fig.$\ref{fig:gated_glitch}$
 	the non coincident have one or both detector's low optimal SNR.
-
+ 		\begin{figure}[h]
+                        \noindent
+                        \label{gated_glitch}
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{gated_glitch}}%
+                        \centering
+                        \caption{The strain spectrogram for a missed BNS injection: the black coloured region represent loud glitches, which are vetoed (green lines). The ligth blue curve is the loudest template. }
+                         \label{fig:gated_glitch}
+                \end{figure}
 	Glitches and gated data are the most occurring reason behind the missed injection for the BBH set.
 	For the not coincident trigger one has a high Opt SNR value for both detectors, 
 	but it is missed because of some gated data in L1 at the time of merging, as shown in Fig.$\ref{fig:missed_inj}$;
