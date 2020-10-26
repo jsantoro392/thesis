@@ -2928,7 +2928,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
        \fpg{Sono qui: le 3 GRBs le correggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.}
 \fpg{Rifare sulla falsa riga della precedente sezione.}
 
-        The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728A at 06:30:36 UT on 28 Jul 2019.
+        The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728271 at 06:30:36 UT on 28 Jul 2019.
         The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
         with a statistical uncertainty of 5.7 degrees, while the duration is $T_{90} = 0.832 \pm 0.905$s.
         All three detector were operating at the time of the GRB 190728271,
@@ -2985,33 +2985,42 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \caption{\textbf{Found/missed injections.} Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271.}
                         \label{fig:missinj2}
                 \end{figure}
-        In order to make a decision about the conditions under which rerunning  the analysis,
-        the last step is looking at the off trial results which shows that injections with higher distances are required.
-        ven though all curves reach $\sim100\%$ efficiency at nearby distances,
-        the detection efficiency plots are not entirely smooth at nearby distances, as shown in Fig.\,\ref{}.
+  By looking at the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2},
+        and comparing to other GRB analyses, it is noticeable that the injection are distributed closer
+        than for most other runs, and there are also many nearby missed injections
+        for both BNS($<68$Mpc) and aligned spin NSBH($<115$Mpc) injection sets.
+        For the BNS set, 32 injections have FAP$\neq0$:
+        a  closer look at the missed injections table shows that
+        most of them have at least one spin magnitude $>$0.05 that also causes precession,
+        except one, whose spin magnitudes are $\sim0.038$ and $\sim0.036$,
+        but also has a high $\chi^2$-test value, which is the main cause of the BestNR down-weighting.
+        This may be due to the large fractional in-plane spin magnitudes($\sim$0.032 and $\sim$0.036),
+        since the calculated match between template and injection shows a good agreement.
+        This is not the case for two of the ten aligned spin NSBH missed injections:
+        a comparison between the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters as it returns matches of  $\sim$8 and  $\sim$9.
+        One of  the two also has high Null SNR values, together
+        Out of the ten aligned spin NSBH missed injections, three do not have a NS spin magnitude $>$ 0.05:
+        one has high Null SNR value, while  the second one suffers from differences between the waveform models,
+        since  when comparing the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters,
+        return a match of $\sim$0.9. The third one has both a high Null SNR value and a low match ($\sim$8) between the injection and waveform model.
                 \begin{figure}[h]
                         \noindent
-                        \label{offtrial2}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{offtrial2}}%
+                        \label{missinj2}
+                        \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj2}}%
                         \centering
-                        \caption{Detection efficiency curves and exclusion distance plots of the first run.}
-                        \label{fig:offtrial2}
+                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271.}
+                        \label{fig:missinj2}
                 \end{figure}
-        The analysis rerun with higher distances is shown in Fig.\,\ref{}.
-        Even though there still are many missed injections, caused by either a component having spin magnitude $> 0.05$,
-        or high $\chi^2$ value, or further in-plane spin components causing precession,
-        the off trial results have improved.
-        Higher exclusion distances and FAPs are shown in Fig.\,\ref{}: the plateau in the detection efficiency curves and exclusion distance curves is gone,
-        but they are not completely smooth and the BNS plots shows dips at closer distances.
-        Smoother curves were successfully achieved by rerunning the analysing one more time with even further distances.
-                \begin{figure}[h]
-                        \noindent
-                        \label{offtrial2rerun}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{offtrial2rerun}}%
-                        \centering
-                        \caption{Comparison between the detection efficiency curves and exclusion distance plots of the first and second rerun.}
-                        \label{fig:offtrial2rerun}
-                \end{figure}
+        By rerunning the analysis with injection at higher distances partially improves the fraction of recovered injections,
+        and increases the exclusion distances and FAPs for all results.
+        The number of BNS injections not confidently recovered has decreased to eighteen at nearby distances ($<$84Mpc),
+        most of them have at least one spin magnitude caused by either a component having spin magnitude $>$0.05,
+ that also causes precession, excepter three injections that show a high $\chi^2$ value.
+        On the other hand, the number NSBH injections has doubled: the majority was lost due to having a NS spin magnitude $>$0.05,
+        the rest due to vetos.
+
+%missedinj for 1 and 2 rerun
+
         Follow up investigations about glitches in the IFOs time series showed four spikes with high SNR values :
         the one at SNR=37.02 corresponds to scattered light, while the ones at 10.75 and 15.81 both are
         the result of a blip like glitch around trigger time.
@@ -3035,77 +3044,16 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	This discrepancy between the IFOs sensitivity can be also seen in the single detector SNR vs coherent SNR plots:
 	while it looks clean for L1 and H1, besides a single injection outside the $3 \sigma$ region,
 	the V1 plot is not as clean as the others, as seen in Fig.\,\ref{fig:detector3}. 
-	 	\begin{figure}[h]
-                        \noindent
-                        \label{detector3}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{detector3}}%
-                        \centering
-                        \caption{Single detector SNR vs coherent SNR plots.}
-                        \label{fig:detector3}
-                \end{figure}
-	By rerunning the analysis, the detection efficiency curves and exclusion distance curves
-	look smoother than in the 3 detector analysis, and they do reach  $\sim 100\%$ and $90\%$ exclusion distances are found,
-	which they did not before, as shown in Fig.\,\ref{fig:offtrial3}  and Fig.\,\ref{fig:offtrial_plot3}.
-	 	\begin{figure}[H]
-                        \noindent
-                        \label{offtrial3}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial3}}%
-                        \centering
-                        \caption{First row: detection efficiency curves for the H1L1V1 analysis. Bottom row: detection efficiency curves after excluding V1.}
-                        \label{fig:offtrial3}
-                \end{figure}
-	 	\begin{figure}[h]
-                        \noindent
-                        \label{offtrial_plot3}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_plot3}}%
-                        \centering
-                        \caption{First row: exclusion distance plots for the H1L1V1 analysis. Bottom row:  exclusion distance plotsafter excluding V1.}
-                        \label{fig:offtrial_plot3}
-                \end{figure}
-	However, the curves for precessing injection sets are not entirely smooth at nearby distances; 
-	the NSBHPRECESSSEOBNRV3 curves suffer the most from this.
-	By rerunning the analysis with closer injection for the precessing NSBH, 
-	detection efficiency curves and exclusion distance plots slightly improve, 
-	besides some dips at nearby distances, see Fig.\ref{fig:offtrial_closer}.
-	 	\begin{figure}[h]
-                        \noindent
-                        \label{offtrial_closer}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_closer}}%
-                        \centering
-                        \caption{Detection efficiency curves and exclusion distance plots with closer injection for the precessing NSBH.}
-                        \label{fig:offtrial_closer}
-                \end{figure}
-	In order to increase the number of injections within the IFOs horizon,
-	a new cut for the single detector SNR is introduced: $\rho=0$.
-	Implementing this cut, the H1L1V1 and H1L1 analysis are rerun, both with closer injections.
-	 	\begin{figure}[H]
-                        \noindent
-                        \label{offtrial_closer}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_closer}}%
-                        \centering
-                        \caption{}
-                        \label{fig:offtrial_closer}
-                \end{figure}
-	In Fig.\,\ref{fig:offtrial_de_cut} and Fig.\,\ref{fig:offtrial_ed_cut} it is shown a comparison between the detection efficiency curves and 
-	exclusion distance plots of the 3 IFOs and 2 IFOs analysis with the SNR cut and closer injections.
-	In the first case they look a little smoother but still do not reach  $\sim 100\%$,
-	while in the second case  there are higher exclusion distances and FAPs for all results, and the overall plots look smoother. 
-	 	\begin{figure}[h]
-                        \noindent
-                        \label{offtrial_de_cut}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_de_cut}}%
-                        \centering
-                        \caption{Comparison between the detection efficiency curves of the analysis with the SNR cut and closer injection for both the H1L1V1 (top row) and H1L1 run (bottom row).}
-                        \label{fig:offtrial_de_cut}
-                \end{figure}
-	 	\begin{figure}[h]
-                        \noindent
-                        \label{offtrial_ed_cut}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{offtrial_ed_cut}}%
-                        \centering
-                        \caption{Comparison between the exclusion distance plots of the analysis with the SNR cut and closer injection for both the H1L1V1 and H1L1 run.}
-                        \label{fig:offtrial_ed_cut}
-                \end{figure}
+
+%H1L1V1
+
+%H1L1
+
+%H1L1 with closer injections
+
+%H1L1V1 closed box with closer injections and sngl-snr-threshold = 0
+
+%H1L1 closed box with closer injections and sngl-snr-threshold = 0
 
 \section{Coincident Analysis of a Chunk of O3b Data}
 \label{sec:pycbc00}
