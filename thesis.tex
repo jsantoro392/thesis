@@ -2668,7 +2668,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \end{figure}
 
 \subsection{Setup of the Offline Analysis}
-\label{sec:pygrb}
+\label{subsec:pygrb}
 \fpg{Qui pure: cita abbondantemente il paper di O2 perch\'e non \`e cambiato nulla e cos\`i giustifichi le scelte.}
 	The {\ttfamily PyGRB} pipeline performs a targeted search for CBC GW signals in LIGO and Virgo data associated with short GRBs seen by Swift and Fermi,
         using the known sky location of the short GRB and the relative GW detector sensitivities to analyses the data coherently, as described in \ref{subsec:coherent}.
@@ -2985,7 +2985,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \caption{\textbf{Found/missed injections.} Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271.}
                         \label{fig:missinj2}
                 \end{figure}
-  By looking at the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2},
+  	By looking at the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2},
         and comparing to other GRB analyses, it is noticeable that the injection are distributed closer
         than for most other runs, and there are also many nearby missed injections
         for both BNS($<68$Mpc) and aligned spin NSBH($<115$Mpc) injection sets.
@@ -3012,16 +3012,21 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \label{fig:missinj2}
                 \end{figure}
         By rerunning the analysis with injection at higher distances partially improves the fraction of recovered injections,
-        and increases the exclusion distances and FAPs for all results.
+        as it clear by looking at Fig.$\ref{fig:missinj2_2}$, and increases the exclusion distances and FAPs for all results.
         The number of BNS injections not confidently recovered has decreased to eighteen at nearby distances ($<$84Mpc),
         most of them have at least one spin magnitude caused by either a component having spin magnitude $>$0.05,
- that also causes precession, excepter three injections that show a high $\chi^2$ value.
+ 	that also causes precession, excepter three injections that show a high $\chi^2$ value.
         On the other hand, the number NSBH injections has doubled: the majority was lost due to having a NS spin magnitude $>$0.05,
         the rest due to vetos.
-
-%missedinj for 1 and 2 rerun
-
-        Follow up investigations about glitches in the IFOs time series showed four spikes with high SNR values :
+                \begin{figure}[h]
+                        \noindent
+                        \label{missinj2_2}
+                        \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj2_2}}%
+                        \centering
+                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271. Results from the first rerun with injections at higher distance.}
+                        \label{fig:missinj2}
+                \end{figure}
+        Follow up investigations about glitches in the IFOs time series showed four spikes with high SNR values:
         the one at SNR=37.02 corresponds to scattered light, while the ones at 10.75 and 15.81 both are
         the result of a blip like glitch around trigger time.
                 \begin{figure}[h]
@@ -3029,10 +3034,31 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \label{glitch_grb}
                         \makebox[\textwidth]{\includegraphics[scale=0.3]{glitch_grb}}%
                         \centering
-                        \caption{Re-weigted SNR vs GPS time.}
+                        \caption{Glitch follow up: re-weigted SNR vs GPS time.}
                         \label{fig:glitch_grb}
                 \end{figure}
-
+	Fig.$\ref{fig:missinj2_3}$ shows the results for the Found/Missed injections for the second rerun analysis, 
+	with higher distances for BNS (375Mpc) and NSBH (700Mpc) injection set,
+	in order to maximise the number of injections at close distances where most injections get lost.
+	Furthermore, a new threshold was chosen for the single SNR cut:
+	instead of a threshold value of four, as discussed in Sec.$\ref{subsec:pygrb}$,
+	now any triggers with $\rho_X<0$ are discharged.
+	As a consequence of these choices, the last  rerun shows better results:
+	higher 90\% exclusion distances for both BNS and NSBH, 
+	with $D_{90}\sim$118Mpc and $D_{90}\sim$134Mpc respectively.
+	Within 118Mpc, out of all the BNS set of injections twenty of them are not recovered confidently.
+	They all have at least one spin magnitude $>$0.05, that also causes precession,
+	besides two injections that have high $\chi^2$ and NullSNR values instead.
+	Given the improved results, the analysis has procede to further investigate the insource data.
+	However,  since the final results are not yet public, we cannot disclose them.
+                \begin{figure}[h]
+                        \noindent
+                        \label{missinj2_3}
+                        \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj2_3}}%
+                        \centering
+                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271. Results from the second rerun with injections at higher distance.}
+                        \label{fig:missinj2_3}
+                \end{figure}
 \subsection{GRB 190425089}
 \fpg{Rifare sulla falsa riga della precedente sezione.}
         GRB 190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellites,
@@ -3073,7 +3099,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \begin{figure}[h]
                         \noindent
                         \label{range_time}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{range_time}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{range_time}}%
                         \centering
                         \caption{On the left: times for which the detector data was marked as ‘science ready’ during the time of this chunk of data. On the right: the inspiral detection range of the LIGO detectors throughout the chunk data taking time.}
                         \label{fig:range_time}
@@ -3089,7 +3115,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \begin{figure}[h]
                         \noindent
                         \label{glitch}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{glitch}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{glitch}}%
                         \centering
                         \caption{Glitches in the omega scan for H1 on the left, and L1 on the right.}
                         \label{fig:glitch}
@@ -3101,7 +3127,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 		\begin{figure}[h]
                         \noindent
                         \label{missed_inj}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{missed_inj}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
                         \centering
                         \caption{ This plot shows if there are missed or 'badly found' injections with unusually high optimal SNR. }
                         \label{fig:missed_inj}
