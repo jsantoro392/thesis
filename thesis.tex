@@ -2925,132 +2925,54 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         \end{figure}
 
 \subsection{GRB 190728271}
-       \fpg{Sono qui: le 3 GRBs le correggo, indipendentemente dalla ristrutturazione di tutto ci\`o che precede.}
-\fpg{Rifare sulla falsa riga della precedente sezione.}
+\fpg{Devi raccontare direttamente il run finale.}
+        {\it Fermi}/GBM triggered on GRB 190728271 at 06:30:36 UTC on July 28, 2019.
+        The GRB was located at $RA = \ang{356.7}$, $Dec = \ang{5.4}$
+        with a statistical uncertainty of 5.7 degrees, while the duration was $T_{90} = (0.832 \pm 0.905)\,$s.
+        All three GW detectors were operating at the time of this GRB,
+        and their responses in its direction were 0.271, 0.665, and 0.463 for H1, L1, and V1, respectively.
 
-        The Fermi Gamma-ray Burst Monitor (GBM) triggered and located GRB 190728271 at 06:30:36 UT on 28 Jul 2019.
-        The on-ground calculated location, using the Fermi GBM trigger data, is $RA = \ang{356.7}$, $Dec = \ang{5.4}$
-        with a statistical uncertainty of 5.7 degrees, while the duration is $T_{90} = 0.832 \pm 0.905$s.
-        All three detector were operating at the time of the GRB 190728271,
-        and their responses in the direction of the GRB were: H1 with 0.271, L1 with 0.665, and V1 with 0.463.
-        While the $\chi^2$ plot looks rather clean, one injection ends up in the bank veto grey area,
-        while the auto veto vetoes several injections, as seen in Fig.\,\ref{fig:scplots2}.
-                \begin{figure}[h]
-                        \noindent
-                        \label{scplots2}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{scplots2}}%
-                        \centering
-                        \caption{\textbf{Signal consistency plots.} Same as Fig.$\ref{fig:signalconsistencyplots1}$ but for GRB 190728271.}
-                        \label{fig:scplots2}
-                \end{figure}
-        Further investigations revealed that the injection vetoed by the Bank test was lost because it is a 22$M_\odot$,
-        highly spinning and precessing BH with a precessing neutron star.
-        Of the six vetoed injections for the Auto Veto, three of them are highly spinning and highly precessing BNS,
-        one NSBH with highly spinning and precessing NS and highly precessing BH,
-        while the last two are BNS with both spin magnitudes greater than 0.05 and in-plane spin components.
-        Since the H1 single SNR plot  looks scattered, Fig.\,\ref{fig:detector2},
-        with injections barely contained inside $3\sigma$,
-        one could  decide to rerun the analysis excluding H1.
-                \begin{figure}[h]
-                        \noindent
-                        \label{detector2}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{detector2}}%
-                        \centering
-                        \caption{Same as Fig.$\ref{fig:detector1}$ but for GRB 190728271.}
-                        \label{fig:detector2}
-                \end{figure}
-        By looking at the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2},
-        and comparing to other GRB analyses, it is noticeable that the injection are distributed closer
-        than for most other runs, and there are also many nearby missed injections
-        for both BNS($<68$Mpc) and aligned spin NSBH($<115$Mpc) injection sets.
-        For the BNS set, 32 injections have FAP$\neq0$:
-        a  closer look at the missed injections table shows that
-        most of them have at least one spin magnitude $>$0.05 that also causes precession,
-        except one, whose spin magnitudes are $\sim0.038$ and $\sim0.036$,
-        but also has a high $\chi^2$-test value, which is the main cause of the BestNR down-weighting.
-        This may be due to the large fractional in-plane spin magnitudes($\sim$0.032 and $\sim$0.036),
-        since the calculated match between template and injection shows a good agreement.
-        This is not the case for two of the ten aligned spin NSBH missed injections:
-        a comparison between the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters as it returns matches of  $\sim$8 and  $\sim$9.
-        One of  the two also has high Null SNR values, together
-        Out of the ten aligned spin NSBH missed injections, three do not have a NS spin magnitude $>$ 0.05:
-        one has high Null SNR value, while  the second one suffers from differences between the waveform models,
-        since  when comparing the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters,
-        return a match of $\sim$0.9. The third one has both a high Null SNR value and a low match ($\sim$8) between the injection and waveform model.
-  	By looking at the Found/Missed Injection plots in Fig.\,\ref{fig:missinj2},
-        and comparing to other GRB analyses, it is noticeable that the injection are distributed closer
-        than for most other runs, and there are also many nearby missed injections
-        for both BNS($<68$Mpc) and aligned spin NSBH($<115$Mpc) injection sets.
-        For the BNS set, 32 injections have FAP$\neq0$:
-        a  closer look at the missed injections table shows that
-        most of them have at least one spin magnitude $>$0.05 that also causes precession,
-        except one, whose spin magnitudes are $\sim0.038$ and $\sim0.036$,
-        but also has a high $\chi^2$-test value, which is the main cause of the BestNR down-weighting.
-        This may be due to the large fractional in-plane spin magnitudes($\sim$0.032 and $\sim$0.036),
-        since the calculated match between template and injection shows a good agreement.
-        This is not the case for two of the ten aligned spin NSBH missed injections:
-        a comparison between the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters as it returns matches of  $\sim$8 and  $\sim$9.
-        One of  the two also has high Null SNR values, together
-        Out of the ten aligned spin NSBH missed injections, three do not have a NS spin magnitude $>$ 0.05:
-        one has high Null SNR value, while  the second one suffers from differences between the waveform models,
-        since  when comparing the SEOBNRv3 injection with a PhenomD waveform with the same physical parameters,
-        return a match of $\sim$0.9. The third one has both a high Null SNR value and a low match ($\sim$8) between the injection and waveform model.
-                \begin{figure}[h]
-                        \noindent
-                        \label{missinj2}
-                        \makebox[\textwidth]{\includegraphics[scale=0.57]{missinj2}}%
-                        \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271.}
-                        \label{fig:missinj2}
-                \end{figure}
-        By rerunning the analysis with injection at higher distances partially improves the fraction of recovered injections,
-        as it clear by looking at Fig.$\ref{fig:missinj2_2}$, and increases the exclusion distances and FAPs for all results.
-        The number of BNS injections not confidently recovered has decreased to eighteen at nearby distances ($<$84Mpc),
-        most of them have at least one spin magnitude caused by either a component having spin magnitude $>$0.05,
- 	that also causes precession, excepter three injections that show a high $\chi^2$ value.
-        On the other hand, the number NSBH injections has doubled: the majority was lost due to having a NS spin magnitude $>$0.05,
-        the rest due to vetos.
-                \begin{figure}[h]
-                        \noindent
-                        \label{missinj2_2}
-                        \makebox[\textwidth]{\includegraphics[scale=0.6]{missinj2_2}}%
-                        \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271. Results from the first rerun with injections at higher distance.}
-                        \label{fig:missinj2}
-                \end{figure}
-        Follow up investigations about glitches in the IFOs time series showed four spikes with high SNR values:
-        the one at SNR=37.02 corresponds to scattered light, while the ones at 10.75 and 15.81 both are
-        the result of a blip like glitch around trigger time.
-                \begin{figure}[h]
-                        \noindent
-                        \label{glitch_grb}
-                        \makebox[\textwidth]{\includegraphics[scale=0.3]{glitch_grb}}%
-                        \centering
-                        \caption{Glitch follow up: re-weigted SNR vs GPS time.}
-                        \label{fig:glitch_grb}
-                \end{figure}
-	Fig.$\ref{fig:missinj2_3}$ shows the results for the Found/Missed injections for the second rerun analysis, 
-	with higher distances for BNS (375Mpc) and NSBH (700Mpc) injection set,
-	in order to maximise the number of injections at close distances where most injections get lost.
-	Furthermore, a new threshold was chosen for the single SNR cut:
-	instead of a threshold value of four, as discussed in Sec.$\ref{subsec:pygrb}$,
-	now any triggers with $\rho_X=0$ are discharged.
-	As a consequence of these choices, the last  rerun shows better results:
-	higher 90\% exclusion distances for both BNS and NSBH, 
-	with $D_{90}\sim$118Mpc and $D_{90}\sim$134Mpc respectively.
-	Within 118Mpc, out of all the BNS set of injections twenty of them are not recovered confidently.
-	They all have at least one spin magnitude $>$0.05, that also causes precession,
-	besides two injections that have high $\chi^2$ and NullSNR values instead.
-	Given the improved results, the analysis has procede to further investigate the insource data.
-	However,  since the final results are not yet public, we cannot disclose them.
-                \begin{figure}[h]
-                        \noindent
-                        \label{missinj2_3}
-                        \makebox[\textwidth]{\includegraphics[scale=0.6]{missinj2_3}}%
-                        \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271. Results from the second rerun with injections at higher distance.}
-                        \label{fig:missinj2_3}
-                \end{figure}
+        While the results of the $\chi^2$-tests look rather clean (Fig.\,\ref{fig:scplots2}), a loud injection ends up being bank-vetoed,
+        as do six injections in the case of the auto veto.
+        \begin{figure}[!t]
+          \noindent
+          \label{scplots2}
+          \makebox[\textwidth]{\includegraphics[scale=0.68]{scplots2}}%
+          \centering
+          \caption{\textbf{Signal consistency plots.} Same as Fig.$\ref{fig:signalconsistencyplots1}$ but for GRB 190728271. \fpg{Servono i pannelli relativi al run definitivo.}}
+          \label{fig:scplots2}
+        \end{figure}
+        Further investigations revealed that the bank-vetoed injection corresponds to a 22$M_\odot$ NSBH system,
+        with a highly spinning and precessing BH as well as a precessing NS: this kind of system is beyond the parameter space region targetted by the template bank.
+        Of the six auto-vetoed injections, five are BNSs with precessing NSs spinning with magnitudes greater than $0.05$, and
+        one is an NSBH with highly spinning and precessing NS and a highly precessing BH.
+        The plots of the of the single SNR versus coherent SNR (Fig.\,\ref{fig:detector2}) reveal that the performance of H1 is not ideal, as several injections fall outside the $3\sigma$ deviation from the expected behaviour.
+        This is due to the poor antenna response of H1 in comparison the L1 and V1.  This also reflects in a fairgly high number of nearby injections that are either not recovered as louder than all background events or are vetoed, even when considering the non-precessing NSBH injeciton set (Fig.\,\ref{fig:missinj2_3}).
+        \begin{figure}[!t]
+          \noindent
+          \label{detector2}
+          \makebox[\textwidth]{\includegraphics[scale=0.55]{detector2}}%
+          \centering
+          \caption{Same as Fig.$\ref{fig:detector1}$, but for GRB 190728271 and for three detectors this time. \fpg{Servono i pannelli relativi al run definitivo.}}
+          \label{fig:detector2}
+        \end{figure}
+        %
+        \begin{figure}[!t]
+          \noindent
+          \label{missinj2_3}
+          \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj2_3}}%
+          \centering
+          \caption{\textbf{Found/missed injections.} Same as Fig.$\ref{fig:missinj1}$ but for GRB 190728271.}
+          \label{fig:missinj2_3}
+        \end{figure}
+        % 
+	Twenty nearby BNS injections were found not to be recovered confidently.
+	All of them have at least one spin magnitude greater than 0.05, that is also precessing.  A high NS spin magnitude was also found for the nearby NSBH injections that were not recovered as louder than all the background events.
+
+        As for GRB 190627A, this background analysis gave overall good results,
+	and the on-source data results were investigated.
+	These, too, are not public yet and cannot be disclosed.
+
 \subsection{GRB 190425089}
 \fpg{Rifare sulla falsa riga della precedente sezione.}
         GRB 190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellites,
