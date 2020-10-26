@@ -3176,7 +3176,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
  		\begin{figure}[h]
                         \noindent
                         \label{range_time}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{range_time}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.7]{range_time}}%
                         \centering
                         \caption{On the left: times for which the detector data was marked as ‘science ready’ during the time of this chunk of data. On the right: the inspiral detection range of the LIGO detectors throughout the chunk data taking time.}
                         \label{fig:range_time}
@@ -3204,7 +3204,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Going through the page result for H1, and looking at the loudest triggers — the ones with SNR$>$8—
 	different kind of glitches can be identified as the source of the high SNR value.
 	The majority of high SNR values are due to close to loud gated glitches: 
-	when a short-duration noise transients ($\sim$\s) is present in the data,
+	when a short-duration noise transients ($\sim$1s) is present in the data,
 	the input data is zeroed for 1 second around the time of the glitch.
 	Three loud single trigger were identified as blip like glitches, 
 	short glitches with a symmetric 'teardrop' shape, by looking at their spectrogram.
@@ -3219,7 +3219,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \begin{figure}[h]
                         \noindent
                         \label{glitch}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{glitch}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.7]{glitch}}%
                         \centering
                         \caption{The spectrogram is plotted in time-frequency space, which means the horizontal axis shows how long the glitch lasts and the vertical axis shows the frequencies that the glitch is 'ringing' at. The colours represent the loudness of the glitch, which indicates how much this glitch moved the arms of the detector. These particular glitches came from H1 on the left, and  from L1 on the right.}
                         \label{fig:glitch}
@@ -3232,6 +3232,36 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	and no other characteristic features in the omega scans were found.
 	The same description applies to singles in the third bin, except for a vibration type glitch.
 \subsection{Missed Injections}
+	In order to check the performance of the search in recovering simulated signal,
+	one looks at the injection results and examines the details of the loudest 
+	missed or badly found injections, in the various injection categories, 
+	with unusually high optimal SNR ($>$8).
+
+	The first category is the BNS injection set: 
+	the ones that were coincident with a trigger are too quiet,
+	except one which overlaps with gated glitches before and just around the time of merger, as shown in Fig.$\ref{}$
+	the non coincident have one or both detector's low optimal SNR.
+
+	Glitches and gated data are the most occurring reason behind the missed injection for the BBH set.
+	For the not coincident trigger one has a high Opt SNR value for both detectors, 
+	but it is missed because of some gated data in L1 at the time of merging, as shown in Fig.$\ref{fig:missed_inj}$;
+ 	another shows a chirp signature H1, however, the precedence of a loud gated glitch just before merging
+	made the recovery  unsuccessful.
+	Because the template bank  parameter space has limitations,
+	an injection may be lost because its parameters are outside the coverage 
+	of the template bank. 
+	For example, an injection from the not coincident and one from the coincident trigger set, 
+	are both lost due to their high mass ratio, and quiet NewSNR value.
+	This set is mostly affected by	 periodic glitches previous to the time of merging,
+	that are  causing the injections to be missed  or not properly found.                
+                \begin{figure}[h]
+                        \noindent
+                        \label{missed_inj}
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
+                        \centering
+                        \caption{ This plot shows if there are missed or 'badly found' injections with unusually high optimal SNR. }
+			 \label{fig:missed_inj}
+                \end{figure}
 
 %--------------------------------------------------------
 \chapter*{Conclusions}
