@@ -3034,7 +3034,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	in order to maximise the number of injections at close distances where most injections get lost.
 	Furthermore, a new threshold was chosen for the single SNR cut:
 	instead of a threshold value of four, as discussed in Sec.$\ref{subsec:pygrb}$,
-	now any triggers with $\rho_X<0$ are discharged.
+	now any triggers with $\rho_X=0$ are discharged.
 	As a consequence of these choices, the last  rerun shows better results:
 	higher 90\% exclusion distances for both BNS and NSBH, 
 	with $D_{90}\sim$118Mpc and $D_{90}\sim$134Mpc respectively.
@@ -3060,7 +3060,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	This was the most challenging GRB, since it required many reruns in order to achieve 
 	a satisfying result, in order to further analyse the on source data.
 %H1L1V1
-        Initially this analysis was done using all the three IFOs,
+	Initially this analysis was done using all the three IFOs,
         that were operating at the time of the GRB:
         V1 was collecting data at the event time, but its antenna factor was low, 0.47,
         compared to the ones of H1 and L1, 0.852 and 0.923 respectively.
@@ -3089,32 +3089,91 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
           		\caption{\textbf{Signal consistency plots.} Same as Fig.$\ref{fig:signalconsistencyplots1}$ but for GRB 190425089.}
          		\label{fig:signalconsistencyplots3}
        		\end{figure}
-
-
+	The most relevant problem is that $D_90$ are not found so, 	
+	since the behaviour of V1 might affect the search, 	
+	the analysis was redone without it.
 %H1L1
-
+	A comparison between the Found/Missed injections results is shown in Fig.$\ref{fig:missinj3_1vs2}$:
+	for the three detector analysis in the upper panel, several injections are assigned a high FAP, 
+	mainly due to bad Null SNR value.
+	The bottom panel shows an improved outcome for the H1L1 analysis rerun: 
+	for the BNS injections set there are nineteen at distance lower than than the $D_{90}\sim207$, 
+	that have at least one large and precessing spin contribution. 
+	The injection around $\sim$-1400s seems to overlap with a glitchy part of the data stream and is vetoed by the null SNR.
+	An even better result is achieved for aligned spin NSBH injections, 
+	as only five are found below the $D_{90}\sim$381Mpc:
+	two of them are lost due to having a NS with spin magnitude above the maximum spin adopted in the waveform template,
+	one out of the five may suffer from discrepancies between the waveform model and the injected signal,
+	and another may be lost due to coincidence with glitch at $\sim$700s. \\
+	The precessing NSBH injection set, however, seem to not have benefited from the V1 exclusion,
+	since, even though there are no missed injection with the $D_{90}\sim$196Mpc,
+	The recovery drops at $\sim$200Mpc in a non smooth fashion.
+ 	Nevertheless, all missed injections between in the range [200;350]Mpc have considerable precessing effects. 
+                \begin{figure}[h]
+                        \noindent
+                        \label{missinj3_1vs2}
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missinj3_1vs2}}%
+                        \centering
+                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190425089. Top panel shows three detector analysis, bottom panel the two detector analysis rerun without V1.}
+                        \label{fig:missinj3_1vs2}
+                \end{figure}
 %H1L1 with closer injections
-
+	Repeating the two detector analysis with closer injection distances for this particular set, 
+	definitely improves the recovery outcome, as shown in Fig.$\ref{fig:missinj3}$
+                \begin{figure}[h]
+                        \noindent
+                        \label{missinj3}
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missinj3}}%
+                        \centering
+                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190425089. Analysis rerun without V1 and injections distributed at closer distances.}
+                        \label{fig:missinj3}
+                \end{figure}
 %H1L1V1 closed box with closer injections and sngl-snr-threshold = 0
-
 %H1L1 closed box with closer injections and sngl-snr-threshold = 0
+	In order to better understand if the reason behind the first not satisfying results,
+	both the three detector analysis and the H1L1 analysis are repeated, 
+	implementing the new single IFO threshold and with the precessing NSBH injections at closer distances.
+%Correggimi se sbaglio,  ma se non ricordo male questa era la GRB che non ho finito di  analizzare. Inoltre se non ricordo male c’era un rerun anche con more injection, giusto??
+%Forse quello che segue non è accurato.  Inoltre non ho il plot per le precessing NSBH.
+	The rerun analysis that meets the standard result, as shown in Fig.$\ref{fig:missinj3_5}$,
+	to further investigate the on source data, is the latter.
+	Higher exclusion distances are found for all results: 
+	210Mpc for the BNS set, $\sim$450Mpc for the aligned and 148Mpc for the precessing NSBH injection set.
+	The injection set whose missed injections are  the most, is the  aligned spin NSBH:
+	out of the forty that are lost due to a NS  with  spin magnitude above the range of the corresponding template,
+	six have high $\chi^2$ value.
+	Same considerations apply for the BNS set, that has 25 missed injections with 210Mpc due to having spin magnitude $>$ 0.05,
+	besides five of  them that were vetoed by a high $\chi^2$ value. 
+                \begin{figure}[h]
+                        \noindent
+                        \label{missinj3_5}
+                        \makebox[\textwidth]{\includegraphics[scale=0.57]{missinj3_5}}%
+                        \centering
+                        \caption{\textbf{Found/missed injections.}Same as Fig.$\ref{fig:missinj1}$ but for GRB 190425089. Analysis rerun without V1, with the single IFO SNR cute, $\rho_X=0$, and injections distributed at closer distances.}
+
+                        \label{fig:missinj3_5}
+                \end{figure}
 
 \section{Coincident Analysis of a Chunk of O3b Data}
 \label{sec:pycbc00}
 \fpg{E qui dovrai spiegare cosa \`e un chunk, che hai usato solo due IFO, che i dati non erano con la calibrazione finale.}
-        The PyCBC coincident search target GWs from compact binaries with a total mass of $2–500M_\odot$,
+	The PyCBC coincident search target GWs from compact binaries with a total mass of $2–500M_\odot$,
         and with maximal $\chi_{BH}$ of 0.998 and 0.05 for the NS spin,
         and to provide a measure of their statistical significance.
-        This analysis performs direct matched filtering of the data against a template bank,
-        to calculate the SNR for each combination of detector, template waveform, and coalescence time as described in Sec.\,\ref{}.
-
-\fpg{Qua \`e un po' tutto da scrivere.  Per le subsections puoi ricalcare i titoli delle sezioni della result webpage che intendi commentare.}
-
-% \subsection{Chunk 29}
+        This analysis performs direct matched filtering of the data against a template bank(Sec.$\ref{subsec:mfcbc}$),
+        to calculate the SNR for each combination of detector, template waveform, and coalescence time as described in Sec.\,\ref{subsec:coincident}.
+	Data stream from the second half of the observing run are split in chunks of data,
+	which are identified by start and stop times (in GPS seconds) of the period to be analyzed.
+	These times require to be padded with respect to the search boundaries with a time padding of, currently, 8s, 	
+	as the high/low pass filters and template matched filter require some time to start operation.
+	Chunks of data denoted by the string “C00” are data in which noise is yet to be subtracted,
+	while “C01” are calibrated data.
+	Until now, the offline PyCBC coincident search has analyzed data from the two Advanced LIGO detectors only. 
+	However, recent work \cite{207} has been done  to extend the PyCBC offline search to three or more detectors.
 	The panel on the left of Fig.\,\ref{fig:range_time} shows that this chunk of raw calibrated data has a duration of 8.59 days,
-	starting from 01:31:32 UTC on 20th December to 15:40:36 UTC of 28th December 2019,
-	during which the coincident time was of 6.235 days (72\%) and the detector sensitivity is shown on the right panel of Fig.\,\ref{fig:range_time}.
-                \begin{figure}[h]
+        starting from 01:31:32 UTC on 20th December to 15:40:36 UTC of 28th December 2019,
+        during which the coincident time was of 6.235 days (72\%) and the detector sensitivity is shown on the right panel of Fig.\,\ref{fig:range_time}.
+ 		\begin{figure}[h]
                         \noindent
                         \label{range_time}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{range_time}}%
@@ -3122,35 +3181,6 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \caption{On the left: times for which the detector data was marked as ‘science ready’ during the time of this chunk of data. On the right: the inspiral detection range of the LIGO detectors throughout the chunk data taking time.}
                         \label{fig:range_time}
                 \end{figure}
-	Whenever the local maximum of this SNR time series is larger than a threshold of 5.5, 
-	the pipeline produces a single-detector trigger associated with the detector, 
-	the parameters of the template, and the coalescence time. 
-	Going through the list of the loudest non-coincident detector triggers in both detectors,
-	divided by template-length bins, no potential GW events were found.
-	Triggers were mostly caused by close to loud gated glitches and blips. 
-	Fig.\,\ref{fig:glitch} on the left shows an example of blip type glitch with few fainter blip around it spanning $\sim1$ second, for H1. 
-	The same goes for L1: there  are no potential GW events and mostly scattered light. 
-                \begin{figure}[h]
-                        \noindent
-                        \label{glitch}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{glitch}}%
-                        \centering
-                        \caption{Glitches in the omega scan for H1 on the left, and L1 on the right.}
-                        \label{fig:glitch}
-                \end{figure}
-	Looking at the missed injections with SNR$>8$ in the various injection categories,
-	showed that for BNS and NSBH sets they were all very quiet, namely SNR$<8$.
-	Same for the BBH missed injections, except for a loud missed injection due to gated data in L1 at the time of merging, 
-	seen in Fig.\,\ref{fig:missed_inj}. %seen in Fig.\,\ref{fig:missed_inj}.                 
-		\begin{figure}[h]
-                        \noindent
-                        \label{missed_inj}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
-                        \centering
-                        \caption{ This plot shows if there are missed or 'badly found' injections with unusually high optimal SNR. }
-                        \label{fig:missed_inj}
-                \end{figure}
-
 
 
 
