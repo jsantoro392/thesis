@@ -1,4 +1,4 @@
-\documentclass[binding=0.6cm, LaM]{sapthesis}
+ with just one injection falling o\documentclass[binding=0.6cm, LaM]{sapthesis}
 \usepackage{microtype}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenx}
@@ -145,14 +145,14 @@ We are grateful for computational resources provided by Cardiff University, and 
 	as they increase the chances of achieving joint GW-GRB detections.
 	Knowing the time and sky-location of a sought for GW event
 	allows to perform a deeper search in the GW data, potentially uncovering signals 
-	that are not accessible to all-sky, all-time searches, as discussed in Chapter \ref{} \fpg{forward reference.}
+	that are not accessible to all-sky, all-time searches, as discussed in Chapter \ref{subsec:coincident}.
 
 	Since the observed properties of short GRBs may be attributed to matter accretion onto a BH,
 	following the tidal disruption of a NS, in addition to BNSs, NSBH systems are also considered likely short GRBs progenitors.
 	At the time of writing this work, no certain NSBH coalescence has been observed.
 	This motivates further the use of 
 	offline GW searches targeting short GRB triggers, as the one I conducted in Chapter \ref{ch:datanalysis}.
-	To enable this search in O3, I also generated and validate the set of waveforms used to filter the data (see discussion in Sec\,\fpg{...})
+	To enable this search in O3, I also generated and validate the set of waveforms used to filter the data (see discussion in Sec\,\ref{subsec:construction_and_validation})
 	This specific set of waveform is known as an ``EM-bright template bank,'' 
 	as it covers only BNSs and NSBH systems that have undergone tidal disruption and are thus potential short GRB progenitors.
 
@@ -1086,7 +1086,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	to the GW signal \cite{23}. 
 
 \section{Template Banks}
-
+\label{sec:template_banks}
 	To perform a matched-filtered search that recovers compact binary coalescence signals
 	with minimal loss of SNR over a given range of intrinsic parameters, 
 	one must filter the data against a predetermined collection of waveform models: the template bank \cite{28}.
@@ -1641,6 +1641,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
         This makes the coherent method highly effective at removing background noise, and therefore coherent searches more sensitive than coincident once.
 
 \subsubsection{Null Stream Consistency}
+\label{subsubsec:nullsnr}
 	In the context of a coherent search for CBC signals,
 	is straightforward to construct a consistency test to distinguish noise transients from GW signals,
 	as those transients which do not contribute power to the two-polarization signal space are rejected as incoherent background noise. 
@@ -1710,7 +1711,7 @@ sense that
         Different injection sets can be used to set up multiple injection searches, as it will be discussed in Chapter \ref{ch:datanalysis}:
         simulated signals are drawn from a synthetic population of a certain type of source,
         described by astrophysical parameters, including the strain amplitude, sky location,
-        and initial frequency \cite{30}.
+        and initial frequency \cite{30}. (See, Sec.\ref{subsec:construction_and_validation})
         This can be done many times, by specifying a time-step at which to place injections,
         without disturbing the detector or significantly reducing the duty cycle of the detectors.
         To randomize the placement, a time interval needs to be provided around
@@ -1734,8 +1735,8 @@ sense that
 	from November 30, 2016 to August 25, 2017.  
 	During the last month of O2, on August 1, 2017, Virgo joined the two LIGO detectors for the first time, 	
 	taking sensitive data about 80\% of the time \cite{13}.  
-	The third observing run (O3) was split in two parts: O3a, which ran between April 1, 2019 and \fpg{...} and O3b, 
-	which started on \fpg{...} and was interrupted on March 27, 2020, prior to the scheduled end date, 
+	The third observing run (O3) was split in two parts: O3a, which ran between April 1, 2019 and 30 September, 2019 and O3b, 
+	which started on  Novem  November 1, 2019 and was interrupted on March 27, 2020, prior to the scheduled end date, 
 	because of the COVID-19 pandemic.  
 	In between observing runs, the detectors are upgraded leading to improvements in sensitivity and duty cycle.
 
@@ -1746,14 +1747,15 @@ sense that
 	the first three-detector event GW170814 \cite{60} and the BNS
 	coalescence GW170817 \cite{62}, the first case in which electromagnetic counterparts to a GW event 
 	were observed \cite{15}.
-        The analyses of O3 data is still in progress, but \fpg{...} events have already been announced.  These are: \fpg{...}.
+        The analyses of O3 data is still in progress, but four events have already been announced.  
+	These are: GW190425, GW190412, GW190814 and GW190521.
 
 	During the observing runs, CBC searches are carried out in near real-time 
 	to rapidly identify event candidates and deliver prompt notice of potential GW transients 
 	enabling follow-up observations in the electromagnetic spectrum. 
 	Increased detection confidence, improved sky localization, identification of a host galaxy, 
 	and the source redshift are just some of the benefits of joint GW–electromagnetic observations.  
-	O3 has yielded a total of 56 (non-retracted) alerts, which include ones for the \fpg{...} events discussed previously.  
+	O3 has yielded a total of 56 (non-retracted) alerts, which include ones for the four events discussed previously.  
 	The performance of the GW detector network in terms of events/alerts is shown in Fig.\,\ref{fig:o3detection}. 
 
         \begin{figure}[!t]
@@ -1922,9 +1924,11 @@ sense that
 	GW151226 persisted in the LIGO frequency band for approximately 1\,s, 
 	increasing in frequency and amplitude over about 55 cycles from 35 to 450\,Hz. 
 	This differs from the more massive GW150914 binary for which only the last 10 cycles of the inspiral where observable.  
-	This has an immediate effect on the precision with which the chirp mass \cite{126, 127} 
-	recovered with respect to the case of GW150914, as this physical parameter controls the binary evolution during the early inspiral.  
-	\fpg{Qui allora dovresti riportare le due chirp masses per fare un confronto.}
+	Since the chirp mass is the physical parameter which controls the binary evolution during the early inspiral, 
+	the longer signal has an immediate effect on the precision 
+	with which the chirp mass \cite{126, 127} was recovered with respect to the case of GW150914.
+	While GW151226 has an inferred chirp mass $\mathcal{M}=8.9\pm 0.3 M_\odot$,
+	GW150914 has $\mathcal{M}=27.6\pm 2  M_\odot$.
 
 	The source of GW151226 was an unequal-mass system with two stellar-mass BHs 
 	with a source-frame masses of $m_1 = 13.7^{+8.8}_{-3.2}M_\odot$ 
@@ -2355,7 +2359,7 @@ sense that
 	The evolution of the remnant matter is responsible for the generation of the EM counterpart of a GW event.
 	However, there are many effects that conditions if and how much material is present after merger.
 	As a matter of fact, not all NSBH mergers are expected to emit electromagnetically, 
-	the conditions under which an EM component is present are discussed in Sec.\,\ref{}.
+	the conditions under which an EM component is present are discussed in Sec.\,\ref{sec:grbfollowup}.
 	Therefore, the NSBH parameter space which needs to be investigate in a triggered analysis,
 	can be considerably reduced by excluding all those systems that are \textit{EM-dim}:
 	since short GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH,
@@ -2374,18 +2378,59 @@ sense that
 	of the PyCBC of one chunk of data from the second part of the third observing run (O3b).
 
 \section{Coherent Follow-Up of Short Gamma-Ray Bursts}
-	The outstanding detection of GW170817 (Sec.\,\ref{subsec:GW170817}) was not only an historical result, 
-	but also clearly demonstrates the vital importance of time-resolved search and follow-up of EM candidate counterparts of GW triggers. 
-	Before that, short GRBs had long been discussed as promising targets for GW astronomy,
-	due to their probable binary merger progenitors \cite{162}, 
-	hypothesis which was confirmed by the joint detection of GW170817  and GRB170817A.
-\fpg{Ma perch\'e parli di NSBH?  Il lettore non lo sa.  C'\`e un tentativo di spiegazione in quello che hai scritto su, ma serve di pi\`u e devi richiamare le informazioni chiave sparse nel resto della tesi.  Va benissimo farlo nel cappello introduttivo di questo capitolo, ma va decisamente migliorato e devi usare i puntatori a quanto hai scritto.  Per esempio ``ho costruito la template bank'' deve essere corredato di rimando al 2.2.   Ti ho rioraganizzatoo sezioni e sottosezioni: al lettore, nel leggere il capitolo, dovr\`a essere evidente perch\'e hai diviso le cose in un certo modo, anzi deve essere proprio di aiuto alla lettura la tua organizzazione del capitolo.}
+\label{sec:grbfollowup}
+	The outstanding detection of GW170817 (Sec.\,\ref{subsec:GW170817}) was not only an historical result,
+        but also clearly demonstrates the vital importance of time-resolved search and follow-up of EM candidate counterparts of GW triggers.
+        Before that, short GRBs had long been discussed as promising targets for GW astronomy,
+        due to their probable binary merger progenitors \cite{162},
+        hypothesis which was confirmed by the joint detection of GW170817  and GRB170817A.	
+
+	Short GRBs and GWs are two opposite astrophysical event:
+	the former are one of most powerful astrophysical events originating throughout the universe,
+	while the latter is characterised by a very small amplitude.
+	However, they share the same catastrophic origin, 
+	therefore are tightly intertwined to each other. \\
+	SGRBs represent an attractive trigger for GW follow-up searches. 
+	The prior observation of an SGRBs provides the time and sky position of a potential GW source. 
+	A targeted search for a binary merger GW signal, 
+	informed by the SGRB observation, need only search a small fraction of the parameter space
+	of a generic binary merger search – one that searches the whole sky at all times and for all binary merger signals (including BBHs). 	
+	Consequently, it is possible to significantly reduce the detection threshold for the targeted SGRB search,
+	thereby increasing the sensitivity of the search.  
+	By looking at the GRBs EM spectrum we can increase our astrophysical knowledge,
+	for example we can infer information about the energy of the event that produced them,
+	how they evolve and what they leave behind. \\
+	However, the EM observation has its own limit due to circum-stellar medium and ejecta,
+	which eclipse possible direct observation of the central engines that power these events.
+	the gamma ray light that is emitted by GRBs is packed into a narrow, highly focused jet of material.
+	This is when GW become the principle probe of the short GRBs central engine.
+	
+	Now that we have pinned down one class of short GRBs progenitors with GW170817, 
+	the next step is to observe the other likely short GRBs source: NSBH systems.
+	Nevertheless, SGRB ignition is supported only by a fraction of NSBH mergers,
+	specifically the ones in which the BH tidally disrupts its companion, 
+	and a sufficiently massive accretion disk forms around the remnant BH.
 
 \subsection{The O3a Template Bank}
-\fpg{Come detto in 2.2, per una modelled search occorre una template bank.  COme detto in ..., BNS ed NSBH sono sorgenti (certe e potenziali) di short GRBs.  Nel caso delle NSBH, ci interessano in particolare quelle con un remnant.  Per questo motivo da O1 incluso in poi, PyGRB viene fatto girare costruendo una template bank con BNS ed NSBH con remnant disk.  Ultimamente \`e stato aggiornato il fit a dai NR per il calcolo della remnant mass.  Ho quindi aggiornato il codice per costruire l'EM bright bank (puoi mettere pure un link all'eseguibile PyCBC e al file em\_progenitors.py), costruito la bank e validato la bank.  Vi vado a spiegare tutte queste cose.}
+	As already mentioned in Sec.\ref{sec:template_banks}, to perform a modelled search 
+	a template bank is required. 
+	In the previous section, Sec.\ref{sec:grbfollowup}, we have introduced BNS and NSBH as certain and potential short GRBs progenitors,
+	as the presence of the NS establishes the potentially right conditions to power the burst.
+	Further studies have demonstrated that necessary and sufficient condition for an NSBH to emit an EM counterpart,
+	is to originate a sufficiently large post merger remnant mass \cite{}.
+	
+	For this reason, {\ttfamily PyCBC} runs its search from O1 included,  onwards with a template bank,
+	whose parameter space  targets only BNS and NSBH that produce an accretion disk after merger.
+	Recent studies have update the remnant mass fitting formula, 	
+	calibrated to numerical relativity  simulations \cite{205}
+	
+	Consequently, we updated the generating code\footnote{https://github.com/jsantoro392/pycbc/blob/master/pycbc/tmpltbank/em\_progenitors.py}
+	for the EM-bright bank with this new model, then we proceed to generate the bank and further validate it.
+	The next sections describe this process step-by-step.
 
 \subsubsection{Tidal Disruption of Black Hole--Neutron Star Binaries}
-        The evolution of the BH singularity and the presence of matter combine
+\label{subsubsec:mrem_model}        
+	The evolution of the BH singularity and the presence of matter combine
         the difficulties of evolving both BBHs and BNS, and the system has its own specific challenges,
         specifically the accretion of the NS matter onto the BH.
         Such binaries are not only sources of GW radiation, but also potential sources of GRBs.
@@ -2496,6 +2541,36 @@ sense that
 \label{subsec:construction_and_validation}
 
 \fpg{Per la bank ho usato questi parametri... che poi sono gli stessi di O2 (cita articolo O2 GRBs.}
+	The EM-bright bank parameter space must cover a parameter space,
+        which corresponds to the combination of masses and spins related to either BNS or NSBH,
+        since these are the binaries for which an EM counterpart is most likely.
+        The parameters for the NSs and BHs can be inferred from astrophysical knowledge.
+        Mass is the dominant term in the waveform, but it is hard to constrain:
+        while most NS observed in BNS systems have masses in the [1.2 − 1.6] $M_{\odot}$ range \cite{200},
+        more massive NS exist, up to at least $\sim$ 2$M_{\odot}$  \cite{200}.
+        Therefore, the NS mass is restricted in the range 1 $M_\odot$ - 2.8 $M_\odot$.
+        Most galactic BH have masses of [5 − 15] $M_{\odot}$  \cite{195},
+        but BHs observed through GWs are often more massive \cite{13}. \\
+        Consequently, the BH mass is limited in the range [2.8;25] $M_\odot$.
+
+        Whether BHs can be formed within the \lq mass gap" between the most massive NS
+        and $\sim$ 5$M_{\odot}$ also remains an important open question.
+
+        The spin parameters are the easier to define: based on astrophysical theory,
+        the unitless maximum spin magnitude is set to 0.988;
+        based on NS parameters from known Galactic BNS systems,
+        the unitless maximum NS spin is constrained to be 0.05 \cite{136}.
+        The templates are restricted to orbital inclinations of $\ang{0}$ or $\ang{180}$.
+        This decision is motivated by the expectation that short GRBs do not have jets with angular sizes,
+        and therefore inclinations, much greater than $\ang{30}$ \cite{136}.
+        The effect of a small inclination angle on the relative amplitudes of the two GW polarizations
+        is minor enough that restricting the inclination of templates to $\ang{0}$ or $\ang{180}$
+        can simultaneously reduce computational cost and improve sensitivity to slightly inclined systems by lowering the search background \cite{136}.
+
+        The magnitude and orientation of BH spins are unknown, and while most NSBH binaries
+        are expected to have negligible eccentricities \cite{202},
+        eccentric NSBH binaries cannot entirely be ruled out
+        and have evolutions very distinct from circular binaries \cite{203}.
 
         The new model covers previously unmodeled regions of the parameter space, comparable masses $q \sim 1$ and high spins,
         giving a more accurate  results.
@@ -2517,14 +2592,12 @@ sense that
         leading to a fractional change in the position of the ISCO for smaller $q$.
         This gives a more precise estimation for $M_{rem}$, which was previously overestimated for nearly equal-mass NSBH.
 
-        Consequently, the region $M_2 \leq 2.5$ of Fig.\,\ref{fig:o3bankvso2bank}, 
-	is slighty denser coverage.
+        Consequently, the region $M_2 \leq 2.5$ of the bank parameter space is slighty denser covered.
         Furthermore, while Eq.\,(\ref{eq:mrem}) did not consider nonlinear effects taking place after the coalescence of a NS
         with a rapidly spinning BH, leading to an underestimation of $M_{rem}$,
         the introduction of the new free parameters $\gamma$ and $\delta$ accurately predicts that in this scenario,
         the remnant mass has larger values than previously found and therefore it is more likely to have an EM counterpart.
 
-%\section{Bank Tests}
 	Part of the construction algorithm of the template bank, 
 	in which the new model has been implemented, 
 	consist in the following steps:
@@ -2546,7 +2619,7 @@ sense that
         so that ‘\textbf{{\color{green}mask\_bns}}’ identifies only BNS, while the systems that do not satisfy this conditions
         are identified by ‘\textbf{{\color{black}masknsbh}}’.
         All these point’s masses and spin are stored.
-        \item As previously showed in Sec.\,\ref{subsec:mrem}, not all NSBH coalescence produce an EM counterpart,
+        \item As previously showed in Sec.\,\ref{subsec:mrem_model}, not all NSBH coalescence produce an EM counterpart,
         so the next step is to keep only those systems whose $M_{rem}$ is greater than the threshold mass to have a counterpart,
         identify these points with ‘\textbf{{\color{blue}mask\_nsbh\_bright}}’ and store their masses and spins.
 	\end{itemize}
@@ -2822,7 +2895,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	but was not louder than all the background triggers;  
 	the circles are colour-codeded with the FAP of the recovered trigger.
 	
-	As discussed in the Sec.\,\ref{sec:pygrb}, the FAP is assigned to a trigger 
+	As discussed in Sec.\,\ref{subsec:pygrb}, the FAP is assigned to a trigger 
 	by calculating the probability that a trial of the same duration as the on-source window 
 	might contain a backgroung event louder than the statistics of the trigger.
         One expects circles to dominate an intermediate transition regime from 
@@ -2852,7 +2925,8 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	These are intentially chosen to be different to account for our incomplete knowledge 
 	of the \emph{exact} signal emitted by compact binaries.
         All in all, the pipeline performance in recovering the injection sets is clean.  
-	
+	Since the precessing NSBH injection set has a behaviour in between the BNS and aligned NSBH set,
+	we will show only the latter for each GRB.	
 	\fpg{Perch\'e i precessing NSBHs non li tratti? -Perchè i plot di NSBHprecessingseobnrv3 ce li ho tagliati a metà. -- Ok, allora per\`o d\`i qualcosa del tipo faccio vedere le BNS e le aligned NSBH perch\'e le precessing NSBH hanno comportamento intermedio. E anche per le altre GRBs mostra solo questi due sets.}
 
         \begin{figure}[!t]
@@ -2953,7 +3027,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         GRB 190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellite,
         with a sky position of $RA=\ang{126.5}$ and $Dec=\ang{-58.1}$.
 
-	Initially the folllow-up analysis of this GRB was carried out using data from all three available GW detectors.
+	Initially the follow-up analysis of this GRB was carried out using data from all three available GW detectors.
         However, the antenna factor for V1 (0.47) in this case was much lower than those of H1 (0.852) and L1 (0.923).
         This inhomogeneous antenna response emerges in an evident manner in the  single detector SNR versus coherent SNR plots (Fig.\,\ref{fig:detector3}):
         while the distribution of injections looks clean for H1 and L1, with the exception of a single injection outside the $3 \sigma$ region for H1,
@@ -2967,85 +3041,44 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
           \label{fig:detector3}
         \end{figure}
 
-        \fpg{Sono qui.} \fpg{Anche qua, se poi l'analisi \`e fatta con H1L1, hai evidenziato il problema con V1 e puoi passare direttamente all'analisi definitiva (sia per i plot che per la descrizione).}
-	The results of the $\chi^2$-tests are shown in Fig.\,\ref{fig:signalconsistencyplots3}:
-	there are several background triggers with high coherent SNR,
-	due to the  overlap with a background glitch, 
-	injections are dragged into the veto area.
-	Follow up investigations of the single injection that ends up in the $\chi^2$ vetoed area,
-	reported that this injection has very large precession.
-		\begin{figure}[!t]
-         		\noindent
-          		\label{signalconsistencyplots3}
-          		\makebox[\textwidth]{\includegraphics[scale=0.68]{signalconsistencyplots3}}%
-          		\centering
-          		\caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190425089.}
-         		\label{fig:signalconsistencyplots3}
-       		\end{figure}
-	The most relevant problem is that $D_90$ are not found so, 	
-	since the behaviour of V1 might affect the search, 	
-	the analysis was redone without it.
-%H1L1
-	A comparison between the Found/Missed injections results is shown in Fig.\,\ref{fig:missinj3_1vs2}:
-	for the three detector analysis in the upper panel, several injections are assigned a high FAP, 
-	mainly due to bad Null SNR value.
-	The bottom panel shows an improved outcome for the H1L1 analysis rerun: 
-	for the BNS injections set there are nineteen at distance lower than than the $D_{90}\sim207$, 
-	that have at least one large and precessing spin contribution. 
-	The injection around $\sim$-1400s seems to overlap with a glitchy part of the data stream and is vetoed by the null SNR.
-	An even better result is achieved for aligned spin NSBH injections, 
-	as only five are found below the $D_{90}\sim$381Mpc:
-	two of them are lost due to having a NS with spin magnitude above the maximum spin adopted in the waveform template,
-	one out of the five may suffer from discrepancies between the waveform model and the injected signal,
-	and another may be lost due to coincidence with glitch at $\sim$700s. \\
-	The precessing NSBH injection set, however, seem to not have benefited from the V1 exclusion,
-	since, even though there are no missed injection with the $D_{90}\sim$196Mpc,
-	The recovery drops at $\sim$200Mpc in a non smooth fashion.
- 	Nevertheless, all missed injections between in the range [200;350]Mpc have considerable precessing effects. 
-                \begin{figure}[h]
+ 	The results of the $\chi^2$-tests are shown in Fig.\,\ref{fig:signalconsistencyplots3_final}:
+       	there are a few injections overlapping with glitchy data, dragged into the veto  area of the bank and  auto veto tests;
+	just two injections are vetoed for the $\chi^2$-test.
+                \begin{figure}[!t]
                         \noindent
-                        \label{missinj3_1vs2}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missinj3_1vs2}}%
+                        \label{signalconsistencyplots3_final}
+                        \makebox[\textwidth]{\includegraphics[scale=0.68]{signalconsistencyplots3_final}}%
                         \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089. Top panel shows three detector analysis, bottom panel the two detector analysis rerun without V1.}
-                        \label{fig:missinj3_1vs2}
+                        \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190425089.}
+                        \label{fig:signalconsistencyplots3_final}
                 \end{figure}
-%H1L1 with closer injections
-	Repeating the two detector analysis with closer injection distances for this particular set, 
-	definitely improves the recovery outcome, as shown in Fig.\,\ref{fig:missinj3}
-                \begin{figure}[h]
+	The plots of the of the single SNR versus coherent SNR (see, Fig.\ref{fig:detector3_final}) show that both H1 and L1
+	follow the expected astrophysical trend overall, with just one  injection falling out the  3$\sigma$ deviation.
+	                \begin{figure}[!t]
                         \noindent
-                        \label{missinj3}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missinj3}}%
+                        \label{detector3_final}
+                        \makebox[\textwidth]{\includegraphics[scale=0.5]{detector3_final}}%
                         \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089. Analysis rerun without V1 and injections distributed at closer distances.}
-                        \label{fig:missinj3}
+                        \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:detector1} but for GRB 190425089.}
+                        \label{fig:detector3_final}
                 \end{figure}
-%H1L1V1 closed box with closer injections and sngl-snr-threshold = 0
-%H1L1 closed box with closer injections and sngl-snr-threshold = 0
-	In order to better understand if the reason behind the first not satisfying results,
-	both the three detector analysis and the H1L1 analysis are repeated, 
-	implementing the new single IFO threshold and with the precessing NSBH injections at closer distances.
-%Correggimi se sbaglio,  ma se non ricordo male questa era la GRB che non ho finito di  analizzare. Inoltre se non ricordo male c’era un rerun anche con more injection, giusto??
-%Forse quello che segue non è accurato.  Inoltre non ho il plot per le precessing NSBH.
-	The rerun analysis that meets the standard result, as shown in Fig.\,\ref{fig:missinj3_5},
-	to further investigate the on source data, is the latter.
-	Higher exclusion distances are found for all results: 
-	210Mpc for the BNS set, $\sim$450Mpc for the aligned and 148Mpc for the precessing NSBH injection set.
-	The injection set whose missed injections are  the most, is the  aligned spin NSBH:
-	out of the forty that are lost due to a NS  with  spin magnitude above the range of the corresponding template,
-	six have high $\chi^2$ value.
-	Same considerations apply for the BNS set, that has 25 missed injections with 210Mpc due to having spin magnitude $>$ 0.05,
-	besides five of  them that were vetoed by a high $\chi^2$ value. 
+	
+        The injection set whose missed injections are the most, is the aligned spin NSBH:
+        out of the forty that are lost due to a NS  with  spin magnitude above the range of the corresponding template,
+        six have high $\chi^2$ value.
+        Same considerations apply for the BNS set, that has 25 missed injections within 210Mpc due to having spin magnitude $>$ 0.05,
+        besides five of  them that were vetoed by a high $\chi^2$ value.
                 \begin{figure}[h]
                         \noindent
                         \label{missinj3_5}
                         \makebox[\textwidth]{\includegraphics[scale=0.57]{missinj3_5}}%
                         \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089. Analysis rerun without V1, with the single IFO SNR cute, $\rho_X=0$, and injections distributed at closer distances.}
-
+                        \caption{\textbf{Found/missed injections.}Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089.}
                         \label{fig:missinj3_5}
                 \end{figure}
+	Nonetheless, the background analysis has given acceptable results
+	and the on-source data results were investigated. 
+	As for the previous GRBs, the on-source data are not public yet and cannot be disclosed. 
 
 \section{Coincident Analysis of a Chunk of O3b Data}
 \label{sec:pycbc00}
@@ -3056,7 +3089,12 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         This analysis performs a direct matched filtering of the single detector data against a template bank (Sec.\,\ref{subsec:mfcbc}),
         and calculates the coincident SNR for each combination of detectors (Sec.\,\ref{subsec:coincident}).
 	Data from the second half of the observing run are split in chunks
-	identified by their start and stop times (in GPS seconds). \fpg{S\`i ma in base a che vengono divisi i chunks?  Il run parte e si apre il chunk 1: come se ne sceglie la fine?}
+	identified by their start and stop times (in GPS seconds).
+	The boundaries of the chunks are chosen in the following way:
+	the time at which the chunk starts in when at least one detector is observin;
+	after five days of coincidence between all the detectors in the network are achieved,
+	the end time is chosen to be the first available moment either when the same starting network configuration is present,
+	or none of the detectors are observing. \fpg{S\`i ma in base a che vengono divisi i chunks?  Il run parte e si apre il chunk 1: come se ne sceglie la fine?}
 	These times require to be padded on both ends with 8\,s of extra data 	
 	as the high/low pass filters and template matched filter require some extra time to operate.
 	Chunks of data denoted by the string ``C00'' require the final data quality checks and calibration to be carried out.
@@ -3072,7 +3110,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         Whenever the local maximum of this SNR time series is larger than a threshold of 5.5,
         the pipeline produces a single-detector trigger associated with the detector,
         the parameters of the template, and the coalescence time.
-	Triggers are then subject to a chi-squared test (Sec.\,\ref{}).
+	Triggers are then subject to a chi-squared test (Sec.\,\ref{subsec:chi_square_test}).
 
 	The  data analysis procedure starts by identifying instrumental issues 
 	that might degrade the sensitivity of the search by causing excess background noise.
@@ -3172,26 +3210,26 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 	the aforementioned data analysis strategies have been investigated. 
 	Algorithms requiring coincident detection of a source by multiple detectors,
 	are the primary method to detect BBH mergers, 
-	as shown in the GW event overview in Chapter \ref{}.
-	The benefits of this procedure, described in Sec.\ref{} are plenty: 
+	as shown in the GW event overview in Chapter \ref{ch:ObservingRuns}.
+	The benefits of this procedure, described in Sec.\ref{subsec:coincident} are plenty: 
 	first it immediately eliminates the great majority of noise background 
 	by rejecting any triggers which are uncorrelated in time in two or more detectors; 
 	secondly, it is not computationally expensive. 
-	The dominant cost of the search is in performing the matched filtering (see, Sec.\ref{}) 
-	of the data against the template bank (see, Section \ref{}).
+	The dominant cost of the search is in performing the matched filtering (see, Sec.\ref{sec:matched_filtering}) 
+	of the data against the template bank (see, Section \ref{sec:template_banks}).
 	The {\ttfamily PyCBC} offline analysis has been developed implementing this method in its algorithms. 
-	In Chapter \ref{}, we reported the results of the analysis of one chunk of data,  from O3b.
-	A coherent approach, described in Sec.\ref{}, on the other hand, 
+	In Sec.\ref{sec:pycbc00} of Chapter \ref{subsec:pygrb}, we reported the results of the analysis of one chunk of data,  from O3b.
+	A coherent approach, described in Sec.\ref{subsec:coherent}, on the other hand, 
 	it is computationally expensive in the case of modelled searches,
 	however, knowing the time and sky-location of the source can cut the cost of the search.
 	It enables a more extensive search in the GW data, potentially uncovering signals 
 	that are not within reach to all-sky, all-time searches.
 	Moreover, the coherent analysis allows for some additional tests 
 	which are not readily available in the coincidence case. 
-	The most significant of these is the null SNR (see, Sec.\ref{}) which can be used to reject events which are 
+	The most significant of these is the null SNR (see, Sec.\ref{subsubsec:nullsnr}) which can be used to reject events which are 
 	not consistent with two GW polarizations. 
-	This method is the  basis which the  {\ttfamily PyGRB}  pipeline is built upon (see, Sec.\ref{}).
-	In Chapter \ref{}, we presented the results of a {\ttfamily PyGRB} search conducted on O3a data,
+	This method is the  basis which the  {\ttfamily PyGRB}  pipeline is built upon (see, Sec.\ref{subsec:pygrb}).
+	In Chapter \ref{ch:datanalysis}, we presented the results of a {\ttfamily PyGRB} search conducted on O3a data,
 	to search for BNS and NSBH signals compatible with the sky-location and time of three short GRBs:
 	GRB 190627A, GRB 190728271 and GRB 190425089.
 	Besides GRB 190627A, the off-source analysis of the data required several reanalysis,
@@ -3207,7 +3245,8 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 	One of the likely progenitors of short GRBs are NSBH systems, 
 	hence is crucial to have reliable models of the GW and EM signals powered by BHNS binaries,
 	in order  to  make optimal use of the available data.
-	In Chapter \ref{} we have compared an old model \cite{}  with an updated one \cite{} for the remnant mass of a NSBH system,
+	In Sec.\ref{subsubsec:mrem_model} of Chapter \ref{ch:datanalysis} we have compared an old model \cite{206}  
+	with an updated one \cite{205} for the remnant mass of a NSBH system,
 	as short GRBs may be powered only when there is matter accretion onto a BH.
 	We proceded to implement this into the EM-bright template bank,
 	generated  it within a well defined parameter space and tested it.
