@@ -3022,7 +3022,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         GRB 190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellite,
         with a sky position of $RA=\ang{126.5}$ and $Dec=\ang{-58.1}$.
 
-	Initially the folllow-up analysis of this GRB was carried out using data from all three available GW detectors.
+	Initially the follow-up analysis of this GRB was carried out using data from all three available GW detectors.
         However, the antenna factor for V1 (0.47) in this case was much lower than those of H1 (0.852) and L1 (0.923).
         This inhomogeneous antenna response emerges in an evident manner in the  single detector SNR versus coherent SNR plots (Fig.\,\ref{fig:detector3}):
         while the distribution of injections looks clean for H1 and L1, with the exception of a single injection outside the $3 \sigma$ region for H1,
@@ -3037,84 +3037,6 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         \end{figure}
 
         \fpg{Sono qui.} \fpg{Anche qua, se poi l'analisi \`e fatta con H1L1, hai evidenziato il problema con V1 e puoi passare direttamente all'analisi definitiva (sia per i plot che per la descrizione).}
-	The results of the $\chi^2$-tests are shown in Fig.\,\ref{fig:signalconsistencyplots3}:
-	there are several background triggers with high coherent SNR,
-	due to the  overlap with a background glitch, 
-	injections are dragged into the veto area.
-	Follow up investigations of the single injection that ends up in the $\chi^2$ vetoed area,
-	reported that this injection has very large precession.
-		\begin{figure}[!t]
-         		\noindent
-          		\label{signalconsistencyplots3}
-          		\makebox[\textwidth]{\includegraphics[scale=0.68]{signalconsistencyplots3}}%
-          		\centering
-          		\caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190425089.}
-         		\label{fig:signalconsistencyplots3}
-       		\end{figure}
-	The most relevant problem is that $D_90$ are not found so, 	
-	since the behaviour of V1 might affect the search, 	
-	the analysis was redone without it.
-%H1L1
-	A comparison between the Found/Missed injections results is shown in Fig.\,\ref{fig:missinj3_1vs2}:
-	for the three detector analysis in the upper panel, several injections are assigned a high FAP, 
-	mainly due to bad Null SNR value.
-	The bottom panel shows an improved outcome for the H1L1 analysis rerun: 
-	for the BNS injections set there are nineteen at distance lower than than the $D_{90}\sim207$, 
-	that have at least one large and precessing spin contribution. 
-	The injection around $\sim$-1400s seems to overlap with a glitchy part of the data stream and is vetoed by the null SNR.
-	An even better result is achieved for aligned spin NSBH injections, 
-	as only five are found below the $D_{90}\sim$381Mpc:
-	two of them are lost due to having a NS with spin magnitude above the maximum spin adopted in the waveform template,
-	one out of the five may suffer from discrepancies between the waveform model and the injected signal,
-	and another may be lost due to coincidence with glitch at $\sim$700s. \\
-	The precessing NSBH injection set, however, seem to not have benefited from the V1 exclusion,
-	since, even though there are no missed injection with the $D_{90}\sim$196Mpc,
-	The recovery drops at $\sim$200Mpc in a non smooth fashion.
- 	Nevertheless, all missed injections between in the range [200;350]Mpc have considerable precessing effects. 
-                \begin{figure}[h]
-                        \noindent
-                        \label{missinj3_1vs2}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missinj3_1vs2}}%
-                        \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089. Top panel shows three detector analysis, bottom panel the two detector analysis rerun without V1.}
-                        \label{fig:missinj3_1vs2}
-                \end{figure}
-%H1L1 with closer injections
-	Repeating the two detector analysis with closer injection distances for this particular set, 
-	definitely improves the recovery outcome, as shown in Fig.\,\ref{fig:missinj3}
-                \begin{figure}[h]
-                        \noindent
-                        \label{missinj3}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missinj3}}%
-                        \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089. Analysis rerun without V1 and injections distributed at closer distances.}
-                        \label{fig:missinj3}
-                \end{figure}
-%H1L1V1 closed box with closer injections and sngl-snr-threshold = 0
-%H1L1 closed box with closer injections and sngl-snr-threshold = 0
-	In order to better understand if the reason behind the first not satisfying results,
-	both the three detector analysis and the H1L1 analysis are repeated, 
-	implementing the new single IFO threshold and with the precessing NSBH injections at closer distances.
-%Correggimi se sbaglio,  ma se non ricordo male questa era la GRB che non ho finito di  analizzare. Inoltre se non ricordo male c’era un rerun anche con more injection, giusto??
-%Forse quello che segue non è accurato.  Inoltre non ho il plot per le precessing NSBH.
-	The rerun analysis that meets the standard result, as shown in Fig.\,\ref{fig:missinj3_5},
-	to further investigate the on source data, is the latter.
-	Higher exclusion distances are found for all results: 
-	210Mpc for the BNS set, $\sim$450Mpc for the aligned and 148Mpc for the precessing NSBH injection set.
-	The injection set whose missed injections are  the most, is the  aligned spin NSBH:
-	out of the forty that are lost due to a NS  with  spin magnitude above the range of the corresponding template,
-	six have high $\chi^2$ value.
-	Same considerations apply for the BNS set, that has 25 missed injections with 210Mpc due to having spin magnitude $>$ 0.05,
-	besides five of  them that were vetoed by a high $\chi^2$ value. 
-                \begin{figure}[h]
-                        \noindent
-                        \label{missinj3_5}
-                        \makebox[\textwidth]{\includegraphics[scale=0.57]{missinj3_5}}%
-                        \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089. Analysis rerun without V1, with the single IFO SNR cute, $\rho_X=0$, and injections distributed at closer distances.}
-
-                        \label{fig:missinj3_5}
-                \end{figure}
 
 \section{Coincident Analysis of a Chunk of O3b Data}
 \label{sec:pycbc00}
