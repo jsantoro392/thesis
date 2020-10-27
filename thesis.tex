@@ -3084,7 +3084,12 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         This analysis performs a direct matched filtering of the single detector data against a template bank (Sec.\,\ref{subsec:mfcbc}),
         and calculates the coincident SNR for each combination of detectors (Sec.\,\ref{subsec:coincident}).
 	Data from the second half of the observing run are split in chunks
-	identified by their start and stop times (in GPS seconds). \fpg{S\`i ma in base a che vengono divisi i chunks?  Il run parte e si apre il chunk 1: come se ne sceglie la fine?}
+	identified by their start and stop times (in GPS seconds).
+	The boundaries of the chunks are chosen in the following way:
+	the time at which the chunk starts in when at least one detector is observin;
+	after five days of coincidence between all the detectors in the network are achieved,
+	the end time is chosen to be the first available moment either when the same starting network configuration is present,
+	or none of the detectors are observing. \fpg{S\`i ma in base a che vengono divisi i chunks?  Il run parte e si apre il chunk 1: come se ne sceglie la fine?}
 	These times require to be padded on both ends with 8\,s of extra data 	
 	as the high/low pass filters and template matched filter require some extra time to operate.
 	Chunks of data denoted by the string ``C00'' require the final data quality checks and calibration to be carried out.
