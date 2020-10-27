@@ -1722,7 +1722,7 @@ sense that
         and noting which injections are not recovered at all,
         one can characterize quantitatively the pipeline performance \cite{47, 48}
         by examinining the fraction of found injections as a function of the distance of the injection.
-\fpg{Devi mettere una forward reference a quando discuti qualcosa di relativo alle tue injections/efficiencies nel capitolo dei risultati.}
+
 	
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Highlights from the Gravitational-Wave Observing Runs}
@@ -1933,8 +1933,6 @@ sense that
 	The source of GW151226 was an unequal-mass system with two stellar-mass BHs 
 	with a source-frame masses of $m_1 = 13.7^{+8.8}_{-3.2}M_\odot$ 
 	and secondary mass $m_2 = 7.7^{+2.2}_{-2.5}M_\odot$ \cite{13}. 
-	\fpg{Stavi citando i valori del paper originale, questi sono quelli finali del catalog 
-	     visto che giustamente parli di GW151012 e non pi\`u di LVT151012, ovvero tieni conto delle rianalisi.} 
 	The inferred BH masses are within the range of dynamically measured masses 
 	of BHs found in X-ray binaries \cite{128-132}, 
 	unlike the high masses of GW150914 which had never been observed before. 
@@ -1977,7 +1975,7 @@ sense that
 	with a network SNR of 13 and a FAR of less than 1 in 70,000 years.
 	At the detection statistic value of GW170104, the background rate in both matched filter 
 	analyses is dwarfed by the signal rate, 
-	yielding a probility of astrophysical origin greater than $1 - (3 \times 10^{-5})$ \cite{60}. \fpg{Citazioni.}
+	yielding a probility of astrophysical origin greater than $1 - (3 \times 10^{-5})$ \cite{60}.
 
 	The source of GW170104 is a BBH system with total mass of $\sim 50M_\odot$.  	
 	The inferred component masses are $31.2^{+8.4}_{-6.0}M_\odot$ and $19.4^{+5.3} _{-5.9}M_\odot$.
@@ -2272,7 +2270,7 @@ sense that
 	spinning Galactic BNSs that are expected to merge within the lifetime of the Universe.
 
 	In the BNS scenario, the detection of GW190425 provides an update 
-	on the number of NS that collide in a volume of the universe every year, bringing this to $250–2810 Gpc^{-3}\,$yr$^{-1}$ \cite{62}.
+	on the number of NS that collide in a volume of the universe every year, bringing this to $250$--$2810\,$Gpc$^{-3}\,$yr$^{-1}$ \cite{62}.
 
 \subsection{GW190521: a $150M_\odot$ Binary Black Hole Merger}
 	The BBH that produced the GW event GW190521 was the most massive and energetic BH merger detected to date, 
@@ -2346,20 +2344,21 @@ sense that
 \label{ch:datanalysis}
 \fpg{Giri di correzione: 1.}%
         {\ttfamily PyGRB} is a GRB triggered CBC search
-	which entails the coherent analysis of multiple detectors data as seen in Sec.\,\ref{subsec:coherent}. \\
-	It also asses if a GW signal is present in the data, 
-	given the time and sky position coordinates of an observed short GRB,
-	by performing several signal-based veto cuts and data quality cuts. \\
-	Not all compact binary mergers lead to an emission of a electromagnetic transient: 
-	binary sources for which EM follow-up is most promising are the ones that contains at least one NS,
-	this is a minimum condition for there to be matter post merger. \\
-	However, a more constraining factor than the solely presence of a NS,
-	is the presence of matter resulting from the backwash of a BNS or an NSBH,
-	outside the final BH.  \\
-	The evolution of the remnant matter is responsible for the generation of the EM counterpart of a GW event.
-	However, there are many effects that conditions if and how much material is present after merger.
-	As a matter of fact, not all NSBH mergers are expected to emit electromagnetically, 
-	the conditions under which an EM component is present are discussed in Sec.\,\ref{sec:grbfollowup}.
+	which entails the coherent analysis of multiple detectors data as seen in Sec.\,\ref{subsec:coherent}. 
+	It assesses whether a GW signal is present in the data, 
+	given the time and sky position of an observed short GRB,
+	by performing several signal-based veto cuts and data quality cuts.
+
+	Not all compact binary mergers lead to the emission of an electromagnetic (EM) transient: 
+	binary sources for which a multi-messenger emission is most probable are the ones that contain at least a NS.
+	This is a minimum condition in order to have the presence of matter in the post-merger stage.
+	However, a more stringent requirement is to demand
+	the presence of matter resulting from the backwash of a BNS or an NSBH
+	outside the remnant central BH.
+	The evolution of this remnant matter can be responsible for the generation of several EM counterparts to GW events, and short GRBs in particular.
+	Several factors contribute to determining if and how much material is present after the merger, outside the BH.
+	Indeed, not all NSBH mergers are expected to emit electromagnetically and/or be viable short GRB progenitors (this is discussed further in Sec.\,\ref{sec:grbfollowup}).
+        %
 	Therefore, the NSBH parameter space which needs to be investigate in a triggered analysis,
 	can be considerably reduced by excluding all those systems that are \textit{EM-dim}:
 	since short GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH,
@@ -2540,7 +2539,6 @@ sense that
 \subsubsection{Construction and Validation}
 \label{subsec:construction_and_validation}
 
-\fpg{Per la bank ho usato questi parametri... che poi sono gli stessi di O2 (cita articolo O2 GRBs.}
 	The EM-bright bank parameter space must cover a parameter space,
         which corresponds to the combination of masses and spins related to either BNS or NSBH,
         since these are the binaries for which an EM counterpart is most likely.
@@ -2550,7 +2548,7 @@ sense that
         more massive NS exist, up to at least $\sim$ 2$M_{\odot}$  \cite{200}.
         Therefore, the NS mass is restricted in the range 1 $M_\odot$ - 2.8 $M_\odot$.
         Most galactic BH have masses of [5 − 15] $M_{\odot}$  \cite{195},
-        but BHs observed through GWs are often more massive \cite{13}. \\
+        but BHs observed through GWs are often more massive \cite{13}. \\  % FP: 13 is the O2 GRB paper.
         Consequently, the BH mass is limited in the range [2.8;25] $M_\odot$.
 
         Whether BHs can be formed within the \lq mass gap" between the most massive NS
@@ -2659,7 +2657,6 @@ sense that
                         \label{fig:banktest}
                 \end{figure}
 
-                \fpg{Oh, questa \`e la validazione/test!}
 	The effectiveness of the bank, in recovering the signal it searching for,
         can be assessed by calculating the fitting factor,
         already introduced in Sec.\,\ref{subsec:fittingfactor}.
@@ -2925,9 +2922,8 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	These are intentially chosen to be different to account for our incomplete knowledge 
 	of the \emph{exact} signal emitted by compact binaries.
         All in all, the pipeline performance in recovering the injection sets is clean.  
-	Since the precessing NSBH injection set has a behaviour in between the BNS and aligned NSBH set,
+	Since the response to the precessing NSBH injection set is inbetween the ones to the BNS and aligned NSBH injection sets,\footnote{BNSs are less massive and therefore recovered at lower distances, while aligned-spin NSBHs can be recovered up to higher distances because they lack precession effects.}
 	we will show only the latter for each GRB.	
-	\fpg{Perch\'e i precessing NSBHs non li tratti? -Perchè i plot di NSBHprecessingseobnrv3 ce li ho tagliati a metà. -- Ok, allora per\`o d\`i qualcosa del tipo faccio vedere le BNS e le aligned NSBH perch\'e le precessing NSBH hanno comportamento intermedio. E anche per le altre GRBs mostra solo questi due sets.}
 
         \begin{figure}[!t]
           \noindent
@@ -2975,13 +2971,13 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         \end{figure}
 
 \subsection{GRB 190728271}
-\fpg{Devi raccontare direttamente il run finale.}
         {\it Fermi}/GBM triggered on GRB 190728271 at 06:30:36 UTC on July 28, 2019.
         The GRB was located at $RA = \ang{356.7}$, $Dec = \ang{5.4}$
         with a statistical uncertainty of 5.7 degrees, while the duration was $T_{90} = (0.832 \pm 0.905)\,$s.
         All three GW detectors were operating at the time of this GRB,
         and their responses in its direction were 0.271, 0.665, and 0.463 for H1, L1, and V1, respectively.
 
+\fpg{Devi raccontare direttamente il run finale.  La descrizione qui sotto riguarda i plot del primo run.  Se io guardo Fig.\,\ref{fig:scplots2_final}, non ritrovo quello che scrivi.  Infatti ci sono 2/3 injections per auto veto e una per lo standard chi-square.}
         While the results of the $\chi^2$-tests look rather clean (Fig.\,\ref{fig:scplots2_final}), a loud injection ends up being bank-vetoed,
         as do six injections in the case of the auto veto.
         \begin{figure}[!t]
@@ -2989,7 +2985,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
           \label{scplots2_final}
           \makebox[\textwidth]{\includegraphics[scale=0.68]{scplots2_final}}%
           \centering
-          \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190728271.  \fpg{Questi non sono i test del chi-quadro!}}
+          \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190728271.}
           \label{fig:scplots2_final}
         \end{figure}
         Further investigations revealed that the bank-vetoed injection corresponds to a 22$M_\odot$ NSBH system,
@@ -3010,7 +3006,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         \begin{figure}[!t]
           \noindent
           \label{missinj2_3}
-          \makebox[\textwidth]{\includegraphics[scale=0.4]{missinj2_3}}%
+          \makebox[\textwidth]{\includegraphics[scale=0.45]{missinj2_3}}%
           \centering
           \caption{\textbf{Found/missed injections.} Same as Fig.\,\ref{fig:missinj1} but for GRB 190728271.}
           \label{fig:missinj2_3}
@@ -3030,7 +3026,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Initially the follow-up analysis of this GRB was carried out using data from all three available GW detectors.
         However, the antenna factor for V1 (0.47) in this case was much lower than those of H1 (0.852) and L1 (0.923).
         This inhomogeneous antenna response emerges in an evident manner in the  single detector SNR versus coherent SNR plots (Fig.\,\ref{fig:detector3}):
-        while the distribution of injections looks clean for H1 and L1, with the exception of a single injection outside the $3 \sigma$ region for H1,
+        while the distribution of injections looks clean for H1 and L1, with the exception of a single one outside the $3 \sigma$ region for H1,
         the V1 plot does not show the expected trend for astrophysical signals.
         \begin{figure}[!t]
           \noindent
@@ -3041,6 +3037,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
           \label{fig:detector3}
         \end{figure}
 
+        \fpg{E quindi l'analisi \`e stata senza V1 e ora fai vedere i risultati relativi a questa analisi.  Almeno presumo.}
  	The results of the $\chi^2$-tests are shown in Fig.\,\ref{fig:signalconsistencyplots3_final}:
        	there are a few injections overlapping with glitchy data, dragged into the veto  area of the bank and  auto veto tests;
 	just two injections are vetoed for the $\chi^2$-test.
@@ -3057,9 +3054,9 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	                \begin{figure}[!t]
                         \noindent
                         \label{detector3_final}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{detector3_final}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.4]{detector3_final}}%
                         \centering
-                        \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:detector1} but for GRB 190425089.}
+                        \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:detector1} but for GRB 190425089.   \fpg{Ma qui devi dire che rispetto all'altra figura per GRB 190425089, hai tolto V1 e ripetuto l'analisi.}}
                         \label{fig:detector3_final}
                 \end{figure}
 	
@@ -3068,10 +3065,10 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         six have high $\chi^2$ value.
         Same considerations apply for the BNS set, that has 25 missed injections within 210Mpc due to having spin magnitude $>$ 0.05,
         besides five of  them that were vetoed by a high $\chi^2$ value.
-                \begin{figure}[h]
+                \begin{figure}[!t]
                         \noindent
                         \label{missinj3_5}
-                        \makebox[\textwidth]{\includegraphics[scale=0.57]{missinj3_5}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.44]{missinj3_5}}%
                         \centering
                         \caption{\textbf{Found/missed injections.}Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089.}
                         \label{fig:missinj3_5}
