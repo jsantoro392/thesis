@@ -2407,6 +2407,21 @@ sense that
 	and a sufficiently massive accretion disk forms around the remnant BH.
 
 \subsection{The O3a Template Bank}
+	As already mentioned in Sec.\ref{sec:template_banks}, to perform a modelled search 
+	a template bank is required. 
+	In the previous section, Sec.\ref{}, we have introduced BNS and NSBH as certain and potential short GRBs progenitors,
+	as the presence of the NS establishes the potentially right conditions to power the burst.
+	Further studies have demonstrated that necessary and sufficient condition for an NSBH to emit an EM counterpart,
+	is to originate a sufficiently large post merger remnant mass \cite{}.
+	
+	For this reason, {\ttfamily PyCBC} runs its search from O1 included,  onwards with a template bank,
+	whose parameter space  targets only BNS and NSBH that produce an accretion disk after merger.
+	Recent studies have update the remnant mass fitting formula, 	
+	calibrated to numerical relativity  simulations \cite{}
+	
+	Consequently, we updated the generating code\footnote{https://github.com/jsantoro392/pycbc/blob/master/pycbc/tmpltbank/em\_progenitors.py}
+	for the EM-bright bank with this new model, then we proceed to generate the bank and further validate it.
+	The next sections describe this process step-by-step.
 
 \subsubsection{Tidal Disruption of Black Hole--Neutron Star Binaries}
         The evolution of the BH singularity and the presence of matter combine
