@@ -2359,7 +2359,7 @@ sense that
 	The evolution of the remnant matter is responsible for the generation of the EM counterpart of a GW event.
 	However, there are many effects that conditions if and how much material is present after merger.
 	As a matter of fact, not all NSBH mergers are expected to emit electromagnetically, 
-	the conditions under which an EM component is present are discussed in Sec.\,\ref{}.
+	the conditions under which an EM component is present are discussed in Sec.\,\ref{sec:grbfollowup}.
 	Therefore, the NSBH parameter space which needs to be investigate in a triggered analysis,
 	can be considerably reduced by excluding all those systems that are \textit{EM-dim}:
 	since short GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH,
@@ -2378,6 +2378,7 @@ sense that
 	of the PyCBC of one chunk of data from the second part of the third observing run (O3b).
 
 \section{Coherent Follow-Up of Short Gamma-Ray Bursts}
+\label{sec:grbfollowup}
 	The outstanding detection of GW170817 (Sec.\,\ref{subsec:GW170817}) was not only an historical result,
         but also clearly demonstrates the vital importance of time-resolved search and follow-up of EM candidate counterparts of GW triggers.
         Before that, short GRBs had long been discussed as promising targets for GW astronomy,
@@ -2413,7 +2414,7 @@ sense that
 \subsection{The O3a Template Bank}
 	As already mentioned in Sec.\ref{sec:template_banks}, to perform a modelled search 
 	a template bank is required. 
-	In the previous section, Sec.\ref{}, we have introduced BNS and NSBH as certain and potential short GRBs progenitors,
+	In the previous section, Sec.\ref{sec:grbfollowup}, we have introduced BNS and NSBH as certain and potential short GRBs progenitors,
 	as the presence of the NS establishes the potentially right conditions to power the burst.
 	Further studies have demonstrated that necessary and sufficient condition for an NSBH to emit an EM counterpart,
 	is to originate a sufficiently large post merger remnant mass \cite{}.
@@ -2421,7 +2422,7 @@ sense that
 	For this reason, {\ttfamily PyCBC} runs its search from O1 included,  onwards with a template bank,
 	whose parameter space  targets only BNS and NSBH that produce an accretion disk after merger.
 	Recent studies have update the remnant mass fitting formula, 	
-	calibrated to numerical relativity  simulations \cite{}
+	calibrated to numerical relativity  simulations \cite{205}
 	
 	Consequently, we updated the generating code\footnote{https://github.com/jsantoro392/pycbc/blob/master/pycbc/tmpltbank/em\_progenitors.py}
 	for the EM-bright bank with this new model, then we proceed to generate the bank and further validate it.
@@ -2591,14 +2592,12 @@ sense that
         leading to a fractional change in the position of the ISCO for smaller $q$.
         This gives a more precise estimation for $M_{rem}$, which was previously overestimated for nearly equal-mass NSBH.
 
-        Consequently, the region $M_2 \leq 2.5$ of Fig.\,\ref{fig:o3bankvso2bank}, 
-	is slighty denser coverage.
+        Consequently, the region $M_2 \leq 2.5$ of the bank parameter space is slighty denser covered.
         Furthermore, while Eq.\,(\ref{eq:mrem}) did not consider nonlinear effects taking place after the coalescence of a NS
         with a rapidly spinning BH, leading to an underestimation of $M_{rem}$,
         the introduction of the new free parameters $\gamma$ and $\delta$ accurately predicts that in this scenario,
         the remnant mass has larger values than previously found and therefore it is more likely to have an EM counterpart.
 
-%\section{Bank Tests}
 	Part of the construction algorithm of the template bank, 
 	in which the new model has been implemented, 
 	consist in the following steps:
@@ -2620,7 +2619,7 @@ sense that
         so that ‘\textbf{{\color{green}mask\_bns}}’ identifies only BNS, while the systems that do not satisfy this conditions
         are identified by ‘\textbf{{\color{black}masknsbh}}’.
         All these point’s masses and spin are stored.
-        \item As previously showed in Sec.\,\ref{subsec:mrem}, not all NSBH coalescence produce an EM counterpart,
+        \item As previously showed in Sec.\,\ref{subsec:mrem_model}, not all NSBH coalescence produce an EM counterpart,
         so the next step is to keep only those systems whose $M_{rem}$ is greater than the threshold mass to have a counterpart,
         identify these points with ‘\textbf{{\color{blue}mask\_nsbh\_bright}}’ and store their masses and spins.
 	\end{itemize}
