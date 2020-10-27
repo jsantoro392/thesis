@@ -2496,6 +2496,36 @@ sense that
 \label{subsec:construction_and_validation}
 
 \fpg{Per la bank ho usato questi parametri... che poi sono gli stessi di O2 (cita articolo O2 GRBs.}
+	The EM-bright bank parameter space must cover a parameter space,
+        which corresponds to the combination of masses and spins related to either BNS or NSBH,
+        since these are the binaries for which an EM counterpart is most likely.
+        The parameters for the NSs and BHs can be inferred from astrophysical knowledge.
+        Mass is the dominant term in the waveform, but it is hard to constrain:
+        while most NS observed in BNS systems have masses in the [1.2 − 1.6] $M_{\odot}$ range \cite{200},
+        more massive NS exist, up to at least $\sim$ 2$M_{\odot}$  \cite{200}.
+        Therefore, the NS mass is restricted in the range 1 $M_\odot$ - 2.8 $M_\odot$.
+        Most galactic BH have masses of [5 − 15] $M_{\odot}$  \cite{195},
+        but BHs observed through GWs are often more massive \cite{13}. \\
+        Consequently, the BH mass is limited in the range [2.8;25] $M_\odot$.
+
+        Whether BHs can be formed within the \'\'mass gap\'\' between the most massive NS
+        and $\sim$ 5$M_{\odot}$ also remains an important open question.
+
+        The spin parameters are the easier to define: based on astrophysical theory,
+        the unitless maximum spin magnitude is set to 0.988;
+        based on NS parameters from known Galactic BNS systems,
+        the unitless maximum NS spin is constrained to be 0.05 \cite{136}.
+        The templates are restricted to orbital inclinations of $\ang{0}$ or $\ang{180}$.
+        This decision is motivated by the expectation that short GRBs do not have jets with angular sizes,
+        and therefore inclinations, much greater than $\ang{30}$ \cite{136}.
+        The effect of a small inclination angle on the relative amplitudes of the two GW polarizations
+        is minor enough that restricting the inclination of templates to $\ang{0}$ or $\ang{180}$
+        can simultaneously reduce computational cost and improve sensitivity to slightly inclined systems by lowering the search background \cite{136}.
+
+        The magnitude and orientation of BH spins are unknown, and while most NSBH binaries
+        are expected to have negligible eccentricities \cite{202},
+        eccentric NSBH binaries cannot entirely be ruled out
+        and have evolutions very distinct from circular binaries \cite{203}.
 
         The new model covers previously unmodeled regions of the parameter space, comparable masses $q \sim 1$ and high spins,
         giving a more accurate  results.
@@ -2528,7 +2558,7 @@ sense that
 	Part of the construction algorithm of the template bank, 
 	in which the new model has been implemented, 
 	consist in the following steps:
-	begin{itemize} 
+	\begin{itemize} 
 	\item The new template bank generates a large set of point within the mass and spin parameter space,
         with the desired minimum $M_{rem}$, then it checks if the systems produce an EM counterpart.
         This means they are required to produce a remnant mass disk:
