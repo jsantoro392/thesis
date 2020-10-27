@@ -1641,6 +1641,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
         This makes the coherent method highly effective at removing background noise, and therefore coherent searches more sensitive than coincident once.
 
 \subsubsection{Null Stream Consistency}
+\label{subsubsec:nullsnr}
 	In the context of a coherent search for CBC signals,
 	is straightforward to construct a consistency test to distinguish noise transients from GW signals,
 	as those transients which do not contribute power to the two-polarization signal space are rejected as incoherent background noise. 
@@ -2427,7 +2428,8 @@ sense that
 	The next sections describe this process step-by-step.
 
 \subsubsection{Tidal Disruption of Black Hole--Neutron Star Binaries}
-        The evolution of the BH singularity and the presence of matter combine
+\label{subsubsec:mrem_model}        
+	The evolution of the BH singularity and the presence of matter combine
         the difficulties of evolving both BBHs and BNS, and the system has its own specific challenges,
         specifically the accretion of the NS matter onto the BH.
         Such binaries are not only sources of GW radiation, but also potential sources of GRBs.
@@ -3209,26 +3211,26 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 	the aforementioned data analysis strategies have been investigated. 
 	Algorithms requiring coincident detection of a source by multiple detectors,
 	are the primary method to detect BBH mergers, 
-	as shown in the GW event overview in Chapter \ref{}.
-	The benefits of this procedure, described in Sec.\ref{} are plenty: 
+	as shown in the GW event overview in Chapter \ref{ch:ObservingRuns}.
+	The benefits of this procedure, described in Sec.\ref{subsec:coincident} are plenty: 
 	first it immediately eliminates the great majority of noise background 
 	by rejecting any triggers which are uncorrelated in time in two or more detectors; 
 	secondly, it is not computationally expensive. 
-	The dominant cost of the search is in performing the matched filtering (see, Sec.\ref{}) 
-	of the data against the template bank (see, Section \ref{}).
+	The dominant cost of the search is in performing the matched filtering (see, Sec.\ref{sec:matched_filtering}) 
+	of the data against the template bank (see, Section \ref{sec:template_banks}).
 	The {\ttfamily PyCBC} offline analysis has been developed implementing this method in its algorithms. 
-	In Chapter \ref{}, we reported the results of the analysis of one chunk of data,  from O3b.
-	A coherent approach, described in Sec.\ref{}, on the other hand, 
+	In Sec.\ref{sec:pycbc00} of Chapter \ref{subsec:pygrb}, we reported the results of the analysis of one chunk of data,  from O3b.
+	A coherent approach, described in Sec.\ref{subsec:coherent}, on the other hand, 
 	it is computationally expensive in the case of modelled searches,
 	however, knowing the time and sky-location of the source can cut the cost of the search.
 	It enables a more extensive search in the GW data, potentially uncovering signals 
 	that are not within reach to all-sky, all-time searches.
 	Moreover, the coherent analysis allows for some additional tests 
 	which are not readily available in the coincidence case. 
-	The most significant of these is the null SNR (see, Sec.\ref{}) which can be used to reject events which are 
+	The most significant of these is the null SNR (see, Sec.\ref{subsubsec:nullsnr}) which can be used to reject events which are 
 	not consistent with two GW polarizations. 
-	This method is the  basis which the  {\ttfamily PyGRB}  pipeline is built upon (see, Sec.\ref{}).
-	In Chapter \ref{}, we presented the results of a {\ttfamily PyGRB} search conducted on O3a data,
+	This method is the  basis which the  {\ttfamily PyGRB}  pipeline is built upon (see, Sec.\ref{subsec:pygrb}).
+	In Chapter \ref{ch:datanalysis}, we presented the results of a {\ttfamily PyGRB} search conducted on O3a data,
 	to search for BNS and NSBH signals compatible with the sky-location and time of three short GRBs:
 	GRB 190627A, GRB 190728271 and GRB 190425089.
 	Besides GRB 190627A, the off-source analysis of the data required several reanalysis,
@@ -3244,7 +3246,8 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 	One of the likely progenitors of short GRBs are NSBH systems, 
 	hence is crucial to have reliable models of the GW and EM signals powered by BHNS binaries,
 	in order  to  make optimal use of the available data.
-	In Chapter \ref{} we have compared an old model \cite{}  with an updated one \cite{} for the remnant mass of a NSBH system,
+	In Sec.\ref{subsubsec:mrem_model} of Chapter \ref{ch:datanalysis} we have compared an old model \cite{206}  
+	with an updated one \cite{205} for the remnant mass of a NSBH system,
 	as short GRBs may be powered only when there is matter accretion onto a BH.
 	We proceded to implement this into the EM-bright template bank,
 	generated  it within a well defined parameter space and tested it.
