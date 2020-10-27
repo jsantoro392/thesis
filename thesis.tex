@@ -2374,12 +2374,34 @@ sense that
 	of the PyCBC of one chunk of data from the second part of the third observing run (O3b).
 
 \section{Coherent Follow-Up of Short Gamma-Ray Bursts}
-	The outstanding detection of GW170817 (Sec.\,\ref{subsec:GW170817}) was not only an historical result, 
-	but also clearly demonstrates the vital importance of time-resolved search and follow-up of EM candidate counterparts of GW triggers. 
-	Before that, short GRBs had long been discussed as promising targets for GW astronomy,
-	due to their probable binary merger progenitors \cite{162}, 
-	hypothesis which was confirmed by the joint detection of GW170817  and GRB170817A.
-\fpg{Ma perch\'e parli di NSBH?  Il lettore non lo sa.  C'\`e un tentativo di spiegazione in quello che hai scritto su, ma serve di pi\`u e devi richiamare le informazioni chiave sparse nel resto della tesi.  Va benissimo farlo nel cappello introduttivo di questo capitolo, ma va decisamente migliorato e devi usare i puntatori a quanto hai scritto.  Per esempio ``ho costruito la template bank'' deve essere corredato di rimando al 2.2.   Ti ho rioraganizzatoo sezioni e sottosezioni: al lettore, nel leggere il capitolo, dovr\`a essere evidente perch\'e hai diviso le cose in un certo modo, anzi deve essere proprio di aiuto alla lettura la tua organizzazione del capitolo.}
+	The outstanding detection of GW170817 (Sec.\,\ref{subsec:GW170817}) was not only an historical result,
+        but also clearly demonstrates the vital importance of time-resolved search and follow-up of EM candidate counterparts of GW triggers.
+        Before that, short GRBs had long been discussed as promising targets for GW astronomy,
+        due to their probable binary merger progenitors \cite{162},
+        hypothesis which was confirmed by the joint detection of GW170817  and GRB170817A.	
+
+	Short GRBs and GWs are two opposite astrophysical event:
+	the former are one of most powerful astrophysical events originating throughout the universe,
+	while the latter is characterised by a very small amplitude.
+	However, they share the same catastrophic origin, 
+	therefore are tightly intertwined to each other. \\
+	SGRBs represent an attractive trigger for GW follow-up searches. 
+	The prior observation of an SGRBs provides the time and sky position of a potential GW source. 
+	A targeted search for a binary merger GW signal, 
+	informed by the SGRB observation, need only search a small fraction of the parameter space
+	of a generic binary merger search – one that searches the whole sky at all times and for all binary merger signals (including BBHs). 	
+	Consequently, it is possible to significantly reduce the detection threshold for the targeted SGRB search,
+	thereby increasing the sensitivity of the search.  
+	By looking at the GRBs EM spectrum we can increase our astrophysical knowledge,
+	for example we can infer information about the energy of the event that produced them,
+	how they evolve and what they leave behind. \\
+	However, the EM observation has its own limit due to circum-stellar medium and ejecta,
+	which eclipse possible direct observation of the central engines that power these events.
+	the gamma ray light that is emitted by GRBs is packed into a narrow, highly focused jet of material.
+	This is when GW become the principle probe of the short GRBs central engine.
+	
+	Now that we have pinned down one class of short GRBs progenitors with GW170817, 
+	the next step is to observe the other likely short GRBs source: NSBH systems.
 
 \subsection{The O3a Template Bank}
 \fpg{Come detto in 2.2, per una modelled search occorre una template bank.  COme detto in ..., BNS ed NSBH sono sorgenti (certe e potenziali) di short GRBs.  Nel caso delle NSBH, ci interessano in particolare quelle con un remnant.  Per questo motivo da O1 incluso in poi, PyGRB viene fatto girare costruendo una template bank con BNS ed NSBH con remnant disk.  Ultimamente \`e stato aggiornato il fit a dai NR per il calcolo della remnant mass.  Ho quindi aggiornato il codice per costruire l'EM bright bank (puoi mettere pure un link all'eseguibile PyCBC e al file em\_progenitors.py), costruito la bank e validato la bank.  Vi vado a spiegare tutte queste cose.}
@@ -2508,7 +2530,7 @@ sense that
         but BHs observed through GWs are often more massive \cite{13}. \\
         Consequently, the BH mass is limited in the range [2.8;25] $M_\odot$.
 
-        Whether BHs can be formed within the \'\'mass gap\'\' between the most massive NS
+        Whether BHs can be formed within the \lq mass gap" between the most massive NS
         and $\sim$ 5$M_{\odot}$ also remains an important open question.
 
         The spin parameters are the easier to define: based on astrophysical theory,
