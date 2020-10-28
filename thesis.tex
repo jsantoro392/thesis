@@ -3052,7 +3052,8 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         \end{figure}
 
         \fpg{E quindi l'analisi \`e stata senza V1 e ora fai vedere i risultati relativi a questa analisi.  Almeno presumo.}
- 	The results of the $\chi^2$-tests are shown in Fig.\,\ref{fig:signalconsistencyplots3_final}:
+ 	Therefore, the analysis has been conducted without V1.
+	The results of the $\chi^2$-tests are shown in Fig.\,\ref{fig:signalconsistencyplots3_final}:
        	there are a few injections overlapping with glitchy data, dragged into the veto  area of the bank and  auto veto tests;
 	just two injections are vetoed for the $\chi^2$-test.
                 \begin{figure}[!t]
@@ -3070,7 +3071,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                         \label{detector3_final}
                         \makebox[\textwidth]{\includegraphics[scale=0.4]{detector3_final}}%
                         \centering
-                        \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:detector1} but for GRB 190425089.   \fpg{Ma qui devi dire che rispetto all'altra figura per GRB 190425089, hai tolto V1 e ripetuto l'analisi.}}
+                        \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:detector1} but for GRB 190425089. These plot show the re-analysis of  GRB 190425089 without V1.}
                         \label{fig:detector3_final}
                 \end{figure}
 	
@@ -3101,17 +3102,19 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
         and calculates the coincident SNR for each combination of detectors (Sec.\,\ref{subsec:coincident}).
 	Data from the second half of the observing run are split in chunks
 	identified by their start and stop times (in GPS seconds).
+	\fpg{S\`i ma in base a che vengono divisi i chunks?  Il run parte e si apre il chunk 1: come se ne sceglie la fine?}
 	The boundaries of the chunks are chosen in the following way:
-	the time at which the chunk starts in when at least one detector is observin;
+	the time at which the chunk starts in when at least one detector is observing;
 	after five days of coincidence between all the detectors in the network are achieved,
 	the end time is chosen to be the first available moment either when the same starting network configuration is present,
-	or none of the detectors are observing. \fpg{S\`i ma in base a che vengono divisi i chunks?  Il run parte e si apre il chunk 1: come se ne sceglie la fine?}
 	These times require to be padded on both ends with 8\,s of extra data 	
 	as the high/low pass filters and template matched filter require some extra time to operate.
 	Chunks of data denoted by the string ``C00'' require the final data quality checks and calibration to be carried out.
         As this happens, C00 data is anlyzed to provide preliminary results.
 
-        I analyzed a chunk of C00 data running from 01:31:32 UTC on December 20, 2019 to 15:40:36 UTC on December 28, 2019.  I considered data from the two LIGO detectors.  This chunk contained 8.59 days of raw calibrated data,
+        I analyzed a chunk of C00 data running from 01:31:32 UTC on December 20, 2019 to 15:40:36 UTC on December 28, 2019.  
+	I considered data from the two LIGO detectors.  
+	This chunk contained 8.59 days of raw calibrated data,
         of which 6.235 days (72\%) constituted coincident time.
 
 \subsection{Loudest Singles}
