@@ -3152,8 +3152,16 @@ Aligned NSBH & 440\\
 	the end time is chosen to be the first available moment either when the same starting network configuration is present,
 	These times require to be padded on both ends with 8\,s of extra data 	
 	as the high/low pass filters and template matched filter require some extra time to operate.
-	Chunks of data denoted by the string ``C00'' require the final data quality checks and calibration to be carried out.
+
+	Since the detector outputs voltages at the anti-symmetric port, 
+	data calibration is necessary to convert from units of volts to units of strain.
+	The data immediately available, denoted by the string ``C00’’,  
+	has higher uncertainty in the function used to convert from voltage to strain, 
+	than later calibration versions that take longer to compute. 
+	Therefore, this C00 data require the final data quality checks and calibration to be carried out.
         As this happens, C00 data is anlyzed to provide preliminary results.
+	%Chunks of data denoted by the string ``C00'' require the final data quality checks and calibration to be carried out.
+        %As this happens, C00 data is anlyzed to provide preliminary results.
 
         I analysed a chunk of C00 data running from 01:31:32 UTC on December 20, 2019 to 15:40:36 UTC on December 28, 2019.  
 	I considered data from the two LIGO detectors.  
