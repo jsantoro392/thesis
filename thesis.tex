@@ -42,7 +42,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 \addcontentsline{toc}{chapter}{Introduction}
 \markboth{Introduction}{Introduction}
 %
-\fpg{In vari punti usi {\ttfamily cite\{\}} oppure {\ttfamily ref\{\}}. Inoltre citi senza averle in biblio 213 e 215.}%
+\fpg{In vari punti usi {\ttfamily cite\{\}} oppure {\ttfamily ref\{\}}. Inoltre citi senza averle in biblio 213 e 215.  Nella bibliografia hai varie entries solo come arXiv preprints, anche per roba gi\`a pubblicata!}%
 \fpg{Giri di correzione: 1.}%
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves (GWs) starting from his theory of general relativity \cite{1,2}.
 	He discovered that the acceleration of masses
@@ -2408,21 +2408,19 @@ sense that
         \fpg{Sono qui.}
 \subsection{The O3a Template Bank}
 \label{subsec:o3aTemplateBank}
-	As already mentioned in Sec.\ref{sec:template_banks}, to perform a modelled search 
-	a template bank is required. 
-	In the previous section, Sec.\ref{sec:grbfollowup}, we have introduced BNS and NSBH as certain and potential short GRBs progenitors,
-	as the presence of the NS establishes the potentially right conditions to power the burst.
-	Further studies have demonstrated that necessary and sufficient condition for an NSBH to emit an EM counterpart,
-	is to originate a sufficiently large post merger remnant mass \cite{}.
-	
-	For this reason, {\ttfamily PyCBC} runs its search from O1 included,  onwards with a template bank,
-	whose parameter space  targets only BNS and NSBH that produce an accretion disk after merger.
-	Recent studies have update the remnant mass fitting formula, 	
-	calibrated to numerical relativity  simulations \cite{205}
-	
-	Consequently, we updated the generating code\footnote{\url{https://github.com/gwastro/pycbc/pull/3055}.}
-	for the EM-bright bank with this new model, then we proceed to generate the bank and further validate it.
-	The next sections describe this process step-by-step.
+	As discussed in Sec.\,\ref{sec:template_banks}, running a modelled GW search 
+	requires predetermining a set of waveform models, i.e., a template bank, in order to filter the data. 
+	In opening Sec.\,\ref{sec:grbfollowup}, moreover, we linked BNS and NSBH systems to short GRBs as certain and potential progenitors, respectively.
+	Additionally, studies have shown that a necessary and sufficient condition for an NSBH to emit an EM counterpart
+	is to produce a sufficiently massive remnant accretion disk after the merger process \cite{}. % \fpg{}.
+	For these reasons, as of O1 included, {\ttfamily PyGRB} is run on detector data using a template bank
+	that targets only BNSs and NSBH systems that produce a remnant accretion disk after merger \fpg{Cita anche il paper O1, oltre alle due citazioni che seguono e che ho aggiunto.} \cite{136, 55}, as suggested in  \fpg{Cita Pannarale \& Ohme 2014}.  This kind of template bank is often referred to as ``EM-bright bank,'' as it targets only potentially electromagnatically bright compact binary sources.
+
+        Determining which NSBH systems may yield an accretion disk that surronds the remnant BH is possible via fits calibrated to numerical-relativity simulation results.  These fits take the NSBH binary physical parameters as input and return the mass of the accretion disk.
+        The first fit of this kind was reported in \cite{206}.
+	A more recent, remnant mass fitting formula was published in \cite{205}:
+        part of this thesis was devoted to updating the code that generates EM-bright banks\footnote{\url{https://github.com/gwastro/pycbc/pull/3055}.}, producing the EM-bright bank for {\ttfamily PyGRB} follow ups of short GRB events that occured in O3a, and validating such template bank.
+	The next sections describe these tasks step-by-step.
 
 \subsubsection{Tidal Disruption of Black Hole--Neutron Star Binaries}
 \label{subsubsec:mrem_model}
