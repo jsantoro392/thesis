@@ -193,7 +193,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	The space-time curvature is associated with the stress-energy tensor 
 	of matter fields through the Einstein field equation:
 		\begin{equation}
-		G_{\mu\nu} \equiv R_{\mu\nu}  - {1 \over 2}g_{\mu\nu}R = {8\pi G_{N} \over {c^4}}T_{\mu\nu} 
+		G_{\mu\nu} \equiv R_{\mu\nu}  - {\frac{1}{2}}g_{\mu\nu}R = \frac{8\pi G_{N}}{c^4}T_{\mu\nu} 
 		\end{equation}
 	where $G_{\mu\nu} $ is the Einstein tensor, $T_{\mu\nu} $ is the stress-energy 
 	tensor of matter-fields, $ G_{N}$ is Newton’s gravitational constant and $c$ the speed of light. \\
@@ -227,7 +227,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 		\end{equation}
 	So that the metric transforms as
 		\begin{equation}
-		g_{\mu\nu} \rightarrow g_{\mu' \nu'} = x^{\rho},_{\mu'}x^{\sigma},_{\nu'}g_{\rho \sigma}
+		g_{\mu\nu} \rightarrow g_{\mu^\prime\nu^\prime} = x^{\rho},_{\mu^\prime}x^{\sigma},_{\nu^\prime}g_{\rho \sigma}
 		\end{equation}
 	This means that one is free to choose a convenient coordinate system without 
 	altering the physical predictions of the field equations \cite{16}. \\
@@ -246,7 +246,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	Rather than working with the metric perturbation, changing notation and using the trace-reversed perturbation 
 	makes the computation more compact and cleaner. We define
 		\begin{equation}
-			{\bar h}_{\mu\nu} = h_{\mu\nu} - {1 \over {2}}\eta_{\mu\nu}h  
+			{\bar h}_{\mu\nu} = h_{\mu\nu} - \frac{1}{2}\eta_{\mu\nu}h  
 		\end{equation}
 	the trace
 		\begin{equation}
@@ -254,16 +254,16 @@ We are grateful for computational resources provided by Cardiff University, and 
 		\end{equation}
 	and express the trace-reversed field:
 		\begin{equation}
-			h_{\mu\nu} = {\bar h}_{\mu\nu} + {1 \over {2}}\eta_{\mu\nu}{\bar h}
+			h_{\mu\nu} = {\bar h}_{\mu\nu} + \frac{1}{2}\eta_{\mu\nu}{\bar h}
 		\end{equation}
 	The Rienmann tensor constructed in the linearised theory is given by
 		\begin{align}
 			R^{\mu}_{\nu\rho\sigma} &= \partial_{\rho} \Gamma^{\mu}_{\nu\sigma} - \partial_{\sigma}\Gamma^{\mu}_{\nu\rho}  \\
-				       &= {1 \over 2} (\partial_{\rho}\partial_{\nu}h^{\mu}_{\nu\rho} + \partial_{\sigma}\partial^{\mu}h^{\nu\rho} - \partial_{\rho}\partial^{\mu}h^{\nu\sigma} - \partial_{\					     \sigma}\partial_{\nu}h^{\mu}_{\rho})
+				       &= \frac{1}{2} (\partial_{\rho}\partial_{\nu}h^{\mu}_{\nu\rho} + \partial_{\sigma}\partial^{\mu}h^{\nu\rho} - \partial_{\rho}\partial^{\mu}h^{\nu\sigma} - \partial_{\					     \sigma}\partial_{\nu}h^{\mu}_{\rho})
 		\end{align}
 	From this, the Ricci tensor takes the form
 		\begin{equation}
-			R_{\mu\nu} = R^{\rho}_{\mu\rho\nu} = {1 \over 2}(\partial_{\rho}\partial_{\nu}h^{\rho}_{\mu} + \partial^{\rho}\partial_{\mu}h_{\nu\rho} - \square h_{\mu\nu} - \partial_{\mu}\partial_{\nu}h)
+			R_{\mu\nu} = R^{\rho}_{\mu\rho\nu} = \frac{1}{2}(\partial_{\rho}\partial_{\nu}h^{\rho}_{\mu} + \partial^{\rho}\partial_{\mu}h_{\nu\rho} - \square h_{\mu\nu} - \partial_{\mu}\partial_{\nu}h)
 		\end{equation}
 	The curvature scalar is obtained contracting once more:
 		\begin{equation}
@@ -271,12 +271,12 @@ We are grateful for computational resources provided by Cardiff University, and 
 		\end{equation}
 	Finally, the Einstein tensor can be expressed as
 		\begin{equation}
-			G_{\mu\nu} = {1 \over 2}(\partial_{\rho}\partial_{\nu}h^{\rho}_{\mu} + \partial^{\rho}\partial_{\mu}h_{\nu\rho} - \square h_{\mu\nu} - \partial_{\mu}\partial_{\nu}h - \eta_{\mu\nu}\partial_{\rho}\partial^{\sigma}h^{\rho}_{\sigma} + \eta_{\mu\nu}\square h)
+			G_{\mu\nu} = \frac{1}{2}(\partial_{\rho}\partial_{\nu}h^{\rho}_{\mu} + \partial^{\rho}\partial_{\mu}h_{\nu\rho} - \square h_{\mu\nu} - \partial_{\mu}\partial_{\nu}h - \eta_{\mu\nu}\partial_{\rho}\partial^{\sigma}h^{\rho}_{\sigma} + \eta_{\mu\nu}\square h)
 		\end{equation}
 	Substituting the metric perturbation $h_{\mu\nu}$  with the $trace-reversed$ perturbation ${\bar h}_{\mu\nu}$ and expanding, 
 	the linearized Einstein equations take the compact form:
 		\begin{equation}
-			\square {\bar h}_{\mu\nu} + \eta_{\mu\nu}{\partial}^{\rho}{\partial}^{\sigma}{\bar h}_{\rho\sigma} - {\partial}^{\rho}{\partial}^{\nu}{\bar h}_{\mu\rho} - {\partial}^{\rho}{\partial}^{\mu}{\bar h}_{\nu\rho} = - {{16\pi G_{N}} \over {c^4}}T_{\mu\nu}.
+			\square {\bar h}_{\mu\nu} + \eta_{\mu\nu}{\partial}^{\rho}{\partial}^{\sigma}{\bar h}_{\rho\sigma} - {\partial}^{\rho}{\partial}^{\nu}{\bar h}_{\mu\rho} - {\partial}^{\rho}{\partial}^{\mu}{\bar h}_{\nu\rho} = - \frac{16\pi G_{N}}{c^4}T_{\mu\nu}.
 		\end{equation}
 	The linearised equations of motion are gauge-invariant, and the gauge freedom can
  	be used to simplify the form of the field equations \cite{17}.
@@ -295,11 +295,11 @@ We are grateful for computational resources provided by Cardiff University, and 
 	leaving four additional components free to be gauge-fixed.
 	If the metric perturbation is not in the harmonic gauge, by making an infinitesimal coordinate transformation
 		\begin{equation}
-			{\bar h}_{\mu\nu} \rightarrow {\bar h}_{\mu’\nu’}  = {\bar h}_{\mu\nu}  - \xi_{\mu,\nu} -\xi_{\nu,\mu} + \eta_{\mu\nu}\xi^{\rho}_{,\rho}
+			{\bar h}_{\mu\nu} \rightarrow {\bar h}_{\mu^\prime\nu^\prime}  = {\bar h}_{\mu\nu}  - \xi_{\mu,\nu} -\xi_{\nu,\mu} + \eta_{\mu\nu}\xi^{\rho}_{,\rho}
 		\end{equation}
 	and applying the harmonic gauge condition
 		\begin{equation}
-			{\bar h}_{\mu’\nu’,} ^{\nu’} = {\bar h}_{\mu\nu,} ^{\nu} - \xi_{\mu,\nu}^{\nu}
+			{\bar h}_{\mu^\prime\nu^\prime,} ^{\nu^\prime} = {\bar h}_{\mu\nu,} ^{\nu} - \xi_{\mu,\nu}^{\nu}
 		\end{equation}
 	Therefore any metric perturbation can be put into an harmonic gauge by making an infinitesimal 
 	coordinate transformation that satisfies
@@ -416,7 +416,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	and intensity and frequency stabilized Nd:YAG laser to the Fabry-Perot arms, 
 	which are made of an input test mass mirror and an end test mass mirror. 
 	The two beams of laser light that return from the two arms are recombined out of phase so that, 
-	in principle, no light reaches the so-called 'dark fringe' of the detector. 
+	in principle, no light reaches the so-called ``dark fringe'' of the detector. 
 	The oscillating quadrupolar strain pattern of a GW, 
 	as seen in Fig.\,\ref{fig:ring}, is well matched by a Michelson interferometer,
         which makes a very sensitive comparison of the lengths of its two orthogonal arms.
@@ -449,7 +449,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         ground-based laser interferometric detectors has its low end set by the fact that it is extremely difficult
         to prevent mechanical coupling of the detector to ground vibrations at low frequencies,
         and probably impossible to prevent gravitational coupling to ground vibrations, human activity, and atmospheric motions.
-    \begin{figure}[H]
+    \begin{figure}[t]
                 \includegraphics[scale=0.5]{interferometer}
                 \centering
                 \caption{Simplified schematic of the experimental setup. Several modifications to the Michelson interferometer are shown such as power and signal recycling. The photodetector records the differential lengths of the arms. \cite{9}}
@@ -680,7 +680,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         This set of equations describes the changes in the $x$ and $y$ components for a passing GW.
         The plus polarisation alternately stretches and compresses the ring of test masses in the x and y directions,
         while the cross polarisation exhibits the same behaviour rotated by $\ang{45}$ in the $x - y$ plane. This is shown in Figure 2.1.
-                \begin{figure}[H]
+                \begin{figure}[t]
                 \label{ring}
                 \includegraphics[scale=1]{ring}
                 \centering
@@ -753,7 +753,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         causing a differential change in the arm cavity lengths, or as sensing noise,
         which appears in the readout signal but is not caused by a GW. \\
         We describe the principal noises that dominate the limits of our sensitivity, (Fig.\,\ref{fig:noise2}).
-		\begin{figure}[H]
+		\begin{figure}[t]
                         \includegraphics[scale=0.3]{noise2}
                         \centering
                         \caption{The strain equivalent spectral amplitudes $\sqrt{S_n(\omega)}$ of several noises couple to the detector. Most relevant contributions comes from quantum noise and from thermal noise of mirror coating and suspensions. Seismic noise dominates below 10Hz}
@@ -820,7 +820,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         of the mirrors and of the laser; for this reason the vacuum system is maintained at a pressure
         of below $10^{-6}$Pa and the noise curve of the interferometer includes only
         the most dominant residual gas component, hydrogen, at a pressure of $10^{−7}$ Pa. 
-		\begin{figure}[H]
+		\begin{figure}[t]
                 	\includegraphics[scale=0.6]{noise1}
                 	\centering
                 	\caption{Amplitude spectral density of the total strain noise  of the Virgo, LHO, and LLO detectors. The curves are representative of the best performance of each detector during O2 \cite{13}.}
@@ -1339,7 +1339,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         of a candidate signal is consistent with the expectation from the triggering template waveform.  If it is not,
         it is more likely to correspond to a noise transient.
 	
-\subsection{$\chi^2$ Test}
+\subsection{Chi-square Tests}
 \label{subsec:chi_square_test}
 In general, the non-stationary detector output data $s(t)$ can be described as
 		\begin{equation}
@@ -1567,7 +1567,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
         for example the Earth’s centre \cite{45}.
 	Assuming that the noise in different detectors are independent, in the sense that 
 		\begin{equation}
-			\langle \tilde{n}^X(f)[ \tilde{n}^Y(f’)]^*\rangle = \delta^{XY}\delta(f-f’)S_h^X(f)
+			\langle \tilde{n}^X(f)[ \tilde{n}^Y(f')]^*\rangle = \delta^{XY}\delta(f-f')S_h^X(f)
 		\end{equation}
         For a network of detectors, the multi-detector matched-filter
         is defined as the sum of the single detector inner products
@@ -2211,7 +2211,7 @@ sense that
           \label{fig:asymmetric}
         \end{figure}
 
-\subsection{GW190425: a Compact Binary Coalescence with Total Mass $\sim 3.4M_\odot$}
+\subsection{GW190425: a Compact Binary Coalescence with Total Mass of About $3.4$ Solar Masses}
 
 	GW190425, observed by LLO, is the second GW event
 	consistent with the inspiral of a BNS system.
@@ -2273,7 +2273,7 @@ sense that
 	In the BNS scenario, the detection of GW190425 provides an update 
 	on the number of NS that collide in a volume of the universe every year, bringing this to $250$--$2810\,$Gpc$^{-3}\,$yr$^{-1}$ \cite{62}.
 
-\subsection{GW190521: a $150M_\odot$ Binary Black Hole Merger}
+\subsection{GW190521: a 150-Solar-Mass Binary Black Hole Merger}
 	The BBH that produced the GW event GW190521 was the most massive and energetic BH merger detected to date, 
 	with masses of $85^{+21}_{-14}M_{\odot}$ and  $66^{+17}_{-18}M_{\odot}$.
 	This event was detected with a three-detector network signal-to-noise ratio of 14.7, 
@@ -2636,7 +2636,7 @@ sense that
        	In a similar fashion, the parameters range for the BH is chosen to be $1M_\odot \leq M_{\rm BH}  \leq 25M_\odot$ and $0 \leq \chi_{\rm BH} \leq 0.998$.
 	Another restriction for the template bank to reduce background triggers and computation time, 
 	is to consider only waveforms from binaries with orbital inclination angles of $\ang{0}$ or $\ang{180}$ \cite{46}. 
-		\begin{figure}[H]
+		\begin{figure}[t]
                         \noindent
                         \label{banktest}
                         \makebox[\textwidth]{\includegraphics[scale=0.45]{banktest}}%
@@ -3182,7 +3182,7 @@ Aligned NSBH & 440\\
 	The third bin is the quietest: the majority of the events looks like random noise barely above the threshold; 
 	there are no distinctive features in the omega scans. 
 	Fig.\,\ref{fig:glitch} on the left shows an example of blip type glitch with few fainter blip around it spanning $\sim1$ second, for H1.
-                \begin{figure}[h]
+                \begin{figure}[t]
                         \noindent
                         \label{glitch}
                         \makebox[\textwidth]{\includegraphics[scale=0.7]{glitch}}%
@@ -3207,7 +3207,7 @@ Aligned NSBH & 440\\
 	the ones that were coincident with a trigger are too quiet,
 	except one which overlaps with gated glitches before and just around the time of merger, as shown in Fig.\,\ref{fig:gated_glitch}
 	the non coincident have one or both detector's low optimal SNR.
- 		\begin{figure}[h]
+ 		\begin{figure}[t]
                         \noindent
                         \label{gated_glitch}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{gated_glitch}}%
@@ -3227,7 +3227,7 @@ Aligned NSBH & 440\\
 	are both lost due to their high mass ratio, and quiet NewSNR value.
 	This set is mostly affected by	 periodic glitches previous to the time of merging,
 	that are  causing the injections to be missed  or not properly found.                
-                \begin{figure}[h]
+                \begin{figure}[t]
                         \noindent
                         \label{missed_inj}
                         \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
