@@ -2996,12 +2996,11 @@ Aligned NSBH & 211\\
 \subsection{GRB 190728271}
         {\it Fermi}/GBM triggered on GRB 190728271 at 06:30:36 UTC on July 28, 2019.
         The GRB was located at $RA = \ang{356.7}$, $Dec = \ang{5.4}$
-        with a statistical uncertainty of 5.7 degrees, while the duration was $T_{90} = (0.832 \pm 0.905)\,$s.
+        with a statistical uncertainty of $\ang{5.7}$, while the duration was $T_{90} = (0.832 \pm 0.905)\,$s.
         All three GW detectors were operating at the time of this GRB,
         and their responses in its direction were 0.271, 0.665, and 0.463 for H1, L1, and V1, respectively.
 
-\fpg{Devi raccontare direttamente il run finale.  La descrizione qui sotto riguarda i plot del primo run.  Se io guardo Fig.\,\ref{fig:scplots2_final}, non ritrovo quello che scrivi.  Infatti ci sono 2/3 injections per auto veto e una per lo standard chi-square.} 
-	\begin{comment}       
+	\begin{comment}
 	While the results of the $\chi^2$-tests look rather clean (Fig.\,\ref{fig:scplots2_final}), a loud injection ends up being bank-vetoed,
         as do six injections in the case of the auto veto.
         Further investigations revealed that the bank-vetoed injection corresponds to a 22$M_\odot$ NSBH system,
@@ -3013,15 +3012,16 @@ Aligned NSBH & 211\\
 	Twenty nearby BNS injections were found not to be recovered confidently.
 	All of them have at least one spin magnitude greater than 0.05, that is also precessing.  A high NS spin magnitude was also found for the nearby NSBH injections that were not recovered as louder than all the background events.
 	\end{comment}
-	
-	Compared to the other results, the $\chi^2$-tests looks the cleanest (Fig.\,\ref{fig:scplots2_final}), 
-	with just two vetoed injections.
-        Both the bank and auto veto show many injections dragged by the background in the veto area.
+
+	The $\chi^2$-tests are shown in Fig.\,\ref{fig:scplots2_final}.
+        In the case of the bank and auto vetoes, several injections are dragged in the vetoed area by the background.  Three auto-vetoed injections (middle panel) and a single standard-vetoed injection are not superimposed to the background triggers: these correspond to highly precessing injections and are therefore not worrisome.
         \begin{figure}[!t]
           \noindent
           \label{scplots2_final}
-          \makebox[\textwidth]{\includegraphics[scale=0.68]{scplots2_final}}%
           \centering
+            \includegraphics[width=0.67\textwidth]{GRB190728271_bank_veto_vs_snr_zoom}\\
+            \includegraphics[width=0.67\textwidth]{GRB190728271_auto_veto_vs_snr_zoom}\\
+            \includegraphics[width=0.67\textwidth]{GRB190728271_chi_square_vs_snr_zoom}%
           \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190728271.}
           \label{fig:scplots2_final}
         \end{figure}        
