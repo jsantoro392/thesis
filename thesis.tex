@@ -2957,12 +2957,12 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	rather than a specific assigned value.  
 	This upper limit coincides, of course, with the FAP of the second loudest event and hence the plotting artifact.
 
-	Since the background analysis has overall given good results,
-	the analysis can proceed by looking at the results for the on-source data.
+	Since the study of the background gave good results overall,
+	the analysis proceeded by looking at the results for the on-source data.
 	In order to claim the detection of a GW candidate event, this 
-	must have a FAP of $\sim 10^{-4}$.  If a trigger of this kind does not emerge within the on-source window,
-	a lower limit on the source distance is determined. 
-        This is known as 90\% exclusion distance, and is
+	must have a FAP of $\sim 10^{-4}$.  If a trigger of this kind does not emerge from the on-source window,
+	a lower limit on the source distance is determined.
+        This is known as the 90\% confidence exclusion distance, and is
 	defined as the distance within which 90\% of the injections of a given set is recovered.
         \begin{figure}[!t]
           \noindent
@@ -2972,12 +2972,11 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
           \caption{\textbf{Loudest offsource events.} Distribution of the background significance (FAP) as a function of the detection statistic (BestNR).}
           \label{fig:loudestoffsourcevent1}
         \end{figure}
-	The on-source results show that there is no significant event, 
-	and the $D_{90}$ recovered for the three injection sets are 115 Mpc for BNS, 
-	139 Mpc for the precessing NSBH, and 211 Mpc for the aligned NSBH.
+	The on-source results returned a FAP of 0.481 for the loudest on source trigger, i.e., no significant event. 
+	The 90\% confidence exclusion distances for the three injection sets are 115\,Mpc for BNSs, 
+	139\,Mpc for precessing NSBHs, and 211 Mpc for aligned NSBHs, as reported in \fpg{cita l'articolo O3a GRB!}.
 
 \begin{comment}
-
 \begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
  \hline
  Source & $D_{90}$\\
@@ -2987,19 +2986,17 @@ Generic NSBH & 139 \\
 Aligned NSBH & 211\\ 
  \hline
 \end{tabular}
-
 \end{comment}
 
 
 \subsection{GRB 190728271}
         {\it Fermi}/GBM triggered on GRB 190728271 at 06:30:36 UTC on July 28, 2019.
         The GRB was located at $RA = \ang{356.7}$, $Dec = \ang{5.4}$
-        with a statistical uncertainty of 5.7 degrees, while the duration was $T_{90} = (0.832 \pm 0.905)\,$s.
+        with a statistical uncertainty of $\ang{5.7}$, while the duration was $T_{90} = (0.832 \pm 0.905)\,$s.
         All three GW detectors were operating at the time of this GRB,
         and their responses in its direction were 0.271, 0.665, and 0.463 for H1, L1, and V1, respectively.
 
-\fpg{Devi raccontare direttamente il run finale.  La descrizione qui sotto riguarda i plot del primo run.  Se io guardo Fig.\,\ref{fig:scplots2_final}, non ritrovo quello che scrivi.  Infatti ci sono 2/3 injections per auto veto e una per lo standard chi-square.} 
-	\begin{comment}       
+	\begin{comment}
 	While the results of the $\chi^2$-tests look rather clean (Fig.\,\ref{fig:scplots2_final}), a loud injection ends up being bank-vetoed,
         as do six injections in the case of the auto veto.
         Further investigations revealed that the bank-vetoed injection corresponds to a 22$M_\odot$ NSBH system,
@@ -3011,30 +3008,33 @@ Aligned NSBH & 211\\
 	Twenty nearby BNS injections were found not to be recovered confidently.
 	All of them have at least one spin magnitude greater than 0.05, that is also precessing.  A high NS spin magnitude was also found for the nearby NSBH injections that were not recovered as louder than all the background events.
 	\end{comment}
-	
-	Compared to the other results, the $\chi^2$-tests looks the cleanest (Fig.\,\ref{fig:scplots2_final}), 
-	with just two vetoed injections.
-        Both the bank and auto veto show many injections dragged by the background in the veto area.
+
+	The $\chi^2$-tests are shown in Fig.\,\ref{fig:scplots2_final}.
+        In the case of the bank and auto vetoes, several injections are dragged in the vetoed area by the background.  Three auto-vetoed injections (middle panel) and a single standard-vetoed injection are not superimposed to the background triggers: these correspond to highly precessing injections and are therefore not worrisome.
         \begin{figure}[!t]
           \noindent
           \label{scplots2_final}
-          \makebox[\textwidth]{\includegraphics[scale=0.68]{scplots2_final}}%
           \centering
+            \includegraphics[width=0.67\textwidth]{GRB190728271_bank_veto_vs_snr_zoom}\\
+            \includegraphics[width=0.67\textwidth]{GRB190728271_auto_veto_vs_snr_zoom}\\
+            \includegraphics[width=0.67\textwidth]{GRB190728271_chi_square_vs_snr_zoom}%
           \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190728271.}
           \label{fig:scplots2_final}
-        \end{figure}        
-        The plots of the of the single SNR versus coherent SNR (Fig.\,\ref{fig:detector2_final}) reveal that 
-	the best performance is of L1, while H1 and  V1 plots show a couple of injections outside the $3\sigma$ 
-	deviation from the expected behaviour.
-	Twenty nearby BNS injections were found not to be recovered confidently.
-        All of them have at least one spin magnitude greater than 0.05, that is also precessing (Fig.\,\ref{fig:missinj2_3}).
-	Two injections were lost due to high $\chi^2$ and NullSNR values.
-	A high NS spin magnitude was also found for the nearby NSBH injections that were not recovered as louder than all the background events.
+        \end{figure}
+        The single SNR versus coherent SNR plots (Fig.\,\ref{fig:detector2_final}) reveal that 
+	the L1 has the best performance, which is in line with it having the highest antenna factor; overall these plots did not flag any issue.
+	%
+        Finally, Fig.\,\ref{fig:missinj2_3} shows the result of the injection recovery study.  Twenty nearby BNS injections were found not to be recovered confidently.
+        All of them have at least one spin magnitude greater than 0.05, with moderate to high precession. 
+	Further, two injections were missed due to high $\chi^2$ and NullSNR values, caused by a glitch in the L1 data.
+	A high NS spin magnitude ($\sim 0.3$) also caused a single nearby NSBH injections to not be recovered as louder than all the background events.
         \begin{figure}[!t]
           \noindent
           \label{detector2_final}
-          \makebox[\textwidth]{\includegraphics[scale=0.55]{detector2_final}}%
           \centering
+            \includegraphics[width=0.67\textwidth]{GRB190728271_H1_snr_vs_snr_zoom}\\
+            \includegraphics[width=0.67\textwidth]{GRB190728271_L1_snr_vs_snr_zoom}\\
+            \includegraphics[width=0.67\textwidth]{GRB190728271_V1_snr_vs_snr_zoom}%
           \caption{Same as Fig.\,\ref{fig:detector1}, but for GRB 190728271 and for three detectors this time.}
           \label{fig:detector2_final}
         \end{figure}
@@ -3050,7 +3050,7 @@ Aligned NSBH & 211\\
         % 
         As for GRB 190627A, this background analysis gave overall good results,
 	and the on-source data results were investigated.
-	The $D_{90}$ found in the on-source window are 160 Mpc, 204 Mpc and 272 Mpc for the BNS, the precessing and aligned NSBH, respectively. 
+	The loudest onsource event was given a FAP of 0.513, so it is not of astrophysical origin.  The $90\%$ confidence exclusion distances for the on-source window are 160\,Mpc, 204\,Mpc and 272\,Mpc for the BNS, the precessing and aligned NSBH, respectively, as reported in \fpg{cita l'articolo O3a GRB!}.
 \begin{comment}
 \begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
  \hline
@@ -3080,47 +3080,43 @@ Aligned NSBH & 272\\
           \label{fig:detector3}
         \end{figure}
 
-        \fpg{E quindi l'analisi \`e stata senza V1 e ora fai vedere i risultati relativi a questa analisi.  Almeno presumo.}
- 	Therefore, the analysis has been conducted without V1.
+ 	Therefore, the production analysis was conducted without considering the V1 data.
 	The results of the $\chi^2$-tests are shown in Fig.\,\ref{fig:signalconsistencyplots3_final}:
-       	there are a few injections overlapping with glitchy data, dragged into the veto  area of the bank and  auto veto tests;
-	just two injections are vetoed for the $\chi^2$-test.
-                \begin{figure}[!t]
-                        \noindent
-                        \label{signalconsistencyplots3_final}
-                        \makebox[\textwidth]{\includegraphics[scale=0.68]{signalconsistencyplots3_final}}%
-                        \centering
-                        \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190425089.}
-                        \label{fig:signalconsistencyplots3_final}
-                \end{figure}
-	The plots of the of the single SNR versus coherent SNR (see, Fig.\ref{fig:detector3_final}) show that both H1 and L1
-	follow the expected astrophysical trend overall, with just one  injection falling out the  3$\sigma$ deviation.
-	                \begin{figure}[!t]
-                        \noindent
-                        \label{detector3_final}
-                        \makebox[\textwidth]{\includegraphics[scale=0.4]{detector3_final}}%
-                        \centering
-                        \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:detector1} but for GRB 190425089. These plot show the re-analysis of  GRB 190425089 without V1.}
-                        \label{fig:detector3_final}
-                \end{figure}
+       	a few injections that overlap with glitches in the data are dragged into the vetoed area of the bank and auto veto tests, while a single injection is vetoed by the $\chi^2$-test.  This corresponded to a BNS with spin $\sim 0.4$ for one of its two components and is therefore not worrisome.  In summary, the performance of the pipeline is adequate.
+
+        \begin{figure}[!t]
+          \noindent
+          \label{signalconsistencyplots3_final}
+          \makebox[\textwidth]{\includegraphics[scale=0.68]{signalconsistencyplots3_final}}%
+          \centering
+          \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:signalconsistencyplots1} but for GRB 190425089.}
+          \label{fig:signalconsistencyplots3_final}
+        \end{figure}
+	The plots of the of the single SNR versus coherent SNR reported in Fig.\,\ref{fig:detector3_final}) show that both H1 and L1
+	follow the expected astrophysical trend overall, with just one injection falling out the 3$\sigma$ deviation in H1.  This corresponds to a BNS with highly spinning and precessing NSs and is therefore not surprising.
+        \begin{figure}[!t]
+          \noindent
+          \label{detector3_final}
+          \makebox[\textwidth]{\includegraphics[scale=0.4]{detector3_final}}%
+          \centering
+          \caption{\textbf{Signal consistency plots.} Same as Fig.\,\ref{fig:detector1} but for GRB 190425089. These plot show the re-analysis of  GRB 190425089 without V1.}
+          \label{fig:detector3_final}
+        \end{figure}
 	
-        The injection set whose missed injections are the most, is the aligned spin NSBH:
-        out of the forty that are lost due to a NS  with  spin magnitude above the range of the corresponding template,
-        six have high $\chi^2$ value.
-        Same considerations apply for the BNS set, that has 25 missed injections within 210Mpc due to having spin magnitude $>$ 0.05,
-        besides five of  them that were vetoed by a high $\chi^2$ value.
-                \begin{figure}[!t]
-                        \noindent
-                        \label{missinj3_5}
-                        \makebox[\textwidth]{\includegraphics[scale=0.44]{missinj3_5}}%
-                        \centering
-                        \caption{\textbf{Found/missed injections.}Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089.}
-                        \label{fig:missinj3_5}
-                \end{figure}
-	Nonetheless, the background analysis has given acceptable results
+        Finally, the found and missed injections are reported in the panels of Fig.\,\ref{fig:missinj3_5}.  An inspection of the aligned spin NSBH missed injections shows that they overlap with glithces in one of the two LIGO interferometers, while the nearby injections that are not recovered as louder than all the background have a NS with spin magnitude above $0.05$.
+        Similar considerations apply to the BNS injection set.
+        \begin{figure}[!t]
+          \noindent
+          \label{missinj3_5}
+          \makebox[\textwidth]{\includegraphics[scale=0.44]{missinj3_5}}%
+          \centering
+          \caption{\textbf{Found/missed injections.} Same as Fig.\,\ref{fig:missinj1} but for GRB 190425089.}
+          \label{fig:missinj3_5}
+        \end{figure}
+	Overall the background analysis gave acceptable results
 	and the on-source data results were investigated: 
-	the recovered 90\% exclusion distance for BNS, generic spin NSBH and aligned spin NSBH are 204 Mpc, 247 Mpc and 440 Mpc, respectively.
-	The most significant event in the on source data has a FAP of 0.075.
+	the loudest event had a FAP of 0.075 which is not significant astrophysically.  The 90\% confidence exclusion distance for BNS, generic spin NSBH and aligned spin NSBH sources were found to be 204\,Mpc, 247\,Mpc and 440\,Mpc, respectively, as reported in \fpg{cita l'articolo O3a GRB!}.
+
 \begin{comment}
 \begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
  \hline
