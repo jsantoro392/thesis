@@ -5,14 +5,14 @@
 \usepackage{hyperref}
 \usepackage{wasysym}
 \usepackage{siunitx}
-\usepackage{biblatex}
+%\usepackage{biblatex}
 \usepackage{titlesec}
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{nameref}
 \usepackage{verbatim}
 \newcommand{\fpg}[1]{\textcolor{red}{#1} }
-\addbibresource{sample.bib}
+%\addbibresource{sample.bib}
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
 \usepackage{amsmath, amssymb}
 \title{Coherent and Coincident Analyses of LIGO-Virgo Data from the Third Observing Run}
@@ -44,6 +44,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 \addcontentsline{toc}{chapter}{Introduction}
 \markboth{Introduction}{Introduction}
 %
+\fpg{Hai alcune undefined references e citations.  Inoltre in vari punti usi {\ttfamily \cite{}} oppure {\ttfamily \ref{}}.}%
 \fpg{Giri di correzione: 1.}%
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves (GWs) starting from his theory of general relativity \cite{1,2}.
 	He discovered that the acceleration of masses
@@ -1741,7 +1742,7 @@ sense that
 	In between observing runs, the detectors are upgraded leading to improvements in sensitivity and duty cycle.
 
 	A total of eleven confident detections were collected from the O1 and O2 data \cite{13}: 
-	ten BBH mergers \cite{14, 52, 58-60} and one BNS merger \cite{61}.  
+	ten BBH mergers \cite{14, 52, 58, 59, 60} and one BNS merger \cite{61}.  
 	In addition, fourteen marginal triggers were also found \cite{13}.
 	Notable events in this catalog are the first observed event GW150914 \cite{52},
 	the first three-detector event GW170814 \cite{60} and the BNS
@@ -1778,11 +1779,11 @@ sense that
 	the late inspiral, merger, and ringdown of stellar-mass BBHs.
 
 	Two independent matched-filter searches were used to detect GWs from CBC sources: 
-	{\ttfamily PyCBC} \cite{109-112} and {\ttfamily GstLAL} \cite{112-114}.
+	{\ttfamily PyCBC} \cite{109, 110, 111, 112} and {\ttfamily GstLAL} \cite{112, 113, 114}.
 	The pipelines identify GW candidates by looking at coincident events 
 	found in both LIGO detectors, in a 15\,ms time window 
 	that accounts for the inter-site propagation time plus timing uncertainties. 
-	Both pipelines used a discrete template bank \cite{42, 114, 115, 117-120}, 
+	Both pipelines used a discrete template bank \cite{42, 114, 115, 117, 118, 119, 120}, 
 	targeting binary sources with individual masses from $1{M_\odot}$ to $99{M_\odot}$,
 	total mass less than $100{M_\odot}$, and dimensionless non-precessing spins up to 0.99 and 0.05 for BHs and NSs, respectively.
 
@@ -1832,7 +1833,7 @@ sense that
 	\subsubsection{Masses}
 	The physical parameters of the source of GW150914 were inferred using two waveform models, 
 	a non-precessing effective-one-body waveform model (EOBNR) \cite{103, 104} 
-	and a precessing spin model (IMRPhenom) \cite{105-107}. 
+	and a precessing spin model (IMRPhenom) \cite{105, 106, 107}. 
 	Results from the two waveforms are consistent, and match the expectations 
 	for a coherent signal of astrophysical origin in both detectors. 
 	The total mass of GW150914 was found to be $M^{\rm source} = 65.3^{+4.1}_{-3.4}M_\odot$, 
@@ -1860,7 +1861,7 @@ sense that
 	GW150914 has an estimated distance of $D_L = 440^{+150}_{-170}\,$Mpc (redshift $z=0.09^{+0.03}_{-0.03}$). 
 
 	The significant fractional uncertainty for the distance is due to the degeneracy 
-	between the distance and the binary inclination with respect to the observer, which both impact the signal amplitude \cite{96-98}.
+	between the distance and the binary inclination with respect to the observer, which both impact the signal amplitude \cite{96, 97, 98}.
 	The configurations for which the orientation of the binary produces the greatest GW amplitude 
 	are either face-on or face-off (angular momentum pointed parallel or antiparallel to the line of sight). 
 	The inclination could potentially be better constrained in a precessing system \cite{94, 95}. 
@@ -1880,10 +1881,10 @@ sense that
 	However, it was impossible to determine the formation channel for this event. 
 	Possible BBH formation channels include dynamical formation in a dense stellar environment \cite{84, 88} 
 	possibly assisted by gas drag in galactic nuclear disks \cite{82, 83}, or isolated binary evolution, 
-	either the classical variant via a common-envelope phase \cite{76-81}, 
+	either the classical variant via a common-envelope phase \cite{76, 77, 78, 79, 80, 81}, 
 	potentially from population III binaries \cite{74, 75}, or chemically homogeneous evolution 
 	in close tidally locked binaries \cite{72, 73}. 
-	All of these channels have been shown to be consistent with the GW150914 discovery \cite{63-70}. 
+	All of these channels have been shown to be consistent with the GW150914 discovery \cite{63, 64, 65, 66, 67, 68, 69, 70}. 
 
         \begin{figure}[!t]
           \label{o1}
@@ -1934,7 +1935,7 @@ sense that
 	with a source-frame masses of $m_1 = 13.7^{+8.8}_{-3.2}M_\odot$ 
 	and secondary mass $m_2 = 7.7^{+2.2}_{-2.5}M_\odot$ \cite{13}. 
 	The inferred BH masses are within the range of dynamically measured masses 
-	of BHs found in X-ray binaries \cite{128-132}, 
+	of BHs found in X-ray binaries \cite{128, 129, 130, 131, 132}, 
 	unlike the high masses of GW150914 which had never been observed before. 
 	Finally, the two LIGO detectors are nearly co-aligned and the source of GW151226 
 	is likely to be located close to the maxima of the directional responses of both detectors \cite{28}. 
@@ -2036,7 +2037,7 @@ sense that
         are $30.5^{+5.7}_{-3.0}M_\odot$ and $25.3^{+2.8}_{-4.2}M_\odot$.
 	For events detected by the two LIGO instruments alone, the localisation 
 	was often limited to roughly annular regions by the baseline formed by the two LIGO detectors,
-	spanning hundreds to about a thousand square degrees at the 90\% credible level \cite{165-167}. 
+	spanning hundreds to about a thousand square degrees at the 90\% credible level \cite{165, 166, 167}. 
 	The inclusion of Virgo contributes with additional independent baselines, 
 	which for GW170814 and similar events can reduce the positional uncertainty by an order of magnitude or more \cite{166}. 
 	For an initial rapid localisation performed with LHO and LLO data, 
@@ -2187,7 +2188,7 @@ sense that
 	respect orbital symmetry and so are present in the radiation \cite{187}, resulting in the quadrupole, $h_{22}$, 
 	being the most dominant, followed by other multipoles with even $m$. 
 	Otherwise, for sufficiently unequal mass ratios, the $l = m = 3$ and subsequent 
-	multipoles with $l = m$ gain increasing importance \cite{187-192}.
+	multipoles with $l = m$ gain increasing importance \cite{187, 188, 189, 190, 191, 192}.
 	GWs of higher harmonics had not been observed until GW190412:
 	these higher multipoles makes a significant, measurable contribution to the observed data as shown in \cite{133}.
 
@@ -3324,7 +3325,6 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 \phantomsection % Give this command only if hyperref is loaded \addcontentsline{toc}{chapter}{\bibname}
 
 \begin{thebibliography}{500}
-
 	\bibitem{1} Albert Einstein. On the General Theory of Relativity. Sitzungsber. Preuss. Akad. Wiss. Berlin (Math. Phys.), 1915:778–786, 1915. [Addendum: Sitzungsber. Preuss. Akad. Wiss. Berlin (Math. Phys.)1915,799(1915)]. 
 	\bibitem{2} Albert Einstein. Naherungsweise integration der feldgleichungen der gravitation. Sitzungsberichte der Koniglich Preu{\ss}ischen Akademie der Wissenschaften (Berlin), 1:688–696, 1916. 
 	\bibitem{3} M. Maggiore. Gravitational Waves: Volume 1: Theory and Experiments. Oxford University Press, 2008
@@ -3457,7 +3457,7 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 	\bibitem{130} K. Belczynski, A. Buonanno, M. Cantiello, C. L. Fryer, D. E. Holz, I. Mandel, M. C. Miller, and M. Walczak, The Formation and Gravitational-Wave Detection of Massive Stellar Black-Hole Binaries, Astrophys. J. 789, 120 (2014). 
 	\bibitem{131} We quote the matched-filter SNR as computed by the PyCBC search using the updated calibration; the GstLAL values agree within 2\%. 
 	\bibitem{132} C. E. Rhoades, Jr. and R. Ruffini, Maximum Mass of a Neutron Star, Phys. Rev. Lett. 32, 324 (1974).
-        \bibitem{132} The LIGO Scientific Collaboration, the Virgo Collaboration. GW190412: Observation of a Binary-Black-Hole Coalescence with Asymmetric Masses. arXiv:2004.08342.
+        \bibitem{133} The LIGO Scientific Collaboration, the Virgo Collaboration. GW190412: Observation of a Binary-Black-Hole Coalescence with Asymmetric Masses. arXiv:2004.08342.
 	\bibitem{134} B. P. Abbott et al. (LIGO Scientific Collaboration, Virgo Collaboration), Astrophysical Implications of the Binary Black-Hole Merger GW150914. Astrophys. J. Lett. 818, L22 (2016), arXiv:1602.03846 [astro-ph.HE]. 
 	\bibitem{135} J. S. Vink, New Astron. Rev. 52, 419 (2008).
 	\bibitem{136} B. P. Abbott et al. (LIGO Scientific Collaboration, Virgo Collaboration). Search for Gravitational-wave Signals Associated with Gamma-Ray Bursts during the Second Observing Run of Advanced LIGO and Advanced Virgo. arXiv:1907.01443.
@@ -3534,6 +3534,6 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 
 \end{thebibliography}
 
-\printbibliography
+%\printbibliography
 \end{document} 
 
