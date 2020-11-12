@@ -8,7 +8,6 @@ all: draft
 draft: 
 	#sed 's/%\\vfill/\\vfill/' < ms.tex > nsbh_pe_sgrb.tex
 	pdflatex -halt-on-error 	$(DRAFTTARGET)
-	bibtex    			$(DRAFTTARGET)
 	pdflatex -halt-on-error  	$(DRAFTTARGET)
 	pdflatex -halt-on-error 	$(DRAFTTARGET)
 
