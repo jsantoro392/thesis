@@ -5,14 +5,12 @@
 \usepackage{hyperref}
 \usepackage{wasysym}
 \usepackage{siunitx}
-%\usepackage{biblatex}
 \usepackage{titlesec}
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{nameref}
 \usepackage{verbatim}
 \newcommand{\fpg}[1]{\textcolor{red}{#1} }
-%\addbibresource{sample.bib}
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
 \usepackage{amsmath, amssymb}
 \title{Coherent and Coincident Analyses of LIGO-Virgo Data from the Third Observing Run}
@@ -44,7 +42,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 \addcontentsline{toc}{chapter}{Introduction}
 \markboth{Introduction}{Introduction}
 %
-\fpg{Hai alcune undefined references e citations.  Inoltre in vari punti usi {\ttfamily \cite{}} oppure {\ttfamily \ref{}}.}%
+\fpg{In vari punti usi {\ttfamily cite\{\}} oppure {\ttfamily ref\{\}}. Inoltre citi senza averle in biblio 213 e 215.}%
 \fpg{Giri di correzione: 1.}%
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves (GWs) starting from his theory of general relativity \cite{1,2}.
 	He discovered that the acceleration of masses
@@ -1497,21 +1495,21 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	When coincident events are found, they are then ranked by the quadrature sum of the re-weighted SNR in each detector;
 	for a two-detector network, the \textit{coincident} SNR is defined as
 		\begin{equation}
-			\hat{\rho}_{coinc}  = \sqrt{\hat{\rho}^2_1 + \hat{\rho}^2_2}.
+			\hat{\rho}_{\rm coinc}  = \sqrt{\hat{\rho}^2_1 + \hat{\rho}^2_2}.
 		\end{equation}
 	A confident detection is claimed when the false alarm probability of an event is computed,
 	and the probability of an equally loud event being caused by noise is below a chosen threshold. 
 	A statistical significance is assigned to candidate events by the FAR,
-	calculated as a function of the detection statistic, $\hat{\rho}_{coinc}$,
+	calculated as a function of the detection statistic, $\hat{\rho}_{\rm coinc}$,
 	via analysis of time-shifted data, as already seen in Sec.\,\ref{subsec:far}. \\
 	Single-detector triggers from one detector are time shifted with respect to triggers of the other detector;
 	all such coincidences are recorded and assigned a ranking statistic, 
 	to create a background data set that does not contain coincident GW signals.
 	This time-shifting of the data is performed many times to obtain a representative estimate of the expected rate of background triggers. \\
-	For every possible result of a given observation performed on the data with detection statistic $\hat{\rho}_{coinc}$, 
+	For every possible result of a given observation performed on the data with detection statistic $\hat{\rho}_{\rm coinc}$, 
 	a test statistic value, $p_b$ is assigned to measure the probability that the 
 	there are one or more coincident noise events (false alarms) that have
-	a detection statistic value greater than or equal to $\hat{\rho}_{coinc}$. 
+	a detection statistic value greater than or equal to $\hat{\rho}_{\rm coinc}$. 
 	Given the knowledge of only GW data, one cannot be absolutely confident that 
 	any given trigger is a signal rather than noise. 
 	Therefore, p-values are computed under the null hypothesis: this assumes that candidate events 
@@ -1523,12 +1521,12 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	meaning they are random noise candidate events. \\
 	How many noise background events $n_b$ are louder than a given candidate event
 	can be measured using the distribution of coincident events from the time shifts.
-	The number of background events having a higher detection-statistic value than $\hat{\rho}_{coinc}$
-	is given by the function $n_b(\hat{\rho}_{coinc})$, and can be used to calculate 
-	the probability that one or more noise events as loud as a candidate event with $\hat{\rho}_{coinc}$
+	The number of background events having a higher detection-statistic value than $\hat{\rho}_{\rm coinc}$
+	is given by the function $n_b(\hat{\rho}_{\rm coinc})$, and can be used to calculate 
+	the probability that one or more noise events as loud as a candidate event with $\hat{\rho}_{\rm coinc}$
 	occurs in the search, as 
 		\begin{equation}
-			p(\geq 1 \hspace*{0.1cm}\text{above}\hspace*{0.1cm} \hat{\rho}_{coinc}^*|T,T_b)_0 = 1 - exp\big[ {{-T(1+n_b(\hat{\rho}_{coinc}^*))} \over {T_b}}]
+			p(\geq 1 \hspace*{0.1cm}\text{above}\hspace*{0.1cm} \hat{\rho}_{\rm coinc}^*|T,T_b)_0 = 1 - exp\big[ {{-T(1+n_b(\hat{\rho}_{\rm coinc}^*))} \over {T_b}}]
 		\end{equation}
 	 given the duration of observing time $T$ and the amount of background time 
 	constructed from the time shifts $T_b$. \cite{28}
@@ -1544,7 +1542,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
         it is computationally expensive in the case of modelled searches \cite{45}.  
 	It is therefore used for externally triggered searches, 
 	when knowing the time and sky-location of the source can cut the cost of the search.
-	The detection statistic of the {\ttfamily PyGRB} pipeline, see Sec.\,\ref{sec:pygrb}, 
+	The detection statistic of the {\ttfamily PyGRB} pipeline (see Sec.\,\ref{subsec:pygrb}) 
 	is based on a coherent search \cite{46, 92},
 	which uses the sky position and time of the GRB with the antenna response function and PSD of each detector in the network. 
         The fact that the detector data are combined coherently allows to define a new ranking statistic, 
@@ -1614,26 +1612,26 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 			\rho^2_{\rm coh}\equiv 2 \ln \lambda |_{\rm MAX}\equiv (\textbf{s}|\textbf{h}_{\mu})\mathcal{M}^{\mu\nu}(\textbf{s}|\textbf{h}_{\nu})\,.
 		\end{equation}
 	In the absence of a signal, $\rho^2_{\rm coh}$ follows a $\chi^2$ distribution.
-	In addition, $\rho^2_{coh}$ is now a function of only the waveform components $h_{\mu}$ 
+	In addition, $\rho^2_{\rm coh}$ is now a function of only the waveform components $h_{\mu}$ 
 	and no longer the $\mathcal{A}_{\mu}$ parameters. 
 	Thus four of the original seven waveform parameters have been analytically maximized, leaving three to be searched over.
 
 	In order to easily compare the coherent analysis with the coincident one discussed in Sec.\,\ref{subsec:coincident},
 	a  first useful assumption is to consider a coincident search where an identical template is used in all detectors;
-	then re-formulate the expression for both the $\rho^2_{coinc}$ and $\rho^2_{coh}$ as
+	then re-formulate the expression for both the $\rho^2_{\rm coinc}$ and $\rho^2_{\rm coh}$ as
 		\begin{align}
-			\rho^2_{coinc} &= \sum_{X} {{(s^X|h_0)^2+(s^X|h_{{\pi}\over{2}})^2} \over {(\sigma^X)^2}}  \\
+			\rho^2_{\rm coinc} &= \sum_{X} {{(s^X|h_0)^2+(s^X|h_{{\pi}\over{2}})^2} \over {(\sigma^X)^2}}  \\
 					&= \sum_{X,Y}\sum_{i=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[\delta^{XY}]\big( s^Y|{{h_i}\over{\sigma^Y}}\big).
 		\end{align}
 	Similarly, the coherent SNR can be written as
 		\begin{equation}
 		\label{eq:rhocoh}
-			\rho^2_{coh}  = \sum_{X,Y}\sum_{I=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[f_{+}^Xf_{+}^Y+f_{\times}^Xf_{\times}^Y]\big( s^Y|{{h_i}\over{\sigma^Y}}\big)
+			\rho^2_{\rm coh}  = \sum_{X,Y}\sum_{I=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[f_{+}^Xf_{+}^Y+f_{\times}^Xf_{\times}^Y]\big( s^Y|{{h_i}\over{\sigma^Y}}\big)
 		\end{equation}
 	While a coincidence search requires a signal to be observed in two or more detectors, 
         resulting in the coincident SNR to be simply the sum of all power consistent with the template waveform in each detector,
         a coherent search naturally incorporates the SNR from all operational detectors \cite{45, 46}.
-	The coherent SNR (\ref{eq:rhocoh}) makes use of the fact that GWs have only two polarisations 
+	The coherent SNR makes use of the fact that GWs have only two polarisations 
 	to restrict the accumulated SNR to the physical subspace spanned by $f_+$ and $f_{\times}$. 
 	It has been demonstrated that for a signal in the absence of noise the coincident and coherent SNRs are identical. 
         For noise events, the coincident SNR includes all of the noise, 
@@ -2341,7 +2339,7 @@ sense that
 	at six times the distance of GW170817.  
 	This means that any light emitted would be about 36 times fainter in comparison to GW170817.
 	Even if the event was a NSBH merger accompanied by an EM counterpart
-	(see Sec.\,\ref{sec:emnsbh} for the right conditions for this to happen), 
+	(see Sec.\,\ref{subsubsec:mrem_model} for the right conditions for this to happen), 
 	the latter may have been too faint to be observed.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2418,6 +2416,7 @@ sense that
 	and a sufficiently massive accretion disk forms around the remnant BH.
 
 \subsection{The O3a Template Bank}
+\label{subsec:o3aTemplateBank}
 	As already mentioned in Sec.\ref{sec:template_banks}, to perform a modelled search 
 	a template bank is required. 
 	In the previous section, Sec.\ref{sec:grbfollowup}, we have introduced BNS and NSBH as certain and potential short GRBs progenitors,
@@ -2435,7 +2434,7 @@ sense that
 	The next sections describe this process step-by-step.
 
 \subsubsection{Tidal Disruption of Black Hole--Neutron Star Binaries}
-\label{subsubsec:mrem_model}        
+\label{subsubsec:mrem_model}
 	The evolution of the BH singularity and the presence of matter combine
         the difficulties of evolving both BBHs and BNS, and the system has its own specific challenges,
         specifically the accretion of the NS matter onto the BH.
@@ -2624,7 +2623,7 @@ sense that
         so that ‘\textbf{{\color{green}mask\_bns}}’ identifies only BNS, while the systems that do not satisfy this conditions
         are identified by ‘\textbf{{\color{black}masknsbh}}’.
         All these point’s masses and spin are stored.
-        \item As previously showed in Sec.\,\ref{subsec:mrem_model}, not all NSBH coalescence produce an EM counterpart,
+        \item As previously showed in Sec.\,\ref{subsubsec:mrem_model}, not all NSBH coalescence produce an EM counterpart,
         so the next step is to keep only those systems whose $M_{rem}$ is greater than the threshold mass to have a counterpart,
         identify these points with ‘\textbf{{\color{blue}mask\_nsbh\_bright}}’ and store their masses and spins.
 	\end{itemize}
@@ -2739,16 +2738,16 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	data from each detector is then time-shifted so that there is a temporal coincidence between the GW and the GRB in each IFO \cite{92}.
 	A list of triggers is assembled by keeping only times when the individual detector $\rho > 4$,
 	and discarding any trigger that is not coincident in at least two detectors in the network \cite{92}. 
-	Further trigger selection get accomplished after calculating the $\rho_{coinc}$, 
-	and rejecting any trigger with $\rho_{coinc}<6$, and then repeating the same procedure for the $\rho_{coh}$.
-	The last cut is done by computing the $\rho_{null}$ and keeping only the triggers that satisfy the following conditions \cite{46}:
+	Further trigger selection get accomplished after calculating the $\rho_{\rm coinc}$, 
+	and rejecting any trigger with $\rho_{\rm coinc}<6$, and then repeating the same procedure for the $\rho_{\rm coh}$.
+	The last cut is done by computing the $\rho_{\rm null}$ and keeping only the triggers that satisfy the following conditions \cite{46}:
 		\begin{equation}
-			\rho_{null} \leq 5.25 \hspace*{2cm} \text{and} \hspace*{2cm} \rho_{coh} \leq 20
+			\rho_{\rm null} \leq 5.25 \hspace*{2cm} \text{and} \hspace*{2cm} \rho_{\rm coh} \leq 20
 		\end{equation}
 		\begin{equation}
-			\rho_{null} \leq {{\rho_{coh}-20}\over {5}} \hspace*{2cm} \text{and} \hspace*{2cm} \rho_{coh} > 20
+			\rho_{\rm null} \leq {{\rho_{\rm coh}-20}\over {5}} \hspace*{2cm} \text{and} \hspace*{2cm} \rho_{\rm coh} > 20
 		\end{equation}
-	This prevents losing possibile loud GW events, that have high $\rho_{null}$ and $\rho_{coh}$ values,
+	This prevents losing possibile loud GW events, that have high $\rho_{\rm null}$ and $\rho_{\rm coh}$ values,
 	because differences between the actual GW waveform and the template used for the matched filter, 
 	as well as inaccuracies in timing and sky position, can all lead to some fraction of the energy of a GW contributing to the null SNR. 	
 	In order to remove glitches, the remaining triggers go through the $\chi^2$-test, described in Sec.\,\ref{}.
@@ -2757,26 +2756,26 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
 	Therefore, glitches that still pass the cut, but do not match well with the template waveform, will be down-weighted.
 	The re-weighting is done in two steps: first according  to  the  $\chi^2$ value
 		\begin{equation}
-		\text{if} \hspace*{0.5cm} \chi^2 \leq n_{dof} \hspace*{3.9cm} \rho_{\chi^2} =  \rho_{coh} 
+		\text{if} \hspace*{0.5cm} \chi^2 \leq n_{dof} \hspace*{3.9cm} \rho_{\chi^2} =  \rho_{\rm coh} 
 		\end{equation}
 		\begin{equation}
-		\text{if} \hspace*{0.5cm} \chi^2 > n_{dof} \hspace*{1.2cm} \rho_{\chi^2} =  {{\rho_{coh}}  \over {\{[1+ \big( {{\chi^2} \over {n_{dof}}} \big)^3 ]/2\}^{1/6}}}
+		\text{if} \hspace*{0.5cm} \chi^2 > n_{dof} \hspace*{1.2cm} \rho_{\chi^2} =  {{\rho_{\rm coh}}  \over {\{[1+ \big( {{\chi^2} \over {n_{dof}}} \big)^3 ]/2\}^{1/6}}}
 		\end{equation}	
 	and then according to the null SNR
 		\begin{equation}
-			\text{if} \hspace*{0.5cm} \rho_{null} \leq 4.25 \hspace*{3.5cm} \rho_{rw} = \rho_{\chi^2}
+			\text{if} \hspace*{0.5cm} \rho_{\rm null} \leq 4.25 \hspace*{3.5cm} \rho_{\rm rw} = \rho_{\chi^2}
 		\end{equation}
 		\begin{equation}
-			\text{if} \hspace*{0.5cm} \rho_{null} > 4.25 \hspace*{2cm} \rho_{rw} = {{ \rho_{\chi^2}}  \over {\rho_{null} - 3.25}}
+			\text{if} \hspace*{0.5cm} \rho_{\rm null} > 4.25 \hspace*{2cm} \rho_{\rm rw} = {{ \rho_{\chi^2}}  \over {\rho_{\rm null} - 3.25}}
 		\end{equation}
 	For each template of the mass parameter space, 
-	the re-weighted SNR is calculated, and the template producing the largest $\rho_{rw}$ 
+	the re-weighted SNR is calculated, and the template producing the largest $\rho_{\rm rw}$ 
 	during the on-source window is retained as the event candidate \cite{46}. 
-	For the {\ttfamily PyGRB} analysis, the threshold that a candidate event must surpass is $\rho_{rw} \geq 8$,
+	For the {\ttfamily PyGRB} analysis, the threshold that a candidate event must surpass is $\rho_{\rm rw} \geq 8$,
 	while, in order to remove any non-Gaussian triggers left from the data, 
-	any trigger with $\rho_{rw}$ less than 6 is discarded.
+	any trigger with $\rho_{\rm rw}$ less than 6 is discarded.
 	The last step is to determine the significance of a trigger,
-	namely how often glitches with a higher $\rho_{rw}$ than the trigger will occur,
+	namely how often glitches with a higher $\rho_{\rm rw}$ than the trigger will occur,
 	by calculating the false alarm probability (FAP) around the time of the GRB \cite{46}.
 	To evaluate the p-value of the loudest event, the off-source data are analysed:
 	since any events occurring in the off-source will be due only to background noise, 
