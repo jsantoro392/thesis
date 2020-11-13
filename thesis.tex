@@ -2549,7 +2549,8 @@ sense that
         the template bank is designed assuming zero eccentricity.
       \end{itemize}
 
-      Two other parameters must be specidied in order to generate the bank.  1) The design value for the minimum match of the bank with any point in its target paremeter space, which is set to $0.97$, allowing for at most 10\% signal losses.  2) The threshold value for the accretion disk mass of NSBH binaries that flags them as potential short GRB progenitors: any NSBH with $M_{\rm rem}>0$ is considered as a viable short GRB progenitor, in order to err on the side of caution thus including more NSBH binaries than necessary, rather than risk omotting them.
+      Two other parameters must be specidied in order to generate the bank.  1) The design value for the minimum match \fpg{Se prima dicevamo overlap, qui dobbiamo dire overlap. Controllare.} of the bank with any point in its target paremeter space, which is set to $0.97$, allowing for at most 10\% signal losses.  Matches are calculated over the frequency interval $[27, 1000]\,$Hz. 2) The threshold value for the accretion disk mass of NSBH binaries that flags them as potential short GRB progenitors: any NSBH with $M_{\rm rem}>0$ is considered as a viable short GRB progenitor, in order to err on the side of caution thus including more NSBH binaries than necessary, rather than risk omotting them.
+      Finally, we must specify the model to generate gravitational waveforms and compare them.  We used the phenomenological model for spinning, non-precessing binaries {\ttfamily IMRPhenomD} \cite{156}.  This mdoel does not account for NS-specific contributions to the waveform: the presence of NSs therefore enters our bank only via the fitting formula used to calculate $M_{\rm rem}$ and downselect NSBH binaries that are viable short GRB progentors.
 
       The EM-bright bank is generated with a hybrid placement code (see Sec.\,\ref{subsubsec:HybridBank}).  At every proposal of a new point in the parameter space, the bank generation algorithm must determine whether to add or not that proal to the set of tempalate points.  Based on the two masses of the proposed new bank element, three things may happen. 
       \begin{enumerate}
@@ -2586,18 +2587,15 @@ sense that
 %{\color{red}1}0{\color{green}1}  & {\color{red}1}1{\color{green}0}{\color{blue}1}  & {\color{red}1}1{\color{green}0}{\color{blue}0}  & {\color{red}0}  \\ \hline
 %\end{tabular}
 %\end{table}
-		
+
 	The O3a EM-bright template bank produced once the code was able to hande Eq.\,(\ref{eq:mremup}) is shown in Fig.\,\ref{fig:banktest}.  The two axes represent the mass of the BH and the magnitude of its spin, while the color code is the NS mass.  The only information lost in this plot is the NS spin magnitude, but this is taken to be 0.05 at most, so this direction in parameter space is not very rich.
         A significant portion of the parameter space is empty of any templates  (lower-right),
         as it either contains BBH systems or NSBH systems that cannot produce an accretion disk around the BH remnant.
         Another advantage emerges at this point, as this is the portion of parameter space where waveforms mostly latch onto detector noise transients.  The absence of template points here translates into an increase in sensitivity for the {\rm PyGRB} search.
 
         \fpg{Sono qui.}
-        The template bank is built with a hybrid geometric random method and uses templates generated with an aligned spin model,
-        IMRPhenomD \cite{156}, a family of waveforms tuned for small mass ratios with aligned spins,                                                                                                        
-        for non precessing point particle binaries.\\
-	The template bank is designed to have an SNR loss of no more than 3\% due to discretisation, 
-	which results in a bank of 288,177  templates. Filtering is performed from 27 Hz to 1000 Hz. 	
+%	The template bank is designed to have an SNR loss of no more than 3\% due to discretisation, which
+        results in a bank of 288,177 templates. 	
 	Since the targeted search puts particular emphasis on the coalescence of  BNS and NSBH systems,
 	it is important that the EM bright bank appropriately covers the region of the parameter space 
 	that is expected to include the progenitors of short GRB and does not expand over this region,
