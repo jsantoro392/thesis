@@ -2305,7 +2305,7 @@ sense that
 	falling right in the mass gap between stellar-mass and supermassive BH.
 
 \subsection{GW190814: a Signal from an Unclear Source}
-\subsection{subsec:GW190814}
+\label{subsec:GW190814}
 	This was one of the must puzzling observations so far, as it is unclear
 	whether its source was a BBH or an NSBH.
 	This system shows the highest mass asymmetry observed to date:
@@ -2588,69 +2588,49 @@ sense that
 %\end{tabular}
 %\end{table}
 
-	The O3a EM-bright template bank produced once the code was able to hande Eq.\,(\ref{eq:mremup}) is shown in Fig.\,\ref{fig:banktest}.  The two axes represent the mass of the BH and the magnitude of its spin, while the color code is the NS mass.  The only information lost in this plot is the NS spin magnitude, but this is taken to be 0.05 at most, so this direction in parameter space is not very rich.
+	The O3a EM-bright template bank produced once the code was able to hande Eq.\,(\ref{eq:mremup}) contained 288,177 templates and is shown in Fig.\,\ref{fig:banktest}.  The two axes represent the mass of the BH and the magnitude of its spin, while the color code is the NS mass.  The only information lost in this plot is the NS spin magnitude, but this is taken to be 0.05 at most, so this direction in parameter space is not very rich.
         A significant portion of the parameter space is empty of any templates  (lower-right),
         as it either contains BBH systems or NSBH systems that cannot produce an accretion disk around the BH remnant.
         Another advantage emerges at this point, as this is the portion of parameter space where waveforms mostly latch onto detector noise transients.  The absence of template points here translates into an increase in sensitivity for the {\rm PyGRB} search.
 
-        \fpg{Sono qui.}
-%	The template bank is designed to have an SNR loss of no more than 3\% due to discretisation, which
-        results in a bank of 288,177 templates. 	
-	Since the targeted search puts particular emphasis on the coalescence of  BNS and NSBH systems,
-	it is important that the EM bright bank appropriately covers the region of the parameter space 
-	that is expected to include the progenitors of short GRB and does not expand over this region,
-	as this will increase the the computational cost of the analysis as well as the number of background triggers. \\ 
-	It is also crucial to properly define the parameter space for the binary components based on astrophysical knowledge:
-	combining the theoretical and experimental upper bound, the NS mass is restricted in the range $1M_\odot \leq M_{\rm NS}  \leq 2.8M_\odot$,
-	while the dimensionless spin magnitude to $\leq 0.05$, which is based on NS parameters from known Galactic BNS systems \cite{155},
-       	In a similar fashion, the parameters range for the BH is chosen to be $1M_\odot \leq M_{\rm BH}  \leq 25M_\odot$ and $0 \leq \chi_{\rm BH} \leq 0.998$.
-	Another restriction for the template bank to reduce background triggers and computation time, 
-	is to consider only waveforms from binaries with orbital inclination angles of $\ang{0}$ or $\ang{180}$ \cite{46}. 
-		\begin{figure}[t]
-                        \noindent
-                        \label{banktest}
-                        \makebox[\textwidth]{\includegraphics[scale=0.45]{banktest}}%
-                        \centering
-                        \caption{Parameter space boundaries for the O3a template bank illustrated through the BH spin vs BH mass.}
-                        \label{fig:banktest}
-                \end{figure}
+        \begin{figure}[t]
+          \noindent
+          \label{banktest}
+          \makebox[\textwidth]{\includegraphics[scale=0.45]{banktest}}%
+          \centering
+          \caption{{\bf The O3a template bank for the GW follow up of short GRBs.} The horizantal and vertical axis are the BH mass and dimensionless spin magnitude, respectively.  The colorcode is based on the NS mass.}
+          \label{fig:banktest}
+        \end{figure}
 
-	The effectiveness of the bank, in recovering the signal it searching for,
-        can be assessed by calculating the fitting factor,
-        already introduced in Sec.\,\ref{subsec:fittingfactor}.
-        This is done by injecting two sets of known GW signals, broad and point injections,
-        and determine how well the bank recovers them.
-	The broad injections cover the entire BNS and NSBH parameter space and contains 10,000 injection signals each,
-	approximated by the effective-one-body waveform model SEOBNRv4\_ROM, 
-	which results to be faster during the bank simulation.
         \begin{figure}[!t]
           \noindent
-          \label{fittingfactor}
           \makebox[\textwidth]{\includegraphics[scale=0.9]{fittingfactor}}%
           \centering
-          \caption{Broad Injection set results. From top left to bottom right the plots are as follows: The first plot is of the fitting factors over the spin parameter space. The next plot is the fitting factors over the effective spin vs symmetric mass ratio $\eta$ parameter space. The third plot contains the the fitting factors over the mass parameter space. 
-Plot four shows the fitting factor over the injected spin vs the secondary component mass. Plot five is a histogram of number of fitting factors per bin of fitting factors. The last plot has all the same data as the previous but is cumulative to determine percentages.}
-\label{fig:fittingfactor}
-\end{figure}
-	The NSBH injection set is injected  through the same EM-bright condition so that
-	only potentially EM-bright source waveforms are used to tune the pipeline and test its efficiency at making detections.
-	The range of mass and spin parameters of the injected signals were chosen 
-	to be the same as that of the bank and were drawn from a uniform distribution in this range. 
-	The necessary requirements the bank must meet to be claimed effective are: 
-	it needs to recover 99\% of injected signals is designed for with a fitting factor of 0.97 or better,
-	no fitting factors with matches less than 0.95 should be present or 
-	below 0.97 should not be clustered in a particular part of parameter space. 
-	However, these conditions are not sufficient for the bank to  successfully recover all possible signals in the parameter region,
-	since there may be different reasons why the template generation is not successful, such as different sensitivities in the two detectors, 	
-	different waveform approximants, precession effects, tidal deformation, etc.
-	The results are shown in Fig.\,\ref{fig:fittingfactor}: 
-	the majority of fitting factors are above 0.97, 
-	however, since the injection model is different from the one used to construct the template bank
-	fitting factors down to 0.965 across the parameter space are present as expected.
-	The first and fourth plot show that the bank performs well to match the injected signals 
-	throughout the parameter space for NSBH and BNS systems, 
-	except for those regions where both masses are high or for anti-aligned spins components.
-	This could be explained as the placement method not performing properly in extreme regions of parameter space.
+          \caption{{\bf Recovery of NSBH injections with the O3a {\ttfamily PyGRB}-dedicated template bank.}  In the scatter plots, from left to right and top to bottom, the fitting factors are reported as a function of: the BH and NS dimensionless spin magnitudes; the symmetric mass ratio and the effective dimensionless spin (a mass-weighted combination of the two dimensionless spin components); the BH and the NS masses; the NS mass and the effective dimensionless spin.  The bottom histograms show the distribution and cumulative distribution of the fitting factor values.  Roughly 0.001 of the injections are recovered with match smaller than 0.97.}
+          \label{fig:fittingfactor}
+        \end{figure}
+
+	Once a bank is built, it is important to check that it actually covers appropriately the region of interest in parameter space, with the required minimum match tollerance of 0.97.
+        This is known as testing the \emph{effectiveness} of the bank,
+        which is done by calculating the fitting factor introduced in Sec.\,\ref{subsec:fittingfactor} for several simulated GW signals drawn within the target parameter space.
+	% Another restriction for the template bank to reduce background triggers and computation time, 
+	% is to consider only waveforms from binaries with orbital inclination angles of $\ang{0}$ or $\ang{180}$ \cite{46}. 
+        Our first set of injected GW signals covered the target NSBH parameter space with 10,000 simulated waveforms.
+        This set is subject to the same EM-bright condition used to build the template bank, namely, all injections are require to have $M_{\rm rem}^{\rm model}>0$ according to Eq.\,(\ref{eq:mremup}).
+        A second set, also of 10,000 injections, covered the target BNS parameter space.
+        All injected waveforms are generated using the effective-one-body waveform model {\ttfamily SEOBNRv4\_ROM} \fpg{Citazione.}, which differs from the one used to construct the bank ({\ttfamily IMRPhenomD}).  The rationale is to factor in our uncertainty about the waveform by switching to a different model from templates to injections.
+        Results for the recovery of these two injection sets are reported in Figs.\,\ref{fig:fittingfactor} and \ref{fig:fittingfactorBNS}.  In both cases, only about a thousandth of the injections are recovered with match smaller than 0.97.  The small tail in the fitting factor distribution for the NSBH injection sets is due to differences between the waveform models {\ttfamily SEOBNRv4\_ROM} (for the injections) and {\ttfamily IMRPhenomD} (for the templates), which emerge for high spins and mass ratios.  Importantly, none of the scatter plots presents areas in which points with lower fitting factors tend to cluster. 
+
+        \begin{figure}[!t]
+          \noindent
+          \makebox[\textwidth]{\includegraphics[scale=0.9]{HL-BANKSIM_PLOT_FITTING_FACTORS_BROADINJBNS1_MAIN-2620801-1163865616}}%
+          \centering
+          \caption{{\bf Recovery of BNS injections with the O3a {\ttfamily PyGRB}-dedicated template bank.}  This plot is similare to Fig.\,\ref{fig:fittingfactor}, but the more massive NS physical parameters, rather than the BH ones.  \fpg{Questa figura mancava totalmente! Vanno un po' sistemate le labels degli assi.}}
+          \label{fig:fittingfactorBNS}
+        \end{figure}
+
+        \fpg{Sono qui.}
+
 	From the missing clustering around points of either of the parameter spaces,
 	the bank should not contain any systematic holes in its sensitivity.
 	The average fitting factor for the entire bank is $\sim0.98$, that means a loss of detection rates of $\sim6\%$,
@@ -2666,7 +2646,7 @@ Plot four shows the fitting factor over the injected spin vs the secondary compo
                 \begin{figure}[!t]
                         \noindent
                         \label{pointinj}
-                        \makebox[\textwidth]{\includegraphics[scale=0.55]{pointinj}}%
+                        \makebox[\textwidth]{\includegraphics[scale=0.3]{pointinj}}%
                         \centering
                         \caption{The effective fitting factor is the signal-strength weighted average fitting factor. This is shown, as a function of masses, for the input injection sets. Injections are filtered so that only those passing the filter function used when creating the input files are considered. Usually this is used to restrict to only signals that are the parameter space used to create the template bank. Any point marked with a black cross contain no injections that pass the filter function.}
                         \label{fig:pointinj}
