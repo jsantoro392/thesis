@@ -42,7 +42,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 \addcontentsline{toc}{chapter}{Introduction}
 \markboth{Introduction}{Introduction}
 %
-\fpg{In vari punti usi {\ttfamily cite\{\}} oppure {\ttfamily ref\{\}}. Inoltre citi senza averle in biblio 213 e 215.  Nella bibliografia hai varie entries solo come arXiv preprints, anche per roba gi\`a pubblicata!}%
+\fpg{In vari punti usi {\ttfamily cite\{\}}. Inoltre citi senza averle in biblio 213 e 215.  Nella bibliografia hai varie entries solo come arXiv preprints, anche per roba gi\`a pubblicata!}%
 \fpg{Giri di correzione: 1.}%
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves (GWs) starting from his theory of general relativity \cite{1,2}.
 	He discovered that the acceleration of masses
@@ -1620,6 +1620,7 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	a  first useful assumption is to consider a coincident search where an identical template is used in all detectors;
 	then re-formulate the expression for both the $\rho^2_{\rm coinc}$ and $\rho^2_{\rm coh}$ as
 		\begin{align}
+                  \label{eq:rhocoinc}
 			\rho^2_{\rm coinc} &= \sum_{X} {{(s^X|h_0)^2+(s^X|h_{{\pi}\over{2}})^2} \over {(\sigma^X)^2}}  \\
 					&= \sum_{X,Y}\sum_{i=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[\delta^{XY}]\big( s^Y|{{h_i}\over{\sigma^Y}}\big).
 		\end{align}
@@ -1649,7 +1650,8 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	When there are more than two detectors, it is possible to construct one or more null data streams 
 	which contain only noise and to define the null SNR 
                 \begin{align}
-                        \rho^2_N &= \rho^2_{\rm coinc} - \rho^2_{\rm coh} \\
+                  \label{eq:rhonull}
+                        \rho^2_{\rm null} &= \rho^2_{\rm coinc} - \rho^2_{\rm coh} \\
 					&= \sum_{X,Y}\sum_{i=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[N^{XY}]\big( s^Y|{{h_i}\over{\sigma^Y}}\big)\,. 
                 \end{align}
 	where
@@ -2408,6 +2410,11 @@ sense that
 	specifically ones in which the BH tidally disrupts its companion, 
 	and a sufficiently massive accretion disk forms around the remnant BH.
 
+	From April 2019 to September 2019, the Advanced LIGO  and  Advanced  Virgo detectors undertook 
+	the first part of the third observing run (O3a).
+	{\rm PyGRB} was used to search for GWs associated with short and ambiguous duration GRBs detected by {\it Swift}/BAT or {\it Fermi}/GBM during O3a (see Sec.\,\fpg{short e ambiguous li devi definire altrove, e probabilmente lo hai gi\`a fatto.}.
+	This required building and validating a template bank specifically designed for this task and then running the individual follow ups.  In the next Section I will describe the steps I carried out to deliver the bank and then I will report on the three GRB follow up analyses that I performed.
+
 \subsection{The O3a Template Bank}
 \label{subsec:o3aTemplateBank}
 	As discussed in Sec.\,\ref{sec:template_banks}, running a modelled GW search 
@@ -2646,102 +2653,88 @@ sense that
 
 \subsection{Setup of the Offline Analysis}
 \label{subsec:pygrb}
-        \fpg{Sono qui.}
-	The {\ttfamily PyGRB} pipeline performs a targeted search for CBC GW signals in LIGO and Virgo data associated with short GRBs seen by Swift and Fermi,
-        using the known sky location of the short GRB and the relative GW detector sensitivities to analyses the data coherently, as described in \ref{subsec:coherent}.
-        Even though this approach is more computationally expensive than a coincident search \ref{subsec:coincident},
+	The {\ttfamily PyGRB} pipeline performs a targeted search for CBC GW signals in LIGO and Virgo data associated with short GRBs seen by {\it Swift}/BAT and {\it Fermi}/GBM,
+        using the known sky location of the short GRB and the relative GW detector sensitivities to analyses the data coherently, as described in Sec.\,\ref{subsec:coherent}.
+        Even though this approach is more computationally expensive than a coincident search, described in Sec.\,\ref{subsec:coincident},
         it is more sensitive.
-	The analysis is performed if at least two IFOs are active at the time the short GRB was observed, 
-	and if the supplied data cover a sufficiently long period of time either side of the short GRB.
-	The pipeline looks for a GW signal in a time window, “on-source”, that covers  5 s before to 1 s 
+	The analysis is performed if the GW data cover a period of time on either side of the short GRB that is long enough to build the background of the search.  The typical requirement is half an hour of data.
+	The pipeline looks for a GW signal in a time window, ``on-source,'' that runs from 5\,s before to 1\,s 
 	after the Earth crossing time of the short GRB \cite{92, 136}.
-	However, in order to ensure that the detectors were operating stably at this time,
-        additional data surrounding the on-source time is required to provide a good estimate of the detector sensitivity,
-	and is defined as the “off-source window”. \\
-	The first part of the analysis consists in matched-filtering the individual detector data;
-	knowing sky location of the GRB and the fact that gravitational waves travel at the speed of light,
-	data from each detector is then time-shifted so that there is a temporal coincidence between the GW and the GRB in each IFO \cite{92}.
-	A list of triggers is assembled by keeping only times when the individual detector $\rho > 4$,
-	and discarding any trigger that is not coincident in at least two detectors in the network \cite{92}. 
-	Further trigger selection get accomplished after calculating the $\rho_{\rm coinc}$, 
-	and rejecting any trigger with $\rho_{\rm coinc}<6$, and then repeating the same procedure for the $\rho_{\rm coh}$.
-	The last cut is done by computing the $\rho_{\rm null}$ and keeping only the triggers that satisfy the following conditions \cite{46}:
-		\begin{equation}
-			\rho_{\rm null} \leq 5.25 \hspace*{2cm} \text{and} \hspace*{2cm} \rho_{\rm coh} \leq 20
-		\end{equation}
-		\begin{equation}
-			\rho_{\rm null} \leq {{\rho_{\rm coh}-20}\over {5}} \hspace*{2cm} \text{and} \hspace*{2cm} \rho_{\rm coh} > 20
-		\end{equation}
-	This prevents losing possibile loud GW events, that have high $\rho_{\rm null}$ and $\rho_{\rm coh}$ values,
-	because differences between the actual GW waveform and the template used for the matched filter, 
-	as well as inaccuracies in timing and sky position, can all lead to some fraction of the energy of a GW contributing to the null SNR. 	
-	In order to remove glitches, the remaining triggers go through the $\chi^2$-test, described in Sec.\,\ref{}.
+	However,
+        the additional data surrounding the on-source time and required to characterize the detector sensitivity at the time of the GRB event
+	is referred to as the ``off-source window.''
+
+	The first part of the analysis consists in matched-filtering the individual detector data.%;
+%	knowing the GRB sky location and the fact that GWs travel at the speed of light,
+%	data from each detector is time-shifted so that there is a temporal coincidence between the GW and the GRB in each IFO \cite{92}.
+	A list of GW triggers is assembled by keeping only times when the individual detector $\rho > 4$.
+	Further trigger selection is accomplished by rejecting any trigger with $\rho_{\rm coinc}<6$ [see Eq.\,(\ref{eq:rhocoinc})].
+        The coherent SNR is also calculated and triggers are downselected by requiring $\rho_{\rm coh}>0$ [see Eq.\,(\ref{eq:rhocoh})].
+	The final SNR cut is performed by computing $\rho_{\rm null}$ [see Eq.\,(\ref{eq:rhonull})] and keeping only the triggers that satisfy the following conditions \cite{46}:
+        \begin{equation}
+          \begin{cases}
+            \rho_{\rm null} \leq 5.25 & \wedge ~~~ \rho_{\rm coh} \leq 20\\
+            \rho_{\rm null} \leq {{\rho_{\rm coh}-20}\over {5}} & \wedge ~~~ \rho_{\rm coh} > 20
+          \end{cases}\,.
+        \end{equation}
+	This prevents us from losing possibile loud GW events with high $\rho_{\rm null}$.
+	The high null SNR in this case may stem from differences between the actual gravitational waveform and the waveform model of the template used for the matched filter, 
+	as well as from inaccuracies in the timing and/or sky position, which can lead to some fraction of the energy of a GW contributing to the null SNR. 	
+
+	In order to remove glitches --- which may also have high SNR values --- the remaining triggers go through the $\chi^2$-test described in Sec.\,\ref{subsubsec:multidec_chi_test}.
 	Once the final list of triggers is ready, they need to be ranked in order of likelihood of being a real GW event:
-	the surviving triggers SNRs are re-weighted based on the values of their $\chi^2$-tests and null SNR.
-	Therefore, glitches that still pass the cut, but do not match well with the template waveform, will be down-weighted.
-	The re-weighting is done in two steps: first according  to  the  $\chi^2$ value
-		\begin{equation}
-		\text{if} \hspace*{0.5cm} \chi^2 \leq n_{\rm dof} \hspace*{3.9cm} \rho_{\chi^2} =  \rho_{\rm coh} 
-		\end{equation}
-		\begin{equation}
-		\text{if} \hspace*{0.5cm} \chi^2 > n_{\rm dof} \hspace*{1.2cm} \rho_{\chi^2} =  {{\rho_{\rm coh}}  \over {\{[1+ \big( {{\chi^2} \over {n_{\rm dof}}} \big)^3 ]/2\}^{1/6}}}
-		\end{equation}	
-	and then according to the null SNR
-		\begin{equation}
-			\text{if} \hspace*{0.5cm} \rho_{\rm null} \leq 4.25 \hspace*{3.5cm} \rho_{\rm rw} = \rho_{\chi^2}
-		\end{equation}
-		\begin{equation}
-			\text{if} \hspace*{0.5cm} \rho_{\rm null} > 4.25 \hspace*{2cm} \rho_{\rm rw} = {{ \rho_{\chi^2}}  \over {\rho_{\rm null} - 3.25}}
-		\end{equation}
-	For each template of the mass parameter space, 
-	the re-weighted SNR is calculated, and the template producing the largest $\rho_{\rm rw}$ 
-	during the on-source window is retained as the event candidate \cite{46}. 
-	For the {\ttfamily PyGRB} analysis, the threshold that a candidate event must surpass is $\rho_{\rm rw} \geq 8$,
-	while, in order to remove any non-Gaussian triggers left from the data, 
-	any trigger with $\rho_{\rm rw}$ less than 6 is discarded.
-	The last step is to determine the significance of a trigger,
-	namely how often glitches with a higher $\rho_{\rm rw}$ than the trigger will occur,
-	by calculating the false alarm probability (FAP) around the time of the GRB \cite{46}.
-	To evaluate the p-value of the loudest event, the off-source data are analysed:
-	since any events occurring in the off-source will be due only to background noise, 
-	this data is split into trials with durations equal to that of the on-source window 
-	so that an estimate of the background noise in our detector network around the time of the short GRB can be estimated.
-	The FAP of the on-source trigger is the fraction of off-source trials with an event of equal or greater significance than in the on-source. 
-        The efficiency of the analysis is assessed by injecting simulated signals to the data stream before performing the search,
- 	but it also allows to place constraints on the short GRB source in the event of no detection in the on-source window. 
-        The simulated signals are drawn randomly from an astrophysically motivated distribution of distances given the time and sky position of each trigger, 
-	component masses and spins and binary inclination. 
-	Since BNS systems will not precess significantly within the aLIGO band, the injection set for BNS is built only for generic spin.
-	However, injections for NSBH systems are built both generic and aligned,
-	in order to asses the impact of precession on the search sensitivity for rapidly-spinning and highly-precessing systems.
-	All simulated signals are modelled using the SEOBNRv3 waveform approximate, which is different from IMRPhenomD,
-	the one used to build the template bank. 
-	The injections parameters are chosen in the following way \cite{136}:
-		\begin{itemize}
-			\item $M_{\rm BH}$ are drawn from a Gaussian distribution with mean $10M_\odot$ and width $6M_\odot$.
-			\item $\chi_{\rm BH}$ are drawn uniformly from the interval $[0.00, 0.98]$.
-			\item $M_{\rm NS}$ are drawn from a Gaussian distributions with mean $1.4M_\odot$, 
-				 and widths of $0.2M_\odot$ for BNS systems and $0.4N_\odot$ for NSBH systems \cite{}. 
-				 The larger width for NSBH binaries is chosen in order to reflect the greater uncertainty arising from a lack of observed NSBH systems. 
-			\item For the generic spins sets, both component spins are drawn uniformly from all possible orientations. 
-			\item In all three sets, the short GRB is considered to be emitted in the direction of the binary total angular momentum. 
-				 Relativistic beaming and collimation due to the ambient medium confines the GRB jet to a half-opening angle. 
-				 The observation of prompt gamma-ray emission is, therefore, indicative that the inclination of the total angular momentum 
-				 with respect to the line of sight to the detectors lies within the jet cone. 
-				 In all three injection sets the angle between the total angular momentum and the line-of-sight is uniformly drawn from the interval $[\ang{0}, \ang{30}]$,
-				 since it’s safe to assume that the half-opening angle is $\sim \ang{30}$ \cite{}.
-		\end{itemize}
-	All NSBH injections that will not produce an EM counterpart are excluded, 
-	even under the most optimistic assumptions regarding the NS equation of state and the amount of $M_{\rm rem}$ required to power the GRB emission \cite{}. 
-	The data with the injected signals is then filtered with the same EM-bright bank of templates to assess performance. 
-	The efficiency of the analysis at recovering these signals provides a measure of pipeline performance 
-	and produces an estimate of the distance to which the pipeline is sensitive.
-	From April 2019 to September 2019, the Advanced LIGO  and  Advanced  Virgo detectors undertook 
-	the first part of the third observing run (O3a).
-	PyGRB was used to search for GWs associated with short and ambiguous duration GRBs detected during O3a:
-	in order not to neglect short GRBs in the tail of the duration distribution, 
-	the threshold for a GRB to be short is set to $T_{90} − \Delta T_{90} < 2\,$s \cite{136}. 
-	The GRBs analysed here were detected by {\it Swift}/BAT or {\it Fermi}/GBM.
+	the SNR of the surviving triggers are thus re-weighted based on the values of their $\chi^2$-tests and null SNR.
+	This allows us to downweight glitches that still pass the previous cuts.
+	The re-weighting is carried out in two steps: first according to the $\chi^2$ value,
+        \begin{equation}
+          \begin{cases}
+            \rho_{\chi^2} =  \rho_{\rm coh} & \text{if}~~ \chi^2 \leq n_{\rm dof} \\
+            \rho_{\chi^2} =  {{\rho_{\rm coh}}  \over {\{[1+ \big( {{\chi^2} \over {n_{\rm dof}}} \big)^3 ]/2\}^{1/6}}} & \text{if}~~ \chi^2 > n_{\rm dof}
+          \end{cases}\,,
+        \end{equation}
+	and then according to the null SNR value:
+        \begin{equation}
+          \begin{cases}
+            \rho_{\rm rw} = \rho_{\chi^2} & \text{if}~~ \rho_{\rm null} \leq 4.25\\
+            \rho_{\rm rw} = {{ \rho_{\chi^2}}  \over {\rho_{\rm null} - 3.25}} & \text{if}~~ \rho_{\rm null} > 4.25
+          \end{cases}\,.
+        \end{equation}
+	In order to remove non-Gaussian noise transients left in trigger list, 
+	any trigger with $\rho_{\rm rw}<6$ is discarded.
+	The template yielding the largest $\rho_{\rm rw}$ 
+	in the on-source window is retained \cite{46}. 
+	For the {\ttfamily PyGRB} analysis, the threshold that must be exceeded in order for this loudest trigger to be promoted to candidate event is $\rho_{\rm rw} = 8$.
+
+	The last step is to determine the significance of the loudest trigger trigger,
+	namely how often random noise in the detector data can generate a trigger with $\rho_{\rm rw}$ equal to or higher than the loudest trigger surviving in the on-source.
+	This is done by calculating the false alarm probability (FAP) around the time of the GRB \cite{46}. \fpg{il discorso della coherent FAP va messo in 2.4.2 per simmetria con 2.4.1.  Qui rimarr\`a ``as discussed in Sec\,\ref{subsec:coherent}.''}
+	To evaluate the FAP of the loudest event, the off-source data are analysed.
+	Since events occurring in the (time-slid) off-source are due only to background noise, 
+	this data is split into trials with durations equal to the one of the on-source window (6\,s), 
+	and the FAP of the on-source trigger is then the fraction of off-source trials cointaining a loudest trigger with $\rho_{\rm rw}$ equal to or greater than the one associated with the on-source.
+
+        The efficiency of the analysis is assessed by injecting simulated signals to the data stream and reperforming the search.
+ 	This also allows to place a lower bound on the distance to the short in the absence of a GW in the on-source window. 
+        The simulated signals are drawn randomly from astrophysically motivated distributions of the CBC source parameters (masses, spins, and extrinsic parameters).
+	Three sets of injections were performed in O3a.  A set of BNS signals and two sets of an NSBH signals, one with both spins aligned to the orbital angulare momentum (no precession) and one with generic spin orientations (with precession).  Since NS spin magnitudes are taken to be 0.4, at most, precession in the case of BNS systems is generally not too significant and therefore a single, precessing set is taken for BNSs, unlike NSBHs, for which the BH spin magnitude may reach up to 0.98.
+	All simulated signals are modelled using the {\ttfamily SEOBNRv3} waveform approximate \fpg{Citazione}, which differs from the {\ttfamily IMRPhenomD} waveform model used to generate the templates: this is intentional and factors in our incomplete knowledge about waveforms.
+	The injection parameters are chosen as follows \cite{208}.
+        \begin{itemize}
+        \item $M_{\rm BH}$ is drawn from a Gaussian distribution with mean $10M_\odot$ and width $6M_\odot$.
+        \item $\chi_{\rm BH}$ is drawn uniformly in the interval $[0.00, 0.98]$.
+        \item $M_{\rm NS}$ is drawn from a Gaussian distribution with mean $1.4M_\odot$, and width of $0.2M_\odot$ for BNS systems and $0.4M_\odot$ for NSBH systems.
+          The larger width for NSBH binaries is chosen in order to reflect the greater uncertainty arising from a lack of observed NSBH systems. 
+        \item For the two injection sets with generic spin orientations, both spin orientations are drawn uniformly on the solid angle. 
+        \item Short GRB are considered to be emitted in the direction of the binary total angular momentum.
+          Relativistic beaming and collimation due to the ambient medium confines the GRB jet to a half-opening angle. 
+          The observation of prompt gamma-ray emission is, therefore, indicative that the inclination of the total angular momentum 
+          with respect to the line of sight to the detectors lies within the jet cone.
+          Therefore, for all three populations of injected signals,
+          the inclination with respect to the line of sight is drawn from a uniform distribution in $[\ang{0}, \ang{30}] \cup [\ang{150}, \ang{180}]$.
+        \item Finally, only injections corresponding to NSBH systems with $M_{\rm rem}^{\rm model}>0$ are considered.
+        \end{itemize}
+        The fraction of recovered simulated signals as a function of (simulated) source distance is recorded as a means of providing a measure of the pipeline performance 
+	and of the lower limit to the source distance, i.e., an \emph{exclusion distance}.
 
 \subsection{GRB 190627A}
 	GRB 190627A was detected by the BAT onboard the {\it Swift} satellite on June 27, 2019, at 11:18:31 UTC.
@@ -3059,6 +3052,7 @@ Aligned NSBH & 440\\
 
 \section{Coincident Analysis of a Chunk of O3b Data}
 \label{sec:pycbc00}
+\fpg{Sono qui.}
 \fpg{E qui dovrai spiegare cosa \`e un chunk, che hai usato solo due IFO, che i dati non erano con la calibrazione finale.}
 	The {\texttt{PyCBC}} coincident search targets GWs from CBCs with a total mass of $2$--$500\,M_\odot$,
         and with maximal $\chi_{\rm BH}$ of 0.998 and 0.05 for the NS spin,
