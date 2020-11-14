@@ -2549,7 +2549,7 @@ sense that
         the template bank is designed assuming zero eccentricity.
       \end{itemize}
 
-      Two other parameters must be specidied in order to generate the bank.  1) The design value for the minimum match \fpg{Se prima dicevamo overlap, qui dobbiamo dire overlap. Controllare.} of the bank with any point in its target paremeter space, which is set to $0.97$, allowing for at most 10\% signal losses.  Matches are calculated over the frequency interval $[27, 1000]\,$Hz. 2) The threshold value for the accretion disk mass of NSBH binaries that flags them as potential short GRB progenitors: any NSBH with $M_{\rm rem}>0$ is considered as a viable short GRB progenitor, in order to err on the side of caution thus including more NSBH binaries than necessary, rather than risk omotting them.
+      Two other parameters must be specidied in order to generate the bank.  1) The design value for the minimum match \fpg{Se prima dicevamo overlap, qui dobbiamo dire overlap. Controllare.} of the bank with any point in its target paremeter space, which is set to $0.97$, allowing for at most 10\% signal losses.\footnote{The detection rate is proportional to the cube of the SNR, and the SNR is proportional to the match, which is 0.97 in the worst case scenario.}  Matches are calculated over the frequency interval $[27, 1000]\,$Hz. 2) The threshold value for the accretion disk mass of NSBH binaries that flags them as potential short GRB progenitors: any NSBH with $M_{\rm rem}>0$ is considered as a viable short GRB progenitor, in order to err on the side of caution thus including more NSBH binaries than necessary, rather than risk omotting them.
       Finally, we must specify the model to generate gravitational waveforms and compare them.  We used the phenomenological model for spinning, non-precessing binaries {\ttfamily IMRPhenomD} \cite{156}.  This mdoel does not account for NS-specific contributions to the waveform: the presence of NSs therefore enters our bank only via the fitting formula used to calculate $M_{\rm rem}$ and downselect NSBH binaries that are viable short GRB progentors.
 
       The EM-bright bank is generated with a hybrid placement code (see Sec.\,\ref{subsubsec:HybridBank}).  At every proposal of a new point in the parameter space, the bank generation algorithm must determine whether to add or not that proal to the set of tempalate points.  Based on the two masses of the proposed new bank element, three things may happen. 
@@ -2613,13 +2613,14 @@ sense that
 	Once a bank is built, it is important to check that it actually covers appropriately the region of interest in parameter space, with the required minimum match tollerance of 0.97.
         This is known as testing the \emph{effectiveness} of the bank,
         which is done by calculating the fitting factor introduced in Sec.\,\ref{subsec:fittingfactor} for several simulated GW signals drawn within the target parameter space.
-	% Another restriction for the template bank to reduce background triggers and computation time, 
-	% is to consider only waveforms from binaries with orbital inclination angles of $\ang{0}$ or $\ang{180}$ \cite{46}. 
         Our first set of injected GW signals covered the target NSBH parameter space with 10,000 simulated waveforms.
         This set is subject to the same EM-bright condition used to build the template bank, namely, all injections are require to have $M_{\rm rem}^{\rm model}>0$ according to Eq.\,(\ref{eq:mremup}).
         A second set, also of 10,000 injections, covered the target BNS parameter space.
         All injected waveforms are generated using the effective-one-body waveform model {\ttfamily SEOBNRv4\_ROM} \fpg{Citazione.}, which differs from the one used to construct the bank ({\ttfamily IMRPhenomD}).  The rationale is to factor in our uncertainty about the waveform by switching to a different model from templates to injections.
-        Results for the recovery of these two injection sets are reported in Figs.\,\ref{fig:fittingfactor} and \ref{fig:fittingfactorBNS}.  In both cases, only about a thousandth of the injections are recovered with match smaller than 0.97.  The small tail in the fitting factor distribution for the NSBH injection sets is due to differences between the waveform models {\ttfamily SEOBNRv4\_ROM} (for the injections) and {\ttfamily IMRPhenomD} (for the templates), which emerge for high spins and mass ratios.  Importantly, none of the scatter plots presents areas in which points with lower fitting factors tend to cluster. 
+
+        Results for the recovery of the two injection sets just described are reported in Figs.\,\ref{fig:fittingfactor} and \ref{fig:fittingfactorBNS}.  In both cases, only about a thousandth of the injections are recovered with match smaller than 0.97.  The small tail in the fitting factor distribution for the NSBH injection sets is due to differences between the waveform models {\ttfamily SEOBNRv4\_ROM} (for the injections) and {\ttfamily IMRPhenomD} (for the templates), which emerge for high spins and mass ratios.  Importantly, none of the scatter plots presents areas in which points with lower fitting factors tend to cluster:
+        this means that there are no ``holes'' in the banks, or systematics in the placement of templates by the algorithm.
+	The average fitting factor for the entire bank is $\sim0.98$, meaning a $\sim 6\%$ loss of detections.  \fpg{Lo 0.98 come lo hai ricavato? A quale set si riferisce? BNS o NSBH?  E qual \`e il valore per l'altro set?}
 
         \begin{figure}[!t]
           \noindent
@@ -2629,31 +2630,23 @@ sense that
           \label{fig:fittingfactorBNS}
         \end{figure}
 
-        \fpg{Sono qui.}
-
-	From the missing clustering around points of either of the parameter spaces,
-	the bank should not contain any systematic holes in its sensitivity.
-	The average fitting factor for the entire bank is $\sim0.98$, that means a loss of detection rates of $\sim6\%$,
-	because the detection rate  is proportional to the cube of the SNR, and SNR $\propto FF$.
-	Since the analysis depends also on the extrinsic parameters such as sky-location and source distance,
-	this is an ideal recovery rate.
-
-	In Fig.\,\ref{fig:pointinj}, results from an additional check for the bank validity are shown: 
-	this is done by using point injections, wherein 10,000 signals are injected at single points in the mass parameter space while varying the spins. 
-	For this set, 43 points in the mass parameter space were chosen randomly. 
-	It confirms that the bank works well, as the lowest fitting factor of these points is 0.9870, 
-	which is consistent with the bank average from the broad injection set. 
-                \begin{figure}[!t]
-                        \noindent
-                        \label{pointinj}
-                        \makebox[\textwidth]{\includegraphics[scale=0.55]{pointinj}}%
-                        \centering
-                        \caption{The effective fitting factor is the signal-strength weighted average fitting factor. This is shown, as a function of masses, for the input injection sets. Injections are filtered so that only those passing the filter function used when creating the input files are considered. Usually this is used to restrict to only signals that are the parameter space used to create the template bank. Any point marked with a black cross contain no injections that pass the filter function.}
-                        \label{fig:pointinj}
-                \end{figure}
+% 	In Fig.\,\ref{fig:pointinj}, results from an additional check for the bank validity are shown: 
+% 	this is done by using point injections, wherein 10,000 signals are injected at single points in the mass parameter space while varying the spins. 
+% 	For this set, 43 points in the mass parameter space were chosen randomly. 
+% 	It confirms that the bank works well, as the lowest fitting factor of these points is 0.9870, 
+% 	which is consistent with the bank average from the broad injection set. 
+%                 \begin{figure}[!t]
+%                         \noindent
+%                         \label{pointinj}
+%                         \makebox[\textwidth]{\includegraphics[scale=0.55]{pointinj}}%
+%                         \centering
+%                         \caption{The effective fitting factor is the signal-strength weighted average fitting factor. This is shown, as a function of masses, for the input injection sets. Injections are filtered so that only those passing the filter function used when creating the input files are considered. Usually this is used to restrict to only signals that are the parameter space used to create the template bank. Any point marked with a black cross contain no injections that pass the filter function.}
+%                         \label{fig:pointinj}
+%                 \end{figure}
 
 \subsection{Setup of the Offline Analysis}
 \label{subsec:pygrb}
+        \fpg{Sono qui.}
 	The {\ttfamily PyGRB} pipeline performs a targeted search for CBC GW signals in LIGO and Virgo data associated with short GRBs seen by Swift and Fermi,
         using the known sky location of the short GRB and the relative GW detector sensitivities to analyses the data coherently, as described in \ref{subsec:coherent}.
         Even though this approach is more computationally expensive than a coincident search \ref{subsec:coincident},
