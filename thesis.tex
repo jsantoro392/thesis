@@ -3052,13 +3052,14 @@ Aligned NSBH & 440\\
 
 \section{Coincident Analysis of a Chunk of O3b Data}
 \label{sec:pycbc00}
+	The {\texttt{PyCBC}} coincident search targets GWs from CBCs with a total mass of $2$--$500\,M_\odot$,
+        and with maximal dimensionless spin parameters of 0.998 and 0.05 for BH s and NSs, respectively,
+        providing a measure of their statistical significance.
+        This analysis match filters each single detector data stream against a template bank (Sec.\,\ref{subsec:mfcbc}),
+        and calculates the coincident SNR for each combination of detectors (Sec.\,\ref{subsec:coincident}).
+
 \fpg{Sono qui.}
 \fpg{E qui dovrai spiegare cosa \`e un chunk, che hai usato solo due IFO, che i dati non erano con la calibrazione finale.}
-	The {\texttt{PyCBC}} coincident search targets GWs from CBCs with a total mass of $2$--$500\,M_\odot$,
-        and with maximal $\chi_{\rm BH}$ of 0.998 and 0.05 for the NS spin,
-        and to provide a measure of their statistical significance.
-        This analysis performs a direct matched filtering of the single detector data against a template bank (Sec.\,\ref{subsec:mfcbc}),
-        and calculates the coincident SNR for each combination of detectors (Sec.\,\ref{subsec:coincident}).
 	Data from the second half of the observing run are split in chunks
 	identified by their start and stop times (in GPS seconds).
 	\fpg{S\`i ma in base a che vengono divisi i chunks?  Il run parte e si apre il chunk 1: come se ne sceglie la fine?}
