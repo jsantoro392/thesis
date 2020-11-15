@@ -174,7 +174,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	Before giving into this topic, it is useful to shortly discuss gravitational waves, 
 	the theory behind them and the instrumental apparatus that is being used to detect them. 
 	In this chapter we give a broad outline of these subjects, 
-	without going too deep into details. \\
+	without going too deep into details.
+
 	We begin by introducing the basics of gravitational wave theory in section 2.1. 
 	In section 2.2 we discuss gravitational wave interferometric detectors. 
 	In section 2.3 we briefly describe the noise sources that affect the detection. 
@@ -189,21 +190,24 @@ We are grateful for computational resources provided by Cardiff University, and 
 	by mass \cite{1}. 
 	The motion of masses on this curved spacetime fabric will then be perceived as gravity. 
 	In general relativity, spacetime is regarded as a four-dimensional manifold 
-	with a Lorentzian metric, and gravity is a manifestation of the manifold’s curvature. \\
+	with a Lorentzian metric, and gravity is a manifestation of the manifold’s curvature.
+
 	The space-time curvature is associated with the stress-energy tensor 
 	of matter fields through the Einstein field equation:
 		\begin{equation}
 		G_{\mu\nu} \equiv R_{\mu\nu}  - {\frac{1}{2}}g_{\mu\nu}R = \frac{8\pi G_{N}}{c^4}T_{\mu\nu} 
 		\end{equation}
 	where $G_{\mu\nu} $ is the Einstein tensor, $T_{\mu\nu} $ is the stress-energy 
-	tensor of matter-fields, $ G_{N}$ is Newton’s gravitational constant and $c$ the speed of light. \\
+	tensor of matter-fields, $ G_{N}$ is Newton’s gravitational constant and $c$ the speed of light.
+
 	In 1916 Einstein found the weak-field solutions to general relativity had wave-like solutions, GWs.
 	GWs are ripples in the fabric of spacetime, 
 	which periodically lengthen and shorten space, and speed up and slow down time \cite{2}.
  	To study the properties of GWs, it is instructive to first study them 
 	in situations where the gravitational fields are weak.
 	In the so-called weak-field approximation, one can view the metric as the Minkowski metric 
-	with a small perturbation: the Einstein equations can be expanded around the flat-space metric, of special relativity. \\
+	with a small perturbation: the Einstein equations can be expanded around the flat-space metric, of special relativity.
+
 	Letting $ x_\mu = (t, x, y, z)$ denote the time and space coordinates, 
 	we can write the proper distance between events $x_{\mu}$ and $x_{\mu} + dx_{\mu}$ as
 		\[
@@ -214,13 +218,15 @@ We are grateful for computational resources provided by Cardiff University, and 
 	but contains additional, non-radiative degrees of freedom as well. $\|h_{\mu\nu}\|$ means
 	“the magnitude of a typical non-zero component of $h_{\mu\nu}$”. 
 	The condition $\|h_{\mu\nu}\|\ll 1$ requires both the gravitational field to be weak, 
-	and constrains the coordinate system to be approximately Cartesian.  \\
+	and constrains the coordinate system to be approximately Cartesian.
+
 	In linearized gravity, the smallness of the perturbation means that only terms which are linear in $h_{\mu\nu}$ are considered;
 	higher order terms are discarded. As a consequence, indices are raised and lowered using the flat metric. 
 	The metric perturbation $h_{\mu\nu}$ transforms as a tensor under Lorentz transformations, 
 	but not under general coordinate transformations: since the numerical values of the components
 	of a tensor depend on the reference frame, there exists a reference frame in which 
-	the linearisation of the gravitational field holds on a sufficiently large region of the spacetime. \\
+	the linearisation of the gravitational field holds on a sufficiently large region of the spacetime.
+        
 	The Einstein field equations are covariant under general coordinate transformations
 		\begin{equation}
 		x^{\mu} \rightarrow x^{\mu ‘}(x)
@@ -230,11 +236,13 @@ We are grateful for computational resources provided by Cardiff University, and 
 		g_{\mu\nu} \rightarrow g_{\mu^\prime\nu^\prime} = x^{\rho},_{\mu^\prime}x^{\sigma},_{\nu^\prime}g_{\rho \sigma}
 		\end{equation}
 	This means that one is free to choose a convenient coordinate system without 
-	altering the physical predictions of the field equations \cite{16}. \\
+	altering the physical predictions of the field equations \cite{16}.
+
 	Choosing a reference frame breaks the invariance of general relativity under 
 	coordinate transformations but it also erases spurious degrees of freedom. 
 	After choosing a frame where the field is linearised, 
-	a residual gauge symmetry remains. \\
+	a residual gauge symmetry remains.
+
 	Under infinitesimal coordinate transformations
                  \[
 			x_{\mu} \rightarrow x_{\mu} + \xi_{\mu}
@@ -325,7 +333,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	associated to the four functions $\xi^{\mu}$, has further reduced these to just two degrees of freedom, 
 	which correspond to the two possible polarisation states of the GW. 
 	Equation (2.17) has plane wave solutions $h_{\mu\nu}^{TT}(x)=e_{ij}(k)e^{ikx}$ with 
-	$k^{\mu}=(\omega/c,k)$ and $\omega/c=|k|$. The tensor $e_{ij}(k)$ is called the polarisation tensor. \\
+	$k^{\mu}=(\omega/c,k)$ and $\omega/c=|k|$. The tensor $e_{ij}(k)$ is called the polarisation tensor.
+
 	In vacuum spacetimes, a plane GW with a given wave-vector $k$ is characterised 
 	by two functions $h_+$ and $h_{\times}$, while the remaining components can be set to zero by
 	choosing the transverse-traceless gauge. 
@@ -345,7 +354,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	The usual notion of “gravitational force” disappears in general relativity, replaced instead 
 	by the idea that freely falling bodies follow geodesics in spacetime.
 	Geodesics are the curved-spacetime equivalents of straight lines, which can be found by 
-	parallel transporting the tangent vector of a curve \cite{16}. \\
+	parallel transporting the tangent vector of a curve \cite{16}.
+
 	Given a spacetime metric $g_{\mu\nu}$ and a set of spacetime coordinates $x^{\mu}$, 
 	geodesic trajectories are given by the equation:
 		\begin{equation}
@@ -357,8 +367,9 @@ We are grateful for computational resources provided by Cardiff University, and 
 	which is the classical equation of motion of a test mass in the curved background described 
 	by the metric $g_{\mu\nu}$, in the absence of an external non-gravitational force and where $m$ is the mass
 	of the object, $\tau$ represents the proper time given by $d\tau^2 = -ds^2$, 
-	and $\lambda$ is some affine parameter along the geodesic. \\
-	In a flat spacetime, two straight lines that are initially parallel to each other will remain parallel. \\
+	and $\lambda$ is some affine parameter along the geodesic.
+
+	In a flat spacetime, two straight lines that are initially parallel to each other will remain parallel.
 	In a curved spacetime, geodesics do not satisfy this property.
 	Instead, two nearby geodesics, separated by $\zeta^{\mu}$, follow the geodesic deviation equation
 		\begin{equation}
@@ -369,7 +380,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 			{{DV^{\mu}}\over{D\tau}} \equiv {{dV^{\mu}}\over{d\tau}} + \Gamma^{\mu}_{\nu\rho}V^{\nu}{{dx^{\rho}}\over{d\tau}}
 		\end{equation}
 	and denotes the covariant derivative along a curve parameterised by $\tau$. 
-	The geodesics deviation equation describes the change in separation $\zeta^{\mu}$ between two nearby geodesic. \\
+	The geodesics deviation equation describes the change in separation $\zeta^{\mu}$ between two nearby geodesic.
 	As the Rienmann tensor describes the tidal forces caused by the gravitational field, 
 	the geodesic deviation equation shows that tidal forces can be considered as deviations of nearby geodesics \cite{6}.
 
@@ -379,7 +390,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	Electromagnetic waves interact strongly with matter, while GWs travel unperturbed through space,
         as they interact only very weakly with matter. This makes them an excellent probe for astrophysical phenomena that are dark
         in the electromagnetic channel, such as the coalescence and merger of BHs, the collapse of a stellar core,
-  	the dynamics of the early Universe. \\
+  	the dynamics of the early Universe.
+
 	However, it also means that detecting GWs is extremely challenging.
         Electromagnetic radiation typically has a wavelength smaller than the size of the emitting system,
         and so can be used to form an image of the source, while the wavelength of gravitational radiation is typically comparable
@@ -387,7 +399,8 @@ We are grateful for computational resources provided by Cardiff University, and 
         Because GWs are generated by the bulk dynamics of the source itself therefore they cannot be used to form an image:
         the radiation simply does not resolve the generating system.
         In most cases, electromagnetic astronomy is based on observers obtain a large amount of information about sources on a small piece
-        of the sky while GW astronomy is intrinsically an all-sky approach \cite{4}. \\
+        of the sky while GW astronomy is intrinsically an all-sky approach \cite{4}.
+
 	The experimental search for GWs was initiated by Joseph Weber in the early 60  \cite{7}.
 	Weber’s first GW detector was a resonant bar detector; 
 	the detection’s principle behind these instruments is that 
@@ -399,9 +412,10 @@ We are grateful for computational resources provided by Cardiff University, and 
 	and the cylinder surrounded by a belt of piezoelectric crystal, 
 	to sense cylinder vibrations induced by GWs.
 	Even though, over the course of the following years, the bar detectors’ sensitivity increased, 
-	it did not reach a level where they would be able to detect an extragalactic source. \\
+	it did not reach a level where they would be able to detect an extragalactic source.
+
 	The first explicit suggestion of a laser interferometer detector 
-	was outlined by Gertsenshtein and Pustovoid in 1962 \cite{8}. \\
+	was outlined by Gertsenshtein and Pustovoid in 1962 \cite{8}.
 	From the early 2000s, several kilometer-scale ground-based interferometers 
 	operated in the frequency band from 10 Hz to 1 kHz at a sensitivity 
 	that all owed the potential for detection from a variety 
@@ -422,7 +436,8 @@ We are grateful for computational resources provided by Cardiff University, and 
         which makes a very sensitive comparison of the lengths of its two orthogonal arms.
 	Any variation caused by an alteration in the distance between the mirrors, 
 	produces a very small shift in phase between the beams and, thus, 
-	a variation of the intensity of the light, which is proportional to the wave's amplitude. \cite{10}. \\
+	a variation of the intensity of the light, which is proportional to the wave's amplitude. \cite{10}.
+
 	The Fabry-Perot arms are a modification to the Michelson 
 	that increases the change in phase measured compared to that for a simple Michelson: 
 	because of multiple reflections that occur within each cavity, 
@@ -432,7 +447,8 @@ We are grateful for computational resources provided by Cardiff University, and 
         The photodetectors are all located outside the vacuum system, mounted on optical tables.
         The beam tubes are made from stainless steel and are designed to have low-outgassing
         so that the required vacuum can be attained by pumping only from the ends of the tubes \cite{11}. 
-        The interferometer optics, including the test masses, are manufactured to have extremely low scatter and low absorption. \\
+        The interferometer optics, including the test masses, are manufactured to have extremely low scatter and low absorption.
+
 	The GW detectors offer the possibility of very high sensitivities over a wide range of frequency and
         are particularly suited for the detection of local perturbations in the spacetime metric from astrophysical sources,
         such as binary BH (BBH), or NS coalescences, asymmetric rapidly spinning NSs,
@@ -444,23 +460,25 @@ We are grateful for computational resources provided by Cardiff University, and 
         This comparatively slow fall off with distances means that relatively small improvements in the sensitivity
         of GW detectors can have a large impact on their science:
         doubling the sensitivity of a detector doubles the distance to which sources can be detected,
-        increasing the volume of the Universe to which sources are measurable by a factor eight. \\
+        increasing the volume of the Universe to which sources are measurable by a factor eight.
+
 	The frequency band $1Hz \apprle f \apprle 10^4 Hz$ is targeted by
         ground-based laser interferometric detectors has its low end set by the fact that it is extremely difficult
         to prevent mechanical coupling of the detector to ground vibrations at low frequencies,
         and probably impossible to prevent gravitational coupling to ground vibrations, human activity, and atmospheric motions.
-    \begin{figure}[t]
-                \includegraphics[scale=0.5]{interferometer}
-                \centering
-                \caption{Simplified schematic of the experimental setup. Several modifications to the Michelson interferometer are shown such as power and signal recycling. The photodetector records the differential lengths of the arms. \cite{9}}
-                \label{fig:interferometer}
-                \end{figure}
+        \begin{figure}[t]
+          \includegraphics[scale=0.5]{interferometer}
+          \centering
+          \caption{Simplified schematic of the experimental setup. Several modifications to the Michelson interferometer are shown such as power and signal recycling. The photodetector records the differential lengths of the arms. \cite{9}}
+          \label{fig:interferometer}
+        \end{figure}
 
 \subsection{Ground-Based Laser Interferometers}
 
 	Detectors have nearly $4\pi$ steradian sensitivity to events over the sky. 
 	This means that any source on the sky will be detectable,
-        not just sources in specific pointing directions. \\
+        not just sources in specific pointing directions.
+
 	A single interferometer is unable to detect GW alone,
 	because it us difficult to separate a signal from noise confidently 
 	and also provides no directional information about the source.
@@ -471,69 +489,71 @@ We are grateful for computational resources provided by Cardiff University, and 
 	to reconstruct the location of a transient signal is primarily due to triangulation 
 	based on the observed time delays of the signal at several detectors. 
 	For more than two sites, requiring a consistency between the observed amplitudes 
-	will also serve to restrict the allowed sky positions\cite{12}. \\
+	will also serve to restrict the allowed sky positions\cite{12}.
+
 	A crucial aspect of the research is to make the instrument sufficiently sensitive:
         at the targeted strain sensitivity of $10^{−21}$ m, the resulting arm length change is only $ 10^{-18}$ m for km-scale instruments, that is
         a thousand times smaller than the diameter of a proton.
         A key feature of the detectors is simply their scale:
-        the arms are made as long as practically possible to increase the signal due to a GW strain. \\
+        the arms are made as long as practically possible to increase the signal due to a GW strain.
+
 	We now briefly list current GW interferometers.
-
 	\begin{itemize}
-		\item LIGO. LIGO operates two identical and far apart GW observatories: 
-			    LIGO Hanford Observatory (LHO), in Washington, and LIGO Livingston Observatory (LLO), in Louisiana.
-			    The sites are separated by roughly 3000 km, 
-		   	    and are situated to support coincidence analysis of events.
-		       	    LIGO's original instrument engaged in "science observations" from 2002 to 2010. 
-			    During this initial phase, the Hanford site operated two collocated interferometers:
-			    one detector with 4 km long arms (H1) and another with 2 km long arms (H2). 
-			    The Livingston site operated a second 4 km detector (L1). 
-			    Each observatory is made up of ultra high vacuum system, 
-			    where the interferometer is placed. \\
-			    This Advanced LIGO project successfully improved the capabilities of the detectors, 
-			    both interferometers were completely overhauled to incorporate much more sophisticated engineering.
-		\item Virgo. The Advanced Virgo detector, located in Cascina (near Pisa) in Italy, 
-			     is the upgraded version of the Virgo detector. 
-			     As LIGO, it is a Michelson interferometer but with 3 km arms.
-                 \item GEO600. GEO600 is a 600 m interferometer located near Hannover,
-                 	       Germany. It is designed and operated by scientists from the
-                               Max Planck Institute for Gravitational Physics and the Leibniz Universität Hannover.
-                  \item KAGRA. It is Japan’s first GW detector and also the first GW detector to operate
-			       at cryogenic temperatures, improving sensitivity at frequencies around 100 Hz.
+        \item LIGO. LIGO operates two identical and far apart GW observatories: 
+          LIGO Hanford Observatory (LHO), in Washington, and LIGO Livingston Observatory (LLO), in Louisiana.
+          The sites are separated by roughly 3000 km, 
+          and are situated to support coincidence analysis of events.
+          LIGO's original instrument engaged in "science observations" from 2002 to 2010. 
+          During this initial phase, the Hanford site operated two collocated interferometers:
+          one detector with 4 km long arms (H1) and another with 2 km long arms (H2). 
+          The Livingston site operated a second 4 km detector (L1). 
+          Each observatory is made up of ultra high vacuum system, 
+          where the interferometer is placed.
 
-\end{itemize}
+          This Advanced LIGO project successfully improved the capabilities of the detectors, 
+          both interferometers were completely overhauled to incorporate much more sophisticated engineering.
+        \item Virgo. The Advanced Virgo detector, located in Cascina (near Pisa) in Italy, 
+          is the upgraded version of the Virgo detector. 
+          As LIGO, it is a Michelson interferometer but with 3 km arms.
+        \item GEO600. GEO600 is a 600 m interferometer located near Hannover,
+          Germany. It is designed and operated by scientists from the
+          Max Planck Institute for Gravitational Physics and the Leibniz Universität Hannover.
+        \item KAGRA. It is Japan’s first GW detector and also the first GW detector to operate
+          at cryogenic temperatures, improving sensitivity at frequencies around 100 Hz.
+        \end{itemize}
 
 \section{Interaction of Gravitational Waves with Test Masses}
-	
 	The effects of GWs cannot be seen in isolated bodies. 
 	This is a result of the fact that a single test mass, 
 	in a frame freely falling with it, will remain at rest.
 	At least two test masses are required to measure the effects of GWs. 	
-	This is also the case when one wants to measure any curvature of spacetime. \\
+	This is also the case when one wants to measure any curvature of spacetime.
         Therefore, to understand how GWs interact with the interferometric detectors,
         it is necessary to use the geodesic equation and the geodesic deviation equation, which are also important tools
         for understanding the physical meaning of a given gauge choice \cite{3}. 
         In fact the physics must be invariant under coordinate transformations but GWs and the detector description's depend on the chosen reference frame.
-        Consider a test mass initially at rest at $\tau = 0$. \\
+        Consider a test mass initially at rest at $\tau = 0$.
+
 	The geodesic equation then becomes
-                \begin{equation}
-                	{{dx^i}\over{d\tau^2}} = -[\Gamma^i_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}}]_{\tau=0} \\ 
-                			       = - [ \Gamma^i_{00}({{dx^0}\over{d\tau}})^2]_{\tau=0}
-                \end{equation}
+        \begin{equation}
+          {{dx^i}\over{d\tau^2}} = -[\Gamma^i_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}}]_{\tau=0} \\ 
+          = - [ \Gamma^i_{00}({{dx^0}\over{d\tau}})^2]_{\tau=0}
+        \end{equation}
         because
-                \begin{equation}
-                	{{dx^i}\over{d\tau}} = 0 \hspace*{2cm} at \hspace*{0.5cm}\tau = 0
-                \end{equation}
+        \begin{equation}
+          {{dx^i}\over{d\tau}} = 0 \hspace*{2cm} at \hspace*{0.5cm}\tau = 0
+        \end{equation}
         since the mass is initially at rest. Expanding to first order in $h_{\mu\nu}$,
         the Christoffel symbol $\Gamma^i_{00} = 1/2(2\partial_{0}h_{0i} - \partial_i h_{00})$ vanishes in the TT gauge
-        because both $h_{00}$ and $h_{0i}$ are set to zero by the gauge condition. \\
+        because both $h_{00}$ and $h_{0i}$ are set to zero by the gauge condition.
         Therefore, if at time $\tau = 0$ $dx^i/d\tau$ is zero, it remains zero at all times,
         because its derivative also vanishes.
         This shows that if two test masses are initially separated by a coordinate separation of $x^i$ in the TT frame,
         and are at rest with respect to each other, they will remain at this separation.
         Overall, it seems that a GW has no influence on the geodesic or on the deviation of geodesics. 
         In other words, in the TT gauge the coordinate location of a slowly moving, free-falling body is unaffected
-        by a GW because the coordinates move with the waves \cite{4}. \\
+        by a GW because the coordinates move with the waves \cite{4}.
+
         The TT gauge illustrates that, in general relativity, the physical effects are not expressed by what happens
         to the coordinates since the theory is invariant under coordinate transformations:
         the position of test masses does not change because the gauge freedom allowed to define the coordinates
@@ -541,24 +561,26 @@ We are grateful for computational resources provided by Cardiff University, and 
         Physical effects can instead be found monitoring proper distances, or proper times. 
         GWs cause the proper separation between two freely falling particles to oscillate,
         even if their coordinate separation is constant. Consider two  free-falling particles,
-        located at $z = 0$, and separated on the $x$ axis by a coordinate distance $L_c$. \\
+        located at $z = 0$, and separated on the $x$ axis by a coordinate distance $L_c$.
+
         Consider a GW in TT gauge that propagates down the $z$ axis, $h^{TT}_{\mu\nu}(t,z)$.
         The proper distance L between the two particles in the presence of the GW is given by
-                \begin{align}
-                \label{distance}
-                	L & = \int^{L_c}_{0}{dx\sqrt{g_{xx}}} = \int^{L_c}_{0}dx\sqrt{1 + h^{TT}_{xx}(t,z=0)} \\
-                	  & \simeq \int^{L_c}_{0}{dx[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]} \\
-                	  &= L_c[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]
-                \end{align}
+        \begin{align}
+          \label{distance}
+          L & = \int^{L_c}_{0}{dx\sqrt{g_{xx}}} = \int^{L_c}_{0}dx\sqrt{1 + h^{TT}_{xx}(t,z=0)} \\
+          & \simeq \int^{L_c}_{0}{dx[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]} \\
+          &= L_c[1 + {1 \over 2}h^{TT}_{xx}(t,z=0)]
+        \end{align}
         Therefore, the proper distance expands and shrinks periodically, with a fractional length change $\delta L/L_c$ given by
-                \begin{equation}
-                	{{\delta L}\over{L_c}} \simeq {1 \over 2} h_{xx}^{TT}(t,z=0)
-                \end{equation}
+        \begin{equation}
+          {{\delta L}\over{L_c}} \simeq {1 \over 2} h_{xx}^{TT}(t,z=0)
+        \end{equation}
         Even though this result is calculated in the TT gauge, it is indeed gauge independent;
         $h_{xx}^{TT}$ acts as a strain, a fractional length change.
         Because the time that light travels between the two test masses is related to the proper distance,
         which directly relates to the accumulated phase measured by laser interferometric GW observatories,
-        GWs leave an imprint on the time it takes for a photon to make a round trip \cite{4}. \\
+        GWs leave an imprint on the time it takes for a photon to make a round trip \cite{4}.
+
         Consequently, interferometers can potentially measure these imprints by measuring the length difference between
         their arms. The “extra” phase $\delta \phi$ (if $L \ll \lambda$ so that the metric perturbation
 	does not vary during a light travel time) accumulated by a photon that travels
@@ -567,7 +589,6 @@ We are grateful for computational resources provided by Cardiff University, and 
         the end mirror moves relative to the beam splitter.
 
 \subsection{Local Proper Reference Frame}
-
         Since positions in a lab are not marked by test particles,
         the $TT$ frame is not very practical.
         The preferred reference frame is the proper detector frame
@@ -578,132 +599,133 @@ We are grateful for computational resources provided by Cardiff University, and 
 	GW detectors need to be designed in order to maximise their sensitivity to the part proportional to the Riemann tensor while minimizing their sensitivity to all other terms.
         Consider a detector capable of measuring changes in the proper distance, between two test masses
         and assume the detector has a characteristic size that is much smaller
-        than the characteristic wavelength of the GW. \\
+        than the characteristic wavelength of the GW.
+
         In this case, one can approximate the entire detector to be in a near local Lorentz frame
         (freely falling frame), even in the presence of GWs. This coordinate system is defined by the requirements
-                \begin{equation}
-                	z^i(\tau) = 0, \hspace*{2cm} g_{ab}(t, 0) = \eta_{ab}, \hspace*{2cm} \Gamma^a_{bc}(t,0) = 0,
-                \end{equation}
+        \begin{equation}
+          z^i(\tau) = 0, \hspace*{2cm} g_{ab}(t, 0) = \eta_{ab}, \hspace*{2cm} \Gamma^a_{bc}(t,0) = 0,
+        \end{equation}
         which imply that the metric has the form
-                \begin{equation}
-                	ds^2 \approx -dt^2 + \delta_{ij}dx^i dx^j + O({{x^ix^j}\over{L^2_B}})
-                \end{equation}
-        where $L^2_B$ denotes the typical variation scale of the metric. \\
+        \begin{equation}
+          ds^2 \approx -dt^2 + \delta_{ij}dx^i dx^j + O({{x^ix^j}\over{L^2_B}})
+        \end{equation}
+        where $L^2_B$ denotes the typical variation scale of the metric.
+
         Consider now the proper distance between the two geodesics of the test masses, $\zeta^i$.
         The GWs influence these two test masses via the geodesic deviation equation
-                \begin{equation}
-                	{{d^2\zeta^{\mu}}\over{d\tau^2}} + 2\Gamma^{\mu}_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^\rho}\over{d\tau}} + \zeta^{\sigma}\Gamma^{\mu}_{\nu\rho,\sigma}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}} = 0
-                \end{equation}
-        Assuming the two test masses are moving non-relativistically, $dx^i/d\tau$ can be neglected compared to $dx^0/d\tau$. \\
+        \begin{equation}
+          {{d^2\zeta^{\mu}}\over{d\tau^2}} + 2\Gamma^{\mu}_{\nu\rho}{{dx^{\nu}}\over{d\tau}}{{dx^\rho}\over{d\tau}} + \zeta^{\sigma}\Gamma^{\mu}_{\nu\rho,\sigma}{{dx^{\nu}}\over{d\tau}}{{dx^{\rho}}\over{d\tau}} = 0
+        \end{equation}
+        Assuming the two test masses are moving non-relativistically, $dx^i/d\tau$ can be neglected compared to $dx^0/d\tau$.
         Furthermore, the term proportional to $\Gamma^{\mu}_{\nu\rho}$ is negligible compared to other terms in a near  local-Lorentz frame, LLF. Hence,
-                \begin{equation}
-                	{{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{\sigma}\Gamma^{i}_{00, \sigma}({{dx^0}\over{d\tau}})^2 = 0
-                \end{equation}
+        \begin{equation}
+          {{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{\sigma}\Gamma^{i}_{00, \sigma}({{dx^0}\over{d\tau}})^2 = 0
+        \end{equation}
         Further simplifying $\zeta^{\sigma}\Gamma^{i}_{00, \sigma} \approx \zeta^{j}\Gamma^{i}_{00, j}$
-                \begin{equation}
-                	{{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{j}\Gamma^{i}_{00,j}({{dx^0}\over{d\tau}})^2 = 0
-                \end{equation}
+        \begin{equation}
+          {{d^2\zeta^{\mu}}\over{d\tau^2}} + \zeta^{j}\Gamma^{i}_{00,j}({{dx^0}\over{d\tau}})^2 = 0
+        \end{equation}
         But in the LLF, $R^i_{0j0} = \Gamma^i_{00,j} - \Gamma^i_{0j,0} = \Gamma^i_{00,j}$ and therefore
-                \begin{equation}
-                	{{d^2\zeta^{\mu}}\over{d\tau^2}} + R^i_{0j0} \zeta^j({{dx^0}\over{d\tau}})^2 = 0
-                \end{equation}
+        \begin{equation}
+          {{d^2\zeta^{\mu}}\over{d\tau^2}} + R^i_{0j0} \zeta^j({{dx^0}\over{d\tau}})^2 = 0
+        \end{equation}
         Because $dx^0/d\tau \approx 1$, one can approximate $\tau \approx t$:
-                \begin{equation}
-                	{\ddot \zeta}^j = - R^i_{0j0}\zeta^j
-                \end{equation}
+        \begin{equation}
+          {\ddot \zeta}^j = - R^i_{0j0}\zeta^j
+        \end{equation}
         The key quantity entering into the equation, the Rienmann tensor, is gauge invariant in the linearized theory and
-        it can be evaluated in any convenient coordinate system. \\
+        it can be evaluated in any convenient coordinate system.
+
         The expression for the Rienmann tensor in terms of the TT gauge metric perturbation $h_{ij}^{TT}$ is
-                \begin{equation}
-                	R^i_{0j0} = R_{i0j0} = - {1 \over 2}{\ddot h}_{ij}^{TT}
-                \end{equation}
+        \begin{equation}
+          R^i_{0j0} = R_{i0j0} = - {1 \over 2}{\ddot h}_{ij}^{TT}
+        \end{equation}
         Substituting into the previous equation, the geodesic deviation equation in the proper detector frame takes the form
-                \begin{equation}
-                	{\ddot \zeta}^i = {1 \over 2}{\ddot h}_{ij}^{TT}\zeta^j
-                \end{equation}
-        which can be interpreted as if the influence of a GW in a near LLF resembles a Newtonian force. \\
+        \begin{equation}
+          {\ddot \zeta}^i = {1 \over 2}{\ddot h}_{ij}^{TT}\zeta^j
+        \end{equation}
+        which can be interpreted as if the influence of a GW in a near LLF resembles a Newtonian force.
         Generalizing Eq.\,(\ref{distance}), the proper distance may be written as
-                \begin{equation}
-                	s = \sqrt{L^2 + h_{ij}(t)L_{i}L_{j}}
-                \end{equation}
+        \begin{equation}
+          s = \sqrt{L^2 + h_{ij}(t)L_{i}L_{j}}
+        \end{equation}
         where $L_i$ denotes the spatial separation between two test masses and $L$ the associated coordinate distance.
         In the given metric for the proper reference frame, the proper distance is just $|L| = \sqrt{L_iL_j}$ up to fractional errors;
         since we are considering detectors such that
-        $L \ll \lambda$, these errors are smaller than the fractional distance changes caused by the GW. \\
-        Therefore $|L|$ is simply identified as the proper separation. The equation for analyzing an interferometric GW detector is therefore
-                \begin{equation}
-                	{\ddot L}^i = {1 \over 2}{\ddot h}_{ij}^{TT}L^j
-                \end{equation}
+        $L \ll \lambda$, these errors are smaller than the fractional distance changes caused by the GW.
+        Therefore, $|L|$ is simply identified as the proper separation. The equation for analyzing an interferometric GW detector is therefore
+        \begin{equation}
+          {\ddot L}^i = {1 \over 2}{\ddot h}_{ij}^{TT}L^j
+        \end{equation}
 
 \subsection{Ring of Test Masses}
-
         Consider a ring of test masses in the $(x, y)$ plane of a proper detector frame, initially at rest, centred at $z = 0$,
         and a GW travelling in the $z$-direction.
         This situation restricts the attention to the $(x,y)$ plane alone, because $h_{ij}^{TT}$ is transverse to the propagation direction,
         so the GW will only have influence in the plane of the test masses:
         the only non zero compontents of the metric perturbation are
-                \begin{equation}
-                	h_{xx}^{TT} = - h_{yy}^{TT} = h_{+} \hspace*{3cm} h_{xy}^{TT} = h_{yx}^{TT} = h_{\times}
-                \end{equation}
+        \begin{equation}
+          h_{xx}^{TT} = - h_{yy}^{TT} = h_{+} \hspace*{3cm} h_{xy}^{TT} = h_{yx}^{TT} = h_{\times}
+        \end{equation}
         where $h_{+}=h_{+}(t-z)$ and $h_{\times}=h_{\times}(t-z)$ are the two polarisation components, which are independent and can be considered separately.
         For the plus polarisation at $z=0$ and initial conditions $h_{ij}^{TT} = 0$ at $t=0$:
-                \begin{equation}
-                h_{ab}^{TT} = 
-                \begin{bmatrix}
-                1  & 0 \\
-                0 &  -1 \\
-                \end{bmatrix} 
-                h_{+}\cos \omega t
-                \end{equation}
+        \begin{equation}
+          h_{ab}^{TT} = 
+          \begin{bmatrix}
+            1  & 0 \\
+            0 &  -1 \\
+          \end{bmatrix} 
+          h_{+}\cos \omega t
+        \end{equation}
         If the displacement between geodesics is $\zeta_a (t) = (x_0 + \delta x(t), y_0 + \delta y(t))$, then
-                \begin{equation}
-                	\delta {\ddot x} = - {{h_{+}} \over 2} (x_0 + \delta x) \omega ^2 \sin \omega t
-                \end{equation}
-                \begin{equation}
-                	\delta {\ddot y} =  {{h_{+}} \over 2} (y_0 + \delta y) \omega ^2 \sin \omega t
-                \end{equation}
+        \begin{equation}
+          \delta {\ddot x} = - {{h_{+}} \over 2} (x_0 + \delta x) \omega ^2 \sin \omega t
+        \end{equation}
+        \begin{equation}
+          \delta {\ddot y} =  {{h_{+}} \over 2} (y_0 + \delta y) \omega ^2 \sin \omega t
+        \end{equation}
         Assuming that the perturbations are $O(h)$, and thus small compared to the unperturbed locations, $\delta x$ and $\delta y$ can be neglected.
         The integrations gives the deviations caused by the plus polarisations:
-                \begin{equation}
-                	\delta x(t) =  {{h_{+}} \over 2} x_0 \sin \omega t
-                \end{equation}
-                \begin{equation}
-                	\delta y(t) = - {{h_{+}} \over 2} y_0  \sin \omega t
-                \end{equation}
+        \begin{equation}
+          \delta x(t) =  {{h_{+}} \over 2} x_0 \sin \omega t
+        \end{equation}
+        \begin{equation}
+          \delta y(t) = - {{h_{+}} \over 2} y_0  \sin \omega t
+        \end{equation}
         Similarly, for the cross polarisation at $z=0$ and initial conditions $h_{ii}^{TT} = 0$ at $t= 0$, the situation is described by the equations
-                \begin{equation}
-                	\delta x(t) =  {{h_{\times}} \over 2} y_0 \sin \omega t
-                \end{equation}
-                \begin{equation}
-                	\delta y(t) =  {{h_{\times}} \over 2} x_0  \sin \omega t
-                \end{equation}
+        \begin{equation}
+          \delta x(t) =  {{h_{\times}} \over 2} y_0 \sin \omega t
+        \end{equation}
+        \begin{equation}
+          \delta y(t) =  {{h_{\times}} \over 2} x_0  \sin \omega t
+        \end{equation}
         This set of equations describes the changes in the $x$ and $y$ components for a passing GW.
         The plus polarisation alternately stretches and compresses the ring of test masses in the x and y directions,
         while the cross polarisation exhibits the same behaviour rotated by $\ang{45}$ in the $x - y$ plane. This is shown in Figure 2.1.
-                \begin{figure}[t]
-                \label{ring}
-                \includegraphics[scale=1]{ring}
-                \centering
-                \caption{The effects of plus and cross polarisation on a ring of test masses. The plus polarisation alternately compresses and stretches the x- and y-separations. The cross polarisation has the same effect only rotated by  $\ang{45}$.}
-                \label{fig:ring}
-                \end{figure}
+        \begin{figure}[t]
+          \label{ring}
+          \includegraphics[scale=1]{ring}
+          \centering
+          \caption{The effects of plus and cross polarisation on a ring of test masses. The plus polarisation alternately compresses and stretches the x- and y-separations. The cross polarisation has the same effect only rotated by  $\ang{45}$.}
+          \label{fig:ring}
+        \end{figure}
 
 \section{Response of an Interferometer to a Gravitational Wave}
-
         Interferometers are sensitive to the relative difference between two distances, the so-called strain \cite{6} .
         Suppose we have an interferometer with its arms pointing along the unit vectors $u^i$ and $v^i$. The strain $h(t)$ is given by
-                \begin{equation}
-                	h(t) = {1 \over 2} (h_{ij}u^iu^j - h_{ij}v^iv^j) = D^{ij}h_{ij}(t)
-                \end{equation}
+        \begin{equation}
+          h(t) = {1 \over 2} (h_{ij}u^iu^j - h_{ij}v^iv^j) = D^{ij}h_{ij}(t)
+        \end{equation}
         where $D^{ij}$ is referred to as the detector tensor and is given by
-                \begin{equation}
-                	D^{ij} = {1\over 2} (u^iu^j -v^iv^j)
-                \end{equation}
+        \begin{equation}
+          D^{ij} = {1\over 2} (u^iu^j -v^iv^j)
+        \end{equation}
         As the expression for $h(t)$ is linear in $h_{+}$ and $h_{\times}$, one can also write
-                \begin{equation}
-		 \label{beampattern}
-                	h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
-                \end{equation}
+        \begin{equation}
+          \label{beampattern}
+          h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
+        \end{equation}
         where $F_{+,\times}$ are called the beam pattern functions. Suppose we have a detector
         with arms that are perpendicular to each other, one pointing in the x-direction and the other
         in the $y$-direction in a Cartesian coordinate system. This detector frame, denoted by $(x,y,z)$,
@@ -711,132 +733,135 @@ We are grateful for computational resources provided by Cardiff University, and 
         is conveniently described. To account for such a difference, we first note that when the plus
         and cross polarisations are not equal in strength, we can rotate the coordinate system by
         an angle $\psi$ around the $z^\prime$ axis so that the $x^\prime$ and $y^\prime$ axes
-        coincide with the mayor and minor axis of the associated ellipse. \\
+        coincide with the mayor and minor axis of the associated ellipse.
+
         In going from the GW frame to the detector frame, we can rotate the GW frame by
         an angle $\theta$ around the $x^\prime$ axis and an angle $\phi$ around the $z^\prime$ axis,
         where the angles $(\theta, \phi)$ denote the direction of propagation of the GW in the detector frame.
         Applying these three rotations, the beam pattern functions for a detector with perpendicular arms are given by
-                \begin{align}
-                F_{+}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \cos 2 \psi - \cos \theta \sin2\phi \sin2\psi \\
-                F_{\times}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \sin 2 \psi + \cos \theta \sin2\phi \cos2\psi
-                \end{align}
+        \begin{align}
+          F_{+}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \cos 2 \psi - \cos \theta \sin2\phi \sin2\psi \\
+          F_{\times}^{\ang{90}}& = {1 \over 2} (1 + \cos^2 \theta)\cos 2\phi \sin 2 \psi + \cos \theta \sin2\phi \cos2\psi
+        \end{align}
+        
 
 \section{Non-Stationary Transient Noise Sources}
-	
 	The various noises of the detector can be conveniently characterised by a spectral strain
         sensitivity with dimensions of $1/\sqrt{Hz}$, as we explain in this section. 
         The detector output $s(t)$ is composed of instrumental noise $n(t)$ arising from
         naturally occurring random processes and a potential strain signal $h(t)$
-                \begin{equation}
-                	s(t) = n(t) + h(t)
-                \end{equation}
+        \begin{equation}
+          s(t) = n(t) + h(t)
+        \end{equation}
         The detection problem then becomes how to distinguish $h(t)$ from $n(t)$ when $h(t) << n(t)$.
         In a way, $n(t)$ provides a measure of how small an $h(t)$ we can detect.
         Thus we take $n(t)$ as the detector’s noise and have a convenient way to
         compare performances of different detectors.
 	The instrument response $s(t)$ can be also expressed as a convolution of the antenna patterns 
 	with the two GW polarisations $h_{+}, h_{\times}(t)$:
-		\begin{equation}
-			s(t) = n(t) +  F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
-		\end{equation} 
+        \begin{equation}
+          s(t) = n(t) +  F_{+}h_{+} (t) + F_{\times}h_{\times}(t)
+        \end{equation} 
 	The antenna patterns depend on the frequency and sky location of the source; 
 	for wavelengths that are large compared to the detector, the antenna patterns are simple quadrupoles \cite{19}.
 	The information contained in the time series is usually represented in the Fourier domain 
-	as a strain amplitude spectral density, $h(f)$. \\
+	as a strain amplitude spectral density, $h(f)$.
 	This quantity is defined in terms of the power spectral density $S_s(f) = \tilde s^{*}(f) \tilde s(f)$
 	of the Fourier transform of the time series:
-		\begin{equation}
-                	\tilde s(f) = \int^{\infty}_{-\infty} e^{-2 \pi ift} s(t)dt
-		\end{equation}
+        \begin{equation}
+          \tilde s(f) = \int^{\infty}_{-\infty} e^{-2 \pi ift} s(t)dt
+        \end{equation}
 	The strain amplitude spectral density is then defined as $h(f) = \sqrt{S_s(f)}$.
 	Noise is categorised as either displacement noise, which directly moves the suspended mirrors
         causing a differential change in the arm cavity lengths, or as sensing noise,
-        which appears in the readout signal but is not caused by a GW. \\
+        which appears in the readout signal but is not caused by a GW.
+
         We describe the principal noises that dominate the limits of our sensitivity, (Fig.\,\ref{fig:noise2}).
-		\begin{figure}[t]
-                        \includegraphics[scale=0.3]{noise2}
-                        \centering
-                        \caption{The strain equivalent spectral amplitudes $\sqrt{S_n(\omega)}$ of several noises couple to the detector. Most relevant contributions comes from quantum noise and from thermal noise of mirror coating and suspensions. Seismic noise dominates below 10Hz}
-                        \label{fig:noise2}
-                \end{figure}
+        \begin{figure}[t]
+          \includegraphics[scale=0.3]{noise2}
+          \centering
+          \caption{The strain equivalent spectral amplitudes $\sqrt{S_n(\omega)}$ of several noises couple to the detector. Most relevant contributions comes from quantum noise and from thermal noise of mirror coating and suspensions. Seismic noise dominates below 10Hz}
+          \label{fig:noise2}
+        \end{figure}
         At lower frequencies, up to 10Hz, the main contribution to the global noise
         is due to vibrations of the ground which couple to the mirror motion, (Fig.\,\ref{fig:noise2} brown line): 
 	it shakes the optics and produces strain signals that mask GW signals. 
         This seismic noise is caused by earthquakes, weather and human activity.
         To reduce the potential movements of the optical elements,
-        the mirrors are isolated using an advanced suspension system. \\
+        the mirrors are isolated using an advanced suspension system.
+
         At frequencies where the seismic motion has been sufficiently reduced,
-        between 10Hz and 500Hz, the random Brownian motion of the molecules on the surface of the mirrors and wires dominates (Fig.\,\ref{fig:noise2} red line). \\
+        between 10Hz and 500Hz, the random Brownian motion of the molecules on the surface of the mirrors and wires dominates (Fig.\,\ref{fig:noise2}, red line).
+
         The thermal energy of the interferometer’s components induce vibrations both in the suspensions and in the mirrors.
         The nature of GW signal requires the sensitivity of the interferometric detectors
         to be extremely high in broad frequency band.
         Therefore, the power spectrum density of the thermal noise must be considered in the development of the detectors.
         The Fluctuation-dissipation Theorem relates the spectrum of the thermal noise to the amount of dissipation
-                \begin{equation}
-                	S_{n}(\omega) = - {{4k_bT} \over {\omega}} Im[H(\omega)]
-                \end{equation}
+        \begin{equation}
+          S_{n}(\omega) = - {{4k_bT} \over {\omega}} Im[H(\omega)]
+        \end{equation}
         From this equation is possible to state that the energy of fluctuations has a frequency dependent distribution;
         $H(z)$ is the transfer function of the system, it is a mathematical function that models the device’s output, defined as
-                \begin{equation}
-                	H(x) = {1 \over {iWZ(\omega)}}
-                \end{equation}
+        \begin{equation}
+          H(x) = {1 \over {iWZ(\omega)}}
+        \end{equation}
         In which $Z(\omega)$ is the impedance of the system in the frequency domain that can be computed as the ratio
         between the Fourier components of the generalised force $\tilde F(\omega)$ and the response of the system $\tilde X(\omega)$
-                \begin{equation}
-                	Z(\omega) = {{\tilde F(\omega)} \over {i\omega \tilde X(\omega)}}
-                \end{equation}
+        \begin{equation}
+          Z(\omega) = {{\tilde F(\omega)} \over {i\omega \tilde X(\omega)}}
+        \end{equation}
         In the case of an harmonic oscillator, the noise spectral density is
-                \begin{equation}
-                	S_n(\omega) = {{4k_bT} \over {m\omega}} {{{\omega_0}^2 \phi(\omega)} \over {(\omega^2-{\omega_0}^2)^2 + {\omega_0}^4 \phi^2(\omega)}}
-		\end{equation} 
+        \begin{equation}
+          S_n(\omega) = {{4k_bT} \over {m\omega}} {{{\omega_0}^2 \phi(\omega)} \over {(\omega^2-{\omega_0}^2)^2 + {\omega_0}^4 \phi^2(\omega)}}
+        \end{equation} 
 	Generally, thermal noise can be reduced decreasing the dissipation with monolithic suspensions and better coatings
         other than lowering the temperature using cryogenic payloads as it is done in KAGRA.
-        Quantum mechanics limits the precision at which the test mass positions can be determined. \\
+        Quantum mechanics limits the precision at which the test mass positions can be determined.
+
         At high frequencies, photon shot noise limits the sensitivity, 
 	while at low frequencies it is limited by radiation pressure.
         The photon shot noise is produced by the natural fluctuations in the rate of photons arriving at the photodiode,
         that follow a Poisson process. The noise will decrease with increasing laser power,
         recycling cavity gain, arm cavity gain, and arm length.
         The corresponding noise spectral density is
-		\begin{equation}
-                	S_n(\omega) = \Bigg({{\lambda_{laser}} \over {4 \pi L}}\Bigg)^2 {{2 \hbar \omega_{laser}} \over {P}}
-                \end{equation}
+        \begin{equation}
+          S_n(\omega) = \Bigg({{\lambda_{laser}} \over {4 \pi L}}\Bigg)^2 {{2 \hbar \omega_{laser}} \over {P}}
+        \end{equation}
         Radiation pressure noise is associated with the photons from the laser striking the mirror
         and causing a force on the mirror. Of course, increasing the laser power to combat shot noise
         will actually result in an increase of radiation pressure.
-                \begin{equation}
-                	S_n(\omega) =  {{32 \hbar \omega_{laser}P} \over {(4MLc \pi^2 f^2)^2}}
-                \end{equation}
+        \begin{equation}
+          S_n(\omega) =  {{32 \hbar \omega_{laser}P} \over {(4MLc \pi^2 f^2)^2}}
+        \end{equation}
         This is an example of the Heisenberg’s Uncertainty Principle, which says that the knowledge
         of the position and the momentum of a body is restricted from the relation $\Delta x \Delta p \geq \hbar$. 
         The high laser power required to determine the position of the test masses exerts
         a fluctuating radiation pressure which perturbs the test mass positions. 
         The minimum noise level is called Standard Quantum Limit (SQL) and sets a fundamental limit
         on the sensitivity of beam detectors, contributing to the noise as
-                \begin{equation}
-                	S_n(\omega) = {{2 \hbar} \over {M(\pi f L)^2}}
-                \end{equation}
+        \begin{equation}
+          S_n(\omega) = {{2 \hbar} \over {M(\pi f L)^2}}
+        \end{equation}
         Moreover, the presence of residual gas in the beam tubes would worsen the performance
         of the mirrors and of the laser; for this reason the vacuum system is maintained at a pressure
         of below $10^{-6}$Pa and the noise curve of the interferometer includes only
         the most dominant residual gas component, hydrogen, at a pressure of $10^{−7}$ Pa. 
-		\begin{figure}[t]
-                	\includegraphics[scale=0.6]{noise1}
-                	\centering
-                	\caption{Amplitude spectral density of the total strain noise  of the Virgo, LHO, and LLO detectors. The curves are representative of the best performance of each detector during O2 \cite{13}.}
-                	\label{fig:noise1}
-                \end{figure}
+        \begin{figure}[t]
+          \includegraphics[scale=0.6]{noise1}
+          \centering
+          \caption{Amplitude spectral density of the total strain noise  of the Virgo, LHO, and LLO detectors. The curves are representative of the best performance of each detector during O2 \cite{13}.}
+          \label{fig:noise1}
+        \end{figure}
 
 \subsection{Sources}
 \label{sec:sources}
-
 	There are four different classes of physical sources 
 	that are potential sources of GWs 
 	of sufficient amplitude to be detectable 
 	by current or theorised GW detectors. 
 
 \subsubsection{Compact Binaries Coalescences}
-
 	Compact binary star systems, in which each member is a NS or BH, 
 	are currently the only observed sources of GWs.
 	They are an ideal source for ground based GW detectors, 
@@ -855,9 +880,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	that is being search for allows powerful matched filtering techniques 
 	and signal consistency tests to be used in the attempt to detect such signals.
 
-
 \subsubsection{Bursts}
-
 	A burst of GWs is an event that releases a large amount 
 	of gravitational energy over a very short period of time, typically less than a few seconds.  
 	Astrophysical events that are believed to result in a transient signal 
@@ -870,16 +893,15 @@ We are grateful for computational resources provided by Cardiff University, and 
 	Even with no knowledge of the source of a GW signal, 
 	it is still possible to estimate some of the source parameters. 
 	Searches for GW bursts typically give estimations of the duration, 
-	amplitude and frequency of the source. \\
+	amplitude and frequency of the source.
+
 	An estimation of the sky position is given by measuring the difference 
 	in arrival time between different detectors. 
 	If the distance to the source is known, 
 	perhaps through an electromagnetic counterpart, 
 	then it is possible to estimate the energy of the source. 
 
-
 \subsubsection{Continuous Sources}
-
 	A periodic source is a source that emits at constant or nearly constant frequency.
 	The prototypical source of continuous GWs is high frequency rotating NSs 
 	with a non-axial deformation or low frequency binary systems 
@@ -892,7 +914,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	To emit a continuous GW with characteristic amplitude, 
 	a NS must have a non-axisymmetry in the crust. 
 	The radiation amplitude is proportional to the crucial parameter $\epsilon$, 
-	the fractional asymmetry that is proportional to the mass of the bump on the surface. \\
+	the fractional asymmetry that is proportional to the mass of the bump on the surface.
+
 	As NSs emit electromagnetic radiation, 
 	it is possible to target searches of GWs for NSs with positions, 
 	frequencies and spin-downs known from X-ray, radio and gamma-ray observations. 
@@ -908,14 +931,14 @@ We are grateful for computational resources provided by Cardiff University, and 
 	Measuring these waves will require
 	coherently tracking their signal for a large number of wave cycles, 
 	which is actually quite difficult, 
-	since the signal is strongly modulated by the Earth’s rotation and orbital motion.\\
+	since the signal is strongly modulated by the Earth’s rotation and orbital motion.
+
 	Searching for periodic GWs means demodulating the motion of the detector, 
 	a computationally intensive problem since the modulation is different for every sky position \cite{4}. 
 	Unless one knows in advance the position of the source, 
 	one needs to search over a huge number of sky position "error boxes”.
 
 \subsubsection{Stochastic Background}
-
 	Stochastic backgrounds are “random” GWs, 
 	arising from a  number of sources that overlap 
 	in time and frequency that are not individually resolvable \cite{22}. 
@@ -923,12 +946,13 @@ We are grateful for computational resources provided by Cardiff University, and 
 	a random pattern that may be analysed statistically but not predicted precisely.
 	A particularly interesting source of stochastic waves is the dynamics of the early Universe, 
 	which could produce an all-sky GW background, 
-	similar to the cosmic microwave background. \\ 
+	similar to the cosmic microwave background.
 	However, to measure waves from this epoch, 
 	we would need much more sensitive detectors than the ground-based interferometers available.
 	Stochastic backgrounds are usually idealized as being stationary, 
 	isotropic and homogeneous and because of their random nature they look just like noise \cite{4}.	
-	Another possible background could come from astrophysical sources. \\ 
+	Another possible background could come from astrophysical sources.
+
 	These possible sources include a population of rotating NSs 
 	and a population of white dwarf binaries that would be important mostly for a space-based interferometers such as LISA. 
 
@@ -964,19 +988,20 @@ We are grateful for computational resources provided by Cardiff University, and 
 	may be taken to be infinite outside the bandwidth of the instrument, 
 	effectively restricting the range of integration to lie between $[-f_N, f_N]$, 
 	where $f_N$ denotes the Nyquist frequency $f_N = 1/(2\Delta t)$, 
-	and $\Delta t$ is the time between successive data samples.   \\
+	and $\Delta t$ is the time between successive data samples.
+
 	The measured detector strain amplitude, $s(t)$, may or may not contain a signal,
 	thus it will be composed of $n(t)$, the real strain-equivalent noise
         produced by fluctuations within the detector and its environment, 
 	and possibly a GW of known form, $h(t)$
-                \begin{equation}
-                \label{eq:strain}        
-			s(t) = h(t) + n(t)\,.
-                \end{equation}
+        \begin{equation}
+          \label{eq:strain}        
+          s(t) = h(t) + n(t)\,.
+        \end{equation}
         When no signal is present,   		
-		\begin{equation}
-                        s(t) = n(t)\,.
-                \end{equation}
+        \begin{equation}
+          s(t) = n(t)\,.
+        \end{equation}
         The aim of the match filtering is to look for a filter function to process the data,
 	the output of which will be large when a signal is present and small otherwise. 
         If the waveform, $h(t)$, is embedded in stationary Gaussian noise with zero mean and one-sided power-spectral density (PSD) $S_n(f)$,
@@ -985,34 +1010,34 @@ We are grateful for computational resources provided by Cardiff University, and 
 	This optimal filter may be cross-correlated with the data over the detector frequency band to search for GW
         signals.  The output of this filtering operation may be viewed as a weighted inner product in the frequency domain, 
 	between the data and the template, where the weight is the inverse PSD of the detector:
-		\begin{equation}
- 			(s|h)(t) = 4Re \int^{f^{high}}_{f^{low}} {{\tilde s (f) \tilde h^{*}_{\rm template}(f)} \over {S_n (f)}} e^{2 \pi ift}df\,, 
-		\end{equation}
+        \begin{equation}
+          (s|h)(t) = 4Re \int^{f^{high}}_{f^{low}} {{\tilde s (f) \tilde h^{*}_{\rm template}(f)} \over {S_n (f)}} e^{2 \pi ift}df\,, 
+        \end{equation}
 	where the frequency limits $f_{low}$ and $f_{high}$ are determined by the detector bandwidth
 	and $\hat s(f)$ denotes the Fourier-transformed detector data, defined as
-		\begin{equation}
-			\tilde s(f) = \int^{\infty}_{-\infty} s(t) e^{-2i \pi tf} dt\,.
-		\end{equation}
-  
+        \begin{equation}
+          \tilde s(f) = \int^{\infty}_{-\infty} s(t) e^{-2i \pi tf} dt\,.
+        \end{equation}
+        
 \subsection{Signal-to-Noise Ratio}
-
 	Finding the form of the filter which will optimally extract the signal from the noise,
         means locating the maxima of the output of the matched filter, $(s|h)(t)$, 
 	over the arrival time and phase.
         One can therefore set a threshold value such that values of the matched filter 
-	above it would indicate a signal candidate while values below would indicate the absence of signals. \\
+	above it would indicate a signal candidate while values below would indicate the absence of signals.
+
 	The filter output can be normalised by the variance of the optimal filter, $\sigma^2$,
 	which is an estimate of the uncertainty in a measurement of $(s|h)$ due to the detector noise:
-                \begin{equation}
-                        \sigma^2 =4 \int^{f^{high}}_{f^{low}} {{|\tilde h_{\rm template}(f)|^2} \over {S_n(f)}}df
-                \end{equation}
+        \begin{equation}
+          \sigma^2 =4 \int^{f^{high}}_{f^{low}} {{|\tilde h_{\rm template}(f)|^2} \over {S_n(f)}}df
+        \end{equation}
  	The normalised output of the optimal filter is a new thresholding statistic and can be defined as  
 	the signal-to-noise ratio (SNR), the ratio of the observed filter output to its,
         expected or observed, root-mean-square fluctuations \cite{24}:
-                \begin{align}
-                        \rho(t) &= {{| (s|h) |} \over {\sigma_{h}}} \\
-                             &= {{(\tilde s|\tilde h_{\rm template})} \over {\sqrt{(h_{\rm template}|h_{\rm template})}}}\,.
-                \end{align}
+        \begin{align}
+          \rho(t) &= {{| (s|h) |} \over {\sigma_{h}}} \\
+          &= {{(\tilde s|\tilde h_{\rm template})} \over {\sqrt{(h_{\rm template}|h_{\rm template})}}}\,.
+        \end{align}
         The value of the SNR will then be proportional to the amplitude of the signal buried in the noise.
 	The smart choice for a threshold that can be set on this value is such that
 	it can admit as many signals as possible, while still keeping the false alarm rate low. 
@@ -1021,49 +1046,49 @@ We are grateful for computational resources provided by Cardiff University, and 
 \label{subsec:mfcbc}
 	An interferometric detector is sensitive to a linear combination 
 	of the two GW polarisations \cite{26}: 
-                \begin{equation}
-                h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)\,,
-                \end{equation}
+        \begin{equation}
+          h(t) = F_{+}h_{+} (t) + F_{\times}h_{\times}(t)\,,
+        \end{equation}
 	where $F_{+}$ and $F_{\times}$ are the two antenna response functions of the detector, 
 	which depend on $\theta$ and $\phi$, 
 	the angular coordinates of the source sky position with respect to axes defined by the interferometer arms. 
 	Due to the nature of GW signals from the inspiral stage of compact binary coalescences (CBCs), 
 	it follows that the phase evolution of the cross polarisation is $\ang{90}$ out of phase with the plus polarisation:
-		\begin{equation}
-			h_{+}(t) = A(t) \cos (\phi (t))
-		\end{equation}
-		\begin{equation}
-			h_{\times}(t) = A(t) \sin (\phi (t))  
-		\end{equation}
+        \begin{equation}
+          h_{+}(t) = A(t) \cos (\phi (t))
+        \end{equation}
+        \begin{equation}
+          h_{\times}(t) = A(t) \sin (\phi (t))  
+        \end{equation}
 	where $A(t)$ is the amplitude evolution of the signal 
 	and $\phi(t)$ is the phase evolution of the signal. 
 	The Fourier transform of the two polarisation are related by $\tilde h_{+} = i\tilde{h}_{\times}$, 
 	which means that the inner product between the two orthogonal polarisations is zero 
-		\begin{equation}
-			(h_{\times}|h_{+}) = 0
-		\end{equation}
+        \begin{equation}
+          (h_{\times}|h_{+}) = 0
+        \end{equation}
 	Hence, when filtering  $s = (Xh_{+}/\sigma_{h}) + (Y h_{\times}/\sigma_{h})$ 
 	with the templates $h_{+}$ and $h_{\times}$, we obtain the matched-filter real-time series
-		\begin{equation}
-			z_{+} = X\sigma_{h}
-		\end{equation}
-		\begin{equation}
-			z_{\times} = Y \sigma_{h} 
-		\end{equation}
+        \begin{equation}
+          z_{+} = X\sigma_{h}
+        \end{equation}
+        \begin{equation}
+          z_{\times} = Y \sigma_{h} 
+        \end{equation}
 	This leads to the definition of the two-phase filter, 
 	which has twice the degrees of freedom of a single-phase filter:
-		\begin{equation}
-			\rho = {1 \over \sigma_h} \sqrt{|z_{+}| ^2+ |z_{\times}|^2}
-		\end{equation}
+        \begin{equation}
+          \rho = {1 \over \sigma_h} \sqrt{|z_{+}| ^2+ |z_{\times}|^2}
+        \end{equation}
 	The bonus of extracting information from both polarisations of the GW 
 	comes at the cost of increasing the expectation value of $\rho$ when there is no signal present. 
 	For a detector output that includes a signal at distance $D_{\rm eff}$, 
 	$s(t) = n(t) + (D_{\rm eff}/1 Mpc)^{-1}h_{1Mpc}$, 
 	a biased estimate of the effective distance for a given trigger 
 	may be defined by combining the definition of the SNR with the template normalization $\sigma_h$:
-		\begin{equation}
-			\hat D_{\rm eff} = {{\sigma_h} \over {\rho}}
-		\end{equation}
+        \begin{equation}
+          \hat D_{\rm eff} = {{\sigma_h} \over {\rho}}
+        \end{equation}
 	In reality, the parameters of astrophysical systems will not be known a-priori, 
 	and searches must therefore be sensitive to signals at any location in the parameter space \cite{25}. 
 	Performing the matched-filter calculation at every point in the full parameter space 
@@ -1075,7 +1100,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	constant time-shift and a constant amplitude scaling to the observed waveform \cite{27}. 
 	With these assumptions in place, 
 	one can analytically maximise over an overall amplitude and phase of the signal, 
-	and use an inverse Fourier transform to quickly evaluate the statistic as a function of time. \\
+	and use an inverse Fourier transform to quickly evaluate the statistic as a function of time.
+
 	The component masses and spins --- the intrinsic parameters --- 
 	are searched over by repeating the search process with a well chosen discrete set of waveform models 
 	with varying values of the component masses and spins, 
@@ -1093,7 +1119,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	One may only to search over this manifold on a discrete points, 
 	which have to be placed in such a way that any signal
 	that has parameters in the targeted space will still produce an SNR 
-	above threshold by matching with the ''loudeest'' template \cite{27}. \\ 
+	above threshold by matching with the ''loudeest'' template \cite{27}.
+
 	In order to compute the distance between two templates with different parameter values, 
 	one can create a metric over the parameter space and then compute an ``error'' between two waveforms.
 	Two neighbouring templates can be defined as $h(f;\lambda)$ and $h(f;\lambda + \Delta \lambda)$,
@@ -1101,40 +1128,42 @@ We are grateful for computational resources provided by Cardiff University, and 
         intrinsic (masses and spins) and extrinsic (time and phase shifts) template parameters.
 	The overlap of two waveforms, defined as the inner product inversely weighted by the detector one-sided  PSD $S_n(f)$, 
 	can be written as  
-		\begin{equation}
-			(h_i| h_j)  \equiv 4 \int_{0}^{\infty} df {{\tilde h_i(f) \tilde h^*_j(f)} \over {S_n(f)}}.
-                \end{equation}
+        \begin{equation}
+          (h_i| h_j)  \equiv 4 \int_{0}^{\infty} df {{\tilde h_i(f) \tilde h^*_j(f)} \over {S_n(f)}}.
+        \end{equation}
 	The normalised overlap between the two waveforms is given by
-		\begin{align}
-			(\hat{h}_i|\hat{h}_j)& = {{(h_i|h_j)} \over {\sqrt{(h_i| h_i)(h_j| h_j)}}}\,.
-		\end{align}
+        \begin{align}
+          (\hat{h}_i|\hat{h}_j)& = {{(h_i|h_j)} \over {\sqrt{(h_i| h_i)(h_j| h_j)}}}\,.
+        \end{align}
 	As the template waveforms are defined up to an overall normalization, 
 	it is customary to work directly with the normalised $\hat{h}_i$'s. \\
 	The match is then defined as
-		\begin{equation}
-			\mathcal{M}(\lambda, \Delta \lambda) \equiv \max_{\Delta \lambda_{extr}} (\hat h(f;\lambda), \hat h(f;\lambda + \Delta \lambda))
-		\end{equation}
+        \begin{equation}
+          \mathcal{M}(\lambda, \Delta \lambda) \equiv \max_{\Delta \lambda_{extr}} (\hat h(f;\lambda), \hat h(f;\lambda + \Delta \lambda))
+        \end{equation}
 	The match is maximised only over the two extrinsic parameters of a template, 
 	because waveforms related by time and phase offsets
 	are described by the same template, 
-	since all possible coalescence times and phases are searched for \cite{29}. \\
+	since all possible coalescence times and phases are searched for \cite{29}.
+
 	This expression can be Taylor-expanded about $\Delta \lambda = 0$:
-		\begin{equation}
-			\mathcal{M}(\lambda, \Delta \lambda) \simeq 1 - g_{ij} \Delta \lambda^i \Delta \lambda^j\,,
-		\end{equation}
+        \begin{equation}
+          \mathcal{M}(\lambda, \Delta \lambda) \simeq 1 - g_{ij} \Delta \lambda^i \Delta \lambda^j\,,
+        \end{equation}
 	where 
-		\begin{equation}
-			 g_{ij} \equiv -{1 \over 2} {{\partial^2\mathcal{M}} \over {\partial  \Delta \lambda^i  \partial \Delta \lambda^j}}\vert_{\Delta \lambda = 0}
-		\end{equation}
+        \begin{equation}
+          g_{ij} \equiv -{1 \over 2} {{\partial^2\mathcal{M}} \over {\partial  \Delta \lambda^i  \partial \Delta \lambda^j}}\vert_{\Delta \lambda = 0}
+        \end{equation}
 	can be interpreted as a metric in the waveform manifold.  A commonly used quantity related to this metric
 	is the mismatch between two templates $MM = (1 − \mathcal{M})$.
 	Any mismatch between signal and template leads to a loss in SNR, 
-	and to a down-weighting by the signal-based vetoes, see Sec.\,\ref{subsec:chi_square_test}. \\
-	When constructing a template bank, this mismatch can be viewed as the means
+	and to a down-weighting by the signal-based vetoes, see Sec.\,\ref{subsec:chi_square_test}.
+
+        When constructing a template bank, this mismatch can be viewed as the means
 	to compute the proper distance in the waveform space:
-		\begin{equation}
-			ds_{ij}^2 = 1 − \mathcal{M} = g_{ij} \Delta \lambda^i \Delta \lambda^j\,.
-		\end{equation}
+        \begin{equation}
+          ds_{ij}^2 = 1 − \mathcal{M} = g_{ij} \Delta \lambda^i \Delta \lambda^j\,.
+        \end{equation}
 	This proper distance should be chosen to guarantee that the loss in SNR due to the mismatch 
 	between template and signal does not jeopardize the detectability of the signal \cite{30}.
 
@@ -1148,12 +1177,13 @@ We are grateful for computational resources provided by Cardiff University, and 
 	the data with an approximate family of templates \cite{31}. 
 	To quantify the bank coverage, usually Monte-Carlo simulations are carried out   
 	to compute the distribution of fitting factors of the templates in the bank against 
-	a set of injected signal waveforms with randomly chosen parameters \cite{32}. \\
+	a set of injected signal waveforms with randomly chosen parameters \cite{32}.
+
 	The fitting factor, $FF$, of a template bank with respect to an injected signal $h_{*}$ 
 	is defined as the maximum value of match over all the templates:
-		\begin{equation}
-			FF(h_{*}) = \max_\Lambda \mathcal{M}(\tilde{h}_{*}, \tilde{h}(\Lambda))
-		\end{equation}
+        \begin{equation}
+          FF(h_{*}) = \max_\Lambda \mathcal{M}(\tilde{h}_{*}, \tilde{h}(\Lambda))
+        \end{equation}
 	assuming that the signal model is the same for both templates and injections. 
 	The fractional loss of SNR in capturing the signal 
 	$h_{*}$ with the template bank is $1 - FF(h_{*})$.
@@ -1163,7 +1193,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	This loss arises from the discrete placement of the templates. 
 	Because binaries are, on large scales, uniformly distributed in space 
 	and because the signal strength scales inversely with distance, 
-	the fraction of events retained is approximately $FF(h_*)^3$. \\ 
+	the fraction of events retained is approximately $FF(h_*)^3$.
+
 	Therefore it is desirable that the template bank is constructed such that 
 	no putative signal anywhere in the parameter space
 	has a FF value less than the minimal match. 
@@ -1172,7 +1203,6 @@ We are grateful for computational resources provided by Cardiff University, and 
 	as this translates into a $10\%$ loss of events \cite{33}.
 
 \subsubsection{Frequency Bound}
-
 	An algorithm that most efficiently covers the parameter space relies on the choice of a coordinate system, 
 	in which the metric is as flat as possible across the space \cite{34}.
 	In computations with the two-mass-parameter waveforms, 
@@ -1183,21 +1213,20 @@ We are grateful for computational resources provided by Cardiff University, and 
 	when expressed in as dimensionless chirp times. 
         The lower frequency cutoff $f_L$, which essentially determines the size of the parameter space
         of chirptimes and plays a crucial role in the computational resources required
-        to process the data through the template bank \cite{30}, and is not itself a parameter to search for. \\
+        to process the data through the template bank \cite{30}, and is not itself a parameter to search for.
         However, it affects the length of the signals
         (therefore, the parameter space to be covered) and the SNR extracted.
 
 \subsection{Template Placement}
-
 	The computational cost of any GW search
-	 is directly proportional to the number of templates used \cite{28}.
+        is directly proportional to the number of templates used \cite{28}.
 	It is therefore vital to have a method that enables one 
-	to place a template bank using as few templates as possible. \\ 
+	to place a template bank using as few templates as possible.
+
 	Two broad classes of template-placement algorithms 
 	have been developed in the literature. 
 
 \subsubsection{Stochastic Placement}
-
 	Stochastic methods place templates, 
 	that are randomly drawn from an initially chosen distribution, 
 	at random points in the parameter space.
@@ -1213,7 +1242,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	a large number of trial waveforms needs to be drawn and generated before convergence is achieved 
 	(many more than the required number of templates in the bank). 
 	This method also tends to over-cover the parameter space, 
-	in the sense that the average template density is higher than optimal at fixed minimum match. \\
+	in the sense that the average template density is higher than optimal at fixed minimum match.
+
 	Furthermore, the construction of a stochastic template bank 
 	can be computationally demanding since, in principle, 
 	each new proposed template needs to be compared 
@@ -1222,14 +1252,13 @@ We are grateful for computational resources provided by Cardiff University, and 
 	the closer the bank gets to saturation. 
 	The computational problem also becomes especially demanding 
 	when precession effects are considered as these additional degrees 
-	of freedom require a large number of templates. \\
+	of freedom require a large number of templates.
+
 	It is therefore important to consider methods to optimise the template bank construction, 
 	specifically finding ways of improving effectualness for a given number 
 	of templates and reducing the computational cost. 
 
 \subsubsection{Geometric Placement}
-
-
 	A different method to construct the bank is geometric placement:
 	this means building a flat, linear space in such a way that embeds the space of physical waveforms. 
 	Hence, a crucial point is to identify a set of coordinates 
@@ -1251,7 +1280,6 @@ We are grateful for computational resources provided by Cardiff University, and 
 	to cover the entire parameter space \cite{29, 34}. 
 
 \subsubsection{Spins of Compact Objects}
-
 	The processes that lead to the formation of a compact binary
 	depend sensitively on a number of poorly constrained parameters, 
 	such as the typical stellar metallicity at formation, 
@@ -1260,7 +1288,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	There are two main channels through which compact objects can be formed:
 	the coevolution of two massive stars in a binary and 
 	the dynamical capture of two preformed compact objects 
-	in dense stellar environments such as globular clusters \cite{37}. \\	
+	in dense stellar environments such as globular clusters \cite{37}.	
 	It is thought that compact binaries formed by dynamical capture 
 	are more likely to have component spins
 	at large angles with respect to the orbital angular momentum, 
@@ -1272,7 +1300,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	the orbital angular momentum exist from electromagnetic observations. 
 	In some cases, one can measure this spin misalignment via GW emission, 
 	as misalignment leads to precession of the orbital plane, 
-	which appears as phase and amplitude modulations in the observed signal. \\
+	which appears as phase and amplitude modulations in the observed signal.
+
 	Almost all searches for GWs from coalescing compact binaries 
 	using the data of first generation interferometers 
 	have used templates that neglect the spins of the compact objects \cite{32}.
@@ -1281,14 +1310,16 @@ We are grateful for computational resources provided by Cardiff University, and 
 	including spin effects greatly increased the number of templates to be searched over, 
 	and the search performed, on average, no better than non spinning searches, 	
 	as the increased degrees of freedom in the signal space picked up extra noise noise transients, 	
-	increasing the false alarm rate \cite{32, 38}. \\ 
+	increasing the false alarm rate \cite{32, 38}.
+
 	However, the Advanced LIGO and Virgo detectors are sensitive to frequencies above 10–20 Hz, 
 	therefore they can observe the inspiral from much larger orbital separations, 
 	resulting is significantly longer observed GW signal \cite{23}. 
 	Proper consideration of the spin effects is essential in the advanced detector era, 
 	as there might be astrophysical systems that are entirely missed by non-precessing searches.
 	Neglecting the spin effects can cause a much larger dephasing of the template with the signal, 
-	and hence considerable loss of SNR. \\
+	and hence considerable loss of SNR. 
+
 	Currently, waveform models with spins (anti)aligned with the orbital angular momentum 
 	are used in searches with Advanced LIGO and Virgo, 
 	as it was demonstrated that aligned-spin templates accumulate more signals than noise \cite{27}. 
@@ -1326,7 +1357,8 @@ We are grateful for computational resources provided by Cardiff University, and 
         and to assign an accurate statistical significance to candidate signals.
         In order to eliminate the worst periods of detector performance, 
         data quality investigations are conducted by looking only at the detector behaviour,  
-        which is analysed by monitoring environmental and instrumental channels \cite{40}.\\
+        which is analysed by monitoring environmental and instrumental channels \cite{40}.
+
         After removing data that is not suitable for astrophysical searches, 
         noise transients, glitches, of unknown origin could still be present in the data 
         and cause certain templates to produce high SNR values.
@@ -1342,71 +1374,74 @@ We are grateful for computational resources provided by Cardiff University, and 
 	
 \subsection{Chi-square Tests}
 \label{subsec:chi_square_test}
-In general, the non-stationary detector output data $s(t)$ can be described as
-		\begin{equation}
-			s(t) = n(t) + Ah(t) + Bg(t) 
-		\end{equation}
+        In general, the non-stationary detector output data $s(t)$ can be described as
+        \begin{equation}
+          s(t) = n(t) + Ah(t) + Bg(t) 
+        \end{equation}
 	where $g(t)$ is an additional non-Gaussian noise contribution to the data stream, 
 	orthogonal to the template, and $A$ and $B$ are amplitude factors. 
 	Contrary to GW signals which ring off only against templates 
 	that have similar morphology to the GW, 
 	loud glitches may return a high SNR when matched filtered against a 
-	large variety of templates because their amplitude $B$ is high. \\
+	large variety of templates because their amplitude $B$ is high.
+
 	$\chi^2$-tests are necessary to check that triggers match the waveform of the  template.
 	The glitch contribution $g(t)$ is taken to be the power orthogonal to $h(t)$ 
 	and both $g(t)$ and $h(t)$ are normalised, so that 
-		\begin{equation}
-			(g|h)=0, \hspace*{1.5cm} (g|g)=1, \hspace*{1.5cm} (h|h)=1
-		\end{equation}
+        \begin{equation}
+          (g|h)=0, \hspace*{1.5cm} (g|g)=1, \hspace*{1.5cm} (h|h)=1
+        \end{equation}
 	In order to construct a $\chi^2$-test, an additional set of N waveforms $T^i$, 
 	orthonormal to the template in question, is needed 
-		\begin{equation}
-			(h|T^i)=0,  \hspace*{1.5cm} (T^i|T^j)=\delta^{ij}
-		\end{equation}
+        \begin{equation}
+          (h|T^i)=0,  \hspace*{1.5cm} (T^i|T^j)=\delta^{ij}
+        \end{equation}
 	Furthermore, for the $\chi^2$-test to be effective, 
 	the $T^i$ must have a good overlap with the glitch waveform $g(t)$.
 	When the noise is stationary B = 0, the orthonormality condition translates to 
- 		\begin{equation}
-			\chi^2 \equiv \sum^N_{i=1}(T^i|s)^2 =\sum^{N}_{i=1}(T^i|n)^2
-		\end{equation}
+        \begin{equation}
+          \chi^2 \equiv \sum^N_{i=1}(T^i|s)^2 =\sum^{N}_{i=1}(T^i|n)^2
+        \end{equation}
 	whether a GW signal is present or not. 
 	Thus the test is $\chi^2$ distributed with N degrees of freedom, 
 	with a mean and variance of 
-		\begin{equation}
-			\langle \chi^2 \rangle = N, \hspace*{1.5cm} Var\langle \chi^2 \rangle=2N
-		\end{equation}
+        \begin{equation}
+          \langle \chi^2 \rangle = N, \hspace*{1.5cm} Var\langle \chi^2 \rangle=2N
+        \end{equation}
 	This is true for any set of waveforms $T^i$ given the above assumptions. 
 	In the case there is a  glitch in the data $B \neq 0$, the $\chi^2$ takes the form
-		\begin{equation}
-			\chi^2 =  \sum^N_{i=1}[(T^i|n) + B(T^I|g)]^2.
-		\end{equation}
+        \begin{equation}
+          \chi^2 =  \sum^N_{i=1}[(T^i|n) + B(T^I|g)]^2.
+        \end{equation}
 	Thus the mean and variance are 
-		\begin{equation}
-			\langle \chi^2 \rangle = N+ B^2\sum^N_{i=1}(T^i|g)^2, 
-		\end{equation}
-		\begin{equation}
-			Var\langle \chi^2 \rangle=2N+ 4B^2\sum^N_{i=1}(T^i|g)^2, 
-		\end{equation}
+        \begin{equation}
+          \langle \chi^2 \rangle = N+ B^2\sum^N_{i=1}(T^i|g)^2, 
+        \end{equation}
+        \begin{equation}
+          Var\langle \chi^2 \rangle=2N+ 4B^2\sum^N_{i=1}(T^i|g)^2, 
+        \end{equation}
 	The procedure to distinguish signals from glitches consists in calculating the $\chi^2$-test 
 	and divide by the number of degrees of freedom: for a GW signal this should be $\sim 1$, 
-	but for a glitch it will be greater than one by an amount that is proportional to the square of the amplitude of the glitch. \\
+	but for a glitch it will be greater than one by an amount that is proportional to the square of the amplitude of the glitch.
+
 	Applying a proper threshold on the value of $\chi^2$ per degree of freedom, 
-	it is helpful to get rid of glitches, which will be those triggers exceeding the threshold. \\
+	it is helpful to get rid of glitches, which will be those triggers exceeding the threshold.
+
 	The challenge in constructing a $\chi$-test is to select the basis waveforms $T^i$ 	
 	such they have large overlaps with the observed glitches in the data and 
 	are orthonormal and orthogonal to the template waveform $h$. 
 	If this is done successfully, then any glitch producing a large SNR will also give a large value of $\chi^2$, 
 	inconsistent with a signal in Gaussian noise. 
 	One way to construct a set of waveforms orthogonal to $h$ is using the formula
-		\begin{equation}
-			T^i = {{t^I-(t^i|h)h} \over {\sqrt{1-(t^i|h)^2}}}
-		\end{equation}
+        \begin{equation}
+          T^i = {{t^I-(t^i|h)h} \over {\sqrt{1-(t^i|h)^2}}}
+        \end{equation}
 	While this ensures $(h|T^i) = 0$ it does not guarantee orthonormality $(T^i|T^j)=\delta^{ij}$. 
 	Thus the formula for $\chi^2$ will be a sum of correlated Gaussian variables, 
 	for which the mean is unchanged, but the variance becomes
-		\begin{equation}
-			Var\langle \chi^2 \rangle=2N+ 2\sum^N_{i \neq j}(T^i|T^j)^2, 
-		\end{equation}
+        \begin{equation}
+          Var\langle \chi^2 \rangle=2N+ 2\sum^N_{i \neq j}(T^i|T^j)^2, 
+        \end{equation}
 	It has been found, however, that this does not present a significant obstacle to using these tests, 	
 	especially as the thresholds are tuned empirically.
  
@@ -1454,9 +1489,9 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	The significance of candidate events is measured against the background from the same class. 
 	For each candidate event, one can compute the probability of finding one or more 
 	noise background events in the observation time with a detection-statistic value above that of the candidate event.  This is given by 
-		\begin{equation}
-			p(\hat \rho) \equiv P(\geq 1 \hspace*{0.1cm}\text{noise event above}\hspace*{0.1cm} \hat \rho|T,T_b) = 1 - \exp\left[-T{{1+n_b(\hat \rho)} \over{T_b}}\right]\,,
-		\end{equation}
+        \begin{equation}
+          p(\hat \rho) \equiv P(\geq 1 \hspace*{0.1cm}\text{noise event above}\hspace*{0.1cm} \hat \rho|T,T_b) = 1 - \exp\left[-T{{1+n_b(\hat \rho)} \over{T_b}}\right]\,,
+        \end{equation}
 	where $T$ is the observation time of the search and it multiplies the FAR in the exponential.
 	If the detection-statistic value of a candidate event is larger 
 	than that of any noise background event, 
@@ -1464,7 +1499,6 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	
 
 \section{Coincident and Coherent Searches}
-
 	The two main detection strategies to search for GWs 	
 	from a network of detectors are known as coincident and coherent.  
 	In this section, we highlight differences between the two methods, 
@@ -1481,33 +1515,38 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	this window is taken as the maximum light travel time for GW between the sites plus a small, 
 	fixed amount to allow for timing errors. 
 	For example, for the two-detector LHO-LLO network, signals must be seen in both detectors within a time difference of 15ms: 
-	10ms maximum travel time between detectors and 5ms padding to account for timing errors. \\
+	10ms maximum travel time between detectors and 5ms padding to account for timing errors.
+
         The benefits of this procedure are plenty: first it immediately eliminates the great majority of background noise 
 	by rejecting any triggers which are not coincident in two or more detectors;
 	secondly, it is not computationally expensive.
         The dominant cost of the search is in performing a matched filter 
         of the data against a bank of template waveforms (see, Section \ref{sec:matched_filtering}):
-        this task is performed once per detector per template \cite{28, 45}. \\
+        this task is performed once per detector per template \cite{28, 45}.
+
 	The {\ttfamily PyCBC} pipeline, used in Sec.\,\ref{sec:pycbc00}, 
 	requires consistency of arrival time and template parameters (masses and spins) 
 	between triggers in each of the detectors must be exactly the same,,
 	since the same waveform should be observed in all detectors.
-	The same template bank is used to filter data and produce triggers from each detector. \\
+	The same template bank is used to filter data and produce triggers from each detector.
+
 	When coincident events are found, they are then ranked by the quadrature sum of the re-weighted SNR in each detector;
 	for a two-detector network, the \textit{coincident} SNR is defined as
-		\begin{equation}
-                  \label{eq:rhocoincPyCBC}
-			\hat{\rho}_{\rm coinc}  = \sqrt{\hat{\rho}^2_1 + \hat{\rho}^2_2}.
-		\end{equation}
+        \begin{equation}
+          \label{eq:rhocoincPyCBC}
+          \hat{\rho}_{\rm coinc}  = \sqrt{\hat{\rho}^2_1 + \hat{\rho}^2_2}.
+        \end{equation}
 	A confident detection is claimed when the false alarm probability of an event is computed,
 	and the probability of an equally loud event being caused by noise is below a chosen threshold. 
 	A statistical significance is assigned to candidate events by the FAR,
 	calculated as a function of the detection statistic, $\hat{\rho}_{\rm coinc}$,
-	via analysis of time-shifted data, as already seen in Sec.\,\ref{subsec:far}. \\
+	via analysis of time-shifted data, as already seen in Sec.\,\ref{subsec:far}.
+
 	Single-detector triggers from one detector are time shifted with respect to triggers of the other detector;
 	all such coincidences are recorded and assigned a ranking statistic, 
 	to create a background data set that does not contain coincident GW signals.
-	This time-shifting of the data is performed many times to obtain a representative estimate of the expected rate of background triggers. \\
+	This time-shifting of the data is performed many times to obtain a representative estimate of the expected rate of background triggers.
+
 	For every possible result of a given observation performed on the data with detection statistic $\hat{\rho}_{\rm coinc}$, 
 	a test statistic value, $p_b$ is assigned to measure the probability that the 
 	there are one or more coincident noise events (false alarms) that have
@@ -1516,22 +1555,25 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	any given trigger is a signal rather than noise. 
 	Therefore, p-values are computed under the null hypothesis: this assumes that candidate events 
 	are caused by non-GW processes acting on and within the interferometers,
-	even when loud signals are present in the data. \\
+	even when loud signals are present in the data.
+
 	The smaller the p-values is, the more significant is the candidate,
 	while larger p-values indicate a higher deviation from expectations under the null hypothesis.
 	A detection is claimed when events actually obtained in the search all have very small p-value,
-	meaning they are random noise candidate events. \\
+	meaning they are random noise candidate events.
+
 	How many noise background events $n_b$ are louder than a given candidate event
 	can be measured using the distribution of coincident events from the time shifts.
 	The number of background events having a higher detection-statistic value than $\hat{\rho}_{\rm coinc}$
 	is given by the function $n_b(\hat{\rho}_{\rm coinc})$, and can be used to calculate 
 	the probability that one or more noise events as loud as a candidate event with $\hat{\rho}_{\rm coinc}$
 	occurs in the search, as 
-		\begin{equation}
-			p(\geq 1 \hspace*{0.1cm}\text{above}\hspace*{0.1cm} \hat{\rho}_{\rm coinc}^*|T,T_b)_0 = 1 - exp\big[ {{-T(1+n_b(\hat{\rho}_{\rm coinc}^*))} \over {T_b}}]
-		\end{equation}
+        \begin{equation}
+          p(\geq 1 \hspace*{0.1cm}\text{above}\hspace*{0.1cm} \hat{\rho}_{\rm coinc}^*|T,T_b)_0 = 1 - exp\big[ {{-T(1+n_b(\hat{\rho}_{\rm coinc}^*))} \over {T_b}}]
+        \end{equation}
 	 given the duration of observing time $T$ and the amount of background time 
 	constructed from the time shifts $T_b$. \cite{28}
+
 \subsection{Coherent}
 \label{subsec:coherent}
 	The coherent search strategy combines the data from all detectors coherently in phase, 
@@ -1550,69 +1592,70 @@ In general, the non-stationary detector output data $s(t)$ can be described as
         The fact that the detector data are combined coherently allows to define a new ranking statistic, 
 	known as coherent SNR, and to build new consistency tests, of which we discuss an example.
 	Furthermore, the data from all detectors are combined to extract the two physical GW polarisations. 
+
 \subsubsection{Coherent SNR}	
 	The output $s^X(t)$, as already seen in Eq.\,(\ref{eq:strain}) by detector $X$,  
 	is the sum of the detector response to a GW $h^X$,
 	with the detector noise $n^X(t)$
-		\begin{equation}
-			s^X(t) = h^X(t) + n^X(t).
-		\end{equation}
+        \begin{equation}
+          s^X(t) = h^X(t) + n^X(t).
+        \end{equation}
 	The GW signal seen by detector $X$ is a combination of
         the two polarisations weighted by the detector antenna
         response:
-                \begin{equation}
-		\label{eq:gwsignal}
-                        h^X(t) = F_{+}^X h_{+}(t^X) + F_{\times}^X h_{\times}(t^X)\,, 
-                \end{equation}
+        \begin{equation}
+          \label{eq:gwsignal}
+          h^X(t) = F_{+}^X h_{+}(t^X) + F_{\times}^X h_{\times}(t^X)\,, 
+        \end{equation}
         where the time of arrival in detector $X$ depends upon the sky location
         of the source relative to the detector and the time of arrival at a fiducial location,
         for example the Earth’s centre \cite{45}.
 	Assuming that the noise in different detectors are independent, in the sense that 
-		\begin{equation}
-			\langle \tilde{n}^X(f)[ \tilde{n}^Y(f')]^*\rangle = \delta^{XY}\delta(f-f')S_h^X(f)
-		\end{equation}
+        \begin{equation}
+          \langle \tilde{n}^X(f)[ \tilde{n}^Y(f')]^*\rangle = \delta^{XY}\delta(f-f')S_h^X(f)
+        \end{equation}
         For a network of detectors, the multi-detector matched-filter
         is defined as the sum of the single detector inner products
-                \begin{equation}
-                        (\textbf{a}|\textbf{b}) \equiv \sum^D_{X=1} (a^X|b^X)\,,
-                \end{equation}
+        \begin{equation}
+          (\textbf{a}|\textbf{b}) \equiv \sum^D_{X=1} (a^X|b^X)\,,
+        \end{equation}
         where D is the number of detectors in the network. The multi-detector log-likelihood is then calculated as
-                \begin{equation}
-                        \ln \lambda = (\textbf{s}|\textbf{h}) - {1 \over 2} (\textbf{h}|\textbf{h})\,.
-                \end{equation}
+        \begin{equation}
+          \ln \lambda = (\textbf{s}|\textbf{h}) - {1 \over 2} (\textbf{h}|\textbf{h})\,.
+        \end{equation}
         The larger the value of $\ln \lambda$, the likelier it is that a signal is present.
 	Even for a known sky location, it is necessary to search a seven 
 	dimensional parameter space of signals for binaries on circular orbits with and aligned spin components.
 	However, as already stated in Sec.\,\ref{subsec:mfcbc}, the analysis is greatly simplified 
 	maximising over source orientation, polarisation phase and distance.
 	Specifically, the two polarisations of the waveform can be expressed as 
-		\begin{equation}
-			h_+(t) = \mathcal{A}^1h_0(t) + \mathcal{A}^3h_{{{\pi} \over {2}}}
-		\end{equation}		
-		\begin{equation}
-			h_{\times}(t) = \mathcal{A}^2h_0(t) + \mathcal{A}^4h_{{{\pi} \over {2}}}
-		\end{equation}
+        \begin{equation}
+          h_+(t) = \mathcal{A}^1h_0(t) + \mathcal{A}^3h_{{{\pi} \over {2}}}
+        \end{equation}		
+        \begin{equation}
+          h_{\times}(t) = \mathcal{A}^2h_0(t) + \mathcal{A}^4h_{{{\pi} \over {2}}}
+        \end{equation}
  	where $h_0$ and $h_{{{\pi} \over {2}}}$ are the two phases of the waveform,
 	and $\mathcal{A}_i$ are constant amplitude terms.
 	Combining these expressions for the binary coalescence waveform 
 	and the detector response (\ref{eq:gwsignal}),
 	the gravitational waveform observed in a given detector is given by
-		\begin{equation}
-			h^X(t) = \sum_{\mu=1}^4\mathcal{A}^{\mu}(D,\psi,\phi_0,\iota)h_{\mu}^X(t)
-		\end{equation}
+        \begin{equation}
+          h^X(t) = \sum_{\mu=1}^4\mathcal{A}^{\mu}(D,\psi,\phi_0,\iota)h_{\mu}^X(t)
+        \end{equation}
 	This expression can be used to rewrite the multi-detector log-likelihood function as 
-		\begin{equation}
-			\ln\lambda = \big[  \mathcal{A}^{\mu}(\textbf{s}|\textbf{h}_{\mu}) - {{1}\over{2}}\mathcal{A}^{\mu}\mathcal{M}_{\mu\nu}\mathcal{A}^{\nu} \big]
-		\end{equation}
-	where $\mathcal{M}_{\mu\nu}$ is the symmetric matrix given by
-		\begin{equation}
-			\mathcal{M}_{\mu\nu}  = (\textbf{h}_{\mu}|\textbf{h}_{\nu}).
-		\end{equation}
+        \begin{equation}
+          \ln\lambda = \big[  \mathcal{A}^{\mu}(\textbf{s}|\textbf{h}_{\mu}) - {{1}\over{2}}\mathcal{A}^{\mu}\mathcal{M}_{\mu\nu}\mathcal{A}^{\nu} \big]
+        \end{equation}
+        where $\mathcal{M}_{\mu\nu}$ is the symmetric matrix given by
+        \begin{equation}
+          \mathcal{M}_{\mu\nu}  = (\textbf{h}_{\mu}|\textbf{h}_{\nu}).
+        \end{equation}
 	The coherent SNR is obtained by maximising this log-likelihood 
 	over the values of the waveform amplitudes:
-		\begin{equation}
-			\rho^2_{\rm coh}\equiv 2 \ln \lambda |_{\rm MAX}\equiv (\textbf{s}|\textbf{h}_{\mu})\mathcal{M}^{\mu\nu}(\textbf{s}|\textbf{h}_{\nu})\,.
-		\end{equation}
+        \begin{equation}
+          \rho^2_{\rm coh}\equiv 2 \ln \lambda |_{\rm MAX}\equiv (\textbf{s}|\textbf{h}_{\mu})\mathcal{M}^{\mu\nu}(\textbf{s}|\textbf{h}_{\nu})\,.
+        \end{equation}
 	In the absence of a signal, $\rho^2_{\rm coh}$ follows a $\chi^2$ distribution.
 	In addition, $\rho^2_{\rm coh}$ is now a function of only the waveform components $h_{\mu}$ 
 	and no longer the $\mathcal{A}_{\mu}$ parameters. 
@@ -1621,16 +1664,16 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	In order to easily compare the coherent analysis with the coincident one discussed in Sec.\,\ref{subsec:coincident},
 	a  first useful assumption is to consider a coincident search where an identical template is used in all detectors;
 	then re-formulate the expression for both the $\rho^2_{\rm coinc}$ and $\rho^2_{\rm coh}$ as
-		\begin{align}
-                  \label{eq:rhocoinc}
-			\rho^2_{\rm coinc} &= \sum_{X} {{(s^X|h_0)^2+(s^X|h_{{\pi}\over{2}})^2} \over {(\sigma^X)^2}}  \\
-					&= \sum_{X,Y}\sum_{i=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[\delta^{XY}]\big( s^Y|{{h_i}\over{\sigma^Y}}\big).
-		\end{align}
+        \begin{align}
+          \label{eq:rhocoinc}
+          \rho^2_{\rm coinc} &= \sum_{X} {{(s^X|h_0)^2+(s^X|h_{{\pi}\over{2}})^2} \over {(\sigma^X)^2}}  \\
+          &= \sum_{X,Y}\sum_{i=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[\delta^{XY}]\big( s^Y|{{h_i}\over{\sigma^Y}}\big).
+        \end{align}
 	Similarly, the coherent SNR can be written as
-		\begin{equation}
-		\label{eq:rhocoh}
-			\rho^2_{\rm coh}  = \sum_{X,Y}\sum_{I=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[f_{+}^Xf_{+}^Y+f_{\times}^Xf_{\times}^Y]\big( s^Y|{{h_i}\over{\sigma^Y}}\big)
-		\end{equation}
+        \begin{equation}
+          \label{eq:rhocoh}
+          \rho^2_{\rm coh}  = \sum_{X,Y}\sum_{I=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[f_{+}^Xf_{+}^Y+f_{\times}^Xf_{\times}^Y]\big( s^Y|{{h_i}\over{\sigma^Y}}\big)
+        \end{equation}
 	While a coincidence search requires a signal to be observed in two or more detectors, 
         resulting in the coincident SNR to be simply the sum of all power consistent with the template waveform in each detector,
         a coherent search naturally incorporates the SNR from all operational detectors \cite{45, 46}.
@@ -1651,15 +1694,15 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	not only because the ranking statistic improves, but also because its noise reduction and rejection mechanisms improve. 
 	When there are more than two detectors, it is possible to construct one or more null data streams 
 	which contain only noise and to define the null SNR 
-                \begin{align}
-                  \label{eq:rhonull}
-                        \rho^2_{\rm null} &= \rho^2_{\rm coinc} - \rho^2_{\rm coh} \\
-					&= \sum_{X,Y}\sum_{i=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[N^{XY}]\big( s^Y|{{h_i}\over{\sigma^Y}}\big)\,. 
-                \end{align}
+        \begin{align}
+          \label{eq:rhonull}
+          \rho^2_{\rm null} &= \rho^2_{\rm coinc} - \rho^2_{\rm coh} \\
+          &= \sum_{X,Y}\sum_{i=0,{{\pi}\over{2}}}  \big(s^X|{{h_i}\over{\sigma^X}}\big)[N^{XY}]\big( s^Y|{{h_i}\over{\sigma^Y}}\big)\,. 
+        \end{align}
 	where
-                \begin{equation}
-			N^{XY} = \delta^{XY}-f^X_*f^Y_* - f^X_{\times}f^Y_{\times}
-                \end{equation}
+        \begin{equation}
+          N^{XY} = \delta^{XY}-f^X_*f^Y_* - f^X_{\times}f^Y_{\times}
+        \end{equation}
 	Requiring a small null SNR is an effective method to separate incoherent noise transients from real GW signals: 
 	such noise events may give a large coherent SNR, but are highly likely to also give a large null SNR \cite{45}.
 
@@ -1668,46 +1711,47 @@ In general, the non-stationary detector output data $s(t)$ can be described as
 	In order to extend the idea of the $\chi^2$-test to a multi detector search,
 	a four component waveform $\textbf{h}_{\mu}$ that satisfy the condition to 	
 	be orthogonal in the dominant polarisation basis 
-		\begin{equation}
-			(\textbf{h}_{\mu}|\textbf{h}_{\nu}) = \mathcal{M}_{\mu \nu}
-		\end{equation}
+        \begin{equation}
+          (\textbf{h}_{\mu}|\textbf{h}_{\nu}) = \mathcal{M}_{\mu \nu}
+        \end{equation}
 	needs to be introduced.
 	Applying the standard normalisation procedure
-		\begin{equation}
-			(\hat{\textbf{h}_{\mu}}|\hat{\textbf{h}_{\nu}}) = \delta_{\mu \nu}
-		\end{equation}
+        \begin{equation}
+          (\hat{\textbf{h}_{\mu}}|\hat{\textbf{h}_{\nu}}) = \delta_{\mu \nu}
+        \end{equation}
 	a set of normalised test waveforms $\hat{t}^i_{\mu}$, orthogonal to $\hat{\textbf{h}_{\mu}}$ can be defined as
-		\begin{equation}
-			T^i_{\mu} = {{\hat{t}^i_{\mu} - \sum_{\nu}(\hat{\textbf{t}}^i_{\mu}|\hat{\textbf{h}}_{\nu})\hat{h}_{\nu}} \over {\sqrt{1-\sum_{\sigma}(\hat{\textbf{t}}^i_{\sigma}|\hat{\textbf{h}}_{\sigma})^2}}}
-		\end{equation}
+        \begin{equation}
+          T^i_{\mu} = {{\hat{t}^i_{\mu} - \sum_{\nu}(\hat{\textbf{t}}^i_{\mu}|\hat{\textbf{h}}_{\nu})\hat{h}_{\nu}} \over {\sqrt{1-\sum_{\sigma}(\hat{\textbf{t}}^i_{\sigma}|\hat{\textbf{h}}_{\sigma})^2}}}
+        \end{equation}
 	Thus, the coherent, multi-detector $\chi^2$-test is defined as 
-		\begin{equation}
-			\chi^2= \sum^4_{\mu=1} \sum^N_{i=1} (\textbf{T}^i_{\mu}|\textbf{s})^2
-		\end{equation}
+        \begin{equation}
+          \chi^2= \sum^4_{\mu=1} \sum^N_{i=1} (\textbf{T}^i_{\mu}|\textbf{s})^2
+        \end{equation}
 	Provided the test waveforms are orthonormal, in the 
-sense that 
-		\begin{equation}
-			 (\textbf{T}^i_{\mu}| \textbf{T}^j_{\nu})= \delta^{ij} \delta_{\mu \nu}
-		\end{equation}
+        sense that 
+        \begin{equation}
+          (\textbf{T}^i_{\mu}| \textbf{T}^j_{\nu})= \delta^{ij} \delta_{\mu \nu}
+        \end{equation}
 	the distribution for a signal matching $h_{\mu}$ plus Gaussian noise will be $\chi^2$ distributed with 4N degrees of freedom. 
 	In practice it is far from trivial to choose the set of waveforms $T^i$ so that 
 	they are both orthonormal and orthogonal to $h(t)$, and match a variety of non-Gaussianities. 
 	Three different $\chi^2$ tests have been implemented in the {\ttfamily PyGRB} analysis: 
-		\begin{itemize}
- 			 \item Frequency bins: The test waveforms $T^i$ are generated by dividing the template $h(t)$ into (N+1) 
-				  sub-templates in the frequency domain, each of which contains an equal amount of power. 
-				  From these, N waveforms orthonormal and orthogonal to h(t) are generated. 
- 			 \item Template bank: a set of templates from across the template bank is selected to be the test waveforms $T^i$.
-				  In general, these will not be orthogonal to h(t), but it is straightforward to subtract the part proportional to h(t). 	
-				  In order to render the waveforms $T^i$ orthonormal, since it is more difficult, 
-				  an empirical threshold based is used on an effective number of degrees of freedom. 
-				  The templates are chosen so that they cover the mass parameter space of the search. 
- 			 \item Autocorrelation: The test waveforms $T^i$ can be selected by applying time-shifts to the original template  $h(t)$. 
-				  As with the template bank, it is straightforward to remove the component of $T^i$ that is proportional to $h(t)$. 
-				  As thresholds are set empirically, this can still be used as a consistency check, but it has a large variance. 
-		\end{itemize}
-\section{Injections}
+        \begin{itemize}
+        \item Frequency bins: The test waveforms $T^i$ are generated by dividing the template $h(t)$ into (N+1) 
+          sub-templates in the frequency domain, each of which contains an equal amount of power. 
+          From these, N waveforms orthonormal and orthogonal to h(t) are generated. 
+        \item Template bank: a set of templates from across the template bank is selected to be the test waveforms $T^i$.
+          In general, these will not be orthogonal to h(t), but it is straightforward to subtract the part proportional to h(t). 	
+          In order to render the waveforms $T^i$ orthonormal, since it is more difficult, 
+          an empirical threshold based is used on an effective number of degrees of freedom. 
+          The templates are chosen so that they cover the mass parameter space of the search. 
+        \item Autocorrelation: The test waveforms $T^i$ can be selected by applying time-shifts to the original template  $h(t)$. 
+          As with the template bank, it is straightforward to remove the component of $T^i$ that is proportional to $h(t)$. 
+          As thresholds are set empirically, this can still be used as a consistency check, but it has a large variance. 
+        \end{itemize}
 
+
+\section{Injections}
         In order to test the sensitivity of a CBC search pipeline,
         streaming time series of simulated gravitational waveforms are added to the data (software injections)
         and re-estracted by means of matched filtering.
@@ -1773,7 +1817,6 @@ sense that
 	by the LIGO-Virgo Collaboration and the scientific results connected to them.
 
 \section{The First Observing Run (O1)}
-
 	The first observing run involved the LIGO Hanford Observatory (LHO) and LIGO Livingston Observatory (LLO) detectors, 
 	which provided unprecedented sensitivity to GWs
 	over a range of frequencies from 30 Hz to several kHz \cite{14}, an interval that  
@@ -1832,7 +1875,7 @@ sense that
 	The two time-series vary consistently with one another, 
 	within the 1-$\sigma$ deviations reported by the black dashed line.
 
-	\subsubsection{Masses}
+\subsubsection{Masses}
 	The physical parameters of the source of GW150914 were inferred using two waveform models, 
 	a non-precessing effective-one-body waveform model (EOBNR) \cite{103, 104} 
 	and a precessing spin model (IMRPhenom) \cite{105, 106, 107}. 
@@ -1847,7 +1890,7 @@ sense that
 	While predominantly determined by the total mass, 
 	the radiated energy also depends upon the mass ratio and component spins.
 
-	\subsubsection{Spins}
+\subsubsection{Spins}
 	The results obtained for GW150914 are consistent with expectations for moderately spinning BHs \cite{101, 102}. 
 	For equal mass binaries, both components of the spin, 
 	parallel and orthogonal to the orbital angular momentum, 
@@ -1858,7 +1901,7 @@ sense that
 	It was inferred to be $0.69^{+0.05}_{-0.04}$, as expected for near equal-mass BBH mergers 
 	for which the final spin is dominated by the orbital angular momentum of the binary at merger \cite{99, 100}.
 
-	\subsubsection{Distance, Inclination, and Sky Location}
+\subsubsection{Distance, Inclination, and Sky Location}
 	The signal amplitude is inversely proportional to the luminosity distance to the source: 
 	GW150914 has an estimated distance of $D_L = 440^{+150}_{-170}\,$Mpc (redshift $z=0.09^{+0.03}_{-0.03}$). 
 
@@ -1877,7 +1920,7 @@ sense that
 	and this trend is followed as this event had the smallest sky localisation and 
 	highest SNR amongst the events detected during O1.
 
-	\subsubsection{Astrophysical Implications}
+\subsubsection{Astrophysical Implications}
 	This GW discovery provides the first robust confirmation of several theoretical predictions, beyond the existence of GWs:
 	heavy BHs exist, BBHs form in nature, and BBHs merge within the age of the Universe at a detectable rate. 
 	However, it was impossible to determine the formation channel for this event. 
@@ -1898,7 +1941,6 @@ sense that
 
 
 \subsection{GW151012 and GW151226}
-
 	Two more GW signals were detected during O1, and both were consistent with a BBH source: 
 	GW151012 and GW151226.  
 	A summary of all three observations is provided in Fig.\,\ref{fig:o1} \cite{13}.  
@@ -1947,7 +1989,6 @@ sense that
 
 
 \section{The Second Observing Run (O2)}
-
 	Between O1 and O2 run the sensitivity of both LIGO instruments was improved and 
 	at LLO further improvements were made during O2. 
 	As a result, the LLO BNS range --- i.e., the distance, averaged over sky position and inclination, 
@@ -1972,8 +2013,8 @@ sense that
 	whereas the spin target space remained unchanged.
 	Since GW151226 is a low mass binary, the chirp  mass is well measured $8.9^{+0.3}_{-0.3} M_\odot$,
 	while for the higher mass system GW150914 is $28^{+2}_{-2}M_\odot$.
-\subsection{GW170104: a 50-Solar-Mass Binary Black Hole Coalescence}
 
+\subsection{GW170104: a 50-Solar-Mass Binary Black Hole Coalescence}
 	The observation of GW170104 was made by the LIGO detectors, 
 	with a network SNR of 13 and a FAR of less than 1 in 70,000 years.
 	At the detection statistic value of GW170104, the background rate in both matched filter 
@@ -1997,7 +2038,6 @@ sense that
 	by BBHs forming through isolated binary evolution or dynamical interactions in dense stellar clusters \cite{134}. 
 
 \subsection{GW170608}
-
 	GW170608 was first identified as a loud (SNR $\sim9$) event in LLO data,
 	via low-latency templated searches \cite{138}.	
 	The morphology of the LLO event is consistent with a CBC signal, 
@@ -2024,7 +2064,6 @@ sense that
 	However, formation at lower metallicity with comparatively lower mass progenitors is not excluded.
 
 \subsection{GW170814: the First Three-Detector Network Observation}	
-
 	On August 14, 2017, a GW signal coming from the merger of two stellar mass BHs 
 	was observed for the first time by a three detector network, comprised of the Virgo and two LIGO detectors. 
 	GW170814 was first identified with high confidence by two independent 
@@ -2134,7 +2173,6 @@ sense that
 
 
 \section{The Third Observing Run (O3)}
-
 	Between O2 and O3, several improvements were made to increase the detector sensitivities.  For the LIGO detectors, 
 	the input laser power was increased, a squeezed vacuum source 
 	at the interferometer output was added and noise arising from scattered light was mitigated.  
@@ -2719,7 +2757,7 @@ sense that
  	This also allows to place a lower bound on the distance to the short in the absence of a GW in the on-source window. 
         The simulated signals are drawn randomly from astrophysically motivated distributions of the CBC source parameters (masses, spins, and extrinsic parameters).
 	Three sets of injections were performed in O3a.  A set of BNS signals and two sets of an NSBH signals, one with both spins aligned to the orbital angulare momentum (no precession) and one with generic spin orientations (with precession).  Since NS spin magnitudes are taken to be 0.4, at most, precession in the case of BNS systems is generally not too significant and therefore a single, precessing set is taken for BNSs, unlike NSBHs, for which the BH spin magnitude may reach up to 0.98.
-	All simulated signals are modelled using the {\ttfamily SEOBNRv3} waveform approximate \fpg{Citazione}, which differs from the {\ttfamily IMRPhenomD} waveform model used to generate the templates: this is intentional and factors in our incomplete knowledge about waveforms.
+	All simulated signals are modelled using the {\ttfamily SEOBNRv3} waveform approximant \fpg{Citazione}, which differs from the {\ttfamily IMRPhenomD} waveform model used to generate the templates: this is intentional and factors in our incomplete knowledge about waveforms.
 	The injection parameters are chosen as follows \cite{208}.
         \begin{itemize}
         \item $M_{\rm BH}$ is drawn from a Gaussian distribution with mean $10M_\odot$ and width $6M_\odot$.
@@ -2832,7 +2870,7 @@ sense that
 	the waveforms models in the template bank and the injected signals. 
 	The template bank contains waveforms that do not account for precession effects, 
 	and consider a maximum NS spin of $0.05$, whereas the injections sets can admit 
-	precession and NS spin magnitudes up to $0.4$.  \\
+	precession and NS spin magnitudes up to $0.4$.
 	In other words, the parameter space of the injections is larger 
 	than the on strictly targetted by the template bank.
 	In the case of this GRB follow up, there are 7 injections at nearby distances ($<100\,$Mpc), 
@@ -3089,31 +3127,28 @@ sense that
 	No other characteristic features were seen in the spectrograms
 	% The same description applies to singles in the third bin, except for a vibration type glitch.
 
-        % The analysis proceeds by identifying instrumental issues
-        % that might degrade the sensitivity of the search by causing
-        % excess background noise.
+        \fpg{Ma del background a 2 detector hai deciso di non parlare?}
         % coincident SNR time series [Eq.\,(\ref{eq:rhocoincPyCBC})].  This operation is repeated with multiple timeshifts to generate the {\it background} trigger distribution, to which the discussion here is limited; the non-timeshifted distribution of triggers constitutes the {\it foreground}, and is not presented in this thesis.
 
 \subsection{Missed Injections}
-        \fpg{Sono qui.}
+	As for the coherent  analysis, the performance of the search is assessed by recovering simulated signals artificially added to the data, i.e., injections.
+	The loudest missed injections and the poorly recovered ones with optimal SNR \fpg{Cos'\`e l'optimal SNR?} greater than 8 are
+        examined in detail, in all
+        injection categories.
 
-	In order to check the performance of the search in recovering simulated signal,
-	one looks at the injection results and examines the details of the loudest 
-	missed or badly found injections, in the various injection categories, 
-	with unusually high optimal SNR ($>$8).
-
+        \fpg{Da qui in avanti il discorso \`e poco lineare.  Per favore rivedi il testo.  Forse ti convienve partire dagli elementi con cui concludi questo capoverso, ma decidi tu.}
 	The first category is the BNS injection set: 
 	the ones that were coincident with a trigger are too quiet,
 	except one which overlaps with gated glitches before and just around the time of merger, as shown in Fig.\,\ref{fig:gated_glitch}
 	the non coincident have one or both detector's low optimal SNR.
- 		\begin{figure}[t]
-                        \noindent
-                        \label{gated_glitch}
-                        \makebox[\textwidth]{\includegraphics[scale=0.4]{gated_glitch}}%
-                        \centering
-                        \caption{The strain spectrogram for a missed BNS injection: the black coloured region represent loud glitches, which are vetoed (green lines). The ligth blue curve is the loudest template. }
-                         \label{fig:gated_glitch}
-                \end{figure}
+        \begin{figure}[t]
+          \noindent
+          \label{gated_glitch}
+          \makebox[\textwidth]{\includegraphics[scale=0.4]{gated_glitch}}%
+          \centering
+          \caption{The strain spectrogram for a missed BNS injection: the black coloured region represent loud glitches, which are vetoed (green lines). The ligth blue curve is the loudest template. }
+          \label{fig:gated_glitch}
+        \end{figure}
 	Glitches and gated data are the most occurring reason behind the missed injection for the BBH set.
 	For the not coincident trigger one has a high Opt SNR value for both detectors, 
 	but it is missed because of some gated data in L1 at the time of merging, as shown in Fig.\,\ref{fig:missed_inj};
@@ -3125,15 +3160,15 @@ sense that
 	For example, an injection from the not coincident and one from the coincident trigger set, 
 	are both lost due to their high mass ratio, and quiet NewSNR value.
 	This set is mostly affected by	 periodic glitches previous to the time of merging,
-	that are  causing the injections to be missed  or not properly found.                
-                \begin{figure}[t]
-                        \noindent
-                        \label{missed_inj}
-                        \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
-                        \centering
-                        \caption{ This plot shows if there are missed or 'badly found' injections with unusually high optimal SNR. }
-			 \label{fig:missed_inj}
-                \end{figure}
+	that are  causing the injections to be missed  or not properly found.
+        \begin{figure}[t]
+          \noindent
+          \label{missed_inj}
+          \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
+          \centering
+          \caption{ This plot shows if there are missed or 'badly found' injections with unusually high optimal SNR. }
+          \label{fig:missed_inj}
+        \end{figure}
 	Finally, the causes behind the NSBH missed injection set, 
 	are not different from the ones found in the previous sets.
 	To sum it up, an injection may  be lost or not appropriately found,
@@ -3147,6 +3182,8 @@ sense that
 %--------------------------------------------------------
 \chapter*{Conclusions}
 \fpg{Giri di correzione: 0.}%
+\fpg{Anche qui da quello che vedo il discorso fila poco.  Dividi in capoversi, batti sulla centralit\`a della template bank per fare un intero run, riporta i risultati delle 3 GRB, evidenzia la pubblicazione, ecc.}
+
 This thesis aimed to describe two different approaches to GW data analysis: coherent and coincident.
 	After outlining the theoretical framework of GW astronomy,
 	the aforementioned data analysis strategies have been investigated. 
