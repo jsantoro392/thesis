@@ -23,6 +23,9 @@
 \advisor{Dr. Francesco Pannarale Greco}
 \authoremail{giada.greenday92@gmail.com}
 \DeclareUnicodeCharacter{2212}{-}
+
+\usepackage{natbib}
+
 \begin{document}
 
 \frontmatter
@@ -2217,7 +2220,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	In general relativity, gravitational radiation
 	is observed as a combination of two polarisations, weighted with the detector response functions, see Eq.\,(\ref{beampattern}). 
 	This quantity can be expressed also as $h = h_{+}-ih_{\times}$ and expanded into multipole moments 
-	using spherical polar coordinates defined in a source centered frame \cite{225}
+	using spherical polar coordinates defined in a source centered frame \cite{133}
         \begin{equation}
           h_{+}-ih_{\times} = \sum_{l \geq 2} \sum_{-l \leq m \leq l} {{h_{lm}(t, \boldsymbol{\lambda})} \over {D_L}} _{-2} Y_{lm}(\theta, \phi)
         \end{equation}
@@ -2507,8 +2510,8 @@ We are grateful for computational resources provided by Cardiff University, and 
         If $d_{\rm tid} \lesssim R_{\rm ISCO}$, the NS plunges into the BH, no matter is left outside the remnant BH,
         and the chances of producing an EM counterpart are very low; in this case the GW signal is practically identical to the one emitted by a BBH system with the same component masses and spins \cite{163, 164, 165, 166, 167}.
         On the other hand, if $d_{\rm tid} \gtrsim R_{\rm ISCO}$, the NS will be disrupted by the BH tidal field, some debris may remain outside the BH after merger, and an accretion disk surrounding the remnant BH may form.
-        When this matter is present outside the final BH, EM emission is expected to emerge from a variety of processes \fpg{Citazioni?}.
-        The mass of the remant accretion disk, also depends upon the NS radius $R_{\rm NS}$, as suggested in \fpg{cita Tonita, Pannarale, Rezzolla.}.
+        When this matter is present outside the final BH, EM emission is expected to emerge from a variety of processes \cite{169}\fpg{Citazioni?}.
+        The mass of the remnant accretion disk, also depends upon the NS radius $R_{\rm NS}$, as suggested in \cite{168} \fpg{cita Tonita, Pannarale, Rezzolla.}.
         In this case the GW signal differs from the one of a BBH system with identical mass and spin parameters.
         \begin{figure}[!t]
           \label{nsbh}
@@ -2573,7 +2576,14 @@ We are grateful for computational resources provided by Cardiff University, and 
         The first model in Eq.\,(\ref{eq:mrem}) was tested against 26 numerical simulations covering mass ratios
         in the range $q\in [3,7]$, $\chi_{\rm BH}\leq 0.9$, and $R_{\rm NS} \approx 11$-$16\,$km,
         while the more recent model in Eq.\,(\ref{eq:mremup}) was fitted to 75 simulations covering the range $q\in [1,7]$, $-0.5 \leq \chi_{\rm BH}\leq 0.97$,
-        and $C_{\rm NS} = 0.13$-$0.182$. \fpg{Mancano i valori dei 4 parametri...}
+        and $C_{\rm NS} = 0.13$-$0.182$. 
+	In \cite{54} is shown how the values of the free parameters are calculated:
+	first a quantity that estimates the quality of the model prediction, $\Delta_{norm}$ is defined, 	
+	and the its root-mea-square is minimised, which leads to 
+	\begin{equation}
+		\alpha=0.406, \hspace*{0.5cm}  \beta=0.139, \hspace*{0.5cm}  \gamma=0.255, \hspace*{0.5cm} \delta=1.761.
+	\end{equation}
+	\fpg{Mancano i valori dei 4 parametri...}
 
 \subsubsection{Construction and Validation}
 \label{subsec:construction_and_validation}
@@ -2582,14 +2592,14 @@ We are grateful for computational resources provided by Cardiff University, and 
         \begin{itemize}
         \item While most NS observed in BNS systems have masses in the $[1.2, 1.6]M_{\odot}$ range \cite{87},
           more massive NSs exist and have been found either in isoltation with radio obsservations ($\sim 2\,M_{\odot}$ \cite{87}) or in binaries with GW observations (see, e.g., Sec\,\ref{subsec:GW190425}).  Above $3.2\,M_\odot$ non-rotating, isotropic NSs imply a violation of causality and cannot exist, according to our present understanding of these objects.
-          The maximum mass depends on the equation of state chosen for the NS interior.  We pick the 2H piecewise polytropic equation of state \fpg{Va citato un paper di Kyutoku et al del 2011, mi pare} that yields a maximum viable NS mass of $\sim 2.8M_\odot$ and high NS compactnesses (radii of about 15 to 16\,km), which favours NS tidal disruption [see Eq.\,(\ref{eq:mremup})]: both implications of this equation of state are inclusive in terms of parameter space we need to cover with an EM-bright bank.
+          The maximum mass depends on the equation of state chosen for the NS interior.  We pick the 2H piecewise polytropic equation of state \cite{170} \fpg{Va citato un paper di Kyutoku et al del 2011, mi pare} that yields a maximum viable NS mass of $\sim 2.8M_\odot$ and high NS compactnesses (radii of about 15 to 16\,km), which favours NS tidal disruption [see Eq.\,(\ref{eq:mremup})]: both implications of this equation of state are inclusive in terms of parameter space we need to cover with an EM-bright bank.
           In summary, we target the NS mass interval $1M_\odot$-$2.8\,M_\odot$.
         \item Galactic BHs have masses that fall in the interval $[5,-15]M_{\odot}$ \cite{124},
-          but GW observations have involved BHs with higher masses \cite{13} \fpg{13 \`e l'O1-O2 CBC catalog paper: devi citare l'O3a CBC catalog paper}.
+          but GW observations have involved BHs with higher masses \cite{49} \fpg{13 \`e l'O1-O2 CBC catalog paper: devi citare l'O3a CBC catalog paper}.
           Further, in Sec.\,\ref{subsec:GW190814} we mentioned the ``lower mass'' gap $3$-$5M_\odot$ that may separate NSs from BHs, so there is some freedom in setting both the lower and upper limit of the BH masses we decide to target.
           We chose to cover BH masses in the range $[2.8,25]M_\odot$.
           This provides continuity with the NS mass values on the lower end, while on the higher end the choice is motivated by the fact that forming accretion disks according to Eq.\,(\ref{eq:mremup}) becomes very difficult, as it requires very high BH spins or even unphysical spin values (depending on the NS equation of state that one chooses).  Further at the high-end of this mass interval, one has NSBH systems with mass ratios between $9$ and $25$, and the highest BBH mass ratio recorded so far is $\sim 10$ (Sec.\,\ref{subsec:GW190814}).  In light of these considerations and of the fact the uncertainty on gravitational-waveform models increases with the mass ratio, $25M_\odot$ is physically a more than reasonable upper limit for the BH mass.
-        \item The maximum dimensionless spin magnitude for BHs is set to 0.998 (just below the Kerr limit), while for NSs it is set to 0.05, as dictated by known galactic BNS systems \cite{136} \fpg{\`E l'O2 GRB paper: devi citare la citazione adeguata l\`i dentro}.  The spins in the templates are taken to be aligned with the orbital angular momentum as a coherent search that includes precession has not been implemented yet.
+        \item The maximum dimensionless spin magnitude for BHs is set to 0.998 (just below the Kerr limit), while for NSs it is set to 0.05, as dictated by known galactic BNS systems \cite{171} \fpg{\`E l'O2 GRB paper: devi citare la citazione adeguata l\`i dentro}.  The spins in the templates are taken to be aligned with the orbital angular momentum as a coherent search that includes precession has not been implemented yet.
         \item Most BNS and NSBH binaries
         are expected to have negligible eccentricities once they enter the band of terrestrial IFOs \cite{86}.
         While eccentric NSBH binaries cannot entirely be ruled out
@@ -2597,7 +2607,8 @@ We are grateful for computational resources provided by Cardiff University, and 
         the template bank is designed assuming zero eccentricity.
       \end{itemize}
 
-      Two other parameters must be specidied in order to generate the bank.  1) The design value for the minimum match \fpg{Se prima dicevamo overlap, qui dobbiamo dire overlap. Controllare.} of the bank with any point in its target paremeter space, which is set to $0.97$, allowing for at most 10\% signal losses.\footnote{The detection rate is proportional to the cube of the SNR, and the SNR is proportional to the match, which is 0.97 in the worst case scenario.}  Matches are calculated over the frequency interval $[27, 1000]\,$Hz. 2) The threshold value for the accretion disk mass of NSBH binaries that flags them as potential short GRB progenitors: any NSBH with $M_{\rm rem}>0$ is considered as a viable short GRB progenitor, in order to err on the side of caution thus including more NSBH binaries than necessary, rather than risk omotting them.
+      Two other parameters must be specified in order to generate the bank.  
+	1) The design value for the minimum match \fpg{Se prima dicevamo overlap, qui dobbiamo dire overlap. Controllare.} of the bank with any point in its target paremeter space, which is set to $0.97$, allowing for at most 10\% signal losses.\footnote{The detection rate is proportional to the cube of the SNR, and the SNR is proportional to the match, which is 0.97 in the worst case scenario.}  Matches are calculated over the frequency interval $[27, 1000]\,$Hz. 2) The threshold value for the accretion disk mass of NSBH binaries that flags them as potential short GRB progenitors: any NSBH with $M_{\rm rem}>0$ is considered as a viable short GRB progenitor, in order to err on the side of caution thus including more NSBH binaries than necessary, rather than risk omotting them.
       Finally, we must specify the model to generate gravitational waveforms and compare them.  We used the phenomenological model for spinning, non-precessing binaries {\ttfamily IMRPhenomD} \cite{153}.  This mdoel does not account for NS-specific contributions to the waveform: the presence of NSs therefore enters our bank only via the fitting formula used to calculate $M_{\rm rem}$ and downselect NSBH binaries that are viable short GRB progentors.
 
       The EM-bright bank is generated with a hybrid placement code (see Sec.\,\ref{subsubsec:HybridBank}).  At every proposal of a new point in the parameter space, the bank generation algorithm must determine whether to add or not that proal to the set of tempalate points.  Based on the two masses of the proposed new bank element, three things may happen. 
@@ -2664,7 +2675,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         Our first set of injected GW signals covered the target NSBH parameter space with 10,000 simulated waveforms.
         This set is subject to the same EM-bright condition used to build the template bank, namely, all injections are require to have $M_{\rm rem}^{\rm model}>0$ according to Eq.\,(\ref{eq:mremup}).
         A second set, also of 10,000 injections, covered the target BNS parameter space.
-        All injected waveforms are generated using the effective-one-body waveform model {\ttfamily SEOBNRv4\_ROM} \fpg{Citazione.}, which differs from the one used to construct the bank ({\ttfamily IMRPhenomD}).  The rationale is to factor in our uncertainty about the waveform by switching to a different model from templates to injections.
+        All injected waveforms are generated using the effective-one-body waveform model {\ttfamily SEOBNRv4\_ROM} \cite{172} \fpg{Citazione.}, which differs from the one used to construct the bank ({\ttfamily IMRPhenomD}).  The rationale is to factor in our uncertainty about the waveform by switching to a different model from templates to injections.
 
         Results for the recovery of the two injection sets just described are reported in Figs.\,\ref{fig:fittingfactor} and \ref{fig:fittingfactorBNS}.  In both cases, only about a thousandth of the injections are recovered with match smaller than 0.97.  The small tail in the fitting factor distribution for the NSBH injection sets is due to differences between the waveform models {\ttfamily SEOBNRv4\_ROM} (for the injections) and {\ttfamily IMRPhenomD} (for the templates), which emerge for high spins and mass ratios.  Importantly, none of the scatter plots presents areas in which points with lower fitting factors tend to cluster:
         this means that there are no ``holes'' in the banks, or systematics in the placement of templates by the algorithm.
@@ -2758,7 +2769,7 @@ We are grateful for computational resources provided by Cardiff University, and 
  	This also allows to place a lower bound on the distance to the short in the absence of a GW in the on-source window. 
         The simulated signals are drawn randomly from astrophysically motivated distributions of the CBC source parameters (masses, spins, and extrinsic parameters).
 	Three sets of injections were performed in O3a.  A set of BNS signals and two sets of an NSBH signals, one with both spins aligned to the orbital angulare momentum (no precession) and one with generic spin orientations (with precession).  Since NS spin magnitudes are taken to be 0.4, at most, precession in the case of BNS systems is generally not too significant and therefore a single, precessing set is taken for BNSs, unlike NSBHs, for which the BH spin magnitude may reach up to 0.98.
-	All simulated signals are modelled using the {\ttfamily SEOBNRv3} waveform approximant \fpg{Citazione}, which differs from the {\ttfamily IMRPhenomD} waveform model used to generate the templates: this is intentional and factors in our incomplete knowledge about waveforms.
+	All simulated signals are modelled using the {\ttfamily SEOBNRv3} waveform approximant \cite{173, 174,175} \fpg{Citazione}, which differs from the {\ttfamily IMRPhenomD} waveform model used to generate the templates: this is intentional and factors in our incomplete knowledge about waveforms.
 	The injection parameters are chosen as follows \cite{43}.
         \begin{itemize}
         \item $M_{\rm BH}$ is drawn from a Gaussian distribution with mean $10M_\odot$ and width $6M_\odot$.
@@ -3234,6 +3245,8 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 	covering section of the parameter space which 
 	with an average fitting factor for the entire bank of 0.98.
 
+	\cite{Abbott_2019}
+
 \addcontentsline{toc}{chapter}{Conclusions}
 \markboth{Introduction}{Conclusions}
 
@@ -3242,6 +3255,11 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 
 \phantomsection % Give this command only if hyperref is loaded \addcontentsline{toc}{chapter}{\bibname}
 
+\bibliographystyle{plain}
+\bibliography{reference}
+
+
+\begin{comment}
 \begin{thebibliography}{500}
 	\bibitem{einstein} Albert Einstein. On the General Theory of Relativity. Sitzungsber. Preuss. Akad. Wiss. Berlin (Math. Phys.), 1915:778–786, 1915. [Addendum: Sitzungsber. Preuss. Akad. Wiss. Berlin (Math. Phys.)1915,799(1915)]. 
 	\bibitem{2} Albert Einstein. Naherungsweise integration der feldgleichungen der gravitation. Sitzungsberichte der Koniglich Preu{\ss}ischen Akademie der Wissenschaften (Berlin), 1:688–696, 1916. 
@@ -3412,9 +3430,18 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 	\bibitem{165} F. Pannarale, E. Berti, K. Kyutoku, B. D. Lackey, M. Shibata. Gravitational-wave cutoff frequencies of tidally disruptive neutron star-black hole binary mergers. doi:10.1103/PhysRevD.92.081504.
 	\bibitem{166} J. E. Thompson, E. Fauchon-Jones, S. Khan, E. Nitoglia, F. Pannarale, T. Dietrich, M. Hannam. Modeling the gravitational wave signature of neutron star black hole coalescences: PhenomNSBH. Phys. Rev. D 101, 124059 (2020). Dos:10.1103/PhysRevD.101.124059.
 	\bibitem{167} Matas A., Dietrich T., Buonanno A. et al. Aligned-spin neutron-star-black-hole waveform model based on the effective-one-body approach and numerical-relativity simulations. Phys. Rev. D 102, 043023 (2020). doi:10.1103/PhysRevD.102.043023.
+        \bibitem{168} F. Pannarale, A. Tonita, L. Rezzolla. Black hole-neutron star mergers and short GRBs: a relativistic toy model to estimate the mass of the torus. Astrophys. J. 727, 95 (2011). doi:10.1088/0004-637X/727/2/95.
+	\bibitem{169} C. Barbieri, O. S. Salafia, A. Perego, M. Colpi, G. Ghirlanda. Electromagnetic counterparts of black hole-neutron star mergers: dependence on the neutron star properties. doi:10.1140/epja/s10050-019-00013-x.
+  \bibitem{168} F. Pannarale, A. Tonita, L. Rezzolla. Black hole-neutron star mergers and short GRBs: a relativistic toy model to estimate the mass of the torus. Astrophys. J. 727, 95 (2011). doi:10.1088/0004-637X/727/2/95.
+	\bibitem{169} C. Barbieri, O. S. Salafia, A. Perego, M. Colpi, G. Ghirlanda. Electromagnetic counterparts of black hole-neutron star mergers: dependence on the neutron star properties. doi:10.1140/epja/s10050-019-00013-x.
+	\bibitem{170} Koutarou Kyutoku, Hirotada Okawa, Masaru Shibata, Keisuke Taniguchi. Gravitational waves from spinning black hole-neutron star binaries: dependence on black hole spins and on neutron star equations of state. Phys. Rev. D 84, 064018 (2011). doi:10.1103/PhysRevD.84.064018.
+	\bibitem{171} B. Farr, C. P. L. Berry, W. M. Farr, C. J. Haster, H. Middleton, K. Cannon, P. B. Graff, C. Hanna, I. Mandel, C. Pankow, and et al. Parameter estimation on gravitational waves from neutron-star binaries with spinning components. The Astrophysical Journal, 825(2):116, Jul 2016. 
+	\bibitem{172} A. Boh'e, L. Shao, A. Taracchini, A. Buonanno, S. Babak, I. Harry, I. Hinder, S. Ossokine, M. Purrer, V. Raymond, Tony Chu, H. Fong, P. Kumar, H. Pfeiffer, M. Boyle, Daniel A. Hemberger, L. Kidder, G. Lovelace, M. Scheel, B. Szilágyi. Improved effective-one-body model of spinning, nonprecessing binary black holes for the era of gravitational-wave astrophysics with advanced detectors.Phys. Rev. D 95, 044028 (2017). 10.1103/PhysRevD.95.044028.
+	\bibitem{173} Pan, Y., Buonanno, A., Taracchini, A., et al. 2014, Phys. Rev., D89, 084006 	\bibitem{174} Babak, S., Taracchini, A., & Buonanno, A. 2017, Phys. Rev., D95, 024010
+	\bibitem{175}  Taracchini, A., Buonanno, A., Pan, Y., et al. 2014, PhRvD, 89, 061502 
 
 \bibitem{204} Shibata, M., Taniguchi, K. Coalescence of Black Hole-Neutron Star Binaries. Living Rev. Relativ. 14, 6 (2011). https://doi.org/10.12942/lrr-2011-6.
 \end{thebibliography}
-
+\end{comment}
 \end{document} 
 
