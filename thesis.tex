@@ -10,10 +10,8 @@
 \usepackage{xcolor}
 \usepackage{nameref}
 \usepackage{verbatim}
-\newcommand{\fpg}[1]{\textcolor{red}{#1} }
-\usepackage{apalike}
-\let\bibhang\relax
 \usepackage{natbib}
+\newcommand{\fpg}[1]{\textcolor{red}{#1} }
 \newcommand\apjl{The Astrophysical Journal Letters}
 \newcommand\apj{The Astrophysical Journal}
 \newcommand\prl{Physical Review Letters}
@@ -21,6 +19,7 @@
 \newcommand\prd{Physical Review D}
 \newcommand\nat{Nature}
 \newcommand\physrep{Physics Reports}
+\DeclareUnicodeCharacter{2009}{\,} 
 \hypersetup{pdftitle={My thesis},pdfauthor={Giada Caneva Santoro}}
 \usepackage{amsmath, amssymb}
 \title{Coherent and Coincident Analyses of LIGO-Virgo Data from the Third Observing Run}
@@ -3258,191 +3257,7 @@ This thesis aimed to describe two different approaches to GW data analysis: cohe
 
 \phantomsection % Give this command only if hyperref is loaded \addcontentsline{toc}{chapter}{\bibname}
 
-\bibliographystyle{abbrv}
+\bibliographystyle{plain}
 \bibliography{reference}
-
-
-\begin{comment}
-\begin{thebibliography}{500}
-	\bibitem{einstein} Albert Einstein. On the General Theory of Relativity. Sitzungsber. Preuss. Akad. Wiss. Berlin (Math. Phys.), 1915:778–786, 1915. [Addendum: Sitzungsber. Preuss. Akad. Wiss. Berlin (Math. Phys.)1915,799(1915)]. 
-	\bibitem{2} Albert Einstein. Naherungsweise integration der feldgleichungen der gravitation. Sitzungsberichte der Koniglich Preu{\ss}ischen Akademie der Wissenschaften (Berlin), 1:688–696, 1916. 
-	\bibitem{3} M. Maggiore. Gravitational Waves: Volume 1: Theory and Experiments. Oxford University Press, 2008
-	\bibitem{4} E. E. Flanagan and S.A .Hughes. The basics of gravitational wave theory. doi:10.1088/1367-2630/7/1/204. 
-	\bibitem{5} M. Blau, “Lecture Notes on General Relativity,” ICTP (2000). 
-	\bibitem{6} Tjonnie G. F. Li. A. Extracting Physics from Gravitational Waves: Testing the Strong-field Dynamics of General Relativity and Inferring the Large-scale Structure of the Universe. Springer, 3 lug 2015.	
-	\bibitem{7} J. Weber. Detection and generation of gravitational waves. Phys. Rev., 117: 306–313, Jan 1960. doi:10.1103/PhysRev.117.306. 
-	\bibitem{8} Gertsenshtein M.E.; Pustovoit V.I. On the detection of low frequency gravitational waves. Sov. J. Exp. Theor. Phys. 1962, 43, 605–607. 
-	\bibitem{9} Yu, H., McCuller, L., Tse, M. et al. Quantum correlations between light and the kilogram-mass mirrors of LIGO. Nature 583, 43–47 (2020). https://doi.org/10.1038/s41586-020-2420-8.
-	\bibitem{10} Weinstein, A. Advanced LIGO optical configuration and prototyping effort. Class. Quantum Grav. 19, 1575–1584 (2002).
-	\bibitem{11} D. G. Blair, E. J. Howell, L. Ju, C. Zhao. Advanced Gravitational Wave Detectors. Cambridge University Press, 16 feb 2012 
-	\bibitem{12} Stephen Fairhurst. Triangulation of gravitational wave sources with a network of detectors. New J.Phys.11:123006,2009; Erratum-ibid.13:069602,2011.10.1088/1367-2630/11/12/123006 10.1088/1367-2630/13/6/069602.
-	\bibitem{13} The LIGO Scientific Collaboration, the Virgo Collaboration. GWTC-1: A Gravitational-Wave Transient Catalog of Compact Binary Mergers Observed by LIGO and Virgo during the First and Second Observing Runs. Phys. Rev. X 9, 031040 (2019). doi:10.1103/PhysRevX.9.031040.
-	\bibitem{14} The LIGO Scientific Collaboration, the Virgo Collaboration. GW150914: First results from the search for binary black hole coalescence with Advanced LIGO.Phys. Rev. D 93, 122003 (2016). doi:10.1103/PhysRevD.93.122003. 
-        \bibitem{15} B.P. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration). GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral. Phys. Rev. Lett. 119, 161101.	
-	\bibitem{16} Charles W. Misner, Kip S. Thorne, and John Archibald Wheeler. Gravitation. W. H. Freeman, 1973
-	\bibitem{17} Sean M. Carroll. Lecture Notes on General Relativity. arXiv:gr-qc/9712019.
-	\bibitem{18} B.S. Sathyaprakash, B.F. Schutz. Physics, Astrophysics and Cosmology with Gravitational Waves. Living Rev. Relativity 12, (2009), 2. doi:10.12942/lrr-2009-2.
-	\bibitem{19} Schutz, B. F. and Tinto, M. Antenna patterns of interferometric detectors of gravitational waves. I - Linearly polarized (ISSN 0035-8711), vol. 224, Jan. 1, 1987, p. 131-154.
-	\bibitem{20} Francesco Zappa, Sebastiano Bernuzzi, Francesco Pannarale, Michela Mapelli, and Nicola Giacobbo. Black-Hole Remnants from Black-Hole–Neutron-Star Mergers. Phys. Rev. Lett. 123, 041102. 
-	\bibitem{21} The LIGO Scientific Collaboration, the Virgo Collaboration. The basic physics of the binary black hole merger GW150914. Annalen der Physik, Volume 529, Issue 1-2, January 2017, 1600209. doi:10.1002/andp.201600209.
-	\bibitem{22} C. J. Moore, R. H. Cole and C. P. L. Berry. Gravitational-wave sensitivity curves. Classical and Quantum Gravity, Volume 32, Number 1.
-	\bibitem{23} The LIGO Scientific Collaboration and the Virgo Collaboration. Tests of General Relativity with the Binary Black Hole Signals from the LIGO-Virgo Catalog GWTC-1. Phys. Rev. D 100, 104036 (2019). doi:10.1103/PhysRevD.100.104036.
-	\bibitem{24} Bruce Allen. A chi-squared time–frequency discriminator for gravitational wave detection. Phys. Rev. D 71, 062001 (2005).
-  	\bibitem{25} Collin Capano, Ian Harry, Stephen Privitera, and Alessandra Buonanno. Implementing a search for gravitational waves from non-precessing, spinning binary black holes. Phys. Rev. D 93, 124007 (2016). doi:10.1103/PhysRevD.93.124007.
-  	\bibitem{26} L. Wen et al 2008. Geometrical expression of the angular resolution of a network of gravitational-wave detectors and improved localisation methods. J. Phys.: Conf. Ser. 122 012038.
-	\bibitem{27} I. Harry, J. Calderon Bustillo, and A. Nitz, (2017). Searching for the full symphony of black hole binary mergers. Phys. Rev. D 97, 023004 (2018). doi:10.1103/PhysRevD.97.023004.
-  	\bibitem{28} Samantha A. Usman et al. The PyCBC search for gravitational waves from compact binary coalescence.  Classical Quantum Gravity 33, 215004 (2016). 
-  	\bibitem{29} Javier Roulet, Liang Dai, Tejaswi Venumadhav, Barak Zackay, and Matias Zaldarriaga. Template bank for compact binary coalescence searches in gravitational wave data: A general geometric placement algorithm. Phys. Rev. D 99, 123022. 
-	\bibitem{30} S. Babak, R. Balasubramanian, D. Churches, T. Cokelaer, and B. S. Sathyaprakash. A template bank to search for gravitational waves from inspiralling compact binaries. I: Physical models. Class. Quant. Grav., 23:5477–5504, 2006. 
-	\bibitem{31} Benjamin J. Owen, B. S. Sathyaprakash. Matched filtering of gravitational waves from inspiraling compact binaries: Computational cost and template placement. Phys.Rev.D60:022002,1999.doi:10.1103/PhysRevD.60.022002.
-	\bibitem{32} P. Ajith, N. Fotopoulos, S. Privitera, A. Neunzert, N. Mazumder, A. J. Weinstein. An effectual template bank for the detection of gravitational waves from inspiralling compact binaries with generic spins. Phys. Rev. D 89, 084041 (2014). doi:10.1103/PhysRevD.89.084041.
-	\bibitem{33} B. J. Owen. Search templates for gravitational waves from inspiraling binaries: Choice of template spacing. Phys. Rev. D 53, 6749 (1996). 
-	\bibitem{34} I. W. Harry, B. Allen, and B. S. Sathyaprakash. A stochastic template placement algorithm for gravitational wave data analysis. Phys. Rev. D 80, 104014 (2009).  
-	\bibitem{35} S. Roy, A. S. Sengupta, and N. Thakor. A hybrid geometric-random template placement algorithm for gravitational wave searches from compact binary coalescences. Phys. Rev. D 95, 104045 (2017). 
-	\bibitem{36} N. Indik, K. Haris, T. Dal Canton, H. Fehrmann, B. Krishnan, A. Lundgren, A. B. Nielsen, and A. Pai. A stochastic template bank for gravitational wave searches for precessing neutron-star--black-hole coalescence events. Phys. Rev. D95, 064056 (2017),
-	\bibitem{37} Maccarone, T., and Knigge, C. Compact objects in globular clusters. Astron. Geophys. 48 5.12- 5.20 (2007)
-	\bibitem{38} Harry I, Privitera S, Bohé A, Buonanno A (2016) Searching for gravitational waves from compact binaries with precessing spins. Phys Rev D 94:024012. https://doi.org/10.1103/PhysRevD.94.024012. 
-	\bibitem{39} Katerina Chatziioannou, Antoine Klein, Nicolás Yunes, and Neil Cornish. Constructing gravitational waves from generic spin-precessing compact binary inspirals. Phys. Rev. D 95, 104004.
-	\bibitem{40} L. K. Nuttall, T. J. Massinger, J. Areeda, J. Betzwieser, S. Dwyer, A. Effler, R. P. Fisher, P. Fritschel, J. S. Kissel, A. P. Lundgren, D. M. Macleod, D. Martynov, J. McIver, A. Mullavey, D. Sigg, J. R. Smith, G. Vajente, A. R. Williamson, C. C. Wipf. Improving the data quality of Advanced LIGO based on early engineering run results. doi:10.1088/0264-9381/32/24/245005.
-	\bibitem{41} Alexander H Nitz. Distinguishing short duration noise transients in LIGO data to improve the PyCBC search for gravitational waves from high mass binary black hole mergers. Class.Quant.Grav. 35 (2018) no.3, 035016. doi:10.1088/1361-6382/aaa13d.
-	\bibitem{42} The LIGO Scientific Collaboration, the Virgo Collaboration. Effects of Data Quality Vetoes on a Search for Compact Binary Coalescences in Advanced LIGO's First Observing Run. Class. Quantum Grav. 35 065010 (2018). doi:10.1088/1361-6382/aaaafa.
-	\bibitem{43} The LIGO Scientific Collaboration, the Virgo Collaboration. Search for Gravitational Waves Associated with Gamma-Ray Bursts Detected by Fermi and Swift During the LIGO-Virgo Run O3a. arXiv:2010.14550. 
-	\bibitem{44} LIGO Scientific, Virgo Collaboration, B. P. Abbott et al., A guide to LIGO-Virgo detector noise and extraction of transient gravitational-wave signals, Class. Quant. Grav. 37 (2020) 055002.
-	\bibitem{45} Macleod D., Harry I. W. and Fairhurst S. A fully-coherent all-sky search for gravitational-waves from compact binary coalescences. 2016 Phys. Rev. D93 064004. 
-	\bibitem{46} Williamson A., Biwer C., Fairhurst S. et al. Improved methods for detecting gravitational waves associated with short gamma-ray bursts. 2014 PhRvD 90 122004.
-	\bibitem{47} S. Babak et al. Searching for gravitational waves from binary coalescence. Phys. Rev. D 87, 024033.
-	\bibitem{48} Juan Calderón Bustillo, Francesco Salemi, Tito Dal Canton, and Karan P. Jani.Sensitivity of gravitational wave searches to the full signal of intermediate-mass black hole binaries during the first observing run of Advanced LIGO. Phys. Rev. D 97, 024016.
-	\bibitem{49} The LIGO Scientific Collaboration, the Virgo Collaboration. GWTC-2: Compact Binary Coalescences Observed by LIGO and Virgo During the First Half of the Third Observing Run. arXiv:2010.14527. 
-	\bibitem{50} Francois Foucart. Black Hole-Neutron Star Mergers: Disk Mass Predictions. Phys. Rev. D 86, 124007 (2012). doi:10.1103/PhysRevD.86.124007. 
-	\bibitem{51} Vassiliki Kalogera and Albert Lazzarini. LIGO and the opening of a unique observational window on the universe. PNAS March 21, 2017 114 (12) 3017-3025.
-	\bibitem{52} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). Observation of gravitational waves from a binary black hole merger. Phys. Rev. Lett. 116, 061102 (2016).
-	\bibitem{53} KAGRA Collaboration, LIGO Scientific Collaboration, and Virgo Collaboration. Prospects for observing and localizing gravitational-wave transients with Advanced LIGO, Advanced Virgo and KAGRA (2019). LIGO-P1200087, VIR-0288A-12, JGW-P1808427. 
-        \bibitem{54} Francois Foucart, Tanja Hinderer, Samaya Nissanke. Remnant baryon mass outside of the black hole after a neutron star-black hole merger. Phys. Rev. D 98, 081501 (2018). doi:10.1103/PhysRevD.98.081501. 
-	\bibitem{55} LIGO Scientific Collaboration and Virgo Collaboration et al. 2017b. Gravitational Waves and Gamma-rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A. The Astrophysical Journal Letters, 848:L13 (27pp), 2017 October 20.
-	\bibitem{56} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). Low-latency Gravitational-wave Alerts for Multimessenger Astronomy during the Second Advanced LIGO and Virgo Observing Run. ApJ 875, 161 (2019). 
-	\bibitem{57} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). GW150914: First Results from the Search for Binary Black Hole Coalescence with Advanced LIGO. Phys. Rev. D 93, 122003 (2016). 
-	\bibitem{58} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). GW151226: Observation of Gravitational Waves from a 22-Solar-Mass Binary Black Hole Coalescence. Phys. Rev. Lett. 116, 241103 (2016). 
-	\bibitem{59} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). Binary Black Hole Mergers in the First Advanced LIGO Observing Run. Phys. Rev. X 6, 041015 (2016).
-	\bibitem{60} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). GW170104: Observation of a 50-Solar-Mass Binary Black Hole Coalescence at Redshift 0.2. Phys. Rev. Lett. 118, 221101 (2017).
-	\bibitem{61} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). GW170814: A Three-Detector Observation of Gravitational Waves from a Binary Black Hole Coalescence. Phys. Rev. Lett. 119, 141101 (2017).
-	\bibitem{62} Abbott, B. P. et al. (LIGO Scientific Collaboration, Virgo Collaboration). GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral. Phys. Rev. Lett. 119, 161101 (2017).         
-	\bibitem{63} Abbott, B. P. et al. Multi-messenger observations of a binary neutron star merger. ApJ 848, L12 (2017).
-	\bibitem{64} K. Belczynski, D. E. Holz, T. Bulik, and R. O’Shaugh- nessy, The First Gravitational-Wave Source from the Isolated Evolution of Two 40-100 Msun Stars, Nature (London) 534, 512 (2016)
-	\bibitem{65} J. J. Eldridge and E. R. Stanway, BPASS Predictions for Binary Black-Hole Mergers, Mon. Not. R. Astron. Soc. 462, 3302 (2016).
-	\bibitem{66} V. M. Lipunov, V. Kornilov, E. Gorbovskoy, N. Tiurina, P. Balanutsa, and A. Kuznetsov, The First Gravitational- Wave Burst GW150914. Part I. Scenario Machine Prediction, New Astron. 51, 122 (2016).
-	\bibitem{67} S.E. de Mink and I. Mandel, The Chemically Homogeneous Evolutionary Channel for Binary Black Hole Mergers: Rates and Properties of Gravitational-Wave Events Detectable by Advanced LIGO, Mon. Not. R. Astron. Soc. 460, 3545 (2016).
- 	\bibitem{68} K. Inayoshi, K. Kashiyama, E. Visbal, and Z. Haiman, Strong Gravitational Wave Background from Population III Binary Black Holes Consistent with Cosmic Reionization, Mon. Not. R. Astron. Soc. 461, 2722 (2016).
- 	\bibitem{69} C. L. Rodriguez, C. J. Haster, S. Chatterjee, V. Kalogera, and F. A. Rasio, Dynamical Formation of the GW150914 Binary Black Hole, Astrophys. J. Lett. 824, L8 (2016). 
-        \bibitem{70} I. Bartos, B. Kocsis, Z. Haiman, and S. Márka, Rapid and Bright Stellar-Mass Binary Black Hole Mergers in Active Galactic Nuclei, doi:10.3847/1538-4357/835/2/165.
- 	\bibitem{71}  Stephens, B. C., East, W. E., and Pretorius, F. (2011). Eccentric black hole-neutron star mergers. Astrophys. J. 737:L5. doi: 10.1088/2041-8205/737/1/L5. 
-        \bibitem{72} I. Mandel and S. E. de Mink, Merging Binary Black Holes Formed through Chemically Homogeneous Evolution in Short-Period Stellar Binaries, Mon. Not. R. Astron. Soc. 458, 2634 (2016).
-        \bibitem{73} P. Marchant, N. Langer, P. Podsiadlowski, T. M. Tauris, and T. J. Moriya, A New Route Towards Merging Massive Black Holes, Astron. Astrophys. 588, A50 (2016).
-        \bibitem{74}K. Belczynski, T. Bulik, and B. Rudak, The First Stellar Binary Black Holes: The Strongest Gravitational Wave Burst Sources, Astrophys. J. Lett. 608, L45 (2004).
-        \bibitem{75} T. Kinugawa, K. Inayoshi, K. Hotokezaka, D. Nakauchi, and T. Nakamura, Possible Indirect Confirmation of the Existence of Pop III Massive Stars by Gravitational Wave, Mon. Not. R. Astron. Soc. 442, 2963 (2014).
-	\bibitem{76} A. Tutukov and L. Yungelson, Evolution of Massive Close Binaries, Nauchnye Informatsii 27, 70 (1973).
-        \bibitem{77} A. V. Tutukov and L. R. Yungelson, The Merger Rate of Neutron Star and Black Hole Binaries, Mon. Not. R. Astron. Soc. 260, 675 (1993).
-        \bibitem{78} V. M. Lipunov, K. A. Postnov, and M. E. Prokhorov, Formation and Coalescence of Relativistic Binary Stars: The Effect of Kick Velocity, Mon. Not. R. Astron. Soc. 288, 245 (1997).
-        \bibitem{79} R. Voss and T. M. Tauris, Galactic Distribution of Merging Neutron Stars and Black Holes—Prospects for Short Gamma-Ray Burst Progenitors and LIGO/Virgo, Mon. Not. R. Astron. Soc. 342, 1169 (2003).
-        \bibitem{80} G. Nelemans, Galactic Binaries as Sources of Gravitational Waves, in Astrophysics of Gravitational Wave Sources, American Institute of Physics Conference Series, edited by J.M. Centrella (AIP, Melville, NY, 2003), Vol. 686, pp. 263–272.
-        \bibitem{81} K. Belczynski, M. Dominik, T. Bulik, R. O’Shaughnessy, C. Fryer, and D. E. Holz, The Effect of Metallicity on the Detection Prospects for Gravitational Waves, Astrophys. J. Lett. 715, L138 (2010).
-        \bibitem{82} B. McKernan, K. E. S. Ford, W. Lyra, and H. B. Perets, Intermediate Mass Black Holes in AGN DiscsI. Production and Growth, Mon. Not. R. Astron. Soc. 425, 460 (2012).
-        \bibitem{83} J.M. Bellovary, M.-M. Mac Low, B. McKernan, and K. E. S. Ford, Migration Traps in Disks around Super- massive Black Holes, Astrophys. J. Lett. 819, L17 (2016).
-        \bibitem{84} S. Sigurdsson and L. Hernquist, Primordial Black Holes in Globular Clusters, Nature (London) 364, 423 (1993).
-        \bibitem{85} D.M. Eardley, D.L. Lee, A.P. Lightman. Gravitational-wave observations as a tool for testing relativistic gravity. Phys.Rev.D 8 (1973) 3308-3321. doi:10.1103/PhysRevD.8.3308. 
-        \bibitem{86} Peters, P. C., and Mathews, J. (1963). Gravitational radiation from point masses in a Keplerian orbit. Phys. Rev. 131:435. doi: 10.1103/PhysRev.131.435. 
-        \bibitem{87} 
-         \bibitem{88} C.L. Rodriguez, M. Morscher, B. Pattabiraman, S. Chatterjee, C.-J. Haster, and F.A. Rasio, Binary Black Hole Mergers from Globular Clusters: Implications for Advanced LIGO, Phys. Rev. Lett. 115, 051101 (2015).
-         \bibitem{89} C. P. L. Berry et al., Parameter Estimation for Binary Neutron-Star Coalescences with Realistic Noise During the Advanced LIGO Era, Astrophys. J. 804, 114 (2015).
- 	\bibitem{90} S. Fairhurst, Source Localization with an Advanced Gravitational Wave Detector Network, Classical Quantum Gravity 28, 105021 (2011).
-         \bibitem{91} L. P. Singer and L. R. Price, Rapid Bayesian Position Reconstruction for Gravitational-Wave Transients, Phys. Rev. D 93, 024013 (2016).
-   	\bibitem{92} I. W. Harry,  S. Fairhurst, A targeted coherent search for gravitational waves from compact binary coalescences. 10.1103/PhysRevD.83.084002. 
-    	\bibitem{93} B. P. Abbott, R. Abbott, T. D. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration), Properties of the Binary Black Hole Merger GW150914, Phys. Rev. Lett. 116, 241102 (2016).
- 	\bibitem{94} S. Vitale, R. Lynch, J. Veitch, V. Raymond, and R. Sturani, Measuring the Spin of Black Holes in Binary Systems Using Gravitational Waves, Phys. Rev. Lett. 112, 251101 (2014). 
- 	\bibitem{95} M. V. van der Sluys, C. Roever, A. Stroeer, N. Christensen, V. Kalogera, R. Meyer, and A. Vecchio, Gravitational- Wave Astronomy with Inspiral Signals of Spinning Compact-Object Binaries,        Astrophys. J. 688, L61 (2008).
-         \bibitem{96}S. Nissanke, D. E. Holz, S. A. Hughes, N. Dalal, and J. L. Sievers, Exploring Short Gamma-Ray Bursts as Gravitational-Wave Standard Sirens, Astrophys. J. 725, 496 (2010).
-         \bibitem{97} B. Farr et al., Parameter Estimation on Gravitational Waves from Neutron-Star Binaries with Spinning Components, Astrophys. J. 825, 116 (2015).
-    	\bibitem{98} C. Cutler and E. Flanagan, Gravitational Waves from Merging Compact Binaries: How Accurately Can One Extract the Binary’s Parameters from the Inspiral Waveform?, Phys. Rev. D 49, 2658 (1994) 
-   	\bibitem{99} J. A. Gonzalez, U. Sperhake, B. Brügmann, M. Hannam, and S. Husa, Total Recoil: The Maximum Kick from Nonspinning Black-Hole Binary Inspiral, Phys. Rev. Lett. 98, 091101 (2007).
-        \bibitem{100} E. Berti, V. Cardoso, J.A. Gonzalez, U. Sperhake, M. Hannam, S. Husa, and B. Brügmann, Inspiral, Merger and Ringdown of Unequal Mass Black Hole Binaries: A Multipolar Analysis, Phys. Rev. D 76, 064034 (2007).
-         \bibitem{101} J. G. Baker, W. D. Boggs, J. Centrella, B. J. Kelly, S. T. McWilliams, and J.R. van Meter, Mergers of Non- spinning Black-Hole Binaries: Gravitational Radiation Characteristics, Phys. Rev. D 78, 044046 (2008). 
-        \bibitem{102} C. Reisswig, S. Husa, L. Rezzolla, E.N. Dorband, D. Pollney, and J. Seiler, Gravitational-Wave Detectability of Equal-Mass Black-Hole Binaries with Aligned Spins, Phys. Rev. D 80, 124026 (2009). 
-    	\bibitem{103} A. Taracchini, A. Buonanno, Y. Pan, T. Hinderer, M. Boyle et al., Effective-One-Body Model for Black-Hole Binaries with Generic Mass Ratios and Spins, Phys. Rev. D 89, 061502 (2014).
-         \bibitem{104} M. Pürrer, Frequency Domain Reduced Order Model of Aligned-Spin Effective-One-Body Waveforms with Generic Mass-Ratios and Spins, Phys. Rev. D 93, 064041 (2016). 
-        \bibitem{105} S. Husa, S. Khan, M. Hannam, M. Pürrer, F. Ohme, X. J. Forteza, and A. Bohé, Frequency-Domain Gravitational Waves from Nonprecessing Black-Hole Binaries. I. New Numerical Waveforms and Anatomy of the Signal, Phys. Rev. D 93, 044006 (2016).
-         \bibitem{106}  S. Khan, S. Husa, M. Hannam, F. Ohme, M. Prrer, X. J. Forteza, and A. Boh, Frequency-Domain Gravitational Waves from Non-precessing Black-Hole Binaries. II. A Phenomenological Model for the Advanced Detector Era, Phys. Rev. D 93, 044007 (2016).
-         \bibitem{107} M. Hannam, P. Schmidt, A. Bohé, L. Haegel, S. Husa, F. Ohme, G. Pratten, and M. Pürrer, Simple Model of Complete Precessing Black-Hole-Binary Gravitational Waveforms, Phys. Rev. Lett. 113, 151101 (2014).
-         \bibitem{108} B. P. Abbott, R. Abbott, T. D. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration), GW150914: The Advanced LIGO Detectors in the Era of First Discoveries, Phys. Rev. Lett. 116, 131103 (2016).
-         \bibitem{109} T. Dal Canton et al., Implementing a Search for Aligned- Spin Neutron Star-Black Hole Systems with Advanced Ground Based Gravitational Wave Detectors, Phys. Rev. D 90, 082004 (2014).
- 	\bibitem{110} S. A. Usman et al., An Improved Pipeline to Search for Gravitational Waves from Compact Binary Coalescence, arXiv:1508.02357.
-        \bibitem{111} A. H. Nitz, I. W. Harry, J. L. Willis, C. M. Biwer, D. A. Brown, L. P. Pekowsky, T. Dal Canton, A. R. Williamson, T. Dent, C. D. Capano et al., PyCBC Software, https:// github.com/ligo!cbc/pycbc.
-        \bibitem{112} K. Cannon, R. Cariou, A. Chapman, M. Crispin-Ortuzar, N. Fotopoulos et al., Toward Early-Warning Detection of Gravitational Waves from Compact Binary Coalescence, Astrophys. J. 748, 136 (2012).
- 	\bibitem{113} S. Privitera, S. R. P. Mohapatra, P. Ajith, K. Cannon, N. Fotopoulos, M.A. Frei, C. Hanna, A.J. Weinstein, and J. T. Whelan, Improving the Sensitivity of a Search for Coalescing Binary Black Holes with Nonprecessing Spins in Gravitational Wave Data, Phys. Rev. D 89, 024003 (2014).
-         \bibitem{114} C. Messick, K. Blackburn, P. Brady, P. Brockill, K. Cannon, S. Caudill, S. J. Chamberlin, J. D. E. Creighton, R. Everett, C. Hanna et al., Analysis Framework for the Prompt Discovery of Compact Binary Mergers in Gravi- tational-wave Data, arXiv:1604.04324
-         \bibitem{115} A. Effler, R. M. S. Schofield, V. V. Frolov, G. Gonzalez, K. Kawabe, J. R. Smith, J. Birch, and R. McCarthy, Envi- ronmental Influences on the LIGO Gravitational Wave Detectors During the 6th Science Run, Classical Quantum Gravity 32, 035017 (2015). 
-        \bibitem{116} B.P. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration), Effects of Data Quality Vetoes on a Search for Compact Binary Coalescences in Ad- vanced LIGO’s First Observing Run 
-        \bibitem{117} L. A. Wainstein and V. D. Zubakov, Extraction of Signals from Noise (Prentice-Hall, Englewood Cliffs, NJ, 1962). 
-         \bibitem{118} K. S. Thorne, Gravitational Radiation, in Three Hundred Years of Gravitation, edited by S. W. Hawking and W. Israel (Cambridge University Press, Cambridge, England, 1987), Chap. 9, pp. 330–458. 
-        \bibitem{119} B. S. Sathyaprakash and S. V. Dhurandhar, Choice of Filters for the Detection of Gravitational Waves from Coalescing Binaries, Phys. Rev. D 44, 3819 (1991). 
- 	\bibitem{120} C. Cutler et al., The Last Three Minutes: Issues in Gravitational Wave Measurements of Coalescing Compact Binaries, Phys. Rev. Lett. 70, 2984 (1993).
- 	\bibitem{121}  Ingo Tews, Peter T. H. Pang, Tim Dietrich, Michael W. Coughlin, Sarah Antier, Mattia Bulla, Jack Heinzel, Lina Issa. On the nature of GW190814 and its impact on the understanding of supranuclear matter. arXiv:2007.06057.
-	\bibitem{122} Reed Essick, Philippe Landry, Daniel E. Holz . Nonparametric Inference of Neutron Star Composition, Equation of State, and Maximum Mass with GW170817. doi:10.1103/PhysRevD.101.063007. 
-	\bibitem{123}  Ben Margalit, Brian Metzger. Constraining the Maximum Mass of Neutron Stars From Multi-Messenger Observations of GW170817. doi:10.3847/2041-8213/aa991c. 
-	\bibitem{124}  C.L. Fryer, K. Belczynski, G. Wiktorowicz, M. Dominik, V. Kalogera, D. Holz. Compact Remnant Mass Function: Dependence on the Explosion Mechanism and Metallicity. doi:10.1088/0004-637X/749/1/91. 
-	\bibitem{125}  LIGO Scientific Collaboration, Virgo Collaboration, Fermi GBM, INTEGRAL, IceCube Collaboration, AstroSat Cadmium Zinc Telluride Imager Team, IPN Collaboration, The Insight-Hxmt Collaboration, ANTARES Collaboration, The Swift Collaboration, AGILE Team, The 1M2H Team, The Dark Energy Camera GW-EM Collaboration, the DES Collaboration, The DLT40 Collaboration, GRAWITA: GRAvitational Wave Inaf TeAm, The Fermi Large Area Telescope Collaboration, ATCA: Australia Telescope Compact Array, ASKAP: Australian SKA Pathfinder, Las Cumbres Observatory Group, OzGrav, DWF (Deeper, Wider, Faster Program), AST3, CAASTRO Collaborations, The VINROUGE Collaboration, MASTER Collaboration, J-GEM, GROWTH, JAGWAR, Caltech- NRAO, TTU-NRAO, NuSTAR Collaborations, Pan-STARRS, The MAXI Team, TZAC Consortium, KU Collaboration, Nordic Optical Telescope, ePESSTO, GROND, Texas Tech University, SALT Group, TOROS: Transient Robotic Observatory of the South Collaboration, The BOOTES Collaboration, MWA: Murchison Widefield Array, The CALET Collaboration, IKI-GW Follow-up Collaboration, H.E.S.S. Collaboration, LOFAR Collaboration, LWA: Long Wavelength Array, HAWC Collaboration, The Pierre Auger Collaboration, ALMA Collaboration, Euro VLBI Team, Pi of the Sky Collaboration, The Chandra Team at McGill University, DFN: Desert Fireball Network, ATLAS, High Time Resolution Universe Survey, RIMAS, RATIR, SKA South Africa/MeerKAT. Multi-messenger Observations of a Binary Neutron Star Merger. 
-	\bibitem{126} L. Blanchet, T. Damour, B. R. Iyer, C. M. Will, and A. G. Wiseman, Phys. Rev. Lett. 74, 3515 (1995).
-	\bibitem{127} C. Cutler and E. E. Flanagan, Phys. Rev. D 49, 2658 (1994). 
-	\bibitem{128} F. Ohme, A.B. Nielsen, D. Keppel, and A. Lundgren, Statistical and Systematic Errors for Gravitational-Wave Inspiral Signals: A Principal Component Analysis, Phys. Rev. D 88, 042002 (2013). 
-	\bibitem{129} J. Antoniadis, P. C. C. Freire, N. Wex, T. M. Tauris, R. S. Lynch et al., A Massive Pulsar in a Compact Relativistic Binary, Science 340, 1233232 (2013). 
-	\bibitem{130} K. Belczynski, A. Buonanno, M. Cantiello, C. L. Fryer, D. E. Holz, I. Mandel, M. C. Miller, and M. Walczak, The Formation and Gravitational-Wave Detection of Massive Stellar Black-Hole Binaries, Astrophys. J. 789, 120 (2014). 
-	\bibitem{131} We quote the matched-filter SNR as computed by the PyCBC search using the updated calibration; the GstLAL values agree within 2\%. 
-	\bibitem{132} C. E. Rhoades, Jr. and R. Ruffini, Maximum Mass of a Neutron Star, Phys. Rev. Lett. 32, 324 (1974).
-        \bibitem{133} The LIGO Scientific Collaboration, the Virgo Collaboration. GW190412: Observation of a Binary-Black-Hole Coalescence with Asymmetric Masses. arXiv:2004.08342.
-	\bibitem{134} B. P. Abbott et al. (LIGO Scientific Collaboration, Virgo Collaboration), Astrophysical Implications of the Binary Black-Hole Merger GW150914. Astrophys. J. Lett. 818, L22 (2016), arXiv:1602.03846 [astro-ph.HE]. 
-	\bibitem{135} N. Wex, Testing Relativistic Gravity with Radio Pulsars. arXiv:1402.5594. 
-	\bibitem{136} B. P. Abbott et al. (LIGO Scientific Collaboration, Virgo Collaboration). Search for Gravitational-wave Signals Associated with Gamma-Ray Bursts during the Second Observing Run of Advanced LIGO and Advanced Virgo. Astrophys. J. 886, 75 (2019). doi:10.3847/1538-4357/ab4b48. 
-	\bibitem{137} B. P. Abbott et al. (LIGO Scientific Collaboration, Virgo Collaboration), Astrophys. J. Lett. 833, L1 (2016), arXiv:1602.03842 [astro-ph.HE]. 
-	\bibitem{138} Cannon et al. 2015; Messick et al. 2017; Adams et al. 2016; Nitz et al. GW170608: Observation of a 19 Solar-mass Binary Black Hole Coalescence (2017b).
-	\bibitem{139} Pawan Kumar, Bing Zhang. The Physics of Gamma-Ray Bursts and Relativistic Jets. arXiv:1410.0679.
-	\bibitem{140} J. M. Weisberg, D. J. Nice, and J. H. Taylor, Timing Measurements of the Relativistic Binary Pulsar PSR B1913+16. Astrophys. J. 722, 1030 (2010). 
-	\bibitem{141} Lattimer and Prakash 2016.
-	\bibitem{142} Spera et al. 2015.
-	\bibitem{143} K. Cannon et al., Astrophys. J. 748, 136 (2012).
-	\bibitem{144} C. Messick et al., Phys. Rev. D 95, 042001 (2017).
-	\bibitem{145} A. H. Nitz et al., PYCBC Software (GitHub, 2017) [https:// github.com/ligo-cbc/pycbc].
-	\bibitem{146} A. H. Nitz, T. Dent, T. Dal Canton, S. Fairhurst, and D. A. Brown, arXiv:1705.01513.
-	\bibitem{147} A. H. Nitz, Distinguishing short duration noise transients in LIGO data to improve the PyCBC search for gravitational waves from high mass binary black hole mergers. arXiv:1709.08974.
-	\bibitem{148} S. A. Usman et al., Classical Quantum Gravity 33, 215004 (2016).
-	\bibitem{149} T. Dal Canton et al., Phys. Rev. D 90, 082004 (2014). 
-	\bibitem{150} B. Allen, W. G. Anderson, P. R. Brady, D. A. Brown, and J. D. E. Creighton, Phys. Rev. D 85, 122006 (2012).
-	\bibitem{151} S. Klimenko et al., Phys. Rev. D 93, 042004 (2016).
-	\bibitem{152} J. Veitch et al., Phys. Rev. D 91, 042003 (2015).
-	\bibitem{153} Sebastian Khan, Sascha Husa, Mark Hannam, Frank Ohme, Michael Purrer, Xisco Jimenez Forteza, and Alejandro Bohe. Frequency-domain gravitational waves from nonprecessing black-hole binaries. ii. da phenomenological model for the advanced detector era. Physical Review D, 93(4), Feb 2016. 
-	\bibitem{154} P.D'Avanzo. Short gamma-ray bursts: A review. https://doi.org/10.1016/j.jheap.2015.07.002. 
-	\bibitem{155} L. P. Singer, L. R. Price, B. Farr, A. L. Urban, C. Pankow et al., THE FIRST TWO YEARS OF ELECTROMAGNETIC FOLLOW-UP WITH ADVANCED LIGO AND VIRGO. Astrophys. J. 795, 105 (2014). 
-	\bibitem{156} M. M. Kasliwal, S. Nissanke. ON DISCOVERING ELECTROMAGNETIC EMISSION FROM NEUTRON STAR MERGERS: THE EARLY YEARS OF TWO GRAVITATIONAL WAVE DETECTORS. 2014 ApJL 789 L5. 
-	\bibitem{157} C. P. L. Berry et al., PARAMETER ESTIMATION FOR BINARY NEUTRON-STAR COALESCENCES WITH REALISTIC NOISE DURING THE ADVANCED LIGO ERA. Astrophys. J. 804, 114 (2015). 
-	\bibitem{158} L. Blanchet, Gravitational Radiation from Post-Newtonian Sources and Inspiralling Compact Binaries. Living Rev. Relativ. 9 (2006). 
-	\bibitem{159} L. Blanchet, G. Faye, B. R. Iyer, and S. Sinha, The third post-Newtonian gravitational wave polarisations and associated spherical harmonic modes for inspiralling compact binaries in quasi-circular orbits. Classical and Quantum Gravity 25, 165003 (2008). 
-	\bibitem{160} L. E. Kidder, Using Full Information When Computing Modes of Post-Newtonian Waveforms From Inspiralling Compact Binaries in Circular Orbit. Phys. Rev. D 77, 044016 (2008). 
-	\bibitem{161} LIGO Scientific Collaboration, Virgo Collaboration, Search for Gravitational Waves Associated with Gamma-Ray Bursts during the First Advanced LIGO Observing Run and Implications for the Origin of GRB 150906B. doi:10.3847/1538-4357/aa6c47.  
-	\bibitem{162} F. Pannarale, F. Ohme. Prospects for joint gravitational-wave and electromagnetic observations of neutron-star--black-hole coalescing binaries. ApJ, 791, L7 (2014). doi:10.1088/2041-8205/791/1/L7.
-	\bibitem{163}  F. Pannarale, E. Berti, K. Kyutoku, M. Shibata. Nonspinning black hole-neutron star mergers: a model for the amplitude of gravitational waveforms. Physical Review D 88, 084011 (2013). 10.1103/PhysRevD.88.084011.
-	\bibitem{164} F. Pannarale, E. Berti, K. Kyutoku, B. D. Lackey, M. Shibata. Aligned spin neutron star-black hole mergers: a gravitational waveform amplitude model.Phys. Rev. D 92, 084050 (2015). Doi:10.1103/PhysRevD.92.084050.
-	\bibitem{165} F. Pannarale, E. Berti, K. Kyutoku, B. D. Lackey, M. Shibata. Gravitational-wave cutoff frequencies of tidally disruptive neutron star-black hole binary mergers. doi:10.1103/PhysRevD.92.081504.
-	\bibitem{166} J. E. Thompson, E. Fauchon-Jones, S. Khan, E. Nitoglia, F. Pannarale, T. Dietrich, M. Hannam. Modeling the gravitational wave signature of neutron star black hole coalescences: PhenomNSBH. Phys. Rev. D 101, 124059 (2020). Dos:10.1103/PhysRevD.101.124059.
-	\bibitem{167} Matas A., Dietrich T., Buonanno A. et al. Aligned-spin neutron-star-black-hole waveform model based on the effective-one-body approach and numerical-relativity simulations. Phys. Rev. D 102, 043023 (2020). doi:10.1103/PhysRevD.102.043023.
-        \bibitem{168} F. Pannarale, A. Tonita, L. Rezzolla. Black hole-neutron star mergers and short GRBs: a relativistic toy model to estimate the mass of the torus. Astrophys. J. 727, 95 (2011). doi:10.1088/0004-637X/727/2/95.
-	\bibitem{169} C. Barbieri, O. S. Salafia, A. Perego, M. Colpi, G. Ghirlanda. Electromagnetic counterparts of black hole-neutron star mergers: dependence on the neutron star properties. doi:10.1140/epja/s10050-019-00013-x.
-        \bibitem{168} F. Pannarale, A. Tonita, L. Rezzolla. Black hole-neutron star mergers and short GRBs: a relativistic toy model to estimate the mass of the torus. Astrophys. J. 727, 95 (2011). doi:10.1088/0004-637X/727/2/95.
-	\bibitem{169} C. Barbieri, O. S. Salafia, A. Perego, M. Colpi, G. Ghirlanda. Electromagnetic counterparts of black hole-neutron star mergers: dependence on the neutron star properties. doi:10.1140/epja/s10050-019-00013-x.
-	\bibitem{170} Koutarou Kyutoku, Hirotada Okawa, Masaru Shibata, Keisuke Taniguchi. Gravitational waves from spinning black hole-neutron star binaries: dependence on black hole spins and on neutron star equations of state. Phys. Rev. D 84, 064018 (2011). doi:10.1103/PhysRevD.84.064018.
-	\bibitem{171} B. Farr, C. P. L. Berry, W. M. Farr, C. J. Haster, H. Middleton, K. Cannon, P. B. Graff, C. Hanna, I. Mandel, C. Pankow, and et al. Parameter estimation on gravitational waves from neutron-star binaries with spinning components. The Astrophysical Journal, 825(2):116, Jul 2016. 
-	\bibitem{172} A. Boh'e, L. Shao, A. Taracchini, A. Buonanno, S. Babak, I. Harry, I. Hinder, S. Ossokine, M. Purrer, V. Raymond, Tony Chu, H. Fong, P. Kumar, H. Pfeiffer, M. Boyle, Daniel A. Hemberger, L. Kidder, G. Lovelace, M. Scheel, B. Szilágyi. Improved effective-one-body model of spinning, nonprecessing binary black holes for the era of gravitational-wave astrophysics with advanced detectors.Phys. Rev. D 95, 044028 (2017). 10.1103/PhysRevD.95.044028.
-	\bibitem{173} Pan, Y., Buonanno, A., Taracchini, A., et al. 2014, Phys. Rev., D89, 084006 	\bibitem{174} Babak, S., Taracchini, A., & Buonanno, A. 2017, Phys. Rev., D95, 024010
-	\bibitem{175}  Taracchini, A., Buonanno, A., Pan, Y., et al. 2014, PhRvD, 89, 061502 
-
-\bibitem{204} Shibata, M., Taniguchi, K. Coalescence of Black Hole-Neutron Star Binaries. Living Rev. Relativ. 14, 6 (2011). https://doi.org/10.12942/lrr-2011-6.
-\end{thebibliography}
-\end{comment}
 \end{document} 
 
