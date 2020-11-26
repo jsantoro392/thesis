@@ -3076,10 +3076,13 @@ We are grateful for computational resources provided by Cardiff University, and 
 	The chunk start time is when at least one detector is in observing mode;
 	after five days of coincident time between all the detectors in the network are accumulated,
 	the chunk ends as soon as the same starting network configuration is availbel.
+        This time period is long enough to get a good background estimate, 
+	but short enough that the sensitivity of the instruments does not change too much. 
 	Start and end times require to be padded on both ends with 8\,s of extra data 	
 	to ensure a correct behaviour of the high/low pass filters and the template matched filter.
 
-        I analysed a chunk of data from the second half of the third observing run (O3b).  This chunk ran from 01:31:32 UTC on December 20, 2019 to 15:40:36 UTC on December 28, 2019.
+        I analysed a chunk of data from the second half of the third observing run (O3b).  
+	This chunk ran from 01:31:32 UTC on December 20, 2019 to 15:40:36 UTC on December 28, 2019.
 	Since the detector outputs voltages at the anti-symmetric port, 
 	data calibration is necessary to convert from units of volts to units of strain.
 	The data immediately available is denoted by the label ``C00''  
@@ -3090,7 +3093,60 @@ We are grateful for computational resources provided by Cardiff University, and 
 	The data I processed was C00 data and came from the two LIGO detectors.
 	It contained 8.59 days of raw calibrated data,
         of which 6.235 days (72\%) constituted coincident time.
-        Since O3b results have not been published yet by the LIGO-Virgo Collaboration, I will not disclose any of the foreground, but I will limit the discussion to the background analysis.
+        Since O3b results have not been published yet by the LIGO-Virgo Collaboration, 
+	I will not disclose any of the foreground, but I will limit the discussion to the background analysis.
+
+	One of the goal of the offline analysis is to performs basic sanity checks 
+	by identifying problematic noise transients in the data or analysis issues.
+	Long time scale non-stationarity in the data can be obtained from the amplitude spectral density 
+	and the inspiral range measured in the search, shown in  Fig.\ref{fig:asd}.
+	The detector sensitivity can be affected by times of troubling data, 
+	and a symptom of this is embodied  by  an abrupt inspiral range drop.
+	Short transients manifest themselves as high re-weighted SNR triggers in the background distribution. 
+	To identify these glitches and subsequently  assess if they can be vetoed before the coincidence test, 
+	the histograms of the background SNR and re-weighted SNR, Fig.\ref{}, 
+	can be inspected to look for an excess of noise transients in the data.
+	Accordingly, the loudest background triggers are followed up individually, 
+	as described in the next section.
+	A data quality flag is applied to those times when known instrumental noise transients are found, 
+	indicating that they should be vetoed by the analysis. 
+	With the new data quality information, the search analysis is then repeated.
+        \begin{figure}[!t]
+          \noindent
+          \label{asd}
+          \makebox[\textwidth]{\includegraphics[width=0.69\textwidth]{asd}}%
+          \centering
+          \caption{(\textit{Left}) Amplitude spectral density as a function of frequency for the Hanford (H1) and Livingston (L1) detectors. The grey line labelled as “Reference” is the design sensitivity for the Advanced LIGO detectors. (\textit{Right}) Inspiral range as a function of time for a binary neutron star with $m1 = m2 = 1.4 M\odot$ at a single detector SNR $\rho$ = 8.}
+          \label{fig:asd}
+        \end{figure}
+        \begin{figure}[!t]
+          \noindent
+          \label{snrhistogram}
+	  \makebox[\textwidth]{\includegraphics[width=0.69\textwidth]{snrhistogram}%
+	  \centering
+          \caption{Histograms of the re-weighted SNR of the background events for the Hanford detector (\textit{left}) and the Livingston detector (\textit{right}).}
+          \label{fig:snrhistogram}
+        \end{figure}
+
+	The analysis is carried out to assess the statistical significance of a candidate event, 
+	looking at the performance of the pipeline in terms of its sensitivity, 
+	ability to discriminate between signal and background, ability to predict the background model, etc. 
+	Using a large number of injections, the performance of of the PyCBC search to real signals is checked.
+ 	The fraction of simulated signals that the pipeline is able to identify at a given false-alarm rate gives a measure of the sensitive volume.
+        On the other hand, real data is used to study the background by looking at the effects of a time-shifted analysis in which, 
+	as stated in Sec.\,\ref{subsec:far}, the data streams of the instruments are shifted by a constant time with respect to each other. 
+	The time-shifted analysis candidates, which are the coincidences contained in that analysis, 
+	are not real candidates as they would not have coincided in the original non-shifted analysis.
+	In the two-detector configuration, applying time shifts is straightforward as shifting one detector 
+	is entirely equivalent to shifting the other detector in the other direction. 
+	Typically many time-shifted background analyses  are  performed with a regularly spaced set of time-shifts 
+	at intervals of 0.1 s for HL coincidences, which is a few times larger than the maximum physical time difference
+
+	Final results for the calculated sensitivity of the search are shown in  Fig.\ref{}: 
+	the injections are grouped into chirp mass bins since the GW amplitude scales with the chirp mass 
+	and the sensitivity is determined for each bin.
+	The individual follow up of single detector noise triggers and missed injections, 
+	described in the next sections, are an indicator of the potential necessity of a re-analysis. 
 
 \subsection{Loudest Singles}
 	After the data from each detector is individually match filtered,
@@ -3123,7 +3179,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	% Additionally, noise transients can also ring off templates and generate high SNR values, mimicking a signal.
 	% This happens to two loudest trigger in the first bin and to one in the second bin.
 	% Glitches vary in shape and duration, as can be seen by examining the rest of the triggers with high SNR,  in the second bin:
-	Besides short blips, \fpg{quanti?} \emph{scratchy blips} spanning a duration of $\gtrsim 2\,$s were identified in the second bin.
+	Besides short blips, \fpg{quanti?} five \emph{scratchy blips} spanning a duration of $\gtrsim 2\,$s were identified in the second bin.
 	As expected, the third bin, with its templates containing several cycles, was the quietest: the majority of the triggers it cointained looked like random noise barely above threshold, and 
 	lacking any distinctive features in the spectrograms.
 
