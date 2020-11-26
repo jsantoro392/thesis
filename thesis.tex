@@ -3143,9 +3143,18 @@ We are grateful for computational resources provided by Cardiff University, and 
 	Typically many time-shifted background analyses  are  performed with a regularly spaced set of time-shifts 
 	at intervals of 0.1 s for HL coincidences, which is a few times larger than the maximum physical time difference
 
-	Final results for the calculated sensitivity of the search are shown in  Fig.\ref{}: 
+	Final results for the calculated sensitivity of the search are shown in  Fig.\ref{fig:sens_vt}: 
 	the injections are grouped into chirp mass bins since the GW amplitude scales with the chirp mass 
 	and the sensitivity is determined for each bin.
+	The sensitive volume times the analysis time are also shown to account for the amount of time removed by data quality vetoes.
+	        \begin{figure}[t]
+          \noindent
+          \label{sens_vt}
+          \makebox[\textwidth]{\includegraphics[scale=0.45]{sens_vt}}%
+          \centering
+          \caption{{ Sensitive distance (\textit{left}) and sensitive volume $\times$ time (\textit{right}) of the PyCBC search as functions of the inverse false-alarm rate for each chirp-mass bin. The sensitivity is estimated from the missed and found injections added to the data. Darker lines represent the significance without including injections in their own background, while lighter lines include each injection individually in the background estimation for that signal.}
+          \label{fig:sens_vt}
+        \end{figure}
 	The individual follow up of single detector noise triggers and missed injections, 
 	described in the next sections, are an indicator of the potential necessity of a re-analysis. 
 
