@@ -3147,12 +3147,12 @@ We are grateful for computational resources provided by Cardiff University, and 
 	the injections are grouped into chirp mass bins since the GW amplitude scales with the chirp mass 
 	and the sensitivity is determined for each bin.
 	The sensitive volume times the analysis time are also shown to account for the amount of time removed by data quality vetoes.
-	        \begin{figure}[t]
+        \begin{figure}[t]
           \noindent
           \label{sens_vt}
           \makebox[\textwidth]{\includegraphics[scale=0.45]{sens_vt}}%
           \centering
-          \caption{{ Sensitive distance (\textit{left}) and sensitive volume $\times$ time (\textit{right}) of the PyCBC search as functions of the inverse false-alarm rate for each chirp-mass bin. The sensitivity is estimated from the missed and found injections added to the data. Darker lines represent the significance without including injections in their own background, while lighter lines include each injection individually in the background estimation for that signal.}
+          \caption{ Sensitive distance (\textit{left}) and sensitive volume $\times$ time (\textit{right}) of the PyCBC search as functions of the inverse false-alarm rate for each chirp-mass bin. The sensitivity is estimated from the missed and found injections added to the data. Darker lines represent the significance without including injections in their own background, while lighter lines include each injection individually in the background estimation for that signal.}
           \label{fig:sens_vt}
         \end{figure}
 	The individual follow up of single detector noise triggers and missed injections, 
@@ -3186,6 +3186,16 @@ We are grateful for computational resources provided by Cardiff University, and 
 	By inspecting their spectrograms, three loud single-detector triggers were identified as {\it blip}-like glitches,
 	short-duration glitches with a symmetric ``teardrop'' shape that have been seen to happen randomly in time in GW detectors.
 	The left panel in Fig.\,\ref{fig:glitches} shows one of these loud blip glitches in H1, with a few fainter blip glitches around it on a $\sim 1\,$s timescale
+        These kind of glitches are particularly harmful to the search since they survive the $\chi^2$-test: 
+	Fig.\ref{fig:chisquared} shows the behaviour of the reduced $\chi^2$ time-series, which perfectly mimics the beahviour of a real signal.
+	 \begin{figure}[t]
+          \noindent
+          \label{chisquared}
+          \makebox[\textwidth]{\includegraphics[scale=0.45]{chisquared}}%
+          \centering
+          \caption{$\chi^2$ distribution and effect on SNR.}
+          \label{fig:chisquared}
+        \end{figure}
 	% Additionally, noise transients can also ring off templates and generate high SNR values, mimicking a signal.
 	% This happens to two loudest trigger in the first bin and to one in the second bin.
 	% Glitches vary in shape and duration, as can be seen by examining the rest of the triggers with high SNR,  in the second bin:
@@ -3214,9 +3224,24 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 \subsection{Missed Injections}
 	As for the coherent  analysis, the performance of the search is assessed by recovering simulated signals artificially added to the data, i.e., injections.
+	The injections that the pipeline could not identify as signals and their FAR can be seen in Fig.\ref{fig:cbc_missinj}. 
 	The loudest missed injections and the poorly recovered ones with optimal SNR \fpg{Cos'\`e l'optimal SNR?} greater than 8 are
-        examined in detail, in all
-        injection categories.
+        examined in detail, in all injection categories.
+	The optimal SNR is a measure of the SNR of the waveform assuming no noise is present, i.e. the SNR of the waveform template with itself. 
+
+	There are several reasons why an injection could be lost or not appropriately found,
+    	and can be summed up in the following way:
+       	\begin{itemize}
+                \item A glitch occurred near the injection. For a time much longer than the length of the peak, 
+		      loud glitches corrupt the SNR and $\chi^2$ time-series, which prevents the search from identifying any SNR peaks associated with nearby injections.
+                \item The injection is near the beginning or the end of a lock\footnote{Interferometric gravitational-wave detectors are amplified by several resonant cavities.The interferometer is locked when all of these cavities are held on resonance \cite{}.}. The high-pass filtering and re-sampling performed by the search alter data at the beginning and end of a segment. Therefore, near a lock transition, the search discards eight seconds of data and injections within or near those eight seconds are subsequently missed.
+                \item The injection’s SNR is below the search threshold. Injections are ranked by optimal SNR. However, the search SNR is not necessarily equal to the optimal SNR. The noise realisation around the time of the injection can cause an injection’s SNR to drop below the search threshold.
+                \item The injection’s parameters fall outside the waveform template parameter range.
+                \item The injection represents a precessing system.  Since precession significantly modifies the waveform’s shape and the template bank only includes waveforms with aligned spins, simulated signals with the spins of the individual objects not aligned with the orbital angular momentum are not recovered.
+                \item The injection is auto-gated by the search. For example, high-mass injections are very short and easily confused with glitches, leading to be auto-gated by the search. 
+        \end{itemize}
+
+
 
         \fpg{Da qui in avanti il discorso \`e poco lineare.  Per favore rivedi il testo.  Forse ti convienve partire dagli elementi con cui concludi questo capoverso, ma decidi tu.}
 	The first category is the BNS injection set: 
@@ -3251,15 +3276,6 @@ We are grateful for computational resources provided by Cardiff University, and 
           \caption{ This plot shows if there are missed or 'badly found' injections with unusually high optimal SNR. }
           \label{fig:missed_inj}
         \end{figure}
-	Finally, the causes behind the NSBH missed injection set, 
-	are not different from the ones found in the previous sets.
-	To sum it up, an injection may  be lost or not appropriately found,
-	due to the following reason:
-	\begin{itemize}
-		\item gated glitches occurring in one or both detector, at or around the time of injection.
-		\item low optimal SNR ($<$8) in one or both detector. Too quiet to be recovered.
-		\item injection’s parameters fall outside the waveform template parameter range.
-	\end{itemize}
 
 %--------------------------------------------------------
 \chapter*{Conclusions}
