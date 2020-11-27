@@ -3224,11 +3224,19 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 \subsection{Missed Injections}
 	As for the coherent  analysis, the performance of the search is assessed by recovering simulated signals artificially added to the data, i.e., injections.
-	The injections that the pipeline could not identify as signals and their FAR can be seen in Fig.\ref{fig:cbc_missinj}. 
+	The injections that the pipeline could not identify as signals and their FAR can be seen in Fig.\ref{fig:missed_inj}. 
 	The loudest missed injections and the poorly recovered ones with optimal SNR \fpg{Cos'\`e l'optimal SNR?} greater than 8 are
         examined in detail, in all injection categories.
 	The optimal SNR is a measure of the SNR of the waveform assuming no noise is present, i.e. the SNR of the waveform template with itself. 
-
+         \begin{figure}[t]
+          \noindent
+          \label{missed_inj}
+          \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
+          \centering
+          \caption{ This plot shows if there are missed or 'badly found' injections with unusually high optimal SNR. }
+          \label{fig:missed_inj}
+        \end{figure}
+        
 	There are several reasons why an injection could be lost or not appropriately found,
     	and can be summed up in the following way:
        	\begin{itemize}
@@ -3240,14 +3248,11 @@ We are grateful for computational resources provided by Cardiff University, and 
                 \item The injection represents a precessing system.  Since precession significantly modifies the waveform’s shape and the template bank only includes waveforms with aligned spins, simulated signals with the spins of the individual objects not aligned with the orbital angular momentum are not recovered.
                 \item The injection is auto-gated by the search. For example, high-mass injections are very short and easily confused with glitches, leading to be auto-gated by the search. 
         \end{itemize}
-
-
-
-        \fpg{Da qui in avanti il discorso \`e poco lineare.  Per favore rivedi il testo.  Forse ti convienve partire dagli elementi con cui concludi questo capoverso, ma decidi tu.}
-	The first category is the BNS injection set: 
-	the ones that were coincident with a trigger are too quiet,
-	except one which overlaps with gated glitches before and just around the time of merger, as shown in Fig.\,\ref{fig:gated_glitch}
-	the non coincident have one or both detector's low optimal SNR.
+    	
+	The most common cause behind a missed injection for the BNS set is that its SNR is below threshold.
+    	%In some cases, such as glitches or proximity to a lock, further investigations are required.
+    	Another cause behind a missed injections could be that it overlaps with gated glitches before and just around the time of merger, as shown in Fig.\,\ref{fig:gated_glitch}. 
+	The gated injection is indicated by a green shaded region in the power spectrogram.
         \begin{figure}[t]
           \noindent
           \label{gated_glitch}
@@ -3256,26 +3261,22 @@ We are grateful for computational resources provided by Cardiff University, and 
           \caption{The strain spectrogram for a missed BNS injection: the black coloured region represent loud glitches, which are vetoed (green lines). The ligth blue curve is the loudest template. }
           \label{fig:gated_glitch}
         \end{figure}
-	Glitches and gated data are the most occurring reason behind the missed injection for the BBH set.
-	For the not coincident trigger one has a high Opt SNR value for both detectors, 
-	but it is missed because of some gated data in L1 at the time of merging, as shown in Fig.\,\ref{fig:missed_inj};
- 	another shows a chirp signature H1, however, the precedence of a loud gated glitch just before merging
-	made the recovery  unsuccessful.
-	Because the template bank  parameter space has limitations,
-	an injection may be lost because its parameters are outside the coverage 
-	of the template bank. 
-	For example, an injection from the not coincident and one from the coincident trigger set, 
-	are both lost due to their high mass ratio, and quiet NewSNR value.
-	This set is mostly affected by	 periodic glitches previous to the time of merging,
-	that are  causing the injections to be missed  or not properly found.
-        \begin{figure}[t]
+        Glitches and gated data are the most occurring reason behind the missed injection for the BBH set: 
+	the top panel of Fig.\,\ref{fig:gated} shows a not coincident trigger,  
+	with high Opt SNR value for both detectors, not recovered  because of some gated data in L1 at the time of merging.
+        Similarly, in the bottom panel of Fig.\,\ref{fig:gated} a chirp signature is present in H1, however, the precedence of a loud gated glitch just before merging
+        made the recovery  unsuccessful.
+         \begin{figure}[t]
           \noindent
-          \label{missed_inj}
-          \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
+          \label{gated}
+          \makebox[\textwidth]{\includegraphics[scale=0.5]{gated}}%
           \centering
-          \caption{ This plot shows if there are missed or 'badly found' injections with unusually high optimal SNR. }
-          \label{fig:missed_inj}
+          \caption{  }
+          \label{fig:gated}
         \end{figure}
+
+
+        \fpg{Da qui in avanti il discorso \`e poco lineare.  Per favore rivedi il testo.  Forse ti convienve partire dagli elementi con cui concludi questo capoverso, ma decidi tu.}
 
 %--------------------------------------------------------
 \chapter*{Conclusions}
