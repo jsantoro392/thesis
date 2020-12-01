@@ -3283,55 +3283,44 @@ We are grateful for computational resources provided by Cardiff University, and 
 \fpg{Giri di correzione: 0.}%
 \fpg{Anche qui da quello che vedo il discorso fila poco.  Dividi in capoversi, batti sulla centralit\`a della template bank per fare un intero run, riporta i risultati delle 3 GRB, evidenzia la pubblicazione, ecc.}
 
-This thesis aimed to describe two different approaches to GW data analysis: coherent and coincident.
+	The first measurement of the effect of GWs has opened the gateway to GW astronomy 
+	and a new window to the universe, enabling astronomers to look into regions of our cosmos 
+	that were inaccessible to regular astronomical observation.
+	It has required long years of development, first from a theoretical, 
+	then from a technological — especially that of precision laser interferometry— point of view,
+	for the detections to become more and more regular recently.
+	
+	The first direct proof of the existence of BBH was the outcome of years of development, 
+	first from a theoretical, then from a technological — especially that of precision laser interferometry— point of view;
+	Recently, the detections become more and more regular as the detectors and the data analysis techniques are still improving.
+	Search pipelines are algorithms designed to identify GW signals in detector data.
+	In this work, I focused explicitly on two offline searches for compact binary coalescences, 
+	which are crucial to accurately estimate the significance of the candidate and confidently establish its astrophysical origin.
+	describing the different approaches to GW data analysis behind the two searches: coherent and coincident.
 	After outlining the theoretical framework of GW astronomy,
-	the aforementioned data analysis strategies have been investigated. 
-	Algorithms requiring coincident detection of a source by multiple detectors,
-	are the primary method to detect BBH mergers, 
-	as shown in the GW event overview in Chapter \ref{ch:ObservingRuns}.
-	The benefits of this procedure, described in Sec.\ref{subsec:coincident} are plenty: 
-	first it immediately eliminates the great majority of noise background 
-	by rejecting any triggers which are uncorrelated in time in two or more detectors; 
-	secondly, it is not computationally expensive. 
-	The dominant cost of the search is in performing the matched filtering (see, Sec.\ref{sec:matched_filtering}) 
-	of the data against the template bank (see, Section \ref{sec:template_banks}).
-	The {\ttfamily PyCBC} offline analysis has been developed implementing this method in its algorithms. 
-	In Sec.\ref{sec:pycbc00} of Chapter \ref{subsec:pygrb}, we reported the results of the analysis of one chunk of data,  from O3b.
-	A coherent approach, described in Sec.\ref{subsec:coherent}, on the other hand, 
-	it is computationally expensive in the case of modelled searches,
-	however, knowing the time and sky-location of the source can cut the cost of the search.
-	It enables a more extensive search in the GW data, potentially uncovering signals 
-	that are not within reach to all-sky, all-time searches.
-	Moreover, the coherent analysis allows for some additional tests 
-	which are not readily available in the coincidence case. 
-	The most significant of these is the null SNR (see, Sec.\ref{subsubsec:nullsnr}) which can be used to reject events which are 
-	not consistent with two GW polarisations. 
-	This method is the  basis which the  {\ttfamily PyGRB}  pipeline is built upon (see, Sec.\ref{subsec:pygrb}).
-	In Chapter \ref{ch:datanalysis}, we presented the results of a {\ttfamily PyGRB} search conducted on O3a data,
-	to search for BNS and NSBH signals compatible with the sky-location and time of three short GRBs:
-	GRB 190627A, GRB 190728271 and GRB 190425089.
-	Besides GRB 190627A, the off-source analysis of the data required several reanalysis,
-	each time either re-tuning the injections parameter or excluding an IFO data that was affecting the search sensitivity.
-	The quality of the background analysis results was fitting to further investigate
-	the on-source data, which will be published by the LIGO-Virgo Collaboration in the near future.
-	The exhaustive search conducted during O3a will contribute to future  efforts,
-	towards a higher effectiveness of the {\ttfamily PyGRB} analyses onwards.
-	This kind of analysis is an example of the important interdependence of GW and GRBs,
-	whose synthesis constitutes one of the basis for multi-messenger astronomy.
-	Numerical simulations are another type of herald that can be combined with observations 
-	to better understand astrophysical phenomena.
-	One of the likely progenitors of short GRBs are NSBH systems, 
-	hence is crucial to have reliable models of the GW and EM signals powered by BHNS binaries,
-	in order  to  make optimal use of the available data.
-	In Sec.\ref{subsubsec:mrem_model} of Chapter \ref{ch:datanalysis} we have compared an old model \cite{50}  
-	with an updated one \cite{54} for the remnant mass of a NSBH system,
-	as short GRBs may be powered only when there is matter accretion onto a BH.
-	We proceded to implement this into the EM-bright template bank,
-	generated  it within a well defined parameter space and tested it.
-	All the results suggest that the template bank is performing exactly as expected,
-	covering section of the parameter space which 
-	with an average fitting factor for the entire bank of 0.98.
+        the aforementioned data analysis strategies have been investigated.
 
+	Algorithms requiring coincident detection of a source by multiple detectors,
+        are the primary method to detect BBH mergers,
+        as shown in the GW event overview in Chapter \ref{ch:ObservingRuns}.
+        The benefits of this procedure, described in Sec.\ref{subsec:coincident} are plenty:
+        first it immediately eliminates the great majority of noise background
+        by rejecting any triggers which are uncorrelated in time in two or more detectors;
+        secondly, it is not computationally expensive.
+        The dominant cost of the search is in performing the matched filtering (see, Sec.\ref{sec:matched_filtering})
+        of the data against the template bank (see, Section \ref{sec:template_banks}).
+        The {\ttfamily PyCBC} offline analysis has been developed implementing this method in its algorithms.
+
+        A coherent approach, described in Sec.\ref{subsec:coherent}, on the other hand,
+        it is computationally expensive in the case of modelled searches,
+        however, knowing the time and sky-location of the source can cut the cost of the search.
+        It enables a more extensive search in the GW data, potentially uncovering signals
+        that are not within reach to all-sky, all-time searches.
+        Moreover, the coherent analysis allows for some additional tests
+        which are not readily available in the coincidence case.
+        The most significant of these is the null SNR (see, Sec.\ref{subsubsec:nullsnr}) which can be used to reject events which are
+        not consistent with two GW polarisations.
+        This method is the  basis which the  {\ttfamily PyGRB}  pipeline is built upon (see, Sec.\ref{subsec:pygrb}).
 \addcontentsline{toc}{chapter}{Conclusions}
 \markboth{Introduction}{Conclusions}
 
