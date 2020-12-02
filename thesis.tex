@@ -3324,6 +3324,28 @@ We are grateful for computational resources provided by Cardiff University, and 
         The most significant of these is the null SNR (see, Sec.\ref{subsubsec:nullsnr}) which can be used to reject events which are
         not consistent with two GW polarisations.
         This method is the  basis which the  {\ttfamily PyGRB}  pipeline is built upon (see, Sec.\ref{subsec:pygrb}).
+
+	The two approaches have one main thing in common: the use of a template bank.
+	This is the core tool in a matched filtering search,  
+	therefore it is crucial that it works efficiently in order to achieve successful detections.
+	However, the two pipelines, built upon these two methods, differ in one important aspect: 
+	while {\ttfamily PyCBC}  is an all-sky search, {\ttfamily PyGRB} is a targeted one.
+	This difference affects the construction of the template bank implemented in the pipeline.
+	Since {\ttfamily PyGRB} conducts the analysis only when the CBC signal is associated with an EM transient, GRBs,
+	it is sufficient that the template bank covers the parameter space associated with binaries that are EM bright.
+	In order to exclude CBC sources that are EM dark from the bank, 
+	it is useful to have reliable models of the GW and EM signals powered by EM sources.
+	Since one of the likely progenitors of short GRBs are systems that 
+	lead to the formation of an accretion torus around the final BH,
+	up until O2 included, the EM bright bank employed in the search 
+	was generated making use of a remnant mass predictive model.
+ 	In Sec.\ref{subsubsec:mrem_model} of Chapter \ref{ch:datanalysis} we have compared this model \cite{50}
+        with an updated one \cite{54} for the remnant mass of a NSBH system,
+	We proceeded to implement this into the EM-bright template bank,
+        generated  it within a well defined parameter space and tested it.
+        All the results suggest that the template bank is performing exactly as expected,
+        covering section of the parameter space which were not well covered before,
+        with an average fitting factor for the entire bank of 0.98.
 \addcontentsline{toc}{chapter}{Conclusions}
 \markboth{Introduction}{Conclusions}
 
