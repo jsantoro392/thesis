@@ -3156,7 +3156,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	and the sensitivity is determined for each bin.
 	The sensitive volumes multiplied by the analysis time are also shown to quantify the amount of time removed by data quality vetoes.
 
-        The individual follow up of loud single-detector noise triggers and missed injections is 
+        The individual follow up of loud single-detector noise triggers (``singles'') and missed injections is 
 	described in the next two sections; the outcome of these invastigations can lead to a re-analysis of the data whenever an unexpected behaviour of the pipeline is identified. 
 
 
@@ -3226,30 +3226,27 @@ We are grateful for computational resources provided by Cardiff University, and 
         % coincident SNR time series [Eq.\,(\ref{eq:rhocoincPyCBC})].  This operation is repeated with multiple timeshifts to generate the {\it background} trigger distribution, to which the discussion here is limited; the non-timeshifted distribution of triggers constitutes the {\it foreground}, and is not presented in this thesis.
 
 \subsection{Missed Injections}
-	As for the coherent  analysis, the performance of the search is assessed by recovering simulated signals artificially added to the data, i.e., injections.
-	The injections that the pipeline could not identify as signals and their FAR can be seen in Fig.\ref{fig:missed_inj}. 
-	The loudest missed injections and the poorly recovered ones with optimal SNR \fpg{Cos'\`e l'optimal SNR?} greater than 8 are
-        examined in detail, in all injection categories.
-	The optimal SNR is a measure of the SNR of the waveform assuming no noise is present, i.e. the SNR of the waveform template with itself. 
+        Figure \ref{fig:missed_inj} summarizes the result of one of the injection campaigns carried out on the chunk of O3b data.  \fpg{Si fanno $N$ injection sets che differiscono per waveform model e prior sui parametri; qui si mostrano a titolo d'esempio i risultati per una categoria che comprende... un po' tutto mi sa, ma controlla.  Le altre categorie mostrano comportamenti analoghi.} Each point here represents an injection; it is placed in the plot according to its chirp mass and optimal SNR, a measure of the SNR of the injected waveform assuming no noise is present, and it is coloured according to the outcome of its recovery: a red cross is an injection that was not recovered, while circles are recovered injections coloured by their FAR, the dark blue ones being identified undoubtedly as signals, that is, they were found to be louder than all background events.
+
          \begin{figure}[t]
           \noindent
           \label{missed_inj}
           \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
           \centering
-          \caption{This plot shows if there are missed or ``badly found'' injections with unusually high optimal SNR.}
+          \caption{This plot shows if there are missed or ``badly found'' injections with unusually high optimal SNR. \fpg{Manca la scala di colore.}}
           \label{fig:missed_inj}
         \end{figure}
-        
-	There are several reasons why an injection could be lost or not appropriately found,
-    	and can be summed up in the following way:
+
+	The loudest missed injections and the poorly recovered ones with optimal SNR greater than 8 are
+        examined in detail, in all injection categories.
+	Several reasons can cause an injection to be missed or not recovered.
        	\begin{itemize}
-                \item A glitch occurred near the injection. For a time much longer than the length of the peak, 
-		      loud glitches corrupt the SNR and $\chi^2$ time-series, which prevents the search from identifying any SNR peaks associated with nearby injections.
-                \item The injection is near the beginning or the end of a lock\footnote{Interferometric gravitational-wave detectors are amplified by several resonant cavities.The interferometer is locked when all of these cavities are held on resonance \cite{108} \fpg{Undefined reference}.}. The high-pass filtering and re-sampling performed by the search alter data at the beginning and end of a segment. Therefore, near a lock transition, the search discards eight seconds of data and injections within or near those eight seconds are subsequently missed.
-                \item The injection's SNR is below the search threshold. Injections are ranked by optimal SNR. However, the search SNR is not necessarily equal to the optimal SNR. The noise realisation around the time of the injection can cause an injection’s SNR to drop below the search threshold.
-                \item The injection's parameters fall outside the waveform template parameter range.
-                \item The injection represents a precessing system.  Since precession significantly modifies the waveform's shape and the template bank only includes waveforms with aligned spins, simulated signals with the spins of the individual objects not aligned with the orbital angular momentum are not recovered.
-                \item The injection is auto-gated by the search. For example, high-mass injections are very short and easily confused with glitches, leading to be auto-gated by the search. 
+          \item Its (optimal) SNR is to weak: this constitutes the bulk of the red crosses in the plot, which represent sources that are too far away to yield a signal that is strong enough to be observed.  Additionally, the search SNR is not necessarily equal to the optimal SNR: the noise realisation around the time of the injection can cause an injection’s SNR to drop below the search threshold.
+          \item A glitch occurred near the injection. For a time much longer than the length of the peak, 
+            loud glitches corrupt the SNR and the $\chi^2$ timeseries, which prevents the search from clearly identifying the SNR peak associated with the injection alone.
+          \item The injection is near the beginning or the end of a lock period\footnote{Interferometric GW are amplified by several resonant cavities: the interferometer is said to be locked when all of these cavities are held on resonance \cite{108} \fpg{Undefined reference}.}. The high-pass filtering and re-sampling performed by the search alter data at the beginning and end of a segment. Therefore, near a lock transition, the search discards eight seconds of data and injections within or near those eight seconds can be missed.
+          \item The injection's parameters fall outside the waveform template parameter range.  Notably, this can happen when an injection represents a strongly precessing system, along the lines of what was discussed for the coherent search.  Since precession significantly modifies the waveform's shape and the template bank only includes waveforms with aligned spins, simulated signals with the spins of the individual objects not aligned with the orbital angular momentum have a non-negligible chance of not being recovered.
+          \item The injection is auto-gated by the search. For example, high-mass injections are very short and easily confused with glitches, leading to be auto-gated by the search.
         \end{itemize}
     	
 	The most common cause behind a missed injection for the BNS set is that its SNR is below threshold.
@@ -3259,7 +3256,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         \begin{figure}[t]
           \noindent
           \label{gated_glitch}
-          \makebox[\textwidth]{\includegraphics[scale=0.4]{gated_glitch}}%
+          \makebox[\textwidth]{\includegraphics[width=\textwidth]{gated_glitch}}%
           \centering
           \caption{The strain spectrogram for a missed BNS injection: the black coloured region represent loud glitches, which are vetoed (green lines). The ligth blue curve is the loudest template. }
           \label{fig:gated_glitch}
