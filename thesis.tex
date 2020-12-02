@@ -3244,7 +3244,7 @@ We are grateful for computational resources provided by Cardiff University, and 
        	\begin{itemize}
                 \item A glitch occurred near the injection. For a time much longer than the length of the peak, 
 		      loud glitches corrupt the SNR and $\chi^2$ time-series, which prevents the search from identifying any SNR peaks associated with nearby injections.
-                \item The injection is near the beginning or the end of a lock\footnote{Interferometric gravitational-wave detectors are amplified by several resonant cavities.The interferometer is locked when all of these cavities are held on resonance \cite{108108108108108108108108108108} \fpg{Undefined reference}.}. The high-pass filtering and re-sampling performed by the search alter data at the beginning and end of a segment. Therefore, near a lock transition, the search discards eight seconds of data and injections within or near those eight seconds are subsequently missed.
+                \item The injection is near the beginning or the end of a lock\footnote{Interferometric gravitational-wave detectors are amplified by several resonant cavities.The interferometer is locked when all of these cavities are held on resonance \cite{108} \fpg{Undefined reference}.}. The high-pass filtering and re-sampling performed by the search alter data at the beginning and end of a segment. Therefore, near a lock transition, the search discards eight seconds of data and injections within or near those eight seconds are subsequently missed.
                 \item The injection's SNR is below the search threshold. Injections are ranked by optimal SNR. However, the search SNR is not necessarily equal to the optimal SNR. The noise realisation around the time of the injection can cause an injection’s SNR to drop below the search threshold.
                 \item The injection's parameters fall outside the waveform template parameter range.
                 \item The injection represents a precessing system.  Since precession significantly modifies the waveform's shape and the template bank only includes waveforms with aligned spins, simulated signals with the spins of the individual objects not aligned with the orbital angular momentum are not recovered.
@@ -3276,7 +3276,10 @@ We are grateful for computational resources provided by Cardiff University, and 
           \caption{The strain spectrogram for two missed BBH injections: the curves represent the loudest triggers; (\textit{top panel}) gated data (green lines) around merger in L1 (\textit{bottom panel}) the black coloured region represent loud glitches, which are vetoed (green lines).}
           \label{fig:gated}
         \end{figure}
-
+	The follow-up of missed injections with a large SNR is a a useful diagnostic check, 
+	as it can be indicative of a noise transient, a gating artefact, or a problem with the analysis configuration.
+	In some cases, such as glitches or proximity to a lock, further investigations are required,
+	in collaboration with The LIGO Detector Characterization group.
 
         \fpg{Da qui in avanti il discorso \`e poco lineare.  Per favore rivedi il testo.  Forse ti convienve partire dagli elementi con cui concludi questo capoverso, ma decidi tu.}
 
