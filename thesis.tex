@@ -1565,13 +1565,13 @@ We are grateful for computational resources provided by Cardiff University, and 
 	a detection statistic value greater than or equal to $\hat{\rho}_{\rm coinc}$. 
 	Given the knowledge of only GW data, one cannot be absolutely confident that 
 	any given trigger is a signal rather than noise. 
-	Therefore, p-values are computed under the null hypothesis: this assumes that candidate events 
+	Therefore, $p$-values are computed under the null hypothesis: this assumes that candidate events 
 	are caused by non-GW processes acting on and within the interferometers,
 	even when loud signals are present in the data.
 
-	The smaller the p-values is, the more significant is the candidate,
-	while larger p-values indicate a higher deviation from expectations under the null hypothesis.
-	A detection is claimed when events actually obtained in the search all have very small p-value,
+	The smaller the $p$-values is, the more significant is the candidate,
+	while larger $p$-values indicate a higher deviation from expectations under the null hypothesis.
+	A detection is claimed when events actually obtained in the search all have very small $p$-value,
 	meaning they are random noise candidate events.
 
 	How many noise background events $n_b$ are louder than a given candidate event
@@ -2313,7 +2313,7 @@ We are grateful for computational resources provided by Cardiff University, and 
           \label{fig:secondbns}
         \end{figure}
 
-	The unusual total mass of GW190425 may have implications for the origin of its source \cite{28}\cite{Idem}\fpg{Undefined reference}.
+	The unusual total mass of GW190425 may have implications for the origin of its source \cite{28}\fpg{Idem}.
 	There are two ways in which we expect to form BNS. 
 	Massive, fast-merging NS pairs could potentially result from 
 	particularly low-metallicity stars evolving in close binary systems, undergoing a supernova explosion.
@@ -2687,9 +2687,9 @@ We are grateful for computational resources provided by Cardiff University, and 
 
         \begin{figure}[!t]
           \noindent
-          \makebox[\textwidth]{\includegraphics[scale=0.3]{HL-BANKSIM_PLOT_FITTING_FACTORS_BROADINJBNS1_MAIN-2620801-1163865616}}%
+          \makebox[\textwidth]{\includegraphics[scale=0.45]{HL-BANKSIM_PLOT_FITTING_FACTORS_BROADINJBNS1_MAIN-2620801-1163865616}}%
           \centering
-          \caption{{\bf Recovery of BNS injections with the O3a {\ttfamily PyGRB}-dedicated template bank.}  This plot is similare to Fig.\,\ref{fig:fittingfactor}, but the more massive NS physical parameters, rather than the BH ones.  \fpg{Questa figura mancava totalmente! Vanno un po' sistemate le labels degli assi.}}
+          \caption{{\bf Recovery of BNS injections with the O3a {\ttfamily PyGRB}-dedicated template bank.}  This plot is similar to Fig.\,\ref{fig:fittingfactor}, but the physical parameters of the more massive object are drawn from NS, rather than BH, distributions.}
           \label{fig:fittingfactorBNS}
         \end{figure}
 
@@ -3130,6 +3130,15 @@ We are grateful for computational resources provided by Cardiff University, and 
 	With the new data quality information, the search analysis is then repeated.  
         For the chunk under investigation here, these preliminary analyses did not reveal any particular issue.
 
+        \begin{figure}[t]
+          \noindent
+          \label{sens_vt}
+          \makebox[\textwidth]{\includegraphics[width=\textwidth]{sens_vt}}%
+          \centering
+          \caption{Sensitive distance (\textit{left}) and sensitive volume $\times$ time (\textit{right}) of the {\texttt{PyCBC}} search as functions of the inverse false-alarm rate for six chirp-mass bins. The sensitivity is estimated from the missed and found injections added to the data. Darker lines represent the significance without including injections in their own background, while lighter lines include each injection individually in the background estimation for that signal.}
+          \label{fig:sens_vt}
+        \end{figure}
+
 	The analysis carried out must assign a statistical significance to candidate events.
         The data is therefore used to study the background by looking at the effects of a time-shifted analysis in which, 
 	as stated in Sec.\,\ref{subsec:far}, the data streams of the instruments are repeatedly shifted by a constant time offset with respect to each other. 
@@ -3146,14 +3155,6 @@ We are grateful for computational resources provided by Cardiff University, and 
 	the injections are grouped into chirp mass bins, since the GW amplitude scales with the chirp mass,
 	and the sensitivity is determined for each bin.
 	The sensitive volumes multiplied by the analysis time are also shown to quantify the amount of time removed by data quality vetoes.
-        \begin{figure}[t]
-          \noindent
-          \label{sens_vt}
-          \makebox[\textwidth]{\includegraphics[width=\textwidth]{sens_vt}}%
-          \centering
-          \caption{Sensitive distance (\textit{left}) and sensitive volume $\times$ time (\textit{right}) of the {\texttt{PyCBC}} search as functions of the inverse false-alarm rate for six chirp-mass bins. The sensitivity is estimated from the missed and found injections added to the data. Darker lines represent the significance without including injections in their own background, while lighter lines include each injection individually in the background estimation for that signal.}
-          \label{fig:sens_vt}
-        \end{figure}
 
         The individual follow up of loud single-detector noise triggers and missed injections is 
 	described in the next two sections; the outcome of these invastigations can lead to a re-analysis of the data whenever an unexpected behaviour of the pipeline is identified. 
@@ -3235,7 +3236,7 @@ We are grateful for computational resources provided by Cardiff University, and 
           \label{missed_inj}
           \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
           \centering
-          \caption{ This plot shows if there are missed or 'badly found' injections with unusually high optimal SNR. }
+          \caption{This plot shows if there are missed or ``badly found'' injections with unusually high optimal SNR.}
           \label{fig:missed_inj}
         \end{figure}
         
