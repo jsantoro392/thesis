@@ -2313,7 +2313,7 @@ We are grateful for computational resources provided by Cardiff University, and 
           \label{fig:secondbns}
         \end{figure}
 
-	The unusual total mass of GW190425 may have implications for the origin of its source \cite{28}\cite{Idem}.
+	The unusual total mass of GW190425 may have implications for the origin of its source \cite{28}\cite{Idem}\fpg{Undefined reference}.
 	There are two ways in which we expect to form BNS. 
 	Massive, fast-merging NS pairs could potentially result from 
 	particularly low-metallicity stars evolving in close binary systems, undergoing a supernova explosion.
@@ -2473,7 +2473,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	requires predetermining a set of waveform models, i.e., a template bank, in order to filter the data. 
 	In opening Sec.\,\ref{sec:grbfollowup}, moreover, we linked BNS and NSBH systems to short GRBs as certain and potential progenitors, respectively.
 	Additionally, studies have shown that a necessary and sufficient condition for an NSBH to emit an EM counterpart
-	is to produce a sufficiently massive remnant accretion disk after the merger process \cite{}.
+	is to produce a sufficiently massive remnant accretion disk after the merger process \cite{} \fpg{Undefined reference}.
 	For these reasons, as of O1 included, {\ttfamily PyGRB} is run on detector data using a template bank
 	that targets only BNSs and NSBH systems that produce a remnant accretion disk after merger \cite{55,136,161}, as suggested in \cite{162}.  This kind of template bank is often referred to as ``EM-bright bank,'' as it targets only potentially electromagnatically bright compact binary sources.
 
@@ -3075,11 +3075,11 @@ We are grateful for computational resources provided by Cardiff University, and 
 	determined operationally as follows.
 	The chunk start time is when at least one detector is in observing mode;
 	after five days of coincident time between all the detectors in the network are accumulated,
-	the chunk ends as soon as the same starting network configuration is availble.
+	the chunk ends as soon as the same starting network configuration is available.
         This time period is long enough to build an extended enough background, 
 	but short enough that the sensitivity of the instruments does not vary too much. 
 	Start and end times require to be padded on both ends with 8\,s of extra data 	
-	to ensure a correct behaviour of the high/low pass filters and the template matched filter.
+	to ensure a correct behaviour of the high/low pass filters.
 
         I analysed a chunk of data from the second half of the third observing run (O3b).  
 	This chunk ran from 01:31:32 UTC on December 20, 2019 to 15:40:36 UTC on December 28, 2019.
@@ -3087,39 +3087,23 @@ We are grateful for computational resources provided by Cardiff University, and 
 	data calibration is necessary to convert from units of volts to units of strain.
 	The data immediately available is denoted by the label ``C00''  
 	and it has higher uncertainties in the function used to convert from voltage to strain, 
-	with respect to final calibration data versions that take longer to compute, as
+	with respect to final calibration data versions that require longer times to be produced, as
         numerous data quality checks and calibration studies are carried out.
         While this process takes place, C00 data is analyzed to provide preliminary results.
 	The data I processed was C00 data and came from the two LIGO detectors.
 	It contained 8.59 days of raw calibrated data,
         of which 6.235 days (72\%) constituted coincident time.
-        Since O3b results have not been published yet by the LIGO-Virgo Collaboration, 
-	I will not disclose any of the foreground, but I will limit the discussion to the background analysis.
+        Since the LIGO-Virgo Collaboration has not published O3b results yet, 
+	I will not disclose any of the foreground, but I will limit the discussion to the analysis of the background.
 
-	One of the goal of the offline analysis is to performs basic sanity checks 
-	by identifying problematic noise transients in the data or analysis issues.
-	Long time scale non-stationarity in the data can be obtained from the amplitude spectral density 
-	and the inspiral range measured in the search, shown in  Fig.\ref{fig:asd}.
-	The detector sensitivity can be affected by times of troubling data, 
-	and a symptom of this is embodied  by  an abrupt inspiral range drop.
-	Short transients manifest themselves as high re-weighted SNR triggers in the background distribution. 
-	To identify these glitches and subsequently  assess if they can be vetoed before the coincidence test, 
-	the histograms of the background SNR and re-weighted SNR, Fig.\ref{fig:snrhistogram}, 
-	can be inspected to look for an excess of noise transients in the data.
-	Accordingly, the loudest background triggers are followed up individually, 
-	as described in the next section.
-	A data quality flag is applied to those times when known instrumental noise transients are found, 
-	indicating that they should be vetoed by the analysis. 
-	With the new data quality information, the search analysis is then repeated.
         \begin{figure}[!t]
           \noindent
           \label{asd}
-          \makebox[\textwidth]{\includegraphics[width=0.69\textwidth]{asd}}%
+          \makebox[\textwidth]{\includegraphics[width=\textwidth]{asd}}%
           \centering
-          \caption{(\textit{Left}) Amplitude spectral density as a function of frequency for the Hanford (H1) and Livingston (L1) detectors. The grey line labelled as “Reference” is the design sensitivity for the Advanced LIGO detectors. (\textit{Right}) Inspiral range as a function of time for a binary neutron star with $m1 = m2 = 1.4 M\odot$ at a single detector SNR $\rho$ = 8.}
+          \caption{(\textit{Left}) Amplitude spectral density as a function of frequency for the Hanford (H1) and Livingston (L1) detectors. The grey line labelled as ``Reference'' is the design sensitivity for the Advanced LIGO detectors. (\textit{Right}) Inspiral range as a function of time for a binary neutron star with $m1 = m2 = 1.4 M_\odot$ at a single detector SNR $\rho = 8$.}
           \label{fig:asd}
         \end{figure}
-        
         \begin{figure}[!t]
           \noindent
           \label{snrhistogram}
@@ -3129,34 +3113,51 @@ We are grateful for computational resources provided by Cardiff University, and 
           \label{fig:snrhistogram}
         \end{figure}
 
-	The analysis is carried out to assess the statistical significance of a candidate event, 
-	looking at the performance of the pipeline in terms of its sensitivity, 
-	ability to discriminate between signal and background, ability to predict the background model, etc. 
-	Using a large number of injections, the performance of of the PyCBC search to real signals is checked.
- 	The fraction of simulated signals that the pipeline is able to identify at a given false-alarm rate gives a measure of the sensitive volume.
-        On the other hand, real data is used to study the background by looking at the effects of a time-shifted analysis in which, 
-	as stated in Sec.\,\ref{subsec:far}, the data streams of the instruments are shifted by a constant time with respect to each other. 
-	The time-shifted analysis candidates, which are the coincidences contained in that analysis, 
-	are not real candidates as they would not have coincided in the original non-shifted analysis.
+	One of the goals of the offline analysis is to perform basic sanity checks 
+	by identifying problematic noise transients in the data or analysis issues.
+	Long time scale non-stationarity in the data can be obtained from the amplitude spectral density 
+	and the inspiral range measured in the search, shown in Fig.\,\ref{fig:asd}.
+	The detector sensitivity can be affected by times of troubling data, 
+	and a symptom of this is embodied  by  an abrupt inspiral range drop.
+	Short transients manifest themselves as high re-weighted SNR triggers in the background distribution. 
+	To identify these glitches and subsequently  assess if they can be vetoed before the coincidence test, 
+	the histograms of the background SNR and re-weighted SNR (see example in Fig.\,\ref{fig:snrhistogram}) 
+	may be inspected to look for an excess of noise transients in the data.
+	Accordingly, the loudest background triggers are followed up individually, 
+	as described in the next section.
+	A data quality flag is applied to those times when known instrumental noise transients are found, 
+	indicating that they should be vetoed by the analysis. 
+	With the new data quality information, the search analysis is then repeated.  
+        For the chunk under investigation here, these preliminary analyses did not reveal any particular issue.
+
+	The analysis carried out must assign a statistical significance to candidate events.
+        The data is therefore used to study the background by looking at the effects of a time-shifted analysis in which, 
+	as stated in Sec.\,\ref{subsec:far}, the data streams of the instruments are repeatedly shifted by a constant time offset with respect to each other. 
+	Typically, the time-shift used to construct HL backgrouns is 0.1\,s.
+	The time-shifted analysis candidates, i.e., coincidences contained in this artificial data, 
+	are not candidates of astrophysical origin, as the time shift is greater than the light travel time between detectors.
 	In the two-detector configuration, applying time shifts is straightforward as shifting one detector 
 	is entirely equivalent to shifting the other detector in the other direction. 
-	Typically many time-shifted background analyses  are  performed with a regularly spaced set of time-shifts 
-	at intervals of 0.1 s for HL coincidences, which is a few times larger than the maximum physical time difference
-
-	Final results for the calculated sensitivity of the search are shown in  Fig.\ref{fig:sens_vt}: 
-	the injections are grouped into chirp mass bins since the GW amplitude scales with the chirp mass 
+        At the same time, this background data is used to assess the performance of the pipeline in terms of its sensitivity, 
+	ability to discriminate between signal and background, ability to predict the background model, etc. 
+	Like for most other detection pipelines, this is done by using a large number of simulated signals (injections) that are added to the background data in software and recovered.
+ 	The fraction of simulated signals that the pipeline is able to identify at a given false-alarm rate gives a measure of the search sensitive volume.
+	The results of this processes are shown in  Fig.\,\ref{fig:sens_vt}: 
+	the injections are grouped into chirp mass bins, since the GW amplitude scales with the chirp mass,
 	and the sensitivity is determined for each bin.
-	The sensitive volume times the analysis time are also shown to account for the amount of time removed by data quality vetoes.
+	The sensitive volumes multiplied by the analysis time are also shown to quantify the amount of time removed by data quality vetoes.
         \begin{figure}[t]
           \noindent
           \label{sens_vt}
-          \makebox[\textwidth]{\includegraphics[scale=0.45]{sens_vt}}%
+          \makebox[\textwidth]{\includegraphics[width=\textwidth]{sens_vt}}%
           \centering
-          \caption{ Sensitive distance (\textit{left}) and sensitive volume $\times$ time (\textit{right}) of the PyCBC search as functions of the inverse false-alarm rate for each chirp-mass bin. The sensitivity is estimated from the missed and found injections added to the data. Darker lines represent the significance without including injections in their own background, while lighter lines include each injection individually in the background estimation for that signal.}
+          \caption{Sensitive distance (\textit{left}) and sensitive volume $\times$ time (\textit{right}) of the {\texttt{PyCBC}} search as functions of the inverse false-alarm rate for six chirp-mass bins. The sensitivity is estimated from the missed and found injections added to the data. Darker lines represent the significance without including injections in their own background, while lighter lines include each injection individually in the background estimation for that signal.}
           \label{fig:sens_vt}
         \end{figure}
-	The individual follow up of single detector noise triggers and missed injections, 
-	described in the next sections, are an indicator of the potential necessity of a re-analysis. 
+
+        The individual follow up of loud single-detector noise triggers and missed injections is 
+	described in the next two sections; the outcome of these invastigations can lead to a re-analysis of the data whenever an unexpected behaviour of the pipeline is identified. 
+
 
 \subsection{Loudest Singles}
 	After the data from each detector is individually match filtered,
@@ -3242,10 +3243,10 @@ We are grateful for computational resources provided by Cardiff University, and 
        	\begin{itemize}
                 \item A glitch occurred near the injection. For a time much longer than the length of the peak, 
 		      loud glitches corrupt the SNR and $\chi^2$ time-series, which prevents the search from identifying any SNR peaks associated with nearby injections.
-                \item The injection is near the beginning or the end of a lock\footnote{Interferometric gravitational-wave detectors are amplified by several resonant cavities.The interferometer is locked when all of these cavities are held on resonance \cite{108108108108108108108108108108}.}. The high-pass filtering and re-sampling performed by the search alter data at the beginning and end of a segment. Therefore, near a lock transition, the search discards eight seconds of data and injections within or near those eight seconds are subsequently missed.
-                \item The injection’s SNR is below the search threshold. Injections are ranked by optimal SNR. However, the search SNR is not necessarily equal to the optimal SNR. The noise realisation around the time of the injection can cause an injection’s SNR to drop below the search threshold.
-                \item The injection’s parameters fall outside the waveform template parameter range.
-                \item The injection represents a precessing system.  Since precession significantly modifies the waveform’s shape and the template bank only includes waveforms with aligned spins, simulated signals with the spins of the individual objects not aligned with the orbital angular momentum are not recovered.
+                \item The injection is near the beginning or the end of a lock\footnote{Interferometric gravitational-wave detectors are amplified by several resonant cavities.The interferometer is locked when all of these cavities are held on resonance \cite{108108108108108108108108108108} \fpg{Undefined reference}.}. The high-pass filtering and re-sampling performed by the search alter data at the beginning and end of a segment. Therefore, near a lock transition, the search discards eight seconds of data and injections within or near those eight seconds are subsequently missed.
+                \item The injection's SNR is below the search threshold. Injections are ranked by optimal SNR. However, the search SNR is not necessarily equal to the optimal SNR. The noise realisation around the time of the injection can cause an injection’s SNR to drop below the search threshold.
+                \item The injection's parameters fall outside the waveform template parameter range.
+                \item The injection represents a precessing system.  Since precession significantly modifies the waveform's shape and the template bank only includes waveforms with aligned spins, simulated signals with the spins of the individual objects not aligned with the orbital angular momentum are not recovered.
                 \item The injection is auto-gated by the search. For example, high-mass injections are very short and easily confused with glitches, leading to be auto-gated by the search. 
         \end{itemize}
     	
