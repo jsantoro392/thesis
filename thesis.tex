@@ -1819,7 +1819,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
         \begin{figure}[!t]
           \label{o3detection}
-          \includegraphics[scale=0.22]{o3detection}
+          \includegraphics[width=0.6\textwidth]{o3detection}
           \centering
           \caption{The number of compact binary coalescence detections versus the effective volume-time (VT) to which gravitational wave network is sensitive to BNS coalescences. The effective VT is defined as the Euclidean sensitive volume of the second-most sensitive detector in the network at a given time, multiplied by the live time of that network configuration. The Euclidean sensitive volume of each detector is calculated from the BNS inspiral range. The effective BNS VT does not account for differences in sensitivity across the entire population of signals detected or necessary cosmological corrections, but, as shown in this figure, is consistent with the currently observed rate of detections. The coloured bands indicate the three runs, O1, O2, and O3a. The black line is the cumulative number of confident detections of all compact binary coalescences (including black holes and neutron stars) for GWTC-1 and GWTC-2. The blue line, dark blue band, and light blue band are the median, 50\% confidence interval, and 90\% confidence interval of draws from a Poisson fit to the number of detections at the end of O3a \cite{49}.}
           \label{fig:o3detection}
@@ -2177,7 +2177,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         
         \begin{figure}[!t]
           \label{gw-grb}
-          \includegraphics[scale=0.45]{gw-grb}
+          \includegraphics[width=\textwidth]{gw-grb}
           \centering
           \caption{Joint, multi-messenger detection of GW170817 and GRB 170817A. Top: the GBM lightcurve in the 50--300\,keV energy range. The background estimate from \cite{110} is overlaid in red. Bottom: the time-frequency map of GW170817  obtained by coherently combining LHO and LLO data. All times here are relative to the GW170817 trigger time. \cite{55}}
           \label{fig:gw-grb}
@@ -2209,7 +2209,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         
         \begin{figure}[!t]
           \label{o3bnsrange}
-          \includegraphics[scale=0.5]{o3bnsrange}
+          \includegraphics[width=\textwidth]{o3bnsrange}
           \centering
           \caption{Advanced LIGO (top left), Advance Virgo (top right) target strain sensitivities as a function of frequency. The quoted range is for a $1.4M_\odot + 1.4M_\odot$ BNS merger.  The BNS range (in Mpc) achieved in past observing runs and anticipated for future runs is shown.  The O1 LIGO curve is taken from the LHO, while the O2 one comes from LLO; in both cases they refer to the interferometer with better performance for the observing run in question. The O3 curves reflect recent performance. For future runs the anticipated ranges are shown as bands reflecting the uncertainty in the impact of improvements and upgrades to the overall sensitivity. \cite{53}}
           \label{fig:o3bnsrange}
@@ -2260,7 +2260,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
         \begin{figure}[!t]
           \label{asymmetric}
-          \includegraphics[scale=0.2]{asymmetric}
+          \includegraphics[width=0.6\textwidth]{asymmetric}
           \centering
           \caption{The inferred mass ratio $q$ and effective spin $\chi_{\rm eff}$ of GW190412. The distributions reported in orange and blue are obtained with two distinct waveform models. \cite{133}} 
           \label{fig:asymmetric}
@@ -3230,14 +3230,14 @@ We are grateful for computational resources provided by Cardiff University, and 
         % coincident SNR time series [Eq.\,(\ref{eq:rhocoincPyCBC})].  This operation is repeated with multiple timeshifts to generate the {\it background} trigger distribution, to which the discussion here is limited; the non-timeshifted distribution of triggers constitutes the {\it foreground}, and is not presented in this thesis.
 
 \subsection{Missed Injections}
-        Figure \ref{fig:missed_inj} summarizes the result of one of the injection campaigns carried out on the chunk of O3b data.  \fpg{Si fanno $N$ injection sets che differiscono per waveform model e prior sui parametri; qui si mostrano a titolo d'esempio i risultati per una categoria che comprende... un po' tutto mi sa, ma controlla.  Le altre categorie mostrano comportamenti analoghi.} Each point here represents an injection; it is placed in the plot according to its chirp mass and optimal SNR, a measure of the SNR of the injected waveform assuming no noise is present, and it is coloured according to the outcome of its recovery: a red cross is an injection that was not recovered, while circles are recovered injections coloured by their FAR, the dark blue ones being identified undoubtedly as signals, that is, they were found to be louder than all background events.
+        Figure \ref{fig:missed_inj} summarizes the result of the injection campaigns carried out on the chunk of O3b data.  \fpg{Si fanno $N$ injections, con  waveform model... e prior sui parametri... (forse sono gi\`a scritti da qualche parte nella tesi).  Aggiornare la parte seguente alla luce dei due pannelli.} Each point here represents an injection; it is placed in the plot according to its chirp mass and optimal SNR, a measure of the SNR of the injected waveform assuming no noise is present, and it is coloured according to the outcome of its recovery: a red cross is an injection that was not recovered, while circles are recovered injections coloured by their FAR, the dark blue ones being identified undoubtedly as signals, that is, they were found to be louder than all background events.
 
          \begin{figure}[t]
           \noindent
           \label{missed_inj}
-          \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
+          \makebox[\textwidth]{\includegraphics[width=\textwidth]{inj_plots}}%
           \centering
-          \caption{This plot shows if there are missed or ``badly found'' injections with unusually high optimal SNR. \fpg{Manca la scala di colore.}}
+          \caption{{\bf Injeciton results.} {\textit Left:} Each point represents the source of a simulated GW signal injected in the data and recovered from it.  The horziontal axis reports the chirp mass of the source, while the veritcal one is the optimal SNR of the signal, a measure of the SNR of the injected waveform assuming no noise is present. Red crosses are injections that was not recovered, while circles are recovered injections coloured by their FAR. {\textit Right:} In this case the vertical axis is the distance to the source.}
           \label{fig:missed_inj}
         \end{figure}
 
