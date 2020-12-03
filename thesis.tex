@@ -3240,7 +3240,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
  \fpg{Si fanno $N$ injection sets che differiscono per waveform model e prior sui parametri; qui si mostrano a titolo d'esempio i risultati per una categoria che comprende... un po' tutto mi sa, ma controlla.  Le altre categorie mostrano comportamenti analoghi.}
 
-        Each point in the left panel of Fig.\ref{} represents an injection;
+        Each point in the left panel of Fig.\ref{fig:inj_plots} represents an injection;
         it is placed in the plot according to its chirp mass and optimal SNR,
         a measure of the SNR of the injected waveform assuming no noise is present,
         and it is coloured according to the outcome of its recovery:
@@ -3249,11 +3249,13 @@ We are grateful for computational resources provided by Cardiff University, and 
         the dark blue ones being identified undoubtedly as signals, that is,
         they were found to be louder than all background events.
 
-        The right panel in Fig.\ref{} shows the distribution of injections and their recovery
+        The right panel in Fig.\ref{fig:inj_plots} shows the distribution of injections and their recovery
         as a function of the injected decisive distance and chirp mass.
         The injected decisive distance is  defined as the injected effective
         distance\footnote{The effective distance of a source is the distance at which an optimally-oriented and located signal would have the produced the same SNR as the given simulation }
         in the second   loudest detector in the detector network.
+	Injections with higher chirp mass tend to be found better 
+	since they have shorter templates that produce higher SNR triggers. 
 
         The ability to detect an event depends upon the decisive distance:
         since coincidence is required in at least two detectors for a detection
@@ -3267,10 +3269,10 @@ We are grateful for computational resources provided by Cardiff University, and 
 
          \begin{figure}[t]
           \noindent
-          \label{missed_inj}
+          \label{inj_plots}
           \makebox[\textwidth]{\includegraphics[width=\textwidth]{inj_plots}}%
           \centering
-          \caption{{\bf Injeciton results.} {\textit Left:} Each point represents the source of a simulated GW signal injected in the data and recovered from it.  The horziontal axis reports the chirp mass of the source, while the veritcal one is the decisive optimal SNR of the signal, which is the expected SNR in the second most sensitive instrument to that particular source.}
+          \caption{{\bf Injection results.} {\textit Left:} Each point represents the source of a simulated GW signal injected in the data and recovered from it.  The horizontal axis reports the chirp mass of the source, while the vertical one is the decisive optimal SNR of the signal, which is the expected SNR in the second most sensitive instrument to that particular source. {\textit Right:} the injected decisive distance  is plotted as a function of the chirp mass.}
           \label{fig:inj_plots}
         \end{figure}
 
