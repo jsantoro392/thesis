@@ -3230,15 +3230,15 @@ We are grateful for computational resources provided by Cardiff University, and 
         % coincident SNR time series [Eq.\,(\ref{eq:rhocoincPyCBC})].  This operation is repeated with multiple timeshifts to generate the {\it background} trigger distribution, to which the discussion here is limited; the non-timeshifted distribution of triggers constitutes the {\it foreground}, and is not presented in this thesis.
 
 \subsection{Missed Injections}
-        Figure \ref{fig:missed_inj} summarizes the result of the injection campaigns carried out on the chunk of O3b data.  \fpg{Si fanno $N$ injections, con  waveform model... e prior sui parametri... (forse sono gi\`a scritti da qualche parte nella tesi).  Aggiornare la parte seguente alla luce dei due pannelli.} Each point here represents an injection; it is placed in the plot according to its chirp mass and optimal SNR, a measure of the SNR of the injected waveform assuming no noise is present, and it is coloured according to the outcome of its recovery: a red cross is an injection that was not recovered, while circles are recovered injections coloured by their FAR, the dark blue ones being identified undoubtedly as signals, that is, they were found to be louder than all background events.
+        Figure \ref{fig:missed_inj} summarizes the outcome of the injection campaigns carried out on the chunk of O3b data.  \fpg{Si fanno $N$ injections, con  waveform model... e prior sui parametri... (forse sono gi\`a scritti da qualche parte nella tesi).} In both panels, red crosses represent injections that were not recovered, while circles are recovered injections coloured by their FAR, the dark blue ones being identified undoubtedly as signals, that is, they were found to be louder than all background events.  In both panels, the chirp mass of the source may be read off the horizontal axis.  The vertical axis in the left panel is the decisive SNR, that is, the expected SNR in the second most sensitive instrument to that particular source, while in the panel on the right hand side it is the source distance.  As the chirp mass of the signal increases, the recovery is possible up to progressively higher distances, as the signal amplitude is directly proportional to the chirp mass, and inversely proportional to the distance.
 
          \begin{figure}[t]
           \noindent
           \label{missed_inj}
           \makebox[\textwidth]{\includegraphics[width=\textwidth]{inj_plots}}%
           \centering
-          \caption{{\bf Injeciton results.} {\textit Left:} Each point represents the source of a simulated GW signal injected in the data and recovered from it.  The horziontal axis reports the chirp mass of the source, while the veritcal one is the optimal SNR of the signal, a measure of the SNR of the injected waveform assuming no noise is present. Red crosses are injections that was not recovered, while circles are recovered injections coloured by their FAR. {\textit Right:} In this case the vertical axis is the distance to the source.}
-          \label{fig:missed_inj}
+          \caption{{\bf Injeciton results.} {\textit Left:} Each point represents the source of a simulated GW signal injected in the data and recovered from it.  The horziontal axis reports the chirp mass of the source, while the veritcal one is the decisive optimal SNR of the signal, which is the expected SNR in the second most sensitive instrument to that particular source.}
+          \label{fig:inj_plots}
         \end{figure}
 
 	The loudest missed injections and the poorly recovered ones with optimal SNR greater than 8 are
