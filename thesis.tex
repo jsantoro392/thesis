@@ -3230,16 +3230,26 @@ We are grateful for computational resources provided by Cardiff University, and 
         % coincident SNR time series [Eq.\,(\ref{eq:rhocoincPyCBC})].  This operation is repeated with multiple timeshifts to generate the {\it background} trigger distribution, to which the discussion here is limited; the non-timeshifted distribution of triggers constitutes the {\it foreground}, and is not presented in this thesis.
 
 \subsection{Missed Injections}
-        Figure \ref{fig:missed_inj} summarizes the result of one of the injection campaigns carried out on the chunk of O3b data.  \fpg{Si fanno $N$ injection sets che differiscono per waveform model e prior sui parametri; qui si mostrano a titolo d'esempio i risultati per una categoria che comprende... un po' tutto mi sa, ma controlla.  Le altre categorie mostrano comportamenti analoghi.} Each point here represents an injection; it is placed in the plot according to its chirp mass and optimal SNR, a measure of the SNR of the injected waveform assuming no noise is present, and it is coloured according to the outcome of its recovery: a red cross is an injection that was not recovered, while circles are recovered injections coloured by their FAR, the dark blue ones being identified undoubtedly as signals, that is, they were found to be louder than all background events.
-
+        Figure \ref{fig:inj_plots} summarizes the result of one of the injection campaigns carried out on the chunk of O3b data.  \fpg{Si fanno $N$ injection sets che differiscono per waveform model e prior sui parametri; qui si mostrano a titolo d'esempio i risultati per una categoria che comprende... un po' tutto mi sa, ma controlla.  Le altre categorie mostrano comportamenti analoghi.} Each point here represents an injection; it is placed in the plot according to its chirp mass and optimal SNR, a measure of the SNR of the injected waveform assuming no noise is present, and it is coloured according to the outcome of its recovery: a red cross is an injection that was not recovered, while circles are recovered injections coloured by their FAR, the dark blue ones being identified undoubtedly as signals, that is, they were found to be louder than all background events.
+\begin{comment}
          \begin{figure}[t]
           \noindent
           \label{missed_inj}
           \makebox[\textwidth]{\includegraphics[scale=0.5]{missed_inj}}%
           \centering
-          \caption{This plot shows if there are missed or ``badly found'' injections with unusually high optimal SNR. \fpg{Manca la scala di colore.}}
+          \caption{This plot shows if there are missed or ``badly found'' injections with unusually high optimal SNR in the BBH set. \fpg{Manca la scala di colore.}}
           \label{fig:missed_inj}
         \end{figure}
+\end{comment}
+         \begin{figure}[t]
+          \noindent
+          \label{inj_plots}
+          \makebox[\textwidth]{\includegraphics[scale=0.4]{inj_plots}}%
+          \centering
+          \caption{Missed (red crosses) and found (coloured circles) injections. The colour indicates the false-alarm rate estimated for the injections using the background estimated including the injection itself. (\textit{Left}) This plot shows if there are missed or ``badly found'' injections with unusually high optimal SNR. Missed (red crosses) and found (coloured circles) injections. The x-axis is the chirp mass. The y-axis shows the decisive optimal SNR, which is the expected SNR in the second most sensitive instrument to that particular source. (\textit{Right})Injections with higher chirp mass tend to be found better since they have shorter templates that produce higher SNR triggers}
+          \label{fig:inj_plots}
+        \end{figure}
+
 
 	The loudest missed injections and the poorly recovered ones with optimal SNR greater than 8 are
         examined in detail, in all injection categories.
