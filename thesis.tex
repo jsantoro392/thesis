@@ -1765,6 +1765,9 @@ We are grateful for computational resources provided by Cardiff University, and 
           As thresholds are set empirically, this can still be used as a consistency check, but it has a large variance. 
         \end{itemize}
 
+\subsubsection{Coherent False Alarm Probability}
+
+%sono bloccata qui perchè dovrei introdurre la on source e off source window ma le ho definite nel cap 4, quindi forse tolgo li e ridefinisco qua però non vorrei impasticciare troppo.
 
 \section{Injections}
         In order to test the sensitivity of a CBC search pipeline,
@@ -2766,11 +2769,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 	The last step is to determine the significance of the loudest trigger trigger,
 	namely how often random noise in the detector data can generate a trigger with $\rho_{\rm rw}$ equal to or higher than the loudest trigger surviving in the on-source.
-	This is done by calculating the false alarm probability (FAP) around the time of the GRB \cite{46}. \fpg{il discorso della coherent FAP va messo in 2.4.2 per simmetria con 2.4.1.  Qui rimarr\`a ``as discussed in Sec\,\ref{subsec:coherent}.''}
-	To evaluate the FAP of the loudest event, the off-source data are analysed.
-	Since events occurring in the (time-slid) off-source are due only to background noise, 
-	this data is split into trials with durations equal to the one of the on-source window (6\,s), 
-	and the FAP of the on-source trigger is then the fraction of off-source trials cointaining a loudest trigger with $\rho_{\rm rw}$ equal to or greater than the one associated with the on-source.
+	This is done by calculating the false alarm probability (FAP) around the time of the GRB, as discussed in Sec\,\ref{subsec:coherent}. \fpg{il discorso della coherent FAP va messo in 2.4.2 per simmetria con 2.4.1.  Qui rimarr\`a ``as discussed in Sec\,\ref{subsec:coherent}.''}
 
         The efficiency of the analysis is assessed by injecting simulated signals to the data stream and reperforming the search.
  	This also allows to place a lower bound on the distance to the short in the absence of a GW in the on-source window. 
