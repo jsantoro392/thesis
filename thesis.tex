@@ -1767,7 +1767,26 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 \subsubsection{Coherent False Alarm Probability}
 
-%sono bloccata qui perchè dovrei introdurre la on source e off source window ma le ho definite nel cap 4, quindi forse tolgo li e ridefinisco qua però non vorrei impasticciare troppo.
+	In order calculate the FAP in a coherent analysis triggered by a GRB,  
+	as for {\ttfamily PyGRB}, data from GW detectors surrounding the time of a GRB 
+	are divided into an {\textit off-source} window, which is used to characterise the background 
+	of transient signals around the time of the GRB, and an {\textit on-source} window, 
+	which is searched for GW signals. 
+ 	The on-source window is assumed to start five seconds before and ending one second after the GRB trigger time.
+	
+	To evaluate the p-value of the loudest event, with the loudest template,
+	in this 6s window, the off-source data is analysed.
+	The latter consists in 90 minutes of data around the on-source, 
+	and it is assumed that it does not contain a GW signal.
+	The background distribution is extended by generating {\textit off-source-trials}:
+	data from detectors are combined, after introducing time shifts longer than the light-travel time across the network,
+	into as many 6s segments as possible, in order to match the width of the on-source window.
+	The data is then reanalysed, identifying the the loudest trigger in each off-source-trial.
+	Since the length of the segments is longer than the duration of a typical glitch (i.e. less than one second),
+	triggers in the time shifted data are unlikely to appear coherently. 
+
+ 	Since events occurring in the (time-slid) off-source are due only to background noise,
+	the FAP of the on-source trigger is then the fraction of off-source trials containing a loudest trigger  than the on-source.
 
 \section{Injections}
         In order to test the sensitivity of a CBC search pipeline,
@@ -2689,7 +2708,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
         Results for the recovery of the two injection sets just described are reported in Figs.\,\ref{fig:fittingfactor} and \ref{fig:fittingfactorBNS}.  In both cases, only about a thousandth of the injections are recovered with match smaller than 0.97.  The small tail in the fitting factor distribution for the NSBH injection sets is due to differences between the waveform models {\ttfamily SEOBNRv4\_ROM} (for the injections) and {\ttfamily IMRPhenomD} (for the templates), which emerge for high spins and mass ratios.  Importantly, none of the scatter plots presents areas in which points with lower fitting factors tend to cluster:
         this means that there are no ``holes'' in the banks, or systematics in the placement of templates by the algorithm.
-	The average fitting factor for the entire bank is $\sim0.98$, meaning a $\sim 6\%$ loss of detections: this is smaller than the 10\% goal we had set, so the bank passes the validation, or effectiveness, test.  \fpg{Lo 0.98 come lo hai ricavato? A quale set si riferisce? BNS o NSBH?  E qual \`e il valore per l'altro set?}
+	The average fitting factor for the entire bank is, qualitatively, between $\sim0.98-0.99$ for both sets, meaning a $\sim 6\%$ loss of detections: this is smaller than the 10\% goal we had set, so the bank passes the validation, or effectiveness, test.  \fpg{Lo 0.98 come lo hai ricavato? A quale set si riferisce? BNS o NSBH?  E qual \`e il valore per l'altro set?}
 
         \begin{figure}[!t]
           \noindent
