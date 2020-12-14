@@ -1605,7 +1605,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	 given the duration of observing time $T$ and the amount of background time 
 	constructed from the time shifts $T_b$. \cite{28}
 
-\subsection{Coherent}
+\subsection{Coherent Analysis}
 \label{subsec:coherent}
 	The coherent search strategy combines the data from all detectors coherently in phase, 
 	appropriately correcting for time-delays and polarisation phases, in order
@@ -1785,19 +1785,19 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 	In order calculate the FAP in a coherent analysis triggered by a GRB,  
 	as for {\ttfamily PyGRB}, data from GW detectors surrounding the time of a GRB 
-	are divided into an {\textit off-source} window, which is used to characterise the background 
-	of transient signals around the time of the GRB, and an {\textit on-source} window, 
-	which is searched for GW signals. 
- 	The on-source window is assumed to start five seconds before and ending one second after the GRB trigger time.
+	are divided into an \textit{off-source} window, which is used to characterise the background 
+	of transient signals around the time of the GRB, and an \textit{on-source} window, in
+	which GW signals are sought for. 
+ 	The on-source window is chosen to start five seconds before and to end one second after the GRB trigger time.
 	
-	To evaluate the p-value of the loudest event, with the loudest template,
-	in this 6s window, the off-source data is analysed.
-	The latter consists in 90 minutes of data around the on-source, 
+	To evaluate the $p$-value of the loudest event, with the loudest template,
+	in this 6\,s window, the off-source data is analysed.
+	The latter consists in $\sim 90$ minutes of data around the on-source, 
 	and it is assumed that it does not contain a GW signal.
-	The background distribution is extended by generating {\textit off-source-trials}:
+	The background distribution is extended by generating \textit{off-source-trials}:
 	data from detectors are combined, after introducing time shifts longer than the light-travel time across the network,
-	into as many 6s segments as possible, in order to match the width of the on-source window.
-	The data is then reanalysed, identifying the the loudest trigger in each off-source-trial \cite{46}.
+	into as many 6\,s segments as possible, in order to match the width of the on-source window.
+	This data is then analysed, identifying the the loudest trigger in each off-source-trial \cite{46}.
 	Since the length of the segments is longer than the duration of a typical glitch (i.e. less than one second),
 	triggers in the time shifted data are unlikely to appear coherently. 
 
@@ -2804,7 +2804,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 	The last step is to determine the significance of the loudest trigger trigger,
 	namely how often random noise in the detector data can generate a trigger with $\rho_{\rm rw}$ equal to or higher than the loudest trigger surviving in the on-source.
-	This is done by calculating the false alarm probability (FAP) around the time of the GRB, as discussed in Sec\,\ref{subsec:coherent}. \fpg{il discorso della coherent FAP va messo in 2.4.2 per simmetria con 2.4.1.  Qui rimarr\`a ``as discussed in Sec\,\ref{subsec:coherent}.''}
+	This is done by calculating the FAP around the time of the GRB, as discussed in Sec.\,\ref{subsec:coherent}.
 
         The efficiency of the analysis is assessed by injecting simulated signals to the data stream and reperforming the search.
  	This also allows to place a lower bound on the distance to the short in the absence of a GW in the on-source window. 
