@@ -54,7 +54,6 @@ We are grateful for computational resources provided by Cardiff University, and 
 \addcontentsline{toc}{chapter}{Introduction}
 \markboth{Introduction}{Introduction}
 %
-\fpg{In vari punti usi {\ttfamily cite\{\}}. Inoltre citi senza averle in biblio 213 e 215.  Nella bibliografia hai varie entries solo come arXiv preprints, anche per roba gi\`a pubblicata!}%
 \fpg{Giri di correzione: 1.}%
 	More than 100 years ago, Albert Einstein predicted the existence of gravitational waves (GWs) starting from his theory of general relativity \cite{1,2}.
 	He discovered that the acceleration of masses
@@ -869,14 +868,11 @@ We are grateful for computational resources provided by Cardiff University, and 
           \label{fig:noise1}
         \end{figure}
 
-\subsection{Sources}
+\section{Gravitational-Wave Signal Categories}
 \label{sec:sources}
-	There are four different classes of physical sources 
-	that are potential sources of GWs 
-	of sufficient amplitude to be detectable 
-	by current or theorised GW detectors. 
+	There are four categories of GW signals of astrophysical origin around which data analysis is traditionally organized.
 
-\subsubsection{Compact Binaries Coalescences}
+\subsection{Compact Binaries Coalescences}
 	Compact binary star systems, in which each member is a NS or BH, 
 	are currently the only observed sources of GWs.
 	They are an ideal source for ground based GW detectors, 
@@ -895,7 +891,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	that is being search for allows powerful matched filtering techniques 
 	and signal consistency tests to be used in the attempt to detect such signals.
 
-\subsubsection{Bursts}
+\subsection{Bursts}
 	A burst of GWs is an event that releases a large amount 
 	of gravitational energy over a very short period of time, typically less than a few seconds.  
 	Astrophysical events that are believed to result in a transient signal 
@@ -916,7 +912,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	perhaps through an electromagnetic counterpart, 
 	then it is possible to estimate the energy of the source. 
 
-\subsubsection{Continuous Sources}
+\subsection{Continuous Waves}
 	A periodic source is a source that emits at constant or nearly constant frequency.
 	The prototypical source of continuous GWs is high frequency rotating NSs 
 	with a non-axial deformation or low frequency binary systems 
@@ -953,7 +949,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	Unless one knows in advance the position of the source, 
 	one needs to search over a huge number of sky position "error boxes”.
 
-\subsubsection{Stochastic Background}
+\subsection{Stochastic Background}
 	Stochastic backgrounds are “random” GWs, 
 	arising from a  number of sources that overlap 
 	in time and frequency that are not individually resolvable \cite{22}. 
@@ -1146,7 +1142,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         \begin{equation}
           (h_i| h_j)  \equiv 4 \int_{0}^{\infty} df {{\tilde h_i(f) \tilde h^*_j(f)} \over {S_n(f)}}.
         \end{equation}
-	The normalised overlap between the two waveforms is given by
+	The normalised overlap between the two waveforms, known as match, is given by
         \begin{align}
           (\hat{h}_i|\hat{h}_j)& = {{(h_i|h_j)} \over {\sqrt{(h_i| h_i)(h_j| h_j)}}}\,.
         \end{align}
@@ -1182,11 +1178,11 @@ We are grateful for computational resources provided by Cardiff University, and 
 	This proper distance should be chosen to guarantee that the loss in SNR due to the mismatch 
 	between template and signal does not jeopardize the detectability of the signal \cite{30}.
 
-\subsubsection{Fitting Factor}
+\subsection{Fitting Factor}
 \label{subsec:fittingfactor}
 	The standard measure used to determine the set of waveform models to used in a
         search is the fitting factor, $FF$.
-	The fitting factor quantitatively describes the ``closeness'' of 
+	This quantifies the ``closeness'' of 
 	the true signals to the template manifold, in terms of the fraction of 
 	SNR obtained when filtering 
 	the data with an approximate family of templates \cite{31}. 
@@ -1194,12 +1190,11 @@ We are grateful for computational resources provided by Cardiff University, and 
 	to compute the distribution of fitting factors of the templates in the bank against 
 	a set of injected signal waveforms with randomly chosen parameters \cite{32}.
 
-	The fitting factor, $FF$, of a template bank with respect to an injected signal $h_{*}$ 
+	The fitting factor of a template bank with respect to an injected signal $h_{*}$ 
 	is defined as the maximum value of match over all the templates:
         \begin{equation}
-          FF(h_{*}) = \max_\Lambda \mathcal{M}(\tilde{h}_{*}, \tilde{h}(\Lambda))
+          FF(h_{*}) = \max_\Lambda \mathcal{M}(\tilde{h}_{*}, \tilde{h}(\Lambda))\,.
         \end{equation}
-	assuming that the signal model is the same for both templates and injections. 
 	The fractional loss of SNR in capturing the signal 
 	$h_{*}$ with the template bank is $1 - FF(h_{*})$.
 	If the fitting factor is less than unity, the signal lies outside the parameter space, 
@@ -1212,32 +1207,33 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 	Therefore it is desirable that the template bank is constructed such that 
 	no putative signal anywhere in the parameter space
-	has a FF value less than the minimal match. 
+	has a fitting factor value below the minimal match. 
 	A bank is said to be effectual if it can satisfy this condition.
-	It has become conventional to set $FF = 97\%$ as a reasonable goal when building a template bank, 
-	as this translates into a $10\%$ loss of events \cite{33}.
-	The distribution of fitting factors for a set of signals is indeed a good indicator to identify regions of parameter space where sensitivity is poor,
-	however, it may not be adequate to quantify the efficiency of a given template bank against short duration signal injections with less signal power,
+	Typically, $FF$ is set to $97\%$, a reasonable goal when building a template bank, 
+	as this translates into a $10\%$ loss of events.
+	The distribution of fitting factors for a set of signals is indeed a good indicator to identify regions of parameter space where sensitivity is poor.
+	However, it may not be adequate to quantify the efficiency of a given template bank against short duration signal injections with less signal power,
 	since systems for which fitting factors are smallest are also those ones whose observable GW signal is weaker. 
-	Therefore to take into account the fact that different signals can be observed at different distances, 
-	one can define the {\textit signal recovery fraction} of the injected signals against a template bank, as
+	Therefore, to take into account the fact that different signals can be observed at different distances, 
+	one can define the \emph{signal recovery fraction} of the injected signals against a template bank, as
 	\begin{equation}
-		\alpha = {{\int d \vec{x} FF^3(\vec{x}) \sigma^3(\vec{x})} \over {\int d \vec{x} \sigma^3(\vec{x})}}
+          \alpha = {{\int d \vec{x} FF^3(\vec{x}) \sigma^3(\vec{x})} \over {\int d \vec{x} \sigma^3(\vec{x})}}
 	\end{equation}
-	where $\vec{x}$ is the source’s parameter vector (excluding the luminosity distance) 
-	and $\sigma(\vec{x})$ is the horizon distance\footnote{The horizon distance is defined as the farthest luminosity distance of an optimally inclined (face-on) and oriented (overhead) CBC source at a fixed canonical SNR, normally taken to be 8.} 
-	and is proportional to the signal power \cite{125}. 
-	Including the $\sigma$ factors means that signals that 
+	where $\vec{x}$ is the parameter vector of the source (excluding the luminosity distance) 
+	and $\sigma(\vec{x})$ is the horizon distance\footnote{The horizon distance is defined as the farthest luminosity distance of an optimally inclined (face-on) and oriented (overhead) CBC source at a fixed SNR, usually taken to be 8.} 
+	and is proportional to the signal power \cite{125} \fpg{Referenza mancante}. 
+	Including the $\sigma$ weights means that signals that 
 	would not be seen at a large distance have only a weak effect on the signal recovery fraction. 
 	This includes signals that are poorly aligned with respect to the detector, 
 	and signals that have intrinsically low GW luminosity. 
 	In contrast, favorably oriented, intrinsically bright sources will have the largest effect on this measure. 
-	It is also convenient to express the bank performance in terms of the {\textit effective fitting factor}, defined as 
+	It is also convenient to express the bank performance in terms of the \emph{effective fitting factor}, defined as 
 	\begin{equation}
-	FF_{eff} = \alpha^{1/3}
+	FF_{\rm eff} = \alpha^{1/3}
 	\end{equation}
-	which can be interpreted as the average SNR recovered for the observed population of sources \cite{127}. 
-\subsubsection{Frequency Bound}
+	which can be interpreted as the average SNR recovered for the observed population of sources \cite{127} \fpg{Referenza mancante}.
+
+\subsection{Frequency Bound}
 	An algorithm that most efficiently covers the parameter space relies on the choice of a coordinate system, 
 	in which the metric is as flat as possible across the space \cite{34}.
 	In computations with the two-mass-parameter waveforms, 
@@ -1314,7 +1310,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	with regularly spaced templates, which are themselves placed stochastically 
 	to cover the entire parameter space \cite{29, 34}. 
 
-\subsubsection{Spins of Compact Objects}
+\subsection{Spins of Compact Objects}
 	The processes that lead to the formation of a compact binary
 	depend sensitively on a number of poorly constrained parameters, 
 	such as the typical stellar metallicity at formation, 
@@ -2328,14 +2324,14 @@ We are grateful for computational resources provided by Cardiff University, and 
 	that it constitutes a significant challenge for follow-up searches for electromagnetic counterparts. 
 	The absence of counterparts means that there is no confirmation that the source was indeed a BNS; 
 	it is therefore possible that one or both of the merging objects were actually 
-	BHs with masses smaller than any BH mass observed so far \cite{175} \fpg{Citazione mancante in bib}.
+	BHs with masses smaller than any BH mass observed so far \cite{175}.
 	Secondly, having a single-detector poses a challenge on determining the FAR.
 	The low-latency FAR was estimated using data collected in O3 
 	up until the time of the event, and it was found to be one in $69,000\,$yrs. 
 	To further establish the significance of GW190425, 169.5 
 	days of background in the BNS part of the parameter space from O1 and O2 were used in addition to the 50 days  
 	from O3.  The event was found to be 
-	louder than any background event up to its detection \cite{175} \fpg{Stessa cosa.}.
+	louder than any background event up to its detection \cite{175}.
 
 	The binary primary component mass is between $1.61M_\odot$ and $2.52 M_\odot$, 
 	while the secondary mass falls between $1.12M_\odot$ and $1.68 M_\odot$.
@@ -2358,7 +2354,7 @@ We are grateful for computational resources provided by Cardiff University, and 
           \label{fig:secondbns}
         \end{figure}
 
-	The unusual total mass of GW190425 may have implications for the origin of its source \cite{175}\fpg{Idem}.
+	The unusual total mass of GW190425 may have implications for the origin of its source \cite{175}.
 	There are two ways in which we expect to form BNS. 
 	Massive, fast-merging NS pairs could potentially result from 
 	particularly low-metallicity stars evolving in close binary systems, undergoing a supernova explosion.
@@ -2517,8 +2513,8 @@ We are grateful for computational resources provided by Cardiff University, and 
 	As discussed in Sec.\,\ref{sec:template_banks}, running a modelled GW search 
 	requires predetermining a set of waveform models, i.e., a template bank, in order to filter the data. 
 	In opening Sec.\,\ref{sec:grbfollowup}, moreover, we linked BNS and NSBH systems to short GRBs as certain and potential progenitors, respectively.
-	Additionally, studies have shown that a necessary and sufficient condition for an NSBH to emit an EM counterpart
-	is to produce a sufficiently massive remnant accretion disk after the merger process \cite{176} \fpg{Undefined reference}.
+	A necessary condition for an NSBH to emit an EM counterpart
+	is to produce a sufficiently massive remnant accretion disk after the merger process.
 	For these reasons, as of O1 included, {\ttfamily PyGRB} is run on detector data using a template bank
 	that targets only BNSs and NSBH systems that produce a remnant accretion disk after merger \cite{55,136,161}, as suggested in \cite{162}.  This kind of template bank is often referred to as ``EM-bright bank,'' as it targets only potentially electromagnatically bright compact binary sources.
 
@@ -2657,7 +2653,7 @@ We are grateful for computational resources provided by Cardiff University, and 
       \end{itemize}
 
       Two other parameters must be specified in order to generate the bank.  
-	1) The design value for the minimum match \fpg{Se prima dicevamo overlap, qui dobbiamo dire overlap. Controllare.} of the bank with any point in its target paremeter space, which is set to $0.97$, allowing for at most 10\% signal losses.\footnote{The detection rate is proportional to the cube of the SNR, and the SNR is proportional to the match, which is 0.97 in the worst case scenario.}  Matches are calculated over the frequency interval $[27, 1000]\,$Hz. 2) The threshold value for the accretion disk mass of NSBH binaries that flags them as potential short GRB progenitors: any NSBH with $M_{\rm rem}>0$ is considered as a viable short GRB progenitor, in order to err on the side of caution thus including more NSBH binaries than necessary, rather than risk omotting them.
+	1) The design value for the minimum match of the bank with any point in its target paremeter space, which is set to $0.97$, allowing for at most 10\% signal losses.\footnote{The detection rate is proportional to the cube of the SNR, and the SNR is proportional to the match, which is 0.97 in the worst case scenario.}  Matches are calculated over the frequency interval $[27, 1000]\,$Hz. 2) The threshold value for the accretion disk mass of NSBH binaries that flags them as potential short GRB progenitors: any NSBH with $M_{\rm rem}>0$ is considered as a viable short GRB progenitor, in order to err on the side of caution thus including more NSBH binaries than necessary, rather than risk omotting them.
       Finally, we must specify the model to generate gravitational waveforms and compare them.  We used the phenomenological model for spinning, non-precessing binaries {\ttfamily IMRPhenomD} \cite{106}.  This mdoel does not account for NS-specific contributions to the waveform: the presence of NSs therefore enters our bank only via the fitting formula used to calculate $M_{\rm rem}$ and downselect NSBH binaries that are viable short GRB progentors.
 
       The EM-bright bank is generated with a hybrid placement code (see Sec.\,\ref{subsubsec:HybridBank}).  At every proposal of a new point in the parameter space, the bank generation algorithm must determine whether to add or not that proal to the set of tempalate points.  Based on the two masses of the proposed new bank element, three things may happen. 
@@ -2728,7 +2724,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
         Results for the recovery of the two injection sets just described are reported in Figs.\,\ref{fig:fittingfactor} and \ref{fig:fittingfactorBNS}.  In both cases, only about a thousandth of the injections are recovered with match smaller than 0.97.  The small tail in the fitting factor distribution for the NSBH injection sets is due to differences between the waveform models {\ttfamily SEOBNRv4\_ROM} (for the injections) and {\ttfamily IMRPhenomD} (for the templates), which emerge for high spins and mass ratios.  Importantly, none of the scatter plots presents areas in which points with lower fitting factors tend to cluster:
         this means that there are no ``holes'' in the banks, or systematics in the placement of templates by the algorithm.
-	The effective fitting factor, calculated as explained in Sec.\,\ref{subsec:fittingfactor}, for the entire bank is 99\% for both sets, meaning a $\sim 6\%$ loss of detections: this is smaller than the 10\% goal we had set, so the bank passes the validation, or effectiveness, test.  \fpg{Lo 0.98 come lo hai ricavato? A quale set si riferisce? BNS o NSBH?  E qual \`e il valore per l'altro set?}
+	The effective fitting factor for the entire bank, calculated as explained in Sec.\,\ref{subsec:fittingfactor}, is 99\% for both sets, meaning a $\sim 6\%$ loss of detections: this is smaller than the 10\% goal we had set, so the bank passes the validation, or effectiveness, test.
 
         \begin{figure}[!t]
           \noindent
@@ -3321,7 +3317,7 @@ We are grateful for computational resources provided by Cardiff University, and 
             This is a particularly common cause behind missed BNS injections, as the SNR is accumulated over a wide bandwidth.
           \item A glitch occurred near the injection. For a time much longer than the length of the peak, 
             loud glitches corrupt the SNR and the $\chi^2$ timeseries, which prevents the search from clearly identifying the SNR peak associated with the injection alone.
-          \item The injection is near the beginning or the end of a lock period\footnote{Interferometric GW are amplified by several resonant cavities: the interferometer is said to be locked when all of these cavities are held on resonance \cite{108} \fpg{Undefined reference}.}. The high-pass filtering and re-sampling performed by the search alter data at the beginning and end of a segment. Therefore, near a lock transition, the search discards eight seconds of data and injections within or near those eight seconds can be missed.
+          \item The injection is near the beginning or the end of a lock period\footnote{Interferometric GW are amplified by several resonant cavities: the interferometer is said to be locked when all of these cavities are held on resonance \cite{108}.}. The high-pass filtering and re-sampling performed by the search alter data at the beginning and end of a segment. Therefore, near a lock transition, the search discards eight seconds of data and injections within or near those eight seconds can be missed.
           \item The physical parameters of the simulated signal fall outside the waveform template parameter range.  Notably, this can happen when an injection represents a strongly precessing system, along the lines of what was discussed for the coherent search.  Since precession significantly modifies the waveform's shape and the template bank only includes waveforms with aligned spins, simulated signals with the spins of the individual objects not aligned with the orbital angular momentum have a non-negligible chance of not being recovered.
           % \item The injection is auto-gated by the search. For example, high-mass injections are very short and easily confused with glitches, leading to be auto-gated by the search.
           \item The injection (partially) overlaps with gated glitches before and just around the time of merger.  An example of this is provided in the spectrogram in Fig.\,\ref{fig:gated_glitch}: the track of the loudest template rung by a BNS injection (blue) is seen to cross two stretches of gated data (green shaded areas), one of which is particularly close to the merger time.
