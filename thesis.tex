@@ -3165,7 +3165,7 @@ During the third LIGO-Virgo observing run (O3),
           \label{snrhistogram}
           \makebox[\textwidth]{\includegraphics[width=\textwidth]{snrhistogram}}%
           \centering
-          \caption{Histograms of the re-weighted SNR \fpg{Questo \`e l'SNR, non il re-weigthed SNR.  Decidi se mostrarli entrambi (e quindi aggiungere 2 pannelli) o solo il re-weighted (e quindi sostituire i 2 pannelli).} of the background events for the Hanford detector (\textit{left}) and the Livingston detector (\textit{right}).}
+          \caption{Histograms of the SNR \fpg{Questo \`e l'SNR, non il re-weigthed SNR.  Decidi se mostrarli entrambi (e quindi aggiungere 2 pannelli) o solo il re-weighted (e quindi sostituire i 2 pannelli).} of the background events for the Hanford detector (\textit{left}) and the Livingston detector (\textit{right}).}
           \label{fig:snrhistogram}
         \end{figure}
 
@@ -3177,7 +3177,7 @@ During the third LIGO-Virgo observing run (O3),
 	and a symptom of this is embodied  by  an abrupt inspiral range drop.
 	Short transients manifest themselves as high re-weighted SNR triggers in the background distribution. 
 	To identify these glitches and subsequently  assess if they can be vetoed before the coincidence test, 
-	the histograms of the background SNR and re-weighted SNR (see example in Fig.\,\ref{fig:snrhistogram}) 
+	the histograms of the background SNR (see example in Fig.\,\ref{fig:snrhistogram}) 
 	may be inspected to look for an excess of noise transients in the data.
 	Accordingly, the loudest background triggers are followed up individually, 
 	as described in the next section.
@@ -3443,8 +3443,30 @@ During the third LIGO-Virgo observing run (O3),
         generated  it within a well defined parameter space and tested it.
         All the results suggest that the template bank is performing exactly as expected,
         covering section of the parameter space which were not well covered before,
-        with an average fitting factor for the entire bank of 0.98.
+        with an average fitting factor for the entire bank of 0.99.
+	Finally, we presented the targeted analyses for GWs associated to three Fermi and Swift GRBs, 
+	reported during the O3a LIGO-Virgo observing run and published in \cite{}: 
+	GRB 190627A, GRB 190728271, GRB 190425089.
+	The follow-up analyses were  carried out using the   {\ttfamily PyGRB}  pipeline  with the updated  bank.
+	After obtaining good results on the background analysis for all the followed-up GRBs, 
+	the on-source data were investigated.
+	However, coherently with the previous prediction of the rate of coincident detections of 0.1–1.4 per year 
+	for the third  LIGO-Virgo observing run \cite{}, no GW candidate event was found since 
+	we obtained FAPs of 0.481, 0.513 and 0.075 for GRB 190627A, GRB 190728271 and GRB 190425089, respectively. 
+	Since these values are way far from the detection claim threshold $\sim 10^{-4}$,
+	a lower bound on the source distance is determined for three different progenitors models,
+	shown in Table \ref{table:1}, along with their FAPs.
 
+\begin{tabular}{ |p{1.7cm}||p{2cm}|p{2.5cm}|p{2.5cm}||p{1cm}| }
+ \hline
+ GRB& BNS $D_{90}$ (Mpc) & Generic NSBH $D_{90}$ (Mpc)&Aligned NSBH $D_{90}$ (Mpc)& FAP\\
+ \hline
+190627A   & 115    &139&   211 & 0.481 \\
+190728271 &   160  & 204   &272 & 0.513\\
+190425089 &204 & 247&  440 & 0.075\\
+ \hline
+\label{table:1}
+\end{tabular}
 
 \backmatter
 \cleardoublepage
