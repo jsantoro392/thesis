@@ -1585,7 +1585,6 @@ FUNCTION {unpublished}
   format.title "title" output.check
   format.date output
   new.block
-  format.note "note" output.check
   fin.entry
 }
 
