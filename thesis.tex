@@ -2645,7 +2645,7 @@ During the third LIGO-Virgo observing run (O3),
         The first model in Eq.\,(\ref{eq:mrem}) was tested against 26 numerical simulations covering mass ratios
         in the range $q\in [3,7]$, $\chi_{\rm BH}\leq 0.9$, and $R_{\rm NS} \approx 11$-$16\,$km,
         while the more recent model in Eq.\,(\ref{eq:mremup}) was fitted to 75 simulations covering the range $q\in [1,7]$, $-0.5 \leq \chi_{\rm BH}\leq 0.97$,
-        and $C_{\rm NS} = 0.13$-$0.182$.
+        and $C_{\rm NS} = 0.13$--$0.182$.
 
 \subsubsection{Construction and Validation}
 \label{subsec:construction_and_validation}
@@ -2847,6 +2847,7 @@ During the third LIGO-Virgo observing run (O3),
 	and of the lower limit to the source distance, i.e., an \emph{exclusion distance}.
 
 \subsection{GRB 190627A}
+\label{sec:GRB190627A}
 	GRB 190627A was detected by the BAT onboard the {\it Swift} satellite on June 27, 2019, at 11:18:31 UTC.
 	Its location was determined to be $RA=\ang{244.83}$, $Dec = \ang{-5.3}$, with 3 arcmin uncertainty.	
 	The duration it had in the 15--350\,keV band was $T_{90} = 1.60 \pm 0.28$s, 
@@ -2858,7 +2859,7 @@ During the third LIGO-Virgo observing run (O3),
 	At the time of GRB 190627A, two GW detectors, H1 and L1, 
 	were operating and their responses in the direction of the GRB were 0.316 and 0.452, respectively.
 	The panels in Fig.\,\ref{fig:signalconsistencyplots1} show the results 
-	of the $\chi^2$-tests applied to the offsource background data (blue crosses), and to the injections (red crosses),
+	of the $\chi^2$-tests applied to the off-source background data (blue crosses), and to the injections (red crosses),
 	the parameters of which are listed in Sec.\,\ref{subsec:pygrb}, that serve as a simulated foreground. 
 	From top to bottom, the panels report the template bank veto test, 
 	the autocorrelation veto test, and the standard $\chi^2$-test, 
@@ -2965,7 +2966,7 @@ During the third LIGO-Virgo observing run (O3),
           \label{missinj1}
           \centering
           \includegraphics[width=\textwidth]{missinj1}
-          \caption{\textbf{Found/missed injection plots.} Plots of the injections distance against time. Each panel represents a different injection set, with precessing BNS systems on the left and aligned-spin NSBH sources on the right. A blue cross denotes an injection that was found and that was louder than all background triggers. A coloured circle indicates that a trigger was found coincident with the injection, but it was not louder than all offsource events: its colour code is given by the FAP of the trigger.  A Red cross indicates a trigger was found coincident with the injection but it was vetoed, while a black cross indicates no trigger was found coincident with the injection.}
+          \caption{\textbf{Found/missed injection plots.} Plots of the injections distance against time. Each panel represents a different injection set, with precessing BNS systems on the left and aligned-spin NSBH sources on the right. A blue cross denotes an injection that was found and that was louder than all background triggers. A coloured circle indicates that a trigger was found coincident with the injection, but it was not louder than all off-source events: its colour code is given by the FAP of the trigger.  A Red cross indicates a trigger was found coincident with the injection but it was vetoed, while a black cross indicates no trigger was found coincident with the injection.}
           \label{fig:missinj1}
         \end{figure}
 
@@ -2982,7 +2983,7 @@ During the third LIGO-Virgo observing run (O3),
 	of failures in correctly handling glitches present in the background data. 
 	The specific distribution in Fig.\,\ref{fig:loudestoffsourcevent1} is smooth 
 	but has a small tail at the higher end of the re-weighted SNR. 
-	An inspection of the list of loudest offsource events revealed that 
+	An inspection of the list of loudest off-source events revealed that 
 	this is simply a plotting artifact, as the loudest event has an upper limit on its FAP, 
 	rather than a specific assigned value.
 	This upper limit coincides, of course, with the FAP of the second loudest event and hence the plotting artifact.
@@ -2999,15 +3000,16 @@ During the third LIGO-Virgo observing run (O3),
           \label{loudestoffsourcevent1}
           \makebox[\textwidth]{\includegraphics[scale=0.4]{loudestoffsourcevent1}}%
           \centering
-          \caption{\textbf{Loudest offsource events.} Distribution of the background significance (FAP) as a function of the detection statistic (BestNR).}
+          \caption{\textbf{Loudest off-source events.} Distribution of the background significance (FAP) as a function of the detection statistic (BestNR).}
           \label{fig:loudestoffsourcevent1}
         \end{figure}
-	The on-source results returned a FAP of 0.481 for the loudest on source trigger, i.e., no significant event. 
+	The on-source results returned a FAP of 0.481 for the loudest on-source trigger, i.e., no significant event. 
 	The 90\% confidence exclusion distances for the three injection sets are 115\,Mpc for BNSs, 
 	139\,Mpc for precessing NSBHs, and 211 Mpc for aligned NSBHs, as reported in \cite{43}.
 
 
 \subsection{GRB 190728271}
+\label{sec:GRB190728271}
         \begin{figure}[!t]
           \noindent
           \label{scplots2_final}
@@ -3056,9 +3058,10 @@ During the third LIGO-Virgo observing run (O3),
 	A high NS spin magnitude ($\sim 0.3$) also caused a single nearby NSBH injections to not be recovered as louder than all the background events.
         As for GRB 190627A, this background analysis gave overall good results,
 	and the on-source data results were investigated.
-	The loudest onsource event was given a FAP of 0.513, so it is not of astrophysical origin.  The $90\%$ confidence exclusion distances for the on-source window are 160\,Mpc, 204\,Mpc and 272\,Mpc for the BNS, the precessing and aligned NSBH, respectively, as reported in \cite{43}.
+	The loudest on-source event was given a FAP of 0.513, so it is not of astrophysical origin.  The $90\%$ confidence exclusion distances for the on-source window are 160\,Mpc, 204\,Mpc and 272\,Mpc for the BNS, the precessing and aligned NSBH, respectively, as reported in \cite{43}.
 
 \subsection{GRB 190425089}
+\label{sec:GRB190425089}
         GRB 190425089 was observed at 02:07:43 on April 25, 2019 by the Swift satellite,
         with a sky position of $RA=\ang{126.5}$ and $Dec=\ang{-58.1}$.
 
@@ -3199,7 +3202,7 @@ During the third LIGO-Virgo observing run (O3),
 	The analysis carried out must assign a statistical significance to candidate events.
         The data is therefore used to study the background by looking at the effects of a time-shifted analysis in which, 
 	as stated in Sec.\,\ref{subsec:far}, the data streams of the instruments are repeatedly shifted by a constant time offset with respect to each other. 
-	Typically, the time-shift used to construct HL backgrounds is 0.1\,s.
+	Typically, the time-shift used to construct Hanford-Livingston backgrounds is 0.1\,s.
 	The time-shifted analysis candidates, i.e., coincidences contained in this artificial data, 
 	are not candidates of astrophysical origin, as the time shift is greater than the light travel time between detectors.
 	In the two-detector configuration, applying time shifts is straightforward as shifting one detector 
@@ -3355,7 +3358,17 @@ During the third LIGO-Virgo observing run (O3),
           \label{fig:gated_glitch}
         \end{figure}
 
-        \begin{figure}[t]
+	The follow-up of missed injections with a large SNR is a useful diagnostic check, 
+	as it can be indicative of a noise transient, a gating artifact, or a problem with the analysis configuration itself.
+	In this specific chunk, injections were missed mostly because of very low SNR values.
+	However, the loudest missed injection is a BBH simulated signal shown in the top panel of Fig.\,\ref{fig:gated},
+	with a decisive optimal SNR of $\sim 230$ and chirp mass of $\sim 40$,
+	which also stands out in the right panel of Fig.\,\ref{fig:inj_plots}.
+	The background investigations yielded overall good results,
+	leading to uncovering of the foreground results:
+	these were shared and discussed within the LIGO-Virgo Collaboration, but cannot be disclosed yet.
+
+        \begin{figure}[!t]
           \noindent
           \label{gated}
           \makebox[\textwidth]{\includegraphics[scale=0.5]{gated}}%
@@ -3364,41 +3377,25 @@ During the third LIGO-Virgo observing run (O3),
           \label{fig:gated}
         \end{figure}
 
-	The follow-up of missed injections with a large SNR is a useful diagnostic check, 
-	as it can be indicative of a noise transient, a gating artifact, or a problem with the analysis configuration itself.
-	In this specific chunk, injections were missed mostly because of very low SNR values.
-	However, the loudest missed injection is a BBH simulated signal shown in the top panel of Fig.\,\ref{fig:gated},
-	with a decisive optimal SNR of $\sim 230$ and chirp mass of $\sim 40$,
-	which also stands out in the left panel of Fig.\,\ref{fig:inj_plots}.
-	The background investigations yielded overall good results,
-	leading to uncovering of the foreground results:
-	these were shared and discussed within the LIGO-Virgo Collaboration, but cannot be disclosed yet.
-
 %--------------------------------------------------------
 \chapter*{Conclusions}
 \addcontentsline{toc}{chapter}{Conclusions}
 \markboth{Conclusions}{Conclusions}
 
-\fpg{Giri di correzione: 0.}%
-% Anche qui da quello che vedo il discorso fila poco.  Dividi in
-% capoversi, batti sulla centralit\`a della template bank per fare un
-% intero run, riporta i risultati delle 3 GRB, evidenzia la
-% pubblicazione, ecc.
-
 	The first measurement of the effect of GWs in 2015 opened the gateway to GW astronomy, 
 	a new window onto the universe that grants scientists access to regions of our cosmos 
 	that are inaccessible with the means of traditional astronomy alone.
-	Starting from the forumation of General Relativity, this remarkable achievement required decades of development, from a theoretical point of view, as well as from 
+	Starting from the formlation of General Relativity, this remarkable achievement required decades of development, from a theoretical point of view, as well as from 
 	an experimental and technological one.
 	With regular upgrades to GW detectors, detections have become more and more frequent in the last five years (see Fig.\,\ref{fig:o3detection}).  In parallel, improvements to the data analysis algorithms, pipelines, and infrastructure have tightened the bonds between the GW and the electromagnetic astronomy communities.  Telescopes are used to follow-up GW candidate events once these are announced via The Gravitational-Wave Candidate Event Database ({\ttfamily GraceDB}, \url{https://gracedb.ligo.org/}), the goal being to further the field of multi-messenger astronomy, after the monumental success of the GW170817 observation.
 
-	In this thesis, I focused on two offline searches for compact binary coalescences,
+	In this thesis, I focused on two offline searches for CBCs,
 	which are used to extract signals from detector data and determine their significance in order to confidently establish their astrophysical origin.
         One is a targeted search used to look for GW signals in temporal and spatial coincidence with short GRBs ({\ttfamily PyGRB}); the other is an all-sky, all-time search (performed with {\ttfamily PyCBC}).
         At the heart of both of these is the strategy of comparing the data against a predetermined GW template bank (Sec.\,\ref{sec:template_banks}) --- that is, a collection of models of expected GW signals --- via match filtering (Sec.\,\ref{sec:matched_filtering}).  However, 
 	two distinct GW data analysis approaches are behind the two searches: the GRB follow-up search is a coherent one (Sec.\,\ref{subsec:coherent}), while the all-sky search is a coincident one (Sec.\,\ref{subsec:coincident}).
         A coincident analyses processes the data from the detectors in the network \emph{separately} and then combines them, looking for signals by inspecting (almost) simultaneous deviations from Gaussian noise in the detector data streams.
-        A coherent analysis, instead, first combines the data of the various detectors and then processes them, looking for deviations from Gaussian noise that are consistent accross the \emph{network}.
+        A coherent analysis, instead, first combines the data of the various detectors and then processes them, looking for deviations from Gaussian noise that are consistent across the \emph{network}.
 
         One of the main benefits of the coincident approach is its lower computational cost: indeed this is the primary method to detect BBH mergers, as is clear from the overview of main GW observations provided in Chapter \ref{ch:ObservingRuns}.
         The dominant cost of a coincident search is the matched filtering stage (and, more specifically, computing Fourier transforms).
@@ -3409,55 +3406,42 @@ During the third LIGO-Virgo observing run (O3),
         that are not readily available in the coincident case: these are based on null streams, which can be used to reject instances in the data that match a template but are
         not consistent with the two polarisations of GW in General Relativity (see Sec.\,\ref{subsubsec:nullsnr}).
 
-	The two searches have a main ingredient in common, which is the use of a template bank
+	The two searches have a main ingredient in common, namely the use of a template bank
 	that is fed to the matched-filtering engine.
-	It is therefore crucial to build template banks that suitably cover the parameter space of sources targeted by the searches.
-	{\ttfamily PyCBC} looks for ``all'' 
-
-
-
-
-
-
-s an all-sky search, {\ttfamily PyGRB} is a targeted one.
-	This difference affects the construction of the template bank implemented in the pipeline.
-	Since {\ttfamily PyGRB} conducts the analysis only when the CBC signal is associated with an EM transient, GRBs,
-	it is sufficient that the template bank covers the parameter space associated with binaries that are EM bright.
-	In order to exclude CBC sources that are EM dark from the bank, 
-	it is useful to have reliable models of the GW and EM signals powered by EM sources.
-	Since one of the likely progenitors of short GRBs are systems that 
-	lead to the formation of an accretion torus around the final BH,
-	up until O2 included, the EM bright bank employed in the search 
-	was generated making use of a remnant mass predictive model.
- 	In Sec.\,\ref{subsec:o3aTemplateBank} we compared this model \cite{50}
-        to an updated one \cite{54} for the remnant mass of a NSBH system,
-	We proceeded to implement this into the EM-bright template bank,
-        generated it within a well defined parameter space and tested it.
-        All the results suggest that the template bank is performing exactly as expected,
-        covering section of the parameter space which were not well covered before,
+	It is therefore crucial to build template banks that suitably cover the source parameter space targeted by searches of this kind.
+	{\ttfamily PyCBC} looks for virtually all CBCs that fall in the sensitivity band of ground-based GW detectors, while {\ttfamily PyGRB}
+        template banks are designed to look for progenitors of short GRBs,
+        and are called EM-bright template banks.
+        These include BNS systems and NSBH systems in which the NS is tidally disrupted by the BH tidal forces, as these are the kinds of binaries
+	that can form an accretion torus around the remnant BH that could then power a GRB.
+        In order to exclude CBC sources that are not plausible short GRB progenitors, 
+	when building an EM-bright bank it is necessary to have a reliable model
+        for the fate of NSBH binaries, given the masses and spins of the two companions, and a prescription for the NS equation of state.
+        In O1 (September 12, 2015 -- January 19, 2016) and O2 (November 30, 2016 -- August 25, 2017) , the EM-bright banks employed in searches conducted with {\ttfamily PyGRB} 
+	were generated making use of the accretion torus mass predictive model published in \cite{50}.
+        This was upgraded and superseded in 2018 \cite{54}.
+ 	In Sec.\,\ref{subsec:o3aTemplateBank} we compared the two models 
+        and implemented the more recent one in the infrastructure to generate EM-bright template banks.
+        We then built and validated the EM-bright template bank that was used by the LIGO-Virgo Collaboration to look for GW signals in coincidence with 
+        short GRBs observed by {\it Swift}/BAT and {\it Fermi}/GBM during O3a (April 1, 2019 -- 30 September, 2019). 
+        The validation procedure shows that the template bank performs exactly as expected,
+        covering desired EM-bright CBC parameter space
         with an average fitting factor for the entire bank of 0.99.
-	
-	Furthermore, we presented the targeted analyses for GWs associated to three Fermi and Swift GRBs, 
-	reported during the O3a LIGO-Virgo observing run and published in \cite{43}: 
-	GRB 190627A, GRB 190728271, GRB 190425089.
-	The follow-up analyses were carried out using the {\ttfamily PyGRB} pipeline with the updated bank.
-	After obtaining good results on the background analysis for all the followed-up GRBs, 
-	the on-source data were investigated.
-	However, coherently with the previous prediction of the rate of coincident detections of 0.1--1.4 per year 
-	for the third LIGO-Virgo observing run \cite{55}, no GW candidate event was found since 
-	we obtained FAPs of 0.481, 0.513 and 0.075 for GRB 190627A, GRB 190728271 and GRB 190425089, respectively. 
-	Since these values are way far from the detection claim threshold $\sim 10^{-4}$,
-	a lower bound on the source distance is determined for three different progenitors models,
-	shown in Table \ref{table:1}, along with their FAPs.
 
-	Finally, in the last section of Chapter \ref{ch:datanalysis}, 
-	after describing the main ingredients of the offline PyCBC search pipeline,
-	we reported on the offline procedure for the analysis of a O3b data chunk.
-	As the analysis results from the second half of O3 have yet to be published, 
-	the open box results have not been disclosed here.
-	
-	
-	
+        The results of the {\ttfamily PyGRB} O3a offline search are available in the LIGO-Virgo Collaboration paper \cite{43}.
+	This thesis discusses in detail the targeted analyses for GWs associated to three GRBs that I conducted: 
+	GRB 190627A, GRB 190728271, and GRB 190425089, in Secs.\,\ref{sec:GRB190627A}, \ref{sec:GRB190728271}, and \ref{sec:GRB190425089}, respectively.
+	In all three cases, after proving that the results for the background data (or \emph{off-source}) were well behaved,
+	the foreground (or \emph{on-source}) data were investigated.
+	The false alarm probabilities (FAPs) for the loudest on-source GW trigger for these three GRB events were 0.481, 0.513 and 0.075 for GRB 190627A, GRB 190728271 and GRB 190425089, respectively. 
+	Given that the threshold to claim a GW candidate is $\sim 10^{-4}$, we concluded that no event was uncovered by these {\ttfamily PyGRB} offline searches.
+        The same conclusion holds for the whole sample of short GRBs in O3a \cite{43}.
+	This is consistently with the predicted rate of coincident GW-GRB detections 
+	for the third LIGO-Virgo observing run of 0.1--1.4 per year \cite{55}.
+	Lower bounds on the source distance were thus determined and reported for three different progenitor classes: precessing BNSs, non-precessing (or aligned spin) NSBHs, and precessing (or generic spin) NSBHs.
+        These are quoted as 90\% confidence exclusion distances and are summarized
+	in Table \ref{table:1}, along with aforementioned FAPs.
+
 \begin{table}[!t]
 \centering
 \begin{tabular}{ccccc}
@@ -3475,6 +3459,13 @@ GRB & BNS           & Generic NSBH   & Aligned NSBH  & FAP \\
 \caption{\fpg{Manca una caption: mai mettere una tabella/figura senza caption.}}
 \label{table:1}
 \end{table}
+
+	Finally, the last section of Chapter \ref{ch:datanalysis}
+	is devoted to the offline all-sky search I carried out with the {\ttfamily PyCBC} pipeline on
+        6.235 days of coincident data in the two LIGO detectors.
+        As the final results of this analysis have not been made public yet, 
+	the foreground results were not disclosed in this thesis and Sec.\,\ref{sec:pycbc00} is limited to a discussion of the background results.
+        This highlighted the presence of blip and comb-like glitches in the data (see Fig.\,\ref{fig:glitches}) and of a single high-SNR missed injection due to it overlapping to noisy data gated by the pipeline (see Fig.\,\ref{fig:gated}).  Overall, the background performance yielded no unexpected results.
 
 \backmatter
 \cleardoublepage
