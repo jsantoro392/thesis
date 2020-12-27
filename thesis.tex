@@ -122,7 +122,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	with the sky-location and time of three short gamma-ray bursts (GRBs).
         \end{enumerate}
         A coincident analyses processes the data from the detectors in the network \emph{separately} and then combines them: signals are sought for by pinpointing (almost) simultaneous --- i.e., coincident --- ``reactions'' of the detectors.
-        A coherent analyses, instead, first combines the data from the various detectors and then processes it: signals are sought for by looking for ``behaviours'' in this data that are not compatible with noise and are consistent --- i.e., coherent --- throughout the \emph{network}.  In both cases, what we labelled as reactions/behaviours are determined by comparing the data stream(s) to a finite collection of predetermined GW signal models --- known as \emph{template bank} --- via matched-filtering (see Sec.\,\ref{sec:matched_filtering}).
+        A coherent analysis, instead, first combines the data from the various detectors and then processes them: signals are sought for by looking for ``behaviours'' in this data that are not compatible with noise and are consistent --- i.e., coherent --- throughout the \emph{network}.  In both cases, what we labelled as reactions/behaviours are determined by comparing the data stream(s) to a finite collection of predetermined GW signal models --- known as \emph{template bank} --- via matched-filtering (see Sec.\,\ref{sec:matched_filtering}).
 
 	GRBs are short (0.1\,s--100\,s), intense, non-repeating bursts of 
 	electromagnetic radiation in the high-energy (1\,keV--10\,MeV) $\gamma$-ray spectrum.
@@ -516,7 +516,7 @@ We are grateful for computational resources provided by Cardiff University, and 
           LIGO Hanford Observatory (LHO), in Washington, and LIGO Livingston Observatory (LLO), in Louisiana.
           The sites are separated by roughly 3000 km, 
           and are situated to support coincidence analysis of events.
-          LIGO's original instrument engaged in "science observations" from 2002 to 2010. 
+          LIGO's original instrument engaged in ``science observations'' from 2002 to 2010. 
           During this initial phase, the Hanford site operated two collocated interferometers:
           one detector with 4 km long arms (H1) and another with 2 km long arms (H2). 
           The Livingston site operated a second 4 km detector (L1). 
@@ -946,7 +946,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	Searching for periodic GWs means demodulating the motion of the detector, 
 	a computationally intensive problem since the modulation is different for every sky position \cite{4}. 
 	Unless one knows in advance the position of the source, 
-	one needs to search over a huge number of sky position "error boxes”.
+	one needs to search over a huge number of sky position error boxes.
 
 \subsection{Stochastic Background}
 	Stochastic backgrounds are “random” GWs, 
@@ -2444,7 +2444,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 During the third LIGO-Virgo observing run (O3),
 	different types of signals are identified using different search methods.
-	As already seen in Sec.\ref{sec:matched_filtering}, matched filtering is the optimal method 
+	As already seen in Sec.\,\ref{sec:matched_filtering}, matched filtering is the optimal method 
 	to search for putative signals in stationary Gaussian noise,
 	and modelled searches are the most sensitive to identify compact binary signals:
 	two types of the latter, {\ttfamily PyGRB} and {\ttfamily PyCBC}, 
@@ -3293,7 +3293,7 @@ During the third LIGO-Virgo observing run (O3),
 	this allows one to estimate the search sensitivity and assess its performance (see Sec.\,\ref{sec:injections}).
 
         Figure \ref{fig:inj_plots} summarizes the result of the injection campaigns carried out on the chunk of O3b data.
-        Each point in the left panel of Fig.\ref{fig:inj_plots} represents an injection;
+        Each point in the left panel of Fig.\,\ref{fig:inj_plots} represents an injection;
         it is placed in the plot according to its chirp mass and optimal SNR,
         a measure of the SNR of the injected waveform assuming no noise is present,
         and it is coloured according to the outcome of its recovery:
@@ -3302,7 +3302,7 @@ During the third LIGO-Virgo observing run (O3),
         the dark blue ones being identified undoubtedly as signals, that is,
         they were found to be louder than all background events.
 
-        The right panel in Fig.\ref{fig:inj_plots} shows the distribution of injections and their recovery
+        The right panel in Fig.\,\ref{fig:inj_plots} shows the distribution of injections and their recovery
         as a function of the injected decisive distance and chirp mass.
         The injected decisive distance is defined as the injected effective
         distance\footnote{The effective distance of a source is the distance at which an optimally-oriented and located signal would have the produced the same SNR as the given simulation }
@@ -3385,50 +3385,41 @@ During the third LIGO-Virgo observing run (O3),
 % intero run, riporta i risultati delle 3 GRB, evidenzia la
 % pubblicazione, ecc.
 
-	The first measurement of the effect of GWs has opened the gateway to GW astronomy 
-	and a new window to the universe, enabling astronomers to look into regions of our cosmos 
-	that were inaccessible to regular astronomical observation.
-	It has required long years of development, first from a theoretical, 
-	then from a technological — especially that of precision laser interferometry— point of view,
-	for the detections to become more and more regular recently.
-	
-	The first direct proof of the existence of BBH was the outcome of years of development, 
-	first from a theoretical, then from a technological — especially that of precision laser interferometry— point of view;
-	Recently, the detections become more and more regular as the detectors and the data analysis techniques are still improving.
-	Search pipelines are algorithms designed to identify GW signals in detector data.
-	In this work, I focused explicitly on two offline searches for compact binary coalescences, 
-	which are crucial to accurately estimate the significance of the candidate and confidently establish its astrophysical origin.
-	describing the different approaches to GW data analysis behind the two searches: coherent and coincident.
-	After outlining the theoretical framework of GW astronomy,
-        the aforementioned data analysis strategies have been investigated.
+	The first measurement of the effect of GWs in 2015 opened the gateway to GW astronomy, 
+	a new window onto the universe that grants scientists access to regions of our cosmos 
+	that are inaccessible with the means of traditional astronomy alone.
+	Starting from the forumation of General Relativity, this remarkable achievement required decades of development, from a theoretical point of view, as well as from 
+	an experimental and technological one.
+	With regular upgrades to GW detectors, detections have become more and more frequent in the last five years (see Fig.\,\ref{fig:o3detection}).  In parallel, improvements to the data analysis algorithms, pipelines, and infrastructure have tightened the bonds between the GW and the electromagnetic astronomy communities.  Telescopes are used to follow-up GW candidate events once these are announced via The Gravitational-Wave Candidate Event Database ({\ttfamily GraceDB}, \url{https://gracedb.ligo.org/}), the goal being to further the field of multi-messenger astronomy, after the monumental success of the GW170817 observation.
 
-	Algorithms requiring coincident detection of a source by multiple detectors,
-        are the primary method to detect BBH mergers,
-        as shown in the GW event overview in Chapter \ref{ch:ObservingRuns}.
-        The benefits of this procedure, described in Sec.\ref{subsec:coincident} are plenty:
-        first it immediately eliminates the great majority of noise background
-        by rejecting any triggers which are uncorrelated in time in two or more detectors;
-        secondly, it is not computationally expensive.
-        The dominant cost of the search is in performing the matched filtering (see, Sec.\ref{sec:matched_filtering})
-        of the data against the template bank (see, Section \ref{sec:template_banks}).
-        The {\ttfamily PyCBC} offline analysis has been developed implementing this method in its algorithms.
+	In this thesis, I focused on two offline searches for compact binary coalescences,
+	which are used to extract signals from detector data and determine their significance in order to confidently establish their astrophysical origin.
+        One is a targeted search used to look for GW signals in temporal and spatial coincidence with short GRBs ({\ttfamily PyGRB}); the other is an all-sky, all-time search (performed with {\ttfamily PyCBC}).
+        At the heart of both of these is the strategy of comparing the data against a predetermined GW template bank (Sec.\,\ref{sec:template_banks}) --- that is, a collection of models of expected GW signals --- via match filtering (Sec.\,\ref{sec:matched_filtering}).  However, 
+	two distinct GW data analysis approaches are behind the two searches: the GRB follow-up search is a coherent one (Sec.\,\ref{subsec:coherent}), while the all-sky search is a coincident one (Sec.\,\ref{subsec:coincident}).
+        A coincident analyses processes the data from the detectors in the network \emph{separately} and then combines them, looking for signals by inspecting (almost) simultaneous deviations from Gaussian noise in the detector data streams.
+        A coherent analysis, instead, first combines the data of the various detectors and then processes them, looking for deviations from Gaussian noise that are consistent accross the \emph{network}.
 
-        A coherent approach, described in Sec.\ref{subsec:coherent}, on the other hand,
-        it is computationally expensive in the case of modelled searches,
-        however, knowing the time and sky-location of the source can cut the cost of the search.
-        It enables a more extensive search in the GW data, potentially uncovering signals
-        that are not within reach to all-sky, all-time searches.
-        Moreover, the coherent analysis allows for some additional tests
-        which are not readily available in the coincidence case.
-        The most significant of these is the null SNR (see, Sec.\ref{subsubsec:nullsnr}) which can be used to reject events which are
-        not consistent with two GW polarisations.
-        This method is the basis which the {\ttfamily PyGRB} pipeline is built upon (see, Sec.\ref{subsec:pygrb}).
+        One of the main benefits of the coincident approach is its lower computational cost: indeed this is the primary method to detect BBH mergers, as is clear from the overview of main GW observations provided in Chapter \ref{ch:ObservingRuns}.
+        The dominant cost of a coincident search is the matched filtering stage (and, more specifically, computing Fourier transforms).
+        A coherent approach, on the other hand,
+        is computationally more expensive;
+        however, it digs deeper in the data, and has the ability to uncover signals that a coincident search may not find.  In other words, it is well suited for weak, near-threshold signals.
+        Moreover, this kind of analysis provides naturally additional noise-rejection tests
+        that are not readily available in the coincident case: these are based on null streams, which can be used to reject instances in the data that match a template but are
+        not consistent with the two polarisations of GW in General Relativity (see Sec.\,\ref{subsubsec:nullsnr}).
 
-	The two approaches have one main thing in common: the use of a template bank.
-	This is the core tool in a matched filtering search,
-	therefore it is crucial that it works efficiently in order to achieve successful detections.
-	However, the two pipelines, built upon these two methods, differ in one important aspect: 
-	while {\ttfamily PyCBC} is an all-sky search, {\ttfamily PyGRB} is a targeted one.
+	The two searches have a main ingredient in common, which is the use of a template bank
+	that is fed to the matched-filtering engine.
+	It is therefore crucial to build template banks that suitably cover the parameter space of sources targeted by the searches.
+	{\ttfamily PyCBC} looks for ``all'' 
+
+
+
+
+
+
+s an all-sky search, {\ttfamily PyGRB} is a targeted one.
 	This difference affects the construction of the template bank implemented in the pipeline.
 	Since {\ttfamily PyGRB} conducts the analysis only when the CBC signal is associated with an EM transient, GRBs,
 	it is sufficient that the template bank covers the parameter space associated with binaries that are EM bright.
