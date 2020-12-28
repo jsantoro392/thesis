@@ -461,12 +461,11 @@ We are grateful for computational resources provided by Cardiff University, and 
 	The first explicit suggestion of a laser interferometer detector 
 	was outlined by Gertsenshtein and Pustovoid in 1962 \cite{8}.
 	From the early 2000s, several kilometer-scale ground-based interferometers 
-	operated in the frequency band from 10 Hz to 1 kHz at a sensitivity 
+	operated in the frequency band from 10\,Hz to 1\,kHz at a sensitivity 
 	that all owed the potential for detection from a variety 
 	of sources at large extragalactic distances.
 
-\subsection{Description of Laser Interferometers}
-
+\subsection{Ground-Based Laser Interferometers}
 	The optical layout of the detectors consists in perpendicular 
 	Fabry–Perot arm cavities of the Michelson, 
 	with lasers running along the 4 km arms, as shown in Fig.\,\ref{fig:interferometer}. 
@@ -506,7 +505,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         doubling the sensitivity of a detector doubles the distance to which sources can be detected,
         increasing the volume of the Universe to which sources are measurable by a factor eight.
 
-	The frequency band $1Hz \apprle f \apprle 10^4 Hz$ is targeted by
+	The frequency band $1\,{\rm Hz} \apprle f \apprle 10^4\,{\rm Hz}$ is targeted by
         ground-based laser interferometric detectors has its low end set by the fact that it is extremely difficult
         to prevent mechanical coupling of the detector to ground vibrations at low frequencies,
         and probably impossible to prevent gravitational coupling to ground vibrations, human activity, and atmospheric motions.
@@ -517,8 +516,7 @@ We are grateful for computational resources provided by Cardiff University, and 
           \label{fig:interferometer}
         \end{figure}
 
-\subsection{Ground-Based Laser Interferometers}
-
+\subsection{The Gravitational-Wave Detector Network}
 	Detectors have nearly $4\pi$ steradians sensitivity to events over the sky. 
 	This means that any source on the sky will be detectable,
         not just sources in specific pointing directions.
@@ -563,7 +561,7 @@ We are grateful for computational resources provided by Cardiff University, and 
           Germany. It is designed and operated by scientists from the
           Max Planck Institute for Gravitational Physics and the Leibniz Universit\"at Hannover.
         \item KAGRA. It is Japan’s first GW detector and also the first GW detector to operate
-          at cryogenic temperatures, improving sensitivity at frequencies around 100 Hz.
+          at cryogenic temperatures, improving sensitivity at frequencies around 100\,Hz.
         \end{itemize}
 
 \section{Interaction of Gravitational Waves with Test Masses}
@@ -791,7 +789,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 
 \section{Non-Stationary Transient Noise Sources}
 	The various noises of the detector can be conveniently characterised by a spectral strain
-        sensitivity with dimensions of $1/\sqrt{Hz}$, as we explain in this section. 
+        sensitivity with dimensions of $1/\sqrt{{\rm Hz}}$, as we explain in this section. 
         The detector output $s(t)$ is composed of instrumental noise $n(t)$ arising from
         naturally occurring random processes and a potential strain signal $h(t)$
         \begin{equation}
@@ -824,10 +822,10 @@ We are grateful for computational resources provided by Cardiff University, and 
         \begin{figure}[t]
           \includegraphics[scale=0.3]{noise2}
           \centering
-          \caption{The strain equivalent spectral amplitudes $\sqrt{S_n(\omega)}$ of several noises couple to the detector. Most relevant contributions comes from quantum noise and from thermal noise of mirror coating and suspensions. Seismic noise dominates below 10Hz}
+          \caption{The strain equivalent spectral amplitudes $\sqrt{S_n(\omega)}$ of several noises couple to the detector. Most relevant contributions comes from quantum noise and from thermal noise of mirror coating and suspensions. Seismic noise dominates below 10\,Hz}
           \label{fig:noise2}
         \end{figure}
-        At lower frequencies, up to 10Hz, the main contribution to the global noise
+        At lower frequencies, up to 10\,Hz, the main contribution to the global noise
         is due to vibrations of the ground which couple to the mirror motion, (Fig.\,\ref{fig:noise2} brown line): 
 	it shakes the optics and produces strain signals that mask GW signals. 
         This seismic noise is caused by earthquakes, weather and human activity.
@@ -835,7 +833,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         the mirrors are isolated using an advanced suspension system.
 
         At frequencies where the seismic motion has been sufficiently reduced,
-        between 10Hz and 500Hz, the random Brownian motion of the molecules on the surface of the mirrors and wires dominates (Fig.\,\ref{fig:noise2}, red line).
+        between 10\,Hz and 500\,Hz, the random Brownian motion of the molecules on the surface of the mirrors and wires dominates (Fig.\,\ref{fig:noise2}, red line).
 
         The thermal energy of the interferometer’s components induce vibrations both in the suspensions and in the mirrors.
         The nature of GW signal requires the sensitivity of the interferometric detectors
@@ -1366,13 +1364,13 @@ We are grateful for computational resources provided by Cardiff University, and 
 	using the data of first generation interferometers 
 	have used templates that neglect the spins of the compact objects \cite{32}.
 	This was primarily motivated by the sensitivity of the initial LIGO and Virgo detectors:
-	because the sensitivity band started above 40 Hz, 
+	because the sensitivity band started above 40\,Hz, 
 	including spin effects greatly increased the number of templates to be searched over, 
 	and the search performed, on average, no better than non spinning searches, 	
 	as the increased degrees of freedom in the signal space picked up extra noise noise transients, 	
 	increasing the false alarm rate \cite{32, 38}.
 
-	However, the Advanced LIGO and Virgo detectors are sensitive to frequencies above 10–20 Hz, 
+	However, the Advanced LIGO and Virgo detectors are sensitive to frequencies above 10--20\,Hz, 
 	therefore they can observe the inspiral from much larger orbital separations, 
 	resulting is significantly longer observed GW signal \cite{23}. 
 	Proper consideration of the spin effects is essential in the advanced detector era, 
@@ -1841,7 +1839,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         Different injection sets can be used to perform distinct injection recovery studies:
         for a single set, simulated signals are drawn from a synthetic population of a certain type of source,
         described by astrophysical parameters, including the strain amplitude, sky location,
-        and initial frequency \cite{30} (e.g., Sec.\,\ref{subsec:construction_and_validation}).
+        and initial frequency \cite{30} (e.g., Sec.\,\ref{subsec:o3aTemplateBank}).
         The various injections are placed in the data by specifying a time-step to separate them.
         To randomize the placement, a time interval needs to be provided around
         each time-step in which the injection is actually placed.
@@ -1900,7 +1898,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 \section{The First Observing Run (O1)}
 	The first observing run involved the LIGO Hanford Observatory (LHO) and LIGO Livingston Observatory (LLO) detectors, 
 	which provided unprecedented sensitivity to GWs
-	over a range of frequencies from 30 Hz to several kHz \cite{14}, an interval that
+	over a range of frequencies from 30\,Hz to several kHz \cite{14}, an interval that
 	covers the frequencies of GWs emitted during 
 	the late inspiral, merger, and ringdown of stellar-mass BBHs.
 
@@ -2124,7 +2122,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	The morphology of the LLO event is consistent with a CBC signal, 
 	but a noise origin could not be ruled out using LLO data alone. 
 	Consequently, LHO data were investigated and were determined to be stable 
-	at frequencies above 30Hz, which was established as the starting frequency 
+	at frequencies above 30\,Hz, which was established as the starting frequency 
 	to look into a segment of LHO data around the event time.
 	{\ttfamily PyCBC} and {\ttfamily GstLAL} then identified GW170608 with a network SNR of 13,
 	and a FAR of less than 1 in 3,000 years and 1 in 160,000 years, respectively.
@@ -2467,7 +2465,7 @@ We are grateful for computational resources provided by Cardiff University, and 
 	the latter may have been too faint to be observed.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\chapter{Analyses of Data From the Third Observing Run}
+\chapter{Analyses of Data from the Third Observing Run}
 \label{ch:datanalysis}
 	Matched filtering is the optimal method 
 	to search for putative signals in stationary Gaussian noise (see Sec.\,\ref{sec:matched_filtering}),
