@@ -101,7 +101,7 @@ We are grateful for computational resources provided by Cardiff University, and 
         More massive binaries merge at lower frequencies and therefore have fewer cycles in band.
         For example, the first GW signal ever detected, GW150914, 
 	came from the coalescence of two fairly massive BHs: 
-	the signal was visible for only two-tenths of a second \cite{14}, 
+	the signal was visible for only two tenths of a second \cite{14}, 
 	as discussed in Sec.\,\ref{subsec:GW150914}. 
         BNS systems, by contrast, accumulate many cycles in the instrument band.
         The first BNS coalescence witnessed by LIGO-Virgo, GW170817, 
@@ -3511,17 +3511,16 @@ During the third LIGO-Virgo observing run (O3),
 \begin{tabular}{ccccc}
 \toprule[1.3pt]
 \toprule[1.3pt]
-GRB & BNS           & Generic NSBH   & Aligned NSBH  & FAP \\
-    & $D_{90}$ (Mpc) & $D_{90}$ (Mpc) & $D_{90}$ (Mpc) & \\
+GRB & FAP & BNS           & Generic NSBH   & Aligned NSBH  \\
+    &     & $D_{90}$ (Mpc) & $D_{90}$ (Mpc) & $D_{90}$ (Mpc) \\
 \midrule[1.1pt]
-190627A   & 115 & 139 & 211 & 0.481\\
-190728271 & 160 & 204 & 272 & 0.513\\
-190425089 & 204 & 247 & 440 & 0.075\\
+190627A   & 0.481 & 115 & 139 & 211 \\
+190728271 & 0.513 & 160 & 204 & 272 \\
+190425089 & 0.075 & 204 & 247 & 440 \\
 \bottomrule[1.3pt]
 \bottomrule[1.3pt]
 \end{tabular}
-\caption{The first three columns show the results for the 90\% confidence exclusion distances of the followed-up GRBs ($D_{90}$) for several emission scenarios: BNS, generic and aligned spin NSBH.
-The last column shows the associated false alarm probabilities. \fpg{Manca una caption: mai mettere una tabella/figura senza caption.}}
+\caption{{\bf Summary of the coherent search results discussed in Sec.\,\ref{sec:grbfollowup}.}  The first column lists the GRBs that were followed up with the {\ttfamily PyGRB} offline search.  The second column indicates the FAP of the loudest on-source GW trigger, for each analysis.  None of these values is low enough (i.e.\,$\lesssim 10^{-4}$) to promote the trigger to a GW candidate, so in the last three columns we report the 90\% confidence exclusion distances ($D_{90}$) in the case of a BNS progenitor, a generic spin NSBH progenitor, and an aligned spin NSBH progenitor.}
 \label{table:1}
 \end{table}
 
