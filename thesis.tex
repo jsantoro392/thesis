@@ -10,7 +10,7 @@
 \usepackage{xcolor}
 \usepackage{nameref}
 \usepackage{verbatim}
-\newcommand{\fpg}[1]{\textcolor{red}{#1} }
+%\newcommand{\fpg}[1]{\textcolor{red}{#1} }
 \newcommand\apjl{The Astrophysical Journal Letters}
 \newcommand\apj{The Astrophysical Journal}
 \newcommand\prl{Physical Review Letters}
@@ -213,7 +213,6 @@ We are grateful for computational resources provided by Cardiff University, and 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Gravitational-Wave Detection Principles}
 \label{ch:GWDetectionPrinciples}
-\fpg{Giri di correzione: 1.}%
 	The aim of this thesis is to expose the methodologies involved 
 	in compact binary coalescence through gravitational wave observation. 
 	Before giving into this topic, it is useful to shortly discuss gravitational waves, 
@@ -1001,7 +1000,6 @@ We are grateful for computational resources provided by Cardiff University, and 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Data Analysis for Coalescing Binary Systems}
 \label{ch:datatools}
-\fpg{Giri di correzione: 1.}%
 	One of the tasks of GW data analysis is to extract GWs signal 
 	buried into noisy interferometric strain data, hence achieving GW detections.
 	The techniques involved in this process depend on the type of source.
@@ -1858,7 +1856,6 @@ We are grateful for computational resources provided by Cardiff University, and 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Highlights from the Gravitational-Wave Observing Runs}
 \label{ch:ObservingRuns}
-\fpg{Giri di correzione: 1.}%
 	The first direct observation of GWs was achieved at the start of the first observing run (O1) 
 	of the advanced detector era \cite{52}.
 	O1 started on September 12, 2015 and ended on January 19, 2016.
@@ -2472,49 +2469,52 @@ We are grateful for computational resources provided by Cardiff University, and 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Analyses of Data From the Third Observing Run}
 \label{ch:datanalysis}
-\fpg{Giri di correzione: 1. Devo rivedere soprattutto l'intro.}%
+	Matched filtering is the optimal method 
+	to search for putative signals in stationary Gaussian noise (see Sec.\,\ref{sec:matched_filtering}),
+	and modelled searches are the most sensitive to GW signals from CBCs.
+        This chapter describes the results I
+        obtained by running two pipelines for searches of this kind on data from O3, the third LIGO-Virgo observing run.
+        One is {\ttfamily PyGRB}, a coherent search (see Sec.\,\ref{subsec:coherent}) that assesses whether the data it processes contains a CBC GW signal compatible
+        with the time and sky position of an observed short GRB.  I ran this pipeline on three GRBs that occurred during O3a (Secs.\,\ref{sec:GRB190627A}--\ref{sec:GRB190425089}); these results are part of a LIGO-Virgo Collabortation paper \cite{43} that reports on the follow-up campaign of all {\it Fermi}/GBM and {\it Swift}/BAT GRB observations that took place in O3a.  As reported in Sec.\,\ref{subsec:o3aTemplateBank}, I was responsible for building and validating the template bank that was used for all {\ttfamily PyGRB} analyses reported in \cite{43}.
+        The second pipeline is {\ttfamily PyCBC}, with which I performed an all-sky coincident search (see Sec.\,\ref{subsec:coincident}) on a portion of data from the second part of the third observing run (O3b).
 
-During the third LIGO-Virgo observing run (O3),
-	different types of signals are identified using different search methods.
-	As already seen in Sec.\,\ref{sec:matched_filtering}, matched filtering is the optimal method 
-	to search for putative signals in stationary Gaussian noise,
-	and modelled searches are the most sensitive to identify compact binary signals:
-	two types of the latter, {\ttfamily PyGRB} and {\ttfamily PyCBC}, 
-	are described in the following chapter.
+        The aim of these and other offline searches is to identify GW candidate events and determine their statistical significance.
+	An important feature of offline analyses of this kind is the distinction between closed box and open box results.
+	In the closed box results, all foreground events have been removed, by time sliding the data (in the case of the {\ttfamily PyCBC} all-sky search) and also by ignoring the 6\,s on-source window (in the case of the {\ttfamily PyGRB} search).  In other words, the closed box results refer to the background distribution measurement.
+	Open box results, on the other hand, pertain to the foreground distribution.
+	Not knowing whether a GW signal is present in the data being analyzed is a way of performing the data quality and sanity checks in an unbiased fashion:
+	the open box results are inspected only after the closed box has been thoroughly scrutinized.
+	
+\section{Coherent Follow-Up of Short Gamma-Ray Bursts}
+\label{sec:grbfollowup}
+	The outstanding detection of GW170817 (Sec.\,\ref{subsec:GW170817}) 
+        clearly demonstrated the vital importance of associating EM counterparts to GW triggers.
+        Prior to this event, short GRBs had long been discussed as promising targets for GW astronomy,
+        due to the probable compact binary nature of their progenitors \cite{154},
+        a hypothesis which was confirmed by the joint detection of GW170817 and GRB 170817A \cite{55}.
+	Short GRBs therefore represented and represent an attractive target for GW follow-up searches. 
+	The observation of a short GRB provides the time and sky position of a GW source:
+	this information allows for a dedicated GW search with a lower detection threshold.
+        These condictions ensure a higher sensitivity than
+        that of an all-sky search, so signals that are not accessible to
+        a generic binary merger search can potenetially be uncovered.
+        Further, joint GW-GRB observations offer a unique means of probing the central engine of short GRBs.
+        These are the scientific motivations for conducting GW follow-up searches of GRB events.
 
-	While {\ttfamily PyCBC} is an all sky search pipeline for CBC,
-	{\ttfamily PyGRB} is a GRB triggered CBC search
-        which entails the coherent analysis of multiple detectors data as seen in Sec.\,\ref{subsec:coherent}.
-        It assesses whether a GW signal is present in the data,
-        given the time and sky position of an observed short GRB,
-        by performing several signal-based veto cuts and data quality cuts.
-
-	The aim of these two offline searches is to determine the statistical significance of a candidate event,
-	with a latency of a few weeks, and sometimes they can also identify candidate events missed by the low-latency searches. 
-	One important characteristic of the offline analysis is the distinction between closed box and open box results:
-	in the closed box results, all foreground events have been removed from the background distribution measurement,
-	while open box results, which are final results that include all foreground events, are temporarily hidden. 
-	Not knowing if a GW signal is present in the data being analysed is a way to perform the data quality and sanity checks in an unbiased fashion.
-	Only after all inspections are performed in the closed box results and 
-	noise transients from known origin have been vetoed from the search, 
-	the open box results are made available. 	
-	We present the results of the {\ttfamily PyGRB} analysis of three GRBs that occurred during O3a \cite{43}, and
-        of the {\ttfamily PyCBC} of one chunk of data from the second part of the third observing run (O3b).
-
-	Not all compact binary mergers lead to the emission of an electromagnetic (EM) transient:
+	Not all compact binary mergers lead to the emission of an EM transient:
         binary sources for which a multi-messenger emission is most probable are the ones that contain at least a NS.
         This is a minimum condition in order to have the presence of matter in the post-merger stage.
         However, a more stringent requirement is to demand
         the presence of matter resulting from the backwash of a BNS or an NSBH
         outside the remnant central BH.
-        The evolution of this remnant matter can be responsible for the generation of several EM counterparts to GW events, and short GRBs in particular.
+        The evolution of this remnant system (matter+BH) can be responsible for the generation of several EM counterparts to GW events, and short GRBs in particular.
         Indeed, not all NSBH mergers are expected to emit electromagnetically and/or be viable short GRB progenitors (this is discussed further in Sec.\,\ref{sec:grbfollowup}).
         As a consequence, the parameter space which needs to be targeted by {\ttfamily PyGRB}
         is a subset of the CBC parameter space that excludes all systems that are \textit{EM-dim}:
         since short GRBs may be ignited when a sufficiently massive accretion disk forms around the remnant BH,
         the case of BBHs and of NSBH systems in which the NS plunges into the BH can be excluded.
         This motivates the construction and use of
-        so called \textit{EM-bright} template banks for the matched filtering carried out by {\ttfamily PyGRB}.
+        so called \textit{EM-bright} template banks for the matched filtering carried out by {\ttfamily PyGRB} \cite{162}.
 
         In order to build such template banks,
         it is of paramount importance to be able to estimate the amount of post-merger remnant matter as a useful indicator of
@@ -2522,41 +2522,10 @@ During the third LIGO-Virgo observing run (O3),
         Several factors contribute to determining if and how much material is present after the merger, outside the BH,
         but an estimate is possible by exploiting fits to the results of
         numerical simulations of NSBH mergers.
-        In the first part of this Chapter, we describe the implementation of a recent model \cite{54}, that accurately discriminates between parameter space
+        In the first part of this Section, we describe the implementation of a recent model \cite{54}, that accurately discriminates between parameter space
         regions that enclose combinations of masses and spins that enable NSBH systems to be short GRB progenitor candidates.
-        This implementation was used to generate the template bank adopted during the first part of the third LIGO-Virgo observing run (O3a) for {\ttfamily PyGRB} follow-ups of short GRB events.
-        The resulting EM-bright template bank has been tested to assess its efficiency, as described in Sec.\,\ref{subsec:construction_and_validation}.
-
-\section{Coherent Follow-Up of Short Gamma-Ray Bursts}
-\label{sec:grbfollowup}
-	The outstanding detection of GW170817 (Sec.\,\ref{subsec:GW170817}) 
-        clearly demonstrated the vital importance of associating EM counterparts to GW triggers.
-        Prior to this event, short GRBs had long been discussed as promising targets for GW astronomy,
-        due to the probable compact binary nature of their progenitors \cite{154},
-        a hypothesis which was confirmed by the joint detection of GW170817 and GRB 170817A.	
-
-	Short GRBs and GWs 
-	share the same catastrophic origin, 
-	and are therefore tightly intertwined.
-	Short GRBs represent an attractive target for GW follow-up searches. 
-	The prior observation of a short GRB provides the time and sky position of a potential GW source. 
-	The information about the short GRB observation, allows a targeted GW search for a compact binary signals to lower the detection threshold: thus,
-        this kind of search has a higher sensitivity than
-        and can uncover signals that are not accessible to
-        a generic binary merger search, one that searches the whole sky at all times and for all compact binary mergers (including BBHs).
-        Further, joint GW-GRB observations offer a unique means of probing the central engine of short GRBs.
-        These are the scientific motivations for conducting GW follow-up searches of GRB events.
-
-	Now that we have pinned down one class of short GRBs progenitors with GW170817, namely BNSs, 
-	the next step is to observe the other likely short GRBs source: NSBH systems.
-	Nevertheless, short GRB ignition is theoretically supported only by a fraction of NSBH mergers,
-	specifically ones in which the BH tidally disrupts its companion, 
-	and a sufficiently massive accretion disk forms around the remnant BH.
-
-	From April 2019 to September 2019, the Advanced LIGO and Advanced Virgo detectors undertook 
-	the first part of the third observing run (O3a).
-	{\rm PyGRB} was used to search for GWs associated with short and ambiguous duration GRBs detected by {\it Swift}/BAT or {\it Fermi}/GBM during O3a (see Introduction).
-	This required building and validating a template bank specifically designed for this task and then running the individual follow ups.  In the next Section I will describe the steps I carried out to deliver the bank and then I will report on the three GRB follow up analyses that I performed.
+        This implementation was used to generate and validate the template bank adopted during O3a for {\ttfamily PyGRB} follow-ups of short GRB events.
+        Next, in Sec.\,\ref{subsec:pygrb}, we discuss the general setup up of {\ttfamily PyGRB} analyses for O3a, and finally in the remaining sections we present the results obtained for three specific O3a GRBs: GRB 190627A, GRB 190728271, and GRB 190425089.
 
 \subsection{The O3a Template Bank}
 \label{subsec:o3aTemplateBank}
@@ -2680,7 +2649,6 @@ During the third LIGO-Virgo observing run (O3),
         and $C_{\rm NS} = 0.13$--$0.182$.
 
 \subsubsection{Construction and Validation}
-\label{subsec:construction_and_validation}
 	In light of the discussion so far, an EM-bright bank cover the portion of compact binary parameter space that
         corresponds mass and spin combinations, such that one is in presence either of a BNS or of an NSBH that will yield an accretion disk after the merger.
         \begin{itemize}
